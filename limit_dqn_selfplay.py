@@ -6,6 +6,8 @@ from honest_agent_limited import HonestAgent
 
 import rlcard
 from rlcard.agents import DQNAgent, RandomAgent
+from dqn_agent_relu import DQNAgent as DQNAgentReLU
+
 from rlcard.utils import (
     reorganize,
     set_seed,
