@@ -108,8 +108,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=42)
 
     # Training loop
-    parser.add_argument('--num_episodes', type=int, default=200_000,
-                        help='Limit Hold\'em needs more episodes than Leduc')
+    parser.add_argument('--num_episodes', type=int, default=200_000)
     parser.add_argument('--num_eval_games', type=int, default=2_000)
     parser.add_argument('--evaluate_every', type=int, default=1_000,
                         help='Evaluate against Random every N episodes')
