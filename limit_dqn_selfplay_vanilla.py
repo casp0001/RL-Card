@@ -51,7 +51,7 @@ def train(args):
     # Opponent pool for self-play: starts as a frozen copy of the initial agent
     opponent = copy.deepcopy(agent)
 
-    # For evaluation: agent vs. Random
+    # For evaluation
     eval_env.set_agents([
         agent,
         HonestAgent(num_actions=env.num_actions),
@@ -88,7 +88,7 @@ def train(args):
                 reward = tournament(eval_env, args.num_eval_games)[0]
                 logger.log_performance(episode, reward)
                 if args.verbose:
-                    print(f'\n[Episode {episode}] Avg reward vs Random: {reward:.4f}')
+                    print(f'\n[Episode {episode}] Avg reward vs Opponent: {reward:.4f}')
 
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', type=str, default=None,
                         help='torch device, e.g. "cpu" or "cuda:0" (None = auto)')
     parser.add_argument('--log_dir', type=str,
-                        default='experiments/limit_holdem_dqn_selfplay_result/')
+                        default='experiments/limit_holdem_dqn_selfplay_vanilla_result/')
     parser.add_argument('--verbose', action='store_true', default=True)
 
     args = parser.parse_args()
