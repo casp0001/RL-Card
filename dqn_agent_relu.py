@@ -58,6 +58,7 @@ class DQNAgent(object):
                  learning_rate=0.00005,
                  device=None,
                  save_path=None,
+                 activation='relu',
                  save_every=float('inf'),):
 
         '''
@@ -94,6 +95,7 @@ class DQNAgent(object):
         self.batch_size = batch_size
         self.num_actions = num_actions
         self.train_every = train_every
+        self.activation = activation
 
         # Torch device
         if device is None:
@@ -112,9 +114,9 @@ class DQNAgent(object):
 
         # Create estimators
         self.q_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
-            mlp_layers=mlp_layers, device=self.device)
+            mlp_layers=mlp_layers, device=self.device, activation=self.activation)
         self.target_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
-            mlp_layers=mlp_layers, device=self.device)
+            mlp_layers=mlp_layers, device=self.device, activation=self.activation)
 
         # Create replay memory
         self.memory = Memory(replay_memory_size, batch_size)
@@ -330,7 +332,7 @@ class Estimator(object):
     This network is used for both the Q-Network and the Target Network.
     '''
 
-    def __init__(self, num_actions=2, learning_rate=0.001, state_shape=None, mlp_layers=None, device=None):
+    def __init__(self, num_actions=2, learning_rate=0.001, state_shape=None, mlp_layers=None, device=None,activation='relu'):
         ''' Initilalize an Estimator object.
 
         Args:
@@ -344,6 +346,7 @@ class Estimator(object):
         self.state_shape = state_shape
         self.mlp_layers = mlp_layers
         self.device = device
+        self.activation = activation
 
         # set up Q model and place it in eval mode
         qnet = EstimatorNetwork(num_actions, state_shape, mlp_layers)
@@ -452,7 +455,7 @@ class EstimatorNetwork(nn.Module):
         It is just a series of tanh layers. All in/out are torch.tensor
     '''
 
-    def __init__(self, num_actions=2, state_shape=None, mlp_layers=None):
+    def __init__(self, num_actions=2, state_shape=None, mlp_layers=None, activation='relu'):
         ''' Initialize the Q network
 
         Args:
@@ -465,6 +468,7 @@ class EstimatorNetwork(nn.Module):
         self.num_actions = num_actions
         self.state_shape = state_shape
         self.mlp_layers = mlp_layers
+        self.activation = activation
 
         # build the Q network
         layer_dims = [np.prod(self.state_shape)] + self.mlp_layers
@@ -472,7 +476,10 @@ class EstimatorNetwork(nn.Module):
         fc.append(nn.BatchNorm1d(layer_dims[0]))
         for i in range(len(layer_dims)-1):
             fc.append(nn.Linear(layer_dims[i], layer_dims[i+1], bias=True))
-            fc.append(nn.ReLU())
+            if self.activation == 'relu':
+                fc.append(nn.ReLU())
+            elif self.activation == 'tanh':
+                fc.append(nn.Tanh())
         fc.append(nn.Linear(layer_dims[-1], self.num_actions, bias=True))
         self.fc_layers = nn.Sequential(*fc)
 

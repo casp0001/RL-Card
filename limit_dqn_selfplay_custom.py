@@ -1,6 +1,7 @@
 import os
 import argparse
 import copy
+import contextlib
 
 from honest_agent_limited import HonestAgent
 
@@ -59,35 +60,37 @@ def train(args):
 
     with Logger(args.log_dir) as logger:
         for episode in range(args.num_episodes):
+            with open(os.devnull, 'w') as devnull:
+                with contextlib.redirect_stdout(devnull):
 
-            # --- Self-play: update opponent snapshot periodically ---
-            if episode % args.opponent_update_every == 0 and episode > 0:
-                opponent = copy.deepcopy(agent)
-                if args.verbose:
-                    print(f'\n[Episode {episode}] Opponent snapshot updated.')
+                    # --- Self-play: update opponent snapshot periodically ---
+                    if episode % args.opponent_update_every == 0 and episode > 0:
+                        opponent = copy.deepcopy(agent)
+                        if args.verbose:
+                            print(f'\n[Episode {episode}] Opponent snapshot updated.')
 
-            # Alternate seats so agent learns both positions
-            if episode % 2 == 0:
-                env.set_agents([agent, opponent])
-                learning_player = 0
-            else:
-                env.set_agents([opponent, agent])
-                learning_player = 1
+                    # Alternate seats so agent learns both positions
+                    if episode % 2 == 0:
+                        env.set_agents([agent, opponent])
+                        learning_player = 0
+                    else:
+                        env.set_agents([opponent, agent])
+                        learning_player = 1
 
-            # Run one episode and feed transitions to the learning agent
-            trajectories, payoffs = env.run(is_training=True)
-            trajectories = reorganize(trajectories, payoffs)
+                    # Run one episode and feed transitions to the learning agent
+                    trajectories, payoffs = env.run(is_training=True)
+                    trajectories = reorganize(trajectories, payoffs)
 
-            for ts in trajectories[learning_player]:
-                agent.feed(ts)
-
-            print(f'\rIteration {episode}', end='')
+                    for ts in trajectories[learning_player]:
+                        agent.feed(ts)
+                    if args.verbose:
+                        print(f'\rIteration {episode}', end='')
 
             # Evaluate against Random periodically
             if episode % args.evaluate_every == 0:
                 reward = tournament(eval_env, args.num_eval_games)[0]
                 logger.log_performance(episode, reward)
-                if args.verbose:
+                if args.verbose == True:
                     print(f'\n[Episode {episode}] Avg reward vs Opponent: {reward:.4f}')
 
         csv_path, fig_path = logger.csv_path, logger.fig_path
@@ -116,7 +119,6 @@ if __name__ == '__main__':
                         help='Freeze a new opponent snapshot every N episodes')
 
     # DQN hyper-parameters
-    # Wider layers to handle the larger ~72-dim state space of Limit Hold'em
     parser.add_argument('--mlp_layers', type=int, nargs='+', default=[128, 128],
                         help='Hidden layer sizes, e.g. --mlp_layers 256 256')
     parser.add_argument('--lr', type=float, default=5e-4)
@@ -129,14 +131,26 @@ if __name__ == '__main__':
     parser.add_argument('--epsilon_end', type=float, default=0.1)
     parser.add_argument('--epsilon_decay_steps', type=int, default=40_000,
                         help='Longer decay for the more complex game')
+    parser.add_argument('--activation', type=str, default='relu',
+                        choices=['relu', 'tanh'],
+                        help='Activation function for the MLP layers')
 
     # Misc
     parser.add_argument('--device', type=str, default=None,
                         help='torch device, e.g. "cpu" or "cuda:0" (None = auto)')
     parser.add_argument('--log_dir', type=str,
-                        default='experiments/limit_holdem_dqn_selfplay_custom_result/')
-    parser.add_argument('--verbose', action='store_true', default=True)
+                        default=None)
+    parser.add_argument('--verbose', type=bool, default=True)
 
     args = parser.parse_args()
+    if args.log_dir is None:
+        layers_str = '_'.join(str(x) for x in args.mlp_layers)
+        args.log_dir = (
+            f'experiments/limit_holdem_dqn_selfplay/'
+            f'activation{args.activation}_'
+            f'lr{args.lr}_bs{args.batch_size}_buf{args.replay_memory_size}_'
+            f'layers{layers_str}_eps{args.epsilon_decay_steps}_'
+            f'opp{args.opponent_update_every}_seed{args.seed}/'
+        )
     os.makedirs(args.log_dir, exist_ok=True)
     train(args)
