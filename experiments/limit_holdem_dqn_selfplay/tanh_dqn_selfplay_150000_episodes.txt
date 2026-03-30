@@ -1,0 +1,24 @@
+1. reward=0.5620  |  lr=0.001, batch_size=32, mlp_layers=[128, 128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+2. reward=0.4340  |  lr=0.0001, batch_size=32, mlp_layers=[128, 128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+3. reward=0.2220  |  lr=0.0001, batch_size=32, mlp_layers=[128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+4. reward=0.2210  |  lr=0.001, batch_size=32, mlp_layers=[128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+5. reward=0.1700  |  lr=0.0001, batch_size=32, mlp_layers=[256, 256], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+6. reward=0.1610  |  lr=0.001, batch_size=64, mlp_layers=[128, 128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+7. reward=0.1160  |  lr=0.0001, batch_size=32, mlp_layers=[128, 128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+8. reward=0.0820  |  lr=0.0001, batch_size=64, mlp_layers=[128, 128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+9. reward=-0.0630  |  lr=0.0001, batch_size=64, mlp_layers=[128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+10. reward=-0.1190  |  lr=0.001, batch_size=64, mlp_layers=[128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+11. reward=-0.2080  |  lr=0.001, batch_size=32, mlp_layers=[256, 256], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+12. reward=-0.2330  |  lr=0.001, batch_size=64, mlp_layers=[128, 128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+13. reward=-0.2490  |  lr=0.0001, batch_size=32, mlp_layers=[256, 256], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+14. reward=-0.2760  |  lr=0.0001, batch_size=64, mlp_layers=[256, 256], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+15. reward=-0.3160  |  lr=0.0001, batch_size=32, mlp_layers=[128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+16. reward=-0.3210  |  lr=0.001, batch_size=64, mlp_layers=[128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+17. reward=-0.3255  |  lr=0.001, batch_size=64, mlp_layers=[256, 256], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+18. reward=-0.3620  |  lr=0.001, batch_size=64, mlp_layers=[256, 256], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+19. reward=-0.4260  |  lr=0.001, batch_size=32, mlp_layers=[256, 256], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+20. reward=-0.4290  |  lr=0.0001, batch_size=64, mlp_layers=[128, 128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+21. reward=-0.4445  |  lr=0.001, batch_size=32, mlp_layers=[128, 128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+22. reward=-0.4550  |  lr=0.001, batch_size=32, mlp_layers=[128, 128], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000
+23. reward=-0.5390  |  lr=0.0001, batch_size=64, mlp_layers=[128, 128], epsilon_decay_steps=40000, activation=tanh, opponent_update_every=1000
+24. reward=-0.5415  |  lr=0.0001, batch_size=64, mlp_layers=[256, 256], epsilon_decay_steps=20000, activation=tanh, opponent_update_every=1000

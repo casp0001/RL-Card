@@ -9,16 +9,16 @@ import csv
 GRID = {
     'lr':                   [1e-3, 1e-4],
     'batch_size':           [32, 64],
-    'mlp_layers':           [[128, 128], [256, 256], [128, 128, 128]],
+    'mlp_layers':           [[128, 128], [128, 128, 128]],
     'epsilon_decay_steps':  [20_000, 40_000],
-    'activation':         ['relu', 'tanh'],
+    'activation':         ['relu'],
     'opponent_update_every': [1_000],
 }
 
 FIXED = {
-    'num_episodes':         50_000,
+    'num_episodes':        150_000,
     'num_eval_games':       1_000,
-    'evaluate_every':       1_000,
+    'evaluate_every':       10_000,
     'seed':                 42,
     'verbose':              False,
 }
