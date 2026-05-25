@@ -19,7 +19,7 @@ from rlcard.utils import (
 
 
 def train(args):
-    # Make environments
+    # make environments
     env = rlcard.make(
         'limit-holdem',
         config={'seed': args.seed}
@@ -29,11 +29,9 @@ def train(args):
         config={'seed': args.seed}
     )
 
-    # Seed numpy, torch, random
     set_seed(args.seed)
 
-    # Initialise the main DQN agent
-    # Limit Hold'em: state_shape is ~72, num_actions is 4 (fold/check/call/raise)
+    # initialise the main DQN agent
     agent = DQNAgent(
         num_actions=env.num_actions,
         state_shape=env.state_shape[0],
@@ -49,10 +47,10 @@ def train(args):
         device=args.device,
     )
 
-    # Opponent pool for self-play: starts as a frozen copy of the initial agent
+    # create agent copy for opponent
     opponent = copy.deepcopy(agent)
 
-    # For evaluation: agent vs. Random
+    # evaluation environemtn, agent vs honest "rational" opponent
     eval_env.set_agents([
         agent,
         HonestAgent(num_actions=env.num_actions),
@@ -63,13 +61,13 @@ def train(args):
             with open(os.devnull, 'w') as devnull:
                 with contextlib.redirect_stdout(devnull):
 
-                    # --- Self-play: update opponent snapshot periodically ---
+                    # periodic opponent snapshot update
                     if episode % args.opponent_update_every == 0 and episode > 0:
                         opponent = copy.deepcopy(agent)
                         if args.verbose:
                             print(f'\n[Episode {episode}] Opponent snapshot updated.')
 
-                    # Alternate seats so agent learns both positions
+                    # alternate seats so agent learns both positions
                     if episode % 2 == 0:
                         env.set_agents([agent, opponent])
                         learning_player = 0
@@ -77,7 +75,7 @@ def train(args):
                         env.set_agents([opponent, agent])
                         learning_player = 1
 
-                    # Run one episode and feed transitions to the learning agent
+                    # feed transitions to the learning agent
                     trajectories, payoffs = env.run(is_training=True)
                     trajectories = reorganize(trajectories, payoffs)
 
@@ -86,7 +84,7 @@ def train(args):
                     if args.verbose:
                         print(f'\rIteration {episode}', end='')
 
-            # Evaluate against Random periodically
+            # periodic evalutaion against honest opponent
             if episode % args.evaluate_every == 0:
                 reward = tournament(eval_env, args.num_eval_games)[0]
                 logger.log_performance(episode, reward)
@@ -95,11 +93,11 @@ def train(args):
 
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
-    # Save final model
+
     agent.save_checkpoint(args.log_dir)
     print(f'\nModel saved to {args.log_dir}')
 
-    # Plot learning curve
+
     plot_curve(csv_path, fig_path, 'dqn_selfplay_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
@@ -107,49 +105,45 @@ def train(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("DQN Self-Play — Limit Hold'em (RLCard)")
 
-    # Reproducibility
+    # seed for reproducibility
     parser.add_argument('--seed', type=int, default=42)
 
-    # Training loop
+    # training loop hyper-parameters
     parser.add_argument('--num_episodes', type=int, default=200_000)
     parser.add_argument('--num_eval_games', type=int, default=2_000)
-    parser.add_argument('--evaluate_every', type=int, default=1_000,
-                        help='Evaluate against Random every N episodes')
-    parser.add_argument('--opponent_update_every', type=int, default=2_000,
-                        help='Freeze a new opponent snapshot every N episodes')
+    parser.add_argument('--evaluate_every', type=int, default=1_000)
+    parser.add_argument('--opponent_update_every', type=int, default=2_000)
 
     # DQN hyper-parameters
-    parser.add_argument('--mlp_layers', type=int, nargs='+', default=[128, 128],
-                        help='Hidden layer sizes, e.g. --mlp_layers 256 256')
+    parser.add_argument('--mlp_layers', type=int, nargs='+', default=[128, 128])
     parser.add_argument('--lr', type=float, default=5e-4)
     parser.add_argument('--batch_size', type=int, default=32)
-    parser.add_argument('--replay_memory_size', type=int, default=40_000,
-                        help='Larger buffer for longer episodes')
+    parser.add_argument('--replay_memory_size', type=int, default=40_000)
     parser.add_argument('--replay_memory_init_size', type=int, default=100)
     parser.add_argument('--train_every', type=int, default=1)
     parser.add_argument('--epsilon_start', type=float, default=1.0)
     parser.add_argument('--epsilon_end', type=float, default=0.1)
-    parser.add_argument('--epsilon_decay_steps', type=int, default=40_000,
-                        help='Longer decay for the more complex game')
+    parser.add_argument('--epsilon_decay_steps', type=int, default=40_000)
     parser.add_argument('--activation', type=str, default='relu',
-                        choices=['relu', 'tanh'],
-                        help='Activation function for the MLP layers')
+                        choices=['relu', 'tanh'])
 
-    # Misc
-    parser.add_argument('--device', type=str, default=None,
-                        help='torch device, e.g. "cpu" or "cuda:0" (None = auto)')
+    # misc
+    parser.add_argument('--device', type=str, default=None)
     parser.add_argument('--log_dir', type=str,
                         default=None)
     parser.add_argument('--verbose', type=bool, default=True)
 
     args = parser.parse_args()
+    # log directory dymanic creation 
     if args.log_dir is None:
         layers_str = '_'.join(str(x) for x in args.mlp_layers)
         args.log_dir = (
             f'experiments/limit_holdem_dqn_selfplay/'
             f'activation{args.activation}_'
             f'lr{args.lr}_bs{args.batch_size}_buf{args.replay_memory_size}_'
-            f'layers{layers_str}_eps{args.epsilon_decay_steps}_'
+            f'layers_{layers_str}'
+            f'eps_start{args.epsilon_start}_eps_end{args.epsilon_end}_'
+            f'eps_decay{args.epsilon_decay_steps}_'
             f'opp{args.opponent_update_every}_seed{args.seed}/'
         )
     os.makedirs(args.log_dir, exist_ok=True)

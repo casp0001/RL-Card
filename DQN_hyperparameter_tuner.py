@@ -13,6 +13,8 @@ GRID = {
     'epsilon_decay_steps':  [20_000, 40_000],
     'activation':         ['relu'],
     'opponent_update_every': [1_000],
+    'epsilon_start': [1.0],
+    'epsilon_end': [0.1],
 }
 
 FIXED = {
@@ -42,27 +44,27 @@ def build_cmd(cfg):
 def infer_log_dir(cfg):
     layers_str = '_'.join(str(x) for x in cfg['mlp_layers'])
     return (
-        f"experiments/limit_holdem_dqn_selfplay/"
-        f'activation{cfg["activation"]}_'
-        f"lr{cfg['lr']}_bs{cfg['batch_size']}_buf40000_"
-        f"layers{layers_str}_eps{cfg['epsilon_decay_steps']}_"
-        f"opp{cfg['opponent_update_every']}_seed{FIXED['seed']}/"
+            f'experiments/limit_holdem_dqn_selfplay/'
+            f'activation{cfg["activation"]}_'
+            f'lr{cfg["lr"]}_bs{cfg["batch_size"]}_buf{cfg["replay_memory_size"]}_'
+            f'layers_{layers_str}'
+            f'eps_start{cfg["epsilon_start"]}_eps_end{cfg["epsilon_end"]}_'
+            f'eps_decay{cfg["epsilon_decay_steps"]}_'
+            f'opp{cfg["opponent_update_every"]}_seed{cfg["seed"]}/'
+        
     )
 
 
 def read_last_reward(log_dir):
     csv_path = os.path.join(log_dir, 'performance.csv')
-    try:
-        with open(csv_path) as f:
+    with open(csv_path) as f:
             reader = csv.reader(f)
-            next(reader)  # skip header
+            next(reader) 
             last = None
-            for row in reader:
-                if len(row) >= 2:  # skip empty or malformed lines
-                    last = float(row[1])
-        return last
-    except FileNotFoundError:
-        return None
+            for row in reader: 
+                last = float(row[1])
+    return last
+
 
 
 configs = list(grid_configs(GRID))
