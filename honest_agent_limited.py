@@ -144,14 +144,14 @@ def _choose_action(strength, legal_actions):
     Map a [0,1] strength score to an action index.
 
     Thresholds (tunable):
-      < 0.20  → fold  (very weak hand)
-      0.20–0.45 → call  (marginal)
+      < 0.35  → fold  (very weak hand)
+      0.35–0.45 → call  (marginal)
       0.45–0.65 → call/raise  (decent — raise only if raise is legal)
       > 0.65  → raise (strong hand)
     """
     available = set(legal_actions.keys())
 
-    if strength < 0.20:
+    if strength < 0.35:
         action = FOLD if FOLD in available else CALL
     elif strength < 0.45:
         action = CALL if CALL in available else FOLD

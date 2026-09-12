@@ -1,0 +1,324 @@
+\begin{thebibliography}{48}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Banerjee et~al.(2005)Banerjee, Merugu, Dhillon, and
+  Ghosh]{banerjee2005clustering}
+Banerjee, A., Merugu, S., Dhillon, I.~S., and Ghosh, J.
+\newblock Clustering with bregman divergences.
+\newblock \emph{Journal of machine learning research}, 6\penalty0
+  (Oct):\penalty0 1705--1749, 2005.
+
+\bibitem[Bowling et~al.(2015)Bowling, Burch, Johanson, and
+  Tammelin]{Bowling15:Heads-up}
+Bowling, M., Burch, N., Johanson, M., and Tammelin, O.
+\newblock Heads-up limit hold'em poker is solved.
+\newblock \emph{Science}, 347\penalty0 (6218):\penalty0 145--149, January 2015.
+
+\bibitem[Brown(1951)]{Brown51:Iterative}
+Brown, G.~W.
+\newblock Iterative solutions of games by fictitious play.
+\newblock In Koopmans, T.~C. (ed.), \emph{Activity Analysis of Production and
+  Allocation}, pp.\  374--376. John Wiley \& Sons, 1951.
+
+\bibitem[Brown \& Sandholm(2017)Brown and Sandholm]{Brown17:Superhuman}
+Brown, N. and Sandholm, T.
+\newblock Superhuman {A}{I} for heads-up no-limit poker: {L}ibratus beats top
+  professionals.
+\newblock \emph{Science}, pp.\  eaao1733, 2017.
+
+\bibitem[Brown \& Sandholm(2019)Brown and Sandholm]{Brown19:Solving}
+Brown, N. and Sandholm, T.
+\newblock Solving imperfect-information games via discounted regret
+  minimization.
+\newblock In \emph{AAAI Conference on Artificial Intelligence (AAAI)}, 2019.
+
+\bibitem[Brown et~al.(2015)Brown, Ganzfried, and
+  Sandholm]{Brown15:Hierarchical}
+Brown, N., Ganzfried, S., and Sandholm, T.
+\newblock Hierarchical abstraction, distributed equilibrium computation, and
+  post-processing, with application to a champion no-limit texas hold'em agent.
+\newblock In \emph{Proceedings of the 2015 International Conference on
+  Autonomous Agents and Multiagent Systems}, pp.\  7--15. International
+  Foundation for Autonomous Agents and Multiagent Systems, 2015.
+
+\bibitem[Brown et~al.(2018)Brown, Sandholm, and Amos]{Brown18:Depth}
+Brown, N., Sandholm, T., and Amos, B.
+\newblock Depth-limited solving for imperfect-information games.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2018.
+
+\bibitem[Burch(2017)]{Burch17:Time}
+Burch, N.
+\newblock \emph{Time and Space: Why Imperfect Information Games are Hard}.
+\newblock PhD thesis, University of Alberta, 2017.
+
+\bibitem[Burch et~al.(2018)Burch, Moravcik, and Schmid]{Burch18:Revisiting}
+Burch, N., Moravcik, M., and Schmid, M.
+\newblock Revisiting cfr+ and alternating updates.
+\newblock \emph{arXiv preprint arXiv:1810.11542}, 2018.
+
+\bibitem[Cesa-Bianchi \& Lugosi(2006)Cesa-Bianchi and
+  Lugosi]{Cesa-Bianchi06:Prediction}
+Cesa-Bianchi, N. and Lugosi, G.
+\newblock \emph{Prediction, learning, and games}.
+\newblock Cambridge University Press, 2006.
+
+\bibitem[Chaudhuri et~al.(2009)Chaudhuri, Freund, and
+  Hsu]{Chaudhuri09:Parameter-free}
+Chaudhuri, K., Freund, Y., and Hsu, D.~J.
+\newblock A parameter-free hedging algorithm.
+\newblock In \emph{Advances in neural information processing systems}, pp.\
+  297--305, 2009.
+
+\bibitem[Farina et~al.(2018)Farina, Kroer, and Sandholm]{Farina18:Online}
+Farina, G., Kroer, C., and Sandholm, T.
+\newblock Online convex optimization for sequential decision processes and
+  extensive-form games.
+\newblock In \emph{AAAI Conference on Artificial Intelligence (AAAI)}, 2018.
+
+\bibitem[Farina et~al.(2019)Farina, Kroer, Brown, and
+  Sandholm]{Farina19:Stable}
+Farina, G., Kroer, C., Brown, N., and Sandholm, T.
+\newblock Stable-predictive optimistic counterfactual regret minimization.
+\newblock In \emph{International Conference on Machine Learning}, 2019.
+
+\bibitem[Ganzfried \& Sandholm(2014)Ganzfried and
+  Sandholm]{Ganzfried14:Potential-Aware}
+Ganzfried, S. and Sandholm, T.
+\newblock Potential-aware imperfect-recall abstraction with earth mover's
+  distance in imperfect-information games.
+\newblock In \emph{AAAI Conference on Artificial Intelligence (AAAI)}, 2014.
+
+\bibitem[Gibson et~al.(2012)Gibson, Lanctot, Burch, Szafron, and
+  Bowling]{Gibson12:Generalized}
+Gibson, R., Lanctot, M., Burch, N., Szafron, D., and Bowling, M.
+\newblock Generalized sampling and variance in counterfactual regret
+  minimization.
+\newblock In \emph{Proceedins of the Twenty-Sixth AAAI Conference on Artificial
+  Intelligence}, pp.\  1355--1361, 2012.
+
+\bibitem[Hart \& Mas-Colell(2000)Hart and Mas-Colell]{Hart00:Simple}
+Hart, S. and Mas-Colell, A.
+\newblock A simple adaptive procedure leading to correlated equilibrium.
+\newblock \emph{Econometrica}, 68:\penalty0 1127--1150, 2000.
+
+\bibitem[Heinrich \& Silver(2016)Heinrich and Silver]{Heinrich16:Deep}
+Heinrich, J. and Silver, D.
+\newblock Deep reinforcement learning from self-play in imperfect-information
+  games.
+\newblock \emph{arXiv preprint arXiv:1603.01121}, 2016.
+
+\bibitem[Hoda et~al.(2010)Hoda, Gilpin, Pe{\~n}a, and
+  Sandholm]{Hoda10:Smoothing}
+Hoda, S., Gilpin, A., Pe{\~n}a, J., and Sandholm, T.
+\newblock Smoothing techniques for computing {N}ash equilibria of sequential
+  games.
+\newblock \emph{Mathematics of Operations Research}, 35\penalty0 (2):\penalty0
+  494--512, 2010.
+\newblock Conference version appeared in WINE-07.
+
+\bibitem[Jackson(2017)]{Jackson17:Targeted}
+Jackson, E.
+\newblock Targeted {C}{F}{R}.
+\newblock In \emph{AAAI Workshop on Computer Poker and Imperfect Information},
+  2017.
+
+\bibitem[Jackson(2016)]{Jackson16:Compact}
+Jackson, E.~G.
+\newblock Compact {CFR}.
+\newblock In \emph{AAAI Workshop on Computer Poker and Imperfect Information},
+  2016.
+
+\bibitem[Jin et~al.(2017)Jin, Levine, and Keutzer]{Jin17:Regret}
+Jin, P.~H., Levine, S., and Keutzer, K.
+\newblock Regret minimization for partially observable deep reinforcement
+  learning.
+\newblock \emph{arXiv preprint arXiv:1710.11424}, 2017.
+
+\bibitem[Johanson et~al.(2012)Johanson, Bard, Lanctot, Gibson, and
+  Bowling]{Johanson12:Efficient}
+Johanson, M., Bard, N., Lanctot, M., Gibson, R., and Bowling, M.
+\newblock Efficient nash equilibrium approximation through monte carlo
+  counterfactual regret minimization.
+\newblock In \emph{Proceedings of the 11th International Conference on
+  Autonomous Agents and Multiagent Systems-Volume 2}, pp.\  837--846.
+  International Foundation for Autonomous Agents and Multiagent Systems, 2012.
+
+\bibitem[Johanson et~al.(2013)Johanson, Burch, Valenzano, and
+  Bowling]{Johanson13:Evaluating}
+Johanson, M., Burch, N., Valenzano, R., and Bowling, M.
+\newblock Evaluating state-space abstractions in extensive-form games.
+\newblock In \emph{Proceedings of the 2013 International Conference on
+  Autonomous Agents and Multiagent Systems}, pp.\  271--278. International
+  Foundation for Autonomous Agents and Multiagent Systems, 2013.
+
+\bibitem[Johanson(2016)]{Johanson16:Robust}
+Johanson, M.~B.
+\newblock \emph{Robust Strategies and Counter-Strategies: From Superhuman to
+  Optimal Play}.
+\newblock PhD thesis, University of Alberta, 2016.
+
+\bibitem[Kingma \& Ba(2014)Kingma and Ba]{Kingma14:Adam}
+Kingma, D.~P. and Ba, J.
+\newblock Adam: A method for stochastic optimization.
+\newblock \emph{arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem[Kroer et~al.(2018{\natexlab{a}})Kroer, Farina, and
+  Sandholm]{Kroer18:Solving}
+Kroer, C., Farina, G., and Sandholm, T.
+\newblock Solving large sequential games with the excessive gap technique.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pp.\
+  864--874, 2018{\natexlab{a}}.
+
+\bibitem[Kroer et~al.(2018{\natexlab{b}})Kroer, Waugh,
+  K{\i}l{\i}n{\c{c}}-Karzan, and Sandholm]{Kroer18:Faster}
+Kroer, C., Waugh, K., K{\i}l{\i}n{\c{c}}-Karzan, F., and Sandholm, T.
+\newblock Faster algorithms for extensive-form game solving via improved
+  smoothing functions.
+\newblock \emph{Mathematical Programming}, pp.\  1--33, 2018{\natexlab{b}}.
+
+\bibitem[Lample \& Chaplot(2017)Lample and Chaplot]{lample2017playing}
+Lample, G. and Chaplot, D.~S.
+\newblock Playing {F}{P}{S} games with deep reinforcement learning.
+\newblock In \emph{AAAI}, pp.\  2140--2146, 2017.
+
+\bibitem[Lanctot(2013)]{lanctot2013monte}
+Lanctot, M.
+\newblock Monte carlo sampling and regret minimization for equilibrium
+  computation and decision-making in large extensive form games.
+\newblock 2013.
+
+\bibitem[Lanctot et~al.(2009)Lanctot, Waugh, Zinkevich, and
+  Bowling]{Lanctot09:Monte}
+Lanctot, M., Waugh, K., Zinkevich, M., and Bowling, M.
+\newblock {M}onte {C}arlo sampling for regret minimization in extensive games.
+\newblock In \emph{Proceedings of the Annual Conference on Neural Information
+  Processing Systems (NIPS)}, pp.\  1078--1086, 2009.
+
+\bibitem[Li et~al.(2018)Li, Hu, Ge, Jiang, Qi, and Song]{Li18:Double}
+Li, H., Hu, K., Ge, Z., Jiang, T., Qi, Y., and Song, L.
+\newblock Double neural counterfactual regret minimization.
+\newblock \emph{arXiv preprint arXiv:1812.10607}, 2018.
+
+\bibitem[Littlestone \& Warmuth(1994)Littlestone and
+  Warmuth]{Littlestone94:Weighted}
+Littlestone, N. and Warmuth, M.~K.
+\newblock The weighted majority algorithm.
+\newblock \emph{Information and Computation}, 108\penalty0 (2):\penalty0
+  212--261, 1994.
+
+\bibitem[Mnih et~al.(2015)Mnih, Kavukcuoglu, Silver, Rusu, Veness, Bellemare,
+  Graves, Riedmiller, Fidjeland, Ostrovski, et~al.]{Mnih15:Human}
+Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A.~A., Veness, J., Bellemare,
+  M.~G., Graves, A., Riedmiller, M., Fidjeland, A.~K., Ostrovski, G., et~al.
+\newblock Human-level control through deep reinforcement learning.
+\newblock \emph{Nature}, 518\penalty0 (7540):\penalty0 529, 2015.
+
+\bibitem[Mnih et~al.(2016)Mnih, Badia, Mirza, Graves, Lillicrap, Harley,
+  Silver, and Kavukcuoglu]{mnih2016asynchronous}
+Mnih, V., Badia, A.~P., Mirza, M., Graves, A., Lillicrap, T., Harley, T.,
+  Silver, D., and Kavukcuoglu, K.
+\newblock Asynchronous methods for deep reinforcement learning.
+\newblock In \emph{International conference on machine learning}, pp.\
+  1928--1937, 2016.
+
+\bibitem[Morav{\v c}{\'\i}k et~al.(2017)Morav{\v c}{\'\i}k, Schmid, Burch,
+  Lis{\'y}, Morrill, Bard, Davis, Waugh, Johanson, and
+  Bowling]{Moravcik17:DeepStack}
+Morav{\v c}{\'\i}k, M., Schmid, M., Burch, N., Lis{\'y}, V., Morrill, D., Bard,
+  N., Davis, T., Waugh, K., Johanson, M., and Bowling, M.
+\newblock Deepstack: Expert-level artificial intelligence in heads-up no-limit
+  poker.
+\newblock \emph{Science}, 2017.
+\newblock ISSN 0036-8075.
+\newblock \doi{10.1126/science.aam6960}.
+
+\bibitem[Morrill(2016)]{Morrill16:Using}
+Morrill, D.~R.
+\newblock \emph{Using Regret Estimation to Solve Games Compactly}.
+\newblock PhD thesis, University of Alberta, 2016.
+
+\bibitem[Nash(1950)]{Nash50:Eq}
+Nash, J.
+\newblock Equilibrium points in n-person games.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 36:\penalty0
+  48--49, 1950.
+
+\bibitem[Paszke et~al.(2017)Paszke, Gross, Chintala, Chanan, Yang, DeVito, Lin,
+  Desmaison, Antiga, and Lerer]{Paszke17:Automatic}
+Paszke, A., Gross, S., Chintala, S., Chanan, G., Yang, E., DeVito, Z., Lin, Z.,
+  Desmaison, A., Antiga, L., and Lerer, A.
+\newblock Automatic differentiation in pytorch.
+\newblock 2017.
+
+\bibitem[Schmid et~al.(2019)Schmid, Burch, Lanctot, Moravcik, Kadlec, and
+  Bowling]{Schmid19:Variance}
+Schmid, M., Burch, N., Lanctot, M., Moravcik, M., Kadlec, R., and Bowling, M.
+\newblock Variance reduction in monte carlo counterfactual regret minimization
+  ({V}{R}-{M}{C}{C}{F}{R}) for extensive form games using baselines.
+\newblock In \emph{AAAI Conference on Artificial Intelligence (AAAI)}, 2019.
+
+\bibitem[Silver et~al.(2017)Silver, Schrittwieser, Simonyan, Antonoglou, Huang,
+  Guez, Hubert, Baker, Lai, Bolton, et~al.]{Silver17:Mastering}
+Silver, D., Schrittwieser, J., Simonyan, K., Antonoglou, I., Huang, A., Guez,
+  A., Hubert, T., Baker, L., Lai, M., Bolton, A., et~al.
+\newblock Mastering the game of go without human knowledge.
+\newblock \emph{Nature}, 550\penalty0 (7676):\penalty0 354, 2017.
+
+\bibitem[Silver et~al.(2018)Silver, Hubert, Schrittwieser, Antonoglou, Lai,
+  Guez, Lanctot, Sifre, Kumaran, Graepel, et~al.]{Silver18:General}
+Silver, D., Hubert, T., Schrittwieser, J., Antonoglou, I., Lai, M., Guez, A.,
+  Lanctot, M., Sifre, L., Kumaran, D., Graepel, T., et~al.
+\newblock A general reinforcement learning algorithm that masters chess, shogi,
+  and go through self-play.
+\newblock \emph{Science}, 362\penalty0 (6419):\penalty0 1140--1144, 2018.
+
+\bibitem[Srinivasan et~al.(2018)Srinivasan, Lanctot, Zambaldi, P{\'e}rolat,
+  Tuyls, Munos, and Bowling]{Srinivasan18:Actor}
+Srinivasan, S., Lanctot, M., Zambaldi, V., P{\'e}rolat, J., Tuyls, K., Munos,
+  R., and Bowling, M.
+\newblock Actor-critic policy optimization in partially observable multiagent
+  environments.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pp.\
+  3426--3439, 2018.
+
+\bibitem[Steinberger(2019)]{Steinberger19:Single}
+Steinberger, E.
+\newblock Single deep counterfactual regret minimization.
+\newblock \emph{arXiv preprint arXiv:1901.07621}, 2019.
+
+\bibitem[Tammelin et~al.(2015)Tammelin, Burch, Johanson, and
+  Bowling]{Tammelin15:Solving}
+Tammelin, O., Burch, N., Johanson, M., and Bowling, M.
+\newblock Solving heads-up limit texas hold'em.
+\newblock In \emph{Proceedings of the International Joint Conference on
+  Artificial Intelligence (IJCAI)}, pp.\  645--652, 2015.
+
+\bibitem[Vitter(1985)]{vitter1985random}
+Vitter, J.~S.
+\newblock Random sampling with a reservoir.
+\newblock \emph{ACM Transactions on Mathematical Software (TOMS)}, 11\penalty0
+  (1):\penalty0 37--57, 1985.
+
+\bibitem[Waugh(2009)]{Waugh09:Thesis}
+Waugh, K.
+\newblock Abstraction in large extensive games.
+\newblock Master's thesis, University of Alberta, 2009.
+
+\bibitem[Waugh et~al.(2015)Waugh, Morrill, Bagnell, and
+  Bowling]{Waugh15:Solving}
+Waugh, K., Morrill, D., Bagnell, D., and Bowling, M.
+\newblock Solving games with functional regret estimation.
+\newblock In \emph{AAAI Conference on Artificial Intelligence (AAAI)}, 2015.
+
+\bibitem[Zinkevich et~al.(2007)Zinkevich, Johanson, Bowling, and
+  Piccione]{Zinkevich07:Regret}
+Zinkevich, M., Johanson, M., Bowling, M.~H., and Piccione, C.
+\newblock Regret minimization in games with incomplete information.
+\newblock In \emph{Proceedings of the Annual Conference on Neural Information
+  Processing Systems (NIPS)}, pp.\  1729--1736, 2007.
+
+\end{thebibliography}

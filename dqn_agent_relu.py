@@ -33,7 +33,7 @@ from collections import namedtuple
 from copy import deepcopy
 
 from rlcard.utils.utils import remove_illegal
-
+_DEVICE = torch.device('xpu' if torch.xpu.is_available() else 'cpu')
 Transition = namedtuple('Transition', ['state', 'action', 'reward', 'next_state', 'done', 'legal_actions'])
 
 
