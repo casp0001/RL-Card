@@ -115,8 +115,8 @@ if __name__ == '__main__':
 
     # Training loop
     parser.add_argument('--num_episodes', type=int, default=200_000)
-    parser.add_argument('--num_eval_games', type=int, default=1_000)
-    parser.add_argument('--evaluate_every', type=int, default=2_000,
+    parser.add_argument('--num_eval_games', type=int, default=4_000)
+    parser.add_argument('--evaluate_every', type=int, default=20_000,
                         help='Evaluate against Random every N episodes')
     parser.add_argument('--opponent_update_every', type=int, default=2_000,
                         help='Freeze a new opponent snapshot every N episodes')

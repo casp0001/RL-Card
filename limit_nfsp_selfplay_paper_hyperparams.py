@@ -64,7 +64,7 @@ def train(args):
         q_train_every=args.q_train_every,
         q_mlp_layers=args.q_mlp_layers,
     )
-    warmup(agent, args)  # optional warmup against honest opponent before self-play
+    #warmup(agent, args)  # optional warmup against honest opponent before self-play
     # create agent copy for opponent
     opponent = copy.deepcopy(agent)
      # evaluation environemtn, agent vs honest "rational" opponent
