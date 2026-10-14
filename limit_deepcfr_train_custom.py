@@ -67,7 +67,10 @@ def save_checkpoint(agent, num_players, path):
     }, path)
 
 
-def train(args):
+def train(args, on_eval=None):
+    ''' Train with the given args. on_eval(episode, panel_results), if given,
+    is called after every panel evaluation; training stops early when it
+    returns True (used by tune.py). Returns the trained agent. '''
     # Make environments
     env = rlcard.make(
         'limit-holdem',
@@ -117,10 +120,12 @@ def train(args):
                 results = panel.evaluate(eval_agent)
                 panel_logger.log(episode, results)
                 logger.log_performance(episode, results['min'])
+                if on_eval is not None and on_eval(episode, results):
+                    break
                 print(format_results(results, prefix=f'[Iteration {episode}] '))
                 print(f'  last-step weighted losses  adv: {avg_adv_loss:.6f}  policy: {policy_loss:.6f}')
 
-            if episode % args.checkpoint_every == 0 and episode > 0:
+            if args.save_model and episode % args.checkpoint_every == 0 and episode > 0:
                 ckpt_dir = f'{args.log_dir}checkpoints/episode_{episode}'
                 os.makedirs(ckpt_dir, exist_ok=True)
                 save_checkpoint(agent, num_players, f'{ckpt_dir}/model.ckpt')
@@ -132,15 +137,18 @@ def train(args):
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
     # Save final model
-    save_checkpoint(agent, num_players, f'{args.log_dir}/model.ckpt')
-    print(f'\nModel saved to {args.log_dir}')
+    if args.save_model:
+        save_checkpoint(agent, num_players, f'{args.log_dir}/model.ckpt')
+        print(f'\nModel saved to {args.log_dir}')
 
     # Plot learning curve
     plot_curve(csv_path, fig_path, 'deepcfr_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
+    return eval_agent
 
-if __name__ == '__main__':
+
+def build_parser():
     parser = argparse.ArgumentParser("Deep CFR — Limit Hold'em (RLCard)")
 
     # Reproducibility
@@ -150,6 +158,8 @@ if __name__ == '__main__':
     parser.add_argument('--num_episodes', type=int, default=1000,
                         help='Number of Deep CFR iterations')
     add_panel_args(parser)
+    parser.add_argument('--save_model', type=str2bool, default=True,
+                        help='Save checkpoints (tune.py turns this off for trials)')
     parser.add_argument('--evaluate_every', type=int, default=2,
                         help='Evaluate against the panel every N iterations')
     parser.add_argument('--checkpoint_every', type=int, default=10,
@@ -175,7 +185,11 @@ if __name__ == '__main__':
     parser.add_argument('--log_dir', type=str, default=None)
     parser.add_argument('--verbose', type=str2bool, default=True)
 
-    args = parser.parse_args()
+    return parser
+
+
+if __name__ == '__main__':
+    args = build_parser().parse_args()
     if args.log_dir is None:
         pol_str = '_'.join(str(x) for x in args.policy_layers)
         adv_str = '_'.join(str(x) for x in args.advantage_layers)

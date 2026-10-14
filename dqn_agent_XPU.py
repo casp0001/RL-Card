@@ -141,7 +141,9 @@ class DQNAgent(object):
         self.feed_memory(state['obs'], action, reward, next_state['obs'], list(next_state['legal_actions'].keys()), done)
         self.total_t += 1
         tmp = self.total_t - self.replay_memory_init_size
-        if tmp>=0 and tmp%self.train_every == 0:
+        # also wait until a full batch is stored: with batch_size larger than
+        # replay_memory_init_size, sampling the batch would fail
+        if tmp>=0 and tmp%self.train_every == 0 and len(self.memory.memory) >= self.batch_size:
             self.train()
 
     def step(self, state):

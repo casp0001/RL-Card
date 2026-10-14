@@ -160,43 +160,82 @@ def parse_script(path):
                         description = value
             continue
 
+        # Shared helpers that add options from another module, e.g.
+        # eval_panel.add_panel_args(parser): read that function's options too
+        if isinstance(func, ast.Name) and func.id in HELPER_ARG_FUNCTIONS:
+            specs.extend(_helper_specs(*HELPER_ARG_FUNCTIONS[func.id]))
+            continue
+
         if not (isinstance(func, ast.Attribute) and func.attr == 'add_argument'):
             continue
 
-        # Longest option string wins ('-v', '--verbose' -> '--verbose')
-        flags = [v for v in (_safe_eval(a) for a in node.args) if isinstance(v, str)]
-        flags = [f for f in flags if f.startswith('-')]
-        if not flags:
-            continue  # positional argument; none of these scripts use one
-        flag = max(flags, key=len)
-
-        spec = ArgSpec(flag=flag)
-        for kw in node.keywords:
-            if kw.arg == 'type':
-                if isinstance(kw.value, ast.Name):
-                    spec.type_name = kw.value.id
-            elif kw.arg == 'default':
-                spec.default = _safe_eval(kw.value)
-                if spec.default is _UNKNOWN:
-                    spec.raw_default = _node_source(kw.value)
-            elif kw.arg == 'nargs':
-                spec.nargs = _safe_eval(kw.value)
-            elif kw.arg == 'choices':
-                value = _safe_eval(kw.value)
-                if isinstance(value, (list, tuple)):
-                    spec.choices = [str(v) for v in value]
-            elif kw.arg == 'help':
-                value = _safe_eval(kw.value)
-                if isinstance(value, str):
-                    spec.help_text = value
-            elif kw.arg == 'action':
-                value = _safe_eval(kw.value)
-                if isinstance(value, str):
-                    spec.action = value
-
-        specs.append(spec)
+        spec = _spec_from_call(node)
+        if spec is not None:
+            specs.append(spec)
 
     return description, specs
+
+
+# function name -> (module file, function name) of helpers that add options
+HELPER_ARG_FUNCTIONS = {'add_panel_args': ('eval_panel.py', 'add_panel_args')}
+
+
+def _helper_specs(filename, function_name):
+    path = os.path.join(REPO_ROOT, filename)
+    try:
+        with open(path, 'r', encoding='utf-8') as handle:
+            tree = ast.parse(handle.read(), filename=path)
+    except (OSError, SyntaxError):
+        return []
+    specs = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.FunctionDef) and node.name == function_name:
+            for call in ast.walk(node):
+                if (isinstance(call, ast.Call) and isinstance(call.func, ast.Attribute)
+                        and call.func.attr == 'add_argument'):
+                    spec = _spec_from_call(call)
+                    if spec is not None:
+                        specs.append(spec)
+    return specs
+
+
+def _spec_from_call(node):
+    ''' ArgSpec for one parser.add_argument(...) call, or None. '''
+    # Longest option string wins ('-v', '--verbose' -> '--verbose')
+    flags = [v for v in (_safe_eval(a) for a in node.args) if isinstance(v, str)]
+    flags = [f for f in flags if f.startswith('-')]
+    if not flags:
+        return None  # positional argument; none of these scripts use one
+    flag = max(flags, key=len)
+
+    spec = ArgSpec(flag=flag)
+    for kw in node.keywords:
+        if kw.arg == 'type':
+            if isinstance(kw.value, ast.Name):
+                spec.type_name = kw.value.id
+        elif kw.arg == 'default':
+            spec.default = _safe_eval(kw.value)
+            if spec.default is _UNKNOWN:
+                spec.raw_default = _node_source(kw.value)
+        elif kw.arg == 'nargs':
+            spec.nargs = _safe_eval(kw.value)
+        elif kw.arg == 'choices':
+            value = _safe_eval(kw.value)
+            if isinstance(value, (list, tuple)):
+                spec.choices = [str(v) for v in value]
+        elif kw.arg == 'help':
+            value = _safe_eval(kw.value)
+            if isinstance(value, str):
+                spec.help_text = value
+        elif kw.arg == 'action':
+            value = _safe_eval(kw.value)
+            if isinstance(value, str):
+                spec.action = value
+    return spec
+
+
+# argparse scripts that are not training scripts (tune.py has its own GUI)
+NOT_TRAINING_SCRIPTS = {'tune.py', 'tune_gui.py'}
 
 
 def discover_scripts(root):
@@ -204,6 +243,8 @@ def discover_scripts(root):
     found = []
     for name in sorted(os.listdir(root)):
         if not name.endswith('.py') or name == os.path.basename(__file__):
+            continue
+        if name in NOT_TRAINING_SCRIPTS or name.startswith('test_'):
             continue
         path = os.path.join(root, name)
         try:

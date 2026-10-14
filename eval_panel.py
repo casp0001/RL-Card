@@ -281,11 +281,12 @@ class PanelLogger(object):
         plt.close(fig)
 
 
-def add_panel_args(parser, deals=1000):
-    ''' Shared --eval_deals / --eval_panel arguments for training scripts. '''
-    parser.add_argument('--eval_deals', type=int, default=deals,
+def add_panel_args(parser):
+    ''' Shared --eval_deals / --eval_panel arguments for training scripts.
+    Defaults are literals so train_gui.py can read them from the source. '''
+    parser.add_argument('--eval_deals', type=int, default=1000,
                         help='Duplicate deals (2 hands each) per panel member per evaluation')
-    parser.add_argument('--eval_panel', type=str, default=','.join(DEFAULT_MEMBERS),
+    parser.add_argument('--eval_panel', type=str, default='random,station,maniac,nit,tag,lag',
                         help=f'Comma-separated panel members, from: {",".join(MEMBERS)}')
 
 

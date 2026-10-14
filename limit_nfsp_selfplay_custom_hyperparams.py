@@ -28,7 +28,10 @@ def warmup(agent, args):
     print("Warmup complete.")
 
 
-def train(args):
+def train(args, on_eval=None):
+    ''' Train with the given args. on_eval(episode, panel_results), if given,
+    is called after every panel evaluation; training stops early when it
+    returns True (used by tune.py). Returns the trained agent. '''
     # make environments
     env = rlcard.make(
         'limit-holdem',
@@ -109,28 +112,32 @@ def train(args):
                 results = panel.evaluate(agent, nfsp_policy='average_policy')
                 panel_logger.log(episode, results)
                 logger.log_performance(episode, results['min'])
+                if on_eval is not None and on_eval(episode, results):
+                    break
                 print(format_results(results, prefix=f'[Episode {episode}] avg policy: '))
                 if args.eval_best_response:
                     results_br = panel.evaluate(agent, nfsp_policy='best_response')
                     panel_logger_br.log(episode, results_br)
                     print(format_results(results_br, prefix=f'[Episode {episode}] best response: '))
-            if episode % 1_000_000 == 0 and episode > 0:
+            if args.save_model and episode % 1_000_000 == 0 and episode > 0:
                     os.makedirs(f'{args.log_dir}checkpoints/episode_{episode}', exist_ok=True)
                     agent.save_checkpoint(f'{args.log_dir}/checkpoints/episode_{episode}')
                     print(f'\nCheckpoint saved at episode {episode} to {args.log_dir}/checkpoints/episode_{episode}')
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
 
-    agent.save_checkpoint(args.log_dir)
-    print(f'\nModel saved to {args.log_dir}')
+    if args.save_model:
+        agent.save_checkpoint(args.log_dir)
+        print(f'\nModel saved to {args.log_dir}')
 
 
     plot_curve(csv_path, fig_path, 'nfsp_selfplay_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
+    return agent
 
 
-if __name__ == '__main__':
+def build_parser():
     parser = argparse.ArgumentParser("NFSP Self-Play — Limit Hold'em (RLCard)")
 
     # seed for reproducibility
@@ -139,6 +146,8 @@ if __name__ == '__main__':
     # training loop hyper-parameters
     parser.add_argument('--num_episodes', type=int, default=2_000_000)
     add_panel_args(parser)
+    parser.add_argument('--save_model', type=str2bool, default=True,
+                        help='Save checkpoints (tune.py turns this off for trials)')
     parser.add_argument('--eval_best_response', type=str2bool, default=False,
                         help='Also evaluate the best-response (DQN) network (panel_br.csv)')
     parser.add_argument('--evaluate_every', type=int, default=10_000)
@@ -174,7 +183,11 @@ if __name__ == '__main__':
                         default=None)
     parser.add_argument('--verbose', type=str2bool, default=True)
 
-    args = parser.parse_args()
+    return parser
+
+
+if __name__ == '__main__':
+    args = build_parser().parse_args()
     # log directory dymanic creation 
     if args.log_dir is None:
         layers_str = '_'.join(str(x) for x in args.q_mlp_layers)

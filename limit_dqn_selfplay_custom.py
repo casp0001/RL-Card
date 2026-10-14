@@ -16,7 +16,10 @@ from rlcard.utils import (
     Logger,
     plot_curve,
 )
-def train(args):
+def train(args, on_eval=None):
+    ''' Train with the given args. on_eval(episode, panel_results), if given,
+    is called after every panel evaluation; training stops early when it
+    returns True (used by tune.py). Returns the trained agent. '''
     # Make environments
     env = rlcard.make(
         'limit-holdem',
@@ -86,20 +89,25 @@ def train(args):
                 results = panel.evaluate(agent)
                 panel_logger.log(episode, results)
                 logger.log_performance(episode, results['min'])
+                if on_eval is not None and on_eval(episode, results):
+                    break
                 print(format_results(results, prefix=f'\n[Episode {episode}] '))
 
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
     # Save final model
-    agent.save_checkpoint(args.log_dir)
-    print(f'\nModel saved to {args.log_dir}')
+    if args.save_model:
+        agent.save_checkpoint(args.log_dir)
+        print(f'\nModel saved to {args.log_dir}')
 
     # Plot learning curve
     plot_curve(csv_path, fig_path, 'dqn_selfplay_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
+    return agent
 
-if __name__ == '__main__':
+
+def build_parser():
     parser = argparse.ArgumentParser("DQN Self-Play — Limit Hold'em (RLCard)")
 
     # Reproducibility
@@ -108,6 +116,8 @@ if __name__ == '__main__':
     # Training loop
     parser.add_argument('--num_episodes', type=int, default=200_000)
     add_panel_args(parser)
+    parser.add_argument('--save_model', type=str2bool, default=True,
+                        help='Save checkpoints (tune.py turns this off for trials)')
     parser.add_argument('--evaluate_every', type=int, default=20_000,
                         help='Evaluate against the panel every N episodes')
     parser.add_argument('--opponent_update_every', type=int, default=2_000,
@@ -137,7 +147,11 @@ if __name__ == '__main__':
                         default=None)
     parser.add_argument('--verbose', type=str2bool, default=True)
 
-    args = parser.parse_args()
+    return parser
+
+
+if __name__ == '__main__':
+    args = build_parser().parse_args()
     if args.log_dir is None:
         layers_str = '_'.join(str(x) for x in args.mlp_layers)
         args.log_dir = (
