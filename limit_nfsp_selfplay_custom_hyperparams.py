@@ -119,7 +119,7 @@ def train(args, on_eval=None):
                     results_br = panel.evaluate(agent, nfsp_policy='best_response')
                     panel_logger_br.log(episode, results_br)
                     print(format_results(results_br, prefix=f'[Episode {episode}] best response: '))
-            if args.save_model and episode % 1_000_000 == 0 and episode > 0:
+            if args.save_model and args.checkpoint_every > 0 and episode % args.checkpoint_every == 0 and episode > 0:
                     os.makedirs(f'{args.log_dir}checkpoints/episode_{episode}', exist_ok=True)
                     agent.save_checkpoint(f'{args.log_dir}/checkpoints/episode_{episode}')
                     print(f'\nCheckpoint saved at episode {episode} to {args.log_dir}/checkpoints/episode_{episode}')
@@ -146,6 +146,8 @@ def build_parser():
     # training loop hyper-parameters
     parser.add_argument('--num_episodes', type=int, default=2_000_000)
     add_panel_args(parser)
+    parser.add_argument('--checkpoint_every', type=int, default=1_000_000,
+                        help='Save a checkpoint every N episodes (0 = only the final model)')
     parser.add_argument('--save_model', type=str2bool, default=True,
                         help='Save checkpoints (tune.py turns this off for trials)')
     parser.add_argument('--eval_best_response', type=str2bool, default=False,

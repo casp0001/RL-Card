@@ -453,6 +453,40 @@ class EquityAgent(object):
             return CALL, info
         return FOLD, info
 
+    def action_probs(self, raw_obs, action_record):
+        ''' The exact probabilities with which decide() picks each action
+        (np.array over [call, raise, fold, check]); used by LBR to track this
+        agent's range. Mirrors decide() step by step. '''
+        p = self.params
+        legal = {ACTION_IDS[a] for a in raw_obs['legal_actions']}
+        hole = [card_from_str(c) for c in raw_obs['hand']]
+        board = [card_from_str(c) for c in raw_obs['public_cards']]
+        street = _STREET_OF_BOARD[len(board)]
+        all_chips = raw_obs['all_chips']
+        pot = sum(all_chips)
+        to_call = max(all_chips) - raw_obs['my_chips']
+        eq = self.equity(hole, board, self._opponent_raises(action_record))
+        temp = p['temperature']
+
+        out = [0.0, 0.0, 0.0, 0.0]
+        remaining = 1.0
+        if RAISE in legal:
+            threshold = p['raise_threshold'][street] + p['reraise_step'][street] * raw_obs['raise_nums'][street]
+            p_raise = _sigmoid((eq - threshold) / temp)
+            out[RAISE] = p_raise
+            remaining = 1.0 - p_raise
+        if CHECK in legal:
+            p_bluff = (p['bluff_frequency'][street]
+                       if RAISE in legal and eq < p['bluff_max_equity'] else 0.0)
+            out[RAISE] += remaining * p_bluff
+            out[CHECK] = remaining * (1.0 - p_bluff)
+            return out
+        required = (to_call / (pot + to_call)) / p['realisation'][street]
+        p_call = _sigmoid((eq - required) / temp) if CALL in legal else 0.0
+        out[CALL] = remaining * p_call
+        out[FOLD] = remaining * (1.0 - p_call)
+        return out
+
     # -- RLCard agent interface -------------------------------------------
 
     def step(self, state):

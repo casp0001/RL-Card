@@ -114,7 +114,7 @@ def train(args):
                     results_br = panel.evaluate(agent, nfsp_policy='best_response')
                     panel_logger_br.log(episode, results_br)
                     print(format_results(results_br, prefix=f'[Episode {episode}] best response: '))
-            if episode % 1_000_000 == 0 and episode > 0:
+            if args.checkpoint_every > 0 and episode % args.checkpoint_every == 0 and episode > 0:
                     os.makedirs(f'{args.log_dir}checkpoints/episode_{episode}', exist_ok=True)
                     agent.save_checkpoint(f'{args.log_dir}/checkpoints/episode_{episode}')
                     print(f'\nCheckpoint saved at episode {episode} to {args.log_dir}/checkpoints/episode_{episode}')
@@ -138,6 +138,8 @@ if __name__ == '__main__':
     # training loop hyper-parameters
     parser.add_argument('--num_episodes', type=int, default=2_000_000)
     add_panel_args(parser)
+    parser.add_argument('--checkpoint_every', type=int, default=1_000_000,
+                        help='Save a checkpoint every N episodes (0 = only the final model)')
     parser.add_argument('--eval_best_response', type=str2bool, default=False,
                         help='Also evaluate the best-response (DQN) network (panel_br.csv)')
     parser.add_argument('--evaluate_every', type=int, default=1_000)

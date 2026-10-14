@@ -27,7 +27,8 @@ Results are in mbb/hand from the evaluated agent's point of view. 'min' and
 score) to select hyper-parameters.
 
 Command line (final evaluation of a checkpoint with many deals):
-    python eval_panel.py --kind dqn --ckpt experiments/.../checkpoint_dqn.pt --deals 20000
+    python eval_panel.py --kind dqn --ckpt experiments/<run> --deals 20000
+    (kinds: dqn nfsp deepcfr ppo tag nit lag honest station maniac random)
 '''
 
 import os
@@ -291,23 +292,16 @@ def add_panel_args(parser):
 
 
 def main():
-    parser = argparse.ArgumentParser('Evaluate a checkpoint against the panel')
-    parser.add_argument('--kind', required=True, choices=['deepcfr', 'nfsp', 'dqn', 'equity'])
-    parser.add_argument('--ckpt', help='checkpoint (not needed for --kind equity)')
+    from agent_loading import load_policy, KINDS
+    parser = argparse.ArgumentParser('Evaluate an agent against the panel')
+    parser.add_argument('--kind', required=True, choices=KINDS)
+    parser.add_argument('--ckpt', help='checkpoint file or run directory (dqn / nfsp / deepcfr / ppo)')
     parser.add_argument('--deals', type=int, default=20_000)
-    parser.add_argument('--panel', type=str, default=','.join(DEFAULT_MEMBERS))
-    parser.add_argument('--policy_layers', type=int, nargs='+', default=[128, 128, 128])
-    parser.add_argument('--advantage_layers', type=int, nargs='+', default=[128, 128, 128])
+    parser.add_argument('--panel', type=str, default='random,station,maniac,nit,tag,lag')
     parser.add_argument('--device', type=str, default=None)
     args = parser.parse_args()
 
-    if args.kind == 'equity':
-        agent = EquityAgent(seed=0)
-    else:
-        from exploitability_lbr import load_frozen_agent
-        args.memory_capacity = 1
-        env = rlcard.make('limit-holdem', config={'allow_step_back': True})
-        agent = load_frozen_agent(args, env)
+    agent = load_policy(args.kind, args.ckpt, device=args.device)
     panel = Panel(parse_members(args.panel), num_deals=args.deals)
     print(format_results(panel.evaluate(agent)))
 

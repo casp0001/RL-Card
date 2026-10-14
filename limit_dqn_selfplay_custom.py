@@ -93,6 +93,13 @@ def train(args, on_eval=None):
                     break
                 print(format_results(results, prefix=f'\n[Episode {episode}] '))
 
+            # Periodic checkpoints (for sweep_exploitability.py)
+            if args.save_model and args.checkpoint_every > 0 and episode % args.checkpoint_every == 0 and episode > 0:
+                ckpt_dir = os.path.join(args.log_dir, 'checkpoints', f'episode_{episode}')
+                os.makedirs(ckpt_dir, exist_ok=True)
+                agent.save_checkpoint(ckpt_dir)
+                print(f'\nCheckpoint saved at episode {episode} to {ckpt_dir}')
+
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
     # Save final model
@@ -116,6 +123,9 @@ def build_parser():
     # Training loop
     parser.add_argument('--num_episodes', type=int, default=200_000)
     add_panel_args(parser)
+    parser.add_argument('--checkpoint_every', type=int, default=0,
+                        help='Save a checkpoint every N episodes (0 = only the final model). '
+                             'DQN checkpoints include the replay memory, so they can be large.')
     parser.add_argument('--save_model', type=str2bool, default=True,
                         help='Save checkpoints (tune.py turns this off for trials)')
     parser.add_argument('--evaluate_every', type=int, default=20_000,
