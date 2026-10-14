@@ -131,12 +131,39 @@ def hand_strength(raw_obs):
 
 # ---------------------------------------------------------------------------
 # Action mapping for limit Hold'em
-#   0 = fold   1 = check/call   2 = raise
+#
+# These ids must match LimitholdemEnv.actions, which is:
+#     ['call', 'raise', 'fold', 'check']  ->  call=0, raise=1, fold=2, check=3
+#
+# NOTE: these constants used to read FOLD=0, CALL=1, RAISE=2, which inverted
+# the agent's decisions against RLCard's ordering: it called its trash hands
+# (0 = 'call') and folded its monsters (2 = 'fold'). Any result measured
+# against this agent before the fix was measured against an opponent playing
+# roughly the opposite of its intended strategy.
+#
+# Note also that 'call' and 'check' are mutually exclusive in limit Hold'em --
+# get_legal_actions() removes 'check' when there is a bet to match and removes
+# 'call' when there is not, so exactly one of them is legal at any decision
+# point. That is why the "check/call" bands below go through _passive().
 # ---------------------------------------------------------------------------
 
-FOLD  = 0
-CALL  = 1
-RAISE = 2
+CALL  = 0
+RAISE = 1
+FOLD  = 2
+CHECK = 3
+
+
+def _passive(available):
+    """
+    The "check/call" action: stay in the hand as cheaply as possible.
+    Calls when there is a bet to match, checks when staying in is free, and
+    only folds if neither is legal.
+    """
+    if CALL in available:
+        return CALL
+    if CHECK in available:
+        return CHECK
+    return FOLD
 
 
 def _choose_action(strength, legal_actions):
@@ -152,20 +179,20 @@ def _choose_action(strength, legal_actions):
     available = set(legal_actions.keys())
 
     if strength < 0.20:
-        action = FOLD if FOLD in available else CALL
+        action = FOLD if FOLD in available else _passive(available)
     elif strength < 0.45:
-        action = CALL if CALL in available else FOLD
+        action = _passive(available)
     elif strength < 0.65:
         # Raise with the stronger half of this band
         if RAISE in available and strength > 0.55:
             action = RAISE
         else:
-            action = CALL if CALL in available else FOLD
+            action = _passive(available)
     else:
         if RAISE in available:
             action = RAISE
         else:
-            action = CALL if CALL in available else FOLD
+            action = _passive(available)
 
     return action
 
@@ -208,7 +235,7 @@ class HonestAgent(object):
 # ---------------------------------------------------------------------------
 
 if __name__ == '__main__':
-    agent = HonestAgent(num_actions=3)
+    agent = HonestAgent(num_actions=4)
 
     # Simulate a few states manually
     test_cases = [
@@ -221,7 +248,8 @@ if __name__ == '__main__':
         (['S2', 'H7'],  ['D9', 'CJ', 'SQ'], 'Nothing / high card'),
     ]
 
-    legal = {FOLD: None, CALL: None, RAISE: None}
+    # Facing a bet: call/raise/fold are legal, check is not
+    legal = {CALL: None, RAISE: None, FOLD: None}
 
     print(f"{'Hand':<20} {'Community':<25} {'Strength':>8}  Action")
     print('-' * 70)
@@ -229,5 +257,5 @@ if __name__ == '__main__':
         raw  = {'hand': hand, 'public_cards': comm}
         s    = hand_strength(raw)
         act  = _choose_action(s, legal)
-        aname = {FOLD: 'fold', CALL: 'call', RAISE: 'raise'}[act]
+        aname = {CALL: 'call', RAISE: 'raise', FOLD: 'fold', CHECK: 'check'}[act]
         print(f"{desc:<45} {s:>8.4f}  {aname}")
