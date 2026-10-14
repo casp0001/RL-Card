@@ -59,13 +59,18 @@ AdvantageMemory = collections.namedtuple(
 StrategyMemory = collections.namedtuple(
     'StrategyMemory', 'info_state iteration strategy_action_probs')
 
-class FixedSizeRingBuffer(object):
-    ''' ReplayBuffer of fixed size with a FIFO replacement policy.
+# The traversal relies on step_back, which rlcard 1.2.0 gets wrong for limit
+# hold'em; see rlcard_patches.py.
+import rlcard_patches  # noqa: F401
 
-    Stored transitions can be sampled uniformly.
 
-    The underlying datastructure is a ring buffer, allowing 0(1) adding and
-    sampling.
+class ReservoirBuffer(object):
+    ''' Fixed-size buffer filled by reservoir sampling.
+
+    Once full, the n-th added element replaces a uniformly random slot with
+    probability capacity / n, so the buffer always holds a uniform sample of
+    everything ever added. Deep CFR needs this (rather than FIFO) so that the
+    linear-CFR average over all iterations is preserved.
     '''
     def __init__(self, replay_buffer_capacity):
         ''' Initialize the buffer
@@ -73,12 +78,10 @@ class FixedSizeRingBuffer(object):
 
         self._replay_buffer_capacity = replay_buffer_capacity
         self._data = []
-        self._next_entry_index = 0
+        self._add_calls = 0
 
     def add(self, element):
-        '''Adds `element` to the buffer.
-
-        If the buffer is full, the oldest element will be replaced.
+        '''Adds `element` to the buffer using reservoir sampling.
 
         Args:
             element: data to be added to the buffer.
@@ -86,10 +89,10 @@ class FixedSizeRingBuffer(object):
         if len(self._data) < self._replay_buffer_capacity:
             self._data.append(element)
         else:
-            self._next_entry_index = int(self._next_entry_index)
-            self._data[self._next_entry_index] = element
-            self._next_entry_index += 1
-            self._next_entry_index %= self._replay_buffer_capacity
+            idx = np.random.randint(0, self._add_calls + 1)
+            if idx < self._replay_buffer_capacity:
+                self._data[idx] = element
+        self._add_calls += 1
 
     def sample(self, num_samples):
         ''' Returns `num_samples` uniformly sampled from the buffer.
@@ -112,7 +115,7 @@ class FixedSizeRingBuffer(object):
         ''' Clear the buffer
         '''
         self._data = []
-        self._next_entry_index = 0
+        self._add_calls = 0
 
     def __len__(self):
         return len(self._data)
@@ -212,7 +215,7 @@ class DeepCFR():
         self._info_state_dim = int(np.prod(self._embedding_size))
 
         # Define strategy network, optimizer & memory.
-        self._strategy_memories = FixedSizeRingBuffer(memory_capacity)
+        self._strategy_memories = ReservoirBuffer(memory_capacity)
         self._policy_network = _build_mlp(
             self._info_state_dim, self._policy_network_layers, self._num_actions)
         self._optimizer_policy = torch.optim.Adam(
@@ -220,7 +223,7 @@ class DeepCFR():
 
         # Define advantage networks, optimizers & memories. (One per player)
         self._advantage_memories = [
-            FixedSizeRingBuffer(memory_capacity) for _ in range(self._num_players)
+            ReservoirBuffer(memory_capacity) for _ in range(self._num_players)
         ]
         self._advantage_networks = [
             _build_mlp(self._info_state_dim,
@@ -241,21 +244,20 @@ class DeepCFR():
             average advantage loss (float): players average advantage loss
             policy loss (float): policy loss
         '''
-        init_state, init_player = self._env.reset()
-        self._root_node = init_state
         for p in range(self._num_players):
-            while init_player != p:
-                init_state, init_player = self._env.reset()
-                self._root_node = init_state
             for _ in range(self._num_traversals):
-                self._traverse_game_tree(self._root_node, init_player)
+                # Fresh deal for every traversal. Player p may be either blind;
+                # the traversal handles whichever player acts first.
+                init_state, _ = self._env.reset()
+                self._traverse_game_tree(init_state, p)
 
-            # Re-initialize advantage networks and train from scratch.
-            self.reinitialize_advantage_networks()
+            # Re-initialize the traverser's advantage network and train from
+            # scratch. The other player's network must be kept: it supplies
+            # the opponent strategy in the next player's traversals.
+            self.reinitialize_advantage_network(p)
             for _ in range(self._num_step):
                 self.advantage_losses[p].append(self._learn_advantage_network(p))
 
-            # Re-initialize advantage networks and train from scratch.
             self._iteration += 1
 
         # Train policy network.
@@ -284,20 +286,24 @@ class DeepCFR():
         action = np.random.choice(np.arange(len(action_prob)), p=action_prob)
         return action
 
-    def reinitialize_advantage_networks(self):
-        ''' Reinitialize the advantage networks
+    def reinitialize_advantage_network(self, player):
+        ''' Reinitialize one player's advantage network
 
-        Rebuild each advantage network (fresh random weights) and reset its
-        optimizer state, reproducing the original "train from scratch each
-        iteration" behaviour.
+        Rebuild the network (fresh random weights) and reset its optimizer
+        state, reproducing the "train from scratch each iteration" behaviour.
+        '''
+        self._advantage_networks[player] = _build_mlp(
+            self._info_state_dim,
+            self._advantage_network_layers, self._num_actions)
+        self._optimizer_advantages[player] = torch.optim.Adam(
+            self._advantage_networks[player].parameters(),
+            lr=self._learning_rate)
+
+    def reinitialize_advantage_networks(self):
+        ''' Reinitialize all advantage networks
         '''
         for p in range(self._num_players):
-            self._advantage_networks[p] = _build_mlp(
-                self._info_state_dim,
-                self._advantage_network_layers, self._num_actions)
-            self._optimizer_advantages[p] = torch.optim.Adam(
-                self._advantage_networks[p].parameters(),
-                lr=self._learning_rate)
+            self.reinitialize_advantage_network(p)
 
     def action_advantage(self, state, player):
         ''' Returns action advantages for a single batch.
@@ -342,7 +348,9 @@ class DeepCFR():
             logits = self._policy_network(inp)
             probs = torch.softmax(logits, dim=-1).cpu().numpy()
 
-        return np.array([round(probs[0][i], 4) for i in range(self._num_actions)])
+        # No rounding: rounding to 4 decimals could zero out every legal
+        # action and make the caller's renormalisation divide by zero.
+        return probs[0].astype(np.float64)
 
     def _traverse_game_tree(self, state, player, count = 0):
         ''' Performs a traversal of the game tree.
@@ -354,21 +362,19 @@ class DeepCFR():
             state (dict): Current rlcard game state.
             player (int): Player index for this traversal.
 
+        Every env.step below is undone by exactly one env.step_back once its
+        subtree has been evaluated, so the env is back at `state` when this
+        call returns.
+
         Returns:
-            payoff (list): Recursively returns expected payoffs for each action.
+            payoff (np.ndarray): Expected payoff for each player.
         '''
         expected_payoff = collections.defaultdict(float)
         current_player = self._env.get_player_id()
         actions = state['legal_actions']
         if self._env.is_over():
             # Terminal state get returns.
-            payoff = self._env.get_payoffs()
-            while True:
-                self._env.step_back()
-                if self._env.get_player_id() == player:
-                    break
-            self.traverse = []
-            return payoff
+            return np.asarray(self._env.get_payoffs())
 
         if current_player == player:
             sampled_regret = collections.defaultdict(float)
@@ -376,9 +382,7 @@ class DeepCFR():
             _, strategy = self._sample_action_from_advantage(state, player)
             for action in actions:
                 child_state, _ = self._env.step(action)
-                self.traverse.append((action, state, child_state))
                 expected_payoff[action] = self._traverse_game_tree(child_state, player)
-            for _ in range(self._env.num_players):
                 self._env.step_back()
 
             for action in actions:
@@ -403,7 +407,9 @@ class DeepCFR():
                 StrategyMemory(
                     state['obs'].flatten(),
                     self._iteration, strategy))
-            return self._traverse_game_tree(child_state, player)
+            payoff = self._traverse_game_tree(child_state, player)
+            self._env.step_back()
+            return payoff
 
     def _sample_action_from_advantage(self, state, player):
         ''' Returns an info state policy by applying regret-matching.
@@ -422,14 +428,19 @@ class DeepCFR():
         with torch.no_grad():
             inp = torch.from_numpy(info_state).to(_DEVICE)
             advantages = self._advantage_networks[player](inp).cpu().numpy()[0]
+        raw_advantages = advantages
         advantages = [max(0., advantage) for advantage in advantages]
         cumulative_regret = np.sum([advantages[action] for action in legal_actions])
         matched_regrets = np.array([0.] * self._num_actions)
-        for action in legal_actions:
-            if cumulative_regret > 0.:
+        if cumulative_regret > 0.:
+            for action in legal_actions:
                 matched_regrets[action] = advantages[action] / cumulative_regret
-            else:
-                matched_regrets[action] = 1 / self._num_actions
+        else:
+            # No positive regret: play the legal action with the highest
+            # predicted advantage, as in Brown et al. (2019). (Uniform play
+            # here was ~50% more exploitable in their ablation.)
+            best = max(legal_actions, key=lambda a: raw_advantages[a])
+            matched_regrets[best] = 1.
         return advantages, matched_regrets
 
     @staticmethod

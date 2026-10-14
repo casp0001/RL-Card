@@ -27,7 +27,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from rlcard.agents.dqn_agent import DQNAgent
+# Local DQN (not rlcard's) so the inner Q-network's activation and optimizer
+# are configurable; rlcard's is hard-wired to Tanh + Adam.
+from dqn_agent_XPU import DQNAgent, make_optimizer
 from rlcard.utils.utils import remove_illegal
 
 Transition = collections.namedtuple('Transition', 'info_state action_probs')
@@ -61,6 +63,8 @@ class NFSPAgent(object):
                  q_batch_size=32,
                  q_train_every=1,
                  q_mlp_layers=None,
+                 q_activation='tanh',
+                 optimizer='adam',
                  evaluate_with='average_policy',
                  device=None,
                  save_path=None,
@@ -90,6 +94,9 @@ class NFSPAgent(object):
             q_batch_size (int): The batch size of inner DQN agent.
             q_train_step (int): Train the model every X steps.
             q_mlp_layers (list): The layer sizes of inner DQN agent.
+            q_activation (str): 'tanh' (rlcard's default) or 'relu' for the inner DQN.
+            optimizer (str): 'adam' (rlcard's default) or 'sgd'; used for both the
+              inner DQN and the average-policy network.
             device (torch.device): Whether to use the cpu or gpu
         '''
         self.use_raw = False
@@ -101,6 +108,7 @@ class NFSPAgent(object):
         self._sl_learning_rate = sl_learning_rate
         self._anticipatory_param = anticipatory_param
         self._min_buffer_size_to_learn = min_buffer_size_to_learn
+        self._optimizer = optimizer
 
         self._reservoir_buffer = ReservoirBuffer(reservoir_buffer_capacity)
         self._prev_timestep = None
@@ -121,7 +129,7 @@ class NFSPAgent(object):
         self._rl_agent = DQNAgent(q_replay_memory_size, q_replay_memory_init_size, \
             q_update_target_estimator_every, q_discount_factor, q_epsilon_start, q_epsilon_end, \
             q_epsilon_decay_steps, q_batch_size, num_actions, state_shape, q_train_every, q_mlp_layers, \
-            rl_learning_rate, device)
+            rl_learning_rate, device, activation=q_activation, optimizer=optimizer)
 
         # Build the average policy supervised model
         self._build_model()
@@ -148,7 +156,8 @@ class NFSPAgent(object):
                 nn.init.xavier_uniform_(p.data)
 
         # configure optimizer
-        self.policy_network_optimizer = torch.optim.Adam(self.policy_network.parameters(), lr=self._sl_learning_rate)
+        self.policy_network_optimizer = make_optimizer(
+            self._optimizer, self.policy_network.parameters(), self._sl_learning_rate)
 
     def feed(self, ts):
         ''' Feed data to inner RL agent
@@ -325,6 +334,7 @@ class NFSPAgent(object):
             'train_t': self.train_t,
             'sl_learning_rate': self._sl_learning_rate,
             'train_every': self._train_every,
+            'optimizer': self._optimizer,
         }
     
     @classmethod
@@ -348,6 +358,8 @@ class NFSPAgent(object):
             q_mlp_layers=checkpoint['rl_agent']['q_estimator']['mlp_layers'],
             state_shape=checkpoint['rl_agent']['q_estimator']['state_shape'],
             hidden_layers_sizes=[],
+            q_activation=checkpoint['rl_agent'].get('activation', 'tanh'),
+            optimizer=checkpoint.get('optimizer', 'adam'),
         )
         
         agent.policy_network = AveragePolicyNetwork.from_checkpoint(checkpoint['policy_network'])
@@ -357,9 +369,18 @@ class NFSPAgent(object):
         agent.train_t = checkpoint['train_t']
         agent.policy_network.to(agent.device)
         agent.policy_network.eval()
-        agent.policy_network_optimizer = torch.optim.Adam(agent.policy_network.parameters(), lr=agent._sl_learning_rate)
+        agent.policy_network_optimizer = make_optimizer(
+            agent._optimizer, agent.policy_network.parameters(), agent._sl_learning_rate)
         agent.policy_network_optimizer.load_state_dict(checkpoint['policy_network_optimizer'])
-        agent._rl_agent.from_checkpoint(checkpoint['rl_agent'])
+        # from_checkpoint is a classmethod that returns a new agent; rlcard
+        # discarded the result, leaving the restored best response untrained.
+        # Checkpoints from rlcard's own NFSPAgent carry a Tanh DQN without an
+        # 'activation' key, so default to tanh rather than DQNAgent's relu.
+        rl_ckpt = dict(checkpoint['rl_agent'])
+        rl_ckpt['q_estimator'] = dict(rl_ckpt['q_estimator'])
+        rl_ckpt.setdefault('activation', 'tanh')
+        rl_ckpt['q_estimator'].setdefault('activation', 'tanh')
+        agent._rl_agent = DQNAgent.from_checkpoint(rl_ckpt)
         agent._rl_agent.set_device(agent.device)
         return agent
         

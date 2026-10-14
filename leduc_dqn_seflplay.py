@@ -4,6 +4,7 @@ import copy
 
 import rlcard
 from rlcard.agents import DQNAgent, RandomAgent
+from functions import compute_mbb_per_hand, str2bool
 from rlcard.utils import (
     reorganize,
     set_seed,
@@ -86,9 +87,14 @@ def train(args):
             # Evaluate against Random periodically
             if episode % args.evaluate_every == 0:
                 reward = tournament(eval_env, args.num_eval_games)[0]
+                # Hold'em payoffs are in big blinds; log mbb/h like the other
+                # scripts. Other games have no big blind, so log raw payoff.
+                if 'holdem' in args.env:
+                    reward = compute_mbb_per_hand(reward)
                 logger.log_performance(episode, reward)
                 if args.verbose:
-                    print(f'\n[Episode {episode}] Avg reward vs Random: {reward:.4f}')
+                    unit = 'mbb/h' if 'holdem' in args.env else 'avg payoff'
+                    print(f'\n[Episode {episode}] vs Random: {reward:.4f} {unit}')
 
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
@@ -140,7 +146,7 @@ if __name__ == '__main__':
                         help='torch device, e.g. "cpu" or "cuda:0" (None = auto)')
     parser.add_argument('--log_dir', type=str,
                         default='experiments/leduc_holdem_dqn_selfplay_result/')
-    parser.add_argument('--verbose', action='store_true', default=True,
+    parser.add_argument('--verbose', type=str2bool, default=True,
                         help='Print extra info during training')
 
     args = parser.parse_args()

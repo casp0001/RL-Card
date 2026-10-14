@@ -5,7 +5,8 @@ import contextlib
 
 from honest_agent_limited import HonestAgent
 import rlcard
-from rlcard.agents import NFSPAgent
+from functions import compute_mbb_per_hand, fmt_actions, str2bool
+from nfsp_agent_XPU import NFSPAgent
 from rlcard.utils import (
     reorganize,
     set_seed,
@@ -25,9 +26,6 @@ def warmup(agent, args):
             agent.feed(ts)
     print("Warmup complete.")
 
-
-def compute_mbb_per_hand(avg_payoff, big_blind=2):
-    return (avg_payoff / big_blind) * 1000
 
 def train(args):
     # make environments
@@ -63,6 +61,9 @@ def train(args):
         q_batch_size=args.q_batch_size,
         q_train_every=args.q_train_every,
         q_mlp_layers=args.q_mlp_layers,
+        q_activation=args.q_activation,
+        optimizer=args.optimizer,
+        device=args.device,
     )
     warmup(agent, args)  # optional warmup against honest opponent before self-play
     # create agent copy for opponent
@@ -93,6 +94,9 @@ def train(args):
                         env.set_agents([opponent, agent])
                         seat = 1
 
+                    # resample the snapshot's mode too, otherwise it keeps the mode it
+                    # was copied in (pure best response w.p. eta) for the whole window
+                    opponent.sample_episode_policy()
                     trajectories, payoffs = env.run(is_training=True)
                     trajectories = reorganize(trajectories, payoffs)
 
@@ -110,6 +114,9 @@ def train(args):
                 # eval best response policy
                 agent.evaluate_with = 'best_response'
                 reward_br = tournament(eval_env, args.num_eval_games)[0]
+                # back to the average policy, which is what NFSP plays and what
+                # the checkpoints below should carry
+                agent.evaluate_with = 'average_policy'
                 
                 mbb = compute_mbb_per_hand(reward_avg)
                 logger.log_performance(episode, mbb)
@@ -162,13 +169,16 @@ if __name__ == '__main__':
     parser.add_argument('--q_batch_size', type=int, default=256)
     parser.add_argument('--q_train_every', type=int, default=512)
     parser.add_argument('--q_mlp_layers', type=int, nargs='+', default=[512, 512, 512])
+    parser.add_argument('--q_activation', type=str, default='tanh', choices=['tanh', 'relu'])
+    parser.add_argument('--optimizer', type=str, default='adam', choices=['adam', 'sgd'],
+                        help='optimizer for both the RL (DQN) and SL networks')
     
 
     # misc
     parser.add_argument('--device', type=str, default=None)
     parser.add_argument('--log_dir', type=str,
                         default=None)
-    parser.add_argument('--verbose', type=bool, default=True)
+    parser.add_argument('--verbose', type=str2bool, default=True)
 
     args = parser.parse_args()
     # log directory dymanic creation 

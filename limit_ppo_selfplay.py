@@ -3,9 +3,10 @@ import argparse
 import copy
 import contextlib
 
-from honest_agent_limited import HonestAgent
 
 import rlcard
+from functions import fmt_actions, str2bool
+from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
 from ppo_agent import PPOAgent
 
 from rlcard.utils import (
@@ -17,17 +18,10 @@ from rlcard.utils import (
 )
 
 
-def compute_mbb_per_hand(avg_payoff, big_blind=2):
-    return (avg_payoff / big_blind) * 1000
-
 
 def train(args):
     # Make environments
     env = rlcard.make(
-        'limit-holdem',
-        config={'seed': args.seed}
-    )
-    eval_env = rlcard.make(
         'limit-holdem',
         config={'seed': args.seed}
     )
@@ -62,11 +56,9 @@ def train(args):
     # Opponent pool for self-play: starts as a frozen copy of the initial agent
     opponent = copy.deepcopy(agent)
 
-    # For evaluation: agent vs. the rule-based "honest" opponent
-    eval_env.set_agents([
-        agent,
-        HonestAgent(num_actions=env.num_actions),
-    ])
+    # Evaluation panel of fixed opponents (see eval_panel.py)
+    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals)
+    panel_logger = PanelLogger(args.log_dir, panel.members)
 
     with Logger(args.log_dir) as logger:
         for episode in range(args.num_episodes):
@@ -100,21 +92,21 @@ def train(args):
                     if args.verbose:
                         print(f'\rIteration {episode}', end='')
 
-            # Evaluate against the honest opponent periodically
+            # Evaluate against the panel periodically; performance.csv gets
+            # the panel 'min' (robustness score), panel.csv every member
             if episode % args.evaluate_every == 0:
-                reward = tournament(eval_env, args.num_eval_games)[0]
-                mbb = compute_mbb_per_hand(reward)
-                logger.log_performance(episode, mbb)
-                if args.verbose:
-                    print(f'\n[Episode {episode}] Avg reward vs Opponent: {reward:.4f} | MBB/h: {mbb:.2f}')
-                    if agent.last_loss is not None:
-                        print(
-                            f'  updates: {agent.train_t} | '
-                            f'policy: {agent.last_loss["policy_loss"]:.5f} | '
-                            f'value: {agent.last_loss["value_loss"]:.5f} | '
-                            f'entropy: {agent.last_loss["entropy"]:.4f} | '
-                            f'approx_kl: {agent.last_loss["approx_kl"]:.5f}'
-                        )
+                results = panel.evaluate(agent)
+                panel_logger.log(episode, results)
+                logger.log_performance(episode, results['min'])
+                print(format_results(results, prefix=f'[Episode {episode}] '))
+                if agent.last_loss is not None:
+                    print(
+                        f'  updates: {agent.train_t} | '
+                        f'policy: {agent.last_loss["policy_loss"]:.5f} | '
+                        f'value: {agent.last_loss["value_loss"]:.5f} | '
+                        f'entropy: {agent.last_loss["entropy"]:.4f} | '
+                        f'approx_kl: {agent.last_loss["approx_kl"]:.5f}'
+                    )
 
             # Periodic checkpoints
             if args.checkpoint_every > 0 and episode % args.checkpoint_every == 0 and episode > 0:
@@ -142,9 +134,9 @@ if __name__ == '__main__':
 
     # Training loop
     parser.add_argument('--num_episodes', type=int, default=200_000)
-    parser.add_argument('--num_eval_games', type=int, default=1_000)
+    add_panel_args(parser)
     parser.add_argument('--evaluate_every', type=int, default=2_000,
-                        help='Evaluate against the honest agent every N episodes')
+                        help='Evaluate against the panel every N episodes')
     parser.add_argument('--opponent_update_every', type=int, default=2_000,
                         help='Freeze a new opponent snapshot every N episodes')
     parser.add_argument('--checkpoint_every', type=int, default=0,
@@ -184,7 +176,7 @@ if __name__ == '__main__':
                         help='torch device, e.g. "cpu" or "cuda:0" (None = auto)')
     parser.add_argument('--log_dir', type=str,
                         default=None)
-    parser.add_argument('--verbose', type=bool, default=True)
+    parser.add_argument('--verbose', type=str2bool, default=True)
 
     args = parser.parse_args()
     # log directory dynamic creation

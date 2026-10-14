@@ -19,7 +19,7 @@ GRID = {
 
 FIXED = {
     'num_episodes':        150_000,
-    'num_eval_games':       1_000,
+    'eval_deals':           500,     # duplicate deals per panel member
     'evaluate_every':       10_000,
     'seed':                 42,
     'verbose':              False,
@@ -31,8 +31,9 @@ def grid_configs(grid):
         yield dict(zip(keys, combo))
 
 
-def build_cmd(cfg):
-    cmd = ['python', 'limit_dqn_selfplay_custom.py']
+def build_cmd(cfg, log_dir):
+    # sys.executable so the runs use the same interpreter/venv as the tuner
+    cmd = [sys.executable, 'limit_dqn_selfplay_custom.py', '--log_dir', log_dir]
     for k, v in {**cfg, **FIXED}.items():
         if isinstance(v, list):
             cmd += [f'--{k}'] + [str(x) for x in v]
@@ -42,28 +43,37 @@ def build_cmd(cfg):
 
 
 def infer_log_dir(cfg):
+    # Passed to the training script explicitly (--log_dir), so it no longer
+    # has to mirror the script's own default naming.
     layers_str = '_'.join(str(x) for x in cfg['mlp_layers'])
     return (
             f'experiments/limit_holdem_dqn_selfplay/'
             f'activation{cfg["activation"]}_'
-            f'lr{cfg["lr"]}_bs{cfg["batch_size"]}_buf{cfg["replay_memory_size"]}_'
-            f'layers_{layers_str}'
+            f'lr{cfg["lr"]}_bs{cfg["batch_size"]}_'
+            f'layers_{layers_str}_'
             f'eps_start{cfg["epsilon_start"]}_eps_end{cfg["epsilon_end"]}_'
             f'eps_decay{cfg["epsilon_decay_steps"]}_'
-            f'opp{cfg["opponent_update_every"]}_seed{cfg["seed"]}/'
-        
+            f'opp{cfg["opponent_update_every"]}_seed{FIXED["seed"]}/'
     )
 
 
+# A single 1000-hand evaluation has a standard error of 100+ mbb/h, so rank
+# configs by the mean of the last few evaluations instead of the last one.
+RANK_TAIL = 3
+
 def read_last_reward(log_dir):
+    # performance.csv holds the eval-panel 'min' (robustness score) per evaluation
     csv_path = os.path.join(log_dir, 'performance.csv')
+    if not os.path.isfile(csv_path):
+        return None
     with open(csv_path) as f:
             reader = csv.reader(f)
-            next(reader) 
-            last = None
-            for row in reader: 
-                last = float(row[1])
-    return last
+            next(reader)
+            rewards = [float(row[1]) for row in reader]
+    if not rewards:
+        return None
+    tail = rewards[-RANK_TAIL:]
+    return sum(tail) / len(tail)
 
 
 
@@ -72,8 +82,8 @@ print(f'Total runs: {len(configs)}\n')
 
 results = []
 for i, cfg in enumerate(configs, 1):
-    cmd = build_cmd(cfg)
     log_dir = infer_log_dir(cfg)
+    cmd = build_cmd(cfg, log_dir)
     print(f'[{i}/{len(configs)}] Running: {" ".join(cmd)}')
 
     output_lines = []

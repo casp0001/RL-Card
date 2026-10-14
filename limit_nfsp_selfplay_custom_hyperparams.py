@@ -3,9 +3,10 @@ import argparse
 import copy
 import contextlib
 
-from honest_agent_limited import HonestAgent
 import rlcard
-from rlcard.agents import NFSPAgent
+from functions import fmt_actions, str2bool
+from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
+from nfsp_agent_XPU import NFSPAgent
 from rlcard.utils import (
     reorganize,
     set_seed,
@@ -14,6 +15,7 @@ from rlcard.utils import (
     plot_curve,
 )
 def warmup(agent, args):
+    from honest_agent_limited import HonestAgent
     print("Warming up agent against HonestAgent...")
     warmup_env = rlcard.make('limit-holdem', config={'seed': args.seed})
     warmup_env.set_agents([agent, HonestAgent(num_actions=warmup_env.num_actions)])
@@ -26,16 +28,9 @@ def warmup(agent, args):
     print("Warmup complete.")
 
 
-def compute_mbb_per_hand(avg_payoff, big_blind=2):
-    return (avg_payoff / big_blind) * 1000
-
 def train(args):
     # make environments
     env = rlcard.make(
-        'limit-holdem',
-        config={'seed': args.seed}
-    )
-    eval_env = rlcard.make(
         'limit-holdem',
         config={'seed': args.seed}
     )
@@ -63,15 +58,18 @@ def train(args):
         q_batch_size=args.q_batch_size,
         q_train_every=args.q_train_every,
         q_mlp_layers=args.q_mlp_layers,
+        q_activation=args.q_activation,
+        optimizer=args.optimizer,
+        device=args.device,
     )
     #warmup(agent, args)  # optional warmup against honest opponent before self-play
     # create agent copy for opponent
     opponent = copy.deepcopy(agent)
-     # evaluation environemtn, agent vs honest "rational" opponent
-    eval_env.set_agents([
-        agent,
-        HonestAgent(num_actions=env.num_actions),
-    ])
+    # Evaluation panel of fixed opponents (see eval_panel.py)
+    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals)
+    panel_logger = PanelLogger(args.log_dir, panel.members)
+    panel_logger_br = (PanelLogger(args.log_dir, panel.members, filename='panel_br')
+                       if args.eval_best_response else None)
 
     with Logger(args.log_dir) as logger:
         for episode in range(args.num_episodes):
@@ -93,6 +91,9 @@ def train(args):
                         env.set_agents([opponent, agent])
                         seat = 1
 
+                    # resample the snapshot's mode too, otherwise it keeps the mode it
+                    # was copied in (pure best response w.p. eta) for the whole window
+                    opponent.sample_episode_policy()
                     trajectories, payoffs = env.run(is_training=True)
                     trajectories = reorganize(trajectories, payoffs)
 
@@ -101,20 +102,18 @@ def train(args):
                 if args.verbose:
                     print(f'\rIteration {episode}', end='')
 
-            # periodic evalutaion against honest opponent
+            # Evaluate the average policy (what NFSP plays) against the panel
+            # periodically; performance.csv gets the panel 'min', panel.csv
+            # every member. Optionally also the best-response network.
             if episode % args.evaluate_every == 0:
-                # eval average policy (default)
-                agent.evaluate_with = 'average_policy'
-                reward_avg = tournament(eval_env, args.num_eval_games)[0]
-                
-                # eval best response policy
-                agent.evaluate_with = 'best_response'
-                reward_br = tournament(eval_env, args.num_eval_games)[0]
-                
-                mbb = compute_mbb_per_hand(reward_avg)
-                logger.log_performance(episode, mbb)
-                print(f'mbb/h: {mbb:.2f}')
-                print(f'[{episode}] avg_policy: {reward_avg:.4f} | best_response: {reward_br:.4f}')
+                results = panel.evaluate(agent, nfsp_policy='average_policy')
+                panel_logger.log(episode, results)
+                logger.log_performance(episode, results['min'])
+                print(format_results(results, prefix=f'[Episode {episode}] avg policy: '))
+                if args.eval_best_response:
+                    results_br = panel.evaluate(agent, nfsp_policy='best_response')
+                    panel_logger_br.log(episode, results_br)
+                    print(format_results(results_br, prefix=f'[Episode {episode}] best response: '))
             if episode % 1_000_000 == 0 and episode > 0:
                     os.makedirs(f'{args.log_dir}checkpoints/episode_{episode}', exist_ok=True)
                     agent.save_checkpoint(f'{args.log_dir}/checkpoints/episode_{episode}')
@@ -139,7 +138,9 @@ if __name__ == '__main__':
 
     # training loop hyper-parameters
     parser.add_argument('--num_episodes', type=int, default=2_000_000)
-    parser.add_argument('--num_eval_games', type=int, default=2_500)
+    add_panel_args(parser)
+    parser.add_argument('--eval_best_response', type=str2bool, default=False,
+                        help='Also evaluate the best-response (DQN) network (panel_br.csv)')
     parser.add_argument('--evaluate_every', type=int, default=10_000)
     parser.add_argument('--opponent_update_every', type=int, default=50_000)
 
@@ -162,13 +163,16 @@ if __name__ == '__main__':
     parser.add_argument('--q_batch_size', type=int, default=256)
     parser.add_argument('--q_train_every', type=int, default=128)
     parser.add_argument('--q_mlp_layers', type=int, nargs='+', default=[256, 256, 256])
+    parser.add_argument('--q_activation', type=str, default='tanh', choices=['tanh', 'relu'])
+    parser.add_argument('--optimizer', type=str, default='adam', choices=['adam', 'sgd'],
+                        help='optimizer for both the RL (DQN) and SL networks')
     
 
     # misc
     parser.add_argument('--device', type=str, default=None)
     parser.add_argument('--log_dir', type=str,
                         default=None)
-    parser.add_argument('--verbose', type=bool, default=True)
+    parser.add_argument('--verbose', type=str2bool, default=True)
 
     args = parser.parse_args()
     # log directory dymanic creation 

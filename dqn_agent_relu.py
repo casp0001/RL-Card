@@ -269,14 +269,17 @@ class DQNAgent(object):
             'memory': self.memory.checkpoint_attributes(),
             'total_t': self.total_t,
             'train_t': self.train_t,
-            'epsilon_start': self.epsilons.min(),
-            'epsilon_end': self.epsilons.max(),
+            # epsilons decays from start to end, so start is the first entry
+            # (rlcard stored min()/max() here, which swapped them on restore)
+            'epsilon_start': self.epsilons[0],
+            'epsilon_end': self.epsilons[-1],
             'epsilon_decay_steps': self.epsilon_decay_steps,
             'discount_factor': self.discount_factor,
             'update_target_estimator_every': self.update_target_estimator_every,
             'batch_size': self.batch_size,
             'num_actions': self.num_actions,
             'train_every': self.train_every,
+            'activation': self.activation,
             'device': self.device
         }
         
@@ -290,6 +293,11 @@ class DQNAgent(object):
         '''
         
         print("\nINFO - Restoring model from checkpoint...")
+        if checkpoint['epsilon_start'] < checkpoint['epsilon_end']:
+            # saved by the old code, which stored start/end swapped
+            checkpoint = dict(checkpoint)
+            checkpoint['epsilon_start'], checkpoint['epsilon_end'] = \
+                checkpoint['epsilon_end'], checkpoint['epsilon_start']
         agent_instance = cls(
             replay_memory_size=checkpoint['memory']['memory_size'],
             update_target_estimator_every=checkpoint['update_target_estimator_every'],
@@ -302,7 +310,9 @@ class DQNAgent(object):
             device=checkpoint['device'], 
             state_shape=checkpoint['q_estimator']['state_shape'],
             mlp_layers=checkpoint['q_estimator']['mlp_layers'],
-            train_every=checkpoint['train_every']
+            train_every=checkpoint['train_every'],
+            # checkpoints saved before activation was recorded were all ReLU
+            activation=checkpoint.get('activation', 'relu'),
         )
         
         agent_instance.total_t = checkpoint['total_t']
@@ -349,7 +359,7 @@ class Estimator(object):
         self.activation = activation
 
         # set up Q model and place it in eval mode
-        qnet = EstimatorNetwork(num_actions, state_shape, mlp_layers)
+        qnet = EstimatorNetwork(num_actions, state_shape, mlp_layers, activation)
         qnet = qnet.to(self.device)
         self.qnet = qnet
         self.qnet.eval()
@@ -430,6 +440,7 @@ class Estimator(object):
             'learning_rate': self.learning_rate,
             'state_shape': self.state_shape,
             'mlp_layers': self.mlp_layers,
+            'activation': self.activation,
             'device': self.device
         }
         
@@ -442,7 +453,8 @@ class Estimator(object):
             learning_rate=checkpoint['learning_rate'],
             state_shape=checkpoint['state_shape'],
             mlp_layers=checkpoint['mlp_layers'],
-            device=checkpoint['device']
+            device=checkpoint['device'],
+            activation=checkpoint.get('activation', 'relu'),
         )
         
         estimator.qnet.load_state_dict(checkpoint['qnet'])

@@ -14,7 +14,7 @@ from rlcard.utils import (
     plot_curve,
 )
 
-from functions import warmup, compute_mbb_per_hand
+from functions import warmup, compute_mbb_per_hand, fmt_actions, str2bool
 
 def train(args):
     # make environments
@@ -50,6 +50,9 @@ def train(args):
         q_batch_size=args.q_batch_size,
         q_train_every=args.q_train_every,
         q_mlp_layers=args.q_mlp_layers,
+        q_activation=args.q_activation,
+        optimizer=args.optimizer,
+        device=args.device,
     )
     #warmup(agent, args)  # optional warmup against honest opponent before self-play
     # create agent copy for opponent
@@ -80,6 +83,9 @@ def train(args):
                         env.set_agents([opponent, agent])
                         seat = 1
 
+                    # resample the snapshot's mode too, otherwise it keeps the mode it
+                    # was copied in (pure best response w.p. eta) for the whole window
+                    opponent.sample_episode_policy()
                     trajectories, payoffs = env.run(is_training=True)
                     trajectories = reorganize(trajectories, payoffs)
 
@@ -121,17 +127,13 @@ def train(args):
                     return action, info
                 agent.eval_step = counting_eval_step_br
                 reward_br = tournament(eval_env, args.num_eval_games)[0]
+                # back to the average policy, which is what NFSP plays and what
+                # the checkpoints below should carry
+                agent.evaluate_with = 'average_policy'
                 agent.eval_step = original_eval_step
 
                 mbb = compute_mbb_per_hand(reward_avg)
                 logger.log_performance(episode, mbb)
-
-                def fmt_actions(counts, total):
-                    if total == 0:
-                        return "no data"
-                    return (f"fold={counts.get(0,0)/total*100:.1f}% "
-                            f"call={counts.get(1,0)/total*100:.1f}% "
-                            f"raise={counts.get(2,0)/total*100:.1f}%")
 
                 print(f'mbb/h: {mbb:.2f}')
                 print(f'[{episode}] avg_policy: {reward_avg:.4f} | best_response: {reward_br:.4f}')
@@ -178,20 +180,24 @@ if __name__ == '__main__':
     parser.add_argument('--q_replay_memory_size', type=int, default=600_000)
     parser.add_argument('--q_replay_memory_init_size', type=int, default=10_000)
     parser.add_argument('--q_update_target_estimator_every', type=int, default=2000)
-    parser.add_argument('--q_discount_factor', type=float, default=0.99)
+    parser.add_argument('--q_discount_factor', type=float, default=1.0,
+                        help='poker hands are episodic with a terminal reward only')
     parser.add_argument('--q_epsilon_start', type=float, default=0.5)
     parser.add_argument('--q_epsilon_end', type=float, default=0.01)
     parser.add_argument('--q_epsilon_decay_steps', type=int, default=int(7e6))
     parser.add_argument('--q_batch_size', type=int, default=256)
     parser.add_argument('--q_train_every', type=int, default=256)
     parser.add_argument('--q_mlp_layers', type=int, nargs='+', default=[1024, 512, 256])
+    parser.add_argument('--q_activation', type=str, default='relu', choices=['tanh', 'relu'])
+    parser.add_argument('--optimizer', type=str, default='sgd', choices=['adam', 'sgd'],
+                        help='optimizer for both the RL (DQN) and SL networks')
     
 
     # misc
     parser.add_argument('--device', type=str, default=None)
     parser.add_argument('--log_dir', type=str,
                         default=None)
-    parser.add_argument('--verbose', type=bool, default=True)
+    parser.add_argument('--verbose', type=str2bool, default=True)
 
     args = parser.parse_args()
     # log directory dymanic creation 

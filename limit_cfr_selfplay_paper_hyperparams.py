@@ -5,6 +5,7 @@ import pickle
 from honest_agent_limited import HonestAgent
 import numpy as np
 import rlcard
+from functions import compute_mbb_per_hand, fmt_actions, str2bool
 from rlcard.agents import CFRAgent
 from rlcard.utils import (
     set_seed,
@@ -12,22 +13,6 @@ from rlcard.utils import (
     Logger,
     plot_curve,
 )
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def compute_mbb_per_hand(avg_payoff, big_blind=2):
-    return (avg_payoff / big_blind) * 1000
-
-
-def fmt_actions(counts, total):
-    if total == 0:
-        return "no data"
-    return (f"fold={counts.get(0, 0) / total * 100:.1f}% "
-            f"call={counts.get(1, 0) / total * 100:.1f}% "
-            f"raise={counts.get(2, 0) / total * 100:.1f}%")
 
 
 # ---------------------------------------------------------------------------
@@ -177,7 +162,7 @@ if __name__ == '__main__':
                         help='Directory for logs, curves, and saved model')
     parser.add_argument('--resume',  action='store_true',
                         help='Resume training from an existing checkpoint in --log_dir')
-    parser.add_argument('--verbose', type=bool, default=True)
+    parser.add_argument('--verbose', type=str2bool, default=True)
 
     args = parser.parse_args()
 

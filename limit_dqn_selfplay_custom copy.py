@@ -9,7 +9,7 @@ import rlcard
 from rlcard.agents import RandomAgent
 from dqn_agent_relu import DQNAgent 
 
-from functions import warmup, compute_mbb_per_hand, fmt_actions
+from functions import warmup, compute_mbb_per_hand, fmt_actions, str2bool
 
 from rlcard.utils import (
     reorganize,
@@ -48,6 +48,7 @@ def train(args):
         epsilon_end=args.epsilon_end,
         epsilon_decay_steps=args.epsilon_decay_steps,
         device=args.device,
+        activation=args.activation,
     )
 
     # Opponent pool for self-play: starts as a frozen copy of the initial agent
@@ -162,7 +163,7 @@ if __name__ == '__main__':
                         help='torch device, e.g. "cpu" or "cuda:0" (None = auto)')
     parser.add_argument('--log_dir', type=str,
                         default=None)
-    parser.add_argument('--verbose', type=bool, default=True)
+    parser.add_argument('--verbose', type=str2bool, default=True)
 
     args = parser.parse_args()
     if args.log_dir is None:

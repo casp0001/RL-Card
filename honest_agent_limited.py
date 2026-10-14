@@ -171,7 +171,7 @@ def _choose_action(strength, legal_actions):
     Map a [0,1] strength score to an action index.
 
     Thresholds (tunable):
-      < 0.35  → fold  (very weak hand)
+      < 0.35  → fold  (very weak hand; check instead when free)
       0.35–0.45 → call  (marginal)
       0.45–0.65 → call/raise  (decent — raise only if raise is legal)
       > 0.65  → raise (strong hand)
@@ -179,7 +179,12 @@ def _choose_action(strength, legal_actions):
     available = set(legal_actions.keys())
 
     if strength < 0.35:
-        action = FOLD if FOLD in available else CALL
+        # Never fold when checking is free: RLCard always lists fold as legal,
+        # but folding instead of checking just gives the pot away.
+        if CHECK in available:
+            action = CHECK
+        else:
+            action = FOLD if FOLD in available else CALL
     elif strength < 0.45:
         action = _passive(available)
     elif strength < 0.65:
@@ -243,7 +248,7 @@ if __name__ == '__main__':
         (['SA', 'HA'],  [],              'Pre-flop pocket Aces'),
         (['S2', 'H7'],  [],              'Pre-flop 2-7 offsuit (trash)'),
         (['SA', 'HA'],  ['DA', 'CA', 'SK'], 'Four of a kind Aces'),
-        (['S2', 'H7'],  ['D3', 'C4', 'S5'], 'Straight 2-6'),
+        (['S6', 'H7'],  ['D3', 'C4', 'S5'], 'Straight 3-7'),
         (['SA', 'HK'],  ['DA', 'CA', 'SK'], 'Full house A over K'),
         (['S2', 'H7'],  ['D9', 'CJ', 'SQ'], 'Nothing / high card'),
     ]

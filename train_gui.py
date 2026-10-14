@@ -75,8 +75,8 @@ class ArgSpec(object):
 
     @property
     def is_bool(self):
-        ''' type=bool, which argparse handles badly -- see value_to_argv(). '''
-        return self.type_name == 'bool'
+        ''' type=bool / type=str2bool (functions.py) -- see value_to_argv(). '''
+        return self.type_name in ('bool', 'str2bool')
 
     @property
     def is_list(self):
@@ -235,8 +235,8 @@ def value_to_argv(spec, text):
 
     if spec.is_bool:
         # argparse's type=bool calls bool() on the *string*, so bool('False')
-        # is True. bool('') is False, so an empty string is the only way to
-        # pass a false value to these scripts without editing them.
+        # is True. bool('') is False, so an empty string is the only false
+        # value that works for both type=bool and type=str2bool.
         return [spec.flag, '1'] if text in ('1', 'True', 'true') else [spec.flag, '']
 
     if not text:

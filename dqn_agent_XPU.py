@@ -59,6 +59,7 @@ class DQNAgent(object):
                  device=None,
                  save_path=None,
                  activation='relu',
+                 optimizer='adam',
                  save_every=float('inf'),):
 
         '''
@@ -86,6 +87,8 @@ class DQNAgent(object):
             device (torch.device): whether to use the cpu or gpu
             save_path (str): The path to save the model checkpoints
             save_every (int): Save the model every X training steps
+            activation (str): 'relu' or 'tanh' hidden-layer activation
+            optimizer (str): 'adam' or 'sgd'
         '''
         self.use_raw = False
         self.replay_memory_init_size = replay_memory_init_size
@@ -96,6 +99,7 @@ class DQNAgent(object):
         self.num_actions = num_actions
         self.train_every = train_every
         self.activation = activation
+        self.optimizer_name = optimizer
 
         # Torch device
         if device is None:
@@ -114,9 +118,9 @@ class DQNAgent(object):
 
         # Create estimators
         self.q_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
-            mlp_layers=mlp_layers, device=self.device, activation=self.activation)
+            mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name)
         self.target_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
-            mlp_layers=mlp_layers, device=self.device, activation=self.activation)
+            mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name)
 
         # Create replay memory
         self.memory = Memory(replay_memory_size, batch_size)
@@ -269,14 +273,18 @@ class DQNAgent(object):
             'memory': self.memory.checkpoint_attributes(),
             'total_t': self.total_t,
             'train_t': self.train_t,
-            'epsilon_start': self.epsilons.min(),
-            'epsilon_end': self.epsilons.max(),
+            # epsilons decays from start to end, so start is the first entry
+            # (rlcard stored min()/max() here, which swapped them on restore)
+            'epsilon_start': self.epsilons[0],
+            'epsilon_end': self.epsilons[-1],
             'epsilon_decay_steps': self.epsilon_decay_steps,
             'discount_factor': self.discount_factor,
             'update_target_estimator_every': self.update_target_estimator_every,
             'batch_size': self.batch_size,
             'num_actions': self.num_actions,
             'train_every': self.train_every,
+            'activation': self.activation,
+            'optimizer': self.optimizer_name,
             'device': self.device
         }
         
@@ -290,6 +298,11 @@ class DQNAgent(object):
         '''
         
         print("\nINFO - Restoring model from checkpoint...")
+        if checkpoint['epsilon_start'] < checkpoint['epsilon_end']:
+            # saved by the old code, which stored start/end swapped
+            checkpoint = dict(checkpoint)
+            checkpoint['epsilon_start'], checkpoint['epsilon_end'] = \
+                checkpoint['epsilon_end'], checkpoint['epsilon_start']
         agent_instance = cls(
             replay_memory_size=checkpoint['memory']['memory_size'],
             update_target_estimator_every=checkpoint['update_target_estimator_every'],
@@ -302,7 +315,10 @@ class DQNAgent(object):
             device=checkpoint['device'], 
             state_shape=checkpoint['q_estimator']['state_shape'],
             mlp_layers=checkpoint['q_estimator']['mlp_layers'],
-            train_every=checkpoint['train_every']
+            train_every=checkpoint['train_every'],
+            # checkpoints saved before activation was recorded were all ReLU
+            activation=checkpoint.get('activation', 'relu'),
+            optimizer=checkpoint.get('optimizer', 'adam'),
         )
         
         agent_instance.total_t = checkpoint['total_t']
@@ -323,6 +339,15 @@ class DQNAgent(object):
         '''
         torch.save(self.checkpoint_attributes(), path + '/' + filename)
         
+def make_optimizer(name, params, lr):
+    ''' Build a torch optimizer by name ('adam' or 'sgd'). '''
+    if name == 'adam':
+        return torch.optim.Adam(params, lr=lr)
+    if name == 'sgd':
+        return torch.optim.SGD(params, lr=lr)
+    raise ValueError(f"optimizer should be 'adam' or 'sgd', got {name!r}")
+
+
 class Estimator(object):
     '''
     Approximate clone of rlcard.agents.dqn_agent.Estimator that
@@ -332,7 +357,7 @@ class Estimator(object):
     This network is used for both the Q-Network and the Target Network.
     '''
 
-    def __init__(self, num_actions=2, learning_rate=0.001, state_shape=None, mlp_layers=None, device=None,activation='relu'):
+    def __init__(self, num_actions=2, learning_rate=0.001, state_shape=None, mlp_layers=None, device=None,activation='relu', optimizer='adam'):
         ''' Initilalize an Estimator object.
 
         Args:
@@ -347,6 +372,7 @@ class Estimator(object):
         self.mlp_layers = mlp_layers
         self.device = device
         self.activation = activation
+        self.optimizer_name = optimizer
 
         # set up Q model and place it in eval mode
         qnet = EstimatorNetwork(num_actions, state_shape, mlp_layers, activation)
@@ -363,7 +389,7 @@ class Estimator(object):
         self.mse_loss = nn.MSELoss(reduction='mean')
 
         # set up optimizer
-        self.optimizer =  torch.optim.Adam(self.qnet.parameters(), lr=self.learning_rate)
+        self.optimizer = make_optimizer(optimizer, self.qnet.parameters(), self.learning_rate)
 
     def predict_nograd(self, s):
         ''' Predicts action values, but prediction is not included
@@ -430,6 +456,8 @@ class Estimator(object):
             'learning_rate': self.learning_rate,
             'state_shape': self.state_shape,
             'mlp_layers': self.mlp_layers,
+            'activation': self.activation,
+            'optimizer_name': self.optimizer_name,
             'device': self.device
         }
         
@@ -442,7 +470,9 @@ class Estimator(object):
             learning_rate=checkpoint['learning_rate'],
             state_shape=checkpoint['state_shape'],
             mlp_layers=checkpoint['mlp_layers'],
-            device=checkpoint['device']
+            device=checkpoint['device'],
+            activation=checkpoint.get('activation', 'relu'),
+            optimizer=checkpoint.get('optimizer_name', 'adam'),
         )
         
         estimator.qnet.load_state_dict(checkpoint['qnet'])
