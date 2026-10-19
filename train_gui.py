@@ -235,7 +235,7 @@ def _spec_from_call(node):
 
 
 # argparse scripts that are not training scripts (tune.py has its own GUI)
-NOT_TRAINING_SCRIPTS = {'tune.py', 'tune_gui.py', 'exploitability.py'}
+NOT_TRAINING_SCRIPTS = {'tune.py', 'tune_gui.py', 'exploitability.py', 'behaviour_tracker.py'}
 
 
 def discover_scripts(root):
