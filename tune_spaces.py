@@ -74,8 +74,9 @@ SPACES = {
     },
     'deepcfr': {
         'lr': {'type': 'float', 'low': 1e-4, 'high': 3e-3, 'log': True},
-        'num_traversals': {'type': 'int', 'low': 200, 'high': 3000, 'log': True},
-        'num_step': {'type': 'int', 'low': 200, 'high': 4000, 'log': True},
+        # ~60 s per iteration at 1000 traversals + 1000 SGD steps (batch 4096, 4 threads)
+        'num_traversals': {'type': 'int', 'low': 100, 'high': 1500, 'log': True},
+        'num_step': {'type': 'int', 'low': 200, 'high': 2000, 'log': True},
         'batch_size': {'type': 'categorical', 'choices': [1024, 4096, 8192],
                        'targets': ['batch_size_advantage', 'batch_size_strategy']},
         'layers': {'type': 'categorical', 'choices': ['128 128 128', '256 256 256'], 'list': True,
@@ -87,11 +88,14 @@ SPACES = {
 }
 
 FIXED = {
-    'dqn': {'verbose': False, 'replay_memory_init_size': 5_000},
-    'ppo': {'verbose': False, 'discount_factor': 1.0},
-    'nfsp': {'verbose': False, 'q_discount_factor': 1.0, 'eval_best_response': False,
+    # every algorithm trains on the rich observation (obs_encoding.py)
+    # gamma = 1 for every algorithm: a hand pays out only at its end, so
+    # discounting would just shrink values by the number of decisions left
+    'dqn': {'verbose': False, 'obs': 'rich', 'replay_memory_init_size': 5_000, 'discount_factor': 1.0},
+    'ppo': {'verbose': False, 'obs': 'rich', 'discount_factor': 1.0},
+    'nfsp': {'verbose': False, 'obs': 'rich', 'q_discount_factor': 1.0, 'eval_best_response': False,
              'q_replay_memory_init_size': 5_000, 'min_buffer_size_to_learn': 5_000},
-    'deepcfr': {'verbose': False},
+    'deepcfr': {'verbose': False, 'obs': 'rich'},
 }
 
 # Default study settings per algorithm: budget per trial (in the algorithm's

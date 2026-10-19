@@ -25,6 +25,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
+import os
 import random
 import numpy as np
 import torch
@@ -33,6 +34,8 @@ from collections import namedtuple
 from copy import deepcopy
 
 from rlcard.utils.utils import remove_illegal
+
+from array_buffers import ReplayMemory
 _DEVICE = torch.device('xpu' if torch.xpu.is_available() else 'cpu')
 Transition = namedtuple('Transition', ['state', 'action', 'reward', 'next_state', 'done', 'legal_actions'])
 
@@ -123,7 +126,7 @@ class DQNAgent(object):
             mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name)
 
         # Create replay memory
-        self.memory = Memory(replay_memory_size, batch_size)
+        self.memory = Memory(replay_memory_size, batch_size, num_actions)
         
         # Checkpoint saving parameters
         self.save_path = save_path
@@ -207,16 +210,11 @@ class DQNAgent(object):
         Returns:
             loss (float): The loss of the current batch.
         '''
-        state_batch, action_batch, reward_batch, next_state_batch, done_batch, legal_actions_batch = self.memory.sample()
+        state_batch, action_batch, reward_batch, next_state_batch, done_batch, legal_mask_batch = self.memory.sample()
 
-        # Calculate best next actions using Q-network (Double DQN)
+        # Calculate best next actions using Q-network (Double DQN), legal actions only
         q_values_next = self.q_estimator.predict_nograd(next_state_batch)
-        legal_actions = []
-        for b in range(self.batch_size):
-            legal_actions.extend([i + b * self.num_actions for i in legal_actions_batch[b]])
-        masked_q_values = -np.inf * np.ones(self.num_actions * self.batch_size, dtype=float)
-        masked_q_values[legal_actions] = q_values_next.flatten()[legal_actions]
-        masked_q_values = masked_q_values.reshape((self.batch_size, self.num_actions))
+        masked_q_values = np.where(legal_mask_batch, q_values_next, -np.inf)
         best_actions = np.argmax(masked_q_values, axis=1)
 
         # Evaluate best next actions using Target-network (Double DQN)
@@ -262,7 +260,7 @@ class DQNAgent(object):
         self.q_estimator.device = device
         self.target_estimator.device = device
 
-    def checkpoint_attributes(self):
+    def checkpoint_attributes(self, include_buffers=True):
         '''
         Return the current checkpoint attributes (dict)
         Checkpoint attributes are used to save and restore the model in the middle of training
@@ -272,7 +270,7 @@ class DQNAgent(object):
         return {
             'agent_type': 'DQNAgent',
             'q_estimator': self.q_estimator.checkpoint_attributes(),
-            'memory': self.memory.checkpoint_attributes(),
+            'memory': self.memory.checkpoint_attributes(include_data=include_buffers),
             'total_t': self.total_t,
             'train_t': self.train_t,
             # epsilons decays from start to end, so start is the first entry
@@ -333,14 +331,17 @@ class DQNAgent(object):
         
         return agent_instance
                      
-    def save_checkpoint(self, path, filename='checkpoint_dqn.pt'):
-        ''' Save the model checkpoint (all attributes)
+    def save_checkpoint(self, path, filename='checkpoint_dqn.pt', include_buffers=False):
+        ''' Save the model checkpoint.
 
         Args:
-            path (str): the path to save the model
+            path (str): the folder to save into
+            include_buffers (bool): also save the replay memory (needed only to
+              resume training; it can be hundreds of MB)
         '''
-        torch.save(self.checkpoint_attributes(), path + '/' + filename)
-        
+        torch.save(self.checkpoint_attributes(include_buffers), os.path.join(path, filename))
+
+
 def make_optimizer(name, params, lr):
     ''' Build a torch optimizer by name ('adam' or 'sgd'). '''
     if name == 'adam':
@@ -523,71 +524,8 @@ class EstimatorNetwork(nn.Module):
         '''
         return self.fc_layers(s)
 
-class Memory(object):
-    ''' Memory for saving transitions
-    '''
-
-    def __init__(self, memory_size, batch_size):
-        ''' Initialize
-        Args:
-            memory_size (int): the size of the memroy buffer
-        '''
-        self.memory_size = memory_size
-        self.batch_size = batch_size
-        self.memory = []
-
-    def save(self, state, action, reward, next_state, legal_actions, done):
-        ''' Save transition into memory
-
-        Args:
-            state (numpy.array): the current state
-            action (int): the performed action ID
-            reward (float): the reward received
-            next_state (numpy.array): the next state after performing the action
-            legal_actions (list): the legal actions of the next state
-            done (boolean): whether the episode is finished
-        '''
-        if len(self.memory) == self.memory_size:
-            self.memory.pop(0)
-        transition = Transition(state, action, reward, next_state, done, legal_actions)
-        self.memory.append(transition)
-
-    def sample(self):
-        ''' Sample a minibatch from the replay memory
-
-        Returns:
-            state_batch (list): a batch of states
-            action_batch (list): a batch of actions
-            reward_batch (list): a batch of rewards
-            next_state_batch (list): a batch of states
-            done_batch (list): a batch of dones
-        '''
-        samples = random.sample(self.memory, self.batch_size)
-        samples = tuple(zip(*samples))
-        return tuple(map(np.array, samples[:-1])) + (samples[-1],)
-
-    def checkpoint_attributes(self):
-        ''' Returns the attributes that need to be checkpointed
-        '''
-        
-        return {
-            'memory_size': self.memory_size,
-            'batch_size': self.batch_size,
-            'memory': self.memory
-        }
-            
-    @classmethod
-    def from_checkpoint(cls, checkpoint):
-        ''' 
-        Restores the attributes from the checkpoint
-        
-        Args:
-            checkpoint (dict): the checkpoint dictionary
-            
-        Returns:
-            instance (Memory): the restored instance
-        '''
-        
-        instance = cls(checkpoint['memory_size'], checkpoint['batch_size'])
-        instance.memory = checkpoint['memory']
-        return instance
+class Memory(ReplayMemory):
+    ''' Replay memory, array-backed (see array_buffers.ReplayMemory): about
+    10x smaller than a list of Transition tuples, O(1) inserts, and
+    sample() returns legal-action masks instead of lists. Old checkpoints
+    (lists of Transition) still load. '''

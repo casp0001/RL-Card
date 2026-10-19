@@ -4,7 +4,8 @@ import copy
 import contextlib
 
 import rlcard
-from functions import fmt_actions, str2bool
+from obs_encoding import ENV_IDS
+from functions import fmt_actions, str2bool, frozen_copy
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
 from nfsp_agent_XPU import NFSPAgent
 from rlcard.utils import (
@@ -17,7 +18,7 @@ from rlcard.utils import (
 def warmup(agent, args):
     from honest_agent_limited import HonestAgent
     print("Warming up agent against HonestAgent...")
-    warmup_env = rlcard.make('limit-holdem', config={'seed': args.seed})
+    warmup_env = rlcard.make(ENV_IDS[args.obs], config={'seed': args.seed})
     warmup_env.set_agents([agent, HonestAgent(num_actions=warmup_env.num_actions)])
     for ep in range(50_000):
         agent.sample_episode_policy()
@@ -34,7 +35,7 @@ def train(args, on_eval=None):
     returns True (used by tune.py). Returns the trained agent. '''
     # make environments
     env = rlcard.make(
-        'limit-holdem',
+        ENV_IDS[args.obs],
         config={'seed': args.seed}
     )
     set_seed(args.seed)
@@ -42,7 +43,7 @@ def train(args, on_eval=None):
     #print(env.num_actions, env.state_shape)
     agent = NFSPAgent(
         num_actions=env.num_actions,   
-        state_shape=[72],    
+        state_shape=env.state_shape[0],    
         hidden_layers_sizes = args.hidden_layers_sizes,
         reservoir_buffer_capacity=args.reservoir_buffer_capacity,
         anticipatory_param=args.anticipatory_param,
@@ -67,9 +68,9 @@ def train(args, on_eval=None):
     )
     #warmup(agent, args)  # optional warmup against honest opponent before self-play
     # create agent copy for opponent
-    opponent = copy.deepcopy(agent)
+    opponent = frozen_copy(agent)
     # Evaluation panel of fixed opponents (see eval_panel.py)
-    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals)
+    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
     panel_logger = PanelLogger(args.log_dir, panel.members)
     panel_logger_br = (PanelLogger(args.log_dir, panel.members, filename='panel_br')
                        if args.eval_best_response else None)
@@ -82,7 +83,7 @@ def train(args, on_eval=None):
 
                     # periodic opponent snapshot update
                     if episode % args.opponent_update_every == 0 and episode > 0:
-                        opponent = copy.deepcopy(agent)
+                        opponent = frozen_copy(agent)
                         if args.verbose:
                             print(f'\n[Episode {episode}] Opponent snapshot updated.')
 
@@ -146,6 +147,9 @@ def build_parser():
     # training loop hyper-parameters
     parser.add_argument('--num_episodes', type=int, default=2_000_000)
     add_panel_args(parser)
+    parser.add_argument('--obs', type=str, default='rich', choices=['rich', 'rlcard'],
+                        help="Observation encoding: 'rich' (153 values: position, own vs board cards, "
+                             "betting sequence; see obs_encoding.py) or RLCard's default 72-value one")
     parser.add_argument('--checkpoint_every', type=int, default=1_000_000,
                         help='Save a checkpoint every N episodes (0 = only the final model)')
     parser.add_argument('--save_model', type=str2bool, default=True,

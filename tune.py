@@ -324,7 +324,6 @@ def cmd_finalists(a):
     done = {(r['trial'], r['seed']) for r in record['runs']}
 
     seeds = [cfg['seed'] + 1000 + i for i in range(a.seeds)]
-    panel = Panel(parse_members(cfg['eval_panel']), num_deals=a.final_deals)
     for t in top:
         for seed in seeds:
             if (t.number, seed) in done:
@@ -341,7 +340,9 @@ def cmd_finalists(a):
                 return False   # never stop early
 
             agent = module.train(args, track)
-            results = panel.evaluate(agent)
+            # the trained agent reads state['obs'], so evaluate it in an env of its encoding
+            results = Panel(parse_members(cfg['eval_panel']), num_deals=a.final_deals,
+                            obs=getattr(args, 'obs', 'rlcard')).evaluate(agent)
             run = {'trial': t.number, 'seed': seed, 'params': t.params, 'trial_score': t.value,
                    'final_min': results['min'], 'final_mean': results['mean'],
                    'members': results['members'], 'training_score': score(history) if history else None,

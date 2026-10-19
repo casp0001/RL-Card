@@ -50,6 +50,21 @@ How each trained agent plays when it is evaluated: NFSP uses its average
 policy, DQN plays greedily, Deep CFR uses its average-strategy network, and PPO
 uses whatever its checkpoint is set to (stochastic by default).
 
+### Observation encodings
+
+Trained agents see the game through one of two encodings (`--obs` in every
+training script; the tuner always uses `rich`):
+
+* `rich` (default, 153 values, see `obs_encoding.py`): own hole cards and the
+  board separately, street, position (small or big blind), whether you face a
+  bet, the raises of every round and who made them, who led the betting on
+  earlier streets, the pot and the amount to call.
+* `rlcard` (72 values): RLCard's default. Hole and board cards are mixed, and
+  it shows neither position nor who raised; kept for comparison and for old checkpoints.
+
+You never choose the encoding when loading an agent: it is read from the
+checkpoint's network, and the agent plays correctly in every GUI and tool.
+
 ### Units and conventions
 
 * Results are in **mbb/h**: thousandths of a big blind per hand. +1000 mbb/h
@@ -115,6 +130,7 @@ Useful evaluation options in every limit hold'em script:
   about ±65 mbb/h against the TAG; use more for smoother curves).
 * `--eval_panel`: which bots to evaluate against.
 * `--evaluate_every`: how often to evaluate.
+* `--obs`: the observation encoding (`rich` or `rlcard`; see above).
 * `--checkpoint_every`: periodic checkpoints. Use it if you want to measure
   exploitability over training later with `sweep_exploitability.py`.
 

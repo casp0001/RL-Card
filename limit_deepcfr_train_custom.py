@@ -7,6 +7,7 @@ import torch
 
 
 import rlcard
+from obs_encoding import ENV_IDS
 from rlcard.utils.utils import remove_illegal
 from deep_cfr_agent_new import DeepCFR
 
@@ -73,7 +74,7 @@ def train(args, on_eval=None):
     returns True (used by tune.py). Returns the trained agent. '''
     # Make environments
     env = rlcard.make(
-        'limit-holdem',
+        ENV_IDS[args.obs],
         config={'seed': args.seed, 
                 'allow_step_back': True}
     )
@@ -101,7 +102,7 @@ def train(args, on_eval=None):
     eval_agent = DeepCFREvalAgent(agent)
 
     # Evaluation panel of fixed opponents (see eval_panel.py)
-    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals)
+    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
     panel_logger = PanelLogger(args.log_dir, panel.members)
 
     with Logger(args.log_dir) as logger:
@@ -158,6 +159,9 @@ def build_parser():
     parser.add_argument('--num_episodes', type=int, default=1000,
                         help='Number of Deep CFR iterations')
     add_panel_args(parser)
+    parser.add_argument('--obs', type=str, default='rich', choices=['rich', 'rlcard'],
+                        help="Observation encoding: 'rich' (153 values: position, own vs board cards, "
+                             "betting sequence; see obs_encoding.py) or RLCard's default 72-value one")
     parser.add_argument('--save_model', type=str2bool, default=True,
                         help='Save checkpoints (tune.py turns this off for trials)')
     parser.add_argument('--evaluate_every', type=int, default=2,

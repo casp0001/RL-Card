@@ -26,6 +26,35 @@ def warmup(agent, args):
     print("Warmup complete.")
 
 
+def frozen_copy(agent):
+    ''' Copy of an agent to use as a frozen self-play opponent.
+
+    A plain copy.deepcopy also copies the replay / reservoir buffers (up to
+    gigabytes, and seconds per snapshot) although the opponent never trains;
+    here they are replaced by a NullBuffer that discards everything. A PPO
+    opponent would also queue every move for an update that never comes, so
+    its step() samples from the policy without recording anything. '''
+    import copy
+    import numpy as np
+    from array_buffers import NullBuffer
+    null = NullBuffer()
+    memo = {}
+    for owner, attr in ((agent, 'memory'), (agent, '_reservoir_buffer'),
+                        (getattr(agent, '_rl_agent', None), 'memory')):
+        buffer = getattr(owner, attr, None) if owner is not None else None
+        if buffer is not None:
+            memo[id(buffer)] = null
+    opponent = copy.deepcopy(agent, memo)
+    if type(agent).__name__ == 'PPOAgent':
+        def step(state, policy=opponent):
+            obs = np.asarray(state['obs'], dtype=np.float32)
+            log_probs, _ = policy._policy_nograd(obs, list(state['legal_actions']))
+            probs = np.exp(log_probs)
+            return int(np.random.choice(len(probs), p=probs / probs.sum()))
+        opponent.step = step
+        opponent._pending = []
+    return opponent
+
 def compute_mbb_per_hand(avg_payoff):
     # RLCard's hold'em payoffs are already divided by the big blind
     # (games/limitholdem/game.py get_payoffs), so avg_payoff is in BB/hand.

@@ -4,7 +4,8 @@ import copy
 import contextlib
 
 import rlcard
-from functions import str2bool
+from obs_encoding import ENV_IDS
+from functions import str2bool, frozen_copy
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
 from rlcard.agents import RandomAgent
 from dqn_agent_relu import DQNAgent 
@@ -22,7 +23,7 @@ def train(args, on_eval=None):
     returns True (used by tune.py). Returns the trained agent. '''
     # Make environments
     env = rlcard.make(
-        'limit-holdem',
+        ENV_IDS[args.obs],
         config={'seed': args.seed}
     )
 
@@ -45,13 +46,14 @@ def train(args, on_eval=None):
         epsilon_decay_steps=args.epsilon_decay_steps,
         device=args.device,
         activation=args.activation,
+        discount_factor=args.discount_factor,
     )
 
     # Opponent pool for self-play: starts as a frozen copy of the initial agent
-    opponent = copy.deepcopy(agent)
+    opponent = frozen_copy(agent)
 
     # Evaluation panel of fixed opponents (see eval_panel.py)
-    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals)
+    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
     panel_logger = PanelLogger(args.log_dir, panel.members)
 
     with Logger(args.log_dir) as logger:
@@ -62,7 +64,7 @@ def train(args, on_eval=None):
 
                     # --- Self-play: update opponent snapshot periodically ---
                     if episode % args.opponent_update_every == 0 and episode > 0:
-                        opponent = copy.deepcopy(agent)
+                        opponent = frozen_copy(agent)
                         if args.verbose:
                             print(f'\n[Episode {episode}] Opponent snapshot updated.')
 
@@ -123,6 +125,9 @@ def build_parser():
     # Training loop
     parser.add_argument('--num_episodes', type=int, default=200_000)
     add_panel_args(parser)
+    parser.add_argument('--obs', type=str, default='rich', choices=['rich', 'rlcard'],
+                        help="Observation encoding: 'rich' (153 values: position, own vs board cards, "
+                             "betting sequence; see obs_encoding.py) or RLCard's default 72-value one")
     parser.add_argument('--checkpoint_every', type=int, default=0,
                         help='Save a checkpoint every N episodes (0 = only the final model). '
                              'DQN checkpoints include the replay memory, so they can be large.')
@@ -142,6 +147,8 @@ def build_parser():
                         help='Larger buffer for longer episodes')
     parser.add_argument('--replay_memory_init_size', type=int, default=100)
     parser.add_argument('--train_every', type=int, default=1)
+    parser.add_argument('--discount_factor', type=float, default=0.99,
+                        help='Gamma. Hands pay out only at the end, so 1.0 is natural (tuning uses 1.0)')
     parser.add_argument('--epsilon_start', type=float, default=1.0)
     parser.add_argument('--epsilon_end', type=float, default=0.1)
     parser.add_argument('--epsilon_decay_steps', type=int, default=40_000,

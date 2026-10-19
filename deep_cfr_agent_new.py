@@ -47,6 +47,8 @@ import torch
 import torch.nn as nn
 
 from rlcard.utils.utils import remove_illegal
+
+from array_buffers import Reservoir
 sys.setrecursionlimit(10000000)
 
 # Networks and tensors live on CPU by default to match the original eager
@@ -62,66 +64,6 @@ StrategyMemory = collections.namedtuple(
 # The traversal relies on step_back, which rlcard 1.2.0 gets wrong for limit
 # hold'em; see rlcard_patches.py.
 import rlcard_patches  # noqa: F401
-
-
-class ReservoirBuffer(object):
-    ''' Fixed-size buffer filled by reservoir sampling.
-
-    Once full, the n-th added element replaces a uniformly random slot with
-    probability capacity / n, so the buffer always holds a uniform sample of
-    everything ever added. Deep CFR needs this (rather than FIFO) so that the
-    linear-CFR average over all iterations is preserved.
-    '''
-    def __init__(self, replay_buffer_capacity):
-        ''' Initialize the buffer
-        '''
-
-        self._replay_buffer_capacity = replay_buffer_capacity
-        self._data = []
-        self._add_calls = 0
-
-    def add(self, element):
-        '''Adds `element` to the buffer using reservoir sampling.
-
-        Args:
-            element: data to be added to the buffer.
-        '''
-        if len(self._data) < self._replay_buffer_capacity:
-            self._data.append(element)
-        else:
-            idx = np.random.randint(0, self._add_calls + 1)
-            if idx < self._replay_buffer_capacity:
-                self._data[idx] = element
-        self._add_calls += 1
-
-    def sample(self, num_samples):
-        ''' Returns `num_samples` uniformly sampled from the buffer.
-
-        Args:
-            num_samples (int): number of samples to draw.
-
-        Returns:
-            sample data (list): a list of random sampled elements of the buffer
-
-        Raises:
-            ValueError: If there are less than `num_samples` elements in the buffer
-        '''
-        if len(self._data) < num_samples:
-            raise ValueError("{} elements could not be sampled from size {}".format(
-                num_samples, len(self._data)))
-        return random.sample(self._data, num_samples)
-
-    def clear(self):
-        ''' Clear the buffer
-        '''
-        self._data = []
-        self._add_calls = 0
-
-    def __len__(self):
-        return len(self._data)
-
-    def __iter__(self):
-        return iter(self._data)
 
 
 def _build_mlp(input_dim, layer_sizes, num_actions):
@@ -215,7 +157,12 @@ class DeepCFR():
         self._info_state_dim = int(np.prod(self._embedding_size))
 
         # Define strategy network, optimizer & memory.
-        self._strategy_memories = ReservoirBuffer(memory_capacity)
+        # Array-backed reservoirs (array_buffers.Reservoir): ~85 bytes per
+        # sample instead of ~800 for a namedtuple of float64 arrays.
+        self._strategy_memories = Reservoir(memory_capacity, {
+            'info_state': ((self._info_state_dim,), np.float16),
+            'iteration': ((), np.int32),
+            'strategy_action_probs': ((self._num_actions,), np.float32)})
         self._policy_network = _build_mlp(
             self._info_state_dim, self._policy_network_layers, self._num_actions)
         self._optimizer_policy = torch.optim.Adam(
@@ -223,7 +170,11 @@ class DeepCFR():
 
         # Define advantage networks, optimizers & memories. (One per player)
         self._advantage_memories = [
-            ReservoirBuffer(memory_capacity) for _ in range(self._num_players)
+            Reservoir(memory_capacity, {'info_state': ((self._info_state_dim,), np.float16),
+                                        'iteration': ((), np.int32),
+                                        'advantage': ((), np.float32),
+                                        'action': ((), np.int16)})
+            for _ in range(self._num_players)
         ]
         self._advantage_networks = [
             _build_mlp(self._info_state_dim,
@@ -390,7 +341,8 @@ class DeepCFR():
                 for a_ in actions:
                     sampled_regret[action] -= strategy[a_] * expected_payoff[a_][player]
             for act in actions:
-                self._advantage_memories[player].add(AdvantageMemory(state['obs'].flatten(), self._iteration, sampled_regret[act], act))
+                self._advantage_memories[player].add({'info_state': state['obs'].flatten(), 'iteration': self._iteration,
+                                                      'advantage': sampled_regret[act], 'action': act})
             ev = np.zeros(self._env.num_players)
             for action in actions:
                 ev += strategy[action] * np.asarray(expected_payoff[action])
@@ -403,10 +355,8 @@ class DeepCFR():
             probs /= probs.sum()
             action = np.random.choice(range(self._num_actions), p=probs)
             child_state, _ = self._env.step(action)
-            self._strategy_memories.add(
-                StrategyMemory(
-                    state['obs'].flatten(),
-                    self._iteration, strategy))
+            self._strategy_memories.add({'info_state': state['obs'].flatten(), 'iteration': self._iteration,
+                                         'strategy_action_probs': strategy})
             payoff = self._traverse_game_tree(child_state, player)
             self._env.step_back()
             return payoff
@@ -471,26 +421,17 @@ class DeepCFR():
         Returns:
             loss advantages (float): The average loss over the advantage network.
         '''
-        if self._batch_size_advantage and self._batch_size_advantage < len(self._advantage_memories[player]._data):
-            samples = self._advantage_memories[player].sample(self._batch_size_advantage)
-        else:
-            samples = self._advantage_memories[player]
-        info_states = []
-        advantages = []
-        iterations = []
-        acts = []
-        for s in samples:
-            info_states.append(s.info_state)
-            advantages.append(s.advantage)
-            iterations.append(s.iteration)
-            acts.append(s.action)
-        if info_states == []:
+        memory = self._advantage_memories[player]
+        if len(memory) == 0:
             return None
-        # Ensure some samples have been gathered.
-        info_states = np.array(info_states, dtype=np.float32)
-        advantages = np.array(advantages, dtype=np.float32)
-        iterations = np.array(iterations, dtype=np.float32)
-        acts = np.array(acts, dtype=np.int64)
+        if self._batch_size_advantage and self._batch_size_advantage < len(memory):
+            samples = memory.sample(self._batch_size_advantage)
+        else:
+            samples = memory.arrays()
+        info_states = samples['info_state'].astype(np.float32)
+        advantages = samples['advantage'].astype(np.float32)
+        iterations = samples['iteration'].astype(np.float32)
+        acts = samples['action'].astype(np.int64)
 
         network = self._advantage_networks[player]
         optimizer = self._optimizer_advantages[player]
@@ -525,22 +466,16 @@ class DeepCFR():
         Returns:
             The average loss obtained on this batch of transitions or `None`.
         '''
-        if self._batch_size_strategy and self._batch_size_strategy < len(self._strategy_memories._data):
-            samples = self._strategy_memories.sample(self._batch_size_strategy)
-        else:
-            samples = self._strategy_memories
-        info_states = []
-        action_probs = []
-        iterations = []
-        for s in samples:
-            info_states.append(s.info_state)
-            action_probs.append(s.strategy_action_probs)
-            iterations.append(s.iteration)
-        if info_states == []:
+        memory = self._strategy_memories
+        if len(memory) == 0:
             return None
-        info_states = np.array(info_states, dtype=np.float32)
-        action_probs = np.array(np.squeeze(action_probs), dtype=np.float32)
-        iterations = np.array(iterations, dtype=np.float32)
+        if self._batch_size_strategy and self._batch_size_strategy < len(memory):
+            samples = memory.sample(self._batch_size_strategy)
+        else:
+            samples = memory.arrays()
+        info_states = samples['info_state'].astype(np.float32)
+        action_probs = samples['strategy_action_probs'].astype(np.float32)
+        iterations = samples['iteration'].astype(np.float32)
 
         info_states_t = torch.from_numpy(info_states).to(_DEVICE)
         action_probs_t = torch.from_numpy(action_probs).to(_DEVICE)

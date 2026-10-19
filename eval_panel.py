@@ -176,11 +176,15 @@ class Panel(object):
         eval_seed (int): seed of deal 0.
     '''
 
-    def __init__(self, members=DEFAULT_MEMBERS, num_deals=1000, eval_seed=EVAL_SEED):
+    def __init__(self, members=DEFAULT_MEMBERS, num_deals=1000, eval_seed=EVAL_SEED, obs='rlcard'):
+        ''' obs: the observation encoding of the agents that will be evaluated
+        directly (training agents read state['obs']); agent_loading Policies
+        pick their own encoding and work with either. '''
+        from obs_encoding import ENV_IDS
         self.members = {name: MEMBERS[name]() for name in members}
         self.num_deals = num_deals
         self.eval_seed = eval_seed
-        self.env = rlcard.make('limit-holdem', config={'seed': eval_seed})
+        self.env = rlcard.make(ENV_IDS[obs], config={'seed': eval_seed})
 
     def _reseed(self, seed, member, counted):
         self.env.seed(seed)
@@ -225,6 +229,32 @@ class Panel(object):
             'actions': {ACTION_NAMES[a]: counted.counts[a] / n_actions for a in ACTION_NAMES},
             'seconds': time.perf_counter() - start,
         }
+
+
+def duplicate_match(agent_a, agent_b, num_deals, eval_seed=40_000_000):
+    ''' Head-to-head on duplicate deals with common random numbers (the same
+    protocol as Panel.evaluate). Returns agent_a's win rate in mbb/hand:
+    {'mean', 'se', 'deals'}. '''
+    env = rlcard.make('limit-holdem', config={'seed': eval_seed})
+    per_deal = np.empty(num_deals)
+    with preserved_global_rng(), eval_mode(agent_a), eval_mode(agent_b):
+        for i in range(num_deals):
+            seed = eval_seed + i
+            total = 0.0
+            for seat in (0, 1):
+                env.seed(seed)
+                np.random.seed(seed % (2 ** 32))
+                random.seed(seed)
+                torch.manual_seed(seed)
+                _reseed_agent(agent_a, seed + 1)
+                _reseed_agent(agent_b, seed + 2)
+                env.set_agents([agent_a, agent_b] if seat == 0 else [agent_b, agent_a])
+                _, payoffs = env.run(is_training=False)
+                total += payoffs[seat]
+            per_deal[i] = total / 2
+    mbb = per_deal * 1000
+    se = mbb.std(ddof=1) / math.sqrt(num_deals) if num_deals > 1 else float('nan')
+    return {'mean': float(mbb.mean()), 'se': float(se), 'deals': num_deals}
 
 
 def format_results(results, prefix=''):

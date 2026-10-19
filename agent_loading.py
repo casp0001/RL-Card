@@ -24,6 +24,7 @@ import numpy as np
 import torch
 
 import rlcard_patches  # noqa: F401
+from obs_encoding import encoding_of_dim, obs_key
 
 NUM_ACTIONS = 4
 CALL, RAISE, FOLD, CHECK = 0, 1, 2, 3
@@ -56,14 +57,25 @@ def _renormalise(probs, legal):
 
 
 class Policy(object):
-    ''' Base class: subclasses implement probs (and probs_batch_obs if batched). '''
+    ''' Base class: subclasses implement probs (and probs_batch_obs if batched).
+
+    Neural policies know which observation encoding their network was trained
+    on ('rlcard' or 'rich', from its input size) and read it from the matching
+    state key (state['obs'] or state['obs_rich']), so they play correctly in
+    any limit-holdem env. '''
     use_raw = False
     batched = False
     kind = None
+    encoding = 'rlcard'
+    obs_key = 'obs_rlcard'
+
+    def _set_input_dim(self, dim):
+        self.encoding = encoding_of_dim(int(dim))
+        self.obs_key = obs_key(self.encoding)
 
     def probs(self, state):
         legal = list(state['legal_actions'])
-        obs = np.asarray(state['obs'], dtype=np.float32)[None]
+        obs = np.asarray(state[self.obs_key], dtype=np.float32)[None]
         return self.probs_batch_obs(obs, legal)[0]
 
     def eval_step(self, state):
@@ -90,6 +102,7 @@ class DQNPolicy(Policy):
 
     def __init__(self, agent):
         self.agent = agent
+        self._set_input_dim(np.prod(agent.q_estimator.state_shape))
 
     def probs_batch_obs(self, obs, legal):
         q = self.agent.q_estimator.predict_nograd(np.asarray(obs, dtype=np.float32))
@@ -108,6 +121,7 @@ class NFSPPolicy(Policy):
         self.agent = agent
         agent.evaluate_with = 'average_policy'
         agent.policy_network.eval()
+        self._set_input_dim(np.prod(agent._state_shape))
 
     def probs_batch_obs(self, obs, legal):
         with torch.no_grad():
@@ -123,6 +137,7 @@ class DeepCFRPolicy(Policy):
 
     def __init__(self, agent):
         self.agent = agent
+        self._set_input_dim(agent._info_state_dim)
 
     def probs_batch_obs(self, obs, legal):
         from deep_cfr_agent_new import _DEVICE
@@ -143,6 +158,7 @@ class PPOPolicy(Policy):
     def __init__(self, agent):
         self.agent = agent
         agent.network.eval()
+        self._set_input_dim(np.prod(agent.state_shape))
 
     def probs_batch_obs(self, obs, legal):
         with torch.no_grad():
@@ -238,6 +254,12 @@ def _load(path):
     return torch.load(path, map_location='cpu', weights_only=False)
 
 
+def _empty_memory(memory):
+    ''' A DQN replay-memory checkpoint entry without its data (old or new format). '''
+    return {'memory_size': memory['memory_size'], 'batch_size': memory['batch_size'],
+            'num_actions': memory.get('num_actions', NUM_ACTIONS), 'memory': []}
+
+
 def _hidden_layers(state_dict):
     ''' Hidden layer sizes of an nn.Sequential MLP from its weight shapes. '''
     weights = [v for k, v in state_dict.items() if k.endswith('weight') and v.dim() == 2]
@@ -249,7 +271,7 @@ def load_policy(kind, ckpt=None, device=None):
     if kind == 'dqn':
         from dqn_agent_XPU import DQNAgent
         checkpoint = _load(_resolve(ckpt, 'checkpoint_dqn.pt'))
-        checkpoint['memory']['memory'] = []          # the replay buffer is not needed
+        checkpoint['memory'] = _empty_memory(checkpoint['memory'])   # the replay buffer is not needed
         agent = DQNAgent.from_checkpoint(checkpoint)
         if device:
             agent.set_device(device)
@@ -257,8 +279,10 @@ def load_policy(kind, ckpt=None, device=None):
     if kind == 'nfsp':
         from nfsp_agent_XPU import NFSPAgent
         checkpoint = _load(_resolve(ckpt, 'checkpoint_nfsp.pt'))
-        checkpoint['reservoir_buffer']['data'] = []   # buffers are not needed to play
-        checkpoint['rl_agent']['memory']['memory'] = []
+        res = checkpoint['reservoir_buffer']               # buffers are not needed to play
+        checkpoint['reservoir_buffer'] = {'reservoir_buffer_capacity': res['reservoir_buffer_capacity'],
+                                          'data': [], 'add_calls': 0}
+        checkpoint['rl_agent']['memory'] = _empty_memory(checkpoint['rl_agent']['memory'])
         agent = NFSPAgent.from_checkpoint(checkpoint)
         if device:
             agent.set_device(device)
@@ -267,7 +291,9 @@ def load_policy(kind, ckpt=None, device=None):
         import rlcard
         from deep_cfr_agent_new import DeepCFR
         checkpoint = _load(_resolve(ckpt, 'model.ckpt'))
-        env = rlcard.make('limit-holdem', config={'allow_step_back': True})
+        from obs_encoding import ENV_IDS
+        input_dim = next(v for k, v in checkpoint['policy_network'].items() if k.endswith('weight')).shape[1]
+        env = rlcard.make(ENV_IDS[encoding_of_dim(input_dim)], config={'allow_step_back': True})
         # layer sizes are read from the weights, so no --policy_layers needed
         agent = DeepCFR(env=env, memory_capacity=1,
                         policy_network_layers=_hidden_layers(checkpoint['policy_network']),

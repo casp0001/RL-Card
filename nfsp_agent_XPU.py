@@ -32,6 +32,8 @@ import torch.nn.functional as F
 from dqn_agent_XPU import DQNAgent, make_optimizer
 from rlcard.utils.utils import remove_illegal
 
+from array_buffers import Reservoir
+
 Transition = collections.namedtuple('Transition', 'info_state action_probs')
 
 class NFSPAgent(object):
@@ -273,18 +275,18 @@ class NFSPAgent(object):
                 len(self._reservoir_buffer) < self._min_buffer_size_to_learn):
             return None
 
-        transitions = self._reservoir_buffer.sample(self._batch_size)
-        info_states = [t.info_state for t in transitions]
-        action_probs = [t.action_probs for t in transitions]
+        batch = self._reservoir_buffer.sample(self._batch_size)
+        info_states = batch['info_state']
+        action_probs = batch['action_probs']
 
         self.policy_network_optimizer.zero_grad()
         self.policy_network.train()
 
         # (batch, state_size)
-        info_states = torch.from_numpy(np.array(info_states)).float().to(self.device)
+        info_states = torch.from_numpy(np.asarray(info_states, dtype=np.float32)).to(self.device)
 
         # (batch, num_actions)
-        eval_action_probs = torch.from_numpy(np.array(action_probs)).float().to(self.device)
+        eval_action_probs = torch.from_numpy(np.asarray(action_probs, dtype=np.float32)).to(self.device)
 
         # (batch, num_actions)
         log_forecast_action_probs = self.policy_network(info_states)
@@ -310,7 +312,7 @@ class NFSPAgent(object):
         self.device = device
         self._rl_agent.set_device(device)
         
-    def checkpoint_attributes(self):
+    def checkpoint_attributes(self, include_buffers=True):
         '''
         Return the current checkpoint attributes (dict)
         Checkpoint attributes are used to save and restore the model in the middle of training
@@ -320,8 +322,8 @@ class NFSPAgent(object):
         return {
             'agent_type': 'NFSPAgent',
             'policy_network': self.policy_network.checkpoint_attributes(),
-            'reservoir_buffer': self._reservoir_buffer.checkpoint_attributes(),
-            'rl_agent': self._rl_agent.checkpoint_attributes(),
+            'reservoir_buffer': self._reservoir_buffer.checkpoint_attributes(include_buffers),
+            'rl_agent': self._rl_agent.checkpoint_attributes(include_buffers),
             'policy_network_optimizer': self.policy_network_optimizer.state_dict(),
             'device': self.device,
             'anticipatory_param': self._anticipatory_param,
@@ -384,14 +386,16 @@ class NFSPAgent(object):
         agent._rl_agent.set_device(agent.device)
         return agent
         
-    def save_checkpoint(self, path, filename='checkpoint_nfsp.pt'):
-        ''' Save the model checkpoint (all attributes)
+    def save_checkpoint(self, path, filename='checkpoint_nfsp.pt', include_buffers=False):
+        ''' Save the model checkpoint.
 
         Args:
-            path (str): the path to save the model
+            path (str): the folder to save into
+            include_buffers (bool): also save the reservoir and replay memories
+              (needed only to resume training; they can be gigabytes)
         '''
-        torch.save(self.checkpoint_attributes(), path + '/' + filename)
-        
+        torch.save(self.checkpoint_attributes(include_buffers), path + '/' + filename)
+
 
 class AveragePolicyNetwork(nn.Module):
     '''
@@ -470,76 +474,36 @@ class AveragePolicyNetwork(nn.Module):
         agent.mlp.load_state_dict(checkpoint['mlp'])
         return agent
 
-class ReservoirBuffer(object):
-    ''' Allows uniform sampling over a stream of data.
-
-    This class supports the storage of arbitrary elements, such as observation
-    tensors, integer actions, etc.
-
-    See https://en.wikipedia.org/wiki/Reservoir_sampling for more details.
-    '''
+class ReservoirBuffer(Reservoir):
+    ''' Reservoir of (info_state, action_probs) transitions for the average
+    policy, array-backed (see array_buffers.Reservoir): ~10x smaller than a
+    list of namedtuples. sample() returns {'info_state', 'action_probs'}
+    arrays. Old checkpoints (lists of Transition) still load. '''
 
     def __init__(self, reservoir_buffer_capacity):
-        ''' Initialize the buffer.
-        '''
+        super().__init__(reservoir_buffer_capacity)
         self._reservoir_buffer_capacity = reservoir_buffer_capacity
-        self._data = []
-        self._add_calls = 0
 
     def add(self, element):
-        ''' Potentially adds `element` to the reservoir buffer.
+        ''' Potentially adds a Transition(info_state, action_probs). '''
+        if self.data is None:
+            self._make({'info_state': (np.asarray(element.info_state).shape, np.float16),
+                        'action_probs': (np.asarray(element.action_probs).shape, np.float16)})
+        super().add({'info_state': element.info_state, 'action_probs': element.action_probs})
 
-        Args:
-            element (object): data to be added to the reservoir buffer.
-        '''
-        if len(self._data) < self._reservoir_buffer_capacity:
-            self._data.append(element)
-        else:
-            idx = np.random.randint(0, self._add_calls + 1)
-            if idx < self._reservoir_buffer_capacity:
-                self._data[idx] = element
-        self._add_calls += 1
+    def checkpoint_attributes(self, include_data=True):
+        state = super().checkpoint_attributes(include_data)
+        state['reservoir_buffer_capacity'] = self._reservoir_buffer_capacity
+        return state
 
-    def sample(self, num_samples):
-        ''' Returns `num_samples` uniformly sampled from the buffer.
-
-        Args:
-            num_samples (int): The number of samples to draw.
-
-        Returns:
-            An iterable over `num_samples` random elements of the buffer.
-
-        Raises:
-            ValueError: If there are less than `num_samples` elements in the buffer
-        '''
-        if len(self._data) < num_samples:
-            raise ValueError("{} elements could not be sampled from size {}".format(
-                    num_samples, len(self._data)))
-        return random.sample(self._data, num_samples)
-
-    def clear(self):
-        ''' Clear the buffer
-        '''
-        self._data = []
-        self._add_calls = 0
-        
-    def checkpoint_attributes(self):
-        return {
-            'data': self._data,
-            'add_calls': self._add_calls,
-            'reservoir_buffer_capacity': self._reservoir_buffer_capacity,
-        }
-        
     @classmethod
     def from_checkpoint(cls, checkpoint):
-        reservoir_buffer = cls(checkpoint['reservoir_buffer_capacity'])
-        reservoir_buffer._data = checkpoint['data']
-        reservoir_buffer._add_calls = checkpoint['add_calls']
-        return reservoir_buffer
-
-    def __len__(self):
-        return len(self._data)
-
-    def __iter__(self):
-        return iter(self._data)
-
+        buf = cls(checkpoint['reservoir_buffer_capacity'])
+        if checkpoint.get('kind') == 'reservoir':
+            buf._load(checkpoint)
+            buf.add_calls = checkpoint.get('add_calls', buf.size)
+        else:
+            for transition in checkpoint.get('data', []):   # old list-based checkpoints
+                buf.add(transition)
+            buf.add_calls = checkpoint.get('add_calls', buf.size)
+        return buf
