@@ -39,6 +39,11 @@ REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 FINAL_ROOT = os.path.join(REPO_ROOT, 'experiments', 'final')
 CHECKPOINT_KINDS = ('dqn', 'nfsp', 'deepcfr', 'ppo')
 ALGO_ORDER = ['dqn', 'ppo', 'nfsp', 'deepcfr']
+# Held-out panel deals: tuning trials and `tune.py finalists` (which picks the
+# winner) use the panel's default deals from eval_panel.EVAL_SEED, so the
+# reported panel results use different deals to avoid selection bias.
+FINAL_PANEL_SEED = 50_000_000
+LBR_CHUNK = 250     # LBR deals per saved chunk (rule-based agents take ~13 s per deal)
 
 
 # --------------------------------------------------------------------------- #
@@ -57,10 +62,14 @@ def build_manifest(studies, extra):
         winner = record.get('winner')
         if not winner:
             raise SystemExit(f'{path} has no winner yet')
-        runs = [r for r in record['runs'] if r['trial'] == winner['trial']]
+        runs = [r for r in record['runs'] if r['trial'] == winner['trial'] and 'failed' not in r]
+        expected = winner.get('seeds')
+        if expected and sorted(r['seed'] for r in runs) != sorted(expected):
+            raise SystemExit(f'{path}: the winner should have seeds {expected} but has '
+                             f'{sorted(r["seed"] for r in runs)} -- finish `tune.py finalists` first')
         for r in runs:
             entries.append({'name': f'{algo}_s{r["seed"]}', 'algo': algo, 'kind': algo,
-                            'ckpt': r['log_dir'], 'seed': r['seed'], 'study': study,
+                            'ckpt': r['log_dir'].replace('\\', '/'), 'seed': r['seed'], 'study': study,
                             'trial': winner['trial'], 'params': winner['params']})
     for spec in extra:
         name, kind = spec.split('=', 1)
@@ -104,6 +113,13 @@ class Results(object):
 
     def put(self, key, value):
         self.data['tasks'][key] = value
+        self._save()
+
+    def drop(self, key):
+        if self.data['tasks'].pop(key, None) is not None:
+            self._save()
+
+    def _save(self):
         tmp = self.path + '.tmp'
         with open(tmp, 'w', encoding='utf-8') as f:
             json.dump(self.data, f, indent=1)
@@ -118,7 +134,8 @@ def run(args):
     entries = load_manifest(args.manifest)
     os.makedirs(args.out, exist_ok=True)
     settings = {'h2h_deals': args.h2h_deals, 'panel_deals': args.panel_deals,
-                'lbr_deals': args.lbr_deals, 'lbr_samples': args.lbr_samples}
+                'lbr_deals': args.lbr_deals, 'lbr_bot_deals': args.lbr_bot_deals,
+                'lbr_samples': args.lbr_samples, 'panel_seed': FINAL_PANEL_SEED}
     results = Results(os.path.join(args.out, 'results.json'), settings)
 
     policies = {}
@@ -148,13 +165,14 @@ def run(args):
             r = duplicate_match(policy(a), policy(b), args.h2h_deals)
             text = f'{a["name"]} vs {b["name"]}: {r["mean"]:+.1f} +/- {r["se"]:.1f}'
         elif kind == 'panel':
-            p = Panel(DEFAULT_MEMBERS, num_deals=args.panel_deals).evaluate(policy(a))
+            p = Panel(DEFAULT_MEMBERS, num_deals=args.panel_deals, eval_seed=FINAL_PANEL_SEED).evaluate(policy(a))
             r = {'members': p['members'], 'min': p['min'], 'mean': p['mean'], 'actions': p['actions']}
             text = f'{a["name"]} panel min {r["min"]:+.1f}'
         else:
-            r = LBR(policy(a), samples=args.lbr_samples).evaluate(args.lbr_deals)
+            deals = args.lbr_deals if a['kind'] in CHECKPOINT_KINDS else args.lbr_bot_deals
+            r = _lbr_chunked(results, key, policy(a), deals, args.lbr_samples, LBR, a['name'])
             text = f'{a["name"]} LBR {r["mean"]:+.1f} +/- {r["se"]:.1f}'
-        r['seconds'] = time.perf_counter() - start
+        r['seconds'] = r.get('seconds_total', time.perf_counter() - start)
         results.put(key, r)
         print(f'[{i}/{len(todo)}] {kind:5s} {text}  ({r["seconds"]:.0f}s)', flush=True)
     report(argparse.Namespace(manifest=args.manifest, out=args.out))
@@ -162,6 +180,31 @@ def run(args):
 
 def _key(kind, a, b=None):
     return f'{kind}:{a["name"]}' + (f':{b["name"]}' if b else '')
+
+
+def _lbr_chunked(results, key, policy, num_deals, samples, LBR, name):
+    ''' LBR in chunks of LBR_CHUNK deals; each finished chunk is saved under
+    'partial:<key>', so an interruption loses at most one chunk. '''
+    from exploitability import summarize_deals
+    partial_key = 'partial:' + key
+    part = results.get(partial_key) or {'per_deal': [], 'seconds': 0.0, 'inconsistent_actions': 0}
+    lbr = LBR(policy, samples=samples)
+    while len(part['per_deal']) < num_deals:
+        done = len(part['per_deal'])
+        n = min(LBR_CHUNK, num_deals - done)
+        before = lbr.inconsistent
+        r = lbr.evaluate(n, first_deal=done, return_per_deal=True)
+        part['per_deal'] += r['per_deal']
+        part['seconds'] += r['seconds']
+        part['inconsistent_actions'] += lbr.inconsistent - before
+        results.put(partial_key, part)
+        s = summarize_deals(part['per_deal'])
+        print(f'    {name} LBR {s["deals"]}/{num_deals} deals: {s["mean"]:+.1f} +/- {s["se"]:.1f} '
+              f'({part["seconds"]:.0f}s)', flush=True)
+    out = summarize_deals(part['per_deal'])
+    out.update(seconds_total=part['seconds'], inconsistent_actions=part['inconsistent_actions'])
+    results.drop(partial_key)
+    return out
 
 
 # --------------------------------------------------------------------------- #
@@ -196,6 +239,20 @@ def _write_table(path_base, title, header, rows, note=''):
     if note:
         md += ['', note]
     return '\n'.join(md) + '\n'
+
+
+def _h2h_algo_se(grid, deal_var):
+    ''' Standard error of the mean of a (row seeds x column seeds) grid of
+    head-to-head results: a two-way random-effects approximation, i.e. the
+    seed-to-seed variation of the row agents' means and of the column agents'
+    means, plus the deal noise of the matches themselves. '''
+    def seed_term(means):
+        means = means[np.isfinite(means)]
+        return means.var(ddof=1) / len(means) if len(means) > 1 else 0.0
+    with np.errstate(all='ignore'):
+        rows, cols = np.nanmean(grid, axis=1), np.nanmean(grid, axis=0)
+    deal = sum(deal_var) / len(deal_var) ** 2
+    return math.sqrt(seed_term(rows) + seed_term(cols) + deal)
 
 
 def report(args):
@@ -243,19 +300,26 @@ def report(args):
             if a == b:
                 row.append('--')
                 continue
-            vals = [h2h(x['name'], y['name']) for x in by_algo[a] for y in by_algo[b]]
-            vals = [v for v in vals if v]
-            if not vals:
+            grid = np.full((len(by_algo[a]), len(by_algo[b])), np.nan)
+            deal_var = []
+            for i, x in enumerate(by_algo[a]):
+                for j, y in enumerate(by_algo[b]):
+                    v = h2h(x['name'], y['name'])
+                    if v:
+                        grid[i, j] = v[0]
+                        deal_var.append(v[1] ** 2)
+            if not deal_var:
                 row.append('')
                 continue
-            means = np.array([v[0] for v in vals])
-            se = math.sqrt(sum(v[1] ** 2 for v in vals)) / len(vals)
-            row.append(_pm(means.mean(), se) + (f' (sd {means.std(ddof=1):.0f})' if len(vals) > 1 else ''))
+            row.append(_pm(float(np.nanmean(grid)), _h2h_algo_se(grid, deal_var))
+                       + (f' (sd {np.nanstd(grid, ddof=1):.0f})' if np.isfinite(grid).sum() > 1 else ''))
         rows.append(row)
     md.append(_write_table(os.path.join(args.out, 'h2h_algorithms'),
                            'Head-to-head by algorithm (mean over all seed pairs)', ['algorithm'] + algos, rows,
                            'Each cell averages every agent of the row algorithm against every agent of the '
-                           'column algorithm; ± is the standard error of that mean, sd the spread over seed pairs.'))
+                           'column algorithm; ± is a standard error that counts the training seeds of both '
+                           'algorithms as the random units (seed pairs share agents, so they are not '
+                           'independent) plus the card noise; sd is the spread over seed pairs.'))
 
     # ---- panel + exploitability, agents
     from exploitability import combine_bounds
@@ -327,6 +391,8 @@ def main():
     r.add_argument('--h2h_deals', type=int, default=2000, help='duplicate deals per head-to-head pair')
     r.add_argument('--panel_deals', type=int, default=5000, help='duplicate deals per panel member')
     r.add_argument('--lbr_deals', type=int, default=5000)
+    r.add_argument('--lbr_bot_deals', type=int, default=500,
+                   help='LBR deals for rule-based reference agents (--add tag=tag): ~13 s per deal')
     r.add_argument('--lbr_samples', type=int, default=500)
     g = sub.add_parser('report', help='write the tables from results.json')
     g.add_argument('--manifest', default=os.path.join(FINAL_ROOT, 'manifest.json'))

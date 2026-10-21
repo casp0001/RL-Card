@@ -11,9 +11,21 @@ plus optional keys
                             e.g. '256 256' -> [256, 256] (layer sizes)
     'tune': False           do not search, use 'value' instead
     'value': ...            the fixed value when 'tune' is False
+    'start': ...            the starting value: tune.py --enqueue 1 runs it as a
+                            study's first trial (a known-sensible configuration,
+                            so TPE has a reasonable point from the start)
     'help': '...'
 
 FIXED holds script arguments that are always overridden for tuning trials.
+
+Why some parameters are fixed:
+    PPO gae_lambda      with gamma = 1 and at most ~4 decisions per hand per
+                        player, lambda hardly changes the advantages
+    Deep CFR num_traversals / num_step
+                        the budget counts iterations, so more traversals or SGD
+                        steps per iteration are simply more compute; tuning them
+                        would drift to the upper bounds instead of finding a
+                        better configuration at equal cost
 '''
 
 import copy
@@ -31,59 +43,64 @@ LAYERS = ['128 128', '256 256', '256 256 256', '512 512']
 
 SPACES = {
     'dqn': {
-        'lr': {'type': 'float', 'low': 1e-5, 'high': 1e-3, 'log': True},
-        'batch_size': {'type': 'categorical', 'choices': [64, 128, 256]},
-        'mlp_layers': {'type': 'categorical', 'choices': LAYERS, 'list': True},
-        'epsilon_decay_steps': {'type': 'int', 'low': 100_000, 'high': 2_000_000, 'log': True},
-        'replay_memory_size': {'type': 'int', 'low': 50_000, 'high': 500_000, 'log': True},
-        'opponent_update_every': {'type': 'int', 'low': 2_000, 'high': 50_000, 'log': True},
+        'lr': {'type': 'float', 'low': 3e-5, 'high': 1e-3, 'log': True, 'start': 1e-4},
+        'batch_size': {'type': 'categorical', 'choices': [64, 128, 256], 'start': 128},
+        'mlp_layers': {'type': 'categorical', 'choices': LAYERS, 'list': True, 'start': '256 256'},
+        'epsilon_decay_steps': {'type': 'int', 'low': 100_000, 'high': 2_000_000, 'log': True,
+                                'start': 500_000,
+                                'help': "counted in the learning agent's decisions (a few per episode)"},
+        'replay_memory_size': {'type': 'int', 'low': 50_000, 'high': 500_000, 'log': True, 'start': 200_000},
+        'opponent_update_every': {'type': 'int', 'low': 2_000, 'high': 50_000, 'log': True, 'start': 10_000},
         'train_every': {'type': 'categorical', 'choices': [1, 2, 4], 'tune': False, 'value': 1},
         'activation': {'type': 'categorical', 'choices': ['relu', 'tanh'], 'tune': False, 'value': 'relu'},
     },
     'ppo': {
-        'lr': {'type': 'float', 'low': 1e-5, 'high': 1e-3, 'log': True},
-        'update_every': {'type': 'categorical', 'choices': [2048, 4096, 8192, 16384]},
-        'num_epochs': {'type': 'int', 'low': 2, 'high': 8, 'log': False},
-        'batch_size': {'type': 'categorical', 'choices': [128, 256, 512, 1024]},
-        'clip_range': {'type': 'float', 'low': 0.1, 'high': 0.3, 'log': False},
-        'entropy_coef': {'type': 'float', 'low': 1e-4, 'high': 3e-2, 'log': True},
-        'gae_lambda': {'type': 'float', 'low': 0.9, 'high': 0.99, 'log': False},
+        'lr': {'type': 'float', 'low': 5e-5, 'high': 1e-3, 'log': True, 'start': 3e-4},
+        'update_every': {'type': 'categorical', 'choices': [2048, 4096, 8192, 16384], 'start': 4096},
+        'num_epochs': {'type': 'int', 'low': 2, 'high': 8, 'log': False, 'start': 4},
+        'batch_size': {'type': 'categorical', 'choices': [128, 256, 512, 1024], 'start': 256},
+        'clip_range': {'type': 'float', 'low': 0.1, 'high': 0.3, 'log': False, 'start': 0.2},
+        'entropy_coef': {'type': 'float', 'low': 1e-3, 'high': 3e-2, 'log': True, 'start': 0.01},
+        'gae_lambda': {'type': 'float', 'low': 0.9, 'high': 0.99, 'log': False, 'tune': False, 'value': 0.95},
         'mlp_layers': {'type': 'categorical', 'choices': LAYERS, 'list': True, 'tune': False,
                        'value': '256 256'},
-        'opponent_update_every': {'type': 'int', 'low': 2_000, 'high': 50_000, 'log': True,
-                                  'tune': False, 'value': 10_000},
+        'opponent_update_every': {'type': 'int', 'low': 2_000, 'high': 50_000, 'log': True, 'start': 10_000,
+                                  'help': 'self-play stability is the usual PPO failure in poker'},
     },
     'nfsp': {
-        'rl_learning_rate': {'type': 'float', 'low': 1e-3, 'high': 0.2, 'log': True,
+        # starts follow Heinrich & Silver (2016): RL 0.1, SL 0.005, eta 0.1, epsilon 0.06
+        'rl_learning_rate': {'type': 'float', 'low': 5e-3, 'high': 0.2, 'log': True, 'start': 0.05,
                              'help': 'range for SGD; use ~1e-5..1e-3 with optimizer=adam'},
-        'sl_learning_rate': {'type': 'float', 'low': 1e-4, 'high': 2e-2, 'log': True,
+        'sl_learning_rate': {'type': 'float', 'low': 1e-3, 'high': 2e-2, 'log': True, 'start': 0.005,
                              'help': 'range for SGD; use ~1e-5..1e-3 with optimizer=adam'},
-        'anticipatory_param': {'type': 'float', 'low': 0.05, 'high': 0.3, 'log': False},
-        'reservoir_buffer_capacity': {'type': 'int', 'low': 200_000, 'high': 2_000_000, 'log': True,
-                                      'help': '~0.9 KB per entry until the memory fixes land'},
-        'q_replay_memory_size': {'type': 'int', 'low': 100_000, 'high': 600_000, 'log': True},
-        'q_epsilon_start': {'type': 'float', 'low': 0.02, 'high': 0.12, 'log': False},
+        'anticipatory_param': {'type': 'float', 'low': 0.05, 'high': 0.3, 'log': False, 'start': 0.1},
+        'reservoir_buffer_capacity': {'type': 'int', 'low': 300_000, 'high': 2_000_000, 'log': True,
+                                      'start': 1_000_000, 'help': '~0.3 KB per entry'},
+        'q_replay_memory_size': {'type': 'int', 'low': 100_000, 'high': 600_000, 'log': True, 'start': 200_000,
+                                 'help': '~0.6 KB per entry'},
+        'q_epsilon_start': {'type': 'float', 'low': 0.02, 'high': 0.12, 'log': False, 'start': 0.06},
         'layers': {'type': 'categorical', 'choices': ['256 256', '512 512', '256 256 256'],
-                   'list': True, 'targets': ['hidden_layers_sizes', 'q_mlp_layers']},
+                   'list': True, 'targets': ['hidden_layers_sizes', 'q_mlp_layers'], 'start': '256 256'},
         'train_every': {'type': 'categorical', 'choices': [64, 128, 256],
-                        'targets': ['train_every', 'q_train_every']},
+                        'targets': ['train_every', 'q_train_every'], 'start': 128},
         'optimizer': {'type': 'categorical', 'choices': ['sgd', 'adam'], 'tune': False, 'value': 'sgd'},
         'q_activation': {'type': 'categorical', 'choices': ['relu', 'tanh'], 'tune': False, 'value': 'relu'},
         'opponent_update_every': {'type': 'int', 'low': 1_000, 'high': 50_000, 'log': True,
                                   'tune': False, 'value': 10_000},
     },
     'deepcfr': {
-        'lr': {'type': 'float', 'low': 1e-4, 'high': 3e-3, 'log': True},
-        # ~60 s per iteration at 1000 traversals + 1000 SGD steps (batch 4096, 4 threads)
-        'num_traversals': {'type': 'int', 'low': 100, 'high': 1500, 'log': True},
-        'num_step': {'type': 'int', 'low': 200, 'high': 2000, 'log': True},
+        'lr': {'type': 'float', 'low': 1e-4, 'high': 3e-3, 'log': True, 'start': 5e-4},
+        # ~60 s per iteration at 1000 traversals + 1000 SGD steps (batch 4096, 4 threads).
+        # Fixed (see the module docstring): they set the compute per iteration.
+        'num_traversals': {'type': 'int', 'low': 100, 'high': 1500, 'log': True, 'tune': False, 'value': 1000},
+        'num_step': {'type': 'int', 'low': 200, 'high': 2000, 'log': True, 'tune': False, 'value': 1000},
         'batch_size': {'type': 'categorical', 'choices': [1024, 4096, 8192],
-                       'targets': ['batch_size_advantage', 'batch_size_strategy']},
+                       'targets': ['batch_size_advantage', 'batch_size_strategy'], 'start': 4096},
         'layers': {'type': 'categorical', 'choices': ['128 128 128', '256 256 256'], 'list': True,
-                   'targets': ['policy_layers', 'advantage_layers']},
+                   'targets': ['policy_layers', 'advantage_layers'], 'start': '256 256 256'},
         'memory_capacity': {'type': 'int', 'low': 500_000, 'high': 5_000_000, 'log': True,
                             'tune': False, 'value': 2_000_000,
-                            'help': 'per buffer (3 buffers, ~0.8 KB per entry until the memory fixes land)'},
+                            'help': 'per buffer (3 buffers, ~0.3 KB per entry)'},
     },
 }
 
@@ -91,7 +108,9 @@ FIXED = {
     # every algorithm trains on the rich observation (obs_encoding.py)
     # gamma = 1 for every algorithm: a hand pays out only at its end, so
     # discounting would just shrink values by the number of decisions left
-    'dqn': {'verbose': False, 'obs': 'rich', 'replay_memory_init_size': 5_000, 'discount_factor': 1.0},
+    # DQN epsilon_end 0.05: the script default (0.1) keeps 10 % random play all run
+    'dqn': {'verbose': False, 'obs': 'rich', 'replay_memory_init_size': 5_000, 'discount_factor': 1.0,
+            'epsilon_end': 0.05},
     'ppo': {'verbose': False, 'obs': 'rich', 'discount_factor': 1.0},
     'nfsp': {'verbose': False, 'obs': 'rich', 'q_discount_factor': 1.0, 'eval_best_response': False,
              'q_replay_memory_init_size': 5_000, 'min_buffer_size_to_learn': 5_000},
@@ -99,12 +118,14 @@ FIXED = {
 }
 
 # Default study settings per algorithm: budget per trial (in the algorithm's
-# unit) and how many panel evaluations a trial reports.
+# unit) and how many panel evaluations a trial reports. 10 evaluations of
+# 6 x 500 duplicate deals cost ~3-4 minutes per trial (~2 % of its time) and
+# still give the pruner rungs at ~30 % and ~70 % of the budget.
 DEFAULT_SETTINGS = {
-    'dqn': {'budget': 1_000_000, 'evals': 20},
-    'ppo': {'budget': 1_000_000, 'evals': 20},
-    'nfsp': {'budget': 2_000_000, 'evals': 20},
-    'deepcfr': {'budget': 200, 'evals': 20},
+    'dqn': {'budget': 1_000_000, 'evals': 10},
+    'ppo': {'budget': 1_000_000, 'evals': 10},
+    'nfsp': {'budget': 2_000_000, 'evals': 10},
+    'deepcfr': {'budget': 200, 'evals': 10},
 }
 
 
@@ -142,9 +163,31 @@ def to_args(name, spec, value):
     return {target: value for target in spec.get('targets', [name])}
 
 
+def start_params(space):
+    ''' The starting configuration of a space ({name: value} of the tuned
+    parameters), or None if a tuned parameter has no 'start'. '''
+    params = {}
+    for name, spec in space.items():
+        if spec.get('tune', True) is False:
+            continue
+        if 'start' not in spec:
+            return None
+        params[name] = spec['start']
+    return params
+
+
+# Bytes per stored sample of the array buffers (array_buffers.py) with the
+# 153-value rich observation stored as float16 (the 72-value one is smaller).
+OBS_BYTES = 153 * 2
+DQN_TRANSITION_BYTES = 2 * OBS_BYTES + 8 + 4 + 1 + 4         # state, next_state, action, reward, done, legal
+NFSP_RESERVOIR_BYTES = OBS_BYTES + 4 * 2                     # info_state, action_probs (float16)
+DEEPCFR_BYTES = (OBS_BYTES + 4 + 16) + 2 * (OBS_BYTES + 4 + 4 + 2)   # strategy + 2 advantage buffers
+PROCESS_OVERHEAD_GB = 0.6                                    # python + torch + rlcard
+
+
 def estimate_memory_gb(algo, space):
-    ''' Rough upper bound of one trial's replay / reservoir memory in GB
-    (current list-based buffers; measured bytes per stored sample). '''
+    ''' Rough upper bound of one trial's memory in GB: the replay / reservoir
+    buffers when full (they grow as they fill) plus the process itself. '''
     def upper(name, default):
         spec = space.get(name)
         if spec is None:
@@ -152,11 +195,14 @@ def estimate_memory_gb(algo, space):
         if spec.get('tune', True) is False:
             return float(spec['value'])
         return float(spec.get('high', default))
+    # opponent snapshots are frozen_copy()s without buffers, so no factor 2
     if algo == 'dqn':
-        return 2 * upper('replay_memory_size', 40_000) * 1576 / 1e9          # + opponent snapshot copy
-    if algo == 'nfsp':
-        return 2 * (upper('q_replay_memory_size', 200_000) * 1576
-                    + upper('reservoir_buffer_capacity', 1_500_000) * 913) / 1e9
-    if algo == 'deepcfr':
-        return upper('memory_capacity', 2_000_000) * (2 * 785 + 921) / 1e9
-    return 0.1   # ppo: on-policy buffer is cleared every update
+        buffers = upper('replay_memory_size', 40_000) * DQN_TRANSITION_BYTES
+    elif algo == 'nfsp':
+        buffers = (upper('q_replay_memory_size', 200_000) * DQN_TRANSITION_BYTES
+                   + upper('reservoir_buffer_capacity', 1_500_000) * NFSP_RESERVOIR_BYTES)
+    elif algo == 'deepcfr':
+        buffers = upper('memory_capacity', 2_000_000) * DEEPCFR_BYTES
+    else:
+        buffers = 0.1e9   # ppo: the on-policy buffer is cleared every update
+    return buffers / 1e9 + PROCESS_OVERHEAD_GB

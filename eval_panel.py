@@ -288,9 +288,20 @@ class PanelLogger(object):
         for a, freq in results['actions'].items():
             row[f'act_{a}'] = freq
         self.rows.append(row)
-        with open(self.csv_path, 'a', newline='') as f:
-            csv.writer(f).writerow([row[c] for c in self.columns])
-        self.plot()
+        # The whole file is rewritten each time and a failed write is only
+        # reported: on Windows a CSV open in Excel is locked, and a log must
+        # never stop a training run (the next write catches up).
+        try:
+            with open(self.csv_path, 'w', newline='') as f:
+                w = csv.writer(f)
+                w.writerow(self.columns)
+                w.writerows([r[c] for c in self.columns] for r in self.rows)
+        except OSError as exc:
+            print(f'\nwarning: could not write {self.csv_path} ({exc}); retrying at the next evaluation', flush=True)
+        try:
+            self.plot()
+        except OSError as exc:
+            print(f'\nwarning: could not write {self.fig_path} ({exc})', flush=True)
 
     def plot(self):
         import matplotlib
@@ -308,8 +319,10 @@ class PanelLogger(object):
         ax.grid(alpha=0.3)
         ax.legend()
         fig.tight_layout()
-        fig.savefig(self.fig_path, dpi=110)
-        plt.close(fig)
+        try:
+            fig.savefig(self.fig_path, dpi=110)
+        finally:
+            plt.close(fig)
 
 
 def add_panel_args(parser):

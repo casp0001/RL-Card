@@ -5,7 +5,7 @@ import contextlib
 
 import rlcard
 from obs_encoding import ENV_IDS
-from functions import fmt_actions, str2bool, frozen_copy
+from functions import fmt_actions, str2bool, frozen_copy, plot_learning_curve
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
 from nfsp_agent_XPU import NFSPAgent
 from rlcard.utils import (
@@ -106,7 +106,7 @@ def train(args):
             # Evaluate the average policy (what NFSP plays) against the panel
             # periodically; performance.csv gets the panel 'min', panel.csv
             # every member. Optionally also the best-response network.
-            if episode % args.evaluate_every == 0:
+            if (episode + 1) % args.evaluate_every == 0 or episode + 1 == args.num_episodes:
                 results = panel.evaluate(agent, nfsp_policy='average_policy')
                 panel_logger.log(episode, results)
                 logger.log_performance(episode, results['min'])
@@ -116,9 +116,10 @@ def train(args):
                     panel_logger_br.log(episode, results_br)
                     print(format_results(results_br, prefix=f'[Episode {episode}] best response: '))
             if args.checkpoint_every > 0 and episode % args.checkpoint_every == 0 and episode > 0:
-                    os.makedirs(f'{args.log_dir}checkpoints/episode_{episode}', exist_ok=True)
-                    agent.save_checkpoint(f'{args.log_dir}/checkpoints/episode_{episode}')
-                    print(f'\nCheckpoint saved at episode {episode} to {args.log_dir}/checkpoints/episode_{episode}')
+                    ckpt_dir = os.path.join(args.log_dir, 'checkpoints', f'episode_{episode}')
+                    os.makedirs(ckpt_dir, exist_ok=True)
+                    agent.save_checkpoint(ckpt_dir)
+                    print(f'\nCheckpoint saved at episode {episode} to {ckpt_dir}')
         csv_path, fig_path = logger.csv_path, logger.fig_path
 
 
@@ -126,7 +127,7 @@ def train(args):
     print(f'\nModel saved to {args.log_dir}')
 
 
-    plot_curve(csv_path, fig_path, 'nfsp_selfplay_limit_holdem')
+    plot_learning_curve(csv_path, fig_path, 'nfsp_selfplay_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
 
@@ -146,7 +147,7 @@ if __name__ == '__main__':
                         help='Save a checkpoint every N episodes (0 = only the final model)')
     parser.add_argument('--eval_best_response', type=str2bool, default=False,
                         help='Also evaluate the best-response (DQN) network (panel_br.csv)')
-    parser.add_argument('--evaluate_every', type=int, default=1_000)
+    parser.add_argument('--evaluate_every', type=int, default=100_000)
     parser.add_argument('--opponent_update_every', type=int, default=10_000)
 
     # NFSP hyper-parameters

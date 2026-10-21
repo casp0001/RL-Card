@@ -28,6 +28,7 @@ Two things differ from DQN/NFSP by necessity, because PPO is on-policy:
 import collections
 
 import numpy as np
+import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -135,7 +136,7 @@ class PPOAgent(object):
 
         # Torch device
         if device is None:
-            self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+            self.device = torch.device(os.environ.get('RL_DEVICE', 'cpu'))
         else:
             self.device = device
 
@@ -305,10 +306,16 @@ class PPOAgent(object):
 
         for _ in range(self.num_epochs):
             np.random.shuffle(indices)
-            for start in range(0, num_samples, batch_size):
-                mb = indices[start:start + batch_size]
-                # A minibatch of one makes the gradient extremely noisy; skip
-                # the ragged tail rather than take a step on a single sample.
+            # Updates fire at episode ends, so num_samples is update_every plus
+            # a few; a ragged tail shorter than half a minibatch would take a
+            # full-size gradient step on a handful of samples, so it joins the
+            # previous minibatch instead.
+            starts = list(range(0, num_samples, batch_size))
+            if len(starts) > 1 and num_samples - starts[-1] < batch_size // 2:
+                starts.pop()
+            for k, start in enumerate(starts):
+                end = starts[k + 1] if k + 1 < len(starts) else num_samples
+                mb = indices[start:end]
                 if len(mb) < 2:
                     continue
 

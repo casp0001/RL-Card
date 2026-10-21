@@ -6,7 +6,7 @@ import contextlib
 
 import rlcard
 from obs_encoding import ENV_IDS
-from functions import fmt_actions, str2bool, frozen_copy
+from functions import fmt_actions, str2bool, frozen_copy, plot_learning_curve
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
 from ppo_agent import PPOAgent
 
@@ -98,7 +98,7 @@ def train(args, on_eval=None):
 
             # Evaluate against the panel periodically; performance.csv gets
             # the panel 'min' (robustness score), panel.csv every member
-            if episode % args.evaluate_every == 0:
+            if (episode + 1) % args.evaluate_every == 0 or episode + 1 == args.num_episodes:
                 results = panel.evaluate(agent)
                 panel_logger.log(episode, results)
                 logger.log_performance(episode, results['min'])
@@ -129,7 +129,7 @@ def train(args, on_eval=None):
         print(f'\nModel saved to {args.log_dir}')
 
     # Plot learning curve
-    plot_curve(csv_path, fig_path, 'ppo_selfplay_limit_holdem')
+    plot_learning_curve(csv_path, fig_path, 'ppo_selfplay_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
     return agent
@@ -149,7 +149,7 @@ def build_parser():
                              "betting sequence; see obs_encoding.py) or RLCard's default 72-value one")
     parser.add_argument('--save_model', type=str2bool, default=True,
                         help='Save checkpoints (tune.py turns this off for trials)')
-    parser.add_argument('--evaluate_every', type=int, default=2_000,
+    parser.add_argument('--evaluate_every', type=int, default=10_000,
                         help='Evaluate against the panel every N episodes')
     parser.add_argument('--opponent_update_every', type=int, default=2_000,
                         help='Freeze a new opponent snapshot every N episodes')

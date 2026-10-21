@@ -36,7 +36,8 @@ from copy import deepcopy
 from rlcard.utils.utils import remove_illegal
 
 from array_buffers import ReplayMemory
-_DEVICE = torch.device('xpu' if torch.xpu.is_available() else 'cpu')
+# torch device: cpu unless the RL_DEVICE environment variable says otherwise (e.g. xpu, cuda)
+_DEVICE = torch.device(os.environ.get('RL_DEVICE', 'cpu'))
 Transition = namedtuple('Transition', ['state', 'action', 'reward', 'next_state', 'done', 'legal_actions'])
 
 
@@ -106,7 +107,7 @@ class DQNAgent(object):
 
         # Torch device
         if device is None:
-            self.device = torch.device('xpu:0' if torch.xpu.is_available() else 'cpu')
+            self.device = _DEVICE
         else:
             self.device = device
 
@@ -259,6 +260,8 @@ class DQNAgent(object):
         self.device = device
         self.q_estimator.device = device
         self.target_estimator.device = device
+        for estimator in (self.q_estimator, self.target_estimator):
+            estimator.qnet.to(device)
 
     def checkpoint_attributes(self, include_buffers=True):
         '''

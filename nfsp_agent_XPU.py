@@ -23,6 +23,7 @@ import random
 import collections
 import enum
 import numpy as np
+import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -117,7 +118,7 @@ class NFSPAgent(object):
         self._prev_action = None
         self.evaluate_with = evaluate_with
         if device is None:
-            self.device = torch.device('xpu:0' if torch.xpu.is_available() else 'cpu')
+            self.device = torch.device(os.environ.get('RL_DEVICE', 'cpu'))
         else:
             self.device = device
 
@@ -311,6 +312,7 @@ class NFSPAgent(object):
     def set_device(self, device):
         self.device = device
         self._rl_agent.set_device(device)
+        self.policy_network.to(device)
         
     def checkpoint_attributes(self, include_buffers=True):
         '''

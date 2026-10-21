@@ -55,6 +55,19 @@ def frozen_copy(agent):
         opponent._pending = []
     return opponent
 
+def plot_learning_curve(csv_path, fig_path, algorithm):
+    ''' rlcard's plot_curve without leaving its figure open (a tuning worker
+    plots once per trial and would otherwise collect figures), drawn with the
+    non-interactive Agg backend unless a GUI backend is already in use. '''
+    import sys
+    import matplotlib
+    if 'matplotlib.pyplot' not in sys.modules:
+        matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    plot_curve(csv_path, fig_path, algorithm)
+    plt.close('all')
+
+
 def compute_mbb_per_hand(avg_payoff):
     # RLCard's hold'em payoffs are already divided by the big blind
     # (games/limitholdem/game.py get_payoffs), so avg_payoff is in BB/hand.

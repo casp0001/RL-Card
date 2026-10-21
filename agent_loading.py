@@ -250,8 +250,22 @@ def _resolve(path, filename):
     return os.path.join(path, filename) if os.path.isdir(path) else path
 
 
-def _load(path):
-    return torch.load(path, map_location='cpu', weights_only=False)
+def _load(path, device=None):
+    ''' Load a checkpoint with every stored 'device' replaced by `device`
+    (default cpu): from_checkpoint builds the networks on the stored device,
+    so a checkpoint saved on a GPU would otherwise not load without one. '''
+    checkpoint = torch.load(path, map_location='cpu', weights_only=False)
+    target = torch.device(device or 'cpu')
+
+    def retarget(obj):
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                if key == 'device' and (value is None or isinstance(value, (str, torch.device))):
+                    obj[key] = target
+                else:
+                    retarget(value)
+    retarget(checkpoint)
+    return checkpoint
 
 
 def _empty_memory(memory):
@@ -270,15 +284,13 @@ def load_policy(kind, ckpt=None, device=None):
     ''' Load an agent of the given kind as a frozen Policy. '''
     if kind == 'dqn':
         from dqn_agent_XPU import DQNAgent
-        checkpoint = _load(_resolve(ckpt, 'checkpoint_dqn.pt'))
+        checkpoint = _load(_resolve(ckpt, 'checkpoint_dqn.pt'), device)
         checkpoint['memory'] = _empty_memory(checkpoint['memory'])   # the replay buffer is not needed
         agent = DQNAgent.from_checkpoint(checkpoint)
-        if device:
-            agent.set_device(device)
         return DQNPolicy(agent)
     if kind == 'nfsp':
         from nfsp_agent_XPU import NFSPAgent
-        checkpoint = _load(_resolve(ckpt, 'checkpoint_nfsp.pt'))
+        checkpoint = _load(_resolve(ckpt, 'checkpoint_nfsp.pt'), device)
         res = checkpoint['reservoir_buffer']               # buffers are not needed to play
         checkpoint['reservoir_buffer'] = {'reservoir_buffer_capacity': res['reservoir_buffer_capacity'],
                                           'data': [], 'add_calls': 0}
@@ -303,7 +315,7 @@ def load_policy(kind, ckpt=None, device=None):
         return DeepCFRPolicy(agent)
     if kind == 'ppo':
         from ppo_agent import PPOAgent
-        agent = PPOAgent.from_checkpoint(_load(_resolve(ckpt, 'checkpoint_ppo.pt')))
+        agent = PPOAgent.from_checkpoint(_load(_resolve(ckpt, 'checkpoint_ppo.pt'), device))
         if device:
             agent.set_device(device)
         return PPOPolicy(agent)

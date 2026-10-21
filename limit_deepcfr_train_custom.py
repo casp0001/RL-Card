@@ -12,7 +12,7 @@ from rlcard.utils.utils import remove_illegal
 from deep_cfr_agent_new import DeepCFR
 
 
-from functions import str2bool
+from functions import str2bool, plot_learning_curve
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
 
 from rlcard.utils import (
@@ -117,7 +117,7 @@ def train(args, on_eval=None):
 
             # Evaluate the average policy against the panel periodically;
             # performance.csv gets the panel 'min', panel.csv every member
-            if episode % args.evaluate_every == 0:
+            if (episode + 1) % args.evaluate_every == 0 or episode + 1 == args.num_episodes:
                 results = panel.evaluate(eval_agent)
                 panel_logger.log(episode, results)
                 logger.log_performance(episode, results['min'])
@@ -126,12 +126,12 @@ def train(args, on_eval=None):
                 print(format_results(results, prefix=f'[Iteration {episode}] '))
                 print(f'  last-step weighted losses  adv: {avg_adv_loss:.6f}  policy: {policy_loss:.6f}')
 
-            if args.save_model and episode % args.checkpoint_every == 0 and episode > 0:
-                ckpt_dir = f'{args.log_dir}checkpoints/episode_{episode}'
+            if args.save_model and args.checkpoint_every > 0 and episode % args.checkpoint_every == 0 and episode > 0:
+                ckpt_dir = os.path.join(args.log_dir, 'checkpoints', f'episode_{episode}')
                 os.makedirs(ckpt_dir, exist_ok=True)
-                save_checkpoint(agent, num_players, f'{ckpt_dir}/model.ckpt')
+                save_checkpoint(agent, num_players, os.path.join(ckpt_dir, 'model.ckpt'))
                 logger.csv_file.flush()
-                plot_curve(logger.csv_path, logger.fig_path, 'deepcfr_limit_holdem')
+                plot_learning_curve(logger.csv_path, logger.fig_path, 'deepcfr_limit_holdem')
                 print(f'\nCheckpoint saved at episode {episode} to {ckpt_dir}')
             print(f'{episode}/{args.num_episodes} complete.', end='\r')
 
@@ -143,7 +143,7 @@ def train(args, on_eval=None):
         print(f'\nModel saved to {args.log_dir}')
 
     # Plot learning curve
-    plot_curve(csv_path, fig_path, 'deepcfr_limit_holdem')
+    plot_learning_curve(csv_path, fig_path, 'deepcfr_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
     return eval_agent
@@ -164,7 +164,7 @@ def build_parser():
                              "betting sequence; see obs_encoding.py) or RLCard's default 72-value one")
     parser.add_argument('--save_model', type=str2bool, default=True,
                         help='Save checkpoints (tune.py turns this off for trials)')
-    parser.add_argument('--evaluate_every', type=int, default=2,
+    parser.add_argument('--evaluate_every', type=int, default=50,
                         help='Evaluate against the panel every N iterations')
     parser.add_argument('--checkpoint_every', type=int, default=10,
                         help='Save a checkpoint every N iterations')

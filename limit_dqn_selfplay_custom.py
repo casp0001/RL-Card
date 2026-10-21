@@ -5,7 +5,7 @@ import contextlib
 
 import rlcard
 from obs_encoding import ENV_IDS
-from functions import str2bool, frozen_copy
+from functions import str2bool, frozen_copy, plot_learning_curve
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
 from rlcard.agents import RandomAgent
 from dqn_agent_relu import DQNAgent 
@@ -87,7 +87,7 @@ def train(args, on_eval=None):
 
             # Evaluate against the panel periodically; performance.csv gets
             # the panel 'min' (robustness score), panel.csv every member
-            if episode % args.evaluate_every == 0:
+            if (episode + 1) % args.evaluate_every == 0 or episode + 1 == args.num_episodes:
                 results = panel.evaluate(agent)
                 panel_logger.log(episode, results)
                 logger.log_performance(episode, results['min'])
@@ -110,7 +110,7 @@ def train(args, on_eval=None):
         print(f'\nModel saved to {args.log_dir}')
 
     # Plot learning curve
-    plot_curve(csv_path, fig_path, 'dqn_selfplay_limit_holdem')
+    plot_learning_curve(csv_path, fig_path, 'dqn_selfplay_limit_holdem')
     print(f'Learning curve saved to {fig_path}')
 
     return agent

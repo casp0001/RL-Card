@@ -43,6 +43,7 @@ import sys
 import collections
 import random
 import numpy as np
+import os
 import torch
 import torch.nn as nn
 
@@ -51,9 +52,8 @@ from rlcard.utils.utils import remove_illegal
 from array_buffers import Reservoir
 sys.setrecursionlimit(10000000)
 
-# Networks and tensors live on CPU by default to match the original eager
-# behaviour; flip this to 'cuda' if a GPU is available and desired.
-_DEVICE = torch.device('xpu' if torch.xpu.is_available() else 'cpu')
+# torch device: cpu unless the RL_DEVICE environment variable says otherwise (e.g. xpu, cuda)
+_DEVICE = torch.device(os.environ.get('RL_DEVICE', 'cpu'))
 
 AdvantageMemory = collections.namedtuple(
     'AdvantageMemory', 'info_state iteration advantage action')
@@ -209,7 +209,10 @@ class DeepCFR():
             for _ in range(self._num_step):
                 self.advantage_losses[p].append(self._learn_advantage_network(p))
 
-            self._iteration += 1
+        # Once per CFR iteration, after both players (as in OpenSpiel's Deep CFR):
+        # samples are weighted by iteration (linear CFR), so incrementing per
+        # player gave player 0 odd and player 1 even weights.
+        self._iteration += 1
 
         # Train policy network.
         for _ in range(self._num_step):

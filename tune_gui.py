@@ -363,7 +363,7 @@ class TuneGUI(tk.Tk):
             row['high'] = tk.StringVar(value=_fmt_num(spec.get('high', '')))
             row['log'] = tk.StringVar(value='1' if spec.get('log') else '0')
             row['choices'] = tk.StringVar(value=', '.join(str(c) for c in spec.get('choices', [])))
-            default_value = spec.get('value', (spec.get('choices') or [spec.get('low', '')])[0])
+            default_value = spec.get('value', spec.get('start', (spec.get('choices') or [spec.get('low', '')])[0]))
             row['value'] = tk.StringVar(value=str(default_value))
             widgets = [ttk.Checkbutton(grid, variable=row['tune'], onvalue='1', offvalue='0')]
             widgets[0].grid(row=r, column=0, padx=4)
@@ -795,14 +795,23 @@ class TuneGUI(tk.Tk):
         lines = []
         fin = data.get('finalists')
         if fin and fin.get('runs'):
-            by_trial = {}
+            by_trial, failed = {}, {}
             for r in fin['runs']:
-                by_trial.setdefault(r['trial'], []).append(r['final_min'])
+                by_trial.setdefault(r['trial'], [])
+                if 'failed' in r:
+                    failed[r['trial']] = failed.get(r['trial'], 0) + 1
+                else:
+                    by_trial[r['trial']].append(r['final_min'])
             lines.append(f'Finalists ({fin.get("final_deals")} deals per member):')
-            for trial, mins in sorted(by_trial.items(), key=lambda kv: -sum(kv[1]) / len(kv[1])):
+            for trial, mins in sorted(by_trial.items(),
+                                      key=lambda kv: -sum(kv[1]) / len(kv[1]) if kv[1] else float('inf')):
+                note = f'  ({failed[trial]} seed(s) failed)' if trial in failed else ''
+                if not mins:
+                    lines.append(f'  trial {trial:3d}: no successful seed{note}')
+                    continue
                 mean = sum(mins) / len(mins)
                 lines.append(f'  trial {trial:3d}: final panel min {mean:+8.1f} '
-                             f'over {len(mins)} seed(s): {", ".join(f"{m:+.0f}" for m in mins)}')
+                             f'over {len(mins)} seed(s): {", ".join(f"{m:+.0f}" for m in mins)}{note}')
             if fin.get('winner'):
                 lines.append(f'  winner: trial {fin["winner"]["trial"]}  {json.dumps(fin["winner"]["params"])}')
         self.finalist_text.configure(state='normal')
