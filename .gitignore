@@ -1,3 +1,5 @@
 *.pt
 checkpoints/
-.venv_deepcfr
+.venv_deepcfr__pycache__/
+*.pyc
+.pytest_cache/
