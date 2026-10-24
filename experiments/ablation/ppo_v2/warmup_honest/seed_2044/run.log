@@ -1,0 +1,88 @@
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1202.5
+----------------------------------------
+[Episode 99999] panel min -1202.5  mean -494.1 mbb/h  |  random +2100±109  station +57±43  maniac +377±134  nit -609±126  tag -1093±139  lag -1202±143
+[Episode 99999]   actions: call=31% raise=65% fold=1% check=4%  (32s)
+  updates: 57 | policy: -0.00179 | value: 72.51525 | entropy: 0.5249 | approx_kl: 0.00401
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -687.5
+----------------------------------------
+[Episode 199999] panel min -687.5  mean -268.8 mbb/h  |  random +1578±84  station +292±48  maniac +210±50  nit -570±89  tag -688±79  lag -588±74
+[Episode 199999]   actions: call=48% raise=33% fold=0% check=19%  (19s)
+  updates: 153 | policy: 0.00186 | value: 32.35704 | entropy: 0.4707 | approx_kl: 0.00776
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -546.0
+----------------------------------------
+[Episode 299999] panel min -546.0  mean -196.9 mbb/h  |  random +1528±92  station +357±51  maniac +165±41  nit -490±90  tag -546±79  lag -470±72
+[Episode 299999]   actions: call=50% raise=36% fold=0% check=14%  (15s)
+  updates: 264 | policy: 0.00161 | value: 30.17516 | entropy: 0.3780 | approx_kl: 0.00734
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -484.5
+----------------------------------------
+[Episode 399999] panel min -484.5  mean -164.0 mbb/h  |  random +1599±96  station +364±57  maniac +198±43  nit -484±90  tag -474±81  lag -422±73
+[Episode 399999]   actions: call=50% raise=36% fold=1% check=13%  (12s)
+  updates: 372 | policy: 0.00039 | value: 30.58975 | entropy: 0.3154 | approx_kl: 0.00542
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -525.0
+----------------------------------------
+[Episode 499999] panel min -525.0  mean -298.4 mbb/h  |  random +1199±87  station +234±73  maniac -468±150  nit -262±83  tag -472±92  lag -525±107
+[Episode 499999]   actions: call=36% raise=47% fold=9% check=7%  (11s)
+  updates: 444 | policy: -0.00114 | value: 23.97613 | entropy: 0.5794 | approx_kl: 0.01972
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -352.5
+----------------------------------------
+[Episode 599999] panel min -352.5  mean -170.2 mbb/h  |  random +1097±91  station +194±74  maniac -126±153  nit -284±88  tag -352±92  lag -281±104
+[Episode 599999]   actions: call=37% raise=47% fold=10% check=7%  (12s)
+  updates: 520 | policy: -0.00227 | value: 28.24039 | entropy: 0.5834 | approx_kl: 0.00673
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -388.5
+----------------------------------------
+[Episode 699999] panel min -388.5  mean -206.8 mbb/h  |  random +1347±92  station +128±76  maniac -142±144  nit -248±86  tag -388±92  lag -383±105
+[Episode 699999]   actions: call=38% raise=46% fold=8% check=7%  (12s)
+  updates: 589 | policy: -0.00252 | value: 27.79859 | entropy: 0.5791 | approx_kl: 0.00425
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -355.5
+----------------------------------------
+[Episode 799999] panel min -355.5  mean -254.6 mbb/h  |  random +800±84  station -72±77  maniac -246±146  nit -288±74  tag -356±89  lag -311±104
+[Episode 799999]   actions: call=37% raise=34% fold=15% check=15%  (13s)
+  updates: 661 | policy: -0.00208 | value: 18.67433 | entropy: 0.6854 | approx_kl: 0.02183
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -346.5
+----------------------------------------
+[Episode 899999] panel min -346.5  mean -221.3 mbb/h  |  random +898±84  station +61±69  maniac -200±149  nit -300±74  tag -321±87  lag -346±104
+[Episode 899999]   actions: call=34% raise=34% fold=14% check=18%  (11s)
+  updates: 732 | policy: -0.00262 | value: 21.31537 | entropy: 0.6516 | approx_kl: 0.00775
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -330.0
+----------------------------------------
+[Episode 999999] panel min -330.0  mean -88.1 mbb/h  |  random +696±73  station +223±72  maniac +174±168  nit -330±67  tag -323±90  lag -184±106
+[Episode 999999]   actions: call=29% raise=35% fold=18% check=19%  (11s)
+  updates: 798 | policy: -0.00217 | value: 25.54456 | entropy: 0.6657 | approx_kl: 0.04049
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\ablation\ppo_v2\warmup_honest\seed_2044/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\ablation\ppo_v2\warmup_honest\seed_2044/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\ablation\ppo_v2\warmup_honest\seed_2044/fig.png
+
+INFO - Restoring model from checkpoint...
+done warmup_honest seed 2044: panel min -301, LBR +528

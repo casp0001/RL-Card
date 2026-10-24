@@ -1,0 +1,3 @@
+worker Cloud-3M0LKK4-40012: 0/50 trials finished
+
+=== trial 2: {"lr": 6.291350078803623e-05, "batch_size": 32, "mlp_layers": "512 512 512", "epsilon_decay_steps": 132529, "epsilon_end": 0.013338538219666391, "replay_memory_size": 22003, "opponent_update_every": 3011, "update_target_every": 1389}

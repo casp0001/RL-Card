@@ -1,0 +1,278 @@
+2026-10-23 15:14 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:19 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:24 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:29 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:34 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:39 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:44 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:49 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:54 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 15:59 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:04 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:09 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:14 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:19 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:24 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:29 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:34 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:39 waiting: ablation done=False, finalists pipeline done=False
+2026-10-23 16:44 {
+ "stats": {
+  "latest": {
+   "seeds": 4,
+   "lbr_mean": 620.9375,
+   "lbr_sd": 57.69617802188749,
+   "panel_min_mean": -386.15625,
+   "panel_min_sd": 119.69433183286779,
+   "rank_sum": 2
+  },
+  "warmup_honest": {
+   "seeds": 4,
+   "lbr_mean": 615.6875,
+   "lbr_sd": 74.54287776172852,
+   "panel_min_mean": -304.28125,
+   "panel_min_sd": 29.492473439563074,
+   "rank_sum": 0
+  },
+  "warmup_mix_pool": {
+   "seeds": 4,
+   "lbr_mean": 759.5,
+   "lbr_sd": 256.8228150560875,
+   "panel_min_mean": -508.1875,
+   "panel_min_sd": 207.0797325307332,
+   "rank_sum": 4
+  }
+ },
+ "best_variant": "warmup_honest",
+ "mix_pool_clearly_better": false,
+ "mix_pool_margins": {
+  "latest": {
+   "lbr_lead": -138.5625,
+   "se_of_difference": 131.61193647582527
+  },
+  "warmup_honest": {
+   "lbr_lead": -143.8125,
+   "se_of_difference": 133.7110681267012
+  }
+ },
+ "rules": {
+  "best": "best sum of ranks by mean LBR (low) and mean held-out panel min (high); LBR breaks ties",
+  "clearly": "warmup_mix_pool best on mean LBR and mean panel min, LBR lead over each other variant > 1 standard error of the difference"
+ },
+ "decided": "2026-10-23 16:44"
+}
+2026-10-23 16:44 best variant: warmup_honest; warmup_mix_pool clearly better: False
+2026-10-23 16:44 starting dqn_v1: dqn, 50 trials, --set warmup_episodes=200000 --set warmup_bot=honest --startup_trials 15
+started 4 workers for dqn_v1; progress: python tune.py status --study dqn_v1
+2026-10-23 16:49 dqn_v1: 0/50 finished, 4 running
+2026-10-23 16:54 dqn_v1: 0/50 finished, 4 running
+2026-10-23 16:59 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:04 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:09 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:14 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:19 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:24 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:29 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:34 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:39 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:44 dqn_v1: 0/50 finished, 4 running
+2026-10-23 17:49 dqn_v1: 1/50 finished, 4 running
+2026-10-23 17:54 dqn_v1: 1/50 finished, 4 running
+2026-10-23 17:59 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:04 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:09 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:14 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:19 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:24 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:29 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:34 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:39 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:44 dqn_v1: 1/50 finished, 4 running
+2026-10-23 18:49 dqn_v1: 2/50 finished, 4 running
+2026-10-23 18:54 dqn_v1: 2/50 finished, 4 running
+2026-10-23 18:59 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:04 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:09 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:15 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:20 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:25 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:30 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:35 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:40 dqn_v1: 2/50 finished, 4 running
+2026-10-23 19:45 dqn_v1: 3/50 finished, 4 running
+2026-10-23 19:50 dqn_v1: 3/50 finished, 4 running
+2026-10-23 19:55 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:00 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:05 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:10 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:15 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:20 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:25 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:30 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:35 dqn_v1: 3/50 finished, 4 running
+2026-10-23 20:40 dqn_v1: 4/50 finished, 4 running
+2026-10-23 20:45 dqn_v1: 4/50 finished, 4 running
+2026-10-23 20:50 dqn_v1: 4/50 finished, 4 running
+2026-10-23 20:55 dqn_v1: 4/50 finished, 4 running
+2026-10-23 21:00 dqn_v1: 4/50 finished, 4 running
+2026-10-23 21:05 dqn_v1: 5/50 finished, 4 running
+2026-10-23 21:10 dqn_v1: 5/50 finished, 4 running
+2026-10-23 21:15 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:20 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:25 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:30 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:35 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:40 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:45 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:50 dqn_v1: 6/50 finished, 4 running
+2026-10-23 21:55 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:00 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:05 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:10 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:15 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:20 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:25 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:30 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:35 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:40 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:45 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:50 dqn_v1: 6/50 finished, 4 running
+2026-10-23 22:55 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:01 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:06 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:11 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:16 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:21 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:26 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:31 dqn_v1: 6/50 finished, 4 running
+2026-10-23 23:36 dqn_v1: 7/50 finished, 4 running
+2026-10-23 23:41 dqn_v1: 7/50 finished, 4 running
+2026-10-23 23:46 dqn_v1: 7/50 finished, 4 running
+2026-10-23 23:51 dqn_v1: 7/50 finished, 4 running
+2026-10-23 23:56 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:01 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:06 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:11 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:16 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:21 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:26 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:31 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:36 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:41 dqn_v1: 7/50 finished, 4 running
+2026-10-24 00:46 dqn_v1: 8/50 finished, 4 running
+2026-10-24 00:51 dqn_v1: 8/50 finished, 4 running
+2026-10-24 00:56 dqn_v1: 8/50 finished, 4 running
+2026-10-24 01:01 dqn_v1: 8/50 finished, 4 running
+2026-10-24 01:06 dqn_v1: 8/50 finished, 4 running
+2026-10-24 01:11 dqn_v1: 8/50 finished, 4 running
+2026-10-24 01:16 dqn_v1: 8/50 finished, 4 running
+2026-10-24 01:21 dqn_v1: 9/50 finished, 4 running
+2026-10-24 01:26 dqn_v1: 9/50 finished, 4 running
+2026-10-24 01:31 dqn_v1: 10/50 finished, 4 running
+2026-10-24 01:36 dqn_v1: 10/50 finished, 4 running
+2026-10-24 01:41 dqn_v1: 10/50 finished, 4 running
+2026-10-24 01:46 dqn_v1: 10/50 finished, 4 running
+2026-10-24 01:51 dqn_v1: 10/50 finished, 4 running
+2026-10-24 01:56 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:01 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:06 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:11 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:16 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:21 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:26 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:31 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:36 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:41 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:47 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:52 dqn_v1: 10/50 finished, 4 running
+2026-10-24 02:57 dqn_v1: 10/50 finished, 4 running
+2026-10-24 03:02 dqn_v1: 10/50 finished, 4 running
+2026-10-24 03:07 dqn_v1: 10/50 finished, 4 running
+2026-10-24 03:12 dqn_v1: 10/50 finished, 4 running
+2026-10-24 03:17 dqn_v1: 10/50 finished, 4 running
+2026-10-24 03:22 dqn_v1: 11/50 finished, 4 running
+2026-10-24 03:27 dqn_v1: 11/50 finished, 4 running
+2026-10-24 03:32 dqn_v1: 11/50 finished, 4 running
+2026-10-24 03:37 dqn_v1: 11/50 finished, 4 running
+2026-10-24 03:42 dqn_v1: 11/50 finished, 4 running
+2026-10-24 03:47 dqn_v1: 11/50 finished, 4 running
+2026-10-24 03:52 dqn_v1: 11/50 finished, 4 running
+2026-10-24 03:57 dqn_v1: 12/50 finished, 4 running
+2026-10-24 04:02 dqn_v1: 12/50 finished, 4 running
+2026-10-24 04:07 dqn_v1: 12/50 finished, 4 running
+2026-10-24 04:12 dqn_v1: 12/50 finished, 4 running
+2026-10-24 04:17 dqn_v1: 12/50 finished, 4 running
+2026-10-24 04:22 dqn_v1: 12/50 finished, 4 running
+2026-10-24 04:27 dqn_v1: 12/50 finished, 4 running
+2026-10-24 04:32 dqn_v1: 13/50 finished, 4 running
+2026-10-24 04:37 dqn_v1: 14/50 finished, 4 running
+2026-10-24 04:42 dqn_v1: 14/50 finished, 4 running
+2026-10-24 04:47 dqn_v1: 14/50 finished, 4 running
+2026-10-24 04:52 dqn_v1: 14/50 finished, 4 running
+2026-10-24 04:57 dqn_v1: 15/50 finished, 4 running
+2026-10-24 05:02 dqn_v1: 15/50 finished, 4 running
+2026-10-24 05:07 dqn_v1: 15/50 finished, 4 running
+2026-10-24 05:12 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:17 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:22 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:27 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:32 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:37 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:42 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:47 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:52 dqn_v1: 16/50 finished, 4 running
+2026-10-24 05:57 dqn_v1: 16/50 finished, 4 running
+2026-10-24 06:02 dqn_v1: 16/50 finished, 4 running
+2026-10-24 06:07 dqn_v1: 16/50 finished, 4 running
+2026-10-24 06:12 dqn_v1: 16/50 finished, 4 running
+2026-10-24 06:18 dqn_v1: 17/50 finished, 4 running
+2026-10-24 06:23 dqn_v1: 17/50 finished, 4 running
+2026-10-24 06:28 dqn_v1: 17/50 finished, 4 running
+2026-10-24 06:33 dqn_v1: 17/50 finished, 4 running
+2026-10-24 06:38 dqn_v1: 17/50 finished, 4 running
+2026-10-24 06:43 dqn_v1: 17/50 finished, 4 running
+2026-10-24 06:48 dqn_v1: 17/50 finished, 4 running
+2026-10-24 06:53 dqn_v1: 18/50 finished, 4 running
+2026-10-24 06:58 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:03 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:08 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:13 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:18 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:23 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:28 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:33 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:38 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:43 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:48 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:53 dqn_v1: 19/50 finished, 4 running
+2026-10-24 07:58 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:03 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:08 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:13 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:18 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:23 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:28 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:33 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:38 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:43 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:48 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:53 dqn_v1: 19/50 finished, 4 running
+2026-10-24 08:58 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:03 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:08 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:13 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:18 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:23 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:28 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:33 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:38 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:43 dqn_v1: 19/50 finished, 4 running
+2026-10-24 09:49 dqn_v1: 20/50 finished, 4 running
+2026-10-24 09:54 dqn_v1: 20/50 finished, 4 running
+2026-10-24 09:59 dqn_v1: 20/50 finished, 4 running
+2026-10-24 10:04 dqn_v1: 20/50 finished, 4 running
+2026-10-24 10:09 dqn_v1: 20/50 finished, 4 running
+2026-10-24 10:14 dqn_v1: 20/50 finished, 4 running
+2026-10-24 10:19 dqn_v1: 21/50 finished, 4 running
+2026-10-24 10:24 dqn_v1: 21/50 finished, 4 running
+2026-10-24 10:29 dqn_v1: 21/50 finished, 4 running

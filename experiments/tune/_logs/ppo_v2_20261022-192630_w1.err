@@ -1,0 +1,11 @@
+[I 2026-10-22 19:26:34,914] A new study created in Journal with name: ppo_v2
+[I 2026-10-22 19:50:06,722] Trial 0 finished with value: -329.8333333333333 and parameters: {'lr': 0.0003, 'update_every': 4096, 'num_epochs': 4, 'batch_size': 256, 'clip_range': 0.2, 'entropy_coef': 0.01, 'opponent_update_every': 10000}. Best is trial 0 with value: -329.8333333333333.
+[I 2026-10-22 20:10:03,082] Trial 8 pruned. 
+[I 2026-10-22 20:29:44,781] Trial 15 pruned. 
+[I 2026-10-22 20:48:31,840] Trial 20 pruned. 
+[I 2026-10-22 20:57:50,475] Trial 24 pruned. 
+[I 2026-10-22 21:08:23,634] Trial 26 pruned. 
+[I 2026-10-22 21:18:58,105] Trial 30 pruned. 
+[I 2026-10-22 21:43:18,677] Trial 34 pruned. 
+[I 2026-10-22 22:10:05,533] Trial 39 finished with value: -394.1666666666667 and parameters: {'lr': 0.00023749373445861637, 'update_every': 4096, 'num_epochs': 3, 'batch_size': 256, 'clip_range': 0.1050397145293651, 'entropy_coef': 0.010194721941073893, 'opponent_update_every': 14829}. Best is trial 35 with value: -171.0.
+[I 2026-10-22 22:36:27,279] Trial 46 finished with value: -1280.3333333333333 and parameters: {'lr': 0.00046609765100559666, 'update_every': 4096, 'num_epochs': 2, 'batch_size': 256, 'clip_range': 0.13215495434193186, 'entropy_coef': 0.005146427279007978, 'opponent_update_every': 27154}. Best is trial 35 with value: -171.0.

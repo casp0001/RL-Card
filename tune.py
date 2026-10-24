@@ -15,7 +15,7 @@ Everything for a study lives in experiments/tune/<study>/:
     plots/           figures written by `report`
 
 Commands:
-    python tune.py run --algo dqn --study dqn_v1 --trials 40
+    python tune.py run --algo dqn --study dqn_v1 --trials 50
         (start several `run` processes on the same study to work in parallel)
     python tune.py status --study dqn_v1 [--json]
     python tune.py finalists --study dqn_v1 --top 3 --seeds 3
@@ -90,6 +90,26 @@ def create_or_check_config(study, cfg):
         raise SystemExit(f'study {study!r} already exists with different settings: {diff}.\n'
                          f'Use a new --study name, or the same settings as {path}.')
     return existing, False
+
+
+def _parse_sets(algo, sets):
+    ''' --set ARG=VALUE pairs -> {arg: value}; values are read as JSON when
+    possible (numbers, true/false, lists), else kept as strings. Unknown
+    arguments are rejected now rather than failing every trial later. '''
+    out = {}
+    if not sets:
+        return out
+    module = importlib.import_module(tune_spaces.ALGORITHMS[algo][0])
+    known = vars(module.build_parser().parse_args([]))
+    for item in sets:
+        key, sep, raw = item.partition('=')
+        if not sep or key not in known:
+            raise SystemExit(f'--set {item!r}: expected ARG=VALUE with ARG one of {module.__name__}.py\'s arguments')
+        try:
+            out[key] = json.loads(raw)
+        except ValueError:
+            out[key] = raw
+    return out
 
 
 def check_start(space, params):
@@ -245,6 +265,11 @@ def count_finished(study):
     return n
 
 
+def count_running(study):
+    from optuna.trial import TrialState
+    return len(study.get_trials(deepcopy=False, states=(TrialState.RUNNING,)))
+
+
 def recover_interrupted(study_name, study, force=False):
     ''' Mark RUNNING trials of dead workers as interrupted and queue their
     parameters again (once). force=True treats every RUNNING trial as dead
@@ -383,7 +408,7 @@ def cmd_run(a):
         'eval_panel': a.eval_panel,
         'seed': a.seed,
         'space': space,
-        'fixed': tune_spaces.FIXED[a.algo],
+        'fixed': {**tune_spaces.FIXED[a.algo], **_parse_sets(a.algo, a.set)},
         'prune': a.prune,
         'min_resource_frac': a.min_resource_frac,
         'reduction_factor': a.reduction_factor,
@@ -449,13 +474,16 @@ def cmd_run(a):
         print(f'=== trial {trial.number} finished: score {value:+.1f}', flush=True)
         return value
 
+    # Stop when the finished trials plus those other workers are running already
+    # reach --trials; counting only finished ones let every worker start one more.
+    # (Trials of dead workers were marked interrupted above, so they are not counted.)
     def stop_when_done(study, _trial):
-        if count_finished(study) >= a.trials:
+        if count_finished(study) + count_running(study) >= a.trials:
             study.stop()
 
-    finished = count_finished(study)
-    if finished >= a.trials:
-        print(f'study already has {finished} finished trials (target {a.trials}); nothing to do')
+    finished, running = count_finished(study), count_running(study)
+    if finished + running >= a.trials:
+        print(f'study has {finished} finished and {running} running trials (target {a.trials}); nothing to do')
         return
     print(f'worker {worker}: {finished}/{a.trials} trials finished', flush=True)
     try:
@@ -709,7 +737,7 @@ def main():
     r = sub.add_parser('run', help='run trials (start several processes to work in parallel)')
     r.add_argument('--algo', required=True, choices=sorted(tune_spaces.ALGORITHMS))
     r.add_argument('--study', required=True)
-    r.add_argument('--trials', type=int, default=40,
+    r.add_argument('--trials', type=int, default=50,
                    help='total trials of the study (across all workers), incl. pruned/failed')
     r.add_argument('--budget', type=int, default=None,
                    help='episodes (Deep CFR: iterations) per trial; default per algorithm')
@@ -723,6 +751,9 @@ def main():
                    help='fraction of a trial\'s evaluations before it can be pruned')
     r.add_argument('--reduction_factor', type=int, default=3)
     r.add_argument('--startup_trials', type=int, default=12, help='random trials before TPE kicks in')
+    r.add_argument('--set', action='append', default=[], metavar='ARG=VALUE',
+                   help='fix a training-script argument for the whole study, e.g. --set opponent_pool=10 '
+                        '(repeatable; stored in the study config, so a restart must pass the same values)')
     r.add_argument('--enqueue', type=int, default=1,
                    help="1 = a new study's first trial uses the space's 'start' values "
                         '(tune_spaces.py), 0 = all startup trials random')

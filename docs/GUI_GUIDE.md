@@ -156,7 +156,7 @@ every evaluation. A trial's final score is the mean of its last 3 reports.
 
    | Setting | Meaning (default) |
    |---|---|
-   | Total trials | trials for the whole study, including pruned and failed ones (40) |
+   | Total trials | trials for the whole study, including pruned and failed ones (50) |
    | Parallel workers | `tune.py` processes working on the study at the same time (2) |
    | Threads / worker | CPU threads per worker; 0 = number of cores / workers |
    | Budget / trial | episodes per trial (Deep CFR: iterations) |

@@ -1,0 +1,451 @@
+
+=== finalist trial 35 (score -171.0), seed 1042: {"lr": 0.0004622276610035371, "update_every": 4096, "num_epochs": 4, "batch_size": 1024, "clip_range": 0.18554120609176747, "entropy_coef": 0.01690513363604953, "opponent_update_every": 9321}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1543.0
+----------------------------------------
+[Episode 99999] panel min -1543.0  mean -721.0 mbb/h  |  random +1665±110  station -70±55  maniac +184±143  nit -792±122  tag -1384±141  lag -1543±139
+[Episode 99999]   actions: call=32% raise=56% fold=2% check=10%  (87s)
+  updates: 62 | policy: 0.00007 | value: 92.19391 | entropy: 0.6340 | approx_kl: 0.01082
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -674.0
+----------------------------------------
+[Episode 199999] panel min -674.0  mean -300.1 mbb/h  |  random +1630±91  station +239±47  maniac +152±45  nit -586±90  tag -674±81  lag -632±73
+[Episode 199999]   actions: call=49% raise=34% fold=0% check=17%  (54s)
+  updates: 160 | policy: -0.00125 | value: 32.10730 | entropy: 0.4643 | approx_kl: 0.00195
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -515.5
+----------------------------------------
+[Episode 299999] panel min -515.5  mean -187.2 mbb/h  |  random +1552±94  station +366±43  maniac +162±36  nit -454±90  tag -516±80  lag -493±67
+[Episode 299999]   actions: call=51% raise=35% fold=0% check=14%  (24s)
+  updates: 270 | policy: 0.00074 | value: 32.35794 | entropy: 0.3720 | approx_kl: 0.00459
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -458.5
+----------------------------------------
+[Episode 399999] panel min -458.5  mean -116.2 mbb/h  |  random +1488±97  station +468±52  maniac +222±39  nit -408±89  tag -458±80  lag -405±72
+[Episode 399999]   actions: call=52% raise=35% fold=0% check=13%  (62s)
+  updates: 378 | policy: 0.00054 | value: 29.91504 | entropy: 0.3051 | approx_kl: 0.00532
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -410.5
+----------------------------------------
+[Episode 499999] panel min -410.5  mean -223.6 mbb/h  |  random +653±80  station +150±91  maniac -160±136  nit -324±72  tag -410±91  lag -373±108
+[Episode 499999]   actions: call=35% raise=39% fold=19% check=7%  (55s)
+  updates: 460 | policy: -0.00239 | value: 21.13078 | entropy: 0.5970 | approx_kl: 0.00974
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -397.0
+----------------------------------------
+[Episode 599999] panel min -397.0  mean -216.5 mbb/h  |  random +998±91  station +196±82  maniac -146±177  nit -397±81  tag -388±104  lag -348±118
+[Episode 599999]   actions: call=31% raise=47% fold=14% check=9%  (56s)
+  updates: 533 | policy: -0.00197 | value: 29.82350 | entropy: 0.6424 | approx_kl: 0.01440
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -384.0
+----------------------------------------
+[Episode 699999] panel min -384.0  mean -155.3 mbb/h  |  random +1094±90  station +212±89  maniac -127±155  nit -256±81  tag -384±100  lag -222±112
+[Episode 699999]   actions: call=31% raise=49% fold=14% check=7%  (20s)
+  updates: 598 | policy: -0.00364 | value: 23.93990 | entropy: 0.5985 | approx_kl: 0.00928
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -318.0
+----------------------------------------
+[Episode 799999] panel min -318.0  mean -114.8 mbb/h  |  random +1264±92  station +136±89  maniac +154±170  nit -232±91  tag -314±102  lag -318±113
+[Episode 799999]   actions: call=32% raise=55% fold=11% check=2%  (17s)
+  updates: 665 | policy: 0.00258 | value: 37.79466 | entropy: 0.5194 | approx_kl: 0.01945
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -382.5
+----------------------------------------
+[Episode 899999] panel min -382.5  mean -134.8 mbb/h  |  random +1124±92  station +210±88  maniac +58±167  nit -282±87  tag -382±101  lag -276±112
+[Episode 899999]   actions: call=32% raise=52% fold=12% check=3%  (18s)
+  updates: 729 | policy: -0.00052 | value: 27.68295 | entropy: 0.5540 | approx_kl: 0.02033
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -239.0
+----------------------------------------
+[Episode 999999] panel min -239.0  mean -142.7 mbb/h  |  random +864±79  station +126±73  maniac -168±139  nit -217±70  tag -239±85  lag -216±102
+[Episode 999999]   actions: call=36% raise=34% fold=14% check=17%  (15s)
+  updates: 790 | policy: -0.00280 | value: 18.95587 | entropy: 0.6774 | approx_kl: 0.01551
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_35\seed_1042/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_35\seed_1042/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_35\seed_1042/fig.png
+=== finalist trial 35 seed 1042: final panel min -373.9 (mean -236.0) over 5000 deals
+trial 35 seed 1043: already done, skipping
+trial 35 seed 1044: being trained by another process, skipping
+
+=== finalist trial 0 (score -329.8), seed 1042: {"lr": 0.0003, "update_every": 4096, "num_epochs": 4, "batch_size": 256, "clip_range": 0.2, "entropy_coef": 0.01, "opponent_update_every": 10000}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -667.0
+----------------------------------------
+[Episode 99999] panel min -667.0  mean -287.1 mbb/h  |  random +2008±102  station +92±29  maniac +121±72  nit -369±117  tag -667±113  lag -612±110
+[Episode 99999]   actions: call=36% raise=59% fold=0% check=5%  (13s)
+  updates: 56 | policy: 0.00196 | value: 46.51064 | entropy: 0.4079 | approx_kl: 0.00614
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -503.0
+----------------------------------------
+[Episode 199999] panel min -503.0  mean -237.9 mbb/h  |  random +1442±91  station +187±40  maniac +18±8  nit -429±96  tag -503±80  lag -462±69
+[Episode 199999]   actions: call=56% raise=34% fold=0% check=9%  (12s)
+  updates: 145 | policy: 0.00103 | value: 28.58962 | entropy: 0.1970 | approx_kl: 0.01085
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -457.0
+----------------------------------------
+[Episode 299999] panel min -457.0  mean -216.7 mbb/h  |  random +1458±96  station +191±40  maniac +2±3  nit -457±98  tag -453±85  lag -366±75
+[Episode 299999]   actions: call=57% raise=35% fold=0% check=7%  (12s)
+  updates: 252 | policy: 0.00101 | value: 30.15601 | entropy: 0.0991 | approx_kl: 0.01146
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -858.0
+----------------------------------------
+[Episode 399999] panel min -858.0  mean -435.5 mbb/h  |  random +1022±94  station +5±89  maniac +104±31  nit -661±88  tag -858±86  lag -768±87
+[Episode 399999]   actions: call=59% raise=33% fold=5% check=3%  (12s)
+  updates: 350 | policy: -0.00023 | value: 25.30318 | entropy: 0.2007 | approx_kl: 0.01640
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -671.0
+----------------------------------------
+[Episode 499999] panel min -671.0  mean -410.7 mbb/h  |  random +804±87  station -38±93  maniac -671±117  nit -243±82  tag -438±97  lag -664±103
+[Episode 499999]   actions: call=34% raise=45% fold=15% check=6%  (10s)
+  updates: 405 | policy: -0.00363 | value: 14.02178 | entropy: 0.4652 | approx_kl: 0.08052
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -530.0
+----------------------------------------
+[Episode 599999] panel min -530.0  mean -384.6 mbb/h  |  random +241±76  station -162±107  maniac -496±114  nit -244±69  tag -492±92  lag -530±96
+[Episode 599999]   actions: call=32% raise=40% fold=23% check=5%  (10s)
+  updates: 454 | policy: -0.00251 | value: 14.50220 | entropy: 0.4382 | approx_kl: 0.06238
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -682.0
+----------------------------------------
+[Episode 699999] panel min -682.0  mean -316.9 mbb/h  |  random +728±81  station -9±89  maniac -682±113  nit -191±69  tag -347±88  lag -356±97
+[Episode 699999]   actions: call=35% raise=38% fold=17% check=10%  (12s)
+  updates: 500 | policy: 0.00390 | value: 12.53912 | entropy: 0.4524 | approx_kl: 0.06607
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -522.5
+----------------------------------------
+[Episode 799999] panel min -522.5  mean -191.8 mbb/h  |  random +891±77  station +174±76  maniac -522±115  nit -212±68  tag -210±76  lag -187±90
+[Episode 799999]   actions: call=40% raise=33% fold=14% check=14%  (26s)
+  updates: 557 | policy: -0.00518 | value: 15.05115 | entropy: 0.4308 | approx_kl: 0.07929
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -305.5
+----------------------------------------
+[Episode 899999] panel min -305.5  mean -199.8 mbb/h  |  random +877±82  station +16±84  maniac -202±120  nit -256±66  tag -306±80  lag -251±91
+[Episode 899999]   actions: call=46% raise=30% fold=14% check=11%  (25s)
+  updates: 616 | policy: -0.00559 | value: 14.48343 | entropy: 0.4115 | approx_kl: 0.12160
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -335.0
+----------------------------------------
+[Episode 999999] panel min -335.0  mean -185.7 mbb/h  |  random +932±76  station +15±85  maniac -141±108  nit -186±74  tag -335±81  lag -282±90
+[Episode 999999]   actions: call=48% raise=29% fold=13% check=9%  (23s)
+  updates: 679 | policy: -0.00411 | value: 16.25611 | entropy: 0.3114 | approx_kl: 0.09303
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_0\seed_1042/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_0\seed_1042/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_0\seed_1042/fig.png
+=== finalist trial 0 seed 1042: final panel min -406.4 (mean -259.1) over 5000 deals
+
+=== finalist trial 0 (score -329.8), seed 1043: {"lr": 0.0003, "update_every": 4096, "num_epochs": 4, "batch_size": 256, "clip_range": 0.2, "entropy_coef": 0.01, "opponent_update_every": 10000}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -811.0
+----------------------------------------
+[Episode 99999] panel min -811.0  mean -307.1 mbb/h  |  random +1930±100  station +99±31  maniac +259±84  nit -422±105  tag -811±100  lag -660±102
+[Episode 99999]   actions: call=33% raise=53% fold=0% check=13%  (27s)
+  updates: 55 | policy: 0.00322 | value: 45.08875 | entropy: 0.4659 | approx_kl: 0.01131
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -476.0
+----------------------------------------
+[Episode 199999] panel min -476.0  mean -203.5 mbb/h  |  random +1446±96  station +261±38  maniac +21±13  nit -424±94  tag -476±80  lag -400±73
+[Episode 199999]   actions: call=55% raise=37% fold=0% check=8%  (27s)
+  updates: 147 | policy: 0.00056 | value: 28.86119 | entropy: 0.2184 | approx_kl: 0.01562
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -810.0
+----------------------------------------
+[Episode 299999] panel min -810.0  mean -438.6 mbb/h  |  random +909±88  station -112±101  maniac +60±28  nit -574±83  tag -756±84  lag -810±85
+[Episode 299999]   actions: call=61% raise=30% fold=8% check=1%  (24s)
+  updates: 246 | policy: -0.00232 | value: 25.27570 | entropy: 0.2069 | approx_kl: 0.01551
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1316.0
+----------------------------------------
+[Episode 399999] panel min -1316.0  mean -585.5 mbb/h  |  random +756±98  station -320±98  maniac -1316±144  nit -290±95  tag -423±108  lag -578±123
+[Episode 399999]   actions: call=24% raise=61% fold=14% check=1%  (25s)
+  updates: 306 | policy: -0.00274 | value: 14.71235 | entropy: 0.4642 | approx_kl: 0.05773
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -380.0
+----------------------------------------
+[Episode 499999] panel min -380.0  mean -225.4 mbb/h  |  random +682±79  station -26±96  maniac -150±118  nit -250±70  tag -322±91  lag -380±102
+[Episode 499999]   actions: call=37% raise=36% fold=19% check=8%  (22s)
+  updates: 361 | policy: -0.00698 | value: 14.33801 | entropy: 0.5118 | approx_kl: 0.03907
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -330.5
+----------------------------------------
+[Episode 599999] panel min -330.5  mean -177.2 mbb/h  |  random +587±85  station -14±92  maniac -330±117  nit -134±78  tag -212±100  lag -196±106
+[Episode 599999]   actions: call=33% raise=46% fold=17% check=4%  (25s)
+  updates: 406 | policy: -0.00160 | value: 17.05925 | entropy: 0.3891 | approx_kl: 0.07184
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -339.0
+----------------------------------------
+[Episode 699999] panel min -339.0  mean -233.7 mbb/h  |  random +902±92  station -79±99  maniac -337±121  nit -140±81  tag -339±96  lag -274±107
+[Episode 699999]   actions: call=31% raise=50% fold=17% check=3%  (23s)
+  updates: 454 | policy: -0.00425 | value: 17.45689 | entropy: 0.3880 | approx_kl: 0.06068
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -245.5
+----------------------------------------
+[Episode 799999] panel min -245.5  mean -108.2 mbb/h  |  random +750±85  station +82±103  maniac -44±132  nit -146±72  tag -246±98  lag -188±104
+[Episode 799999]   actions: call=34% raise=42% fold=20% check=3%  (24s)
+  updates: 502 | policy: -0.00374 | value: 18.00099 | entropy: 0.3695 | approx_kl: 0.04184
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -367.5
+----------------------------------------
+[Episode 899999] panel min -367.5  mean -232.0 mbb/h  |  random +805±90  station +70±99  maniac -368±203  nit -226±78  tag -296±106  lag -340±122
+[Episode 899999]   actions: call=29% raise=46% fold=20% check=4%  (24s)
+  updates: 549 | policy: -0.00488 | value: 37.58364 | entropy: 0.4470 | approx_kl: 0.12373
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1078.5
+----------------------------------------
+[Episode 999999] panel min -1078.5  mean -590.6 mbb/h  |  random +77±73  station -18±97  maniac -1078±179  nit -304±78  tag -672±107  lag -880±124
+[Episode 999999]   actions: call=17% raise=40% fold=33% check=10%  (21s)
+  updates: 587 | policy: -0.00216 | value: 22.91318 | entropy: 0.4504 | approx_kl: 0.11928
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_0\seed_1043/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_0\seed_1043/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_0\seed_1043/fig.png
+=== finalist trial 0 seed 1043: final panel min -1023.9 (mean -533.4) over 5000 deals
+trial 0 seed 1044: being trained by another process, skipping
+
+=== finalist trial 32 (score -354.0), seed 1042: {"lr": 0.00017522492395119385, "update_every": 4096, "num_epochs": 3, "batch_size": 256, "clip_range": 0.11358134755859449, "entropy_coef": 0.022540611598002216, "opponent_update_every": 12732}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1611.5
+----------------------------------------
+[Episode 99999] panel min -1611.5  mean -777.5 mbb/h  |  random +1956±99  station -64±46  maniac +101±123  nit -803±120  tag -1510±140  lag -1612±144
+[Episode 99999]   actions: call=28% raise=55% fold=1% check=16%  (27s)
+  updates: 60 | policy: -0.00173 | value: 99.23058 | entropy: 0.6741 | approx_kl: 0.00271
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1078.0
+----------------------------------------
+[Episode 199999] panel min -1078.0  mean -392.9 mbb/h  |  random +2074±107  station +190±40  maniac +673±138  nit -688±111  tag -1078±114  lag -1062±118
+[Episode 199999]   actions: call=36% raise=49% fold=0% check=14%  (25s)
+  updates: 165 | policy: 0.00274 | value: 67.11097 | entropy: 0.5109 | approx_kl: 0.00508
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1536.0
+----------------------------------------
+[Episode 299999] panel min -1536.0  mean -543.6 mbb/h  |  random +1921±104  station +178±51  maniac +928±216  nit -892±115  tag -1396±136  lag -1536±148
+[Episode 299999]   actions: call=30% raise=51% fold=2% check=17%  (28s)
+  updates: 300 | policy: -0.00065 | value: 96.39019 | entropy: 0.5984 | approx_kl: 0.00254
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1025.5
+----------------------------------------
+[Episode 399999] panel min -1025.5  mean -532.7 mbb/h  |  random +866±96  station +4±84  maniac -4±291  nit -685±99  tag -953±130  lag -1026±156
+[Episode 399999]   actions: call=21% raise=51% fold=14% check=14%  (25s)
+  updates: 383 | policy: -0.00131 | value: 83.95291 | entropy: 0.7570 | approx_kl: 0.00807
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -877.5
+----------------------------------------
+[Episode 499999] panel min -877.5  mean -311.3 mbb/h  |  random +1412±106  station +172±76  maniac +495±271  nit -554±105  tag -792±134  lag -878±151
+[Episode 499999]   actions: call=23% raise=58% fold=9% check=10%  (28s)
+  updates: 461 | policy: 0.00184 | value: 68.81564 | entropy: 0.6885 | approx_kl: 0.00870
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -857.5
+----------------------------------------
+[Episode 599999] panel min -857.5  mean -326.3 mbb/h  |  random +1366±104  station +97±85  maniac +447±289  nit -515±109  tag -803±129  lag -858±154
+[Episode 599999]   actions: call=23% raise=59% fold=9% check=9%  (25s)
+  updates: 539 | policy: -0.00271 | value: 80.74935 | entropy: 0.6762 | approx_kl: 0.00998
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -949.0
+----------------------------------------
+[Episode 699999] panel min -949.0  mean -349.2 mbb/h  |  random +1053±98  station +84±83  maniac +466±306  nit -526±109  tag -820±140  lag -949±165
+[Episode 699999]   actions: call=19% raise=59% fold=13% check=9%  (27s)
+  updates: 609 | policy: -0.00157 | value: 96.11206 | entropy: 0.7275 | approx_kl: 0.00944
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1030.5
+----------------------------------------
+[Episode 799999] panel min -1030.5  mean -324.6 mbb/h  |  random +1179±104  station -52±76  maniac +1058±287  nit -632±105  tag -1030±138  lag -966±154
+[Episode 799999]   actions: call=21% raise=58% fold=10% check=10%  (11s)
+  updates: 689 | policy: -0.00043 | value: 122.42478 | entropy: 0.6588 | approx_kl: 0.01287
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -996.0
+----------------------------------------
+[Episode 899999] panel min -996.0  mean -522.0 mbb/h  |  random +904±96  station -82±76  maniac +216±284  nit -752±102  tag -994±128  lag -996±154
+[Episode 899999]   actions: call=23% raise=51% fold=13% check=13%  (11s)
+  updates: 760 | policy: -0.00010 | value: 74.41345 | entropy: 0.7733 | approx_kl: 0.02485
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -893.0
+----------------------------------------
+[Episode 999999] panel min -893.0  mean -273.7 mbb/h  |  random +1346±102  station +60±78  maniac +1065±288  nit -780±112  tag -893±136  lag -820±150
+[Episode 999999]   actions: call=22% raise=57% fold=9% check=12%  (11s)
+  updates: 838 | policy: 0.00243 | value: 88.63829 | entropy: 0.6803 | approx_kl: 0.01527
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_32\seed_1042/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_32\seed_1042/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_32\seed_1042/fig.png
+=== finalist trial 32 seed 1042: final panel min -1095.8 (mean -413.1) over 5000 deals
+trial 32 seed 1043: being trained by another process, skipping
+
+=== finalist trial 32 (score -354.0), seed 1044: {"lr": 0.00017522492395119385, "update_every": 4096, "num_epochs": 3, "batch_size": 256, "clip_range": 0.11358134755859449, "entropy_coef": 0.022540611598002216, "opponent_update_every": 12732}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1599.5
+----------------------------------------
+[Episode 99999] panel min -1599.5  mean -758.1 mbb/h  |  random +2034±108  station -123±54  maniac +224±150  nit -839±125  tag -1453±147  lag -1600±151
+[Episode 99999]   actions: call=28% raise=61% fold=1% check=10%  (21s)
+  updates: 62 | policy: -0.00158 | value: 97.66806 | entropy: 0.6264 | approx_kl: 0.00140
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1132.5
+----------------------------------------
+[Episode 199999] panel min -1132.5  mean -422.2 mbb/h  |  random +1914±102  station +162±39  maniac +692±140  nit -742±106  tag -1132±107  lag -1092±111
+[Episode 199999]   actions: call=37% raise=45% fold=0% check=18%  (15s)
+  updates: 168 | policy: 0.00238 | value: 55.98859 | entropy: 0.5474 | approx_kl: 0.00533
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -939.0
+----------------------------------------
+[Episode 299999] panel min -939.0  mean -268.1 mbb/h  |  random +1696±104  station +258±52  maniac +1046±146  nit -793±95  tag -939±105  lag -912±103
+[Episode 299999]   actions: call=41% raise=40% fold=1% check=19%  (14s)
+  updates: 290 | policy: 0.00157 | value: 53.32735 | entropy: 0.5154 | approx_kl: 0.00501
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -752.5
+----------------------------------------
+[Episode 399999] panel min -752.5  mean -426.5 mbb/h  |  random +864±87  station -24±85  maniac +15±289  nit -673±93  tag -698±128  lag -752±151
+[Episode 399999]   actions: call=23% raise=50% fold=15% check=12%  (11s)
+  updates: 374 | policy: -0.00192 | value: 78.31889 | entropy: 0.7589 | approx_kl: 0.01263
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -757.0
+----------------------------------------
+[Episode 499999] panel min -757.0  mean -408.4 mbb/h  |  random +889±97  station +140±85  maniac -98±276  nit -574±106  tag -752±136  lag -757±151
+[Episode 499999]   actions: call=21% raise=54% fold=15% check=9%  (12s)
+  updates: 451 | policy: -0.00026 | value: 78.46625 | entropy: 0.7674 | approx_kl: 0.01947
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1033.0
+----------------------------------------
+[Episode 599999] panel min -1033.0  mean -301.8 mbb/h  |  random +1538±107  station +198±71  maniac +974±263  nit -652±118  tag -996±143  lag -1033±157
+[Episode 599999]   actions: call=24% raise=62% fold=6% check=8%  (16s)
+  updates: 525 | policy: 0.00019 | value: 97.52083 | entropy: 0.6689 | approx_kl: 0.01294
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -1041.0
+----------------------------------------
+[Episode 699999] panel min -1041.0  mean -519.8 mbb/h  |  random +985±98  station -36±89  maniac +120±286  nit -698±108  tag -946±142  lag -1041±164
+[Episode 699999]   actions: call=22% raise=56% fold=13% check=9%  (14s)
+  updates: 600 | policy: 0.00125 | value: 90.00703 | entropy: 0.7062 | approx_kl: 0.01189
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -954.0
+----------------------------------------
+[Episode 799999] panel min -954.0  mean -299.3 mbb/h  |  random +1308±101  station +67±78  maniac +910±306  nit -642±115  tag -954±142  lag -878±163
+[Episode 799999]   actions: call=20% raise=60% fold=9% check=11%  (12s)
+  updates: 674 | policy: -0.00105 | value: 108.41188 | entropy: 0.6791 | approx_kl: 0.01909
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -937.5
+----------------------------------------
+[Episode 899999] panel min -937.5  mean -392.3 mbb/h  |  random +1004±100  station -112±81  maniac +661±295  nit -675±103  tag -898±136  lag -938±154
+[Episode 899999]   actions: call=20% raise=55% fold=12% check=12%  (12s)
+  updates: 749 | policy: -0.00233 | value: 82.72703 | entropy: 0.7447 | approx_kl: 0.00559
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1043.0
+----------------------------------------
+[Episode 999999] panel min -1043.0  mean -399.8 mbb/h  |  random +1418±104  station -6±76  maniac +640±304  nit -590±110  tag -1000±143  lag -1043±156
+[Episode 999999]   actions: call=19% raise=61% fold=9% check=11%  (16s)
+  updates: 818 | policy: 0.00055 | value: 129.49791 | entropy: 0.6713 | approx_kl: 0.01171
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_32\seed_1044/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_32\seed_1044/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\ppo_v2\finalists\trial_32\seed_1044/fig.png
+=== finalist trial 32 seed 1044: final panel min -1110.5 (mean -459.4) over 5000 deals
+
+Finalists (final panel min over seeds; configurations with failed seeds rank last):
+  trial  35:   -366.9 +/-  31.3 (sd over 3 seeds)  {"lr": 0.0004622276610035371, "update_every": 4096, "num_epochs": 4, "batch_size": 1024, "clip_range": 0.18554120609176747, "entropy_coef": 0.01690513363604953, "opponent_update_every": 9321}
+  trial   0:   -675.9 +/- 316.1 (sd over 3 seeds)  {"lr": 0.0003, "update_every": 4096, "num_epochs": 4, "batch_size": 256, "clip_range": 0.2, "entropy_coef": 0.01, "opponent_update_every": 10000}
+  trial  32:  -1077.2 +/-  45.4 (sd over 3 seeds)  {"lr": 0.00017522492395119385, "update_every": 4096, "num_epochs": 3, "batch_size": 256, "clip_range": 0.11358134755859449, "entropy_coef": 0.022540611598002216, "opponent_update_every": 12732}
+
+winner: trial 35

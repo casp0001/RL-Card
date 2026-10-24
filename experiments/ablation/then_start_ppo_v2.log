@@ -1,0 +1,47 @@
+19:04 8/10 ablation runs done
+19:06 9/10 ablation runs done
+19:08 9/10 ablation runs done
+19:10 9/10 ablation runs done
+19:12 9/10 ablation runs done
+19:14 9/10 ablation runs done
+19:16 9/10 ablation runs done
+19:18 9/10 ablation runs done
+19:20 9/10 ablation runs done
+19:22 9/10 ablation runs done
+19:24 9/10 ablation runs done
+{
+ "latest": {
+  "lbr": 773.5,
+  "panel_min": -508.0625,
+  "seeds": 2,
+  "rank_sum": 5
+ },
+ "pool": {
+  "lbr": 719.0,
+  "panel_min": -518.875,
+  "seeds": 2,
+  "rank_sum": 4
+ },
+ "warmup_honest": {
+  "lbr": 696.375,
+  "panel_min": -447.875,
+  "seeds": 2,
+  "rank_sum": 1
+ },
+ "warmup_mix": {
+  "lbr": 1219.125,
+  "panel_min": -1224.0625,
+  "seeds": 2,
+  "rank_sum": 8
+ },
+ "warmup_mix_pool": {
+  "lbr": 760.75,
+  "panel_min": -397.0,
+  "seeds": 2,
+  "rank_sum": 2
+ }
+}
+best variant: warmup_honest
+wrote experiments\tune\run_ppo_v2.ps1; starting ppo_v2 with --set warmup_episodes=200000 --set warmup_bot=honest
+started 4 workers for ppo_v2; progress: python tune.py status --study ppo_v2
+ppo_v2 started

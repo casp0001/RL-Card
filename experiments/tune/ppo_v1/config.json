@@ -1,0 +1,96 @@
+{
+  "algo": "ppo",
+  "budget": 1000000,
+  "evals": 10,
+  "eval_deals": 500,
+  "eval_panel": "random,station,maniac,nit,tag,lag",
+  "seed": 42,
+  "space": {
+    "lr": {
+      "type": "float",
+      "low": 5e-05,
+      "high": 0.001,
+      "log": true,
+      "start": 0.0003
+    },
+    "update_every": {
+      "type": "categorical",
+      "choices": [
+        2048,
+        4096,
+        8192,
+        16384
+      ],
+      "start": 4096
+    },
+    "num_epochs": {
+      "type": "int",
+      "low": 2,
+      "high": 8,
+      "log": false,
+      "start": 4
+    },
+    "batch_size": {
+      "type": "categorical",
+      "choices": [
+        128,
+        256,
+        512,
+        1024
+      ],
+      "start": 256
+    },
+    "clip_range": {
+      "type": "float",
+      "low": 0.1,
+      "high": 0.3,
+      "log": false,
+      "start": 0.2
+    },
+    "entropy_coef": {
+      "type": "float",
+      "low": 0.001,
+      "high": 0.03,
+      "log": true,
+      "start": 0.01
+    },
+    "gae_lambda": {
+      "type": "float",
+      "low": 0.9,
+      "high": 0.99,
+      "log": false,
+      "tune": false,
+      "value": 0.95
+    },
+    "mlp_layers": {
+      "type": "categorical",
+      "choices": [
+        "128 128",
+        "256 256",
+        "256 256 256",
+        "512 512"
+      ],
+      "list": true,
+      "tune": false,
+      "value": "256 256"
+    },
+    "opponent_update_every": {
+      "type": "int",
+      "low": 2000,
+      "high": 50000,
+      "log": true,
+      "start": 10000,
+      "help": "self-play stability is the usual PPO failure in poker"
+    }
+  },
+  "fixed": {
+    "verbose": false,
+    "obs": "rich",
+    "discount_factor": 1.0
+  },
+  "prune": 1,
+  "min_resource_frac": 0.25,
+  "reduction_factor": 3,
+  "startup_trials": 12,
+  "created": "2026-10-22 13:37:24"
+}

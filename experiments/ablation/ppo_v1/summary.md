@@ -1,0 +1,18 @@
+# Self-play ablation: ppo_v1
+
+Held-out panel deals and LBR (mbb/hand); fold rates from 500 duplicate deals vs TAG ("behind": equity below the pot odds; "well ahead": 15 points above). Mean over seeds (sd = spread over seeds).
+
+| variant | seeds | panel min | LBR (lower = better) | vs random | vs station | vs maniac | vs nit | vs tag | vs lag | fold facing bet | fold when behind | fold when well ahead | VPIP | PFR | train min |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| latest | 2 | -508 (sd 15) | +774 (sd 21) | +1524 (sd 249) | +104 (sd 90) | +246 (sd 1) | -484 (sd 20) | -443 (sd 107) | -340 (sd 107) | 0.0% (sd 0.0%) | 0.0% (sd 0.0%) | 0.0% (sd 0.0%) | 92.5% (sd 0.8%) | 5.6% (sd 1.6%) | 34 |
+| pool | 2 | -519 (sd 1) | +719 (sd 6) | +1682 (sd 13) | +35 (sd 17) | +177 (sd 41) | -519 (sd 1) | -383 (sd 32) | -276 (sd 19) | 0.0% (sd 0.0%) | 0.0% (sd 0.0%) | 0.0% (sd 0.0%) | 90.0% (sd 0.4%) | 1.8% (sd 0.4%) | 35 |
+| warmup_honest | 2 | -448 (sd 119) | +696 (sd 118) | +1304 (sd 537) | +114 (sd 115) | +27 (sd 257) | -323 (sd 296) | -351 (sd 26) | -311 (sd 74) | 17.8% (sd 25.1%) | 16.2% (sd 22.9%) | 13.8% (sd 19.6%) | 74.0% (sd 23.0%) | 24.5% (sd 31.8%) | 30 |
+| warmup_mix | 2 | -1224 (sd 449) | +1219 (sd 306) | +742 (sd 1) | +234 (sd 90) | -1224 (sd 449) | -20 (sd 60) | -254 (sd 40) | -440 (sd 23) | 34.0% (sd 0.2%) | 51.7% (sd 2.2%) | 24.1% (sd 0.3%) | 62.5% (sd 2.2%) | 38.2% (sd 2.2%) | 23 |
+| warmup_mix_pool | 2 | -397 (sd 343) | +761 (sd 346) | +533 (sd 495) | +195 (sd 119) | -370 (sd 382) | -91 (sd 56) | -291 (sd 194) | -315 (sd 264) | 35.3% (sd 17.3%) | 63.5% (sd 30.3%) | 28.9% (sd 19.2%) | 63.0% (sd 13.6%) | 9.4% (sd 10.6%) | 26 |
+
+Variants:
+- latest: newest snapshot only (plain self-play)
+- pool: pool of the last 10 snapshots, newest half of the time
+- warmup_honest: warm-up vs HonestAgent, fading to 0
+- warmup_mix: warm-up vs randomised equity bot, fading to 0
+- warmup_mix_pool: randomised equity warm-up + snapshot pool

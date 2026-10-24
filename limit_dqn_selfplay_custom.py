@@ -7,6 +7,7 @@ import rlcard
 from obs_encoding import ENV_IDS
 from functions import str2bool, frozen_copy, plot_learning_curve
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
+from self_play import OpponentSchedule, add_self_play_args
 from rlcard.agents import RandomAgent
 from dqn_agent_relu import DQNAgent 
 
@@ -47,10 +48,12 @@ def train(args, on_eval=None):
         device=args.device,
         activation=args.activation,
         discount_factor=args.discount_factor,
+        update_target_estimator_every=args.update_target_every,
     )
 
-    # Opponent pool for self-play: starts as a frozen copy of the initial agent
-    opponent = frozen_copy(agent)
+    # Self-play opponents (newest snapshot by default; optional snapshot pool
+    # and rule-based warm-up, see self_play.py)
+    schedule = OpponentSchedule(agent, args)
 
     # Evaluation panel of fixed opponents (see eval_panel.py)
     panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
@@ -62,11 +65,9 @@ def train(args, on_eval=None):
                 
                 with contextlib.redirect_stdout(devnull):
 
-                    # --- Self-play: update opponent snapshot periodically ---
-                    if episode % args.opponent_update_every == 0 and episode > 0:
-                        opponent = frozen_copy(agent)
-                        if args.verbose:
-                            print(f'\n[Episode {episode}] Opponent snapshot updated.')
+                    # --- Self-play opponent: newest snapshot, or (options) an older
+                    # snapshot from the pool / the warm-up bot; see self_play.py
+                    opponent = schedule.opponent(episode, agent)
 
                     # Alternate seats so agent learns both positions
                     if episode % 2 == 0:
@@ -137,6 +138,7 @@ def build_parser():
                         help='Evaluate against the panel every N episodes')
     parser.add_argument('--opponent_update_every', type=int, default=2_000,
                         help='Freeze a new opponent snapshot every N episodes')
+    add_self_play_args(parser)
 
     # DQN hyper-parameters
     parser.add_argument('--mlp_layers', type=int, nargs='+', default=[128, 128],
@@ -147,6 +149,8 @@ def build_parser():
                         help='Larger buffer for longer episodes')
     parser.add_argument('--replay_memory_init_size', type=int, default=100)
     parser.add_argument('--train_every', type=int, default=1)
+    parser.add_argument('--update_target_every', type=int, default=1000,
+                        help='Copy the Q-network into the target network every N training steps')
     parser.add_argument('--discount_factor', type=float, default=0.99,
                         help='Gamma. Hands pay out only at the end, so 1.0 is natural (tuning uses 1.0)')
     parser.add_argument('--epsilon_start', type=float, default=1.0)

@@ -1,0 +1,43 @@
+15:04 resuming the ablation
+ppo_v2: trial 35 {"lr": 0.0004622276610035371, "update_every": 4096, "num_epochs": 4, "batch_size": 1024, "clip_range": 0.18554120609176747, "entropy_coef": 0.01690513363604953, "opponent_update_every": 9321}
+3 variants x 4 seeds, 3 at a time
+  latest seed 2042: done, skipping
+  warmup_honest seed 2042: done, skipping
+  warmup_mix_pool seed 2042: done, skipping
+  started latest seed 2043
+  started warmup_honest seed 2043
+  started warmup_mix_pool seed 2043
+  warmup_honest seed 2043: finished after 32 min
+  started latest seed 2044
+  warmup_mix_pool seed 2043: finished after 34 min
+  started warmup_honest seed 2044
+  latest seed 2043: finished after 35 min
+  started warmup_mix_pool seed 2044
+  warmup_honest seed 2044: finished after 28 min
+  started latest seed 2045
+  warmup_mix_pool seed 2044: finished after 28 min
+  started warmup_honest seed 2045
+  latest seed 2044: finished after 34 min
+  started warmup_mix_pool seed 2045
+  warmup_honest seed 2045: finished after 32 min
+  latest seed 2045: finished after 34 min
+  warmup_mix_pool seed 2045: finished after 32 min
+# Self-play ablation: ppo_v2
+
+Held-out panel deals and LBR (mbb/hand); fold rates from 500 duplicate deals vs TAG ("behind": equity below the pot odds; "well ahead": 15 points above). Mean over seeds (sd = spread over seeds).
+
+| variant | seeds | panel min | LBR (lower = better) | vs random | vs station | vs maniac | vs nit | vs tag | vs lag | fold facing bet | fold when behind | fold when well ahead | VPIP | PFR | train min |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| latest | 4 | -386 (sd 120) | +621 (sd 58) | +996 (sd 178) | +100 (sd 59) | +135 (sd 521) | -270 (sd 156) | -383 (sd 124) | -317 (sd 80) | 22.1% (sd 6.1%) | 35.5% (sd 9.7%) | 15.0% (sd 4.9%) | 71.7% (sd 6.1%) | 38.3% (sd 6.2%) | 45 |
+| warmup_honest | 4 | -304 (sd 29) | +616 (sd 75) | +960 (sd 127) | +238 (sd 108) | -98 (sd 154) | -215 (sd 61) | -304 (sd 29) | -246 (sd 7) | 24.7% (sd 2.9%) | 38.4% (sd 21.7%) | 16.9% (sd 2.5%) | 68.9% (sd 4.3%) | 41.4% (sd 5.1%) | 41 |
+| warmup_mix_pool | 4 | -508 (sd 207) | +760 (sd 257) | +968 (sd 252) | +213 (sd 139) | -64 (sd 518) | -237 (sd 170) | -359 (sd 100) | -352 (sd 59) | 24.9% (sd 6.6%) | 31.9% (sd 22.1%) | 17.8% (sd 5.9%) | 67.1% (sd 4.4%) | 38.2% (sd 15.0%) | 42 |
+
+Variants:
+- latest: newest snapshot only (plain self-play)
+- pool: pool of the last 10 snapshots, newest half of the time
+- warmup_honest: warm-up vs HonestAgent, fading to 0
+- warmup_mix: warm-up vs randomised equity bot, fading to 0
+- warmup_mix_pool: randomised equity warm-up + snapshot pool
+
+written to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\ablation\ppo_v2\summary.md
+16:41 ablation done

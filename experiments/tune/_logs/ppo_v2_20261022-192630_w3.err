@@ -1,0 +1,16 @@
+[I 2026-10-22 19:26:40,289] Using an existing study with name 'ppo_v2' instead of creating a new one.
+[I 2026-10-22 19:36:33,674] Trial 2 pruned. 
+[I 2026-10-22 20:00:30,259] Trial 5 pruned. 
+[I 2026-10-22 20:09:45,274] Trial 11 pruned. 
+[I 2026-10-22 20:18:59,053] Trial 14 pruned. 
+[I 2026-10-22 20:29:10,341] Trial 16 pruned. 
+[I 2026-10-22 20:38:46,574] Trial 19 pruned. 
+[I 2026-10-22 21:02:05,450] Trial 23 pruned. 
+[I 2026-10-22 21:10:27,882] Trial 28 pruned. 
+[I 2026-10-22 21:19:55,208] Trial 31 pruned. 
+[I 2026-10-22 21:45:46,163] Trial 35 finished with value: -171.0 and parameters: {'lr': 0.0004622276610035371, 'update_every': 4096, 'num_epochs': 4, 'batch_size': 1024, 'clip_range': 0.18554120609176747, 'entropy_coef': 0.01690513363604953, 'opponent_update_every': 9321}. Best is trial 35 with value: -171.0.
+[I 2026-10-22 21:54:12,491] Trial 41 pruned. 
+[I 2026-10-22 22:03:33,340] Trial 42 pruned. 
+[I 2026-10-22 22:12:18,200] Trial 45 pruned. 
+[I 2026-10-22 22:20:13,395] Trial 47 pruned. 
+[I 2026-10-22 22:28:39,608] Trial 49 pruned. 

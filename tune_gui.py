@@ -287,7 +287,7 @@ class TuneGUI(tk.Tk):
         if reset_study:
             self.study_var.set(f'{algo}_{time.strftime("%Y%m%d_%H%M")}')
         defaults = tune_spaces.DEFAULT_SETTINGS[algo]
-        values = {'trials': '40', 'workers': '2', 'threads': '0', 'budget': str(defaults['budget']),
+        values = {'trials': '50', 'workers': '2', 'threads': '0', 'budget': str(defaults['budget']),
                   'evals': str(defaults['evals']), 'eval_deals': '500',
                   'eval_panel': 'random,station,maniac,nit,tag,lag', 'seed': '42', 'prune': '1',
                   'min_resource_frac': '0.25', 'reduction_factor': '3', 'startup_trials': '12'}

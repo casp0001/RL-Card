@@ -1,0 +1,8 @@
+[I 2026-10-22 13:37:29,882] Using an existing study with name 'ppo_v1' instead of creating a new one.
+[I 2026-10-22 14:21:07,131] Trial 2 finished with value: -525.0 and parameters: {'lr': 0.0005715798549444232, 'update_every': 2048, 'num_epochs': 4, 'batch_size': 1024, 'clip_range': 0.1856328638756693, 'entropy_coef': 0.0018700069773611668, 'opponent_update_every': 2951}. Best is trial 2 with value: -525.0.
+[I 2026-10-22 14:35:18,919] Trial 10 pruned. 
+[I 2026-10-22 15:16:23,968] Trial 13 finished with value: -551.0 and parameters: {'lr': 0.0003555680170650665, 'update_every': 2048, 'num_epochs': 5, 'batch_size': 1024, 'clip_range': 0.2830479111806764, 'entropy_coef': 0.002099720789914332, 'opponent_update_every': 4049}. Best is trial 2 with value: -525.0.
+[I 2026-10-22 16:09:59,015] Trial 20 finished with value: -534.0 and parameters: {'lr': 0.0004700660629992501, 'update_every': 2048, 'num_epochs': 7, 'batch_size': 1024, 'clip_range': 0.2988656419704014, 'entropy_coef': 0.003186968894004676, 'opponent_update_every': 6291}. Best is trial 15 with value: -484.6666666666667.
+[I 2026-10-22 16:43:34,287] Trial 25 pruned. 
+[I 2026-10-22 17:19:01,780] Trial 30 finished with value: -504.6666666666667 and parameters: {'lr': 0.0005715415942100724, 'update_every': 2048, 'num_epochs': 3, 'batch_size': 512, 'clip_range': 0.1828151284284241, 'entropy_coef': 0.0030743288311905924, 'opponent_update_every': 4427}. Best is trial 26 with value: -472.3333333333333.
+[I 2026-10-22 17:29:51,437] Trial 38 pruned. 

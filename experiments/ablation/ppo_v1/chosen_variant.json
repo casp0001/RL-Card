@@ -1,0 +1,41 @@
+{
+ "variant": "warmup_honest",
+ "settings": {
+  "warmup_episodes": 200000,
+  "warmup_bot": "honest"
+ },
+ "scores": {
+  "latest": {
+   "lbr": 773.5,
+   "panel_min": -508.0625,
+   "seeds": 2,
+   "rank_sum": 5
+  },
+  "pool": {
+   "lbr": 719.0,
+   "panel_min": -518.875,
+   "seeds": 2,
+   "rank_sum": 4
+  },
+  "warmup_honest": {
+   "lbr": 696.375,
+   "panel_min": -447.875,
+   "seeds": 2,
+   "rank_sum": 1
+  },
+  "warmup_mix": {
+   "lbr": 1219.125,
+   "panel_min": -1224.0625,
+   "seeds": 2,
+   "rank_sum": 8
+  },
+  "warmup_mix_pool": {
+   "lbr": 760.75,
+   "panel_min": -397.0,
+   "seeds": 2,
+   "rank_sum": 2
+  }
+ },
+ "rule": "best sum of ranks by mean LBR (low) and mean held-out panel min (high); LBR breaks ties",
+ "chosen": "2026-10-22 19:26"
+}

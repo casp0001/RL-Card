@@ -1,0 +1,5 @@
+ppo_v2: trial 35 {"lr": 0.0004622276610035371, "update_every": 4096, "num_epochs": 4, "batch_size": 1024, "clip_range": 0.18554120609176747, "entropy_coef": 0.01690513363604953, "opponent_update_every": 9321}
+3 variants x 4 seeds, 3 at a time
+  started latest seed 2042
+  started warmup_honest seed 2042
+  started warmup_mix_pool seed 2042

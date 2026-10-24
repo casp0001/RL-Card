@@ -42,15 +42,27 @@ ALGORITHMS = {
 LAYERS = ['128 128', '256 256', '256 256 256', '512 512']
 
 SPACES = {
+    # DQN ranges widened after the PPO studies (50 trials per study): in PPO the
+    # exploration parameter (entropy) mattered most and its best region moved
+    # with the training protocol, the opponent-snapshot interval was the next
+    # most important (best 3k-15k, mid-range) and the best learning rates hit
+    # the top of their range -- so DQN tunes its exploration (epsilon_end too,
+    # previously fixed) and gets wider learning-rate / interval ranges.
     'dqn': {
-        'lr': {'type': 'float', 'low': 3e-5, 'high': 1e-3, 'log': True, 'start': 1e-4},
-        'batch_size': {'type': 'categorical', 'choices': [64, 128, 256], 'start': 128},
-        'mlp_layers': {'type': 'categorical', 'choices': LAYERS, 'list': True, 'start': '256 256'},
-        'epsilon_decay_steps': {'type': 'int', 'low': 100_000, 'high': 2_000_000, 'log': True,
+        'lr': {'type': 'float', 'low': 1e-5, 'high': 3e-3, 'log': True, 'start': 1e-4},
+        'batch_size': {'type': 'categorical', 'choices': [32, 64, 128, 256, 512], 'start': 128},
+        'mlp_layers': {'type': 'categorical', 'choices': ['128 128', '256 256', '512 512', '256 256 256',
+                                                          '512 512 512'], 'list': True, 'start': '256 256'},
+        'epsilon_decay_steps': {'type': 'int', 'low': 50_000, 'high': 3_000_000, 'log': True,
                                 'start': 500_000,
                                 'help': "counted in the learning agent's decisions (a few per episode)"},
-        'replay_memory_size': {'type': 'int', 'low': 50_000, 'high': 500_000, 'log': True, 'start': 200_000},
-        'opponent_update_every': {'type': 'int', 'low': 2_000, 'high': 50_000, 'log': True, 'start': 10_000},
+        'epsilon_end': {'type': 'float', 'low': 0.01, 'high': 0.25, 'log': True, 'start': 0.05,
+                        'help': 'exploration left after the decay (the DQN counterpart of PPO\'s entropy bonus)'},
+        'replay_memory_size': {'type': 'int', 'low': 20_000, 'high': 1_000_000, 'log': True, 'start': 200_000,
+                               'help': '~0.6 KB per transition'},
+        'opponent_update_every': {'type': 'int', 'low': 1_000, 'high': 100_000, 'log': True, 'start': 10_000},
+        'update_target_every': {'type': 'int', 'low': 250, 'high': 10_000, 'log': True, 'start': 1_000,
+                                'help': 'training steps between target-network copies'},
         'train_every': {'type': 'categorical', 'choices': [1, 2, 4], 'tune': False, 'value': 1},
         'activation': {'type': 'categorical', 'choices': ['relu', 'tanh'], 'tune': False, 'value': 'relu'},
     },
@@ -67,26 +79,32 @@ SPACES = {
         'opponent_update_every': {'type': 'int', 'low': 2_000, 'high': 50_000, 'log': True, 'start': 10_000,
                                   'help': 'self-play stability is the usual PPO failure in poker'},
     },
+    # NFSP ranges widened after the PPO / DQN studies: exploration and the
+    # opponent-snapshot interval mattered most in PPO, so the epsilon range is
+    # wider and the snapshot interval is tuned; the learning-rate ranges are
+    # wider on both sides. Network size and train_every set the compute per
+    # episode (DQN showed a 5-8x spread), so experiments/nfsp_pipeline.py
+    # measures them in a pilot and drops choices that are too expensive.
+    # Buffer ranges are capped so 4 workers fit in RAM (~1.5 GB each when full).
     'nfsp': {
         # starts follow Heinrich & Silver (2016): RL 0.1, SL 0.005, eta 0.1, epsilon 0.06
-        'rl_learning_rate': {'type': 'float', 'low': 5e-3, 'high': 0.2, 'log': True, 'start': 0.05,
+        'rl_learning_rate': {'type': 'float', 'low': 2e-3, 'high': 0.3, 'log': True, 'start': 0.05,
                              'help': 'range for SGD; use ~1e-5..1e-3 with optimizer=adam'},
-        'sl_learning_rate': {'type': 'float', 'low': 1e-3, 'high': 2e-2, 'log': True, 'start': 0.005,
+        'sl_learning_rate': {'type': 'float', 'low': 5e-4, 'high': 5e-2, 'log': True, 'start': 0.005,
                              'help': 'range for SGD; use ~1e-5..1e-3 with optimizer=adam'},
-        'anticipatory_param': {'type': 'float', 'low': 0.05, 'high': 0.3, 'log': False, 'start': 0.1},
-        'reservoir_buffer_capacity': {'type': 'int', 'low': 300_000, 'high': 2_000_000, 'log': True,
+        'anticipatory_param': {'type': 'float', 'low': 0.03, 'high': 0.5, 'log': True, 'start': 0.1},
+        'reservoir_buffer_capacity': {'type': 'int', 'low': 200_000, 'high': 1_500_000, 'log': True,
                                       'start': 1_000_000, 'help': '~0.3 KB per entry'},
         'q_replay_memory_size': {'type': 'int', 'low': 100_000, 'high': 600_000, 'log': True, 'start': 200_000,
                                  'help': '~0.6 KB per entry'},
-        'q_epsilon_start': {'type': 'float', 'low': 0.02, 'high': 0.12, 'log': False, 'start': 0.06},
-        'layers': {'type': 'categorical', 'choices': ['256 256', '512 512', '256 256 256'],
+        'q_epsilon_start': {'type': 'float', 'low': 0.02, 'high': 0.3, 'log': True, 'start': 0.06},
+        'layers': {'type': 'categorical', 'choices': ['128 128', '256 256', '512 512', '256 256 256'],
                    'list': True, 'targets': ['hidden_layers_sizes', 'q_mlp_layers'], 'start': '256 256'},
-        'train_every': {'type': 'categorical', 'choices': [64, 128, 256],
+        'train_every': {'type': 'categorical', 'choices': [32, 64, 128, 256],
                         'targets': ['train_every', 'q_train_every'], 'start': 128},
         'optimizer': {'type': 'categorical', 'choices': ['sgd', 'adam'], 'tune': False, 'value': 'sgd'},
         'q_activation': {'type': 'categorical', 'choices': ['relu', 'tanh'], 'tune': False, 'value': 'relu'},
-        'opponent_update_every': {'type': 'int', 'low': 1_000, 'high': 50_000, 'log': True,
-                                  'tune': False, 'value': 10_000},
+        'opponent_update_every': {'type': 'int', 'low': 1_000, 'high': 100_000, 'log': True, 'start': 10_000},
     },
     'deepcfr': {
         'lr': {'type': 'float', 'low': 1e-4, 'high': 3e-3, 'log': True, 'start': 5e-4},
@@ -108,9 +126,8 @@ FIXED = {
     # every algorithm trains on the rich observation (obs_encoding.py)
     # gamma = 1 for every algorithm: a hand pays out only at its end, so
     # discounting would just shrink values by the number of decisions left
-    # DQN epsilon_end 0.05: the script default (0.1) keeps 10 % random play all run
-    'dqn': {'verbose': False, 'obs': 'rich', 'replay_memory_init_size': 5_000, 'discount_factor': 1.0,
-            'epsilon_end': 0.05},
+    # (DQN's epsilon_end is tuned in its space; it used to be fixed at 0.05 here)
+    'dqn': {'verbose': False, 'obs': 'rich', 'replay_memory_init_size': 5_000, 'discount_factor': 1.0},
     'ppo': {'verbose': False, 'obs': 'rich', 'discount_factor': 1.0},
     'nfsp': {'verbose': False, 'obs': 'rich', 'q_discount_factor': 1.0, 'eval_best_response': False,
              'q_replay_memory_init_size': 5_000, 'min_buffer_size_to_learn': 5_000},

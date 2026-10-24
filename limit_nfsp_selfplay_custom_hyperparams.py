@@ -7,6 +7,7 @@ import rlcard
 from obs_encoding import ENV_IDS
 from functions import fmt_actions, str2bool, frozen_copy, plot_learning_curve
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
+from self_play import OpponentSchedule, add_self_play_args
 from nfsp_agent_XPU import NFSPAgent
 from rlcard.utils import (
     reorganize,
@@ -67,8 +68,9 @@ def train(args, on_eval=None):
         device=args.device,
     )
     #warmup(agent, args)  # optional warmup against honest opponent before self-play
-    # create agent copy for opponent
-    opponent = frozen_copy(agent)
+    # Self-play opponents (newest snapshot by default; optional snapshot pool
+    # and rule-based warm-up, see self_play.py)
+    schedule = OpponentSchedule(agent, args)
     # Evaluation panel of fixed opponents (see eval_panel.py)
     panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
     panel_logger = PanelLogger(args.log_dir, panel.members)
@@ -81,11 +83,10 @@ def train(args, on_eval=None):
             with open(os.devnull, 'w') as devnull:
                 with contextlib.redirect_stdout(devnull):
 
-                    # periodic opponent snapshot update
-                    if episode % args.opponent_update_every == 0 and episode > 0:
-                        opponent = frozen_copy(agent)
-                        if args.verbose:
-                            print(f'\n[Episode {episode}] Opponent snapshot updated.')
+                    # self-play opponent: newest snapshot, or (options) an older
+                    # snapshot from the pool / the warm-up bot; see self_play.py.
+                    # Snapshots resample their NFSP mode every episode there.
+                    opponent = schedule.opponent(episode, agent)
 
                     # alternate seats so agent learns both positions
                     if episode % 2 == 0:
@@ -95,9 +96,6 @@ def train(args, on_eval=None):
                         env.set_agents([opponent, agent])
                         seat = 1
 
-                    # resample the snapshot's mode too, otherwise it keeps the mode it
-                    # was copied in (pure best response w.p. eta) for the whole window
-                    opponent.sample_episode_policy()
                     trajectories, payoffs = env.run(is_training=True)
                     trajectories = reorganize(trajectories, payoffs)
 
@@ -159,6 +157,7 @@ def build_parser():
                         help='Also evaluate the best-response (DQN) network (panel_br.csv)')
     parser.add_argument('--evaluate_every', type=int, default=100_000)
     parser.add_argument('--opponent_update_every', type=int, default=50_000)
+    add_self_play_args(parser)
 
     # NFSP hyper-parameters
     parser.add_argument('--hidden_layers_sizes', type=int, nargs='+', default=[256, 256, 256])

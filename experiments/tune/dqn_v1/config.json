@@ -1,0 +1,111 @@
+{
+  "algo": "dqn",
+  "budget": 1000000,
+  "evals": 10,
+  "eval_deals": 500,
+  "eval_panel": "random,station,maniac,nit,tag,lag",
+  "seed": 42,
+  "space": {
+    "lr": {
+      "type": "float",
+      "low": 1e-05,
+      "high": 0.003,
+      "log": true,
+      "start": 0.0001
+    },
+    "batch_size": {
+      "type": "categorical",
+      "choices": [
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "start": 128
+    },
+    "mlp_layers": {
+      "type": "categorical",
+      "choices": [
+        "128 128",
+        "256 256",
+        "512 512",
+        "256 256 256",
+        "512 512 512"
+      ],
+      "list": true,
+      "start": "256 256"
+    },
+    "epsilon_decay_steps": {
+      "type": "int",
+      "low": 50000,
+      "high": 3000000,
+      "log": true,
+      "start": 500000,
+      "help": "counted in the learning agent's decisions (a few per episode)"
+    },
+    "epsilon_end": {
+      "type": "float",
+      "low": 0.01,
+      "high": 0.25,
+      "log": true,
+      "start": 0.05,
+      "help": "exploration left after the decay (the DQN counterpart of PPO's entropy bonus)"
+    },
+    "replay_memory_size": {
+      "type": "int",
+      "low": 20000,
+      "high": 1000000,
+      "log": true,
+      "start": 200000,
+      "help": "~0.6 KB per transition"
+    },
+    "opponent_update_every": {
+      "type": "int",
+      "low": 1000,
+      "high": 100000,
+      "log": true,
+      "start": 10000
+    },
+    "update_target_every": {
+      "type": "int",
+      "low": 250,
+      "high": 10000,
+      "log": true,
+      "start": 1000,
+      "help": "training steps between target-network copies"
+    },
+    "train_every": {
+      "type": "categorical",
+      "choices": [
+        1,
+        2,
+        4
+      ],
+      "tune": false,
+      "value": 1
+    },
+    "activation": {
+      "type": "categorical",
+      "choices": [
+        "relu",
+        "tanh"
+      ],
+      "tune": false,
+      "value": "relu"
+    }
+  },
+  "fixed": {
+    "verbose": false,
+    "obs": "rich",
+    "replay_memory_init_size": 5000,
+    "discount_factor": 1.0,
+    "warmup_episodes": 200000,
+    "warmup_bot": "honest"
+  },
+  "prune": 1,
+  "min_resource_frac": 0.25,
+  "reduction_factor": 3,
+  "startup_trials": 15,
+  "created": "2026-10-23 16:44:13"
+}

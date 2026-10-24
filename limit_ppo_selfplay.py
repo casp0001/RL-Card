@@ -8,6 +8,7 @@ import rlcard
 from obs_encoding import ENV_IDS
 from functions import fmt_actions, str2bool, frozen_copy, plot_learning_curve
 from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
+from self_play import OpponentSchedule, add_self_play_args
 from ppo_agent import PPOAgent
 
 from rlcard.utils import (
@@ -57,8 +58,9 @@ def train(args, on_eval=None):
         device=args.device,
     )
 
-    # Opponent pool for self-play: starts as a frozen copy of the initial agent
-    opponent = frozen_copy(agent)
+    # Self-play opponents (newest snapshot by default; optional snapshot pool
+    # and rule-based warm-up, see self_play.py)
+    schedule = OpponentSchedule(agent, args)
 
     # Evaluation panel of fixed opponents (see eval_panel.py)
     panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
@@ -70,11 +72,9 @@ def train(args, on_eval=None):
 
                 with contextlib.redirect_stdout(devnull):
 
-                    # --- Self-play: update opponent snapshot periodically ---
-                    if episode % args.opponent_update_every == 0 and episode > 0:
-                        opponent = frozen_copy(agent)
-                        if args.verbose:
-                            print(f'\n[Episode {episode}] Opponent snapshot updated.')
+                    # --- Self-play opponent: newest snapshot, or (options) an older
+                    # snapshot from the pool / the warm-up bot; see self_play.py
+                    opponent = schedule.opponent(episode, agent)
 
                     # Alternate seats so agent learns both positions
                     if episode % 2 == 0:
@@ -153,6 +153,7 @@ def build_parser():
                         help='Evaluate against the panel every N episodes')
     parser.add_argument('--opponent_update_every', type=int, default=2_000,
                         help='Freeze a new opponent snapshot every N episodes')
+    add_self_play_args(parser)
     parser.add_argument('--checkpoint_every', type=int, default=0,
                         help='Save an intermediate checkpoint every N episodes (0 = never)')
 
