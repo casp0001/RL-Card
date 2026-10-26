@@ -1,0 +1,102 @@
+{
+ "rl_learning_rate": {
+  "type": "float",
+  "low": 0.002,
+  "high": 0.3,
+  "log": true,
+  "start": 0.05,
+  "help": "range for SGD; use ~1e-5..1e-3 with optimizer=adam"
+ },
+ "sl_learning_rate": {
+  "type": "float",
+  "low": 0.0005,
+  "high": 0.05,
+  "log": true,
+  "start": 0.005,
+  "help": "range for SGD; use ~1e-5..1e-3 with optimizer=adam"
+ },
+ "anticipatory_param": {
+  "type": "float",
+  "low": 0.03,
+  "high": 0.5,
+  "log": true,
+  "start": 0.1
+ },
+ "reservoir_buffer_capacity": {
+  "type": "int",
+  "low": 200000,
+  "high": 1500000,
+  "log": true,
+  "start": 1000000,
+  "help": "~0.3 KB per entry"
+ },
+ "q_replay_memory_size": {
+  "type": "int",
+  "low": 100000,
+  "high": 600000,
+  "log": true,
+  "start": 200000,
+  "help": "~0.6 KB per entry"
+ },
+ "q_epsilon_start": {
+  "type": "float",
+  "low": 0.02,
+  "high": 0.3,
+  "log": true,
+  "start": 0.06
+ },
+ "layers": {
+  "type": "categorical",
+  "choices": [
+   "128 128",
+   "256 256",
+   "512 512",
+   "256 256 256"
+  ],
+  "list": true,
+  "targets": [
+   "hidden_layers_sizes",
+   "q_mlp_layers"
+  ],
+  "start": "256 256"
+ },
+ "train_every": {
+  "type": "categorical",
+  "choices": [
+   32,
+   64,
+   128,
+   256
+  ],
+  "targets": [
+   "train_every",
+   "q_train_every"
+  ],
+  "start": 128
+ },
+ "optimizer": {
+  "type": "categorical",
+  "choices": [
+   "sgd",
+   "adam"
+  ],
+  "tune": false,
+  "value": "sgd"
+ },
+ "q_activation": {
+  "type": "categorical",
+  "choices": [
+   "relu",
+   "tanh"
+  ],
+  "tune": false,
+  "value": "relu"
+ },
+ "opponent_update_every": {
+  "type": "int",
+  "low": 1000,
+  "high": 100000,
+  "log": true,
+  "start": 10000
+ }
+}

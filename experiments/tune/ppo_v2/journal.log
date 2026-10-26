@@ -1180,3 +1180,4 @@
 {"op_code":0,"worker_id":"04c147ca-bd0f-4221-86c1-4c69ba43057b-51072","study_name":"ppo_v2","directions":[2]}
 {"op_code":0,"worker_id":"2e33ccd1-4f50-4235-abe0-836a78e1a7fd-14808","study_name":"ppo_v2","directions":[2]}
 {"op_code":0,"worker_id":"3fafc578-7be3-489b-afa6-00792dd2e495-28908","study_name":"ppo_v2","directions":[2]}
+{"op_code":0,"worker_id":"8d323bcb-51cb-4a9f-82aa-3c4207cb5d6b-18396","study_name":"ppo_v2","directions":[2]}

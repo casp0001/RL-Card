@@ -1,0 +1,10 @@
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1868.75
+----------------------------------------
+[Episode 99999] avg policy: panel min -1868.8  mean -1023.5 mbb/h  |  random +1975±170  station -239±114  maniac -1091±355  nit -609±190  tag -1310±261  lag -1869±275
+[Episode 99999] avg policy:   actions: call=26% raise=59% fold=3% check=13%  (15s)
+
+Logs saved in experiments\tune\nfsp_pilot\256x256_te64/
+Learning curve saved to experiments\tune\nfsp_pilot\256x256_te64/fig.png

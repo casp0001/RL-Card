@@ -1,0 +1,9 @@
+[I 2026-10-25 15:03:42,830] A new study created in Journal with name: nfsp_v1
+[I 2026-10-25 16:29:15,188] Trial 0 finished with value: -1747.1666666666667 and parameters: {'rl_learning_rate': 0.05, 'sl_learning_rate': 0.005, 'anticipatory_param': 0.1, 'reservoir_buffer_capacity': 1000000, 'q_replay_memory_size': 200000, 'q_epsilon_start': 0.06, 'layers': '256 256', 'train_every': 128, 'opponent_update_every': 10000}. Best is trial 0 with value: -1747.1666666666667.
+[I 2026-10-25 16:55:33,976] Trial 8 pruned. 
+[I 2026-10-25 17:47:14,224] Trial 11 pruned. 
+[I 2026-10-25 19:14:02,231] Trial 18 finished with value: -640.5 and parameters: {'rl_learning_rate': 0.2568539655735623, 'sl_learning_rate': 0.0030668734920730133, 'anticipatory_param': 0.22445192694681784, 'reservoir_buffer_capacity': 1013709, 'q_replay_memory_size': 129013, 'q_epsilon_start': 0.10508233151439188, 'layers': '256 256 256', 'train_every': 64, 'opponent_update_every': 49925}. Best is trial 6 with value: -501.8333333333333.
+[I 2026-10-25 19:36:11,458] Trial 24 pruned. 
+[I 2026-10-25 19:55:55,928] Trial 25 pruned. 
+[I 2026-10-25 21:39:49,833] Trial 28 finished with value: -555.0 and parameters: {'rl_learning_rate': 0.16079023622139632, 'sl_learning_rate': 0.00616802331544853, 'anticipatory_param': 0.4409436670829457, 'reservoir_buffer_capacity': 207359, 'q_replay_memory_size': 162362, 'q_epsilon_start': 0.15306268939926945, 'layers': '256 256 256', 'train_every': 32, 'opponent_update_every': 15388}. Best is trial 27 with value: -491.5.
+[I 2026-10-25 22:24:09,223] Trial 32 pruned. 

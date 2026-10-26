@@ -1,0 +1,12 @@
+[I 2026-10-25 15:03:48,799] Using an existing study with name 'nfsp_v1' instead of creating a new one.
+[I 2026-10-25 15:26:39,833] Trial 2 pruned. 
+[I 2026-10-25 16:39:27,043] Trial 4 finished with value: -707.1666666666666 and parameters: {'rl_learning_rate': 0.17906298656449796, 'sl_learning_rate': 0.0028835035085158713, 'anticipatory_param': 0.07622015860571511, 'reservoir_buffer_capacity': 651371, 'q_replay_memory_size': 207611, 'q_epsilon_start': 0.26378912907494595, 'layers': '512 512', 'train_every': 128, 'opponent_update_every': 9811}. Best is trial 4 with value: -707.1666666666666.
+[I 2026-10-25 17:01:59,706] Trial 9 pruned. 
+[I 2026-10-25 17:24:20,949] Trial 12 pruned. 
+[I 2026-10-25 17:44:16,783] Trial 14 pruned. 
+[I 2026-10-25 18:05:41,647] Trial 17 pruned. 
+[I 2026-10-25 18:25:30,933] Trial 21 pruned. 
+[I 2026-10-25 19:39:03,291] Trial 22 pruned. 
+[I 2026-10-25 21:17:32,992] Trial 26 finished with value: -493.8333333333333 and parameters: {'rl_learning_rate': 0.23550555622018107, 'sl_learning_rate': 0.0012272407163122266, 'anticipatory_param': 0.32030423499611954, 'reservoir_buffer_capacity': 1148503, 'q_replay_memory_size': 169378, 'q_epsilon_start': 0.05711021969162846, 'layers': '512 512', 'train_every': 64, 'opponent_update_every': 76977}. Best is trial 27 with value: -491.5.
+[I 2026-10-25 21:50:13,124] Trial 31 pruned. 
+[I 2026-10-25 22:16:28,549] Trial 33 pruned. 

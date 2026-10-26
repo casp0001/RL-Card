@@ -1,3 +1,666 @@
 worker Cloud-3M0LKK4-33020: 0/50 trials finished
 
 === trial 3: {"lr": 0.0005639927000302529, "batch_size": 64, "mlp_layers": "512 512", "epsilon_decay_steps": 736642, "epsilon_end": 0.018630414244903908, "replay_memory_size": 237512, "opponent_update_every": 10013, "update_target_every": 750}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2528.5
+----------------------------------------
+
+[Episode 99999] panel min -2528.5  mean -1285.9 mbb/h  |  random +2156±118  station +20±40  maniac +15±29  nit -1578±145  tag -2358±175  lag -2528±180
+
+[Episode 99999]   actions: call=32% raise=54% fold=0% check=14%  (40s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2437.5
+----------------------------------------
+
+[Episode 199999] panel min -2437.5  mean -1298.3 mbb/h  |  random +2226±105  station -47±29  maniac -792±230  nit -1125±134  tag -2090±181  lag -2438±197
+
+[Episode 199999]   actions: call=19% raise=59% fold=1% check=21%  (35s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2639.5
+----------------------------------------
+=== trial 3 pruned after 3 evaluation(s) (episode 299999, panel min -2639.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_3/
+
+=== trial 4: {"lr": 1.0554460369440138e-05, "batch_size": 256, "mlp_layers": "128 128", "epsilon_decay_steps": 135755, "epsilon_end": 0.1788024593377399, "replay_memory_size": 115983, "opponent_update_every": 27363, "update_target_every": 3785}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2444.5
+----------------------------------------
+
+[Episode 99999] panel min -2444.5  mean -1049.7 mbb/h  |  random +2534±118  station -28±34  maniac +58±102  nit -833±143  tag -2001±188  lag -2444±198
+
+[Episode 99999]   actions: call=11% raise=71% fold=0% check=18%  (21s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2497.5
+----------------------------------------
+
+[Episode 199999] panel min -2497.5  mean -1076.1 mbb/h  |  random +2670±127  station +63±29  maniac -45±120  nit -829±152  tag -2072±182  lag -2498±194
+
+[Episode 199999]   actions: call=12% raise=72% fold=0% check=16%  (22s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1820.0
+----------------------------------------
+=== trial 4 pruned after 3 evaluation(s) (episode 299999, panel min -1820.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_4/
+
+=== trial 5: {"lr": 0.00010568098136726191, "batch_size": 512, "mlp_layers": "256 256 256", "epsilon_decay_steps": 238863, "epsilon_end": 0.011175389430315095, "replay_memory_size": 73392, "opponent_update_every": 1060, "update_target_every": 3576}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1765.5
+----------------------------------------
+
+[Episode 99999] panel min -1765.5  mean -909.9 mbb/h  |  random +2318±103  station -53±59  maniac -185±164  nit -928±123  tag -1618±147  lag -1766±159
+
+[Episode 99999]   actions: call=23% raise=56% fold=1% check=20%  (23s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2139.0
+----------------------------------------
+
+[Episode 199999] panel min -2139.0  mean -1253.4 mbb/h  |  random +1365±105  station -388±74  maniac -1064±286  nit -956±112  tag -1720±143  lag -2139±169
+
+[Episode 199999]   actions: call=25% raise=45% fold=7% check=23%  (20s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1210.0
+----------------------------------------
+=== trial 5 pruned after 3 evaluation(s) (episode 299999, panel min -1210.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_5/
+
+=== trial 9: {"lr": 1.584798574324639e-05, "batch_size": 64, "mlp_layers": "128 128", "epsilon_decay_steps": 55634, "epsilon_end": 0.0510116460057135, "replay_memory_size": 419861, "opponent_update_every": 1283, "update_target_every": 1889}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2150.5
+----------------------------------------
+
+[Episode 99999] panel min -2150.5  mean -979.9 mbb/h  |  random +2236±126  station -402±66  maniac +400±184  nit -847±128  tag -1900±168  lag -2150±185
+
+[Episode 99999]   actions: call=16% raise=68% fold=2% check=14%  (19s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1428.0
+----------------------------------------
+
+[Episode 199999] panel min -1428.0  mean -418.8 mbb/h  |  random +2040±123  station +290±56  maniac +1038±275  nit -742±124  tag -1252±146  lag -1428±160
+
+[Episode 199999]   actions: call=24% raise=63% fold=3% check=11%  (21s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -942.0
+----------------------------------------
+
+[Episode 299999] panel min -942.0  mean -131.5 mbb/h  |  random +2004±117  station +294±64  maniac +1578±296  nit -668±119  tag -942±138  lag -920±151
+
+[Episode 299999]   actions: call=25% raise=62% fold=4% check=9%  (18s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1269.0
+----------------------------------------
+
+[Episode 399999] panel min -1269.0  mean -236.4 mbb/h  |  random +2304±117  station +284±62  maniac +1748±259  nit -702±135  tag -1244±151  lag -1269±156
+
+[Episode 399999]   actions: call=21% raise=70% fold=3% check=6%  (24s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -1367.0
+----------------------------------------
+
+[Episode 499999] panel min -1367.0  mean -263.6 mbb/h  |  random +2256±130  station +244±73  maniac +1766±253  nit -662±127  tag -1300±151  lag -1367±159
+
+[Episode 499999]   actions: call=18% raise=70% fold=3% check=9%  (24s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1878.0
+----------------------------------------
+
+[Episode 599999] panel min -1878.0  mean -434.2 mbb/h  |  random +2347±123  station +364±60  maniac +1626±236  nit -748±130  tag -1534±157  lag -1878±162
+
+[Episode 599999]   actions: call=17% raise=72% fold=2% check=9%  (24s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -1720.5
+----------------------------------------
+=== trial 9 pruned after 7 evaluation(s) (episode 699999, panel min -1720.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_9/
+
+=== trial 10: {"lr": 0.0001592719381041456, "batch_size": 512, "mlp_layers": "128 128", "epsilon_decay_steps": 97454, "epsilon_end": 0.019921109832651107, "replay_memory_size": 45073, "opponent_update_every": 1742, "update_target_every": 5302}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2318.0
+----------------------------------------
+
+[Episode 99999] panel min -2318.0  mean -1547.0 mbb/h  |  random +1495±109  station -972±86  maniac -1564±298  nit -858±118  tag -2024±160  lag -2318±181
+
+[Episode 99999]   actions: call=19% raise=58% fold=7% check=16%  (24s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1503.5
+----------------------------------------
+
+[Episode 199999] panel min -1503.5  mean -974.6 mbb/h  |  random +1024±79  station -194±46  maniac -1504±260  nit -604±76  tag -1200±114  lag -1371±146
+
+[Episode 199999]   actions: call=25% raise=29% fold=10% check=36%  (21s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1773.5
+----------------------------------------
+=== trial 10 pruned after 3 evaluation(s) (episode 299999, panel min -1773.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_10/
+
+=== trial 11: {"lr": 0.0017101882347758798, "batch_size": 512, "mlp_layers": "128 128", "epsilon_decay_steps": 1778319, "epsilon_end": 0.168907680541755, "replay_memory_size": 73577, "opponent_update_every": 10363, "update_target_every": 4849}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1510.0
+----------------------------------------
+
+[Episode 99999] panel min -1510.0  mean -864.3 mbb/h  |  random +2238±98  station -95±47  maniac -327±154  nit -880±115  tag -1510±134  lag -1510±147
+
+[Episode 99999]   actions: call=24% raise=47% fold=1% check=28%  (22s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2289.5
+----------------------------------------
+
+[Episode 199999] panel min -2289.5  mean -1326.1 mbb/h  |  random +2398±116  station -494±79  maniac -801±227  nit -931±143  tag -2115±179  lag -2290±186
+
+[Episode 199999]   actions: call=16% raise=72% fold=2% check=10%  (22s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2265.5
+----------------------------------------
+=== trial 11 pruned after 3 evaluation(s) (episode 299999, panel min -2265.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_11/
+
+=== trial 12: {"lr": 1.463278595005806e-05, "batch_size": 512, "mlp_layers": "256 256", "epsilon_decay_steps": 230504, "epsilon_end": 0.022254549070458665, "replay_memory_size": 84266, "opponent_update_every": 4366, "update_target_every": 762}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1748.5
+----------------------------------------
+
+[Episode 99999] panel min -1748.5  mean -957.1 mbb/h  |  random +2582±126  station -341±62  maniac -142±118  nit -926±139  tag -1628±159  lag -1748±161
+
+[Episode 99999]   actions: call=22% raise=62% fold=1% check=15%  (23s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1979.0
+----------------------------------------
+
+[Episode 199999] panel min -1979.0  mean -954.3 mbb/h  |  random +1414±88  station +69±51  maniac -1979±263  nit -537±89  tag -1010±115  lag -1314±138
+
+[Episode 199999]   actions: call=25% raise=37% fold=9% check=29%  (19s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1256.0
+----------------------------------------
+=== trial 12 pruned after 3 evaluation(s) (episode 299999, panel min -1256.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_12/
+
+=== trial 14: {"lr": 5.116808673300199e-05, "batch_size": 64, "mlp_layers": "256 256 256", "epsilon_decay_steps": 2021585, "epsilon_end": 0.23715615149967273, "replay_memory_size": 432330, "opponent_update_every": 2548, "update_target_every": 311}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1740.5
+----------------------------------------
+
+[Episode 99999] panel min -1740.5  mean -920.5 mbb/h  |  random +1892±92  station +17±23  maniac -85±79  nit -1089±107  tag -1705±135  lag -1740±135
+
+[Episode 99999]   actions: call=33% raise=37% fold=0% check=30%  (23s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2509.5
+----------------------------------------
+
+[Episode 199999] panel min -2509.5  mean -1179.3 mbb/h  |  random +2344±134  station -38±26  maniac -1±14  nit -1001±145  tag -2347±180  lag -2510±188
+
+[Episode 199999]   actions: call=24% raise=71% fold=0% check=5%  (22s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2248.5
+----------------------------------------
+=== trial 14 pruned after 3 evaluation(s) (episode 299999, panel min -2248.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_14/
+
+=== trial 15: {"lr": 1.4141659954855969e-05, "batch_size": 256, "mlp_layers": "256 256", "epsilon_decay_steps": 1758974, "epsilon_end": 0.047150208207760086, "replay_memory_size": 589367, "opponent_update_every": 17034, "update_target_every": 899}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1603.5
+----------------------------------------
+
+[Episode 99999] panel min -1603.5  mean -892.5 mbb/h  |  random +2200±112  station -161±51  maniac -6±67  nit -1159±130  tag -1533±142  lag -1604±146
+
+[Episode 99999]   actions: call=29% raise=50% fold=0% check=21%  (20s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2327.5
+----------------------------------------
+
+[Episode 199999] panel min -2327.5  mean -1067.7 mbb/h  |  random +2640±126  station +3±27  maniac -203±93  nit -871±145  tag -1940±176  lag -2328±180
+
+[Episode 199999]   actions: call=17% raise=70% fold=0% check=13%  (21s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2341.5
+----------------------------------------
+=== trial 15 pruned after 3 evaluation(s) (episode 299999, panel min -2341.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_15/
+
+=== trial 17: {"lr": 1.676104986013998e-05, "batch_size": 128, "mlp_layers": "256 256", "epsilon_decay_steps": 1434280, "epsilon_end": 0.012280586164106079, "replay_memory_size": 25959, "opponent_update_every": 51977, "update_target_every": 1772}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -3493.5
+----------------------------------------
+
+[Episode 99999] panel min -3493.5  mean -1594.9 mbb/h  |  random +2330±125  station -216±63  maniac -3±28  nit -1464±142  tag -2798±201  lag -3494±214
+
+[Episode 99999]   actions: call=18% raise=61% fold=3% check=17%  (21s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2390.5
+----------------------------------------
+
+[Episode 199999] panel min -2390.5  mean -1118.3 mbb/h  |  random +2600±129  station -109±38  maniac +42±93  nit -1113±155  tag -2021±185  lag -2390±191
+
+[Episode 199999]   actions: call=20% raise=68% fold=0% check=12%  (20s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2296.5
+----------------------------------------
+=== trial 17 pruned after 3 evaluation(s) (episode 299999, panel min -2296.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_17/
+
+=== trial 19: {"lr": 2.245111013480864e-05, "batch_size": 512, "mlp_layers": "256 256", "epsilon_decay_steps": 181296, "epsilon_end": 0.012992541059325948, "replay_memory_size": 884427, "opponent_update_every": 1140, "update_target_every": 659}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1920.5
+----------------------------------------
+
+[Episode 99999] panel min -1920.5  mean -901.3 mbb/h  |  random +2306±113  station -223±48  maniac +99±111  nit -756±120  tag -1706±142  lag -1920±148
+
+[Episode 99999]   actions: call=21% raise=56% fold=1% check=22%  (19s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1140.5
+----------------------------------------
+
+[Episode 199999] panel min -1140.5  mean -603.1 mbb/h  |  random +2074±105  station +242±45  maniac -532±269  nit -475±108  tag -1110±125  lag -1140±134
+
+[Episode 199999]   actions: call=25% raise=51% fold=3% check=20%  (20s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1043.5
+----------------------------------------
+
+[Episode 299999] panel min -1043.5  mean -479.3 mbb/h  |  random +2270±114  station +369±54  maniac -324±274  nit -444±117  tag -954±125  lag -1044±130
+
+[Episode 299999]   actions: call=20% raise=60% fold=4% check=17%  (18s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -879.0
+----------------------------------------
+
+[Episode 399999] panel min -879.0  mean -350.2 mbb/h  |  random +1864±107  station +312±66  maniac +132±265  nit -502±104  tag -814±110  lag -879±125
+
+[Episode 399999]   actions: call=24% raise=53% fold=5% check=17%  (21s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -855.0
+----------------------------------------
+
+[Episode 499999] panel min -855.0  mean -260.9 mbb/h  |  random +1608±100  station +296±68  maniac +527±262  nit -463±99  tag -855±109  lag -810±122
+
+[Episode 499999]   actions: call=26% raise=54% fold=6% check=14%  (20s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -669.0
+----------------------------------------
+
+[Episode 599999] panel min -669.0  mean -237.8 mbb/h  |  random +2015±102  station +338±66  maniac +30±265  nit -274±103  tag -616±106  lag -669±116
+
+[Episode 599999]   actions: call=25% raise=56% fold=5% check=15%  (14s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -776.5
+----------------------------------------
+
+[Episode 699999] panel min -776.5  mean -312.6 mbb/h  |  random +1952±101  station +346±70  maniac +44±274  nit -408±98  tag -776±106  lag -769±114
+
+[Episode 699999]   actions: call=23% raise=54% fold=5% check=18%  (18s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -765.0
+----------------------------------------
+
+[Episode 799999] panel min -765.0  mean -269.6 mbb/h  |  random +1592±95  station +328±70  maniac +208±270  nit -408±95  tag -710±108  lag -765±124
+
+[Episode 799999]   actions: call=26% raise=47% fold=7% check=19%  (20s)
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -718.5
+----------------------------------------
+
+[Episode 899999] panel min -718.5  mean -285.5 mbb/h  |  random +1526±104  station +365±69  maniac -14±269  nit -387±100  tag -673±106  lag -718±126
+
+[Episode 899999]   actions: call=23% raise=52% fold=7% check=17%  (21s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -866.0
+----------------------------------------
+
+[Episode 999999] panel min -866.0  mean -399.1 mbb/h  |  random +1926±103  station +352±61  maniac -866±291  nit -286±107  tag -599±115  lag -596±127
+
+[Episode 999999]   actions: call=20% raise=61% fold=5% check=14%  (18s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_19/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_19/fig.png
+=== trial 19 finished: score -783.2
+
+=== trial 28: {"lr": 1.033998864682508e-05, "batch_size": 512, "mlp_layers": "256 256", "epsilon_decay_steps": 209470, "epsilon_end": 0.01973883795856103, "replay_memory_size": 879898, "opponent_update_every": 2256, "update_target_every": 431}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1861.5
+----------------------------------------
+
+[Episode 99999] panel min -1861.5  mean -913.9 mbb/h  |  random +2476±119  station -120±38  maniac +19±78  nit -877±129  tag -1730±155  lag -1862±162
+
+[Episode 99999]   actions: call=15% raise=64% fold=0% check=21%  (21s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1728.5
+----------------------------------------
+
+[Episode 199999] panel min -1728.5  mean -673.5 mbb/h  |  random +2396±112  station +183±43  maniac +216±227  nit -621±123  tag -1417±137  lag -1728±139
+
+[Episode 199999]   actions: call=18% raise=62% fold=2% check=19%  (21s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1185.5
+----------------------------------------
+=== trial 28 pruned after 3 evaluation(s) (episode 299999, panel min -1185.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_28/
+
+=== trial 29: {"lr": 0.00020209820452415903, "batch_size": 512, "mlp_layers": "256 256", "epsilon_decay_steps": 92568, "epsilon_end": 0.017026598606719005, "replay_memory_size": 303825, "opponent_update_every": 4122, "update_target_every": 1223}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1885.5
+----------------------------------------
+
+[Episode 99999] panel min -1885.5  mean -1158.3 mbb/h  |  random +1946±110  station -636±81  maniac -795±251  nit -743±116  tag -1732±154  lag -1886±172
+
+[Episode 99999]   actions: call=23% raise=55% fold=4% check=18%  (21s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1609.5
+----------------------------------------
+
+[Episode 199999] panel min -1609.5  mean -974.5 mbb/h  |  random +1838±93  station -136±60  maniac -931±254  nit -713±104  tag -1483±130  lag -1610±142
+
+[Episode 199999]   actions: call=24% raise=46% fold=5% check=24%  (21s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1999.5
+----------------------------------------
+=== trial 29 pruned after 3 evaluation(s) (episode 299999, panel min -1999.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_29/
+
+=== trial 33: {"lr": 0.00013379361317717892, "batch_size": 256, "mlp_layers": "256 256", "epsilon_decay_steps": 496229, "epsilon_end": 0.016698001857992667, "replay_memory_size": 813304, "opponent_update_every": 2782, "update_target_every": 295}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -6660.0
+----------------------------------------
+
+[Episode 99999] panel min -6660.0  mean -2473.7 mbb/h  |  random +1958±105  station -311±72  maniac -6660±376  nit -1434±137  tag -1967±170  lag -1996±179
+
+[Episode 99999]   actions: call=27% raise=51% fold=4% check=18%  (18s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1736.5
+----------------------------------------
+
+[Episode 199999] panel min -1736.5  mean -833.7 mbb/h  |  random +2462±120  station -20±21  maniac -8±111  nit -791±126  tag -1613±140  lag -1736±139
+
+[Episode 199999]   actions: call=28% raise=50% fold=0% check=21%  (22s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1734.5
+----------------------------------------
+=== trial 33 pruned after 3 evaluation(s) (episode 299999, panel min -1734.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_33/
+
+=== trial 35: {"lr": 0.0005349606235011599, "batch_size": 256, "mlp_layers": "512 512 512", "epsilon_decay_steps": 138527, "epsilon_end": 0.055962425217807636, "replay_memory_size": 267123, "opponent_update_every": 41833, "update_target_every": 361}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1902.0
+----------------------------------------
+
+[Episode 99999] panel min -1902.0  mean -1266.1 mbb/h  |  random +1762±101  station -915±94  maniac -1902±245  nit -621±109  tag -1253±132  lag -1640±151
+
+[Episode 99999]   actions: call=23% raise=58% fold=7% check=13%  (24s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -850.5
+----------------------------------------
+
+[Episode 199999] panel min -850.5  mean -482.9 mbb/h  |  random +1958±89  station -56±40  maniac -383±204  nit -334±93  tag -791±101  lag -850±111
+
+[Episode 199999]   actions: call=27% raise=48% fold=0% check=25%  (22s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2707.5
+----------------------------------------
+=== trial 35 pruned after 3 evaluation(s) (episode 299999, panel min -2707.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_35/
+
+=== trial 39: {"lr": 7.06355191177848e-05, "batch_size": 512, "mlp_layers": "256 256", "epsilon_decay_steps": 385932, "epsilon_end": 0.01223285909038836, "replay_memory_size": 712235, "opponent_update_every": 1487, "update_target_every": 1416}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2211.5
+----------------------------------------
+
+[Episode 99999] panel min -2211.5  mean -1044.1 mbb/h  |  random +2574±115  station -23±40  maniac -164±104  nit -875±136  tag -1947±165  lag -2212±182
+
+[Episode 99999]   actions: call=18% raise=68% fold=0% check=15%  (22s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1685.5
+----------------------------------------
+
+[Episode 199999] panel min -1685.5  mean -944.1 mbb/h  |  random +2222±109  station +72±43  maniac -770±255  nit -757±122  tag -1580±135  lag -1686±144
+
+[Episode 199999]   actions: call=21% raise=56% fold=2% check=21%  (19s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1527.5
+----------------------------------------
+=== trial 39 pruned after 3 evaluation(s) (episode 299999, panel min -1527.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_39/
+
+=== trial 41: {"lr": 0.002202668661917861, "batch_size": 32, "mlp_layers": "256 256", "epsilon_decay_steps": 119097, "epsilon_end": 0.027961601725473708, "replay_memory_size": 119307, "opponent_update_every": 23439, "update_target_every": 746}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -8731.0
+----------------------------------------
+
+[Episode 99999] panel min -8731.0  mean -2288.3 mbb/h  |  random +1578±149  station +33±31  maniac -8731±127  nit -620±156  tag -980±169  lag -1144±185
+
+[Episode 99999]   actions: call=1% raise=91% fold=8% check=0%  (22s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1984.5
+----------------------------------------
+
+[Episode 199999] panel min -1984.5  mean -1113.1 mbb/h  |  random +2528±134  station +0±0  maniac -1271±306  nit -528±150  tag -1782±200  lag -1984±215
+
+[Episode 199999]   actions: call=9% raise=89% fold=2% check=0%  (20s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -9000.0
+----------------------------------------
+=== trial 41 pruned after 3 evaluation(s) (episode 299999, panel min -9000.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_41/
+
+=== trial 42: {"lr": 0.00020625147306082246, "batch_size": 32, "mlp_layers": "512 512 512", "epsilon_decay_steps": 109107, "epsilon_end": 0.08571794990525604, "replay_memory_size": 309712, "opponent_update_every": 13217, "update_target_every": 646}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2061.0
+----------------------------------------
+
+[Episode 99999] panel min -2061.0  mean -1436.4 mbb/h  |  random +1028±92  station -192±48  maniac -1820±273  nit -1176±110  tag -1934±137  lag -2061±171
+
+[Episode 99999]   actions: call=30% raise=33% fold=7% check=30%  (22s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -3014.5
+----------------------------------------
+
+[Episode 199999] panel min -3014.5  mean -1516.3 mbb/h  |  random +2404±105  station -11±22  maniac +0±0  nit -1660±142  tag -2896±188  lag -3014±201
+
+[Episode 199999]   actions: call=2% raise=53% fold=0% check=45%  (23s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2707.5
+----------------------------------------
+=== trial 42 pruned after 3 evaluation(s) (episode 299999, panel min -2707.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_42/
+
+=== trial 45: {"lr": 0.00011708231171953383, "batch_size": 256, "mlp_layers": "256 256", "epsilon_decay_steps": 888208, "epsilon_end": 0.04983316554412324, "replay_memory_size": 77548, "opponent_update_every": 7297, "update_target_every": 1854}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2939.5
+----------------------------------------
+
+[Episode 99999] panel min -2939.5  mean -1734.3 mbb/h  |  random +1574±113  station -664±78  maniac -928±285  nit -1523±128  tag -2617±180  lag -2940±200
+
+[Episode 99999]   actions: call=24% raise=50% fold=6% check=20%  (20s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2419.5
+----------------------------------------
+
+[Episode 199999] panel min -2419.5  mean -1303.9 mbb/h  |  random +2438±123  station -86±56  maniac -720±172  nit -1203±142  tag -2091±180  lag -2420±176
+
+[Episode 199999]   actions: call=23% raise=55% fold=1% check=21%  (22s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2142.5
+----------------------------------------
+=== trial 45 pruned after 3 evaluation(s) (episode 299999, panel min -2142.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_45/
+
+=== trial 46: {"lr": 0.0019612895804459367, "batch_size": 64, "mlp_layers": "512 512 512", "epsilon_decay_steps": 95463, "epsilon_end": 0.01930053084177205, "replay_memory_size": 324068, "opponent_update_every": 13858, "update_target_every": 1148}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -2707.5
+----------------------------------------
+
+[Episode 99999] panel min -2707.5  mean -1151.3 mbb/h  |  random +2938±137  station +0±0  maniac +0±0  nit -807±165  tag -2242±206  lag -2708±217
+
+[Episode 99999]   actions: call=10% raise=90% fold=0% check=0%  (23s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2707.5
+----------------------------------------
+
+[Episode 199999] panel min -2707.5  mean -1151.3 mbb/h  |  random +2938±137  station +0±0  maniac +0±0  nit -807±165  tag -2242±206  lag -2708±217
+
+[Episode 199999]   actions: call=10% raise=90% fold=0% check=0%  (24s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -2707.5
+----------------------------------------
+=== trial 46 pruned after 3 evaluation(s) (episode 299999, panel min -2707.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\dqn_v1\trials\trial_46/
+worker done

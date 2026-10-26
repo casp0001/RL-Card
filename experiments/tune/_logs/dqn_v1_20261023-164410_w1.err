@@ -1,3 +1,12 @@
 [I 2026-10-23 16:44:13,330] A new study created in Journal with name: dqn_v1
 [I 2026-10-23 21:04:14,216] Trial 0 finished with value: -673.3333333333334 and parameters: {'lr': 0.0001, 'batch_size': 128, 'mlp_layers': '256 256', 'epsilon_decay_steps': 500000, 'epsilon_end': 0.05, 'replay_memory_size': 200000, 'opponent_update_every': 10000, 'update_target_every': 1000}. Best is trial 0 with value: -673.3333333333334.
 [I 2026-10-24 01:28:30,512] Trial 8 pruned. 
+[I 2026-10-24 11:59:22,492] Trial 13 pruned. 
+[I 2026-10-24 12:33:44,184] Trial 26 pruned. 
+[I 2026-10-24 19:08:22,613] Trial 27 pruned. 
+[I 2026-10-24 19:57:56,556] Trial 32 pruned. 
+[I 2026-10-24 23:19:25,487] Trial 34 pruned. 
+[I 2026-10-25 00:12:10,518] Trial 37 pruned. 
+[I 2026-10-25 06:12:29,767] Trial 38 pruned. 
+[I 2026-10-25 11:59:51,859] Trial 44 pruned. 
+[I 2026-10-25 14:53:02,021] Trial 49 pruned. 

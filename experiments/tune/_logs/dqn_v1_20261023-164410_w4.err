@@ -9,3 +9,13 @@
 [I 2026-10-24 03:54:04,172] Trial 14 pruned. 
 [I 2026-10-24 04:36:03,725] Trial 15 pruned. 
 [I 2026-10-24 05:08:52,037] Trial 17 pruned. 
+[I 2026-10-24 14:25:59,542] Trial 19 finished with value: -783.1666666666666 and parameters: {'lr': 2.245111013480864e-05, 'batch_size': 512, 'mlp_layers': '256 256', 'epsilon_decay_steps': 181296, 'epsilon_end': 0.012992541059325948, 'replay_memory_size': 884427, 'opponent_update_every': 1140, 'update_target_every': 659}. Best is trial 0 with value: -673.3333333333334.
+[I 2026-10-24 17:03:54,261] Trial 28 pruned. 
+[I 2026-10-24 19:39:26,667] Trial 29 pruned. 
+[I 2026-10-24 21:20:34,208] Trial 33 pruned. 
+[I 2026-10-25 01:42:53,674] Trial 35 pruned. 
+[I 2026-10-25 03:10:05,177] Trial 39 pruned. 
+[I 2026-10-25 04:03:09,360] Trial 41 pruned. 
+[I 2026-10-25 07:15:19,854] Trial 42 pruned. 
+[I 2026-10-25 08:10:18,143] Trial 45 pruned. 
+[I 2026-10-25 14:07:53,993] Trial 46 pruned. 

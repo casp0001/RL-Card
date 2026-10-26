@@ -1,0 +1,58 @@
+[
+ {
+  "layers": "128 128",
+  "train_every": 128,
+  "seconds": 175.6698682308197,
+  "episodes": 100000,
+  "peak_memory_gb": 0.552054784,
+  "panel_min": -1938.75
+ },
+ {
+  "layers": "256 256",
+  "train_every": 128,
+  "seconds": 184.8052637577057,
+  "episodes": 100000,
+  "peak_memory_gb": 0.55304192,
+  "panel_min": -1753.75
+ },
+ {
+  "layers": "512 512",
+  "train_every": 128,
+  "seconds": 233.99144983291626,
+  "episodes": 100000,
+  "peak_memory_gb": 0.56342528,
+  "panel_min": -1865.0
+ },
+ {
+  "layers": "256 256 256",
+  "train_every": 128,
+  "seconds": 206.35355043411255,
+  "episodes": 100000,
+  "peak_memory_gb": 0.555208704,
+  "panel_min": -1627.5
+ },
+ {
+  "layers": "256 256",
+  "train_every": 32,
+  "seconds": 238.2087643146515,
+  "episodes": 100000,
+  "peak_memory_gb": 0.555020288,
+  "panel_min": -2018.75
+ },
+ {
+  "layers": "256 256",
+  "train_every": 64,
+  "seconds": 204.1475396156311,
+  "episodes": 100000,
+  "peak_memory_gb": 0.553668608,
+  "panel_min": -1868.75
+ },
+ {
+  "layers": "256 256",
+  "train_every": 256,
+  "seconds": 167.57111430168152,
+  "episodes": 100000,
+  "peak_memory_gb": 0.553455616,
+  "panel_min": -1851.25
+ }
+]

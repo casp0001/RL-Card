@@ -1,0 +1,18 @@
+2026-10-25 22:15 nfsp_v1: 31/35 finished, 4 running
+2026-10-25 22:17 nfsp_v1: 32/35 finished, 4 running
+2026-10-25 22:19 nfsp_v1: 32/35 finished, 4 running
+2026-10-25 22:21 nfsp_v1: 32/35 finished, 4 running
+2026-10-25 22:23 nfsp_v1: 32/35 finished, 4 running
+2026-10-25 22:25 nfsp_v1: 33/35 finished, 4 running
+2026-10-25 22:27 nfsp_v1: 33/35 finished, 4 running
+2026-10-25 22:29 nfsp_v1: 33/35 finished, 4 running
+2026-10-25 22:31 nfsp_v1: 33/35 finished, 4 running
+2026-10-25 22:33 nfsp_v1: 33/35 finished, 4 running
+2026-10-25 22:35 nfsp_v1: 33/35 finished, 4 running
+2026-10-25 22:37 nfsp_v1: 34/35 finished, 4 running
+2026-10-25 22:39 nfsp_v1: 34/35 finished, 4 running
+2026-10-25 22:41 nfsp_v1: 34/35 finished, 4 running
+2026-10-25 22:43 nfsp_v1: 34/35 finished, 4 running
+2026-10-25 22:45 nfsp_v1: 34/35 finished, 4 running
+2026-10-25 22:48 stopped nfsp_v1 at 35 finished trials
+2026-10-25 22:48 nfsp_v1 stopped; not starting nfsp_v2 (--stop-only). Start it with: python experiments\nfsp_v2_pipeline.py

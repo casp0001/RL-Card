@@ -1,0 +1,10 @@
+[I 2026-10-25 15:03:51,867] Using an existing study with name 'nfsp_v1' instead of creating a new one.
+[I 2026-10-25 16:24:28,124] Trial 3 pruned. 
+[I 2026-10-25 16:47:11,818] Trial 7 pruned. 
+[I 2026-10-25 17:08:43,407] Trial 10 pruned. 
+[I 2026-10-25 17:39:45,088] Trial 13 pruned. 
+[I 2026-10-25 18:04:41,494] Trial 16 pruned. 
+[I 2026-10-25 18:26:57,555] Trial 20 pruned. 
+[I 2026-10-25 20:14:28,016] Trial 23 finished with value: -519.6666666666666 and parameters: {'rl_learning_rate': 0.17810636805381894, 'sl_learning_rate': 0.00213092384310144, 'anticipatory_param': 0.31178853766129155, 'reservoir_buffer_capacity': 1214735, 'q_replay_memory_size': 116884, 'q_epsilon_start': 0.04102223345821524, 'layers': '256 256 256', 'train_every': 32, 'opponent_update_every': 7285}. Best is trial 6 with value: -501.8333333333333.
+[I 2026-10-25 22:14:35,949] Trial 29 finished with value: -515.5 and parameters: {'rl_learning_rate': 0.22170579429480897, 'sl_learning_rate': 0.004826180048277223, 'anticipatory_param': 0.21325604661030478, 'reservoir_buffer_capacity': 511114, 'q_replay_memory_size': 223710, 'q_epsilon_start': 0.0667907386150659, 'layers': '512 512', 'train_every': 32, 'opponent_update_every': 23582}. Best is trial 27 with value: -491.5.
+[I 2026-10-25 22:46:02,835] Trial 34 pruned. 

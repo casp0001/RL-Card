@@ -1,0 +1,434 @@
+worker Cloud-3M0LKK4-42316: 0/50 trials finished
+
+=== trial 2: {"rl_learning_rate": 0.28176474024887, "sl_learning_rate": 0.0029597293016429497, "anticipatory_param": 0.05032457872023046, "reservoir_buffer_capacity": 248566, "q_replay_memory_size": 281759, "q_epsilon_start": 0.04298798822843234, "layers": "512 512", "train_every": 256, "opponent_update_every": 5799}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1838.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -1838.0  mean -1120.4 mbb/h  |  random +1702±105  station -168±50  maniac -802±212  nit -1032±126  tag -1762±147  lag -1838±155
+[Episode 199999] avg policy:   actions: call=29% raise=51% fold=2% check=18%  (41s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -2095.0
+----------------------------------------
+[Episode 399999] avg policy: panel min -2095.0  mean -1109.6 mbb/h  |  random +2204±108  station -10±64  maniac -594±240  nit -982±130  tag -1866±173  lag -2095±182
+[Episode 399999] avg policy:   actions: call=26% raise=58% fold=1% check=15%  (25s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -2017.0
+----------------------------------------
+=== trial 2 pruned after 3 evaluation(s) (episode 599999, panel min -2017.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_2/
+
+=== trial 4: {"rl_learning_rate": 0.17906298656449796, "sl_learning_rate": 0.0028835035085158713, "anticipatory_param": 0.07622015860571511, "reservoir_buffer_capacity": 651371, "q_replay_memory_size": 207611, "q_epsilon_start": 0.26378912907494595, "layers": "512 512", "train_every": 128, "opponent_update_every": 9811}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -3831.5
+----------------------------------------
+[Episode 199999] avg policy: panel min -3831.5  mean -1880.6 mbb/h  |  random +1421±101  station -486±71  maniac -3832±284  nit -964±119  tag -1828±155  lag -2292±181
+[Episode 199999] avg policy:   actions: call=21% raise=57% fold=9% check=14%  (19s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -2278.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -2278.5  mean -1302.0 mbb/h  |  random +1156±101  station -594±86  maniac -2278±218  nit -690±112  tag -1352±139  lag -1595±152
+[Episode 399999] avg policy:   actions: call=35% raise=49% fold=8% check=8%  (18s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1535.0
+----------------------------------------
+[Episode 599999] avg policy: panel min -1535.0  mean -941.5 mbb/h  |  random +1110±101  station -505±87  maniac -1535±186  nit -694±117  tag -917±121  lag -1056±128
+[Episode 599999] avg policy:   actions: call=42% raise=46% fold=7% check=5%  (18s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1048.5
+----------------------------------------
+[Episode 799999] avg policy: panel min -1048.5  mean -757.0 mbb/h  |  random +1272±100  station -356±83  maniac -1048±165  nit -650±111  tag -766±113  lag -965±127
+[Episode 799999] avg policy:   actions: call=45% raise=45% fold=5% check=4%  (19s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -906.0
+----------------------------------------
+[Episode 999999] avg policy: panel min -906.0  mean -707.9 mbb/h  |  random +1252±101  station -319±81  maniac -906±149  nit -627±111  tag -788±112  lag -900±123
+[Episode 999999] avg policy:   actions: call=48% raise=44% fold=4% check=3%  (19s)
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -770.5
+----------------------------------------
+[Episode 1199999] avg policy: panel min -770.5  mean -594.7 mbb/h  |  random +1360±101  station -183±74  maniac -735±143  nit -590±112  tag -695±112  lag -770±116
+[Episode 1199999] avg policy:   actions: call=49% raise=45% fold=3% check=3%  (18s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -674.0
+----------------------------------------
+[Episode 1399999] avg policy: panel min -674.0  mean -516.0 mbb/h  |  random +1355±99  station -142±70  maniac -584±136  nit -552±112  tag -628±109  lag -674±108
+[Episode 1399999] avg policy:   actions: call=50% raise=44% fold=3% check=3%  (19s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -751.5
+----------------------------------------
+[Episode 1599999] avg policy: panel min -751.5  mean -538.1 mbb/h  |  random +1350±100  station -99±69  maniac -572±116  nit -590±114  tag -678±112  lag -752±113
+[Episode 1599999] avg policy:   actions: call=50% raise=44% fold=3% check=3%  (19s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -674.5
+----------------------------------------
+[Episode 1799999] avg policy: panel min -674.5  mean -497.1 mbb/h  |  random +1308±101  station -134±69  maniac -433±108  nit -625±113  tag -619±108  lag -674±106
+[Episode 1799999] avg policy:   actions: call=52% raise=44% fold=3% check=2%  (18s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -695.5
+----------------------------------------
+[Episode 1999999] avg policy: panel min -695.5  mean -504.5 mbb/h  |  random +1324±100  station -73±65  maniac -533±124  nit -610±112  tag -611±107  lag -696±110
+[Episode 1999999] avg policy:   actions: call=51% raise=44% fold=3% check=2%  (17s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_4/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_4/fig.png
+=== trial 4 finished: score -707.2
+
+=== trial 9: {"rl_learning_rate": 0.08161630800606832, "sl_learning_rate": 0.004878210614050337, "anticipatory_param": 0.41157501077539904, "reservoir_buffer_capacity": 908664, "q_replay_memory_size": 529172, "q_epsilon_start": 0.052610494068773946, "layers": "256 256 256", "train_every": 256, "opponent_update_every": 38837}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2058.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -2058.0  mean -1188.8 mbb/h  |  random +2196±111  station -130±56  maniac -1120±232  nit -802±138  tag -1834±174  lag -2058±183
+[Episode 199999] avg policy:   actions: call=17% raise=71% fold=2% check=10%  (20s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1896.0
+----------------------------------------
+[Episode 399999] avg policy: panel min -1896.0  mean -1095.4 mbb/h  |  random +2189±109  station +0±45  maniac -1094±218  nit -800±137  tag -1688±165  lag -1896±176
+[Episode 399999] avg policy:   actions: call=19% raise=69% fold=1% check=10%  (19s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1935.0
+----------------------------------------
+=== trial 9 pruned after 3 evaluation(s) (episode 599999, panel min -1935.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_9/
+
+=== trial 12: {"rl_learning_rate": 0.00555958102876394, "sl_learning_rate": 0.0017587357571016084, "anticipatory_param": 0.03668963006929834, "reservoir_buffer_capacity": 295019, "q_replay_memory_size": 129689, "q_epsilon_start": 0.23416770294224903, "layers": "256 256", "train_every": 32, "opponent_update_every": 7293}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2992.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -2992.0  mean -1613.5 mbb/h  |  random +1464±104  station -582±70  maniac -2992±257  nit -895±122  tag -1656±145  lag -1942±173
+[Episode 199999] avg policy:   actions: call=17% raise=58% fold=8% check=17%  (18s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -3074.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -3074.5  mean -1689.4 mbb/h  |  random +1431±98  station -448±69  maniac -3074±275  nit -914±126  tag -1746±153  lag -2265±185
+[Episode 399999] avg policy:   actions: call=18% raise=60% fold=7% check=15%  (18s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -3020.0
+----------------------------------------
+=== trial 12 pruned after 3 evaluation(s) (episode 599999, panel min -3020.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_12/
+
+=== trial 14: {"rl_learning_rate": 0.10501840514651609, "sl_learning_rate": 0.03611501716348685, "anticipatory_param": 0.2697132646006312, "reservoir_buffer_capacity": 315723, "q_replay_memory_size": 286544, "q_epsilon_start": 0.2150161601982452, "layers": "512 512", "train_every": 128, "opponent_update_every": 2794}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -3127.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -3127.0  mean -1670.1 mbb/h  |  random +1444±104  station -486±71  maniac -3127±277  nit -922±121  tag -1790±156  lag -2026±180
+[Episode 199999] avg policy:   actions: call=20% raise=61% fold=7% check=12%  (19s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -2952.0
+----------------------------------------
+[Episode 399999] avg policy: panel min -2952.0  mean -1598.3 mbb/h  |  random +1648±106  station -492±75  maniac -2952±284  nit -866±124  tag -1760±154  lag -1922±177
+[Episode 399999] avg policy:   actions: call=21% raise=62% fold=6% check=11%  (18s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -2632.5
+----------------------------------------
+=== trial 14 pruned after 3 evaluation(s) (episode 599999, panel min -2632.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_14/
+
+=== trial 17: {"rl_learning_rate": 0.16127284123211907, "sl_learning_rate": 0.006887702452227754, "anticipatory_param": 0.12905653780446627, "reservoir_buffer_capacity": 332944, "q_replay_memory_size": 598593, "q_epsilon_start": 0.05337997366083919, "layers": "128 128", "train_every": 128, "opponent_update_every": 57488}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2357.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -2357.0  mean -1359.4 mbb/h  |  random +2280±120  station -162±60  maniac -1448±246  nit -802±145  tag -2028±188  lag -2357±205
+[Episode 199999] avg policy:   actions: call=17% raise=74% fold=2% check=7%  (19s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -2354.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -2354.5  mean -1352.9 mbb/h  |  random +2320±124  station -144±64  maniac -1294±261  nit -1005±147  tag -1967±180  lag -2354±201
+[Episode 399999] avg policy:   actions: call=19% raise=73% fold=2% check=7%  (18s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -2043.0
+----------------------------------------
+=== trial 17 pruned after 3 evaluation(s) (episode 599999, panel min -2043.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_17/
+
+=== trial 21: {"rl_learning_rate": 0.049205468575514874, "sl_learning_rate": 0.0025525246387617592, "anticipatory_param": 0.07114435439027834, "reservoir_buffer_capacity": 692365, "q_replay_memory_size": 222644, "q_epsilon_start": 0.25894683263664325, "layers": "512 512", "train_every": 128, "opponent_update_every": 84683}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -3989.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -3989.0  mean -1952.5 mbb/h  |  random +1480±108  station -673±78  maniac -3989±294  nit -910±127  tag -1814±165  lag -2376±194
+[Episode 199999] avg policy:   actions: call=15% raise=64% fold=9% check=11%  (18s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -3094.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -3094.5  mean -1784.2 mbb/h  |  random +1471±105  station -648±80  maniac -3094±276  nit -886±125  tag -1950±168  lag -2343±188
+[Episode 399999] avg policy:   actions: call=16% raise=64% fold=8% check=13%  (19s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -3251.0
+----------------------------------------
+=== trial 21 pruned after 3 evaluation(s) (episode 599999, panel min -3251.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_21/
+
+=== trial 22: {"rl_learning_rate": 0.25043953481939313, "sl_learning_rate": 0.0011568203601063259, "anticipatory_param": 0.05929454037897609, "reservoir_buffer_capacity": 567594, "q_replay_memory_size": 399941, "q_epsilon_start": 0.2667515415283258, "layers": "512 512", "train_every": 32, "opponent_update_every": 9249}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1324.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -1324.0  mean -1007.1 mbb/h  |  random +802±97  station -757±90  maniac -1324±140  nit -623±100  tag -1089±116  lag -1242±122
+[Episode 199999] avg policy:   actions: call=47% raise=40% fold=10% check=3%  (18s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1138.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -1138.5  mean -855.5 mbb/h  |  random +942±98  station -544±83  maniac -966±115  nit -646±103  tag -983±112  lag -1138±118
+[Episode 399999] avg policy:   actions: call=49% raise=41% fold=8% check=3%  (18s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1008.5
+----------------------------------------
+[Episode 599999] avg policy: panel min -1008.5  mean -805.5 mbb/h  |  random +1002±100  station -467±81  maniac -992±111  nit -680±105  tag -880±111  lag -1008±111
+[Episode 599999] avg policy:   actions: call=50% raise=41% fold=7% check=2%  (17s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -820.5
+----------------------------------------
+[Episode 799999] avg policy: panel min -820.5  mean -668.9 mbb/h  |  random +1180±100  station -366±80  maniac -679±91  nit -687±105  tag -792±108  lag -820±107
+[Episode 799999] avg policy:   actions: call=51% raise=41% fold=6% check=2%  (18s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -716.5
+----------------------------------------
+[Episode 999999] avg policy: panel min -716.5  mean -559.1 mbb/h  |  random +1266±101  station -287±76  maniac -539±90  nit -609±107  tag -644±108  lag -716±108
+[Episode 999999] avg policy:   actions: call=52% raise=41% fold=4% check=2%  (17s)
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -637.5
+----------------------------------------
+[Episode 1199999] avg policy: panel min -637.5  mean -526.7 mbb/h  |  random +1284±99  station -228±69  maniac -506±84  nit -629±108  tag -633±106  lag -638±100
+[Episode 1199999] avg policy:   actions: call=53% raise=41% fold=4% check=2%  (18s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -621.0
+----------------------------------------
+=== trial 22 pruned after 7 evaluation(s) (episode 1399999, panel min -621.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_22/
+
+=== trial 26: {"rl_learning_rate": 0.23550555622018107, "sl_learning_rate": 0.0012272407163122266, "anticipatory_param": 0.32030423499611954, "reservoir_buffer_capacity": 1148503, "q_replay_memory_size": 169378, "q_epsilon_start": 0.05711021969162846, "layers": "512 512", "train_every": 64, "opponent_update_every": 76977}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -941.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -941.0  mean -636.8 mbb/h  |  random +1439±105  station -232±63  maniac -446±133  nit -626±117  tag -938±126  lag -941±121
+[Episode 199999] avg policy:   actions: call=46% raise=47% fold=2% check=6%  (19s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -522.0
+----------------------------------------
+[Episode 399999] avg policy: panel min -522.0  mean -415.1 mbb/h  |  random +1548±104  station -147±57  maniac -434±138  nit -497±112  tag -522±106  lag -476±102
+[Episode 399999] avg policy:   actions: call=51% raise=45% fold=1% check=2%  (19s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -575.5
+----------------------------------------
+[Episode 599999] avg policy: panel min -575.5  mean -363.4 mbb/h  |  random +1601±105  station -102±56  maniac -108±101  nit -518±111  tag -576±106  lag -513±100
+[Episode 599999] avg policy:   actions: call=52% raise=44% fold=1% check=2%  (19s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -513.0
+----------------------------------------
+[Episode 799999] avg policy: panel min -513.0  mean -317.3 mbb/h  |  random +1570±108  station -47±52  maniac -59±96  nit -513±112  tag -504±103  lag -464±97
+[Episode 799999] avg policy:   actions: call=53% raise=44% fold=1% check=2%  (19s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -520.0
+----------------------------------------
+[Episode 999999] avg policy: panel min -520.0  mean -323.5 mbb/h  |  random +1572±109  station -49±50  maniac -82±100  nit -475±112  tag -520±105  lag -492±101
+[Episode 999999] avg policy:   actions: call=53% raise=44% fold=1% check=1%  (19s)
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -518.5
+----------------------------------------
+[Episode 1199999] avg policy: panel min -518.5  mean -338.8 mbb/h  |  random +1601±105  station -60±52  maniac -150±86  nit -490±112  tag -518±103  lag -475±97
+[Episode 1199999] avg policy:   actions: call=54% raise=44% fold=1% check=1%  (19s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -480.5
+----------------------------------------
+[Episode 1399999] avg policy: panel min -480.5  mean -311.2 mbb/h  |  random +1573±106  station -26±50  maniac -132±82  nit -480±110  tag -472±102  lag -445±97
+[Episode 1399999] avg policy:   actions: call=54% raise=44% fold=1% check=1%  (22s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -482.5
+----------------------------------------
+[Episode 1599999] avg policy: panel min -482.5  mean -313.8 mbb/h  |  random +1596±107  station -42±50  maniac -134±96  nit -482±110  tag -458±103  lag -452±97
+[Episode 1599999] avg policy:   actions: call=54% raise=44% fold=1% check=1%  (18s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -484.5
+----------------------------------------
+[Episode 1799999] avg policy: panel min -484.5  mean -304.8 mbb/h  |  random +1581±108  station -36±50  maniac -114±102  nit -484±111  tag -456±102  lag -434±98
+[Episode 1799999] avg policy:   actions: call=54% raise=44% fold=1% check=1%  (18s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -514.5
+----------------------------------------
+[Episode 1999999] avg policy: panel min -514.5  mean -319.0 mbb/h  |  random +1534±108  station -66±50  maniac -148±98  nit -514±110  tag -436±101  lag -431±96
+[Episode 1999999] avg policy:   actions: call=55% raise=44% fold=1% check=1%  (19s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_26/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_26/fig.png
+=== trial 26 finished: score -493.8
+
+=== trial 31: {"rl_learning_rate": 0.09963669697124225, "sl_learning_rate": 0.0006082847309939899, "anticipatory_param": 0.31270424292040955, "reservoir_buffer_capacity": 778495, "q_replay_memory_size": 201477, "q_epsilon_start": 0.0726521401062222, "layers": "512 512", "train_every": 64, "opponent_update_every": 52138}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2036.5
+----------------------------------------
+[Episode 199999] avg policy: panel min -2036.5  mean -1365.5 mbb/h  |  random +2168±112  station -328±64  maniac -1841±239  nit -812±135  tag -1810±168  lag -2036±180
+[Episode 199999] avg policy:   actions: call=21% raise=67% fold=3% check=9%  (19s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -2380.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -2380.5  mean -1381.7 mbb/h  |  random +2348±123  station -118±63  maniac -1424±271  nit -908±138  tag -2078±179  lag -2380±196
+[Episode 399999] avg policy:   actions: call=19% raise=70% fold=2% check=9%  (20s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -2278.5
+----------------------------------------
+=== trial 31 pruned after 3 evaluation(s) (episode 599999, panel min -2278.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_31/
+
+=== trial 33: {"rl_learning_rate": 0.13155086228220855, "sl_learning_rate": 0.04110527446665809, "anticipatory_param": 0.48739720836500594, "reservoir_buffer_capacity": 712547, "q_replay_memory_size": 110772, "q_epsilon_start": 0.13690155498865786, "layers": "512 512", "train_every": 32, "opponent_update_every": 3459}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1326.5
+----------------------------------------
+[Episode 199999] avg policy: panel min -1326.5  mean -980.9 mbb/h  |  random +1488±102  station -416±78  maniac -1218±209  nit -776±121  tag -1168±143  lag -1326±156
+[Episode 199999] avg policy:   actions: call=34% raise=56% fold=3% check=7%  (18s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -894.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -894.5  mean -643.1 mbb/h  |  random +1348±105  station -263±72  maniac -750±172  nit -510±113  tag -798±124  lag -894±134
+[Episode 399999] avg policy:   actions: call=44% raise=50% fold=3% check=3%  (15s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1006.0
+----------------------------------------
+=== trial 33 pruned after 3 evaluation(s) (episode 599999, panel min -1006.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v1\trials\trial_33/
+
+=== trial 35: {"rl_learning_rate": 0.10713301533134814, "sl_learning_rate": 0.013775577856740731, "anticipatory_param": 0.4784101900331491, "reservoir_buffer_capacity": 807631, "q_replay_memory_size": 122075, "q_epsilon_start": 0.22927291249067844, "layers": "256 256", "train_every": 64, "opponent_update_every": 8720}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -3459.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -3459.0  mean -1699.9 mbb/h  |  random +1452±105  station -590±78  maniac -3459±292  nit -798±119  tag -1727±159  lag -1926±170
+[Episode 199999] avg policy:   actions: call=19% raise=62% fold=9% check=11%  (13s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1630.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -1630.5  mean -1070.2 mbb/h  |  random +1275±97  station -596±82  maniac -1630±199  nit -708±111  tag -1126±132  lag -1292±139
+[Episode 399999] avg policy:   actions: call=38% raise=51% fold=7% check=4%  (15s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -954.0
+----------------------------------------
+[Episode 599999] avg policy: panel min -954.0  mean -704.8 mbb/h  |  random +1329±97  station -322±76  maniac -758±156  nit -642±111  tag -848±122  lag -954±127
+[Episode 599999] avg policy:   actions: call=43% raise=48% fold=5% check=4%  (16s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -915.5
+----------------------------------------
+[Episode 799999] avg policy: panel min -915.5  mean -645.1 mbb/h  |  random +1280±97  station -277±73  maniac -727±142  nit -535±111  tag -771±121  lag -916±124
+[Episode 799999] avg policy:   actions: call=47% raise=46% fold=5% check=3%  (17s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -896.5
+----------------------------------------
+[Episode 999999] avg policy: panel min -896.5  mean -625.3 mbb/h  |  random +1376±99  station -237±72  maniac -709±143  nit -574±110  tag -710±115  lag -896±120
+[Episode 999999] avg policy:   actions: call=47% raise=46% fold=4% check=2%  (17s)

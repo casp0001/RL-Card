@@ -1,3 +1,9 @@
 [I 2026-10-23 16:44:16,189] Using an existing study with name 'dqn_v1' instead of creating a new one.
 [I 2026-10-24 06:55:05,465] Trial 1 finished with value: -2707.5 and parameters: {'lr': 0.0013307219382368137, 'batch_size': 32, 'mlp_layers': '512 512 512', 'epsilon_decay_steps': 228224, 'epsilon_end': 0.0454659507923761, 'replay_memory_size': 526020, 'opponent_update_every': 19245, 'update_target_every': 613}. Best is trial 0 with value: -673.3333333333334.
 [I 2026-10-24 09:46:09,067] Trial 22 pruned. 
+[I 2026-10-24 10:33:14,400] Trial 23 pruned. 
+[I 2026-10-24 22:23:29,565] Trial 25 pruned. 
+[I 2026-10-25 02:33:21,176] Trial 36 pruned. 
+[I 2026-10-25 09:04:13,503] Trial 40 pruned. 
+[I 2026-10-25 11:16:21,566] Trial 47 pruned. 
+[I 2026-10-25 13:58:20,642] Trial 48 pruned. 
