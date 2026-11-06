@@ -1,0 +1,261 @@
+trial 24 seed 1042: being trained by another process, skipping
+trial 24 seed 1043: being trained by another process, skipping
+trial 24 seed 1044: being trained by another process, skipping
+
+=== finalist trial 27 (score -378.7), seed 1042: {"lr": 0.0006527893773762898, "batch_size": 8192, "layers": "128 128 128"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.
+Checkpoint saved at episode 10 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_10
+10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1316.5
+----------------------------------------
+[Iteration 19] panel min -1316.5  mean -800.0 mbb/h  |  random +834±90  station -206±77  maniac -1316±244  nit -444±98  tag -822±126  lag -1210±148
+[Iteration 19]   actions: call=24% raise=52% fold=13% check=11%  (20s)
+  last-step weighted losses  adv: 13.377783  policy: 0.013288
+19/200 complete.
+Checkpoint saved at episode 20 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_20
+20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.
+Checkpoint saved at episode 30 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_30
+30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -910.5
+----------------------------------------
+[Iteration 39] panel min -910.5  mean -424.9 mbb/h  |  random +1558±105  station +110±60  maniac -347±269  nit -301±119  tag -676±143  lag -910±155
+[Iteration 39]   actions: call=20% raise=69% fold=7% check=4%  (12s)
+  last-step weighted losses  adv: 19.078724  policy: 0.012917
+39/200 complete.
+Checkpoint saved at episode 40 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_40
+40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.
+Checkpoint saved at episode 50 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_50
+50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -861.0
+----------------------------------------
+[Iteration 59] panel min -861.0  mean -329.6 mbb/h  |  random +1382±108  station +190±70  maniac +76±256  nit -324±108  tag -730±133  lag -861±149
+[Iteration 59]   actions: call=22% raise=64% fold=8% check=5%  (11s)
+  last-step weighted losses  adv: 21.002234  policy: 0.015138
+59/200 complete.
+Checkpoint saved at episode 60 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_60
+60/200 complete.61/200 complete.62/200 complete.63/200 complete.64/200 complete.65/200 complete.66/200 complete.67/200 complete.68/200 complete.69/200 complete.
+Checkpoint saved at episode 70 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_70
+70/200 complete.71/200 complete.72/200 complete.73/200 complete.74/200 complete.75/200 complete.76/200 complete.77/200 complete.78/200 complete.
+----------------------------------------
+  episode      |  79
+  reward       |  -628.5
+----------------------------------------
+[Iteration 79] panel min -628.5  mean -198.8 mbb/h  |  random +1391±95  station +178±76  maniac +390±266  nit -352±103  tag -628±128  lag -581±138
+[Iteration 79]   actions: call=23% raise=60% fold=8% check=9%  (11s)
+  last-step weighted losses  adv: 19.683637  policy: 0.017754
+79/200 complete.
+Checkpoint saved at episode 80 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_80
+80/200 complete.81/200 complete.82/200 complete.83/200 complete.84/200 complete.85/200 complete.86/200 complete.87/200 complete.88/200 complete.89/200 complete.
+Checkpoint saved at episode 90 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_90
+90/200 complete.91/200 complete.92/200 complete.93/200 complete.94/200 complete.95/200 complete.96/200 complete.97/200 complete.98/200 complete.
+----------------------------------------
+  episode      |  99
+  reward       |  -493.5
+----------------------------------------
+[Iteration 99] panel min -493.5  mean -169.1 mbb/h  |  random +1154±88  station +96±88  maniac +447±250  nit -446±93  tag -449±118  lag -494±132
+[Iteration 99]   actions: call=29% raise=47% fold=9% check=14%  (11s)
+  last-step weighted losses  adv: 17.270630  policy: 0.019981
+99/200 complete.
+Checkpoint saved at episode 100 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_100
+100/200 complete.101/200 complete.102/200 complete.103/200 complete.104/200 complete.105/200 complete.106/200 complete.107/200 complete.108/200 complete.109/200 complete.
+Checkpoint saved at episode 110 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_110
+110/200 complete.111/200 complete.112/200 complete.113/200 complete.114/200 complete.115/200 complete.116/200 complete.117/200 complete.118/200 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -592.0
+----------------------------------------
+[Iteration 119] panel min -592.0  mean -69.5 mbb/h  |  random +1032±82  station +198±88  maniac +860±236  nit -404±84  tag -592±112  lag -410±130
+[Iteration 119]   actions: call=32% raise=40% fold=10% check=18%  (10s)
+  last-step weighted losses  adv: 15.757044  policy: 0.019764
+119/200 complete.
+Checkpoint saved at episode 120 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_120
+120/200 complete.121/200 complete.122/200 complete.123/200 complete.124/200 complete.125/200 complete.126/200 complete.127/200 complete.128/200 complete.129/200 complete.
+Checkpoint saved at episode 130 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_130
+130/200 complete.131/200 complete.132/200 complete.133/200 complete.134/200 complete.135/200 complete.136/200 complete.137/200 complete.138/200 complete.
+----------------------------------------
+  episode      |  139
+  reward       |  -398.5
+----------------------------------------
+[Iteration 139] panel min -398.5  mean +71.2 mbb/h  |  random +930±77  station +268±84  maniac +1060±226  nit -398±78  tag -382±106  lag -191±122
+[Iteration 139]   actions: call=33% raise=36% fold=12% check=19%  (10s)
+  last-step weighted losses  adv: 14.652977  policy: 0.020201
+139/200 complete.
+Checkpoint saved at episode 140 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_140
+140/200 complete.141/200 complete.142/200 complete.143/200 complete.144/200 complete.145/200 complete.146/200 complete.147/200 complete.148/200 complete.149/200 complete.
+Checkpoint saved at episode 150 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_150
+150/200 complete.151/200 complete.152/200 complete.153/200 complete.154/200 complete.155/200 complete.156/200 complete.157/200 complete.158/200 complete.
+----------------------------------------
+  episode      |  159
+  reward       |  -424.5
+----------------------------------------
+[Iteration 159] panel min -424.5  mean +116.6 mbb/h  |  random +1030±84  station +282±78  maniac +1184±231  nit -424±79  tag -310±102  lag -148±118
+[Iteration 159]   actions: call=34% raise=36% fold=10% check=20%  (10s)
+  last-step weighted losses  adv: 13.823249  policy: 0.021578
+159/200 complete.
+Checkpoint saved at episode 160 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_160
+160/200 complete.161/200 complete.162/200 complete.163/200 complete.164/200 complete.165/200 complete.166/200 complete.167/200 complete.168/200 complete.169/200 complete.
+Checkpoint saved at episode 170 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_170
+170/200 complete.171/200 complete.172/200 complete.173/200 complete.174/200 complete.175/200 complete.176/200 complete.177/200 complete.178/200 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -300.0
+----------------------------------------
+[Iteration 179] panel min -300.0  mean +161.3 mbb/h  |  random +1032±85  station +343±79  maniac +1164±227  nit -263±82  tag -300±100  lag -138±119
+[Iteration 179]   actions: call=34% raise=37% fold=11% check=18%  (10s)
+  last-step weighted losses  adv: 13.496027  policy: 0.021935
+179/200 complete.
+Checkpoint saved at episode 180 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_180
+180/200 complete.181/200 complete.182/200 complete.183/200 complete.184/200 complete.185/200 complete.186/200 complete.187/200 complete.188/200 complete.189/200 complete.
+Checkpoint saved at episode 190 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/checkpoints\episode_190
+190/200 complete.191/200 complete.192/200 complete.193/200 complete.194/200 complete.195/200 complete.196/200 complete.197/200 complete.198/200 complete.
+----------------------------------------
+  episode      |  199
+  reward       |  -309.5
+----------------------------------------
+[Iteration 199] panel min -309.5  mean +33.8 mbb/h  |  random +960±81  station +382±76  maniac +662±216  nit -274±77  tag -310±100  lag -291±117
+[Iteration 199]   actions: call=34% raise=36% fold=11% check=18%  (10s)
+  last-step weighted losses  adv: 13.015457  policy: 0.022726
+199/200 complete.
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_27\seed_1042/fig.png
+=== finalist trial 27 seed 1042: final panel min -418.8 (mean -70.8) over 5000 deals
+trial 27 seed 1043: being trained by another process, skipping
+trial 27 seed 1044: being trained by another process, skipping
+trial 0 seed 1042: being trained by another process, skipping
+
+=== finalist trial 0 (score -391.7), seed 1043: {"lr": 0.0005, "batch_size": 4096, "layers": "256 256 256"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.
+Checkpoint saved at episode 10 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_10
+10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1046.0
+----------------------------------------
+[Iteration 19] panel min -1046.0  mean -647.0 mbb/h  |  random +826±90  station -178±79  maniac -850±239  nit -368±102  tag -794±119  lag -1046±142
+[Iteration 19]   actions: call=24% raise=53% fold=13% check=10%  (10s)
+  last-step weighted losses  adv: 12.574181  policy: 0.011056
+19/200 complete.
+Checkpoint saved at episode 20 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_20
+20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.
+Checkpoint saved at episode 30 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_30
+30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -727.0
+----------------------------------------
+[Iteration 39] panel min -727.0  mean -415.5 mbb/h  |  random +1280±102  station -45±73  maniac -727±268  nit -248±113  tag -462±131  lag -596±152
+[Iteration 39]   actions: call=19% raise=67% fold=9% check=4%  (10s)
+  last-step weighted losses  adv: 18.134344  policy: 0.010780
+39/200 complete.
+Checkpoint saved at episode 40 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_40
+40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.
+Checkpoint saved at episode 50 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_50
+50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -625.0
+----------------------------------------
+[Iteration 59] panel min -625.0  mean -344.2 mbb/h  |  random +1212±100  station +118±76  maniac -388±260  nit -330±115  tag -496±136  lag -625±151
+[Iteration 59]   actions: call=21% raise=68% fold=9% check=2%  (10s)
+  last-step weighted losses  adv: 20.355753  policy: 0.011795
+59/200 complete.
+Checkpoint saved at episode 60 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_60
+60/200 complete.61/200 complete.62/200 complete.63/200 complete.64/200 complete.65/200 complete.66/200 complete.67/200 complete.68/200 complete.69/200 complete.
+Checkpoint saved at episode 70 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_70
+70/200 complete.71/200 complete.72/200 complete.73/200 complete.74/200 complete.75/200 complete.76/200 complete.77/200 complete.78/200 complete.
+----------------------------------------
+  episode      |  79
+  reward       |  -691.0
+----------------------------------------
+[Iteration 79] panel min -691.0  mean -330.9 mbb/h  |  random +1376±104  station +206±83  maniac -209±256  nit -304±116  tag -691±140  lag -656±152
+[Iteration 79]   actions: call=23% raise=65% fold=8% check=4%  (11s)
+  last-step weighted losses  adv: 19.270175  policy: 0.013991
+79/200 complete.
+Checkpoint saved at episode 80 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_80
+80/200 complete.81/200 complete.82/200 complete.83/200 complete.84/200 complete.85/200 complete.86/200 complete.87/200 complete.88/200 complete.89/200 complete.
+Checkpoint saved at episode 90 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_90
+90/200 complete.91/200 complete.92/200 complete.93/200 complete.94/200 complete.95/200 complete.96/200 complete.97/200 complete.98/200 complete.
+----------------------------------------
+  episode      |  99
+  reward       |  -434.5
+----------------------------------------
+[Iteration 99] panel min -434.5  mean -70.2 mbb/h  |  random +1133±90  station +234±85  maniac +512±246  nit -282±108  tag -434±134  lag -381±147
+[Iteration 99]   actions: call=24% raise=60% fold=10% check=6%  (11s)
+  last-step weighted losses  adv: 18.796230  policy: 0.014082
+99/200 complete.
+Checkpoint saved at episode 100 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_100
+100/200 complete.101/200 complete.102/200 complete.103/200 complete.104/200 complete.105/200 complete.106/200 complete.107/200 complete.108/200 complete.109/200 complete.
+Checkpoint saved at episode 110 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_110
+110/200 complete.111/200 complete.112/200 complete.113/200 complete.114/200 complete.115/200 complete.116/200 complete.117/200 complete.118/200 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -610.5
+----------------------------------------
+[Iteration 119] panel min -610.5  mean -105.8 mbb/h  |  random +1233±92  station +224±85  maniac +714±248  nit -388±104  tag -610±131  lag -467±146
+[Iteration 119]   actions: call=26% raise=56% fold=9% check=8%  (10s)
+  last-step weighted losses  adv: 17.349228  policy: 0.016685
+119/200 complete.
+Checkpoint saved at episode 120 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_120
+120/200 complete.121/200 complete.122/200 complete.123/200 complete.124/200 complete.125/200 complete.126/200 complete.127/200 complete.128/200 complete.129/200 complete.
+Checkpoint saved at episode 130 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_130
+130/200 complete.131/200 complete.132/200 complete.133/200 complete.134/200 complete.135/200 complete.136/200 complete.137/200 complete.138/200 complete.
+----------------------------------------
+  episode      |  139
+  reward       |  -528.5
+----------------------------------------
+[Iteration 139] panel min -528.5  mean -123.4 mbb/h  |  random +1167±90  station +184±92  maniac +568±235  nit -410±95  tag -528±124  lag -429±144
+[Iteration 139]   actions: call=30% raise=48% fold=9% check=12%  (9s)
+  last-step weighted losses  adv: 15.647619  policy: 0.015735
+139/200 complete.
+Checkpoint saved at episode 140 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_140
+140/200 complete.141/200 complete.142/200 complete.143/200 complete.144/200 complete.145/200 complete.146/200 complete.147/200 complete.148/200 complete.149/200 complete.
+Checkpoint saved at episode 150 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_150
+150/200 complete.151/200 complete.152/200 complete.153/200 complete.154/200 complete.155/200 complete.156/200 complete.157/200 complete.158/200 complete.
+----------------------------------------
+  episode      |  159
+  reward       |  -548.0
+----------------------------------------
+[Iteration 159] panel min -548.0  mean -47.7 mbb/h  |  random +1066±90  station +250±90  maniac +870±228  nit -377±93  tag -548±120  lag -434±131
+[Iteration 159]   actions: call=30% raise=47% fold=9% check=13%  (8s)
+  last-step weighted losses  adv: 15.673782  policy: 0.016211
+159/200 complete.
+Checkpoint saved at episode 160 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_160
+160/200 complete.161/200 complete.162/200 complete.163/200 complete.164/200 complete.165/200 complete.166/200 complete.167/200 complete.168/200 complete.169/200 complete.
+Checkpoint saved at episode 170 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_170
+170/200 complete.171/200 complete.172/200 complete.173/200 complete.174/200 complete.175/200 complete.176/200 complete.177/200 complete.178/200 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -510.0
+----------------------------------------
+[Iteration 179] panel min -510.0  mean -144.1 mbb/h  |  random +914±88  station +211±92  maniac +435±224  nit -368±88  tag -510±118  lag -488±130
+[Iteration 179]   actions: call=31% raise=45% fold=10% check=14%  (8s)
+  last-step weighted losses  adv: 14.864871  policy: 0.017950
+179/200 complete.
+Checkpoint saved at episode 180 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_180
+180/200 complete.181/200 complete.182/200 complete.183/200 complete.184/200 complete.185/200 complete.186/200 complete.187/200 complete.188/200 complete.189/200 complete.
+Checkpoint saved at episode 190 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/checkpoints\episode_190
+190/200 complete.191/200 complete.192/200 complete.193/200 complete.194/200 complete.195/200 complete.196/200 complete.197/200 complete.198/200 complete.
+----------------------------------------
+  episode      |  199
+  reward       |  -510.5
+----------------------------------------
+[Iteration 199] panel min -510.5  mean -61.0 mbb/h  |  random +1136±91  station +346±89  maniac +622±215  nit -308±91  tag -510±116  lag -454±129
+[Iteration 199]   actions: call=31% raise=46% fold=9% check=14%  (8s)
+  last-step weighted losses  adv: 15.109118  policy: 0.018458
+199/200 complete.
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\finalists\trial_0\seed_1043/fig.png
+=== finalist trial 0 seed 1043: final panel min -527.5 (mean -91.5) over 5000 deals
+trial 0 seed 1044: being trained by another process, skipping
+
+1 finalist run(s) still running in other processes or not done: [(0, 1044)]; the last process to finish picks the winner

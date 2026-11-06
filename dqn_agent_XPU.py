@@ -64,7 +64,8 @@ class DQNAgent(object):
                  save_path=None,
                  activation='relu',
                  optimizer='adam',
-                 save_every=float('inf'),):
+                 save_every=float('inf'),
+                 max_grad_norm=None):
 
         '''
         Q-Learning algorithm for off-policy TD control using Function Approximation.
@@ -93,6 +94,8 @@ class DQNAgent(object):
             save_every (int): Save the model every X training steps
             activation (str): 'relu' or 'tanh' hidden-layer activation
             optimizer (str): 'adam' or 'sgd'
+            max_grad_norm (float or None): global gradient-norm clip of the Q-network
+              update; None (the default) disables it
         '''
         self.use_raw = False
         self.replay_memory_init_size = replay_memory_init_size
@@ -122,9 +125,11 @@ class DQNAgent(object):
 
         # Create estimators
         self.q_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
-            mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name)
+            mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name,
+            max_grad_norm=max_grad_norm)
         self.target_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
-            mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name)
+            mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name,
+            max_grad_norm=max_grad_norm)
 
         # Create replay memory
         self.memory = Memory(replay_memory_size, batch_size, num_actions)
@@ -363,7 +368,8 @@ class Estimator(object):
     This network is used for both the Q-Network and the Target Network.
     '''
 
-    def __init__(self, num_actions=2, learning_rate=0.001, state_shape=None, mlp_layers=None, device=None,activation='relu', optimizer='adam'):
+    def __init__(self, num_actions=2, learning_rate=0.001, state_shape=None, mlp_layers=None, device=None,activation='relu', optimizer='adam',
+                 max_grad_norm=None):
         ''' Initilalize an Estimator object.
 
         Args:
@@ -379,6 +385,7 @@ class Estimator(object):
         self.device = device
         self.activation = activation
         self.optimizer_name = optimizer
+        self.max_grad_norm = max_grad_norm
 
         # set up Q model and place it in eval mode
         qnet = EstimatorNetwork(num_actions, state_shape, mlp_layers, activation)
@@ -444,7 +451,13 @@ class Estimator(object):
 
         # update model
         batch_loss = self.mse_loss(Q, y)
+        # a diverged network would otherwise keep playing: with NaN Q-values the
+        # greedy action silently becomes the first legal one
+        if not torch.isfinite(batch_loss):
+            raise FloatingPointError(f'Q-network diverged: non-finite loss {batch_loss.item()}')
         batch_loss.backward()
+        if self.max_grad_norm is not None:
+            nn.utils.clip_grad_norm_(self.qnet.parameters(), self.max_grad_norm)
         self.optimizer.step()
         batch_loss = batch_loss.item()
 
@@ -464,6 +477,7 @@ class Estimator(object):
             'mlp_layers': self.mlp_layers,
             'activation': self.activation,
             'optimizer_name': self.optimizer_name,
+            'max_grad_norm': self.max_grad_norm,
             'device': self.device
         }
         
@@ -479,6 +493,7 @@ class Estimator(object):
             device=checkpoint['device'],
             activation=checkpoint.get('activation', 'relu'),
             optimizer=checkpoint.get('optimizer_name', 'adam'),
+            max_grad_norm=checkpoint.get('max_grad_norm'),
         )
         
         estimator.qnet.load_state_dict(checkpoint['qnet'])

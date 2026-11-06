@@ -4,9 +4,8 @@ import copy
 import contextlib
 
 import rlcard
-from obs_encoding import ENV_IDS
 from functions import fmt_actions, str2bool, frozen_copy, plot_learning_curve
-from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
+from eval_panel import PanelLogger, add_panel_args, make_panel, env_id, format_results
 from self_play import OpponentSchedule, add_self_play_args
 from nfsp_agent_XPU import NFSPAgent
 from rlcard.utils import (
@@ -19,7 +18,7 @@ from rlcard.utils import (
 def warmup(agent, args):
     from honest_agent_limited import HonestAgent
     print("Warming up agent against HonestAgent...")
-    warmup_env = rlcard.make(ENV_IDS[args.obs], config={'seed': args.seed})
+    warmup_env = rlcard.make(env_id(args), config={'seed': args.seed})
     warmup_env.set_agents([agent, HonestAgent(num_actions=warmup_env.num_actions)])
     for ep in range(50_000):
         agent.sample_episode_policy()
@@ -36,7 +35,7 @@ def train(args, on_eval=None):
     returns True (used by tune.py). Returns the trained agent. '''
     # make environments
     env = rlcard.make(
-        ENV_IDS[args.obs],
+        env_id(args),
         config={'seed': args.seed}
     )
     set_seed(args.seed)
@@ -65,6 +64,7 @@ def train(args, on_eval=None):
         q_mlp_layers=args.q_mlp_layers,
         q_activation=args.q_activation,
         optimizer=args.optimizer,
+        max_grad_norm=args.max_grad_norm,
         device=args.device,
     )
     #warmup(agent, args)  # optional warmup against honest opponent before self-play
@@ -72,7 +72,7 @@ def train(args, on_eval=None):
     # and rule-based warm-up, see self_play.py)
     schedule = OpponentSchedule(agent, args)
     # Evaluation panel of fixed opponents (see eval_panel.py)
-    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
+    panel = make_panel(args)
     panel_logger = PanelLogger(args.log_dir, panel.members)
     panel_logger_br = (PanelLogger(args.log_dir, panel.members, filename='panel_br')
                        if args.eval_best_response else None)
@@ -181,6 +181,8 @@ def build_parser():
     parser.add_argument('--q_activation', type=str, default='tanh', choices=['tanh', 'relu'])
     parser.add_argument('--optimizer', type=str, default='adam', choices=['adam', 'sgd'],
                         help='optimizer for both the RL (DQN) and SL networks')
+    parser.add_argument('--max_grad_norm', type=float, default=None,
+                        help='gradient-norm clip for both networks (default: none)')
     
 
     # misc

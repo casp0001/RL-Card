@@ -1,0 +1,440 @@
+{
+  "final_deals": 5000,
+  "runs": [
+    {
+      "trial": 44,
+      "seed": 1043,
+      "params": {
+        "rl_learning_rate": 8.690004079178533e-06,
+        "sl_learning_rate": 0.0008416925693512637,
+        "anticipatory_param": 0.09763025388181211,
+        "reservoir_buffer_capacity": 275413,
+        "q_replay_memory_size": 59717,
+        "q_epsilon_start": 0.020338217115977265,
+        "layers": "256 256",
+        "train_every": 32,
+        "opponent_update_every": 20093
+      },
+      "trial_score": -1127.3333333333333,
+      "final_min": -1076.65,
+      "final_mean": -384.98,
+      "members": {
+        "random": {
+          "mean": 1415.65,
+          "se": 32.1285848535683
+        },
+        "station": {
+          "mean": 125.5,
+          "se": 25.945800949621567
+        },
+        "maniac": {
+          "mean": 598.3,
+          "se": 91.65641058605941
+        },
+        "nit": {
+          "mean": -633.0,
+          "se": 31.96484866709151
+        },
+        "tag": {
+          "mean": -939.05,
+          "se": 43.91281346642808
+        },
+        "lag": {
+          "mean": -1076.65,
+          "se": 50.52561749355094
+        }
+      },
+      "training_score": -1053.8333333333333,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_44/seed_1043"
+    },
+    {
+      "trial": 44,
+      "seed": 1044,
+      "params": {
+        "rl_learning_rate": 8.690004079178533e-06,
+        "sl_learning_rate": 0.0008416925693512637,
+        "anticipatory_param": 0.09763025388181211,
+        "reservoir_buffer_capacity": 275413,
+        "q_replay_memory_size": 59717,
+        "q_epsilon_start": 0.020338217115977265,
+        "layers": "256 256",
+        "train_every": 32,
+        "opponent_update_every": 20093
+      },
+      "trial_score": -1127.3333333333333,
+      "final_min": -1250.65,
+      "final_mean": -488.82000000000005,
+      "members": {
+        "random": {
+          "mean": 1496.95,
+          "se": 32.37337249267227
+        },
+        "station": {
+          "mean": 65.2,
+          "se": 25.47910180767338
+        },
+        "maniac": {
+          "mean": 537.8,
+          "se": 92.44359575264872
+        },
+        "nit": {
+          "mean": -663.3,
+          "se": 32.488270491731456
+        },
+        "tag": {
+          "mean": -1133.15,
+          "se": 44.20568452143685
+        },
+        "lag": {
+          "mean": -1250.65,
+          "se": 51.641221699875885
+        }
+      },
+      "training_score": -1339.5,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_44/seed_1044"
+    },
+    {
+      "trial": 44,
+      "seed": 1042,
+      "params": {
+        "rl_learning_rate": 8.690004079178533e-06,
+        "sl_learning_rate": 0.0008416925693512637,
+        "anticipatory_param": 0.09763025388181211,
+        "reservoir_buffer_capacity": 275413,
+        "q_replay_memory_size": 59717,
+        "q_epsilon_start": 0.020338217115977265,
+        "layers": "256 256",
+        "train_every": 32,
+        "opponent_update_every": 20093
+      },
+      "trial_score": -1127.3333333333333,
+      "final_min": -1287.05,
+      "final_mean": -470.08000000000004,
+      "members": {
+        "random": {
+          "mean": 1607.45,
+          "se": 31.883251211906988
+        },
+        "station": {
+          "mean": 78.6,
+          "se": 24.269264666270555
+        },
+        "maniac": {
+          "mean": 674.8,
+          "se": 95.23464663442563
+        },
+        "nit": {
+          "mean": -644.1,
+          "se": 32.77463765436126
+        },
+        "tag": {
+          "mean": -1172.65,
+          "se": 44.818942903962004
+        },
+        "lag": {
+          "mean": -1287.05,
+          "se": 52.33398254142072
+        }
+      },
+      "training_score": -1348.1666666666667,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_44/seed_1042"
+    },
+    {
+      "trial": 17,
+      "seed": 1042,
+      "params": {
+        "rl_learning_rate": 6.06324738512529e-06,
+        "sl_learning_rate": 0.001327534257380684,
+        "anticipatory_param": 0.08052815071350788,
+        "reservoir_buffer_capacity": 262521,
+        "q_replay_memory_size": 100414,
+        "q_epsilon_start": 0.020505387376025454,
+        "layers": "128 128",
+        "train_every": 16,
+        "opponent_update_every": 25160
+      },
+      "trial_score": -1163.1666666666667,
+      "final_min": -1158.75,
+      "final_mean": -441.18,
+      "members": {
+        "random": {
+          "mean": 1499.25,
+          "se": 33.017274502646586
+        },
+        "station": {
+          "mean": 63.1,
+          "se": 24.232542607498804
+        },
+        "maniac": {
+          "mean": 591.3,
+          "se": 92.1680902122349
+        },
+        "nit": {
+          "mean": -655.8,
+          "se": 32.26737529923592
+        },
+        "tag": {
+          "mean": -1045.75,
+          "se": 43.81475589418265
+        },
+        "lag": {
+          "mean": -1158.75,
+          "se": 50.83250904977305
+        }
+      },
+      "training_score": -1346.1666666666667,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_17/seed_1042"
+    },
+    {
+      "trial": 17,
+      "seed": 1043,
+      "params": {
+        "rl_learning_rate": 6.06324738512529e-06,
+        "sl_learning_rate": 0.001327534257380684,
+        "anticipatory_param": 0.08052815071350788,
+        "reservoir_buffer_capacity": 262521,
+        "q_replay_memory_size": 100414,
+        "q_epsilon_start": 0.020505387376025454,
+        "layers": "128 128",
+        "train_every": 16,
+        "opponent_update_every": 25160
+      },
+      "trial_score": -1163.1666666666667,
+      "final_min": -1245.35,
+      "final_mean": -472.41999999999996,
+      "members": {
+        "random": {
+          "mean": 1537.95,
+          "se": 31.631464863548178
+        },
+        "station": {
+          "mean": 128.8,
+          "se": 24.768827403859724
+        },
+        "maniac": {
+          "mean": 590.5,
+          "se": 95.07344393650831
+        },
+        "nit": {
+          "mean": -701.8,
+          "se": 33.20784401584716
+        },
+        "tag": {
+          "mean": -1134.25,
+          "se": 44.81969040979294
+        },
+        "lag": {
+          "mean": -1245.35,
+          "se": 52.61764816940962
+        }
+      },
+      "training_score": -1352.8333333333333,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_17/seed_1043"
+    },
+    {
+      "trial": 17,
+      "seed": 1044,
+      "params": {
+        "rl_learning_rate": 6.06324738512529e-06,
+        "sl_learning_rate": 0.001327534257380684,
+        "anticipatory_param": 0.08052815071350788,
+        "reservoir_buffer_capacity": 262521,
+        "q_replay_memory_size": 100414,
+        "q_epsilon_start": 0.020505387376025454,
+        "layers": "128 128",
+        "train_every": 16,
+        "opponent_update_every": 25160
+      },
+      "trial_score": -1163.1666666666667,
+      "final_min": -1194.5,
+      "final_mean": -461.41,
+      "members": {
+        "random": {
+          "mean": 1533.0,
+          "se": 32.040950742836905
+        },
+        "station": {
+          "mean": 112.15,
+          "se": 24.32879679660945
+        },
+        "maniac": {
+          "mean": 634.75,
+          "se": 88.73675016398748
+        },
+        "nit": {
+          "mean": -739.25,
+          "se": 33.4854989992481
+        },
+        "tag": {
+          "mean": -1120.2,
+          "se": 43.865079745102584
+        },
+        "lag": {
+          "mean": -1194.5,
+          "se": 49.89771444045584
+        }
+      },
+      "training_score": -1253.0,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_17/seed_1044"
+    },
+    {
+      "trial": 33,
+      "seed": 1042,
+      "params": {
+        "rl_learning_rate": 5.399790117221206e-06,
+        "sl_learning_rate": 0.001651998752669914,
+        "anticipatory_param": 0.032663786525574307,
+        "reservoir_buffer_capacity": 354192,
+        "q_replay_memory_size": 78922,
+        "q_epsilon_start": 0.021407987140248542,
+        "layers": "256 256",
+        "train_every": 16,
+        "opponent_update_every": 18149
+      },
+      "trial_score": -1188.1666666666667,
+      "final_min": -1099.6,
+      "final_mean": -417.89,
+      "members": {
+        "random": {
+          "mean": 1554.9,
+          "se": 32.33073233396748
+        },
+        "station": {
+          "mean": 92.95,
+          "se": 24.915431267450472
+        },
+        "maniac": {
+          "mean": 621.15,
+          "se": 86.2174792385236
+        },
+        "nit": {
+          "mean": -663.95,
+          "se": 32.836142007616985
+        },
+        "tag": {
+          "mean": -1040.0,
+          "se": 41.839456354278845
+        },
+        "lag": {
+          "mean": -1099.6,
+          "se": 48.106276209681326
+        }
+      },
+      "training_score": -1088.3333333333333,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_33/seed_1042"
+    },
+    {
+      "trial": 33,
+      "seed": 1043,
+      "params": {
+        "rl_learning_rate": 5.399790117221206e-06,
+        "sl_learning_rate": 0.001651998752669914,
+        "anticipatory_param": 0.032663786525574307,
+        "reservoir_buffer_capacity": 354192,
+        "q_replay_memory_size": 78922,
+        "q_epsilon_start": 0.021407987140248542,
+        "layers": "256 256",
+        "train_every": 16,
+        "opponent_update_every": 18149
+      },
+      "trial_score": -1188.1666666666667,
+      "final_min": -1157.75,
+      "final_mean": -426.0799999999999,
+      "members": {
+        "random": {
+          "mean": 1567.15,
+          "se": 33.092290574076124
+        },
+        "station": {
+          "mean": 64.5,
+          "se": 25.915772715763097
+        },
+        "maniac": {
+          "mean": 659.5,
+          "se": 94.08074822957929
+        },
+        "nit": {
+          "mean": -659.8,
+          "se": 33.015387248357875
+        },
+        "tag": {
+          "mean": -1036.85,
+          "se": 44.058020124915565
+        },
+        "lag": {
+          "mean": -1157.75,
+          "se": 51.71441156556569
+        }
+      },
+      "training_score": -965.0,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_33/seed_1043"
+    },
+    {
+      "trial": 33,
+      "seed": 1044,
+      "params": {
+        "rl_learning_rate": 5.399790117221206e-06,
+        "sl_learning_rate": 0.001651998752669914,
+        "anticipatory_param": 0.032663786525574307,
+        "reservoir_buffer_capacity": 354192,
+        "q_replay_memory_size": 78922,
+        "q_epsilon_start": 0.021407987140248542,
+        "layers": "256 256",
+        "train_every": 16,
+        "opponent_update_every": 18149
+      },
+      "trial_score": -1188.1666666666667,
+      "final_min": -1245.4,
+      "final_mean": -509.07,
+      "members": {
+        "random": {
+          "mean": 1417.7,
+          "se": 31.64807517262979
+        },
+        "station": {
+          "mean": 99.65,
+          "se": 25.04819270709123
+        },
+        "maniac": {
+          "mean": 503.15,
+          "se": 97.04794782134896
+        },
+        "nit": {
+          "mean": -722.65,
+          "se": 32.77259074349796
+        },
+        "tag": {
+          "mean": -1180.1,
+          "se": 46.034352719746856
+        },
+        "lag": {
+          "mean": -1245.4,
+          "se": 52.899531567756036
+        }
+      },
+      "training_score": -1198.8333333333333,
+      "log_dir": "experiments/tune/nfsp_v3/finalists/trial_33/seed_1044"
+    }
+  ],
+  "winner": {
+    "trial": 33,
+    "params": {
+      "rl_learning_rate": 5.399790117221206e-06,
+      "sl_learning_rate": 0.001651998752669914,
+      "anticipatory_param": 0.032663786525574307,
+      "reservoir_buffer_capacity": 354192,
+      "q_replay_memory_size": 78922,
+      "q_epsilon_start": 0.021407987140248542,
+      "layers": "256 256",
+      "train_every": 16,
+      "opponent_update_every": 18149
+    },
+    "final_min_mean": -1167.5833333333333,
+    "seeds": [
+      1042,
+      1043,
+      1044
+    ],
+    "final_deals": 5000
+  }
+}

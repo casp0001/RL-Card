@@ -332,6 +332,24 @@ def add_panel_args(parser):
                         help='Duplicate deals (2 hands each) per panel member per evaluation')
     parser.add_argument('--eval_panel', type=str, default='random,station,maniac,nit,tag,lag',
                         help=f'Comma-separated panel members, from: {",".join(MEMBERS)}')
+    parser.add_argument('--game', type=str, default='limit', choices=['limit', 'leduc'],
+                        help="'limit' hold'em (panel evaluation), or RLCard's 'leduc' hold'em with exact "
+                             "exploitability as the evaluation (leduc.py; --obs and the panel options are ignored)")
+
+
+def env_id(args):
+    ''' The RLCard env of a training run (--game and --obs). '''
+    from obs_encoding import ENV_IDS
+    return 'leduc-holdem' if getattr(args, 'game', 'limit') == 'leduc' else ENV_IDS[args.obs]
+
+
+def make_panel(args):
+    ''' The evaluation of a training run: the panel on limit hold'em, exact
+    exploitability (leduc.LeducPanel, same result format) on Leduc. '''
+    if getattr(args, 'game', 'limit') == 'leduc':
+        from leduc import LeducPanel
+        return LeducPanel()
+    return Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
 
 
 def main():

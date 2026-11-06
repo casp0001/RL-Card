@@ -1,0 +1,77 @@
+{
+  "algo": "deepcfr",
+  "budget": 200,
+  "evals": 10,
+  "eval_deals": 500,
+  "eval_panel": "random,station,maniac,nit,tag,lag",
+  "seed": 42,
+  "space": {
+    "lr": {
+      "type": "float",
+      "low": 0.0001,
+      "high": 0.003,
+      "log": true,
+      "start": 0.0005
+    },
+    "num_traversals": {
+      "type": "int",
+      "low": 100,
+      "high": 1500,
+      "log": true,
+      "tune": false,
+      "value": 1000
+    },
+    "num_step": {
+      "type": "int",
+      "low": 200,
+      "high": 2000,
+      "log": true,
+      "tune": false,
+      "value": 1000
+    },
+    "batch_size": {
+      "type": "categorical",
+      "choices": [
+        1024,
+        4096,
+        8192
+      ],
+      "targets": [
+        "batch_size_advantage",
+        "batch_size_strategy"
+      ],
+      "start": 4096
+    },
+    "layers": {
+      "type": "categorical",
+      "choices": [
+        "128 128 128",
+        "256 256 256"
+      ],
+      "list": true,
+      "targets": [
+        "policy_layers",
+        "advantage_layers"
+      ],
+      "start": "256 256 256"
+    },
+    "memory_capacity": {
+      "type": "int",
+      "low": 500000,
+      "high": 5000000,
+      "log": true,
+      "tune": false,
+      "value": 2000000,
+      "help": "per buffer (3 buffers, ~0.3 KB per entry)"
+    }
+  },
+  "fixed": {
+    "verbose": false,
+    "obs": "rich"
+  },
+  "prune": 1,
+  "min_resource_frac": 0.25,
+  "reduction_factor": 3,
+  "startup_trials": 12,
+  "created": "2026-10-30 09:44:27"
+}

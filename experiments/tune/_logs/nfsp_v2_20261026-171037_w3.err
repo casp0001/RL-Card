@@ -1,0 +1,16 @@
+[I 2026-10-26 17:10:46,939] Using an existing study with name 'nfsp_v2' instead of creating a new one.
+[I 2026-10-26 18:24:06,782] Trial 2 pruned. 
+[I 2026-10-26 19:27:07,543] Trial 6 pruned. 
+[I 2026-10-26 19:45:09,625] Trial 13 pruned. 
+[I 2026-10-26 20:30:36,438] Trial 15 pruned. 
+[I 2026-10-26 20:58:05,014] Trial 17 pruned. 
+[I 2026-10-26 21:42:30,645] Trial 20 pruned. 
+[I 2026-10-26 22:49:51,646] Trial 22 pruned. 
+[I 2026-10-27 00:12:42,880] Trial 27 pruned. 
+[I 2026-10-27 00:45:08,431] Trial 31 pruned. 
+[I 2026-10-27 01:24:41,534] Trial 35 pruned. 
+[I 2026-10-27 01:57:41,808] Trial 37 pruned. 
+[I 2026-10-27 02:49:43,504] Trial 38 pruned. 
+[I 2026-10-27 10:19:09,459] Trial 40 finished with value: -437.6666666666667 and parameters: {'rl_learning_rate': 0.3403118002833716, 'sl_learning_rate': 0.04869726384176641, 'anticipatory_param': 0.3681579146387049, 'reservoir_buffer_capacity': 466070, 'q_replay_memory_size': 59346, 'q_epsilon_start': 0.03994494570349491, 'layers': '512 512', 'train_every': 64, 'opponent_update_every': 2166}. Best is trial 40 with value: -437.6666666666667.
+[I 2026-10-27 11:42:34,772] Trial 44 pruned. 
+[I 2026-10-27 12:21:12,405] Trial 49 pruned. 

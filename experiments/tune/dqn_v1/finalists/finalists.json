@@ -1,0 +1,430 @@
+{
+  "final_deals": 5000,
+  "runs": [
+    {
+      "trial": 0,
+      "seed": 1043,
+      "params": {
+        "lr": 0.0001,
+        "batch_size": 128,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 500000,
+        "epsilon_end": 0.05,
+        "replay_memory_size": 200000,
+        "opponent_update_every": 10000,
+        "update_target_every": 1000
+      },
+      "trial_score": -673.3333333333334,
+      "final_min": -1211.0,
+      "final_mean": -587.21,
+      "members": {
+        "random": {
+          "mean": 2226.5,
+          "se": 36.873316616432255
+        },
+        "station": {
+          "mean": 325.55,
+          "se": 17.64520360160314
+        },
+        "maniac": {
+          "mean": -921.45,
+          "se": 90.25892096664357
+        },
+        "nit": {
+          "mean": -271.15,
+          "se": 35.76882605403002
+        },
+        "tag": {
+          "mean": -858.0,
+          "se": 40.08713753461506
+        },
+        "lag": {
+          "mean": -1211.0,
+          "se": 43.31715682284611
+        }
+      },
+      "training_score": -1043.0,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_0/seed_1043"
+    },
+    {
+      "trial": 0,
+      "seed": 1042,
+      "params": {
+        "lr": 0.0001,
+        "batch_size": 128,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 500000,
+        "epsilon_end": 0.05,
+        "replay_memory_size": 200000,
+        "opponent_update_every": 10000,
+        "update_target_every": 1000
+      },
+      "trial_score": -673.3333333333334,
+      "final_min": -752.2,
+      "final_mean": -474.63,
+      "members": {
+        "random": {
+          "mean": 1243.6,
+          "se": 24.087296393939976
+        },
+        "station": {
+          "mean": 82.05,
+          "se": 15.405308312553856
+        },
+        "maniac": {
+          "mean": -735.65,
+          "se": 51.86785488502561
+        },
+        "nit": {
+          "mean": -338.75,
+          "se": 20.937881136191756
+        },
+        "tag": {
+          "mean": -628.6,
+          "se": 24.703025237633916
+        },
+        "lag": {
+          "mean": -752.2,
+          "se": 30.305489874663117
+        }
+      },
+      "training_score": -851.5,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_0/seed_1042"
+    },
+    {
+      "trial": 0,
+      "seed": 1044,
+      "params": {
+        "lr": 0.0001,
+        "batch_size": 128,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 500000,
+        "epsilon_end": 0.05,
+        "replay_memory_size": 200000,
+        "opponent_update_every": 10000,
+        "update_target_every": 1000
+      },
+      "trial_score": -673.3333333333334,
+      "final_min": -2191.85,
+      "final_mean": -1542.1799999999998,
+      "members": {
+        "random": {
+          "mean": 1931.35,
+          "se": 32.984504407466865
+        },
+        "station": {
+          "mean": -117.9,
+          "se": 15.250456822228552
+        },
+        "maniac": {
+          "mean": -2153.2,
+          "se": 92.12102479153022
+        },
+        "nit": {
+          "mean": -1326.3,
+          "se": 39.67474611255653
+        },
+        "tag": {
+          "mean": -1921.65,
+          "se": 50.68632533746398
+        },
+        "lag": {
+          "mean": -2191.85,
+          "se": 56.524642613151556
+        }
+      },
+      "training_score": -1248.8333333333333,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_0/seed_1044"
+    },
+    {
+      "trial": 19,
+      "seed": 1042,
+      "params": {
+        "lr": 2.245111013480864e-05,
+        "batch_size": 512,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 181296,
+        "epsilon_end": 0.012992541059325948,
+        "replay_memory_size": 884427,
+        "opponent_update_every": 1140,
+        "update_target_every": 659
+      },
+      "trial_score": -783.1666666666666,
+      "final_min": -1034.5,
+      "final_mean": -566.79,
+      "members": {
+        "random": {
+          "mean": 1695.4,
+          "se": 32.06086941849166
+        },
+        "station": {
+          "mean": 170.45,
+          "se": 19.55615882962792
+        },
+        "maniac": {
+          "mean": -613.05,
+          "se": 89.52895914956947
+        },
+        "nit": {
+          "mean": -456.85,
+          "se": 29.47234024077242
+        },
+        "tag": {
+          "mean": -900.0,
+          "se": 36.32043274476439
+        },
+        "lag": {
+          "mean": -1034.5,
+          "se": 42.216506211188715
+        }
+      },
+      "training_score": -1010.1666666666666,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_19/seed_1042"
+    },
+    {
+      "trial": 7,
+      "seed": 1042,
+      "params": {
+        "lr": 1.0339910411294462e-05,
+        "batch_size": 512,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 321427,
+        "epsilon_end": 0.02028445965557619,
+        "replay_memory_size": 331814,
+        "opponent_update_every": 4186,
+        "update_target_every": 666
+      },
+      "trial_score": -1282.3333333333333,
+      "final_min": -999.0,
+      "final_mean": -547.4399999999999,
+      "members": {
+        "random": {
+          "mean": 1334.05,
+          "se": 27.815092222947495
+        },
+        "station": {
+          "mean": 184.2,
+          "se": 17.348609940089457
+        },
+        "maniac": {
+          "mean": -999.0,
+          "se": 75.4645531342759
+        },
+        "nit": {
+          "mean": -337.3,
+          "se": 24.588343972945115
+        },
+        "tag": {
+          "mean": -697.35,
+          "se": 31.57898893264953
+        },
+        "lag": {
+          "mean": -887.75,
+          "se": 38.75819819193634
+        }
+      },
+      "training_score": -1010.6666666666666,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_7/seed_1042"
+    },
+    {
+      "trial": 19,
+      "seed": 1043,
+      "params": {
+        "lr": 2.245111013480864e-05,
+        "batch_size": 512,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 181296,
+        "epsilon_end": 0.012992541059325948,
+        "replay_memory_size": 884427,
+        "opponent_update_every": 1140,
+        "update_target_every": 659
+      },
+      "trial_score": -783.1666666666666,
+      "final_min": -1170.0,
+      "final_mean": -616.21,
+      "members": {
+        "random": {
+          "mean": 1614.8,
+          "se": 30.852869751684086
+        },
+        "station": {
+          "mean": 128.55,
+          "se": 18.730927607297133
+        },
+        "maniac": {
+          "mean": -522.15,
+          "se": 96.56049482750316
+        },
+        "nit": {
+          "mean": -533.35,
+          "se": 28.979700138269557
+        },
+        "tag": {
+          "mean": -984.1,
+          "se": 36.96055538720849
+        },
+        "lag": {
+          "mean": -1170.0,
+          "se": 44.25682696880414
+        }
+      },
+      "training_score": -923.1666666666666,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_19/seed_1043"
+    },
+    {
+      "trial": 19,
+      "seed": 1044,
+      "params": {
+        "lr": 2.245111013480864e-05,
+        "batch_size": 512,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 181296,
+        "epsilon_end": 0.012992541059325948,
+        "replay_memory_size": 884427,
+        "opponent_update_every": 1140,
+        "update_target_every": 659
+      },
+      "trial_score": -783.1666666666666,
+      "final_min": -1128.8,
+      "final_mean": -697.5999999999999,
+      "members": {
+        "random": {
+          "mean": 1578.35,
+          "se": 30.503374348903332
+        },
+        "station": {
+          "mean": 107.5,
+          "se": 18.6149953964733
+        },
+        "maniac": {
+          "mean": -1128.8,
+          "se": 92.1757092963046
+        },
+        "nit": {
+          "mean": -466.4,
+          "se": 28.068608397201864
+        },
+        "tag": {
+          "mean": -938.95,
+          "se": 35.73964946678691
+        },
+        "lag": {
+          "mean": -1061.35,
+          "se": 42.802057645956054
+        }
+      },
+      "training_score": -1022.0,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_19/seed_1044"
+    },
+    {
+      "trial": 7,
+      "seed": 1043,
+      "params": {
+        "lr": 1.0339910411294462e-05,
+        "batch_size": 512,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 321427,
+        "epsilon_end": 0.02028445965557619,
+        "replay_memory_size": 331814,
+        "opponent_update_every": 4186,
+        "update_target_every": 666
+      },
+      "trial_score": -1282.3333333333333,
+      "final_min": -1090.95,
+      "final_mean": -573.75,
+      "members": {
+        "random": {
+          "mean": 1435.1,
+          "se": 30.925375887364005
+        },
+        "station": {
+          "mean": 231.15,
+          "se": 20.24187200276781
+        },
+        "maniac": {
+          "mean": -1090.95,
+          "se": 86.27549948775939
+        },
+        "nit": {
+          "mean": -406.65,
+          "se": 26.902126317079027
+        },
+        "tag": {
+          "mean": -723.9,
+          "se": 35.049457212490154
+        },
+        "lag": {
+          "mean": -878.4,
+          "se": 41.75621396009049
+        }
+      },
+      "training_score": -986.8333333333334,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_7/seed_1043"
+    },
+    {
+      "trial": 7,
+      "seed": 1044,
+      "params": {
+        "lr": 1.0339910411294462e-05,
+        "batch_size": 512,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 321427,
+        "epsilon_end": 0.02028445965557619,
+        "replay_memory_size": 331814,
+        "opponent_update_every": 4186,
+        "update_target_every": 666
+      },
+      "trial_score": -1282.3333333333333,
+      "final_min": -1127.55,
+      "final_mean": -593.83,
+      "members": {
+        "random": {
+          "mean": 1400.4,
+          "se": 28.521459687970854
+        },
+        "station": {
+          "mean": 185.25,
+          "se": 18.623328198005698
+        },
+        "maniac": {
+          "mean": -1127.55,
+          "se": 81.60986909465502
+        },
+        "nit": {
+          "mean": -391.45,
+          "se": 26.2521182810616
+        },
+        "tag": {
+          "mean": -724.5,
+          "se": 33.20572953715697
+        },
+        "lag": {
+          "mean": -910.9,
+          "se": 41.08612724473303
+        }
+      },
+      "training_score": -993.0,
+      "log_dir": "experiments/tune/dqn_v1/finalists/trial_7/seed_1044"
+    }
+  ],
+  "winner": {
+    "trial": 7,
+    "params": {
+      "lr": 1.0339910411294462e-05,
+      "batch_size": 512,
+      "mlp_layers": "256 256",
+      "epsilon_decay_steps": 321427,
+      "epsilon_end": 0.02028445965557619,
+      "replay_memory_size": 331814,
+      "opponent_update_every": 4186,
+      "update_target_every": 666
+    },
+    "final_min_mean": -1072.5,
+    "seeds": [
+      1042,
+      1043,
+      1044
+    ],
+    "final_deals": 5000
+  }
+}

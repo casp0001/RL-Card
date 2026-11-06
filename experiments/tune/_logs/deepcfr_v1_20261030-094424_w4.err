@@ -1,0 +1,10 @@
+[I 2026-10-30 09:44:35,467] Using an existing study with name 'deepcfr_v1' instead of creating a new one.
+[I 2026-10-30 12:33:00,011] Trial 3 pruned. 
+[I 2026-10-30 14:02:16,735] Trial 4 pruned. 
+[I 2026-10-30 15:42:45,959] Trial 5 pruned. 
+[I 2026-10-30 23:00:22,236] Trial 8 pruned. 
+[I 2026-10-31 00:56:55,524] Trial 12 pruned. 
+[I 2026-10-31 03:01:14,979] Trial 15 pruned. 
+[I 2026-10-31 04:06:14,886] Trial 19 pruned. 
+[I 2026-10-31 07:02:51,333] Trial 21 pruned. 
+[I 2026-10-31 12:37:50,946] Trial 27 finished with value: -378.6666666666667 and parameters: {'lr': 0.0006527893773762898, 'batch_size': 8192, 'layers': '128 128 128'}. Best is trial 24 with value: -346.3333333333333.

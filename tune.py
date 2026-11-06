@@ -458,14 +458,13 @@ def cmd_run(a):
             trial.set_user_attr('interrupted', True)
             raise
         except (ValueError, RuntimeError, FloatingPointError) as exc:
-            # typically a diverged network (NaN probabilities in np.random.choice);
-            # after at least one report it is ended as PRUNED, so TPE still sees
-            # its (bad) intermediate values instead of ignoring a FAILed trial
-            if not history:
-                raise
+            # typically a diverged network (non-finite loss, or NaN probabilities in
+            # np.random.choice). It ends as FAIL, never PRUNED: a pruned trial keeps
+            # its intermediate values, and a diverged network can score well for
+            # the wrong reason (NFSP's dead Q-network played a fixed call/raise rule)
             trial.set_user_attr('diverged', repr(exc)[:300])
-            print(f'=== trial {trial.number} stopped after {len(history)} evaluation(s): {exc!r}', flush=True)
-            raise optuna.TrialPruned(f'diverged: {exc!r}')
+            print(f'=== trial {trial.number} failed after {len(history)} evaluation(s): {exc!r}', flush=True)
+            raise
         finally:
             _cleanup()
         if not history:
@@ -590,8 +589,12 @@ def cmd_finalists(a):
                 _cleanup()
                 continue
             # the trained agent reads state['obs'], so evaluate it in an env of its encoding
-            results = Panel(parse_members(cfg['eval_panel']), num_deals=a.final_deals,
-                            obs=getattr(args, 'obs', 'rlcard')).evaluate(agent)
+            if getattr(args, 'game', 'limit') == 'leduc':
+                from leduc import LeducPanel        # exact: no deals needed
+                results = LeducPanel().evaluate(agent)
+            else:
+                results = Panel(parse_members(cfg['eval_panel']), num_deals=a.final_deals,
+                                obs=getattr(args, 'obs', 'rlcard')).evaluate(agent)
             run = {'trial': t.number, 'seed': seed, 'params': t.params, 'trial_score': t.value,
                    'final_min': results['min'], 'final_mean': results['mean'],
                    'members': results['members'], 'training_score': score(history) if history else None,

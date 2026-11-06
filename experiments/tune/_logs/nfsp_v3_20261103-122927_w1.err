@@ -1,0 +1,14 @@
+[I 2026-11-03 12:29:30,480] A new study created in Journal with name: nfsp_v3
+[I 2026-11-03 14:33:18,271] Trial 0 finished with value: -1500.3333333333333 and parameters: {'rl_learning_rate': 5e-05, 'sl_learning_rate': 0.0003, 'anticipatory_param': 0.1, 'reservoir_buffer_capacity': 1000000, 'q_replay_memory_size': 200000, 'q_epsilon_start': 0.06, 'layers': '256 256', 'train_every': 64, 'opponent_update_every': 10000}. Best is trial 0 with value: -1500.3333333333333.
+[I 2026-11-03 15:01:16,150] Trial 9 pruned. 
+[I 2026-11-03 15:18:45,768] Trial 14 pruned. 
+[I 2026-11-03 16:06:05,386] Trial 15 pruned. 
+[I 2026-11-03 16:30:15,163] Trial 19 pruned. 
+[I 2026-11-03 18:19:13,871] Trial 21 finished with value: -1232.8333333333333 and parameters: {'rl_learning_rate': 0.00013683052188143794, 'sl_learning_rate': 2.902798261524184e-05, 'anticipatory_param': 0.10720011381063786, 'reservoir_buffer_capacity': 974634, 'q_replay_memory_size': 26330, 'q_epsilon_start': 0.036328386613915443, 'layers': '512 512', 'train_every': 64, 'opponent_update_every': 1926}. Best is trial 17 with value: -1163.1666666666667.
+[I 2026-11-03 19:20:15,030] Trial 28 pruned. 
+[I 2026-11-03 19:48:51,260] Trial 31 pruned. 
+[I 2026-11-03 20:18:30,714] Trial 32 pruned. 
+[I 2026-11-03 21:45:05,520] Trial 35 pruned. 
+[I 2026-11-03 22:20:38,976] Trial 41 pruned. 
+[I 2026-11-03 23:55:20,574] Trial 44 finished with value: -1127.3333333333333 and parameters: {'rl_learning_rate': 8.690004079178533e-06, 'sl_learning_rate': 0.0008416925693512637, 'anticipatory_param': 0.09763025388181211, 'reservoir_buffer_capacity': 275413, 'q_replay_memory_size': 59717, 'q_epsilon_start': 0.020338217115977265, 'layers': '256 256', 'train_every': 32, 'opponent_update_every': 20093}. Best is trial 44 with value: -1127.3333333333333.
+[I 2026-11-04 01:26:04,671] Trial 49 finished with value: -1253.8333333333333 and parameters: {'rl_learning_rate': 6.404975643864049e-06, 'sl_learning_rate': 0.0022967994235739567, 'anticipatory_param': 0.10902859335801654, 'reservoir_buffer_capacity': 377991, 'q_replay_memory_size': 84659, 'q_epsilon_start': 0.03716713431630797, 'layers': '256 256 256', 'train_every': 32, 'opponent_update_every': 6238}. Best is trial 44 with value: -1127.3333333333333.

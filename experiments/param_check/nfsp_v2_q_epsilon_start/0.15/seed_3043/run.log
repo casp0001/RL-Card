@@ -1,0 +1,81 @@
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -851.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -851.0  mean -556.1 mbb/h  |  random +1178±104  station -288±67  maniac -851±127  nit -474±109  tag -567±108  lag -600±107
+[Episode 199999] avg policy:   actions: call=50% raise=44% fold=4% check=2%  (35s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -719.0
+----------------------------------------
+[Episode 399999] avg policy: panel min -719.0  mean -523.0 mbb/h  |  random +1250±100  station -276±71  maniac -424±87  nit -538±108  tag -658±109  lag -719±110
+[Episode 399999] avg policy:   actions: call=53% raise=42% fold=4% check=2%  (18s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -978.5
+----------------------------------------
+[Episode 599999] avg policy: panel min -978.5  mean -677.8 mbb/h  |  random +1295±101  station -402±74  maniac -978±125  nit -524±110  tag -714±109  lag -770±110
+[Episode 599999] avg policy:   actions: call=53% raise=42% fold=4% check=1%  (17s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -671.5
+----------------------------------------
+[Episode 799999] avg policy: panel min -671.5  mean -544.0 mbb/h  |  random +1281±101  station -268±72  maniac -596±111  nit -516±109  tag -672±110  lag -668±110
+[Episode 799999] avg policy:   actions: call=53% raise=43% fold=4% check=1%  (16s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -710.5
+----------------------------------------
+[Episode 999999] avg policy: panel min -710.5  mean -488.6 mbb/h  |  random +1212±96  station -398±81  maniac -122±69  nit -554±104  tag -710±106  lag -660±106
+[Episode 999999] avg policy:   actions: call=56% raise=39% fold=3% check=2%  (14s)
+
+Checkpoint saved at episode 1000000 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check\nfsp_v2_q_epsilon_start\0.15\seed_3043/checkpoints\episode_1000000
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -536.0
+----------------------------------------
+[Episode 1199999] avg policy: panel min -536.0  mean -393.4 mbb/h  |  random +1346±102  station -150±59  maniac -358±89  nit -470±108  tag -454±101  lag -536±99
+[Episode 1199999] avg policy:   actions: call=55% raise=42% fold=2% check=1%  (14s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -627.0
+----------------------------------------
+[Episode 1399999] avg policy: panel min -627.0  mean -392.6 mbb/h  |  random +1378±100  station -138±59  maniac -136±63  nit -504±108  tag -560±103  lag -627±101
+[Episode 1399999] avg policy:   actions: call=56% raise=41% fold=2% check=1%  (14s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -498.5
+----------------------------------------
+[Episode 1599999] avg policy: panel min -498.5  mean -301.8 mbb/h  |  random +1440±106  station -62±41  maniac -114±57  nit -498±108  tag -418±98  lag -417±94
+[Episode 1599999] avg policy:   actions: call=55% raise=43% fold=1% check=1%  (15s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -515.5
+----------------------------------------
+[Episode 1799999] avg policy: panel min -515.5  mean -318.0 mbb/h  |  random +1295±104  station -88±51  maniac -94±52  nit -516±107  tag -438±100  lag -455±96
+[Episode 1799999] avg policy:   actions: call=56% raise=42% fold=2% check=0%  (14s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -511.5
+----------------------------------------
+[Episode 1999999] avg policy: panel min -511.5  mean -302.2 mbb/h  |  random +1379±103  station -58±48  maniac -74±54  nit -512±109  tag -446±99  lag -422±92
+[Episode 1999999] avg policy:   actions: call=56% raise=43% fold=1% check=0%  (14s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check\nfsp_v2_q_epsilon_start\0.15\seed_3043/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check\nfsp_v2_q_epsilon_start\0.15\seed_3043/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check\nfsp_v2_q_epsilon_start\0.15\seed_3043/fig.png
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...

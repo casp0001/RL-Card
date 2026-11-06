@@ -46,6 +46,7 @@ from rlcard.envs.limitholdem import LimitholdemEnv
 from rlcard.games.limitholdem.game import LimitHoldemGame
 
 RICH_DIM = 153
+LEDUC_DIM = 36          # RLCard's leduc-holdem observation (leduc.py)
 ENV_IDS = {'rlcard': 'limit-holdem', 'rich': 'limit-holdem-rich'}
 ENCODINGS = tuple(ENV_IDS)
 
@@ -56,17 +57,22 @@ _STREET = {0: 0, 3: 1, 4: 2, 5: 3}
 
 
 def encoding_of_dim(dim):
-    ''' 'rich' or 'rlcard' from a network's input size. '''
+    ''' 'rich', 'rlcard' or 'leduc' from a network's input size. '''
     if dim == RICH_DIM:
         return 'rich'
     if dim == 72:
         return 'rlcard'
+    if dim == LEDUC_DIM:
+        return 'leduc'
     raise ValueError(f'no observation encoding has {dim} values')
 
 
 def obs_key(encoding):
     ''' The state key that holds an encoding's observation in ANY limit-holdem
-    env (both keys are always present, whatever state['obs'] is). '''
+    env (both keys are always present, whatever state['obs'] is). Leduc
+    states have only RLCard's own 'obs'. '''
+    if encoding == 'leduc':
+        return 'obs'
     return 'obs_rich' if encoding == 'rich' else 'obs_rlcard'
 
 

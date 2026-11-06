@@ -1,0 +1,170 @@
+{
+ "panel": {
+  "min": -438.25,
+  "mean": -21.8,
+  "members": {
+   "random": {
+    "mean": 1156.25,
+    "se": 47.06903935691689
+   },
+   "station": {
+    "mean": 332.375,
+    "se": 43.321096631943625
+   },
+   "maniac": {
+    "mean": 687.625,
+    "se": 107.30206624943528
+   },
+   "nit": {
+    "mean": -312.375,
+    "se": 42.34122334421435
+   },
+   "tag": {
+    "mean": -438.25,
+    "se": 55.63342977027393
+   },
+   "lag": {
+    "mean": -378.375,
+    "se": 61.84583056331714
+   }
+  },
+  "actions": {
+   "call": 0.281233911700455,
+   "raise": 0.48492395886961,
+   "fold": 0.10965784969875746,
+   "check": 0.12418427973117756
+  }
+ },
+ "lbr": {
+  "mean": 522.75,
+  "se": 96.94492382665405,
+  "deals": 1000
+ },
+ "play_vs_tag": {
+  "win rate (mbb/h)": {
+   "value": -570.0,
+   "n": 1000
+  },
+  "win rate SE (mbb/h)": {
+   "value": 108.7421247695611,
+   "n": 500
+  },
+  "VPIP": {
+   "value": 0.645,
+   "n": 1000
+  },
+  "PFR": {
+   "value": 0.356,
+   "n": 1000
+  },
+  "limp (SB completes)": {
+   "value": 0.26979652600000004,
+   "n": 500
+  },
+  "SB open raise": {
+   "value": 0.40204686,
+   "n": 500
+  },
+  "3-bet": {
+   "value": 0.2396995357142857,
+   "n": 504
+  },
+  "preflop fold to raise": {
+   "value": 0.2603540603448276,
+   "n": 580
+  },
+  "flop: bet when checked to": {
+   "value": 0.7682884495238095,
+   "n": 525
+  },
+  "flop: fold to bet": {
+   "value": 0.1802790621761658,
+   "n": 193
+  },
+  "flop: raise when bet into": {
+   "value": 0.27176408152173914,
+   "n": 184
+  },
+  "turn: bet when checked to": {
+   "value": 0.7949326757369615,
+   "n": 441
+  },
+  "turn: fold to bet": {
+   "value": 0.09700208695652174,
+   "n": 161
+  },
+  "turn: raise when bet into": {
+   "value": 0.1753782322580645,
+   "n": 155
+  },
+  "river: bet when checked to": {
+   "value": 0.7998896825396825,
+   "n": 315
+  },
+  "river: fold to bet": {
+   "value": 0.0021359022988505748,
+   "n": 174
+  },
+  "river: raise when bet into": {
+   "value": 0.24606059638554215,
+   "n": 166
+  },
+  "aggression factor (post-flop)": {
+   "value": 3.129092118578652,
+   "n": 1809
+  },
+  "c-bet": {
+   "value": 0.9377416655290103,
+   "n": 293
+  },
+  "WTSD": {
+   "value": 0.5751937984496124,
+   "n": 645
+  },
+  "W$SD": {
+   "value": 0.38274932614555257,
+   "n": 371
+  },
+  "bluff rate (bet/raise | weak hand)": {
+   "value": 0.4762548660968661,
+   "n": 351
+  },
+  "bluff share of aggression": {
+   "value": 0.14873479650092655,
+   "n": 1123.916272
+  },
+  "semi-bluff share of aggression": {
+   "value": 0.10211162598062287,
+   "n": 1123.916272
+  },
+  "value share of aggression": {
+   "value": 0.45532523707424355,
+   "n": 1123.916272
+  },
+  "slow-play rate (no raise | equity >= 0.8)": {
+   "value": 0.2350665681063123,
+   "n": 301
+  },
+  "river: aggression while behind (share)": {
+   "value": 0.46735063774466445,
+   "n": 292.811309
+  },
+  "fold facing a bet": {
+   "value": 0.22752892723880597,
+   "n": 1608
+  },
+  "fold when equity < pot odds": {
+   "value": 0.1580515909090909,
+   "n": 22
+  },
+  "fold when equity >> pot odds": {
+   "value": 0.1786512567463377,
+   "n": 1297
+  }
+ },
+ "settings": {
+  "panel_deals": 2000,
+  "lbr_deals": 1000,
+  "play_deals": 500
+ }
+}

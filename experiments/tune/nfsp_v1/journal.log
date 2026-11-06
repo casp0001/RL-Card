@@ -1101,3 +1101,10 @@
 {"op_code":8,"worker_id":"d206e130-818d-4f5c-a0e6-2b137f392ac6-12876","trial_id":38,"user_attr":{"log_dir":"experiments/tune/nfsp_v1/trials/trial_38"}}
 {"op_code":0,"worker_id":"f7e24914-1b5d-459a-8717-f98c763f3bc8-53648","study_name":"nfsp_v1","directions":[2]}
 {"op_code":0,"worker_id":"bf728a38-9130-4ac6-8b41-8a4193f07c3c-53648","study_name":"nfsp_v1","directions":[2]}
+{"op_code":0,"worker_id":"9827d110-1d21-4aef-9336-24c095969dbd-35768","study_name":"nfsp_v1","directions":[2]}
+{"op_code":0,"worker_id":"6710cb3c-7630-4b9d-95e0-e434b3399d55-60372","study_name":"nfsp_v1","directions":[2]}
+{"op_code":0,"worker_id":"745239c5-93fe-4b82-8a35-f23dea2afd8b-60372","study_name":"nfsp_v1","directions":[2]}
+{"op_code":0,"worker_id":"7e1f98ec-18da-4c83-860e-57ac91e9d527-60372","study_name":"nfsp_v1","directions":[2]}
+{"op_code":0,"worker_id":"d98132ac-adc4-4b36-821b-73e53d90b3e6-60372","study_name":"nfsp_v1","directions":[2]}
+{"op_code":0,"worker_id":"f3812147-1629-4e88-b662-8d53e79b0b67-16236","study_name":"nfsp_v1","directions":[2]}
+{"op_code":0,"worker_id":"1db6794c-55ae-46f0-8e35-be862f11d3a8-51408","study_name":"nfsp_v1","directions":[2]}

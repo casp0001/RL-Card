@@ -102,6 +102,8 @@ class OpponentSchedule(object):
         self.warmup_start_frac = float(getattr(args, 'warmup_start_frac', 1.0))
         if self.warmup_episodes and self.warmup_bot not in WARMUP_BOTS:
             raise ValueError(f'unknown warm-up bot {self.warmup_bot!r}; choose from {WARMUP_BOTS}')
+        if self.warmup_episodes and getattr(args, 'game', 'limit') == 'leduc':
+            raise ValueError("the warm-up bots play limit hold'em only; use --warmup_episodes 0 on Leduc")
         self.rng = random.Random(f'opponents-{args.seed}')
         self.pool = [frozen_copy(agent)]
         self._bot = None

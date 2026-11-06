@@ -305,7 +305,8 @@ def load_policy(kind, ckpt=None, device=None):
         checkpoint = _load(_resolve(ckpt, 'model.ckpt'))
         from obs_encoding import ENV_IDS
         input_dim = next(v for k, v in checkpoint['policy_network'].items() if k.endswith('weight')).shape[1]
-        env = rlcard.make(ENV_IDS[encoding_of_dim(input_dim)], config={'allow_step_back': True})
+        encoding = encoding_of_dim(input_dim)
+        env = rlcard.make('leduc-holdem' if encoding == 'leduc' else ENV_IDS[encoding], config={'allow_step_back': True})
         # layer sizes are read from the weights, so no --policy_layers needed
         agent = DeepCFR(env=env, memory_capacity=1,
                         policy_network_layers=_hidden_layers(checkpoint['policy_network']),

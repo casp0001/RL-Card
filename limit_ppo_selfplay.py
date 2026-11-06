@@ -5,9 +5,8 @@ import contextlib
 
 
 import rlcard
-from obs_encoding import ENV_IDS
 from functions import fmt_actions, str2bool, frozen_copy, plot_learning_curve
-from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
+from eval_panel import PanelLogger, add_panel_args, make_panel, env_id, format_results
 from self_play import OpponentSchedule, add_self_play_args
 from ppo_agent import PPOAgent
 
@@ -27,7 +26,7 @@ def train(args, on_eval=None):
     returns True (used by tune.py). Returns the trained agent. '''
     # Make environments
     env = rlcard.make(
-        ENV_IDS[args.obs],
+        env_id(args),
         config={'seed': args.seed}
     )
 
@@ -63,7 +62,7 @@ def train(args, on_eval=None):
     schedule = OpponentSchedule(agent, args)
 
     # Evaluation panel of fixed opponents (see eval_panel.py)
-    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
+    panel = make_panel(args)
     panel_logger = PanelLogger(args.log_dir, panel.members)
 
     with Logger(args.log_dir) as logger:

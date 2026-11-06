@@ -1,0 +1,328 @@
+worker Cloud-3M0LKK4-37804: 0/30 trials finished
+
+=== trial 3: {"lr": 0.00022235978979065878, "batch_size": 4096, "layers": "256 256 256"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1181.0
+----------------------------------------
+[Iteration 19] panel min -1181.0  mean -689.6 mbb/h  |  random +801±81  station -302±75  maniac -292±247  nit -598±84  tag -1074±122  lag -1181±140
+[Iteration 19]   actions: call=30% raise=37% fold=15% check=18%  (31s)
+  last-step weighted losses  adv: 18.511670  policy: 0.014218
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -994.0
+----------------------------------------
+[Iteration 39] panel min -994.0  mean -605.1 mbb/h  |  random +796±81  station -274±82  maniac -232±219  nit -563±94  tag -994±119  lag -962±133
+[Iteration 39]   actions: call=30% raise=41% fold=14% check=15%  (19s)
+  last-step weighted losses  adv: 23.922623  policy: 0.016452
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -844.5
+----------------------------------------
+=== trial 3 pruned after 3 evaluation(s) (episode 59, panel min -844.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_3/
+
+=== trial 4: {"lr": 0.0029706622958572113, "batch_size": 1024, "layers": "128 128 128"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1434.0
+----------------------------------------
+[Iteration 19] panel min -1434.0  mean -719.1 mbb/h  |  random +918±94  station -46±78  maniac -1434±248  nit -411±100  tag -706±123  lag -998±150
+[Iteration 19]   actions: call=20% raise=55% fold=13% check=12%  (17s)
+  last-step weighted losses  adv: 14.812814  policy: 0.016651
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -947.5
+----------------------------------------
+[Iteration 39] panel min -947.5  mean -555.5 mbb/h  |  random +1382±101  station +93±62  maniac -909±255  nit -394±116  tag -620±135  lag -948±155
+[Iteration 39]   actions: call=22% raise=67% fold=8% check=4%  (17s)
+  last-step weighted losses  adv: 23.135398  policy: 0.016005
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -696.0
+----------------------------------------
+=== trial 4 pruned after 3 evaluation(s) (episode 59, panel min -696.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_4/
+
+=== trial 5: {"lr": 0.00037421147479914005, "batch_size": 4096, "layers": "128 128 128"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1128.5
+----------------------------------------
+[Iteration 19] panel min -1128.5  mean -697.9 mbb/h  |  random +636±78  station -100±74  maniac -692±232  nit -559±89  tag -1010±113  lag -1128±136
+[Iteration 19]   actions: call=33% raise=32% fold=16% check=19%  (14s)
+  last-step weighted losses  adv: 14.788754  policy: 0.014935
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -633.0
+----------------------------------------
+[Iteration 39] panel min -633.0  mean -323.0 mbb/h  |  random +830±90  station +54±81  maniac +52±239  nit -492±89  tag -596±110  lag -633±127
+[Iteration 39]   actions: call=32% raise=41% fold=14% check=14%  (9s)
+  last-step weighted losses  adv: 22.448126  policy: 0.020083
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -959.0
+----------------------------------------
+=== trial 5 pruned after 3 evaluation(s) (episode 59, panel min -959.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_5/
+
+=== trial 8: {"lr": 0.0025629728555844992, "batch_size": 8192, "layers": "256 256 256"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1374.5
+----------------------------------------
+[Iteration 19] panel min -1374.5  mean -904.9 mbb/h  |  random +714±82  station -565±79  maniac -660±228  nit -714±87  tag -1211±127  lag -1374±144
+[Iteration 19]   actions: call=27% raise=38% fold=17% check=19%  (16s)
+  last-step weighted losses  adv: 6.131642  policy: 0.018340
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -1129.0
+----------------------------------------
+[Iteration 39] panel min -1129.0  mean -728.6 mbb/h  |  random +793±86  station -178±78  maniac -922±240  nit -460±94  tag -956±117  lag -1129±133
+[Iteration 39]   actions: call=26% raise=42% fold=15% check=16%  (16s)
+  last-step weighted losses  adv: 8.067316  policy: 0.015511
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -1001.5
+----------------------------------------
+=== trial 8 pruned after 3 evaluation(s) (episode 59, panel min -1001.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_8/
+
+=== trial 12: {"lr": 0.002713436991892032, "batch_size": 1024, "layers": "256 256 256"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1311.5
+----------------------------------------
+[Iteration 19] panel min -1311.5  mean -849.9 mbb/h  |  random +570±77  station -347±80  maniac -974±233  nit -547±85  tag -1070±113  lag -1312±136
+[Iteration 19]   actions: call=25% raise=39% fold=18% check=18%  (16s)
+  last-step weighted losses  adv: 13.011853  policy: 0.020088
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -1183.5
+----------------------------------------
+[Iteration 39] panel min -1183.5  mean -595.0 mbb/h  |  random +723±100  station +56±68  maniac -1184±232  nit -318±100  tag -680±116  lag -850±140
+[Iteration 39]   actions: call=21% raise=55% fold=11% check=13%  (17s)
+  last-step weighted losses  adv: 17.133809  policy: 0.017542
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -973.0
+----------------------------------------
+=== trial 12 pruned after 3 evaluation(s) (episode 59, panel min -973.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_12/
+
+=== trial 15: {"lr": 0.001361824594737118, "batch_size": 4096, "layers": "256 256 256"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1226.0
+----------------------------------------
+[Iteration 19] panel min -1226.0  mean -734.4 mbb/h  |  random +717±82  station -418±75  maniac -354±248  nit -654±88  tag -1020±116  lag -1226±136
+[Iteration 19]   actions: call=26% raise=39% fold=16% check=19%  (9s)
+  last-step weighted losses  adv: 7.845182  policy: 0.014404
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -1289.0
+----------------------------------------
+[Iteration 39] panel min -1289.0  mean -680.3 mbb/h  |  random +1008±91  station +60±75  maniac -1289±261  nit -352±100  tag -792±124  lag -1028±141
+[Iteration 39]   actions: call=22% raise=53% fold=11% check=14%  (10s)
+  last-step weighted losses  adv: 12.832551  policy: 0.014175
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -1114.5
+----------------------------------------
+=== trial 15 pruned after 3 evaluation(s) (episode 59, panel min -1114.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_15/
+
+=== trial 19: {"lr": 0.0002766282037891353, "batch_size": 1024, "layers": "256 256 256"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1157.0
+----------------------------------------
+[Iteration 19] panel min -1157.0  mean -632.6 mbb/h  |  random +832±80  station -186±71  maniac -160±241  nit -620±81  tag -1040±118  lag -1157±145
+[Iteration 19]   actions: call=34% raise=33% fold=13% check=20%  (11s)
+  last-step weighted losses  adv: 23.652178  policy: 0.015349
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -836.0
+----------------------------------------
+[Iteration 39] panel min -836.0  mean -450.3 mbb/h  |  random +966±81  station -95±75  maniac +135±203  nit -654±80  tag -836±99  lag -802±120
+[Iteration 39]   actions: call=39% raise=32% fold=10% check=19%  (10s)
+  last-step weighted losses  adv: 23.710992  policy: 0.017838
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -720.0
+----------------------------------------
+=== trial 19 pruned after 3 evaluation(s) (episode 59, panel min -720.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_19/
+
+=== trial 21: {"lr": 0.0016185414274305133, "batch_size": 1024, "layers": "256 256 256"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1249.5
+----------------------------------------
+[Iteration 19] panel min -1249.5  mean -790.3 mbb/h  |  random +972±82  station -270±75  maniac -679±250  nit -628±92  tag -1125±122  lag -1250±140
+[Iteration 19]   actions: call=26% raise=43% fold=12% check=18%  (10s)
+  last-step weighted losses  adv: 11.657113  policy: 0.015881
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -552.0
+----------------------------------------
+[Iteration 39] panel min -552.0  mean -295.2 mbb/h  |  random +1108±92  station +160±65  maniac -356±249  nit -314±106  tag -414±130  lag -552±151
+[Iteration 39]   actions: call=21% raise=58% fold=10% check=11%  (10s)
+  last-step weighted losses  adv: 16.050963  policy: 0.015097
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -568.5
+----------------------------------------
+[Iteration 59] panel min -568.5  mean -246.9 mbb/h  |  random +1598±103  station +150±59  maniac -66±248  nit -287±110  tag -463±127  lag -568±145
+[Iteration 59]   actions: call=23% raise=64% fold=6% check=8%  (10s)
+  last-step weighted losses  adv: 22.206403  policy: 0.014783
+59/200 complete.60/200 complete.61/200 complete.62/200 complete.63/200 complete.64/200 complete.65/200 complete.66/200 complete.67/200 complete.68/200 complete.69/200 complete.70/200 complete.71/200 complete.72/200 complete.73/200 complete.74/200 complete.75/200 complete.76/200 complete.77/200 complete.78/200 complete.
+----------------------------------------
+  episode      |  79
+  reward       |  -563.0
+----------------------------------------
+[Iteration 79] panel min -563.0  mean -151.1 mbb/h  |  random +1498±102  station +201±64  maniac +581±251  nit -415±114  tag -563±136  lag -560±147
+[Iteration 79]   actions: call=24% raise=62% fold=6% check=8%  (10s)
+  last-step weighted losses  adv: 25.198421  policy: 0.015042
+79/200 complete.80/200 complete.81/200 complete.82/200 complete.83/200 complete.84/200 complete.85/200 complete.86/200 complete.87/200 complete.88/200 complete.89/200 complete.90/200 complete.91/200 complete.92/200 complete.93/200 complete.94/200 complete.95/200 complete.96/200 complete.97/200 complete.98/200 complete.
+----------------------------------------
+  episode      |  99
+  reward       |  -629.0
+----------------------------------------
+[Iteration 99] panel min -629.0  mean -160.3 mbb/h  |  random +1622±104  station +244±71  maniac +520±237  nit -369±107  tag -629±133  lag -568±140
+[Iteration 99]   actions: call=28% raise=58% fold=5% check=9%  (9s)
+  last-step weighted losses  adv: 19.069963  policy: 0.018754
+99/200 complete.100/200 complete.101/200 complete.102/200 complete.103/200 complete.104/200 complete.105/200 complete.106/200 complete.107/200 complete.108/200 complete.109/200 complete.110/200 complete.111/200 complete.112/200 complete.113/200 complete.114/200 complete.115/200 complete.116/200 complete.117/200 complete.118/200 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -458.5
+----------------------------------------
+[Iteration 119] panel min -458.5  mean -64.0 mbb/h  |  random +1310±97  station +200±81  maniac +774±218  nit -414±96  tag -458±122  lag -423±132
+[Iteration 119]   actions: call=32% raise=48% fold=7% check=13%  (10s)
+  last-step weighted losses  adv: 19.825189  policy: 0.019348
+119/200 complete.120/200 complete.121/200 complete.122/200 complete.123/200 complete.124/200 complete.125/200 complete.126/200 complete.127/200 complete.128/200 complete.129/200 complete.130/200 complete.131/200 complete.132/200 complete.133/200 complete.134/200 complete.135/200 complete.136/200 complete.137/200 complete.138/200 complete.
+----------------------------------------
+  episode      |  139
+  reward       |  -559.0
+----------------------------------------
+=== trial 21 pruned after 7 evaluation(s) (episode 139, panel min -559.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_21/
+
+=== trial 27: {"lr": 0.0006527893773762898, "batch_size": 8192, "layers": "128 128 128"}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -989.0
+----------------------------------------
+[Iteration 19] panel min -989.0  mean -721.9 mbb/h  |  random +824±88  station -310±82  maniac -989±237  nit -490±96  tag -882±116  lag -938±137
+[Iteration 19]   actions: call=22% raise=50% fold=14% check=14%  (10s)
+  last-step weighted losses  adv: 13.492200  policy: 0.015414
+19/200 complete.20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -941.0
+----------------------------------------
+[Iteration 39] panel min -941.0  mean -452.4 mbb/h  |  random +1316±103  station +172±64  maniac -506±262  nit -362±112  tag -624±133  lag -941±149
+[Iteration 39]   actions: call=20% raise=68% fold=9% check=4%  (10s)
+  last-step weighted losses  adv: 20.400477  policy: 0.013893
+39/200 complete.40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -667.0
+----------------------------------------
+[Iteration 59] panel min -667.0  mean -338.0 mbb/h  |  random +1365±100  station +160±75  maniac -268±256  nit -316±115  tag -600±137  lag -667±154
+[Iteration 59]   actions: call=20% raise=68% fold=9% check=3%  (9s)
+  last-step weighted losses  adv: 21.268340  policy: 0.015629
+59/200 complete.60/200 complete.61/200 complete.62/200 complete.63/200 complete.64/200 complete.65/200 complete.66/200 complete.67/200 complete.68/200 complete.69/200 complete.70/200 complete.71/200 complete.72/200 complete.73/200 complete.74/200 complete.75/200 complete.76/200 complete.77/200 complete.78/200 complete.
+----------------------------------------
+  episode      |  79
+  reward       |  -496.0
+----------------------------------------
+[Iteration 79] panel min -496.0  mean -231.8 mbb/h  |  random +1049±92  station +106±86  maniac +122±236  nit -402±97  tag -488±119  lag -496±129
+[Iteration 79]   actions: call=25% raise=55% fold=13% check=8%  (9s)
+  last-step weighted losses  adv: 18.911831  policy: 0.016794
+79/200 complete.80/200 complete.81/200 complete.82/200 complete.83/200 complete.84/200 complete.85/200 complete.86/200 complete.87/200 complete.88/200 complete.89/200 complete.90/200 complete.91/200 complete.92/200 complete.93/200 complete.94/200 complete.95/200 complete.96/200 complete.97/200 complete.98/200 complete.
+----------------------------------------
+  episode      |  99
+  reward       |  -469.5
+----------------------------------------
+[Iteration 99] panel min -469.5  mean -95.2 mbb/h  |  random +1125±89  station +104±88  maniac +604±235  nit -354±94  tag -470±112  lag -360±128
+[Iteration 99]   actions: call=27% raise=49% fold=12% check=12%  (9s)
+  last-step weighted losses  adv: 17.314941  policy: 0.018018
+99/200 complete.100/200 complete.101/200 complete.102/200 complete.103/200 complete.104/200 complete.105/200 complete.106/200 complete.107/200 complete.108/200 complete.109/200 complete.110/200 complete.111/200 complete.112/200 complete.113/200 complete.114/200 complete.115/200 complete.116/200 complete.117/200 complete.118/200 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -459.0
+----------------------------------------
+[Iteration 119] panel min -459.0  mean -99.7 mbb/h  |  random +1080±84  station +114±88  maniac +588±233  nit -459±89  tag -423±116  lag -318±128
+[Iteration 119]   actions: call=30% raise=43% fold=13% check=15%  (9s)
+  last-step weighted losses  adv: 15.415480  policy: 0.018916
+119/200 complete.120/200 complete.121/200 complete.122/200 complete.123/200 complete.124/200 complete.125/200 complete.126/200 complete.127/200 complete.128/200 complete.129/200 complete.130/200 complete.131/200 complete.132/200 complete.133/200 complete.134/200 complete.135/200 complete.136/200 complete.137/200 complete.138/200 complete.
+----------------------------------------
+  episode      |  139
+  reward       |  -394.0
+----------------------------------------
+[Iteration 139] panel min -394.0  mean -85.5 mbb/h  |  random +940±78  station +76±87  maniac +567±223  nit -362±82  tag -394±106  lag -314±126
+[Iteration 139]   actions: call=31% raise=38% fold=13% check=17%  (9s)
+  last-step weighted losses  adv: 15.441606  policy: 0.020178
+139/200 complete.140/200 complete.141/200 complete.142/200 complete.143/200 complete.144/200 complete.145/200 complete.146/200 complete.147/200 complete.148/200 complete.149/200 complete.150/200 complete.151/200 complete.152/200 complete.153/200 complete.154/200 complete.155/200 complete.156/200 complete.157/200 complete.158/200 complete.
+----------------------------------------
+  episode      |  159
+  reward       |  -403.5
+----------------------------------------
+[Iteration 159] panel min -403.5  mean -81.6 mbb/h  |  random +884±77  station +188±84  maniac +472±215  nit -348±78  tag -404±103  lag -317±118
+[Iteration 159]   actions: call=33% raise=36% fold=12% check=18%  (7s)
+  last-step weighted losses  adv: 14.505635  policy: 0.020484
+159/200 complete.160/200 complete.161/200 complete.162/200 complete.163/200 complete.164/200 complete.165/200 complete.166/200 complete.167/200 complete.168/200 complete.169/200 complete.170/200 complete.171/200 complete.172/200 complete.173/200 complete.174/200 complete.175/200 complete.176/200 complete.177/200 complete.178/200 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -347.0
+----------------------------------------
+[Iteration 179] panel min -347.0  mean +45.3 mbb/h  |  random +832±78  station +295±82  maniac +793±221  nit -246±75  tag -347±99  lag -268±117
+[Iteration 179]   actions: call=32% raise=37% fold=13% check=18%  (7s)
+  last-step weighted losses  adv: 14.503786  policy: 0.021849
+179/200 complete.180/200 complete.181/200 complete.182/200 complete.183/200 complete.184/200 complete.185/200 complete.186/200 complete.187/200 complete.188/200 complete.189/200 complete.190/200 complete.191/200 complete.192/200 complete.193/200 complete.194/200 complete.195/200 complete.196/200 complete.197/200 complete.198/200 complete.
+----------------------------------------
+  episode      |  199
+  reward       |  -385.5
+----------------------------------------
+[Iteration 199] panel min -385.5  mean -21.4 mbb/h  |  random +958±81  station +310±81  maniac +546±213  nit -322±78  tag -386±96  lag -256±113
+[Iteration 199]   actions: call=31% raise=38% fold=12% check=18%  (7s)
+  last-step weighted losses  adv: 13.267719  policy: 0.023607
+199/200 complete.
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_27/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\deepcfr_v1\trials\trial_27/fig.png
+=== trial 27 finished: score -378.7
+worker done

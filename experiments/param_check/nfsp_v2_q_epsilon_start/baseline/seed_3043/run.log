@@ -1,0 +1,22 @@
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check\nfsp_v2_q_epsilon_start\baseline\seed_3043/
+Traceback (most recent call last):
+  File "C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check.py", line 184, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check.py", line 180, in main
+    {'run': cmd_run, 'train': cmd_train, 'report': cmd_report}[a.command](a)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\param_check.py", line 56, in cmd_train
+    module.train(args, None)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\limit_nfsp_selfplay_custom_hyperparams.py", line 99, in train
+    trajectories, payoffs = env.run(is_training=True)
+                            ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Petr.Cesar\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\rlcard\envs\env.py", line 146, in run
+    action = self.agents[player_id].step(state)
+  File "C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\nfsp_agent_XPU.py", line 189, in step
+    action = self._rl_agent.step(state)
+  File "C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\dqn_agent_XPU.py", line 167, in step
+    best_action_idx = legal_actions.index(np.argmax(q_values))
+ValueError: list.index(x): x not in list

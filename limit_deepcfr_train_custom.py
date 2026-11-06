@@ -7,13 +7,12 @@ import torch
 
 
 import rlcard
-from obs_encoding import ENV_IDS
 from rlcard.utils.utils import remove_illegal
 from deep_cfr_agent_new import DeepCFR
 
 
 from functions import str2bool, plot_learning_curve
-from eval_panel import Panel, PanelLogger, add_panel_args, parse_members, format_results
+from eval_panel import PanelLogger, add_panel_args, make_panel, env_id, format_results
 
 from rlcard.utils import (
     set_seed,
@@ -74,7 +73,7 @@ def train(args, on_eval=None):
     returns True (used by tune.py). Returns the trained agent. '''
     # Make environments
     env = rlcard.make(
-        ENV_IDS[args.obs],
+        env_id(args),
         config={'seed': args.seed, 
                 'allow_step_back': True}
     )
@@ -102,7 +101,7 @@ def train(args, on_eval=None):
     eval_agent = DeepCFREvalAgent(agent)
 
     # Evaluation panel of fixed opponents (see eval_panel.py)
-    panel = Panel(parse_members(args.eval_panel), num_deals=args.eval_deals, obs=args.obs)
+    panel = make_panel(args)
     panel_logger = PanelLogger(args.log_dir, panel.members)
 
     with Logger(args.log_dir) as logger:

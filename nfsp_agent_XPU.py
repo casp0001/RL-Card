@@ -68,6 +68,7 @@ class NFSPAgent(object):
                  q_mlp_layers=None,
                  q_activation='tanh',
                  optimizer='adam',
+                 max_grad_norm=None,
                  evaluate_with='average_policy',
                  device=None,
                  save_path=None,
@@ -100,6 +101,8 @@ class NFSPAgent(object):
             q_activation (str): 'tanh' (rlcard's default) or 'relu' for the inner DQN.
             optimizer (str): 'adam' (rlcard's default) or 'sgd'; used for both the
               inner DQN and the average-policy network.
+            max_grad_norm (float or None): global gradient-norm clip of both networks'
+              updates; None (the default) disables it
             device (torch.device): Whether to use the cpu or gpu
         '''
         self.use_raw = False
@@ -112,6 +115,7 @@ class NFSPAgent(object):
         self._anticipatory_param = anticipatory_param
         self._min_buffer_size_to_learn = min_buffer_size_to_learn
         self._optimizer = optimizer
+        self._max_grad_norm = max_grad_norm
 
         self._reservoir_buffer = ReservoirBuffer(reservoir_buffer_capacity)
         self._prev_timestep = None
@@ -132,7 +136,7 @@ class NFSPAgent(object):
         self._rl_agent = DQNAgent(q_replay_memory_size, q_replay_memory_init_size, \
             q_update_target_estimator_every, q_discount_factor, q_epsilon_start, q_epsilon_end, \
             q_epsilon_decay_steps, q_batch_size, num_actions, state_shape, q_train_every, q_mlp_layers, \
-            rl_learning_rate, device, activation=q_activation, optimizer=optimizer)
+            rl_learning_rate, device, activation=q_activation, optimizer=optimizer, max_grad_norm=max_grad_norm)
 
         # Build the average policy supervised model
         self._build_model()
@@ -293,7 +297,11 @@ class NFSPAgent(object):
         log_forecast_action_probs = self.policy_network(info_states)
 
         ce_loss = - (eval_action_probs * log_forecast_action_probs).sum(dim=-1).mean()
+        if not torch.isfinite(ce_loss):
+            raise FloatingPointError(f'average-policy network diverged: non-finite loss {ce_loss.item()}')
         ce_loss.backward()
+        if self._max_grad_norm is not None:
+            nn.utils.clip_grad_norm_(self.policy_network.parameters(), self._max_grad_norm)
 
         self.policy_network_optimizer.step()
         ce_loss = ce_loss.item()
@@ -339,6 +347,7 @@ class NFSPAgent(object):
             'sl_learning_rate': self._sl_learning_rate,
             'train_every': self._train_every,
             'optimizer': self._optimizer,
+            'max_grad_norm': self._max_grad_norm,
         }
     
     @classmethod
@@ -364,6 +373,7 @@ class NFSPAgent(object):
             hidden_layers_sizes=[],
             q_activation=checkpoint['rl_agent'].get('activation', 'tanh'),
             optimizer=checkpoint.get('optimizer', 'adam'),
+            max_grad_norm=checkpoint.get('max_grad_norm'),
         )
         
         agent.policy_network = AveragePolicyNetwork.from_checkpoint(checkpoint['policy_network'])

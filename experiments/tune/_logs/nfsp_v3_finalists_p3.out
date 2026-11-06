@@ -1,0 +1,169 @@
+trial 44 seed 1042: being trained by another process, skipping
+trial 44 seed 1043: being trained by another process, skipping
+
+=== finalist trial 44 (score -1127.3), seed 1044: {"rl_learning_rate": 8.690004079178533e-06, "sl_learning_rate": 0.0008416925693512637, "anticipatory_param": 0.09763025388181211, "reservoir_buffer_capacity": 275413, "q_replay_memory_size": 59717, "q_epsilon_start": 0.020338217115977265, "layers": "256 256", "train_every": 32, "opponent_update_every": 20093}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1693.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -1693.0  mean -849.4 mbb/h  |  random +2355±114  station -132±59  maniac -256±186  nit -740±129  tag -1426±150  lag -1693±173
+[Episode 199999] avg policy:   actions: call=20% raise=66% fold=1% check=13%  (26s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1956.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -1956.5  mean -1101.1 mbb/h  |  random +2274±108  station -171±55  maniac -797±194  nit -857±136  tag -1724±167  lag -1956±175
+[Episode 399999] avg policy:   actions: call=20% raise=66% fold=1% check=14%  (13s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1519.0
+----------------------------------------
+[Episode 599999] avg policy: panel min -1519.0  mean -707.4 mbb/h  |  random +2093±114  station +62±64  maniac +84±231  nit -754±127  tag -1408±154  lag -1519±173
+[Episode 599999] avg policy:   actions: call=20% raise=65% fold=3% check=13%  (12s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1559.5
+----------------------------------------
+[Episode 799999] avg policy: panel min -1559.5  mean -689.3 mbb/h  |  random +1958±114  station +127±71  maniac +131±272  nit -851±122  tag -1294±153  lag -1560±168
+[Episode 799999] avg policy:   actions: call=20% raise=63% fold=4% check=12%  (11s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1636.5
+----------------------------------------
+[Episode 999999] avg policy: panel min -1636.5  mean -649.5 mbb/h  |  random +1896±108  station +149±74  maniac +384±258  nit -722±118  tag -1422±155  lag -1636±170
+[Episode 999999] avg policy:   actions: call=20% raise=62% fold=5% check=13%  (11s)
+
+Checkpoint saved at episode 1000000 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_44\seed_1044/checkpoints\episode_1000000
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -1376.5
+----------------------------------------
+[Episode 1199999] avg policy: panel min -1376.5  mean -535.3 mbb/h  |  random +1764±106  station +158±74  maniac +427±259  nit -662±113  tag -1223±149  lag -1376±165
+[Episode 1199999] avg policy:   actions: call=21% raise=60% fold=5% check=14%  (11s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -1446.0
+----------------------------------------
+[Episode 1399999] avg policy: panel min -1446.0  mean -666.6 mbb/h  |  random +1788±100  station +38±75  maniac +182±277  nit -836±114  tag -1270±151  lag -1446±169
+[Episode 1399999] avg policy:   actions: call=21% raise=58% fold=6% check=15%  (11s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -1301.5
+----------------------------------------
+[Episode 1599999] avg policy: panel min -1301.5  mean -543.1 mbb/h  |  random +1676±104  station +39±77  maniac +407±278  nit -678±108  tag -1182±155  lag -1302±173
+[Episode 1599999] avg policy:   actions: call=21% raise=57% fold=6% check=15%  (11s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -1424.5
+----------------------------------------
+[Episode 1799999] avg policy: panel min -1424.5  mean -681.5 mbb/h  |  random +1686±102  station +61±76  maniac -1±293  nit -828±112  tag -1215±156  lag -1424±172
+[Episode 1799999] avg policy:   actions: call=21% raise=57% fold=7% check=15%  (11s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -1292.5
+----------------------------------------
+[Episode 1999999] avg policy: panel min -1292.5  mean -651.9 mbb/h  |  random +1610±99  station -34±79  maniac +78±300  nit -824±108  tag -1187±147  lag -1292±170
+[Episode 1999999] avg policy:   actions: call=22% raise=55% fold=7% check=16%  (11s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_44\seed_1044/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_44\seed_1044/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_44\seed_1044/fig.png
+=== finalist trial 44 seed 1044: final panel min -1250.7 (mean -488.8) over 5000 deals
+trial 17 seed 1042: being trained by another process, skipping
+trial 17 seed 1043: being trained by another process, skipping
+
+=== finalist trial 17 (score -1163.2), seed 1044: {"rl_learning_rate": 6.06324738512529e-06, "sl_learning_rate": 0.001327534257380684, "anticipatory_param": 0.08052815071350788, "reservoir_buffer_capacity": 262521, "q_replay_memory_size": 100414, "q_epsilon_start": 0.020505387376025454, "layers": "128 128", "train_every": 16, "opponent_update_every": 25160}
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1772.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -1772.0  mean -849.2 mbb/h  |  random +2420±119  station +62±53  maniac -346±192  nit -702±129  tag -1486±156  lag -1772±165
+[Episode 199999] avg policy:   actions: call=20% raise=66% fold=1% check=13%  (13s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1767.0
+----------------------------------------
+[Episode 399999] avg policy: panel min -1767.0  mean -900.4 mbb/h  |  random +2319±110  station -44±55  maniac -260±169  nit -812±133  tag -1620±154  lag -1767±161
+[Episode 399999] avg policy:   actions: call=22% raise=65% fold=1% check=13%  (12s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1633.0
+----------------------------------------
+[Episode 599999] avg policy: panel min -1633.0  mean -796.4 mbb/h  |  random +2209±109  station +54±63  maniac -106±210  nit -876±132  tag -1422±154  lag -1633±166
+[Episode 599999] avg policy:   actions: call=20% raise=65% fold=2% check=13%  (11s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1618.0
+----------------------------------------
+[Episode 799999] avg policy: panel min -1618.0  mean -713.2 mbb/h  |  random +2037±107  station +76±71  maniac +162±256  nit -822±119  tag -1364±151  lag -1618±169
+[Episode 799999] avg policy:   actions: call=21% raise=63% fold=3% check=13%  (11s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1428.0
+----------------------------------------
+[Episode 999999] avg policy: panel min -1428.0  mean -557.0 mbb/h  |  random +1992±108  station +142±73  maniac +660±266  nit -794±120  tag -1364±151  lag -1428±169
+[Episode 999999] avg policy:   actions: call=20% raise=63% fold=4% check=13%  (11s)
+
+Checkpoint saved at episode 1000000 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_17\seed_1044/checkpoints\episode_1000000
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -1375.0
+----------------------------------------
+[Episode 1199999] avg policy: panel min -1375.0  mean -502.6 mbb/h  |  random +1810±109  station +166±78  maniac +766±279  nit -734±113  tag -1334±153  lag -1375±170
+[Episode 1199999] avg policy:   actions: call=21% raise=61% fold=5% check=12%  (11s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -1240.5
+----------------------------------------
+[Episode 1399999] avg policy: panel min -1240.5  mean -381.2 mbb/h  |  random +1725±108  station +190±79  maniac +1010±271  nit -730±113  tag -1240±144  lag -1135±168
+[Episode 1399999] avg policy:   actions: call=22% raise=58% fold=5% check=15%  (11s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -1248.5
+----------------------------------------
+[Episode 1599999] avg policy: panel min -1248.5  mean -532.9 mbb/h  |  random +1668±99  station +124±79  maniac +556±282  nit -848±117  tag -1248±148  lag -1248±171
+[Episode 1599999] avg policy:   actions: call=22% raise=57% fold=6% check=15%  (11s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -1235.5
+----------------------------------------
+[Episode 1799999] avg policy: panel min -1235.5  mean -538.7 mbb/h  |  random +1664±96  station +104±78  maniac +549±297  nit -901±113  tag -1210±150  lag -1236±171
+[Episode 1799999] avg policy:   actions: call=23% raise=55% fold=7% check=16%  (11s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -1275.0
+----------------------------------------
+[Episode 1999999] avg policy: panel min -1275.0  mean -524.9 mbb/h  |  random +1670±103  station +97±77  maniac +658±283  nit -885±108  tag -1275±142  lag -1220±162
+[Episode 1999999] avg policy:   actions: call=23% raise=54% fold=6% check=17%  (11s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_17\seed_1044/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_17\seed_1044/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\nfsp_v3\finalists\trial_17\seed_1044/fig.png
+=== finalist trial 17 seed 1044: final panel min -1194.5 (mean -461.4) over 5000 deals
+trial 33 seed 1042: being trained by another process, skipping
+trial 33 seed 1043: being trained by another process, skipping
+trial 33 seed 1044: being trained by another process, skipping
+
+3 finalist run(s) still running in other processes or not done: [(33, 1042), (33, 1043), (33, 1044)]; the last process to finish picks the winner

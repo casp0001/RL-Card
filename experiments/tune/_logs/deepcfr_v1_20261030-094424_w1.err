@@ -1,0 +1,6 @@
+[I 2026-10-30 09:44:27,643] A new study created in Journal with name: deepcfr_v1
+[I 2026-10-30 21:14:49,312] Trial 0 finished with value: -391.6666666666667 and parameters: {'lr': 0.0005, 'batch_size': 4096, 'layers': '256 256 256'}. Best is trial 0 with value: -391.6666666666667.
+[I 2026-10-31 02:15:48,695] Trial 11 pruned. 
+[I 2026-10-31 05:47:16,900] Trial 16 pruned. 
+[I 2026-10-31 09:57:06,947] Trial 24 finished with value: -346.3333333333333 and parameters: {'lr': 0.0006875867658412249, 'batch_size': 4096, 'layers': '128 128 128'}. Best is trial 24 with value: -346.3333333333333.
+[I 2026-10-31 11:30:34,201] Trial 29 pruned. 

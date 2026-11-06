@@ -1,0 +1,63 @@
+{
+ "lr": {
+  "type": "float",
+  "low": 0.0001,
+  "high": 0.003,
+  "log": true,
+  "start": 0.001
+ },
+ "num_traversals": {
+  "type": "int",
+  "low": 100,
+  "high": 1500,
+  "log": true,
+  "tune": false,
+  "value": 500,
+  "help": "Leduc: ~3 s per iteration at 500 traversals + 300 SGD steps (batch 1024, 128x128, 3 threads); the limit settings took ~51 s"
+ },
+ "num_step": {
+  "type": "int",
+  "low": 100,
+  "high": 1000,
+  "log": true,
+  "tune": false,
+  "value": 300
+ },
+ "batch_size": {
+  "type": "categorical",
+  "choices": [
+   512,
+   1024,
+   2048
+  ],
+  "targets": [
+   "batch_size_advantage",
+   "batch_size_strategy"
+  ],
+  "start": 1024
+ },
+ "layers": {
+  "type": "categorical",
+  "choices": [
+   "64 64",
+   "128 128",
+   "128 128 128",
+   "256 256"
+  ],
+  "list": true,
+  "targets": [
+   "policy_layers",
+   "advantage_layers"
+  ],
+  "start": "128 128"
+ },
+ "memory_capacity": {
+  "type": "int",
+  "low": 200000,
+  "high": 2000000,
+  "log": true,
+  "tune": false,
+  "value": 1000000,
+  "help": "per buffer; Leduc adds ~5-10k entries per iteration"
+ }
+}

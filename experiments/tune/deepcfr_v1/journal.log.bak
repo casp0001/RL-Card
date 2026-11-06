@@ -1,0 +1,23 @@
+{"op_code":0,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","study_name":"deepcfr_v1","directions":[2]}
+{"op_code":4,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","study_id":0,"datetime_start":null,"state":4,"value":null,"values":null,"distributions":{},"params":{},"user_attrs":{},"system_attrs":{"fixed_params":{"lr":0.0005,"batch_size":4096,"layers":"256 256 256"}},"intermediate_values":{}}
+{"op_code":6,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","trial_id":0,"state":0,"values":null,"datetime_start":"2026-10-30T09:44:27.656511"}
+{"op_code":8,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","trial_id":0,"user_attr":{"worker":"Cloud-3M0LKK4-47036"}}
+{"op_code":5,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","trial_id":0,"param_name":"lr","param_value_internal":0.0005,"distribution":"{\"name\": \"FloatDistribution\", \"attributes\": {\"step\": null, \"low\": 0.0001, \"high\": 0.003, \"log\": true}}"}
+{"op_code":5,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","trial_id":0,"param_name":"batch_size","param_value_internal":1,"distribution":"{\"name\": \"CategoricalDistribution\", \"attributes\": {\"choices\": [1024, 4096, 8192]}}"}
+{"op_code":5,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","trial_id":0,"param_name":"layers","param_value_internal":1,"distribution":"{\"name\": \"CategoricalDistribution\", \"attributes\": {\"choices\": [\"128 128 128\", \"256 256 256\"]}}"}
+{"op_code":8,"worker_id":"71aa3ac4-42ee-4b8a-bc46-415509650f16-47060","trial_id":0,"user_attr":{"log_dir":"experiments/tune/deepcfr_v1/trials/trial_0"}}
+{"op_code":0,"worker_id":"54476400-08ed-483d-b0f8-0aaaec23622a-39444","study_name":"deepcfr_v1","directions":[2]}
+{"op_code":4,"worker_id":"54476400-08ed-483d-b0f8-0aaaec23622a-39444","study_id":0,"datetime_start":"2026-10-30T09:44:29.531501"}
+{"op_code":8,"worker_id":"54476400-08ed-483d-b0f8-0aaaec23622a-39444","trial_id":1,"user_attr":{"worker":"Cloud-3M0LKK4-32776"}}
+{"op_code":5,"worker_id":"54476400-08ed-483d-b0f8-0aaaec23622a-39444","trial_id":1,"param_name":"lr","param_value_internal":0.0021123152341727012,"distribution":"{\"name\": \"FloatDistribution\", \"attributes\": {\"step\": null, \"low\": 0.0001, \"high\": 0.003, \"log\": true}}"}
+{"op_code":5,"worker_id":"54476400-08ed-483d-b0f8-0aaaec23622a-39444","trial_id":1,"param_name":"batch_size","param_value_internal":0,"distribution":"{\"name\": \"CategoricalDistribution\", \"attributes\": {\"choices\": [1024, 4096, 8192]}}"}
+{"op_code":5,"worker_id":"54476400-08ed-483d-b0f8-0aaaec23622a-39444","trial_id":1,"param_name":"layers","param_value_internal":1,"distribution":"{\"name\": \"CategoricalDistribution\", \"attributes\": {\"choices\": [\"128 128 128\", \"256 256 256\"]}}"}
+{"op_code":8,"worker_id":"54476400-08ed-483d-b0f8-0aaaec23622a-39444","trial_id":1,"user_attr":{"log_dir":"experiments/tune/deepcfr_v1/trials/trial_1"}}
+{"op_code":0,"worker_id":"03c24e1b-49c1-4387-b82a-c8e1a41ec801-6512","study_name":"deepcfr_v1","directions":[2]}
+{"op_code":4,"worker_id":"03c24e1b-49c1-4387-b82a-c8e1a41ec801-6512","study_id":0,"datetime_start":"2026-10-30T09:44:32.355892"}
+{"op_code":8,"worker_id":"03c24e1b-49c1-4387-b82a-c8e1a41ec801-6512","trial_id":2,"user_attr":{"worker":"Cloud-3M0LKK4-42052"}}
+{"op_code":5,"worker_id":"03c24e1b-49c1-4387-b82a-c8e1a41ec801-6512","trial_id":2,"param_name":"lr","param_value_internal":0.00012801589316479813,"distribution":"{\"name\": \"FloatDistribution\", \"attributes\": {\"step\": null, \"low\": 0.0001, \"high\": 0.003, \"log\": true}}"}
+{"op_code":5,"worker_id":"03c24e1b-49c1-4387-b82a-c8e1a41ec801-6512","trial_id":2,"param_name":"batch_size","param_value_internal":2,"distribution":"{\"name\": \"CategoricalDistribution\", \"attributes\": {\"choices\": [1024, 4096, 8192]}}"}
+{"op_code":5,"worker_id":"03c24e1b-49c1-4387-b82a-c8e1a41ec801-6512","trial_id":2,"param_name":"layers","param_value_internal":1,"distribution":"{\"name\": \"CategoricalDistribution\", \"attributes\": {\"choices\": [\"128 128 128\", \"256 256 256\"]}}"}
+{"op_code":8,"worker_id":"03c24e1b-49c1-4387-b82a-c8e1a41ec801-6512","trial_id":2,"user_attr":{"log_dir":"experiments/tune/deepcfr_v1/trials/trial_2"}}
+{"op_code":0,"worker_id":"e0573655-2076-4ea0-8cb3-b45e6fbd9caa-3232","study_name":"deepcfr_v1","directions":[2]}
