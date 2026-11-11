@@ -38,6 +38,9 @@ Transition = collections.namedtuple(
     ['obs', 'action', 'reward', 'next_obs', 'done', 'legal_actions', 'log_prob', 'value'],
 )
 
+# RLCard action ids (limit and Leduc hold'em)
+FOLD, CHECK = 2, 3
+
 # Value used instead of -inf when masking illegal-action logits. -inf would make
 # log_softmax produce NaN gradients for states in which an action is illegal.
 NEG_INF = -1e8
@@ -68,6 +71,7 @@ class PPOAgent(object):
                  reward_scaling=1.0,
                  target_kl=None,
                  evaluate_with='stochastic',
+                 no_free_fold=False,
                  device=None,
                  save_path=None,
                  save_every=float('inf')):
@@ -102,6 +106,10 @@ class PPOAgent(object):
               approximate KL between the old and new policy exceeds this.
             evaluate_with (str): 'stochastic' samples from the policy at
               evaluation time (recommended for poker), 'greedy' takes the argmax.
+            no_free_fold (bool): Treat folding as illegal when checking is
+              legal (RLCard always allows fold). Applied when acting, in the
+              stored legal-action masks used by the update, and at evaluation,
+              so the agent is trained and evaluated under the same rule.
             device (torch.device): cpu or gpu.
             save_path (str): Directory for periodic checkpoints.
             save_every (int): Save a checkpoint every X PPO updates.
@@ -133,6 +141,7 @@ class PPOAgent(object):
         if evaluate_with not in ('stochastic', 'greedy'):
             raise ValueError("'evaluate_with' should be either 'stochastic' or 'greedy'.")
         self.evaluate_with = evaluate_with
+        self.no_free_fold = bool(no_free_fold)
 
         # Torch device
         if device is None:
@@ -186,7 +195,7 @@ class PPOAgent(object):
             action (int): An action id.
         '''
         obs = np.asarray(state['obs'], dtype=np.float32)
-        legal_actions = list(state['legal_actions'].keys())
+        legal_actions = self._legal(state)
 
         log_probs, value = self._policy_nograd(obs, legal_actions)
         probs = np.exp(log_probs)
@@ -209,7 +218,7 @@ class PPOAgent(object):
             info (dict): A dictionary containing information.
         '''
         obs = np.asarray(state['obs'], dtype=np.float32)
-        legal_actions = list(state['legal_actions'].keys())
+        legal_actions = self._legal(state)
 
         log_probs, value = self._policy_nograd(obs, legal_actions)
         probs = np.exp(log_probs)
@@ -221,13 +230,19 @@ class PPOAgent(object):
             action = int(np.random.choice(self.num_actions, p=probs))
 
         info = {}
-        info['probs'] = {
-            state['raw_legal_actions'][i]: float(probs[legal_actions[i]])
-            for i in range(len(legal_actions))
-        }
+        raw_names = dict(zip(state['legal_actions'].keys(), state['raw_legal_actions']))
+        info['probs'] = {raw_names[a]: float(probs[a]) for a in legal_actions}
         info['state_value'] = float(value)
 
         return action, info
+
+    def _legal(self, state):
+        ''' The legal action ids of a state; without fold when checking is
+            legal if no_free_fold is set (2 = fold, 3 = check in RLCard). '''
+        legal = list(state['legal_actions'].keys())
+        if self.no_free_fold and FOLD in legal and CHECK in legal:
+            legal.remove(FOLD)
+        return legal
 
     def sample_episode_policy(self):
         ''' No-op, kept so that PPOAgent can be dropped into training loops
@@ -253,7 +268,7 @@ class PPOAgent(object):
 
         obs = np.asarray(state['obs'], dtype=np.float32)
         next_obs = np.asarray(next_state['obs'], dtype=np.float32)
-        legal_actions = list(state['legal_actions'].keys())
+        legal_actions = self._legal(state)
 
         cached = self._pop_pending(obs, action)
         if cached is None:
@@ -569,6 +584,7 @@ class PPOAgent(object):
             'reward_scaling': self.reward_scaling,
             'target_kl': self.target_kl,
             'evaluate_with': self.evaluate_with,
+            'no_free_fold': self.no_free_fold,
             'device': self.device,
         }
 
@@ -601,6 +617,7 @@ class PPOAgent(object):
             reward_scaling=checkpoint['reward_scaling'],
             target_kl=checkpoint['target_kl'],
             evaluate_with=checkpoint['evaluate_with'],
+            no_free_fold=checkpoint.get('no_free_fold', False),   # absent in older checkpoints
             device=checkpoint['device'],
         )
 

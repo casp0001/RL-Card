@@ -161,6 +161,8 @@ class PPOPolicy(Policy):
         self._set_input_dim(np.prod(agent.state_shape))
 
     def probs_batch_obs(self, obs, legal):
+        if getattr(self.agent, 'no_free_fold', False):
+            legal = without_free_fold(legal)        # the rule the agent was trained under
         with torch.no_grad():
             x = torch.from_numpy(np.asarray(obs, dtype=np.float32)).to(self.agent.device)
             logits, _ = self.agent.network(x)
@@ -170,6 +172,40 @@ class PPOPolicy(Policy):
             out[np.arange(len(p)), p.argmax(axis=1)] = 1.0
             return out
         return p
+
+
+def without_free_fold(legal):
+    ''' The legal actions without fold when checking is legal (RLCard always
+    allows fold, even when a check costs nothing). '''
+    legal = list(legal)
+    return [a for a in legal if a != FOLD] if FOLD in legal and CHECK in legal else legal
+
+
+class NoFreeFoldPolicy(Policy):
+    ''' Any policy with its probability of folding moved to checking wherever
+    checking is legal: the evaluation-time correction of the free fold (the
+    network is unchanged; a policy trained with no_free_fold needs no wrapper). '''
+
+    def __init__(self, inner):
+        self.inner = inner
+        self.batched = inner.batched
+        self.kind = inner.kind
+        self.encoding, self.obs_key = inner.encoding, inner.obs_key
+        self.agent = getattr(inner, 'agent', None)
+
+    @staticmethod
+    def _move(p, legal):
+        p = np.array(p, dtype=np.float64, copy=True)
+        if FOLD in legal and CHECK in legal:
+            p[..., CHECK] += p[..., FOLD]
+            p[..., FOLD] = 0.0
+        return p
+
+    def probs(self, state):
+        return self._move(self.inner.probs(state), list(state['legal_actions']))
+
+    def probs_batch_obs(self, obs, legal):
+        return self._move(self.inner.probs_batch_obs(obs, legal), list(legal))
 
 
 # --------------------------------------------------------------------------- #

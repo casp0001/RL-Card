@@ -15,6 +15,9 @@
      provenance.json (git commit, versions, settings); provenance_launch.json
      records the code state at launch
 
+It refuses to start until both ablation reports of experiments/run_ablations.py
+exist (they decide whether an algorithm is retrained first).
+
 Started detached; resumable (start it again after a restart: finished runs
 and evaluation tasks are kept).
 
@@ -45,7 +48,15 @@ def step(name, cmd):
         raise SystemExit(code)
 
 
+ABLATION_REPORTS = ['experiments/ablation_ppo_free_fold.md', 'experiments/ablation_nfsp_batchnorm.md']
+
+
 def main():
+    # the ablations (experiments/run_ablations.py) decide whether anything is retrained first
+    missing = [p for p in ABLATION_REPORTS if not os.path.isfile(p)]
+    if missing and '--skip_ablation_check' not in sys.argv:
+        raise SystemExit(f'ablation report(s) missing: {missing}. Run experiments/run_ablations.py first and '
+                         'decide whether anything must be retrained (--skip_ablation_check to start anyway).')
     # the code state at launch (the run itself does not change it)
     step('stage 0: provenance at launch',
          [PY, '-u', 'final_report.py', 'provenance', '--name', 'provenance_launch.json'])

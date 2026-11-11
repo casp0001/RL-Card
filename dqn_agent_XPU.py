@@ -65,7 +65,8 @@ class DQNAgent(object):
                  activation='relu',
                  optimizer='adam',
                  save_every=float('inf'),
-                 max_grad_norm=None):
+                 max_grad_norm=None,
+                 batchnorm=True):
 
         '''
         Q-Learning algorithm for off-policy TD control using Function Approximation.
@@ -94,6 +95,8 @@ class DQNAgent(object):
             save_every (int): Save the model every X training steps
             activation (str): 'relu' or 'tanh' hidden-layer activation
             optimizer (str): 'adam' or 'sgd'
+            batchnorm (bool): BatchNorm on the Q-network input (rlcard's architecture);
+              False removes it (its train/eval-mode statistics differ)
             max_grad_norm (float or None): global gradient-norm clip of the Q-network
               update; None (the default) disables it
         '''
@@ -107,6 +110,7 @@ class DQNAgent(object):
         self.train_every = train_every
         self.activation = activation
         self.optimizer_name = optimizer
+        self.batchnorm = batchnorm
 
         # Torch device
         if device is None:
@@ -126,10 +130,10 @@ class DQNAgent(object):
         # Create estimators
         self.q_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
             mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name,
-            max_grad_norm=max_grad_norm)
+            max_grad_norm=max_grad_norm, batchnorm=batchnorm)
         self.target_estimator = Estimator(num_actions=num_actions, learning_rate=learning_rate, state_shape=state_shape, \
             mlp_layers=mlp_layers, device=self.device, activation=self.activation, optimizer=self.optimizer_name,
-            max_grad_norm=max_grad_norm)
+            max_grad_norm=max_grad_norm, batchnorm=batchnorm)
 
         # Create replay memory
         self.memory = Memory(replay_memory_size, batch_size, num_actions)
@@ -293,6 +297,7 @@ class DQNAgent(object):
             'train_every': self.train_every,
             'activation': self.activation,
             'optimizer': self.optimizer_name,
+            'batchnorm': self.batchnorm,
             'device': self.device
         }
         
@@ -327,6 +332,7 @@ class DQNAgent(object):
             # checkpoints saved before activation was recorded were all ReLU
             activation=checkpoint.get('activation', 'relu'),
             optimizer=checkpoint.get('optimizer', 'adam'),
+            batchnorm=checkpoint.get('batchnorm', True),
         )
         
         agent_instance.total_t = checkpoint['total_t']
@@ -369,7 +375,7 @@ class Estimator(object):
     '''
 
     def __init__(self, num_actions=2, learning_rate=0.001, state_shape=None, mlp_layers=None, device=None,activation='relu', optimizer='adam',
-                 max_grad_norm=None):
+                 max_grad_norm=None, batchnorm=True):
         ''' Initilalize an Estimator object.
 
         Args:
@@ -386,9 +392,10 @@ class Estimator(object):
         self.activation = activation
         self.optimizer_name = optimizer
         self.max_grad_norm = max_grad_norm
+        self.batchnorm = batchnorm
 
         # set up Q model and place it in eval mode
-        qnet = EstimatorNetwork(num_actions, state_shape, mlp_layers, activation)
+        qnet = EstimatorNetwork(num_actions, state_shape, mlp_layers, activation, batchnorm)
         qnet = qnet.to(self.device)
         self.qnet = qnet
         self.qnet.eval()
@@ -478,6 +485,7 @@ class Estimator(object):
             'activation': self.activation,
             'optimizer_name': self.optimizer_name,
             'max_grad_norm': self.max_grad_norm,
+            'batchnorm': self.batchnorm,
             'device': self.device
         }
         
@@ -494,6 +502,7 @@ class Estimator(object):
             activation=checkpoint.get('activation', 'relu'),
             optimizer=checkpoint.get('optimizer_name', 'adam'),
             max_grad_norm=checkpoint.get('max_grad_norm'),
+            batchnorm=checkpoint.get('batchnorm', True),     # older checkpoints all had it
         )
         
         estimator.qnet.load_state_dict(checkpoint['qnet'])
@@ -506,7 +515,7 @@ class EstimatorNetwork(nn.Module):
         It is just a series of tanh layers. All in/out are torch.tensor
     '''
 
-    def __init__(self, num_actions=2, state_shape=None, mlp_layers=None, activation='relu'):
+    def __init__(self, num_actions=2, state_shape=None, mlp_layers=None, activation='relu', batchnorm=True):
         ''' Initialize the Q network
 
         Args:
@@ -520,11 +529,13 @@ class EstimatorNetwork(nn.Module):
         self.state_shape = state_shape
         self.mlp_layers = mlp_layers
         self.activation = activation
+        self.batchnorm = batchnorm
 
-        # build the Q network
+        # build the Q network (rlcard's: BatchNorm on the input, unless batchnorm=False)
         layer_dims = [np.prod(self.state_shape)] + self.mlp_layers
         fc = [nn.Flatten()]
-        fc.append(nn.BatchNorm1d(layer_dims[0]))
+        if batchnorm:
+            fc.append(nn.BatchNorm1d(layer_dims[0]))
         for i in range(len(layer_dims)-1):
             fc.append(nn.Linear(layer_dims[i], layer_dims[i+1], bias=True))
             if self.activation == 'relu':

@@ -54,6 +54,7 @@ def train(args, on_eval=None):
         reward_scaling=args.reward_scaling,
         target_kl=args.target_kl,
         evaluate_with=args.evaluate_with,
+        no_free_fold=args.no_free_fold,
         device=args.device,
     )
 
@@ -184,6 +185,9 @@ def build_parser():
                         help='Stop the epoch loop early past this approximate KL (None = off)')
     parser.add_argument('--evaluate_with', type=str, default='stochastic',
                         choices=['stochastic', 'greedy'])
+    parser.add_argument('--no_free_fold', type=str2bool, default=False,
+                        help='Fold is illegal when checking is legal (RLCard always allows it), '
+                             'in training and evaluation')
 
     # Misc
     parser.add_argument('--device', type=str, default=None,

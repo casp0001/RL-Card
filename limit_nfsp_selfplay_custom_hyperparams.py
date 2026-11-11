@@ -65,6 +65,7 @@ def train(args, on_eval=None):
         q_activation=args.q_activation,
         optimizer=args.optimizer,
         max_grad_norm=args.max_grad_norm,
+        batchnorm=args.batchnorm,
         device=args.device,
     )
     #warmup(agent, args)  # optional warmup against honest opponent before self-play
@@ -183,6 +184,9 @@ def build_parser():
                         help='optimizer for both the RL (DQN) and SL networks')
     parser.add_argument('--max_grad_norm', type=float, default=None,
                         help='gradient-norm clip for both networks (default: none)')
+    parser.add_argument('--batchnorm', type=str2bool, default=True,
+                        help="BatchNorm on the input of both networks (rlcard's architecture); "
+                             'false removes it')
     
 
     # misc

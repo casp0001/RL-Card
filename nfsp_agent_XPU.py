@@ -69,6 +69,7 @@ class NFSPAgent(object):
                  q_activation='tanh',
                  optimizer='adam',
                  max_grad_norm=None,
+                 batchnorm=True,
                  evaluate_with='average_policy',
                  device=None,
                  save_path=None,
@@ -103,6 +104,8 @@ class NFSPAgent(object):
               inner DQN and the average-policy network.
             max_grad_norm (float or None): global gradient-norm clip of both networks'
               updates; None (the default) disables it
+            batchnorm (bool): BatchNorm on the input of both networks (rlcard's
+              architecture); False removes it (its train/eval-mode statistics differ)
             device (torch.device): Whether to use the cpu or gpu
         '''
         self.use_raw = False
@@ -116,6 +119,7 @@ class NFSPAgent(object):
         self._min_buffer_size_to_learn = min_buffer_size_to_learn
         self._optimizer = optimizer
         self._max_grad_norm = max_grad_norm
+        self._batchnorm = batchnorm
 
         self._reservoir_buffer = ReservoirBuffer(reservoir_buffer_capacity)
         self._prev_timestep = None
@@ -136,7 +140,8 @@ class NFSPAgent(object):
         self._rl_agent = DQNAgent(q_replay_memory_size, q_replay_memory_init_size, \
             q_update_target_estimator_every, q_discount_factor, q_epsilon_start, q_epsilon_end, \
             q_epsilon_decay_steps, q_batch_size, num_actions, state_shape, q_train_every, q_mlp_layers, \
-            rl_learning_rate, device, activation=q_activation, optimizer=optimizer, max_grad_norm=max_grad_norm)
+            rl_learning_rate, device, activation=q_activation, optimizer=optimizer, max_grad_norm=max_grad_norm,
+            batchnorm=batchnorm)
 
         # Build the average policy supervised model
         self._build_model()
@@ -152,7 +157,8 @@ class NFSPAgent(object):
         '''
 
         # configure the average policy network
-        policy_network = AveragePolicyNetwork(self._num_actions, self._state_shape, self._layer_sizes)
+        policy_network = AveragePolicyNetwork(self._num_actions, self._state_shape, self._layer_sizes,
+                                              batchnorm=self._batchnorm)
         policy_network = policy_network.to(self.device)
         self.policy_network = policy_network
         self.policy_network.eval()
@@ -348,6 +354,7 @@ class NFSPAgent(object):
             'train_every': self._train_every,
             'optimizer': self._optimizer,
             'max_grad_norm': self._max_grad_norm,
+            'batchnorm': self._batchnorm,
         }
     
     @classmethod
@@ -374,6 +381,7 @@ class NFSPAgent(object):
             q_activation=checkpoint['rl_agent'].get('activation', 'tanh'),
             optimizer=checkpoint.get('optimizer', 'adam'),
             max_grad_norm=checkpoint.get('max_grad_norm'),
+            batchnorm=checkpoint.get('batchnorm', True),     # older checkpoints all had it
         )
         
         agent.policy_network = AveragePolicyNetwork.from_checkpoint(checkpoint['policy_network'])
@@ -416,7 +424,7 @@ class AveragePolicyNetwork(nn.Module):
     log probabilities of actions.
     '''
 
-    def __init__(self, num_actions=2, state_shape=None, mlp_layers=None):
+    def __init__(self, num_actions=2, state_shape=None, mlp_layers=None, batchnorm=True):
         ''' Initialize the policy network.  It's just a bunch of ReLU
         layers with no activation on the final one, initialized with
         Xavier (sonnet.nets.MLP and tensorflow defaults)
@@ -431,11 +439,13 @@ class AveragePolicyNetwork(nn.Module):
         self.num_actions = num_actions
         self.state_shape = state_shape
         self.mlp_layers = mlp_layers
+        self.batchnorm = batchnorm
 
-        # set up mlp w/ relu activations
+        # set up mlp w/ relu activations (BatchNorm on the input, unless batchnorm=False)
         layer_dims = [np.prod(self.state_shape)] + self.mlp_layers
         mlp = [nn.Flatten()]
-        mlp.append(nn.BatchNorm1d(layer_dims[0]))
+        if batchnorm:
+            mlp.append(nn.BatchNorm1d(layer_dims[0]))
         for i in range(len(layer_dims)-1):
             mlp.append(nn.Linear(layer_dims[i], layer_dims[i+1]))
             if i != len(layer_dims) - 2: # all but final have relu
@@ -465,6 +475,7 @@ class AveragePolicyNetwork(nn.Module):
             'num_actions': self.num_actions,
             'state_shape': self.state_shape,
             'mlp_layers': self.mlp_layers,
+            'batchnorm': self.batchnorm,
             'mlp': self.mlp.state_dict(),
         }
         
@@ -481,6 +492,7 @@ class AveragePolicyNetwork(nn.Module):
             num_actions=checkpoint['num_actions'],
             state_shape=checkpoint['state_shape'],
             mlp_layers=checkpoint['mlp_layers'],
+            batchnorm=checkpoint.get('batchnorm', True),
         )
         
         agent.mlp.load_state_dict(checkpoint['mlp'])
