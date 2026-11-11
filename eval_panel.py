@@ -231,12 +231,15 @@ class Panel(object):
         }
 
 
-def duplicate_match(agent_a, agent_b, num_deals, eval_seed=40_000_000):
+def duplicate_match(agent_a, agent_b, num_deals, eval_seed=40_000_000, details=False):
     ''' Head-to-head on duplicate deals with common random numbers (the same
     protocol as Panel.evaluate). Returns agent_a's win rate in mbb/hand:
-    {'mean', 'se', 'deals'}. '''
+    {'mean', 'se', 'deals'}; with details=True also 'details' (MatchDetails:
+    win rate by position, how the hands ended, both players' style). '''
     env = rlcard.make('limit-holdem', config={'seed': eval_seed})
     per_deal = np.empty(num_deals)
+    record = MatchDetails(num_deals) if details else None
+    details = record is not None
     with preserved_global_rng(), eval_mode(agent_a), eval_mode(agent_b):
         for i in range(num_deals):
             seed = eval_seed + i
@@ -249,12 +252,91 @@ def duplicate_match(agent_a, agent_b, num_deals, eval_seed=40_000_000):
                 _reseed_agent(agent_a, seed + 1)
                 _reseed_agent(agent_b, seed + 2)
                 env.set_agents([agent_a, agent_b] if seat == 0 else [agent_b, agent_a])
-                _, payoffs = env.run(is_training=False)
+                trajectories, payoffs = env.run(is_training=False)
                 total += payoffs[seat]
+                if details:
+                    record.add(i, trajectories, payoffs, seat)
             per_deal[i] = total / 2
     mbb = per_deal * 1000
     se = mbb.std(ddof=1) / math.sqrt(num_deals) if num_deals > 1 else float('nan')
-    return {'mean': float(mbb.mean()), 'se': float(se), 'deals': num_deals}
+    out = {'mean': float(mbb.mean()), 'se': float(se), 'deals': num_deals}
+    if details:
+        out['details'] = record.summary()
+    return out
+
+
+def _mean_se(x):
+    x = np.asarray(x, dtype=float)
+    return {'mean': float(x.mean()), 'se': float(x.std(ddof=1) / math.sqrt(len(x))) if len(x) > 1 else float('nan')}
+
+
+class MatchDetails(object):
+    ''' Per-hand bookkeeping of a duplicate match, from env.run's trajectories
+    (agent a's view; 'a' / 'b' are the two players):
+      position     a's win rate as small blind and as big blind (each deal has
+                   a once in each position: the seats swap, the blinds do not)
+      ending       share of hands ending at showdown / by a's fold / by b's
+                   fold, and a's win rate split into the part won at showdown
+                   and the part won without one (the two add up to the total)
+      style[p]     sampled-action rates of player p in this match: fold when
+                   facing a bet, raise when raising is legal, VPIP, PFR and
+                   the post-flop aggression factor (bets+raises / calls) '''
+
+    def __init__(self, num_deals):
+        n = num_deals
+        self.pos = {'sb': np.zeros(n), 'bb': np.zeros(n)}
+        self.part = {'showdown': np.zeros(n), 'no_showdown': np.zeros(n)}
+        self.ends = Counter()
+        self.counts = {p: Counter() for p in ('a', 'b')}
+
+    def add(self, deal, trajectories, payoffs, seat_a):
+        who = {seat_a: 'a', 1 - seat_a: 'b'}
+        # the small blind acts first pre-flop, with 1 chip in
+        sb = 0 if trajectories[0][0]['raw_obs']['my_chips'] == 1 else 1
+        win = payoffs[seat_a] * 1000
+        self.pos['sb' if sb == seat_a else 'bb'][deal] += win
+        folder = None
+        for s in (0, 1):
+            c = self.counts[who[s]]
+            c['hands'] += 1
+            preflop = set()
+            steps = trajectories[s]
+            for k in range(0, len(steps) - 1, 2):
+                state, action = steps[k], steps[k + 1]
+                name = action if isinstance(action, str) else ACTION_NAMES[int(action)]
+                legal = state['raw_legal_actions']
+                if name == 'fold':
+                    folder = s
+                if 'call' in legal:
+                    c['facing'] += 1
+                    c['fold_facing'] += name == 'fold'
+                if 'raise' in legal:
+                    c['can_raise'] += 1
+                    c['raise'] += name == 'raise'
+                if not state['raw_obs']['public_cards']:
+                    preflop.add(name)
+                else:
+                    c['post_aggr'] += name == 'raise'
+                    c['post_call'] += name == 'call'
+            c['vpip'] += bool(preflop & {'call', 'raise'})
+            c['pfr'] += 'raise' in preflop
+        end = 'showdown' if folder is None else f'{who[folder]}_folds'
+        self.ends[end] += 1
+        self.part['showdown' if folder is None else 'no_showdown'][deal] += win / 2
+
+    def summary(self):
+        hands = sum(self.ends.values())
+        style = {}
+        for p, c in self.counts.items():
+            def rate(k, d):
+                return c[k] / c[d] if c[d] else None
+            style[p] = {'fold_facing_bet': rate('fold_facing', 'facing'), 'raise': rate('raise', 'can_raise'),
+                        'vpip': rate('vpip', 'hands'), 'pfr': rate('pfr', 'hands'),
+                        'aggression': rate('post_aggr', 'post_call'), 'counts': dict(c)}
+        return {'position': {k: _mean_se(v) for k, v in self.pos.items()},
+                'ending': {k: self.ends[k] / hands for k in ('showdown', 'a_folds', 'b_folds')},
+                'winnings': {k: _mean_se(v) for k, v in self.part.items()},
+                'style': style}
 
 
 def format_results(results, prefix=''):
