@@ -1,0 +1,304 @@
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2119.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -2119.0  mean -1103.0 mbb/h  |  random +2542±104  station -32±52  maniac -474±179  nit -940±141  tag -1950±179  lag -2119±186
+[Episode 199999] avg policy:   actions: call=19% raise=70% fold=1% check=11%  (36s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -2186.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -2186.5  mean -1051.7 mbb/h  |  random +2280±120  station -1±61  maniac -120±197  nit -1020±143  tag -1931±173  lag -2186±176
+[Episode 399999] avg policy:   actions: call=20% raise=69% fold=1% check=10%  (12s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1746.5
+----------------------------------------
+[Episode 599999] avg policy: panel min -1746.5  mean -765.9 mbb/h  |  random +1826±118  station +179±75  maniac +358±257  nit -990±124  tag -1630±163  lag -1746±180
+[Episode 599999] avg policy:   actions: call=21% raise=62% fold=3% check=14%  (9s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1415.0
+----------------------------------------
+[Episode 799999] avg policy: panel min -1415.0  mean -512.6 mbb/h  |  random +1750±109  station +214±78  maniac +778±271  nit -836±121  tag -1304±160  lag -1415±176
+[Episode 799999] avg policy:   actions: call=20% raise=61% fold=5% check=14%  (8s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1256.0
+----------------------------------------
+[Episode 999999] avg policy: panel min -1256.0  mean -441.2 mbb/h  |  random +1529±103  station +238±81  maniac +894±280  nit -838±109  tag -1244±155  lag -1256±175
+[Episode 999999] avg policy:   actions: call=21% raise=58% fold=6% check=15%  (8s)
+
+Checkpoint saved at episode 1000000 to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/checkpoints\episode_1000000
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -1398.0
+----------------------------------------
+[Episode 1199999] avg policy: panel min -1398.0  mean -538.0 mbb/h  |  random +1610±106  station +244±82  maniac +728±275  nit -934±113  tag -1328±153  lag -1398±173
+[Episode 1199999] avg policy:   actions: call=21% raise=58% fold=6% check=16%  (8s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -1212.5
+----------------------------------------
+[Episode 1399999] avg policy: panel min -1212.5  mean -451.2 mbb/h  |  random +1549±101  station +96±80  maniac +852±294  nit -808±107  tag -1212±157  lag -1184±175
+[Episode 1399999] avg policy:   actions: call=21% raise=55% fold=7% check=17%  (8s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -1193.0
+----------------------------------------
+[Episode 1599999] avg policy: panel min -1193.0  mean -503.1 mbb/h  |  random +1370±96  station +119±84  maniac +462±302  nit -768±100  tag -1193±146  lag -1136±175
+[Episode 1599999] avg policy:   actions: call=21% raise=53% fold=8% check=17%  (8s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -1214.0
+----------------------------------------
+[Episode 1799999] avg policy: panel min -1214.0  mean -545.0 mbb/h  |  random +1510±98  station +102±82  maniac +430±304  nit -854±107  tag -1188±144  lag -1214±172
+[Episode 1799999] avg policy:   actions: call=22% raise=54% fold=8% check=17%  (8s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -1189.5
+----------------------------------------
+[Episode 1999999] avg policy: panel min -1189.5  mean -463.9 mbb/h  |  random +1414±88  station +161±79  maniac +633±310  nit -853±101  tag -1071±140  lag -1190±171
+[Episode 1999999] avg policy:   actions: call=23% raise=52% fold=8% check=17%  (8s)
+
+Checkpoint saved at episode 2000000 to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/checkpoints\episode_2000000
+
+----------------------------------------
+  episode      |  2199999
+  reward       |  -1193.0
+----------------------------------------
+[Episode 2199999] avg policy: panel min -1193.0  mean -468.6 mbb/h  |  random +1500±96  station +100±83  maniac +642±320  nit -760±99  tag -1130±137  lag -1193±171
+[Episode 2199999] avg policy:   actions: call=23% raise=51% fold=8% check=17%  (8s)
+
+----------------------------------------
+  episode      |  2399999
+  reward       |  -1144.0
+----------------------------------------
+[Episode 2399999] avg policy: panel min -1144.0  mean -395.3 mbb/h  |  random +1554±93  station +152±79  maniac +959±314  nit -817±99  tag -1144±142  lag -1126±174
+[Episode 2399999] avg policy:   actions: call=22% raise=52% fold=8% check=18%  (7s)
+
+----------------------------------------
+  episode      |  2599999
+  reward       |  -1258.5
+----------------------------------------
+[Episode 2599999] avg policy: panel min -1258.5  mean -435.3 mbb/h  |  random +1456±100  station +65±79  maniac +1023±306  nit -839±103  tag -1167±142  lag -1258±169
+[Episode 2599999] avg policy:   actions: call=23% raise=52% fold=8% check=17%  (8s)
+
+----------------------------------------
+  episode      |  2799999
+  reward       |  -1126.5
+----------------------------------------
+[Episode 2799999] avg policy: panel min -1126.5  mean -287.7 mbb/h  |  random +1478±92  station +204±78  maniac +1180±314  nit -736±100  tag -960±139  lag -1126±164
+[Episode 2799999] avg policy:   actions: call=22% raise=52% fold=8% check=18%  (8s)
+
+----------------------------------------
+  episode      |  2999999
+  reward       |  -1143.0
+----------------------------------------
+[Episode 2999999] avg policy: panel min -1143.0  mean -374.8 mbb/h  |  random +1365±99  station +168±79  maniac +942±304  nit -700±99  tag -1142±143  lag -1143±164
+[Episode 2999999] avg policy:   actions: call=25% raise=50% fold=7% check=18%  (7s)
+
+Checkpoint saved at episode 3000000 to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/checkpoints\episode_3000000
+
+----------------------------------------
+  episode      |  3199999
+  reward       |  -1245.0
+----------------------------------------
+[Episode 3199999] avg policy: panel min -1245.0  mean -446.8 mbb/h  |  random +1516±98  station +196±80  maniac +794±314  nit -816±107  tag -1164±144  lag -1245±165
+[Episode 3199999] avg policy:   actions: call=24% raise=51% fold=7% check=17%  (7s)
+
+----------------------------------------
+  episode      |  3399999
+  reward       |  -1431.0
+----------------------------------------
+[Episode 3399999] avg policy: panel min -1431.0  mean -543.2 mbb/h  |  random +1429±97  station +164±77  maniac +654±309  nit -842±104  tag -1262±140  lag -1431±163
+[Episode 3399999] avg policy:   actions: call=24% raise=52% fold=7% check=17%  (8s)
+
+----------------------------------------
+  episode      |  3599999
+  reward       |  -1187.5
+----------------------------------------
+[Episode 3599999] avg policy: panel min -1187.5  mean -468.7 mbb/h  |  random +1516±96  station +83±81  maniac +665±316  nit -805±104  tag -1099±141  lag -1188±167
+[Episode 3599999] avg policy:   actions: call=24% raise=51% fold=7% check=17%  (8s)
+
+----------------------------------------
+  episode      |  3799999
+  reward       |  -1157.0
+----------------------------------------
+[Episode 3799999] avg policy: panel min -1157.0  mean -458.4 mbb/h  |  random +1540±103  station +110±82  maniac +632±310  nit -774±102  tag -1104±139  lag -1157±167
+[Episode 3799999] avg policy:   actions: call=25% raise=51% fold=7% check=17%  (8s)
+
+----------------------------------------
+  episode      |  3999999
+  reward       |  -1045.0
+----------------------------------------
+[Episode 3999999] avg policy: panel min -1045.0  mean -285.1 mbb/h  |  random +1454±107  station +234±77  maniac +1236±302  nit -817±106  tag -1045±134  lag -1034±165
+[Episode 3999999] avg policy:   actions: call=24% raise=51% fold=7% check=17%  (7s)
+
+Checkpoint saved at episode 4000000 to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/checkpoints\episode_4000000
+
+----------------------------------------
+  episode      |  4199999
+  reward       |  -1087.0
+----------------------------------------
+[Episode 4199999] avg policy: panel min -1087.0  mean -353.6 mbb/h  |  random +1471±92  station +222±79  maniac +760±313  nit -668±102  tag -994±132  lag -1087±160
+[Episode 4199999] avg policy:   actions: call=25% raise=51% fold=7% check=18%  (8s)
+
+----------------------------------------
+  episode      |  4399999
+  reward       |  -1037.0
+----------------------------------------
+[Episode 4399999] avg policy: panel min -1037.0  mean -299.8 mbb/h  |  random +1424±94  station +202±82  maniac +1078±298  nit -756±103  tag -986±132  lag -1037±157
+[Episode 4399999] avg policy:   actions: call=26% raise=49% fold=7% check=17%  (7s)
+
+----------------------------------------
+  episode      |  4599999
+  reward       |  -1043.5
+----------------------------------------
+[Episode 4599999] avg policy: panel min -1043.5  mean -296.5 mbb/h  |  random +1502±87  station +320±76  maniac +888±307  nit -649±101  tag -998±137  lag -1044±164
+[Episode 4599999] avg policy:   actions: call=26% raise=49% fold=7% check=19%  (7s)
+
+----------------------------------------
+  episode      |  4799999
+  reward       |  -1016.0
+----------------------------------------
+[Episode 4799999] avg policy: panel min -1016.0  mean -372.2 mbb/h  |  random +1501±101  station +206±80  maniac +542±311  nit -586±96  tag -1008±133  lag -1016±160
+[Episode 4799999] avg policy:   actions: call=26% raise=49% fold=7% check=18%  (7s)
+
+----------------------------------------
+  episode      |  4999999
+  reward       |  -1081.5
+----------------------------------------
+[Episode 4999999] avg policy: panel min -1081.5  mean -373.4 mbb/h  |  random +1388±99  station +266±77  maniac +630±315  nit -628±102  tag -1082±138  lag -1054±162
+[Episode 4999999] avg policy:   actions: call=25% raise=49% fold=8% check=18%  (8s)
+
+Checkpoint saved at episode 5000000 to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/checkpoints\episode_5000000
+
+----------------------------------------
+  episode      |  5199999
+  reward       |  -1166.0
+----------------------------------------
+[Episode 5199999] avg policy: panel min -1166.0  mean -448.1 mbb/h  |  random +1362±97  station +160±79  maniac +725±311  nit -818±98  tag -1166±140  lag -1142±161
+[Episode 5199999] avg policy:   actions: call=26% raise=48% fold=7% check=18%  (7s)
+
+----------------------------------------
+  episode      |  5399999
+  reward       |  -1196.5
+----------------------------------------
+[Episode 5399999] avg policy: panel min -1196.5  mean -458.9 mbb/h  |  random +1446±102  station +175±77  maniac +706±301  nit -860±107  tag -1119±143  lag -1196±155
+[Episode 5399999] avg policy:   actions: call=26% raise=50% fold=6% check=17%  (7s)
+
+----------------------------------------
+  episode      |  5599999
+  reward       |  -1009.5
+----------------------------------------
+[Episode 5599999] avg policy: panel min -1009.5  mean -331.5 mbb/h  |  random +1416±104  station +229±79  maniac +687±299  nit -721±102  tag -843±133  lag -1010±152
+[Episode 5599999] avg policy:   actions: call=27% raise=49% fold=7% check=16%  (7s)
+
+----------------------------------------
+  episode      |  5799999
+  reward       |  -940.0
+----------------------------------------
+[Episode 5799999] avg policy: panel min -940.0  mean -278.6 mbb/h  |  random +1423±96  station +314±78  maniac +810±308  nit -640±99  tag -938±131  lag -940±153
+[Episode 5799999] avg policy:   actions: call=26% raise=48% fold=7% check=18%  (7s)
+
+----------------------------------------
+  episode      |  5999999
+  reward       |  -939.5
+----------------------------------------
+[Episode 5999999] avg policy: panel min -939.5  mean -216.2 mbb/h  |  random +1436±90  station +266±75  maniac +1066±298  nit -562±99  tag -940±138  lag -911±156
+[Episode 5999999] avg policy:   actions: call=27% raise=48% fold=7% check=18%  (8s)
+
+Checkpoint saved at episode 6000000 to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/checkpoints\episode_6000000
+
+----------------------------------------
+  episode      |  6199999
+  reward       |  -1141.5
+----------------------------------------
+[Episode 6199999] avg policy: panel min -1141.5  mean -334.3 mbb/h  |  random +1448±94  station +213±82  maniac +936±293  nit -640±101  tag -1039±133  lag -1142±157
+[Episode 6199999] avg policy:   actions: call=28% raise=48% fold=6% check=17%  (7s)
+
+----------------------------------------
+  episode      |  6399999
+  reward       |  -1121.5
+----------------------------------------
+[Episode 6399999] avg policy: panel min -1121.5  mean -259.5 mbb/h  |  random +1310±97  station +267±76  maniac +1107±294  nit -591±105  tag -959±141  lag -1122±160
+[Episode 6399999] avg policy:   actions: call=28% raise=49% fold=7% check=17%  (7s)
+
+----------------------------------------
+  episode      |  6599999
+  reward       |  -1225.5
+----------------------------------------
+[Episode 6599999] avg policy: panel min -1225.5  mean -357.5 mbb/h  |  random +1452±98  station +239±80  maniac +963±304  nit -648±105  tag -1116±134  lag -1226±161
+[Episode 6599999] avg policy:   actions: call=27% raise=50% fold=7% check=16%  (7s)
+
+----------------------------------------
+  episode      |  6799999
+  reward       |  -1185.5
+----------------------------------------
+[Episode 6799999] avg policy: panel min -1185.5  mean -346.5 mbb/h  |  random +1486±101  station +218±76  maniac +1081±306  nit -705±104  tag -1141±144  lag -1186±165
+[Episode 6799999] avg policy:   actions: call=26% raise=50% fold=7% check=17%  (7s)
+
+----------------------------------------
+  episode      |  6999999
+  reward       |  -1210.0
+----------------------------------------
+[Episode 6999999] avg policy: panel min -1210.0  mean -422.2 mbb/h  |  random +1496±99  station +264±72  maniac +666±307  nit -732±103  tag -1100±136  lag -1210±160
+[Episode 6999999] avg policy:   actions: call=28% raise=50% fold=6% check=16%  (8s)
+
+Checkpoint saved at episode 7000000 to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/checkpoints\episode_7000000
+
+----------------------------------------
+  episode      |  7199999
+  reward       |  -1177.5
+----------------------------------------
+[Episode 7199999] avg policy: panel min -1177.5  mean -353.1 mbb/h  |  random +1396±98  station +333±75  maniac +773±291  nit -590±96  tag -1104±131  lag -1178±155
+[Episode 7199999] avg policy:   actions: call=29% raise=47% fold=6% check=18%  (8s)
+
+----------------------------------------
+  episode      |  7399999
+  reward       |  -963.5
+----------------------------------------
+[Episode 7399999] avg policy: panel min -963.5  mean -178.5 mbb/h  |  random +1436±101  station +333±77  maniac +1191±299  nit -604±102  tag -849±137  lag -964±163
+[Episode 7399999] avg policy:   actions: call=27% raise=48% fold=7% check=18%  (7s)
+
+----------------------------------------
+  episode      |  7599999
+  reward       |  -1136.5
+----------------------------------------
+[Episode 7599999] avg policy: panel min -1136.5  mean -266.3 mbb/h  |  random +1608±100  station +318±75  maniac +1136±305  nit -642±101  tag -1007±138  lag -1136±169
+[Episode 7599999] avg policy:   actions: call=26% raise=51% fold=6% check=17%  (8s)
+
+----------------------------------------
+  episode      |  7799999
+  reward       |  -1024.5
+----------------------------------------
+[Episode 7799999] avg policy: panel min -1024.5  mean -239.7 mbb/h  |  random +1562±99  station +219±78  maniac +1232±304  nit -674±106  tag -951±133  lag -1024±153
+[Episode 7799999] avg policy:   actions: call=28% raise=48% fold=6% check=18%  (8s)
+
+----------------------------------------
+  episode      |  7999999
+  reward       |  -1067.0
+----------------------------------------
+[Episode 7999999] avg policy: panel min -1067.0  mean -261.8 mbb/h  |  random +1619±104  station +328±74  maniac +1150±307  nit -790±108  tag -930±141  lag -1067±159
+[Episode 7999999] avg policy:   actions: call=27% raise=50% fold=6% check=17%  (8s)
+
+Logs saved in experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/
+
+Model saved to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/
+Learning curve saved to experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044/fig.png
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044: held-out panel min -1247, LBR +1344

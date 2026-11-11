@@ -1,0 +1,38 @@
+2026-11-06 12:48:15  stage 1: extended deepcfr_v1 (500 iterations) and nfsp_v3 (8M episodes)
+6 extended run(s) to do
+2026-11-06 12:48  started experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1042
+2026-11-06 12:48  started experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043
+2026-11-06 12:48  started experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1044
+2026-11-06 12:48  started experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1042
+2026-11-06 23:10  experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1042: done after 10.4 h
+2026-11-06 23:10  started experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1043
+2026-11-07 08:26  experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1042: done after 19.6 h
+2026-11-07 08:26  started experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044
+2026-11-07 08:42  experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1044: done after 19.9 h
+2026-11-07 08:43  experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043: done after 19.9 h
+2026-11-07 08:57  experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1043: done after 9.8 h
+2026-11-07 14:11  experiments\tune\nfsp_v3\extended_8000000\trial_33\seed_1044: done after 5.8 h
+| study | trial | budget | seeds | held-out panel min | LBR (lower = better) | training hours |
+|---|---|---|---|---|---|---|
+| deepcfr_v1 | 27 | 200 | 3 | -459 (sd 43) | +620 (sd 27) | - |
+| deepcfr_v1 | 27 | 500 | 3 | -331 (sd 13) | +597 (sd 118) | 19.8 |
+| nfsp_v3 | 33 | 2000000 | 3 | -1107 (sd 48) | +1611 (sd 136) | - |
+| nfsp_v3 | 33 | 8000000 | 3 | -1085 (sd 140) | +1258 (sd 74) | 8.6 |
+
+written to experiments\extended_deepcfr_v1_vs_nfsp_v3.md
+2026-11-07 14:11:48  stage 1 finished (exit 0)
+2026-11-07 14:11:48  stage 2: leduc_deepcfr_v1 tuning (30 trials, budget 300)
+2026-11-07 16:41:47  stage 2: leduc_deepcfr_v1 finalists
+2026-11-07 17:59:20  leduc_deepcfr_v1 done
+2026-11-07 17:59:20  stage 2: leduc_ppo_v1 tuning (30 trials, budget 1000000)
+2026-11-07 19:10:31  stage 2: leduc_ppo_v1 finalists
+2026-11-07 19:55:04  leduc_ppo_v1 done
+2026-11-07 19:55:04  stage 2: leduc_nfsp_v1 tuning (30 trials, budget 2000000)
+2026-11-07 23:23:19  stage 2: leduc_nfsp_v1 finalists
+2026-11-08 01:28:09  leduc_nfsp_v1 done
+2026-11-08 01:28:09  stage 2: leduc_dqn_v1 tuning (30 trials, budget 1000000)
+2026-11-08 12:52:20  stage 2: leduc_dqn_v1 finalists
+2026-11-08 18:35:16  leduc_dqn_v1_finalists_p: exit codes [1073807364, 1073807364, 1073807364, 1073807364] (see experiments\tune\_logs/leduc_dqn_v1_finalists_p_*.out)
+2026-11-08 18:35:16  leduc_dqn_v1 done
+
+--- restarted 2026-11-10 14:24:12 ---

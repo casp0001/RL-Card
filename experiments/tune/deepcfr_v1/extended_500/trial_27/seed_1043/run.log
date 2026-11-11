@@ -1,0 +1,304 @@
+0/500 complete.1/500 complete.2/500 complete.3/500 complete.4/500 complete.5/500 complete.6/500 complete.7/500 complete.8/500 complete.9/500 complete.
+Checkpoint saved at episode 10 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_10
+10/500 complete.11/500 complete.12/500 complete.13/500 complete.14/500 complete.15/500 complete.16/500 complete.17/500 complete.18/500 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1046.0
+----------------------------------------
+[Iteration 19] panel min -1046.0  mean -692.2 mbb/h  |  random +1227±109  station -178±76  maniac -958±274  nit -422±114  tag -858±138  lag -1046±155
+[Iteration 19]   actions: call=21% raise=62% fold=9% check=9%  (30s)
+  last-step weighted losses  adv: 15.574572  policy: 0.014435
+19/500 complete.
+Checkpoint saved at episode 20 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_20
+20/500 complete.21/500 complete.22/500 complete.23/500 complete.24/500 complete.25/500 complete.26/500 complete.27/500 complete.28/500 complete.29/500 complete.
+Checkpoint saved at episode 30 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_30
+30/500 complete.31/500 complete.32/500 complete.33/500 complete.34/500 complete.35/500 complete.36/500 complete.37/500 complete.38/500 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -792.0
+----------------------------------------
+[Iteration 39] panel min -792.0  mean -367.8 mbb/h  |  random +1438±106  station +22±74  maniac -152±264  nit -308±115  tag -610±137  lag -792±152
+[Iteration 39]   actions: call=19% raise=69% fold=8% check=4%  (15s)
+  last-step weighted losses  adv: 19.897479  policy: 0.013715
+39/500 complete.
+Checkpoint saved at episode 40 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_40
+40/500 complete.41/500 complete.42/500 complete.43/500 complete.44/500 complete.45/500 complete.46/500 complete.47/500 complete.48/500 complete.49/500 complete.
+Checkpoint saved at episode 50 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_50
+50/500 complete.51/500 complete.52/500 complete.53/500 complete.54/500 complete.55/500 complete.56/500 complete.57/500 complete.58/500 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -623.5
+----------------------------------------
+[Iteration 59] panel min -623.5  mean -264.4 mbb/h  |  random +1234±97  station +100±76  maniac +256±248  nit -444±106  tag -624±134  lag -610±150
+[Iteration 59]   actions: call=23% raise=62% fold=8% check=6%  (13s)
+  last-step weighted losses  adv: 21.372810  policy: 0.015660
+59/500 complete.
+Checkpoint saved at episode 60 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_60
+60/500 complete.61/500 complete.62/500 complete.63/500 complete.64/500 complete.65/500 complete.66/500 complete.67/500 complete.68/500 complete.69/500 complete.
+Checkpoint saved at episode 70 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_70
+70/500 complete.71/500 complete.72/500 complete.73/500 complete.74/500 complete.75/500 complete.76/500 complete.77/500 complete.78/500 complete.
+----------------------------------------
+  episode      |  79
+  reward       |  -615.0
+----------------------------------------
+[Iteration 79] panel min -615.0  mean -208.7 mbb/h  |  random +1220±96  station +95±82  maniac +558±231  nit -540±102  tag -615±124  lag -542±138
+[Iteration 79]   actions: call=27% raise=51% fold=9% check=13%  (13s)
+  last-step weighted losses  adv: 17.599497  policy: 0.017774
+79/500 complete.
+Checkpoint saved at episode 80 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_80
+80/500 complete.81/500 complete.82/500 complete.83/500 complete.84/500 complete.85/500 complete.86/500 complete.87/500 complete.88/500 complete.89/500 complete.
+Checkpoint saved at episode 90 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_90
+90/500 complete.91/500 complete.92/500 complete.93/500 complete.94/500 complete.95/500 complete.96/500 complete.97/500 complete.98/500 complete.
+----------------------------------------
+  episode      |  99
+  reward       |  -621.0
+----------------------------------------
+[Iteration 99] panel min -621.0  mean -219.1 mbb/h  |  random +1088±87  station -57±87  maniac +634±226  nit -454±93  tag -621±120  lag -598±127
+[Iteration 99]   actions: call=29% raise=44% fold=11% check=16%  (13s)
+  last-step weighted losses  adv: 16.580897  policy: 0.018643
+99/500 complete.
+Checkpoint saved at episode 100 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_100
+100/500 complete.101/500 complete.102/500 complete.103/500 complete.104/500 complete.105/500 complete.106/500 complete.107/500 complete.108/500 complete.109/500 complete.
+Checkpoint saved at episode 110 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_110
+110/500 complete.111/500 complete.112/500 complete.113/500 complete.114/500 complete.115/500 complete.116/500 complete.117/500 complete.118/500 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -494.5
+----------------------------------------
+[Iteration 119] panel min -494.5  mean -146.2 mbb/h  |  random +1079±81  station +148±83  maniac +452±210  nit -408±83  tag -494±105  lag -428±124
+[Iteration 119]   actions: call=33% raise=39% fold=10% check=18%  (12s)
+  last-step weighted losses  adv: 14.927018  policy: 0.019749
+119/500 complete.
+Checkpoint saved at episode 120 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_120
+120/500 complete.121/500 complete.122/500 complete.123/500 complete.124/500 complete.125/500 complete.126/500 complete.127/500 complete.128/500 complete.129/500 complete.
+Checkpoint saved at episode 130 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_130
+130/500 complete.131/500 complete.132/500 complete.133/500 complete.134/500 complete.135/500 complete.136/500 complete.137/500 complete.138/500 complete.
+----------------------------------------
+  episode      |  139
+  reward       |  -514.5
+----------------------------------------
+[Iteration 139] panel min -514.5  mean -91.3 mbb/h  |  random +1140±80  station +178±80  maniac +775±230  nit -431±84  tag -464±110  lag -514±132
+[Iteration 139]   actions: call=32% raise=40% fold=10% check=18%  (10s)
+  last-step weighted losses  adv: 14.860968  policy: 0.021027
+139/500 complete.
+Checkpoint saved at episode 140 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_140
+140/500 complete.141/500 complete.142/500 complete.143/500 complete.144/500 complete.145/500 complete.146/500 complete.147/500 complete.148/500 complete.149/500 complete.
+Checkpoint saved at episode 150 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_150
+150/500 complete.151/500 complete.152/500 complete.153/500 complete.154/500 complete.155/500 complete.156/500 complete.157/500 complete.158/500 complete.
+----------------------------------------
+  episode      |  159
+  reward       |  -447.5
+----------------------------------------
+[Iteration 159] panel min -447.5  mean -116.6 mbb/h  |  random +1060±81  station +150±79  maniac +530±225  nit -400±81  tag -448±100  lag -416±119
+[Iteration 159]   actions: call=31% raise=39% fold=11% check=18%  (11s)
+  last-step weighted losses  adv: 14.164931  policy: 0.021817
+159/500 complete.
+Checkpoint saved at episode 160 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_160
+160/500 complete.161/500 complete.162/500 complete.163/500 complete.164/500 complete.165/500 complete.166/500 complete.167/500 complete.168/500 complete.169/500 complete.
+Checkpoint saved at episode 170 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_170
+170/500 complete.171/500 complete.172/500 complete.173/500 complete.174/500 complete.175/500 complete.176/500 complete.177/500 complete.178/500 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -391.5
+----------------------------------------
+[Iteration 179] panel min -391.5  mean -8.8 mbb/h  |  random +1176±80  station +290±77  maniac +776±219  nit -382±82  tag -392±104  lag -336±120
+[Iteration 179]   actions: call=34% raise=39% fold=9% check=19%  (12s)
+  last-step weighted losses  adv: 14.808696  policy: 0.022962
+179/500 complete.
+Checkpoint saved at episode 180 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_180
+180/500 complete.181/500 complete.182/500 complete.183/500 complete.184/500 complete.185/500 complete.186/500 complete.187/500 complete.188/500 complete.189/500 complete.
+Checkpoint saved at episode 190 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_190
+190/500 complete.191/500 complete.192/500 complete.193/500 complete.194/500 complete.195/500 complete.196/500 complete.197/500 complete.198/500 complete.
+----------------------------------------
+  episode      |  199
+  reward       |  -343.0
+----------------------------------------
+[Iteration 199] panel min -343.0  mean -61.1 mbb/h  |  random +1140±78  station +241±78  maniac +443±219  nit -343±82  tag -310±107  lag -336±119
+[Iteration 199]   actions: call=34% raise=38% fold=9% check=18%  (12s)
+  last-step weighted losses  adv: 14.373100  policy: 0.024213
+199/500 complete.
+Checkpoint saved at episode 200 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_200
+200/500 complete.201/500 complete.202/500 complete.203/500 complete.204/500 complete.205/500 complete.206/500 complete.207/500 complete.208/500 complete.209/500 complete.
+Checkpoint saved at episode 210 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_210
+210/500 complete.211/500 complete.212/500 complete.213/500 complete.214/500 complete.215/500 complete.216/500 complete.217/500 complete.218/500 complete.
+----------------------------------------
+  episode      |  219
+  reward       |  -331.5
+----------------------------------------
+[Iteration 219] panel min -331.5  mean -32.0 mbb/h  |  random +1070±80  station +244±77  maniac +522±218  nit -332±77  tag -280±100  lag -315±116
+[Iteration 219]   actions: call=33% raise=40% fold=10% check=18%  (11s)
+  last-step weighted losses  adv: 13.237906  policy: 0.024436
+219/500 complete.
+Checkpoint saved at episode 220 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_220
+220/500 complete.221/500 complete.222/500 complete.223/500 complete.224/500 complete.225/500 complete.226/500 complete.227/500 complete.228/500 complete.229/500 complete.
+Checkpoint saved at episode 230 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_230
+230/500 complete.231/500 complete.232/500 complete.233/500 complete.234/500 complete.235/500 complete.236/500 complete.237/500 complete.238/500 complete.
+----------------------------------------
+  episode      |  239
+  reward       |  -354.5
+----------------------------------------
+[Iteration 239] panel min -354.5  mean -31.8 mbb/h  |  random +1148±82  station +274±76  maniac +578±227  nit -354±84  tag -314±107  lag -342±119
+[Iteration 239]   actions: call=33% raise=43% fold=9% check=16%  (11s)
+  last-step weighted losses  adv: 13.454018  policy: 0.025518
+239/500 complete.
+Checkpoint saved at episode 240 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_240
+240/500 complete.241/500 complete.242/500 complete.243/500 complete.244/500 complete.245/500 complete.246/500 complete.247/500 complete.248/500 complete.249/500 complete.
+Checkpoint saved at episode 250 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_250
+250/500 complete.251/500 complete.252/500 complete.253/500 complete.254/500 complete.255/500 complete.256/500 complete.257/500 complete.258/500 complete.
+----------------------------------------
+  episode      |  259
+  reward       |  -330.5
+----------------------------------------
+[Iteration 259] panel min -330.5  mean -43.2 mbb/h  |  random +1040±82  station +262±81  maniac +418±215  nit -288±82  tag -330±102  lag -278±113
+[Iteration 259]   actions: call=31% raise=42% fold=10% check=16%  (11s)
+  last-step weighted losses  adv: 14.227970  policy: 0.024275
+259/500 complete.
+Checkpoint saved at episode 260 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_260
+260/500 complete.261/500 complete.262/500 complete.263/500 complete.264/500 complete.265/500 complete.266/500 complete.267/500 complete.268/500 complete.269/500 complete.
+Checkpoint saved at episode 270 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_270
+270/500 complete.271/500 complete.272/500 complete.273/500 complete.274/500 complete.275/500 complete.276/500 complete.277/500 complete.278/500 complete.
+----------------------------------------
+  episode      |  279
+  reward       |  -315.0
+----------------------------------------
+[Iteration 279] panel min -315.0  mean -10.5 mbb/h  |  random +1072±84  station +331±80  maniac +391±216  nit -247±83  tag -315±102  lag -212±116
+[Iteration 279]   actions: call=31% raise=43% fold=10% check=16%  (10s)
+  last-step weighted losses  adv: 14.565985  policy: 0.025959
+279/500 complete.
+Checkpoint saved at episode 280 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_280
+280/500 complete.281/500 complete.282/500 complete.283/500 complete.284/500 complete.285/500 complete.286/500 complete.287/500 complete.288/500 complete.289/500 complete.
+Checkpoint saved at episode 290 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_290
+290/500 complete.291/500 complete.292/500 complete.293/500 complete.294/500 complete.295/500 complete.296/500 complete.297/500 complete.298/500 complete.
+----------------------------------------
+  episode      |  299
+  reward       |  -326.5
+----------------------------------------
+[Iteration 299] panel min -326.5  mean -3.8 mbb/h  |  random +1013±83  station +392±79  maniac +440±210  nit -272±83  tag -326±104  lag -254±118
+[Iteration 299]   actions: call=31% raise=43% fold=10% check=16%  (10s)
+  last-step weighted losses  adv: 14.416498  policy: 0.027342
+299/500 complete.
+Checkpoint saved at episode 300 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_300
+300/500 complete.301/500 complete.302/500 complete.303/500 complete.304/500 complete.305/500 complete.306/500 complete.307/500 complete.308/500 complete.309/500 complete.
+Checkpoint saved at episode 310 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_310
+310/500 complete.311/500 complete.312/500 complete.313/500 complete.314/500 complete.315/500 complete.316/500 complete.317/500 complete.318/500 complete.
+----------------------------------------
+  episode      |  319
+  reward       |  -294.0
+----------------------------------------
+[Iteration 319] panel min -294.0  mean +4.3 mbb/h  |  random +1084±84  station +433±80  maniac +376±219  nit -294±84  tag -283±110  lag -210±123
+[Iteration 319]   actions: call=29% raise=46% fold=10% check=15%  (11s)
+  last-step weighted losses  adv: 14.063782  policy: 0.027335
+319/500 complete.
+Checkpoint saved at episode 320 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_320
+320/500 complete.321/500 complete.322/500 complete.323/500 complete.324/500 complete.325/500 complete.326/500 complete.327/500 complete.328/500 complete.329/500 complete.
+Checkpoint saved at episode 330 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_330
+330/500 complete.331/500 complete.332/500 complete.333/500 complete.334/500 complete.335/500 complete.336/500 complete.337/500 complete.338/500 complete.
+----------------------------------------
+  episode      |  339
+  reward       |  -303.5
+----------------------------------------
+[Iteration 339] panel min -303.5  mean +18.2 mbb/h  |  random +1154±86  station +368±79  maniac +414±215  nit -304±85  tag -250±108  lag -137±119
+[Iteration 339]   actions: call=29% raise=47% fold=10% check=14%  (11s)
+  last-step weighted losses  adv: 13.664559  policy: 0.027110
+339/500 complete.
+Checkpoint saved at episode 340 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_340
+340/500 complete.341/500 complete.342/500 complete.343/500 complete.344/500 complete.345/500 complete.346/500 complete.347/500 complete.348/500 complete.349/500 complete.
+Checkpoint saved at episode 350 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_350
+350/500 complete.351/500 complete.352/500 complete.353/500 complete.354/500 complete.355/500 complete.356/500 complete.357/500 complete.358/500 complete.
+----------------------------------------
+  episode      |  359
+  reward       |  -301.5
+----------------------------------------
+[Iteration 359] panel min -301.5  mean +35.2 mbb/h  |  random +1118±82  station +352±80  maniac +468±221  nit -302±82  tag -218±107  lag -125±122
+[Iteration 359]   actions: call=28% raise=48% fold=10% check=14%  (10s)
+  last-step weighted losses  adv: 14.072538  policy: 0.026914
+359/500 complete.
+Checkpoint saved at episode 360 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_360
+360/500 complete.361/500 complete.362/500 complete.363/500 complete.364/500 complete.365/500 complete.366/500 complete.367/500 complete.368/500 complete.369/500 complete.
+Checkpoint saved at episode 370 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_370
+370/500 complete.371/500 complete.372/500 complete.373/500 complete.374/500 complete.375/500 complete.376/500 complete.377/500 complete.378/500 complete.
+----------------------------------------
+  episode      |  379
+  reward       |  -305.0
+----------------------------------------
+[Iteration 379] panel min -305.0  mean -13.1 mbb/h  |  random +1096±86  station +332±80  maniac +324±214  nit -305±84  tag -261±103  lag -156±119
+[Iteration 379]   actions: call=28% raise=48% fold=10% check=14%  (9s)
+  last-step weighted losses  adv: 13.830664  policy: 0.027587
+379/500 complete.
+Checkpoint saved at episode 380 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_380
+380/500 complete.381/500 complete.382/500 complete.383/500 complete.384/500 complete.385/500 complete.386/500 complete.387/500 complete.388/500 complete.389/500 complete.
+Checkpoint saved at episode 390 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_390
+390/500 complete.391/500 complete.392/500 complete.393/500 complete.394/500 complete.395/500 complete.396/500 complete.397/500 complete.398/500 complete.
+----------------------------------------
+  episode      |  399
+  reward       |  -265.0
+----------------------------------------
+[Iteration 399] panel min -265.0  mean -10.3 mbb/h  |  random +1232±90  station +281±81  maniac +346±217  nit -265±86  tag -256±108  lag -158±118
+[Iteration 399]   actions: call=28% raise=49% fold=10% check=13%  (10s)
+  last-step weighted losses  adv: 13.762253  policy: 0.027870
+399/500 complete.
+Checkpoint saved at episode 400 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_400
+400/500 complete.401/500 complete.402/500 complete.403/500 complete.404/500 complete.405/500 complete.406/500 complete.407/500 complete.408/500 complete.409/500 complete.
+Checkpoint saved at episode 410 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_410
+410/500 complete.411/500 complete.412/500 complete.413/500 complete.414/500 complete.415/500 complete.416/500 complete.417/500 complete.418/500 complete.
+----------------------------------------
+  episode      |  419
+  reward       |  -259.0
+----------------------------------------
+[Iteration 419] panel min -259.0  mean +29.3 mbb/h  |  random +1222±91  station +350±79  maniac +365±217  nit -259±86  tag -224±108  lag -86±118
+[Iteration 419]   actions: call=27% raise=51% fold=10% check=13%  (11s)
+  last-step weighted losses  adv: 13.566077  policy: 0.027707
+419/500 complete.
+Checkpoint saved at episode 420 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_420
+420/500 complete.421/500 complete.422/500 complete.423/500 complete.424/500 complete.425/500 complete.426/500 complete.427/500 complete.428/500 complete.429/500 complete.
+Checkpoint saved at episode 430 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_430
+430/500 complete.431/500 complete.432/500 complete.433/500 complete.434/500 complete.435/500 complete.436/500 complete.437/500 complete.438/500 complete.
+----------------------------------------
+  episode      |  439
+  reward       |  -265.0
+----------------------------------------
+[Iteration 439] panel min -265.0  mean -13.7 mbb/h  |  random +1206±89  station +351±81  maniac +245±211  nit -206±85  tag -265±106  lag -194±121
+[Iteration 439]   actions: call=26% raise=50% fold=11% check=13%  (9s)
+  last-step weighted losses  adv: 14.280133  policy: 0.026692
+439/500 complete.
+Checkpoint saved at episode 440 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_440
+440/500 complete.441/500 complete.442/500 complete.443/500 complete.444/500 complete.445/500 complete.446/500 complete.447/500 complete.448/500 complete.449/500 complete.
+Checkpoint saved at episode 450 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_450
+450/500 complete.451/500 complete.452/500 complete.453/500 complete.454/500 complete.455/500 complete.456/500 complete.457/500 complete.458/500 complete.
+----------------------------------------
+  episode      |  459
+  reward       |  -259.5
+----------------------------------------
+[Iteration 459] panel min -259.5  mean +26.2 mbb/h  |  random +1295±94  station +284±79  maniac +456±214  nit -216±88  tag -260±111  lag -132±124
+[Iteration 459]   actions: call=27% raise=53% fold=9% check=11%  (11s)
+  last-step weighted losses  adv: 14.958977  policy: 0.027202
+459/500 complete.
+Checkpoint saved at episode 460 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_460
+460/500 complete.461/500 complete.462/500 complete.463/500 complete.464/500 complete.465/500 complete.466/500 complete.467/500 complete.468/500 complete.469/500 complete.
+Checkpoint saved at episode 470 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_470
+470/500 complete.471/500 complete.472/500 complete.473/500 complete.474/500 complete.475/500 complete.476/500 complete.477/500 complete.478/500 complete.
+----------------------------------------
+  episode      |  479
+  reward       |  -330.0
+----------------------------------------
+[Iteration 479] panel min -330.0  mean -22.3 mbb/h  |  random +1260±91  station +265±81  maniac +413±207  nit -316±89  tag -330±108  lag -144±123
+[Iteration 479]   actions: call=27% raise=51% fold=10% check=12%  (11s)
+  last-step weighted losses  adv: 14.278587  policy: 0.027353
+479/500 complete.
+Checkpoint saved at episode 480 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_480
+480/500 complete.481/500 complete.482/500 complete.483/500 complete.484/500 complete.485/500 complete.486/500 complete.487/500 complete.488/500 complete.489/500 complete.
+Checkpoint saved at episode 490 to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/checkpoints\episode_490
+490/500 complete.491/500 complete.492/500 complete.493/500 complete.494/500 complete.495/500 complete.496/500 complete.497/500 complete.498/500 complete.
+----------------------------------------
+  episode      |  499
+  reward       |  -274.0
+----------------------------------------
+[Iteration 499] panel min -274.0  mean +72.3 mbb/h  |  random +1274±90  station +316±80  maniac +688±207  nit -263±86  tag -274±110  lag -106±121
+[Iteration 499]   actions: call=28% raise=51% fold=10% check=12%  (10s)
+  last-step weighted losses  adv: 14.372855  policy: 0.028567
+499/500 complete.
+Logs saved in experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/
+
+Model saved to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/
+Learning curve saved to experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043/fig.png
+experiments\tune\deepcfr_v1\extended_500\trial_27\seed_1043: held-out panel min -345, LBR +565

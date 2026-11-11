@@ -1,0 +1,272 @@
+{
+  "final_deals": 5000,
+  "runs": [
+    {
+      "trial": 8,
+      "seed": 1042,
+      "params": {
+        "lr": 0.0021420324600510345,
+        "batch_size": 1024,
+        "layers": "128 128"
+      },
+      "trial_score": -176.91094476680794,
+      "final_min": -180.2895338398954,
+      "final_mean": -32.79415851320525,
+      "members": {
+        "best_response": {
+          "mean": -180.2895338398954,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -32.79415851320525,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 698.0418932075727,
+          "se": 0.0
+        }
+      },
+      "training_score": -184.95237091309005,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_8/seed_1042"
+    },
+    {
+      "trial": 8,
+      "seed": 1043,
+      "params": {
+        "lr": 0.0021420324600510345,
+        "batch_size": 1024,
+        "layers": "128 128"
+      },
+      "trial_score": -176.91094476680794,
+      "final_min": -206.53084168054326,
+      "final_mean": -29.828265612123676,
+      "members": {
+        "best_response": {
+          "mean": -206.53084168054326,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -29.828265612123676,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 701.550695554782,
+          "se": 0.0
+        }
+      },
+      "training_score": -197.0334400843651,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_8/seed_1043"
+    },
+    {
+      "trial": 29,
+      "seed": 1042,
+      "params": {
+        "lr": 0.001123997891990446,
+        "batch_size": 2048,
+        "layers": "256 256"
+      },
+      "trial_score": -169.9362025965613,
+      "final_min": -186.45154340886893,
+      "final_mean": -26.09558727044662,
+      "members": {
+        "best_response": {
+          "mean": -186.45154340886893,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -26.09558727044662,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 697.5536726534126,
+          "se": 0.0
+        }
+      },
+      "training_score": -185.9922408689671,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_29/seed_1042"
+    },
+    {
+      "trial": 29,
+      "seed": 1043,
+      "params": {
+        "lr": 0.001123997891990446,
+        "batch_size": 2048,
+        "layers": "256 256"
+      },
+      "trial_score": -169.9362025965613,
+      "final_min": -188.04916561050496,
+      "final_mean": -27.438587116316224,
+      "members": {
+        "best_response": {
+          "mean": -188.04916561050496,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -27.438587116316224,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 706.631648929159,
+          "se": 0.0
+        }
+      },
+      "training_score": -177.6463346237233,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_29/seed_1043"
+    },
+    {
+      "trial": 29,
+      "seed": 1044,
+      "params": {
+        "lr": 0.001123997891990446,
+        "batch_size": 2048,
+        "layers": "256 256"
+      },
+      "trial_score": -169.9362025965613,
+      "final_min": -162.65322065291198,
+      "final_mean": -31.204263041416596,
+      "members": {
+        "best_response": {
+          "mean": -162.65322065291198,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -31.204263041416596,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 731.0107265846895,
+          "se": 0.0
+        }
+      },
+      "training_score": -160.635057411347,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_29/seed_1044"
+    },
+    {
+      "trial": 8,
+      "seed": 1044,
+      "params": {
+        "lr": 0.0021420324600510345,
+        "batch_size": 1024,
+        "layers": "128 128"
+      },
+      "trial_score": -176.91094476680794,
+      "final_min": -173.79927839462795,
+      "final_mean": -31.71477289952828,
+      "members": {
+        "best_response": {
+          "mean": -173.79927839462795,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -31.71477289952828,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 703.6859590442624,
+          "se": 0.0
+        }
+      },
+      "training_score": -164.93850560380383,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_8/seed_1044"
+    },
+    {
+      "trial": 15,
+      "seed": 1042,
+      "params": {
+        "lr": 0.0029448989559409263,
+        "batch_size": 1024,
+        "layers": "128 128"
+      },
+      "trial_score": -177.1550267467227,
+      "final_min": -185.89132923341234,
+      "final_mean": -27.525680649477923,
+      "members": {
+        "best_response": {
+          "mean": -185.89132923341234,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -27.525680649477923,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 718.8867867896636,
+          "se": 0.0
+        }
+      },
+      "training_score": -190.43669547186448,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_15/seed_1042"
+    },
+    {
+      "trial": 15,
+      "seed": 1043,
+      "params": {
+        "lr": 0.0029448989559409263,
+        "batch_size": 1024,
+        "layers": "128 128"
+      },
+      "trial_score": -177.1550267467227,
+      "final_min": -172.10549943725405,
+      "final_mean": -23.62768938490348,
+      "members": {
+        "best_response": {
+          "mean": -172.10549943725405,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -23.62768938490348,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 709.8310632179168,
+          "se": 0.0
+        }
+      },
+      "training_score": -165.64503632623655,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_15/seed_1043"
+    },
+    {
+      "trial": 15,
+      "seed": 1044,
+      "params": {
+        "lr": 0.0029448989559409263,
+        "batch_size": 1024,
+        "layers": "128 128"
+      },
+      "trial_score": -177.1550267467227,
+      "final_min": -165.95651951762616,
+      "final_mean": -28.653844699766527,
+      "members": {
+        "best_response": {
+          "mean": -165.95651951762616,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -28.653844699766527,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 702.7037696502949,
+          "se": 0.0
+        }
+      },
+      "training_score": -169.15942231664883,
+      "log_dir": "experiments/tune/leduc_deepcfr_v1/finalists/trial_15/seed_1044"
+    }
+  ],
+  "winner": {
+    "trial": 15,
+    "params": {
+      "lr": 0.0029448989559409263,
+      "batch_size": 1024,
+      "layers": "128 128"
+    },
+    "final_min_mean": -174.6511160627642,
+    "seeds": [
+      1042,
+      1043,
+      1044
+    ],
+    "final_deals": 5000
+  }
+}

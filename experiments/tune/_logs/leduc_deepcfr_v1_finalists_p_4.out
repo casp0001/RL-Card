@@ -1,0 +1,702 @@
+trial 29 seed 1042: being trained by another process, skipping
+trial 29 seed 1043: being trained by another process, skipping
+trial 29 seed 1044: being trained by another process, skipping
+
+=== finalist trial 8 (score -176.9), seed 1042: {"lr": 0.0021420324600510345, "batch_size": 1024, "layers": "128 128"}
+0/300 complete.1/300 complete.2/300 complete.3/300 complete.4/300 complete.5/300 complete.6/300 complete.7/300 complete.8/300 complete.9/300 complete.
+Checkpoint saved at episode 10 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_10
+10/300 complete.11/300 complete.12/300 complete.13/300 complete.
+----------------------------------------
+  episode      |  14
+  reward       |  -212.64841338159619
+----------------------------------------
+[Iteration 14] panel min -212.6  mean -67.1 mbb/h  |  best_response -213±0  equilibrium -67±0  random +705±0
+[Iteration 14]   actions: call=34% raise=32% fold=15% check=20%  (30s)
+  last-step weighted losses  adv: 1.793580  policy: 0.022633
+14/300 complete.15/300 complete.16/300 complete.17/300 complete.18/300 complete.19/300 complete.
+Checkpoint saved at episode 20 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_20
+20/300 complete.21/300 complete.22/300 complete.23/300 complete.24/300 complete.25/300 complete.26/300 complete.27/300 complete.28/300 complete.
+----------------------------------------
+  episode      |  29
+  reward       |  -182.46789771430784
+----------------------------------------
+[Iteration 29] panel min -182.5  mean -48.2 mbb/h  |  best_response -182±0  equilibrium -48±0  random +715±0
+[Iteration 29]   actions: call=34% raise=32% fold=15% check=18%  (0s)
+  last-step weighted losses  adv: 1.690425  policy: 0.021260
+29/300 complete.
+Checkpoint saved at episode 30 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_30
+30/300 complete.31/300 complete.32/300 complete.33/300 complete.34/300 complete.35/300 complete.36/300 complete.37/300 complete.38/300 complete.39/300 complete.
+Checkpoint saved at episode 40 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_40
+40/300 complete.41/300 complete.42/300 complete.43/300 complete.
+----------------------------------------
+  episode      |  44
+  reward       |  -206.05344037474555
+----------------------------------------
+[Iteration 44] panel min -206.1  mean -39.8 mbb/h  |  best_response -206±0  equilibrium -40±0  random +702±0
+[Iteration 44]   actions: call=35% raise=32% fold=15% check=18%  (0s)
+  last-step weighted losses  adv: 1.650635  policy: 0.026485
+44/300 complete.45/300 complete.46/300 complete.47/300 complete.48/300 complete.49/300 complete.
+Checkpoint saved at episode 50 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_50
+50/300 complete.51/300 complete.52/300 complete.53/300 complete.54/300 complete.55/300 complete.56/300 complete.57/300 complete.58/300 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -170.9699777253646
+----------------------------------------
+[Iteration 59] panel min -171.0  mean -33.6 mbb/h  |  best_response -171±0  equilibrium -34±0  random +692±0
+[Iteration 59]   actions: call=34% raise=31% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.638273  policy: 0.020785
+59/300 complete.
+Checkpoint saved at episode 60 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_60
+60/300 complete.61/300 complete.62/300 complete.63/300 complete.64/300 complete.65/300 complete.66/300 complete.67/300 complete.68/300 complete.69/300 complete.
+Checkpoint saved at episode 70 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_70
+70/300 complete.71/300 complete.72/300 complete.73/300 complete.
+----------------------------------------
+  episode      |  74
+  reward       |  -168.9680330019661
+----------------------------------------
+[Iteration 74] panel min -169.0  mean -31.2 mbb/h  |  best_response -169±0  equilibrium -31±0  random +676±0
+[Iteration 74]   actions: call=31% raise=32% fold=16% check=21%  (0s)
+  last-step weighted losses  adv: 1.848972  policy: 0.020739
+74/300 complete.75/300 complete.76/300 complete.77/300 complete.78/300 complete.79/300 complete.
+Checkpoint saved at episode 80 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_80
+80/300 complete.81/300 complete.82/300 complete.83/300 complete.84/300 complete.85/300 complete.86/300 complete.87/300 complete.88/300 complete.
+----------------------------------------
+  episode      |  89
+  reward       |  -185.45890153327937
+----------------------------------------
+[Iteration 89] panel min -185.5  mean -31.5 mbb/h  |  best_response -185±0  equilibrium -31±0  random +701±0
+[Iteration 89]   actions: call=31% raise=33% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 2.048721  policy: 0.022476
+89/300 complete.
+Checkpoint saved at episode 90 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_90
+90/300 complete.91/300 complete.92/300 complete.93/300 complete.94/300 complete.95/300 complete.96/300 complete.97/300 complete.98/300 complete.99/300 complete.
+Checkpoint saved at episode 100 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_100
+100/300 complete.101/300 complete.102/300 complete.103/300 complete.
+----------------------------------------
+  episode      |  104
+  reward       |  -244.57654529554628
+----------------------------------------
+[Iteration 104] panel min -244.6  mean -32.0 mbb/h  |  best_response -245±0  equilibrium -32±0  random +686±0
+[Iteration 104]   actions: call=32% raise=34% fold=15% check=18%  (0s)
+  last-step weighted losses  adv: 2.046203  policy: 0.024438
+104/300 complete.105/300 complete.106/300 complete.107/300 complete.108/300 complete.109/300 complete.
+Checkpoint saved at episode 110 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_110
+110/300 complete.111/300 complete.112/300 complete.113/300 complete.114/300 complete.115/300 complete.116/300 complete.117/300 complete.118/300 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -194.90953631082826
+----------------------------------------
+[Iteration 119] panel min -194.9  mean -36.4 mbb/h  |  best_response -195±0  equilibrium -36±0  random +705±0
+[Iteration 119]   actions: call=35% raise=32% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 2.027638  policy: 0.027092
+119/300 complete.
+Checkpoint saved at episode 120 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_120
+120/300 complete.121/300 complete.122/300 complete.123/300 complete.124/300 complete.125/300 complete.126/300 complete.127/300 complete.128/300 complete.129/300 complete.
+Checkpoint saved at episode 130 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_130
+130/300 complete.131/300 complete.132/300 complete.133/300 complete.
+----------------------------------------
+  episode      |  134
+  reward       |  -180.0332480993584
+----------------------------------------
+[Iteration 134] panel min -180.0  mean -34.6 mbb/h  |  best_response -180±0  equilibrium -35±0  random +716±0
+[Iteration 134]   actions: call=37% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.825227  policy: 0.025400
+134/300 complete.135/300 complete.136/300 complete.137/300 complete.138/300 complete.139/300 complete.
+Checkpoint saved at episode 140 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_140
+140/300 complete.141/300 complete.142/300 complete.143/300 complete.144/300 complete.145/300 complete.146/300 complete.147/300 complete.148/300 complete.
+----------------------------------------
+  episode      |  149
+  reward       |  -188.80401753151205
+----------------------------------------
+[Iteration 149] panel min -188.8  mean -34.9 mbb/h  |  best_response -189±0  equilibrium -35±0  random +711±0
+[Iteration 149]   actions: call=37% raise=29% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.672005  policy: 0.025532
+149/300 complete.
+Checkpoint saved at episode 150 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_150
+150/300 complete.151/300 complete.152/300 complete.153/300 complete.154/300 complete.155/300 complete.156/300 complete.157/300 complete.158/300 complete.159/300 complete.
+Checkpoint saved at episode 160 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_160
+160/300 complete.161/300 complete.162/300 complete.163/300 complete.
+----------------------------------------
+  episode      |  164
+  reward       |  -183.65618703206496
+----------------------------------------
+[Iteration 164] panel min -183.7  mean -33.6 mbb/h  |  best_response -184±0  equilibrium -34±0  random +698±0
+[Iteration 164]   actions: call=38% raise=28% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.946834  policy: 0.027733
+164/300 complete.165/300 complete.166/300 complete.167/300 complete.168/300 complete.169/300 complete.
+Checkpoint saved at episode 170 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_170
+170/300 complete.171/300 complete.172/300 complete.173/300 complete.174/300 complete.175/300 complete.176/300 complete.177/300 complete.178/300 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -168.35354385504812
+----------------------------------------
+[Iteration 179] panel min -168.4  mean -32.6 mbb/h  |  best_response -168±0  equilibrium -33±0  random +701±0
+[Iteration 179]   actions: call=38% raise=28% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.703665  policy: 0.028991
+179/300 complete.
+Checkpoint saved at episode 180 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_180
+180/300 complete.181/300 complete.182/300 complete.183/300 complete.184/300 complete.185/300 complete.186/300 complete.187/300 complete.188/300 complete.189/300 complete.
+Checkpoint saved at episode 190 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_190
+190/300 complete.191/300 complete.192/300 complete.193/300 complete.
+----------------------------------------
+  episode      |  194
+  reward       |  -173.60259983062508
+----------------------------------------
+[Iteration 194] panel min -173.6  mean -31.3 mbb/h  |  best_response -174±0  equilibrium -31±0  random +691±0
+[Iteration 194]   actions: call=37% raise=28% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.772945  policy: 0.026483
+194/300 complete.195/300 complete.196/300 complete.197/300 complete.198/300 complete.199/300 complete.
+Checkpoint saved at episode 200 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_200
+200/300 complete.201/300 complete.202/300 complete.203/300 complete.204/300 complete.205/300 complete.206/300 complete.207/300 complete.208/300 complete.
+----------------------------------------
+  episode      |  209
+  reward       |  -182.83462600399162
+----------------------------------------
+[Iteration 209] panel min -182.8  mean -31.5 mbb/h  |  best_response -183±0  equilibrium -32±0  random +692±0
+[Iteration 209]   actions: call=37% raise=29% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.625783  policy: 0.027787
+209/300 complete.
+Checkpoint saved at episode 210 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_210
+210/300 complete.211/300 complete.212/300 complete.213/300 complete.214/300 complete.215/300 complete.216/300 complete.217/300 complete.218/300 complete.219/300 complete.
+Checkpoint saved at episode 220 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_220
+220/300 complete.221/300 complete.222/300 complete.223/300 complete.
+----------------------------------------
+  episode      |  224
+  reward       |  -179.6435832125015
+----------------------------------------
+[Iteration 224] panel min -179.6  mean -31.4 mbb/h  |  best_response -180±0  equilibrium -31±0  random +697±0
+[Iteration 224]   actions: call=37% raise=29% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 2.153427  policy: 0.026490
+224/300 complete.225/300 complete.226/300 complete.227/300 complete.228/300 complete.229/300 complete.
+Checkpoint saved at episode 230 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_230
+230/300 complete.231/300 complete.232/300 complete.233/300 complete.234/300 complete.235/300 complete.236/300 complete.237/300 complete.238/300 complete.
+----------------------------------------
+  episode      |  239
+  reward       |  -166.0761650614605
+----------------------------------------
+[Iteration 239] panel min -166.1  mean -30.9 mbb/h  |  best_response -166±0  equilibrium -31±0  random +684±0
+[Iteration 239]   actions: call=37% raise=29% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.703459  policy: 0.024834
+239/300 complete.
+Checkpoint saved at episode 240 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_240
+240/300 complete.241/300 complete.242/300 complete.243/300 complete.244/300 complete.245/300 complete.246/300 complete.247/300 complete.248/300 complete.249/300 complete.
+Checkpoint saved at episode 250 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_250
+250/300 complete.251/300 complete.252/300 complete.253/300 complete.
+----------------------------------------
+  episode      |  254
+  reward       |  -186.17954709538031
+----------------------------------------
+[Iteration 254] panel min -186.2  mean -30.2 mbb/h  |  best_response -186±0  equilibrium -30±0  random +680±0
+[Iteration 254]   actions: call=35% raise=30% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 2.036793  policy: 0.027549
+254/300 complete.255/300 complete.256/300 complete.257/300 complete.258/300 complete.259/300 complete.
+Checkpoint saved at episode 260 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_260
+260/300 complete.261/300 complete.262/300 complete.263/300 complete.264/300 complete.265/300 complete.266/300 complete.267/300 complete.268/300 complete.
+----------------------------------------
+  episode      |  269
+  reward       |  -199.70858015924898
+----------------------------------------
+[Iteration 269] panel min -199.7  mean -33.3 mbb/h  |  best_response -200±0  equilibrium -33±0  random +694±0
+[Iteration 269]   actions: call=35% raise=31% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 2.023401  policy: 0.028147
+269/300 complete.
+Checkpoint saved at episode 270 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_270
+270/300 complete.271/300 complete.272/300 complete.273/300 complete.274/300 complete.275/300 complete.276/300 complete.277/300 complete.278/300 complete.279/300 complete.
+Checkpoint saved at episode 280 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_280
+280/300 complete.281/300 complete.282/300 complete.283/300 complete.
+----------------------------------------
+  episode      |  284
+  reward       |  -174.85899874012577
+----------------------------------------
+[Iteration 284] panel min -174.9  mean -32.0 mbb/h  |  best_response -175±0  equilibrium -32±0  random +693±0
+[Iteration 284]   actions: call=35% raise=30% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 2.040563  policy: 0.029526
+284/300 complete.285/300 complete.286/300 complete.287/300 complete.288/300 complete.289/300 complete.
+Checkpoint saved at episode 290 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/checkpoints\episode_290
+290/300 complete.291/300 complete.292/300 complete.293/300 complete.294/300 complete.295/300 complete.296/300 complete.297/300 complete.298/300 complete.
+----------------------------------------
+  episode      |  299
+  reward       |  -180.2895338398954
+----------------------------------------
+[Iteration 299] panel min -180.3  mean -32.8 mbb/h  |  best_response -180±0  equilibrium -33±0  random +698±0
+[Iteration 299]   actions: call=36% raise=31% fold=14% check=19%  (0s)
+  last-step weighted losses  adv: 1.754173  policy: 0.028553
+299/300 complete.
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1042/fig.png
+=== finalist trial 8 seed 1042: final panel min -180.3 (mean -32.8) over 5000 deals
+
+=== finalist trial 8 (score -176.9), seed 1043: {"lr": 0.0021420324600510345, "batch_size": 1024, "layers": "128 128"}
+0/300 complete.1/300 complete.2/300 complete.3/300 complete.4/300 complete.5/300 complete.6/300 complete.7/300 complete.8/300 complete.9/300 complete.
+Checkpoint saved at episode 10 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_10
+10/300 complete.11/300 complete.12/300 complete.13/300 complete.
+----------------------------------------
+  episode      |  14
+  reward       |  -253.66708917196667
+----------------------------------------
+[Iteration 14] panel min -253.7  mean -90.5 mbb/h  |  best_response -254±0  equilibrium -91±0  random +625±0
+[Iteration 14]   actions: call=32% raise=31% fold=20% check=18%  (0s)
+  last-step weighted losses  adv: 1.526733  policy: 0.023081
+14/300 complete.15/300 complete.16/300 complete.17/300 complete.18/300 complete.19/300 complete.
+Checkpoint saved at episode 20 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_20
+20/300 complete.21/300 complete.22/300 complete.23/300 complete.24/300 complete.25/300 complete.26/300 complete.27/300 complete.28/300 complete.
+----------------------------------------
+  episode      |  29
+  reward       |  -259.3249280870763
+----------------------------------------
+[Iteration 29] panel min -259.3  mean -51.1 mbb/h  |  best_response -259±0  equilibrium -51±0  random +712±0
+[Iteration 29]   actions: call=36% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.540461  policy: 0.024023
+29/300 complete.
+Checkpoint saved at episode 30 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_30
+30/300 complete.31/300 complete.32/300 complete.33/300 complete.34/300 complete.35/300 complete.36/300 complete.37/300 complete.38/300 complete.39/300 complete.
+Checkpoint saved at episode 40 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_40
+40/300 complete.41/300 complete.42/300 complete.43/300 complete.
+----------------------------------------
+  episode      |  44
+  reward       |  -193.72116831627457
+----------------------------------------
+[Iteration 44] panel min -193.7  mean -38.8 mbb/h  |  best_response -194±0  equilibrium -39±0  random +688±0
+[Iteration 44]   actions: call=35% raise=29% fold=16% check=21%  (0s)
+  last-step weighted losses  adv: 1.855463  policy: 0.027358
+44/300 complete.45/300 complete.46/300 complete.47/300 complete.48/300 complete.49/300 complete.
+Checkpoint saved at episode 50 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_50
+50/300 complete.51/300 complete.52/300 complete.53/300 complete.54/300 complete.55/300 complete.56/300 complete.57/300 complete.58/300 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -181.76444025436905
+----------------------------------------
+[Iteration 59] panel min -181.8  mean -33.6 mbb/h  |  best_response -182±0  equilibrium -34±0  random +705±0
+[Iteration 59]   actions: call=34% raise=31% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.463168  policy: 0.024194
+59/300 complete.
+Checkpoint saved at episode 60 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_60
+60/300 complete.61/300 complete.62/300 complete.63/300 complete.64/300 complete.65/300 complete.66/300 complete.67/300 complete.68/300 complete.69/300 complete.
+Checkpoint saved at episode 70 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_70
+70/300 complete.71/300 complete.72/300 complete.73/300 complete.
+----------------------------------------
+  episode      |  74
+  reward       |  -184.2914445591795
+----------------------------------------
+[Iteration 74] panel min -184.3  mean -31.6 mbb/h  |  best_response -184±0  equilibrium -32±0  random +717±0
+[Iteration 74]   actions: call=31% raise=33% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.857520  policy: 0.028036
+74/300 complete.75/300 complete.76/300 complete.77/300 complete.78/300 complete.79/300 complete.
+Checkpoint saved at episode 80 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_80
+80/300 complete.81/300 complete.82/300 complete.83/300 complete.84/300 complete.85/300 complete.86/300 complete.87/300 complete.88/300 complete.
+----------------------------------------
+  episode      |  89
+  reward       |  -167.61378710605547
+----------------------------------------
+[Iteration 89] panel min -167.6  mean -29.9 mbb/h  |  best_response -168±0  equilibrium -30±0  random +725±0
+[Iteration 89]   actions: call=31% raise=34% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.987830  policy: 0.025279
+89/300 complete.
+Checkpoint saved at episode 90 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_90
+90/300 complete.91/300 complete.92/300 complete.93/300 complete.94/300 complete.95/300 complete.96/300 complete.97/300 complete.98/300 complete.99/300 complete.
+Checkpoint saved at episode 100 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_100
+100/300 complete.101/300 complete.102/300 complete.103/300 complete.
+----------------------------------------
+  episode      |  104
+  reward       |  -188.3047048201321
+----------------------------------------
+[Iteration 104] panel min -188.3  mean -27.6 mbb/h  |  best_response -188±0  equilibrium -28±0  random +732±0
+[Iteration 104]   actions: call=32% raise=34% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.776445  policy: 0.023313
+104/300 complete.105/300 complete.106/300 complete.107/300 complete.108/300 complete.109/300 complete.
+Checkpoint saved at episode 110 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_110
+110/300 complete.111/300 complete.112/300 complete.113/300 complete.114/300 complete.115/300 complete.116/300 complete.117/300 complete.118/300 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -178.33958042018673
+----------------------------------------
+[Iteration 119] panel min -178.3  mean -24.8 mbb/h  |  best_response -178±0  equilibrium -25±0  random +719±0
+[Iteration 119]   actions: call=30% raise=34% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.841469  policy: 0.025051
+119/300 complete.
+Checkpoint saved at episode 120 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_120
+120/300 complete.121/300 complete.122/300 complete.123/300 complete.124/300 complete.125/300 complete.126/300 complete.127/300 complete.128/300 complete.129/300 complete.
+Checkpoint saved at episode 130 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_130
+130/300 complete.131/300 complete.132/300 complete.133/300 complete.
+----------------------------------------
+  episode      |  134
+  reward       |  -176.88643129871423
+----------------------------------------
+[Iteration 134] panel min -176.9  mean -24.5 mbb/h  |  best_response -177±0  equilibrium -24±0  random +729±0
+[Iteration 134]   actions: call=31% raise=34% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.872583  policy: 0.025010
+134/300 complete.135/300 complete.136/300 complete.137/300 complete.138/300 complete.139/300 complete.
+Checkpoint saved at episode 140 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_140
+140/300 complete.141/300 complete.142/300 complete.143/300 complete.144/300 complete.145/300 complete.146/300 complete.147/300 complete.148/300 complete.
+----------------------------------------
+  episode      |  149
+  reward       |  -175.15182260423973
+----------------------------------------
+[Iteration 149] panel min -175.2  mean -26.6 mbb/h  |  best_response -175±0  equilibrium -27±0  random +717±0
+[Iteration 149]   actions: call=31% raise=34% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 2.013924  policy: 0.027526
+149/300 complete.
+Checkpoint saved at episode 150 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_150
+150/300 complete.151/300 complete.152/300 complete.153/300 complete.154/300 complete.155/300 complete.156/300 complete.157/300 complete.158/300 complete.159/300 complete.
+Checkpoint saved at episode 160 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_160
+160/300 complete.161/300 complete.162/300 complete.163/300 complete.
+----------------------------------------
+  episode      |  164
+  reward       |  -165.932247955771
+----------------------------------------
+[Iteration 164] panel min -165.9  mean -28.0 mbb/h  |  best_response -166±0  equilibrium -28±0  random +721±0
+[Iteration 164]   actions: call=33% raise=33% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.904541  policy: 0.026485
+164/300 complete.165/300 complete.166/300 complete.167/300 complete.168/300 complete.169/300 complete.
+Checkpoint saved at episode 170 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_170
+170/300 complete.171/300 complete.172/300 complete.173/300 complete.174/300 complete.175/300 complete.176/300 complete.177/300 complete.178/300 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -187.3185569870997
+----------------------------------------
+[Iteration 179] panel min -187.3  mean -27.0 mbb/h  |  best_response -187±0  equilibrium -27±0  random +712±0
+[Iteration 179]   actions: call=33% raise=33% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.849493  policy: 0.025781
+179/300 complete.
+Checkpoint saved at episode 180 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_180
+180/300 complete.181/300 complete.182/300 complete.183/300 complete.184/300 complete.185/300 complete.186/300 complete.187/300 complete.188/300 complete.189/300 complete.
+Checkpoint saved at episode 190 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_190
+190/300 complete.191/300 complete.192/300 complete.193/300 complete.
+----------------------------------------
+  episode      |  194
+  reward       |  -179.43607864763655
+----------------------------------------
+[Iteration 194] panel min -179.4  mean -27.1 mbb/h  |  best_response -179±0  equilibrium -27±0  random +711±0
+[Iteration 194]   actions: call=33% raise=32% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 2.195985  policy: 0.025254
+194/300 complete.195/300 complete.196/300 complete.197/300 complete.198/300 complete.199/300 complete.
+Checkpoint saved at episode 200 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_200
+200/300 complete.201/300 complete.202/300 complete.203/300 complete.204/300 complete.205/300 complete.206/300 complete.207/300 complete.208/300 complete.
+----------------------------------------
+  episode      |  209
+  reward       |  -176.77586681796345
+----------------------------------------
+[Iteration 209] panel min -176.8  mean -28.6 mbb/h  |  best_response -177±0  equilibrium -29±0  random +714±0
+[Iteration 209]   actions: call=33% raise=33% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.728331  policy: 0.026993
+209/300 complete.
+Checkpoint saved at episode 210 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_210
+210/300 complete.211/300 complete.212/300 complete.213/300 complete.214/300 complete.215/300 complete.216/300 complete.217/300 complete.218/300 complete.219/300 complete.
+Checkpoint saved at episode 220 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_220
+220/300 complete.221/300 complete.222/300 complete.223/300 complete.
+----------------------------------------
+  episode      |  224
+  reward       |  -182.7779332162331
+----------------------------------------
+[Iteration 224] panel min -182.8  mean -27.5 mbb/h  |  best_response -183±0  equilibrium -27±0  random +702±0
+[Iteration 224]   actions: call=34% raise=32% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.929515  policy: 0.029234
+224/300 complete.225/300 complete.226/300 complete.227/300 complete.228/300 complete.229/300 complete.
+Checkpoint saved at episode 230 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_230
+230/300 complete.231/300 complete.232/300 complete.233/300 complete.234/300 complete.235/300 complete.236/300 complete.237/300 complete.238/300 complete.
+----------------------------------------
+  episode      |  239
+  reward       |  -193.4949744015706
+----------------------------------------
+[Iteration 239] panel min -193.5  mean -29.6 mbb/h  |  best_response -193±0  equilibrium -30±0  random +710±0
+[Iteration 239]   actions: call=35% raise=32% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.882271  policy: 0.025572
+239/300 complete.
+Checkpoint saved at episode 240 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_240
+240/300 complete.241/300 complete.242/300 complete.243/300 complete.244/300 complete.245/300 complete.246/300 complete.247/300 complete.248/300 complete.249/300 complete.
+Checkpoint saved at episode 250 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_250
+250/300 complete.251/300 complete.252/300 complete.253/300 complete.
+----------------------------------------
+  episode      |  254
+  reward       |  -181.3867963763739
+----------------------------------------
+[Iteration 254] panel min -181.4  mean -29.3 mbb/h  |  best_response -181±0  equilibrium -29±0  random +701±0
+[Iteration 254]   actions: call=35% raise=31% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.780069  policy: 0.028535
+254/300 complete.255/300 complete.256/300 complete.257/300 complete.258/300 complete.259/300 complete.
+Checkpoint saved at episode 260 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_260
+260/300 complete.261/300 complete.262/300 complete.263/300 complete.264/300 complete.265/300 complete.266/300 complete.267/300 complete.268/300 complete.
+----------------------------------------
+  episode      |  269
+  reward       |  -188.55764483054023
+----------------------------------------
+[Iteration 269] panel min -188.6  mean -29.6 mbb/h  |  best_response -189±0  equilibrium -30±0  random +708±0
+[Iteration 269]   actions: call=35% raise=31% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.877633  policy: 0.028003
+269/300 complete.
+Checkpoint saved at episode 270 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_270
+270/300 complete.271/300 complete.272/300 complete.273/300 complete.274/300 complete.275/300 complete.276/300 complete.277/300 complete.278/300 complete.279/300 complete.
+Checkpoint saved at episode 280 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_280
+280/300 complete.281/300 complete.282/300 complete.283/300 complete.
+----------------------------------------
+  episode      |  284
+  reward       |  -196.0118337420118
+----------------------------------------
+[Iteration 284] panel min -196.0  mean -29.7 mbb/h  |  best_response -196±0  equilibrium -30±0  random +703±0
+[Iteration 284]   actions: call=35% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.880203  policy: 0.027961
+284/300 complete.285/300 complete.286/300 complete.287/300 complete.288/300 complete.289/300 complete.
+Checkpoint saved at episode 290 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/checkpoints\episode_290
+290/300 complete.291/300 complete.292/300 complete.293/300 complete.294/300 complete.295/300 complete.296/300 complete.297/300 complete.298/300 complete.
+----------------------------------------
+  episode      |  299
+  reward       |  -206.53084168054326
+----------------------------------------
+[Iteration 299] panel min -206.5  mean -29.8 mbb/h  |  best_response -207±0  equilibrium -30±0  random +702±0
+[Iteration 299]   actions: call=36% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.943110  policy: 0.028142
+299/300 complete.
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1043/fig.png
+=== finalist trial 8 seed 1043: final panel min -206.5 (mean -29.8) over 5000 deals
+
+=== finalist trial 8 (score -176.9), seed 1044: {"lr": 0.0021420324600510345, "batch_size": 1024, "layers": "128 128"}
+0/300 complete.1/300 complete.2/300 complete.3/300 complete.4/300 complete.5/300 complete.6/300 complete.7/300 complete.8/300 complete.9/300 complete.
+Checkpoint saved at episode 10 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_10
+10/300 complete.11/300 complete.12/300 complete.13/300 complete.
+----------------------------------------
+  episode      |  14
+  reward       |  -229.3148642354629
+----------------------------------------
+[Iteration 14] panel min -229.3  mean -72.4 mbb/h  |  best_response -229±0  equilibrium -72±0  random +729±0
+[Iteration 14]   actions: call=34% raise=33% fold=15% check=18%  (0s)
+  last-step weighted losses  adv: 1.614557  policy: 0.021417
+14/300 complete.15/300 complete.16/300 complete.17/300 complete.18/300 complete.19/300 complete.
+Checkpoint saved at episode 20 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_20
+20/300 complete.21/300 complete.22/300 complete.23/300 complete.24/300 complete.25/300 complete.26/300 complete.27/300 complete.28/300 complete.
+----------------------------------------
+  episode      |  29
+  reward       |  -203.99565686210914
+----------------------------------------
+[Iteration 29] panel min -204.0  mean -41.6 mbb/h  |  best_response -204±0  equilibrium -42±0  random +699±0
+[Iteration 29]   actions: call=36% raise=28% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.676195  policy: 0.022235
+29/300 complete.
+Checkpoint saved at episode 30 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_30
+30/300 complete.31/300 complete.32/300 complete.33/300 complete.34/300 complete.35/300 complete.36/300 complete.37/300 complete.38/300 complete.39/300 complete.
+Checkpoint saved at episode 40 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_40
+40/300 complete.41/300 complete.42/300 complete.43/300 complete.
+----------------------------------------
+  episode      |  44
+  reward       |  -231.7933816829695
+----------------------------------------
+[Iteration 44] panel min -231.8  mean -36.7 mbb/h  |  best_response -232±0  equilibrium -37±0  random +688±0
+[Iteration 44]   actions: call=35% raise=31% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 1.987266  policy: 0.027345
+44/300 complete.45/300 complete.46/300 complete.47/300 complete.48/300 complete.49/300 complete.
+Checkpoint saved at episode 50 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_50
+50/300 complete.51/300 complete.52/300 complete.53/300 complete.54/300 complete.55/300 complete.56/300 complete.57/300 complete.58/300 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -207.490018109385
+----------------------------------------
+[Iteration 59] panel min -207.5  mean -37.1 mbb/h  |  best_response -207±0  equilibrium -37±0  random +704±0
+[Iteration 59]   actions: call=33% raise=32% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.837602  policy: 0.022879
+59/300 complete.
+Checkpoint saved at episode 60 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_60
+60/300 complete.61/300 complete.62/300 complete.63/300 complete.64/300 complete.65/300 complete.66/300 complete.67/300 complete.68/300 complete.69/300 complete.
+Checkpoint saved at episode 70 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_70
+70/300 complete.71/300 complete.72/300 complete.73/300 complete.
+----------------------------------------
+  episode      |  74
+  reward       |  -157.9768901726215
+----------------------------------------
+[Iteration 74] panel min -158.0  mean -32.4 mbb/h  |  best_response -158±0  equilibrium -32±0  random +703±0
+[Iteration 74]   actions: call=32% raise=32% fold=16% check=20%  (0s)
+  last-step weighted losses  adv: 1.697869  policy: 0.024972
+74/300 complete.75/300 complete.76/300 complete.77/300 complete.78/300 complete.79/300 complete.
+Checkpoint saved at episode 80 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_80
+80/300 complete.81/300 complete.82/300 complete.83/300 complete.84/300 complete.85/300 complete.86/300 complete.87/300 complete.88/300 complete.
+----------------------------------------
+  episode      |  89
+  reward       |  -155.49571668360744
+----------------------------------------
+[Iteration 89] panel min -155.5  mean -30.2 mbb/h  |  best_response -155±0  equilibrium -30±0  random +687±0
+[Iteration 89]   actions: call=33% raise=32% fold=16% check=20%  (0s)
+  last-step weighted losses  adv: 1.894951  policy: 0.024176
+89/300 complete.
+Checkpoint saved at episode 90 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_90
+90/300 complete.91/300 complete.92/300 complete.93/300 complete.94/300 complete.95/300 complete.96/300 complete.97/300 complete.98/300 complete.99/300 complete.
+Checkpoint saved at episode 100 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_100
+100/300 complete.101/300 complete.102/300 complete.103/300 complete.
+----------------------------------------
+  episode      |  104
+  reward       |  -158.43750361089346
+----------------------------------------
+[Iteration 104] panel min -158.4  mean -33.8 mbb/h  |  best_response -158±0  equilibrium -34±0  random +676±0
+[Iteration 104]   actions: call=33% raise=31% fold=16% check=20%  (0s)
+  last-step weighted losses  adv: 1.800593  policy: 0.027660
+104/300 complete.105/300 complete.106/300 complete.107/300 complete.108/300 complete.109/300 complete.
+Checkpoint saved at episode 110 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_110
+110/300 complete.111/300 complete.112/300 complete.113/300 complete.114/300 complete.115/300 complete.116/300 complete.117/300 complete.118/300 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -160.40635086976852
+----------------------------------------
+[Iteration 119] panel min -160.4  mean -32.8 mbb/h  |  best_response -160±0  equilibrium -33±0  random +684±0
+[Iteration 119]   actions: call=34% raise=32% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 1.733735  policy: 0.025765
+119/300 complete.
+Checkpoint saved at episode 120 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_120
+120/300 complete.121/300 complete.122/300 complete.123/300 complete.124/300 complete.125/300 complete.126/300 complete.127/300 complete.128/300 complete.129/300 complete.
+Checkpoint saved at episode 130 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_130
+130/300 complete.131/300 complete.132/300 complete.133/300 complete.
+----------------------------------------
+  episode      |  134
+  reward       |  -161.54436437300052
+----------------------------------------
+[Iteration 134] panel min -161.5  mean -27.9 mbb/h  |  best_response -162±0  equilibrium -28±0  random +685±0
+[Iteration 134]   actions: call=34% raise=31% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.695932  policy: 0.025765
+134/300 complete.135/300 complete.136/300 complete.137/300 complete.138/300 complete.139/300 complete.
+Checkpoint saved at episode 140 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_140
+140/300 complete.141/300 complete.142/300 complete.143/300 complete.144/300 complete.145/300 complete.146/300 complete.147/300 complete.148/300 complete.
+----------------------------------------
+  episode      |  149
+  reward       |  -201.48677198756891
+----------------------------------------
+[Iteration 149] panel min -201.5  mean -29.7 mbb/h  |  best_response -201±0  equilibrium -30±0  random +689±0
+[Iteration 149]   actions: call=35% raise=32% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 2.056681  policy: 0.024878
+149/300 complete.
+Checkpoint saved at episode 150 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_150
+150/300 complete.151/300 complete.152/300 complete.153/300 complete.154/300 complete.155/300 complete.156/300 complete.157/300 complete.158/300 complete.159/300 complete.
+Checkpoint saved at episode 160 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_160
+160/300 complete.161/300 complete.162/300 complete.163/300 complete.
+----------------------------------------
+  episode      |  164
+  reward       |  -196.05575125134973
+----------------------------------------
+[Iteration 164] panel min -196.1  mean -32.0 mbb/h  |  best_response -196±0  equilibrium -32±0  random +705±0
+[Iteration 164]   actions: call=34% raise=32% fold=14% check=19%  (0s)
+  last-step weighted losses  adv: 2.090363  policy: 0.028134
+164/300 complete.165/300 complete.166/300 complete.167/300 complete.168/300 complete.169/300 complete.
+Checkpoint saved at episode 170 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_170
+170/300 complete.171/300 complete.172/300 complete.173/300 complete.174/300 complete.175/300 complete.176/300 complete.177/300 complete.178/300 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -176.1005736207114
+----------------------------------------
+[Iteration 179] panel min -176.1  mean -31.3 mbb/h  |  best_response -176±0  equilibrium -31±0  random +694±0
+[Iteration 179]   actions: call=34% raise=32% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 2.085076  policy: 0.026215
+179/300 complete.
+Checkpoint saved at episode 180 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_180
+180/300 complete.181/300 complete.182/300 complete.183/300 complete.184/300 complete.185/300 complete.186/300 complete.187/300 complete.188/300 complete.189/300 complete.
+Checkpoint saved at episode 190 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_190
+190/300 complete.191/300 complete.192/300 complete.193/300 complete.
+----------------------------------------
+  episode      |  194
+  reward       |  -169.20679632138481
+----------------------------------------
+[Iteration 194] panel min -169.2  mean -29.8 mbb/h  |  best_response -169±0  equilibrium -30±0  random +701±0
+[Iteration 194]   actions: call=35% raise=31% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.868300  policy: 0.028716
+194/300 complete.195/300 complete.196/300 complete.197/300 complete.198/300 complete.199/300 complete.
+Checkpoint saved at episode 200 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_200
+200/300 complete.201/300 complete.202/300 complete.203/300 complete.204/300 complete.205/300 complete.206/300 complete.207/300 complete.208/300 complete.
+----------------------------------------
+  episode      |  209
+  reward       |  -151.63409668818764
+----------------------------------------
+[Iteration 209] panel min -151.6  mean -27.7 mbb/h  |  best_response -152±0  equilibrium -28±0  random +706±0
+[Iteration 209]   actions: call=35% raise=31% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.869762  policy: 0.025384
+209/300 complete.
+Checkpoint saved at episode 210 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_210
+210/300 complete.211/300 complete.212/300 complete.213/300 complete.214/300 complete.215/300 complete.216/300 complete.217/300 complete.218/300 complete.219/300 complete.
+Checkpoint saved at episode 220 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_220
+220/300 complete.221/300 complete.222/300 complete.223/300 complete.
+----------------------------------------
+  episode      |  224
+  reward       |  -157.23856693013173
+----------------------------------------
+[Iteration 224] panel min -157.2  mean -28.3 mbb/h  |  best_response -157±0  equilibrium -28±0  random +695±0
+[Iteration 224]   actions: call=34% raise=32% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 2.002525  policy: 0.023870
+224/300 complete.225/300 complete.226/300 complete.227/300 complete.228/300 complete.229/300 complete.
+Checkpoint saved at episode 230 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_230
+230/300 complete.231/300 complete.232/300 complete.233/300 complete.234/300 complete.235/300 complete.236/300 complete.237/300 complete.238/300 complete.
+----------------------------------------
+  episode      |  239
+  reward       |  -152.22087470525793
+----------------------------------------
+[Iteration 239] panel min -152.2  mean -28.4 mbb/h  |  best_response -152±0  equilibrium -28±0  random +702±0
+[Iteration 239]   actions: call=36% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.896733  policy: 0.026065
+239/300 complete.
+Checkpoint saved at episode 240 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_240
+240/300 complete.241/300 complete.242/300 complete.243/300 complete.244/300 complete.245/300 complete.246/300 complete.247/300 complete.248/300 complete.249/300 complete.
+Checkpoint saved at episode 250 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_250
+250/300 complete.251/300 complete.252/300 complete.253/300 complete.
+----------------------------------------
+  episode      |  254
+  reward       |  -155.08142543106595
+----------------------------------------
+[Iteration 254] panel min -155.1  mean -29.5 mbb/h  |  best_response -155±0  equilibrium -29±0  random +704±0
+[Iteration 254]   actions: call=36% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.770495  policy: 0.027435
+254/300 complete.255/300 complete.256/300 complete.257/300 complete.258/300 complete.259/300 complete.
+Checkpoint saved at episode 260 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_260
+260/300 complete.261/300 complete.262/300 complete.263/300 complete.264/300 complete.265/300 complete.266/300 complete.267/300 complete.268/300 complete.
+----------------------------------------
+  episode      |  269
+  reward       |  -159.94273237732705
+----------------------------------------
+[Iteration 269] panel min -159.9  mean -29.6 mbb/h  |  best_response -160±0  equilibrium -30±0  random +707±0
+[Iteration 269]   actions: call=36% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.945924  policy: 0.025173
+269/300 complete.
+Checkpoint saved at episode 270 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_270
+270/300 complete.271/300 complete.272/300 complete.273/300 complete.274/300 complete.275/300 complete.276/300 complete.277/300 complete.278/300 complete.279/300 complete.
+Checkpoint saved at episode 280 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_280
+280/300 complete.281/300 complete.282/300 complete.283/300 complete.
+----------------------------------------
+  episode      |  284
+  reward       |  -161.07350603945648
+----------------------------------------
+[Iteration 284] panel min -161.1  mean -31.8 mbb/h  |  best_response -161±0  equilibrium -32±0  random +699±0
+[Iteration 284]   actions: call=36% raise=29% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.908599  policy: 0.028652
+284/300 complete.285/300 complete.286/300 complete.287/300 complete.288/300 complete.289/300 complete.
+Checkpoint saved at episode 290 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/checkpoints\episode_290
+290/300 complete.291/300 complete.292/300 complete.293/300 complete.294/300 complete.295/300 complete.296/300 complete.297/300 complete.298/300 complete.
+----------------------------------------
+  episode      |  299
+  reward       |  -173.79927839462795
+----------------------------------------
+[Iteration 299] panel min -173.8  mean -31.7 mbb/h  |  best_response -174±0  equilibrium -32±0  random +704±0
+[Iteration 299]   actions: call=36% raise=30% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.706627  policy: 0.028567
+299/300 complete.
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\finalists\trial_8\seed_1044/fig.png
+=== finalist trial 8 seed 1044: final panel min -173.8 (mean -31.7) over 5000 deals
+trial 15 seed 1042: being trained by another process, skipping
+trial 15 seed 1043: being trained by another process, skipping
+trial 15 seed 1044: being trained by another process, skipping
+
+3 finalist run(s) still running in other processes or not done: [(15, 1042), (15, 1043), (15, 1044)]; the last process to finish picks the winner
+trial 29 seed 1042: already done, skipping
+trial 29 seed 1043: already done, skipping
+trial 29 seed 1044: already done, skipping
+trial 8 seed 1042: already done, skipping
+trial 8 seed 1043: already done, skipping
+trial 8 seed 1044: already done, skipping
+trial 15 seed 1042: already done, skipping
+trial 15 seed 1043: already done, skipping
+trial 15 seed 1044: already done, skipping
+
+Finalists (final panel min over seeds; configurations with failed seeds rank last):
+  trial  15:   -174.7 +/-  10.2 (sd over 3 seeds)  {"lr": 0.0029448989559409263, "batch_size": 1024, "layers": "128 128"}
+  trial  29:   -179.1 +/-  14.2 (sd over 3 seeds)  {"lr": 0.001123997891990446, "batch_size": 2048, "layers": "256 256"}
+  trial   8:   -186.9 +/-  17.3 (sd over 3 seeds)  {"lr": 0.0021420324600510345, "batch_size": 1024, "layers": "128 128"}
+
+winner: trial 15

@@ -1,0 +1,325 @@
+trial 9 seed 1042: being trained by another process, skipping
+trial 9 seed 1043: being trained by another process, skipping
+trial 9 seed 1044: being trained by another process, skipping
+
+=== finalist trial 27 (score -318.4), seed 1042: {"rl_learning_rate": 0.00025246730017827333, "sl_learning_rate": 1.4419968327580409e-05, "anticipatory_param": 0.03868400949181342, "reservoir_buffer_capacity": 515097, "q_replay_memory_size": 25893, "q_epsilon_start": 0.042922901292093064, "layers": "128 128", "train_every": 32, "opponent_update_every": 34927}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1301.1202348069849
+----------------------------------------
+[Episode 99999] avg policy: panel min -1301.1  mean -685.2 mbb/h  |  best_response -1301±0  equilibrium -685±0  random +354±0
+[Episode 99999] avg policy:   actions: call=22% raise=47% fold=21% check=10%  (21s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -805.0956942107628
+----------------------------------------
+[Episode 199999] avg policy: panel min -805.1  mean -341.6 mbb/h  |  best_response -805±0  equilibrium -342±0  random +1063±0
+[Episode 199999] avg policy:   actions: call=17% raise=59% fold=6% check=18%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -622.1434719757075
+----------------------------------------
+[Episode 299999] avg policy: panel min -622.1  mean -287.9 mbb/h  |  best_response -622±0  equilibrium -288±0  random +1048±0
+[Episode 299999] avg policy:   actions: call=25% raise=52% fold=7% check=17%  (0s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -561.6021841482574
+----------------------------------------
+[Episode 399999] avg policy: panel min -561.6  mean -253.6 mbb/h  |  best_response -562±0  equilibrium -254±0  random +1010±0
+[Episode 399999] avg policy:   actions: call=29% raise=47% fold=7% check=18%  (0s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -579.1112807680074
+----------------------------------------
+[Episode 499999] avg policy: panel min -579.1  mean -236.2 mbb/h  |  best_response -579±0  equilibrium -236±0  random +985±0
+[Episode 499999] avg policy:   actions: call=31% raise=44% fold=8% check=17%  (0s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -535.4564021860353
+----------------------------------------
+[Episode 599999] avg policy: panel min -535.5  mean -218.3 mbb/h  |  best_response -535±0  equilibrium -218±0  random +963±0
+[Episode 599999] avg policy:   actions: call=32% raise=43% fold=8% check=17%  (0s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -529.0862002396541
+----------------------------------------
+[Episode 699999] avg policy: panel min -529.1  mean -204.1 mbb/h  |  best_response -529±0  equilibrium -204±0  random +940±0
+[Episode 699999] avg policy:   actions: call=35% raise=41% fold=8% check=17%  (0s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -488.0746238324969
+----------------------------------------
+[Episode 799999] avg policy: panel min -488.1  mean -199.2 mbb/h  |  best_response -488±0  equilibrium -199±0  random +956±0
+[Episode 799999] avg policy:   actions: call=34% raise=41% fold=7% check=18%  (0s)
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -430.991163531208
+----------------------------------------
+[Episode 899999] avg policy: panel min -431.0  mean -188.3 mbb/h  |  best_response -431±0  equilibrium -188±0  random +953±0
+[Episode 899999] avg policy:   actions: call=36% raise=39% fold=7% check=18%  (0s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -401.2605272914896
+----------------------------------------
+[Episode 999999] avg policy: panel min -401.3  mean -185.4 mbb/h  |  best_response -401±0  equilibrium -185±0  random +958±0
+[Episode 999999] avg policy:   actions: call=35% raise=39% fold=7% check=19%  (0s)
+
+Checkpoint saved at episode 1000000 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_27\seed_1042/checkpoints\episode_1000000
+
+----------------------------------------
+  episode      |  1099999
+  reward       |  -393.3538981532466
+----------------------------------------
+[Episode 1099999] avg policy: panel min -393.4  mean -179.8 mbb/h  |  best_response -393±0  equilibrium -180±0  random +963±0
+[Episode 1099999] avg policy:   actions: call=36% raise=38% fold=7% check=19%  (0s)
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -371.46377004543916
+----------------------------------------
+[Episode 1199999] avg policy: panel min -371.5  mean -176.1 mbb/h  |  best_response -371±0  equilibrium -176±0  random +962±0
+[Episode 1199999] avg policy:   actions: call=36% raise=37% fold=7% check=20%  (0s)
+
+----------------------------------------
+  episode      |  1299999
+  reward       |  -362.897732124985
+----------------------------------------
+[Episode 1299999] avg policy: panel min -362.9  mean -169.4 mbb/h  |  best_response -363±0  equilibrium -169±0  random +961±0
+[Episode 1299999] avg policy:   actions: call=36% raise=37% fold=7% check=20%  (0s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -348.0584145081318
+----------------------------------------
+[Episode 1399999] avg policy: panel min -348.1  mean -167.7 mbb/h  |  best_response -348±0  equilibrium -168±0  random +957±0
+[Episode 1399999] avg policy:   actions: call=36% raise=36% fold=7% check=20%  (0s)
+
+----------------------------------------
+  episode      |  1499999
+  reward       |  -346.3355703973761
+----------------------------------------
+[Episode 1499999] avg policy: panel min -346.3  mean -164.2 mbb/h  |  best_response -346±0  equilibrium -164±0  random +958±0
+[Episode 1499999] avg policy:   actions: call=36% raise=36% fold=8% check=20%  (0s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -322.0136676027471
+----------------------------------------
+[Episode 1599999] avg policy: panel min -322.0  mean -158.5 mbb/h  |  best_response -322±0  equilibrium -159±0  random +953±0
+[Episode 1599999] avg policy:   actions: call=37% raise=35% fold=8% check=21%  (0s)
+
+----------------------------------------
+  episode      |  1699999
+  reward       |  -321.0583682051164
+----------------------------------------
+[Episode 1699999] avg policy: panel min -321.1  mean -156.6 mbb/h  |  best_response -321±0  equilibrium -157±0  random +954±0
+[Episode 1699999] avg policy:   actions: call=37% raise=35% fold=8% check=21%  (0s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -320.91412360699525
+----------------------------------------
+[Episode 1799999] avg policy: panel min -320.9  mean -155.1 mbb/h  |  best_response -321±0  equilibrium -155±0  random +959±0
+[Episode 1799999] avg policy:   actions: call=37% raise=34% fold=8% check=21%  (0s)
+
+----------------------------------------
+  episode      |  1899999
+  reward       |  -314.5079883023708
+----------------------------------------
+[Episode 1899999] avg policy: panel min -314.5  mean -149.8 mbb/h  |  best_response -315±0  equilibrium -150±0  random +944±0
+[Episode 1899999] avg policy:   actions: call=37% raise=34% fold=8% check=21%  (0s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -310.63116355662913
+----------------------------------------
+[Episode 1999999] avg policy: panel min -310.6  mean -150.3 mbb/h  |  best_response -311±0  equilibrium -150±0  random +956±0
+[Episode 1999999] avg policy:   actions: call=36% raise=34% fold=8% check=21%  (0s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_27\seed_1042/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_27\seed_1042/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_27\seed_1042/fig.png
+=== finalist trial 27 seed 1042: final panel min -310.6 (mean -150.3) over 5000 deals
+trial 27 seed 1043: being trained by another process, skipping
+trial 27 seed 1044: being trained by another process, skipping
+trial 24 seed 1042: being trained by another process, skipping
+
+=== finalist trial 24 (score -348.9), seed 1043: {"rl_learning_rate": 0.00032104910689298644, "sl_learning_rate": 6.48955895936618e-05, "anticipatory_param": 0.07066892163561657, "reservoir_buffer_capacity": 225892, "q_replay_memory_size": 40650, "q_epsilon_start": 0.027680889998980038, "layers": "512 512", "train_every": 64, "opponent_update_every": 71598}
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -811.3116035653059
+----------------------------------------
+[Episode 99999] avg policy: panel min -811.3  mean -309.5 mbb/h  |  best_response -811±0  equilibrium -310±0  random +1016±0
+[Episode 99999] avg policy:   actions: call=23% raise=53% fold=7% check=18%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -566.6428894723143
+----------------------------------------
+[Episode 199999] avg policy: panel min -566.6  mean -235.4 mbb/h  |  best_response -567±0  equilibrium -235±0  random +1021±0
+[Episode 199999] avg policy:   actions: call=29% raise=46% fold=7% check=17%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -515.7064727324032
+----------------------------------------
+[Episode 299999] avg policy: panel min -515.7  mean -212.3 mbb/h  |  best_response -516±0  equilibrium -212±0  random +1002±0
+[Episode 299999] avg policy:   actions: call=33% raise=42% fold=8% check=18%  (0s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -572.4372297880749
+----------------------------------------
+[Episode 399999] avg policy: panel min -572.4  mean -207.6 mbb/h  |  best_response -572±0  equilibrium -208±0  random +956±0
+[Episode 399999] avg policy:   actions: call=35% raise=40% fold=8% check=17%  (0s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -570.944471680864
+----------------------------------------
+[Episode 499999] avg policy: panel min -570.9  mean -183.4 mbb/h  |  best_response -571±0  equilibrium -183±0  random +937±0
+[Episode 499999] avg policy:   actions: call=35% raise=38% fold=8% check=19%  (0s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -514.3857657033677
+----------------------------------------
+[Episode 599999] avg policy: panel min -514.4  mean -170.5 mbb/h  |  best_response -514±0  equilibrium -170±0  random +909±0
+[Episode 599999] avg policy:   actions: call=35% raise=37% fold=9% check=20%  (0s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -468.9299714014591
+----------------------------------------
+[Episode 699999] avg policy: panel min -468.9  mean -152.1 mbb/h  |  best_response -469±0  equilibrium -152±0  random +883±0
+[Episode 699999] avg policy:   actions: call=37% raise=35% fold=9% check=20%  (0s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -374.80983542196435
+----------------------------------------
+[Episode 799999] avg policy: panel min -374.8  mean -145.2 mbb/h  |  best_response -375±0  equilibrium -145±0  random +907±0
+[Episode 799999] avg policy:   actions: call=36% raise=35% fold=9% check=20%  (0s)
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -351.9592934073208
+----------------------------------------
+[Episode 899999] avg policy: panel min -352.0  mean -133.8 mbb/h  |  best_response -352±0  equilibrium -134±0  random +900±0
+[Episode 899999] avg policy:   actions: call=37% raise=34% fold=9% check=20%  (0s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -315.4920134716406
+----------------------------------------
+[Episode 999999] avg policy: panel min -315.5  mean -128.2 mbb/h  |  best_response -315±0  equilibrium -128±0  random +892±0
+[Episode 999999] avg policy:   actions: call=38% raise=32% fold=9% check=21%  (0s)
+
+Checkpoint saved at episode 1000000 to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_24\seed_1043/checkpoints\episode_1000000
+
+----------------------------------------
+  episode      |  1099999
+  reward       |  -288.18965578650415
+----------------------------------------
+[Episode 1099999] avg policy: panel min -288.2  mean -125.4 mbb/h  |  best_response -288±0  equilibrium -125±0  random +901±0
+[Episode 1099999] avg policy:   actions: call=38% raise=32% fold=9% check=21%  (0s)
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -271.8738720953826
+----------------------------------------
+[Episode 1199999] avg policy: panel min -271.9  mean -117.7 mbb/h  |  best_response -272±0  equilibrium -118±0  random +904±0
+[Episode 1199999] avg policy:   actions: call=38% raise=32% fold=9% check=21%  (0s)
+
+----------------------------------------
+  episode      |  1299999
+  reward       |  -264.00509462818644
+----------------------------------------
+[Episode 1299999] avg policy: panel min -264.0  mean -109.7 mbb/h  |  best_response -264±0  equilibrium -110±0  random +913±0
+[Episode 1299999] avg policy:   actions: call=38% raise=31% fold=9% check=22%  (0s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -283.9837116812509
+----------------------------------------
+[Episode 1399999] avg policy: panel min -284.0  mean -110.2 mbb/h  |  best_response -284±0  equilibrium -110±0  random +895±0
+[Episode 1399999] avg policy:   actions: call=37% raise=31% fold=10% check=22%  (0s)
+
+----------------------------------------
+  episode      |  1499999
+  reward       |  -300.0097099274194
+----------------------------------------
+[Episode 1499999] avg policy: panel min -300.0  mean -102.7 mbb/h  |  best_response -300±0  equilibrium -103±0  random +900±0
+[Episode 1499999] avg policy:   actions: call=38% raise=31% fold=9% check=22%  (0s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -323.2965184383694
+----------------------------------------
+[Episode 1599999] avg policy: panel min -323.3  mean -102.0 mbb/h  |  best_response -323±0  equilibrium -102±0  random +900±0
+[Episode 1599999] avg policy:   actions: call=39% raise=30% fold=9% check=22%  (0s)
+
+----------------------------------------
+  episode      |  1699999
+  reward       |  -311.97643671234044
+----------------------------------------
+[Episode 1699999] avg policy: panel min -312.0  mean -102.9 mbb/h  |  best_response -312±0  equilibrium -103±0  random +915±0
+[Episode 1699999] avg policy:   actions: call=38% raise=31% fold=9% check=22%  (0s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -302.6930158468338
+----------------------------------------
+[Episode 1799999] avg policy: panel min -302.7  mean -96.9 mbb/h  |  best_response -303±0  equilibrium -97±0  random +913±0
+[Episode 1799999] avg policy:   actions: call=39% raise=30% fold=9% check=22%  (0s)
+
+----------------------------------------
+  episode      |  1899999
+  reward       |  -352.45672528002837
+----------------------------------------
+[Episode 1899999] avg policy: panel min -352.5  mean -95.8 mbb/h  |  best_response -352±0  equilibrium -96±0  random +893±0
+[Episode 1899999] avg policy:   actions: call=38% raise=30% fold=9% check=22%  (0s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -348.173867368747
+----------------------------------------
+[Episode 1999999] avg policy: panel min -348.2  mean -92.3 mbb/h  |  best_response -348±0  equilibrium -92±0  random +898±0
+[Episode 1999999] avg policy:   actions: call=38% raise=30% fold=9% check=22%  (0s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_24\seed_1043/
+
+Model saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_24\seed_1043/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_nfsp_v1\finalists\trial_24\seed_1043/fig.png
+=== finalist trial 24 seed 1043: final panel min -348.2 (mean -92.3) over 5000 deals
+trial 24 seed 1044: being trained by another process, skipping
+
+1 finalist run(s) still running in other processes or not done: [(24, 1044)]; the last process to finish picks the winner
+trial 9 seed 1042: already done, skipping
+trial 9 seed 1043: already done, skipping
+trial 9 seed 1044: already done, skipping
+trial 27 seed 1042: already done, skipping
+trial 27 seed 1043: already done, skipping
+trial 27 seed 1044: already done, skipping
+trial 24 seed 1042: already done, skipping
+trial 24 seed 1043: already done, skipping
+trial 24 seed 1044: already done, skipping
+
+Finalists (final panel min over seeds; configurations with failed seeds rank last):
+  trial  27:   -314.7 +/-  15.9 (sd over 3 seeds)  {"rl_learning_rate": 0.00025246730017827333, "sl_learning_rate": 1.4419968327580409e-05, "anticipatory_param": 0.03868400949181342, "reservoir_buffer_capacity": 515097, "q_replay_memory_size": 25893, "q_epsilon_start": 0.042922901292093064, "layers": "128 128", "train_every": 32, "opponent_update_every": 34927}
+  trial   9:   -343.0 +/-   9.4 (sd over 3 seeds)  {"rl_learning_rate": 0.0005185001831473947, "sl_learning_rate": 1.350192675756759e-05, "anticipatory_param": 0.0442501929827899, "reservoir_buffer_capacity": 256030, "q_replay_memory_size": 156957, "q_epsilon_start": 0.03290530425259887, "layers": "256 256", "train_every": 64, "opponent_update_every": 9675}
+  trial  24:   -381.1 +/-  34.7 (sd over 3 seeds)  {"rl_learning_rate": 0.00032104910689298644, "sl_learning_rate": 6.48955895936618e-05, "anticipatory_param": 0.07066892163561657, "reservoir_buffer_capacity": 225892, "q_replay_memory_size": 40650, "q_epsilon_start": 0.027680889998980038, "layers": "512 512", "train_every": 64, "opponent_update_every": 71598}
+
+winner: trial 27

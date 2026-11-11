@@ -1,0 +1,638 @@
+[I 2026-11-07 17:59:32,770] Using an existing study with name 'leduc_ppo_v1' instead of creating a new one.
+worker Cloud-3M0LKK4-29916: 0/30 trials finished
+
+=== trial 2: {"lr": 0.0006059478031424348, "update_every": 4096, "num_epochs": 2, "batch_size": 1024, "clip_range": 0.2477924957743116, "entropy_coef": 0.014417884738361402, "opponent_update_every": 10689}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -754.1660286953552
+----------------------------------------
+[Episode 49999] panel min -754.2  mean -365.3 mbb/h  |  best_response -754±0  equilibrium -365±0  random +958±0
+[Episode 49999]   actions: call=44% raise=42% fold=0% check=14%  (23s)
+  updates: 26 | policy: -0.00033 | value: 9.62432 | entropy: 0.4345 | approx_kl: 0.00194
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -735.2192460062932
+----------------------------------------
+[Episode 99999] panel min -735.2  mean -286.2 mbb/h  |  best_response -735±0  equilibrium -286±0  random +884±0
+[Episode 99999]   actions: call=56% raise=28% fold=0% check=15%  (0s)
+  updates: 55 | policy: -0.00080 | value: 7.83796 | entropy: 0.2882 | approx_kl: 0.00413
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -765.9736021666722
+----------------------------------------
+[Episode 149999] panel min -766.0  mean -289.2 mbb/h  |  best_response -766±0  equilibrium -289±0  random +896±0
+[Episode 149999]   actions: call=55% raise=30% fold=0% check=14%  (0s)
+  updates: 84 | policy: -0.00088 | value: 8.33806 | entropy: 0.2458 | approx_kl: 0.00269
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -785.4434056510846
+----------------------------------------
+[Episode 199999] panel min -785.4  mean -298.7 mbb/h  |  best_response -785±0  equilibrium -299±0  random +902±0
+[Episode 199999]   actions: call=56% raise=30% fold=0% check=13%  (0s)
+  updates: 113 | policy: 0.00022 | value: 8.11037 | entropy: 0.1979 | approx_kl: 0.00541
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -791.141445904045
+----------------------------------------
+[Episode 249999] panel min -791.1  mean -294.7 mbb/h  |  best_response -791±0  equilibrium -295±0  random +937±0
+[Episode 249999]   actions: call=51% raise=35% fold=0% check=13%  (0s)
+  updates: 141 | policy: -0.00044 | value: 8.84169 | entropy: 0.1640 | approx_kl: 0.00092
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -553.3060282201658
+----------------------------------------
+[Episode 299999] panel min -553.3  mean -122.0 mbb/h  |  best_response -553±0  equilibrium -122±0  random +755±0
+[Episode 299999]   actions: call=35% raise=36% fold=15% check=14%  (0s)
+  updates: 166 | policy: -0.00138 | value: 5.41023 | entropy: 0.3360 | approx_kl: 0.00599
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -759.6594804624799
+----------------------------------------
+[Episode 349999] panel min -759.7  mean -94.4 mbb/h  |  best_response -760±0  equilibrium -94±0  random +904±0
+[Episode 349999]   actions: call=43% raise=31% fold=7% check=19%  (0s)
+  updates: 192 | policy: 0.00145 | value: 4.94143 | entropy: 0.1594 | approx_kl: 0.00884
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -793.2902577725945
+----------------------------------------
+[Episode 399999] panel min -793.3  mean -93.6 mbb/h  |  best_response -793±0  equilibrium -94±0  random +917±0
+[Episode 399999]   actions: call=43% raise=31% fold=7% check=19%  (0s)
+  updates: 220 | policy: 0.00021 | value: 4.96483 | entropy: 0.1006 | approx_kl: 0.00065
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -782.8717455350651
+----------------------------------------
+[Episode 449999] panel min -782.9  mean -102.4 mbb/h  |  best_response -783±0  equilibrium -102±0  random +909±0
+[Episode 449999]   actions: call=43% raise=30% fold=7% check=19%  (0s)
+  updates: 249 | policy: 0.00011 | value: 5.07068 | entropy: 0.0946 | approx_kl: 0.00048
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -1117.4187492160427
+----------------------------------------
+[Episode 499999] panel min -1117.4  mean -120.6 mbb/h  |  best_response -1117±0  equilibrium -121±0  random +824±0
+[Episode 499999]   actions: call=31% raise=40% fold=9% check=19%  (0s)
+  updates: 278 | policy: 0.00031 | value: 5.40976 | entropy: 0.0817 | approx_kl: 0.00057
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -1499.7784616312963
+----------------------------------------
+[Episode 549999] panel min -1499.8  mean -60.7 mbb/h  |  best_response -1500±0  equilibrium -61±0  random +751±0
+[Episode 549999]   actions: call=27% raise=35% fold=13% check=25%  (0s)
+  updates: 307 | policy: -0.00044 | value: 2.17532 | entropy: 0.0927 | approx_kl: 0.00198
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1299.4299084282943
+----------------------------------------
+[Episode 599999] panel min -1299.4  mean -73.0 mbb/h  |  best_response -1299±0  equilibrium -73±0  random +663±0
+[Episode 599999]   actions: call=20% raise=33% fold=18% check=30%  (0s)
+  updates: 335 | policy: -0.00112 | value: 2.29702 | entropy: 0.2006 | approx_kl: 0.01119
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -1281.1161337730073
+----------------------------------------
+[Episode 649999] panel min -1281.1  mean -68.2 mbb/h  |  best_response -1281±0  equilibrium -68±0  random +546±0
+[Episode 649999]   actions: call=8% raise=38% fold=26% check=29%  (0s)
+  updates: 355 | policy: 0.00031 | value: 2.58900 | entropy: 0.1371 | approx_kl: 0.00248
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -1331.1360708437637
+----------------------------------------
+[Episode 699999] panel min -1331.1  mean -67.6 mbb/h  |  best_response -1331±0  equilibrium -68±0  random +526±0
+[Episode 699999]   actions: call=3% raise=40% fold=29% check=28%  (0s)
+  updates: 374 | policy: 0.00034 | value: 2.56643 | entropy: 0.0759 | approx_kl: 0.00245
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -1297.889338993792
+----------------------------------------
+[Episode 749999] panel min -1297.9  mean -65.5 mbb/h  |  best_response -1298±0  equilibrium -65±0  random +530±0
+[Episode 749999]   actions: call=3% raise=40% fold=29% check=27%  (0s)
+  updates: 391 | policy: 0.00003 | value: 2.54135 | entropy: 0.0545 | approx_kl: 0.00143
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1269.2516348761712
+----------------------------------------
+=== trial 2 pruned after 16 evaluation(s) (episode 799999, panel min -1269.3)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_2/
+[I 2026-11-07 18:12:07,302] Trial 2 pruned. 
+
+=== trial 6: {"lr": 9.80386675137873e-05, "update_every": 8192, "num_epochs": 5, "batch_size": 128, "clip_range": 0.29240822289448404, "entropy_coef": 0.0011262344389164345, "opponent_update_every": 11648}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -770.7782457350843
+----------------------------------------
+[Episode 49999] panel min -770.8  mean -390.4 mbb/h  |  best_response -771±0  equilibrium -390±0  random +1002±0
+[Episode 49999]   actions: call=41% raise=44% fold=1% check=15%  (0s)
+  updates: 13 | policy: -0.00268 | value: 13.16522 | entropy: 0.3950 | approx_kl: 0.00528
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -549.9880867064572
+----------------------------------------
+[Episode 99999] panel min -550.0  mean -177.6 mbb/h  |  best_response -550±0  equilibrium -178±0  random +825±0
+[Episode 99999]   actions: call=43% raise=35% fold=11% check=11%  (0s)
+  updates: 27 | policy: -0.00267 | value: 7.36336 | entropy: 0.4620 | approx_kl: 0.00647
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -683.3249842171446
+----------------------------------------
+[Episode 149999] panel min -683.3  mean -104.6 mbb/h  |  best_response -683±0  equilibrium -105±0  random +874±0
+[Episode 149999]   actions: call=42% raise=30% fold=8% check=20%  (0s)
+  updates: 40 | policy: -0.00136 | value: 5.24232 | entropy: 0.2499 | approx_kl: 0.00190
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1412.1600399081663
+----------------------------------------
+[Episode 199999] panel min -1412.2  mean -40.3 mbb/h  |  best_response -1412±0  equilibrium -40±0  random +737±0
+[Episode 199999]   actions: call=30% raise=37% fold=13% check=21%  (0s)
+  updates: 54 | policy: -0.00178 | value: 2.84269 | entropy: 0.1585 | approx_kl: 0.00062
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1281.4964780632517
+----------------------------------------
+[Episode 249999] panel min -1281.5  mean -32.1 mbb/h  |  best_response -1281±0  equilibrium -32±0  random +743±0
+[Episode 249999]   actions: call=25% raise=37% fold=15% check=23%  (0s)
+  updates: 68 | policy: -0.00017 | value: 2.20043 | entropy: 0.1198 | approx_kl: 0.00145
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1214.2089977890191
+----------------------------------------
+=== trial 6 pruned after 6 evaluation(s) (episode 299999, panel min -1214.2)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_6/
+[I 2026-11-07 18:17:36,176] Trial 6 pruned. 
+
+=== trial 10: {"lr": 0.0008492291561235842, "update_every": 16384, "num_epochs": 4, "batch_size": 1024, "clip_range": 0.25363141844778414, "entropy_coef": 0.00850031407986063, "opponent_update_every": 47843}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1218.4110453060928
+----------------------------------------
+[Episode 49999] panel min -1218.4  mean -400.4 mbb/h  |  best_response -1218±0  equilibrium -400±0  random +1121±0
+[Episode 49999]   actions: call=22% raise=54% fold=2% check=22%  (0s)
+  updates: 4 | policy: -0.01990 | value: 7.30928 | entropy: 0.6704 | approx_kl: 0.02970
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -481.84758590564826
+----------------------------------------
+[Episode 99999] panel min -481.8  mean -225.2 mbb/h  |  best_response -482±0  equilibrium -225±0  random +1052±0
+[Episode 99999]   actions: call=30% raise=48% fold=8% check=14%  (0s)
+  updates: 12 | policy: -0.00357 | value: 13.71991 | entropy: 0.3687 | approx_kl: 0.00855
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1027.3086015853296
+----------------------------------------
+[Episode 149999] panel min -1027.3  mean -70.8 mbb/h  |  best_response -1027±0  equilibrium -71±0  random +966±0
+[Episode 149999]   actions: call=34% raise=43% fold=9% check=14%  (0s)
+  updates: 19 | policy: -0.00170 | value: 7.17032 | entropy: 0.2090 | approx_kl: 0.00345
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1003.9191419541187
+----------------------------------------
+[Episode 199999] panel min -1003.9  mean -24.1 mbb/h  |  best_response -1004±0  equilibrium -24±0  random +872±0
+[Episode 199999]   actions: call=31% raise=43% fold=10% check=16%  (0s)
+  updates: 27 | policy: -0.00062 | value: 3.83155 | entropy: 0.1285 | approx_kl: 0.00309
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1254.0282781021915
+----------------------------------------
+[Episode 249999] panel min -1254.0  mean -17.7 mbb/h  |  best_response -1254±0  equilibrium -18±0  random +673±0
+[Episode 249999]   actions: call=23% raise=44% fold=16% check=16%  (0s)
+  updates: 34 | policy: -0.00127 | value: 3.21037 | entropy: 0.1736 | approx_kl: 0.00517
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1495.595830796236
+----------------------------------------
+=== trial 10 pruned after 6 evaluation(s) (episode 299999, panel min -1495.6)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_10/
+[I 2026-11-07 18:22:31,665] Trial 10 pruned. 
+
+=== trial 14: {"lr": 0.00011600696201979147, "update_every": 2048, "num_epochs": 5, "batch_size": 128, "clip_range": 0.10905355341743506, "entropy_coef": 0.019226659495022433, "opponent_update_every": 41062}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1318.36243790283
+----------------------------------------
+[Episode 49999] panel min -1318.4  mean -390.8 mbb/h  |  best_response -1318±0  equilibrium -391±0  random +1308±0
+[Episode 49999]   actions: call=14% raise=69% fold=0% check=17%  (0s)
+  updates: 43 | policy: -0.00059 | value: 19.74656 | entropy: 0.2386 | approx_kl: 0.00093
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -724.4019784637769
+----------------------------------------
+[Episode 99999] panel min -724.4  mean -329.1 mbb/h  |  best_response -724±0  equilibrium -329±0  random +956±0
+[Episode 99999]   actions: call=38% raise=46% fold=3% check=14%  (0s)
+  updates: 112 | policy: 0.00021 | value: 10.58528 | entropy: 0.3372 | approx_kl: 0.00423
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1042.3348271843695
+----------------------------------------
+[Episode 149999] panel min -1042.3  mean -72.3 mbb/h  |  best_response -1042±0  equilibrium -72±0  random +714±0
+[Episode 149999]   actions: call=31% raise=39% fold=16% check=15%  (0s)
+  updates: 163 | policy: 0.00040 | value: 5.67549 | entropy: 0.3953 | approx_kl: 0.00254
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1044.1221083575354
+----------------------------------------
+[Episode 199999] panel min -1044.1  mean -46.0 mbb/h  |  best_response -1044±0  equilibrium -46±0  random +831±0
+[Episode 199999]   actions: call=29% raise=38% fold=13% check=20%  (0s)
+  updates: 213 | policy: -0.00004 | value: 3.59197 | entropy: 0.2656 | approx_kl: 0.00092
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1161.3964067366403
+----------------------------------------
+[Episode 249999] panel min -1161.4  mean -34.4 mbb/h  |  best_response -1161±0  equilibrium -34±0  random +629±0
+[Episode 249999]   actions: call=17% raise=40% fold=21% check=22%  (0s)
+  updates: 261 | policy: -0.00006 | value: 2.57400 | entropy: 0.1960 | approx_kl: 0.00287
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1191.0156840178424
+----------------------------------------
+=== trial 14 pruned after 6 evaluation(s) (episode 299999, panel min -1191.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_14/
+[I 2026-11-07 18:27:46,879] Trial 14 pruned. 
+
+=== trial 18: {"lr": 6.834767918201967e-05, "update_every": 8192, "num_epochs": 4, "batch_size": 1024, "clip_range": 0.20609070606516003, "entropy_coef": 0.004362299397560209, "opponent_update_every": 7541}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1097.5203756352453
+----------------------------------------
+[Episode 49999] panel min -1097.5  mean -512.9 mbb/h  |  best_response -1098±0  equilibrium -513±0  random +630±0
+[Episode 49999]   actions: call=31% raise=43% fold=9% check=17%  (0s)
+  updates: 9 | policy: -0.00737 | value: 10.36881 | entropy: 0.8973 | approx_kl: 0.00295
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -915.7369293054134
+----------------------------------------
+[Episode 99999] panel min -915.7  mean -421.9 mbb/h  |  best_response -916±0  equilibrium -422±0  random +953±0
+[Episode 99999]   actions: call=35% raise=46% fold=1% check=17%  (0s)
+  updates: 23 | policy: -0.00139 | value: 12.99548 | entropy: 0.6246 | approx_kl: 0.00058
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -741.2876213412129
+----------------------------------------
+[Episode 149999] panel min -741.3  mean -364.3 mbb/h  |  best_response -741±0  equilibrium -364±0  random +918±0
+[Episode 149999]   actions: call=46% raise=38% fold=1% check=15%  (0s)
+  updates: 38 | policy: -0.00119 | value: 9.87164 | entropy: 0.5015 | approx_kl: 0.00075
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -736.484006998057
+----------------------------------------
+[Episode 199999] panel min -736.5  mean -339.9 mbb/h  |  best_response -736±0  equilibrium -340±0  random +908±0
+[Episode 199999]   actions: call=50% raise=36% fold=0% check=14%  (0s)
+  updates: 54 | policy: -0.00083 | value: 9.61043 | entropy: 0.4086 | approx_kl: 0.00128
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -737.1763060828655
+----------------------------------------
+[Episode 249999] panel min -737.2  mean -323.8 mbb/h  |  best_response -737±0  equilibrium -324±0  random +899±0
+[Episode 249999]   actions: call=53% raise=33% fold=0% check=13%  (0s)
+  updates: 68 | policy: -0.00048 | value: 8.97048 | entropy: 0.3667 | approx_kl: 0.00067
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -744.4351408907377
+----------------------------------------
+[Episode 299999] panel min -744.4  mean -304.9 mbb/h  |  best_response -744±0  equilibrium -305±0  random +876±0
+[Episode 299999]   actions: call=57% raise=28% fold=0% check=14%  (0s)
+  updates: 83 | policy: -0.00111 | value: 7.99983 | entropy: 0.3278 | approx_kl: 0.00146
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -751.6696516136061
+----------------------------------------
+[Episode 349999] panel min -751.7  mean -301.5 mbb/h  |  best_response -752±0  equilibrium -301±0  random +882±0
+[Episode 349999]   actions: call=57% raise=29% fold=0% check=14%  (0s)
+  updates: 98 | policy: -0.00030 | value: 8.70006 | entropy: 0.2815 | approx_kl: 0.00063
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -758.5184485855485
+----------------------------------------
+[Episode 399999] panel min -758.5  mean -295.3 mbb/h  |  best_response -759±0  equilibrium -295±0  random +873±0
+[Episode 399999]   actions: call=59% raise=27% fold=0% check=14%  (0s)
+  updates: 112 | policy: -0.00033 | value: 8.29830 | entropy: 0.2535 | approx_kl: 0.00038
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -761.2465211411286
+----------------------------------------
+[Episode 449999] panel min -761.2  mean -300.6 mbb/h  |  best_response -761±0  equilibrium -301±0  random +893±0
+[Episode 449999]   actions: call=57% raise=30% fold=0% check=14%  (0s)
+  updates: 127 | policy: -0.00011 | value: 8.61237 | entropy: 0.2405 | approx_kl: 0.00024
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -767.0959800711645
+----------------------------------------
+[Episode 499999] panel min -767.1  mean -297.2 mbb/h  |  best_response -767±0  equilibrium -297±0  random +881±0
+[Episode 499999]   actions: call=59% raise=27% fold=0% check=14%  (0s)
+  updates: 141 | policy: 0.00003 | value: 8.09747 | entropy: 0.2224 | approx_kl: 0.00016
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -777.8646877085496
+----------------------------------------
+[Episode 549999] panel min -777.9  mean -292.3 mbb/h  |  best_response -778±0  equilibrium -292±0  random +883±0
+[Episode 549999]   actions: call=58% raise=28% fold=0% check=14%  (0s)
+  updates: 156 | policy: 0.00023 | value: 8.41283 | entropy: 0.2032 | approx_kl: 0.00272
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -775.7761171882285
+----------------------------------------
+[Episode 599999] panel min -775.8  mean -295.6 mbb/h  |  best_response -776±0  equilibrium -296±0  random +895±0
+[Episode 599999]   actions: call=57% raise=29% fold=0% check=14%  (0s)
+  updates: 170 | policy: -0.00041 | value: 8.15678 | entropy: 0.1985 | approx_kl: 0.00101
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -774.9130364956802
+----------------------------------------
+[Episode 649999] panel min -774.9  mean -299.5 mbb/h  |  best_response -775±0  equilibrium -300±0  random +899±0
+[Episode 649999]   actions: call=57% raise=29% fold=0% check=13%  (0s)
+  updates: 184 | policy: -0.00015 | value: 8.29541 | entropy: 0.1823 | approx_kl: 0.00077
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -777.0770103717798
+----------------------------------------
+[Episode 699999] panel min -777.1  mean -296.0 mbb/h  |  best_response -777±0  equilibrium -296±0  random +904±0
+[Episode 699999]   actions: call=57% raise=30% fold=0% check=13%  (0s)
+  updates: 199 | policy: 0.00047 | value: 8.42924 | entropy: 0.1651 | approx_kl: 0.00130
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -781.9498680577886
+----------------------------------------
+[Episode 749999] panel min -781.9  mean -293.4 mbb/h  |  best_response -782±0  equilibrium -293±0  random +900±0
+[Episode 749999]   actions: call=57% raise=29% fold=0% check=14%  (0s)
+  updates: 213 | policy: -0.00007 | value: 8.58175 | entropy: 0.1723 | approx_kl: 0.00055
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -784.4702606892464
+----------------------------------------
+=== trial 18 pruned after 16 evaluation(s) (episode 799999, panel min -784.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_18/
+[I 2026-11-07 18:41:32,088] Trial 18 pruned. 
+
+=== trial 24: {"lr": 0.00012072806281186651, "update_every": 8192, "num_epochs": 6, "batch_size": 1024, "clip_range": 0.22458781852773624, "entropy_coef": 0.004393483717890632, "opponent_update_every": 13808}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -939.0476318865402
+----------------------------------------
+[Episode 49999] panel min -939.0  mean -420.9 mbb/h  |  best_response -939±0  equilibrium -421±0  random +1011±0
+[Episode 49999]   actions: call=32% raise=50% fold=1% check=17%  (0s)
+  updates: 11 | policy: -0.00537 | value: 13.48082 | entropy: 0.5906 | approx_kl: 0.00514
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -758.8735391764341
+----------------------------------------
+[Episode 99999] panel min -758.9  mean -332.3 mbb/h  |  best_response -759±0  equilibrium -332±0  random +907±0
+[Episode 99999]   actions: call=52% raise=35% fold=0% check=12%  (0s)
+  updates: 27 | policy: -0.00120 | value: 9.28676 | entropy: 0.3670 | approx_kl: 0.00201
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -754.2767448868874
+----------------------------------------
+[Episode 149999] panel min -754.3  mean -297.5 mbb/h  |  best_response -754±0  equilibrium -298±0  random +877±0
+[Episode 149999]   actions: call=57% raise=28% fold=0% check=15%  (0s)
+  updates: 41 | policy: -0.00141 | value: 8.13133 | entropy: 0.3113 | approx_kl: 0.00155
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -764.7813636499255
+----------------------------------------
+[Episode 199999] panel min -764.8  mean -294.0 mbb/h  |  best_response -765±0  equilibrium -294±0  random +892±0
+[Episode 199999]   actions: call=57% raise=29% fold=0% check=14%  (0s)
+  updates: 56 | policy: -0.00067 | value: 7.88313 | entropy: 0.2406 | approx_kl: 0.00080
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -783.07307537404
+----------------------------------------
+[Episode 249999] panel min -783.1  mean -295.3 mbb/h  |  best_response -783±0  equilibrium -295±0  random +924±0
+[Episode 249999]   actions: call=54% raise=33% fold=0% check=14%  (0s)
+  updates: 70 | policy: -0.00046 | value: 8.37004 | entropy: 0.1910 | approx_kl: 0.00159
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -777.5872448180648
+----------------------------------------
+[Episode 299999] panel min -777.6  mean -285.2 mbb/h  |  best_response -778±0  equilibrium -285±0  random +898±0
+[Episode 299999]   actions: call=58% raise=28% fold=0% check=14%  (0s)
+  updates: 84 | policy: -0.00067 | value: 8.39870 | entropy: 0.1723 | approx_kl: 0.00170
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -785.9888949376343
+----------------------------------------
+[Episode 349999] panel min -786.0  mean -291.9 mbb/h  |  best_response -786±0  equilibrium -292±0  random +930±0
+[Episode 349999]   actions: call=54% raise=32% fold=0% check=14%  (0s)
+  updates: 99 | policy: -0.00043 | value: 8.86379 | entropy: 0.1424 | approx_kl: 0.00079
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -800.7555858963004
+----------------------------------------
+[Episode 399999] panel min -800.8  mean -289.5 mbb/h  |  best_response -801±0  equilibrium -290±0  random +930±0
+[Episode 399999]   actions: call=55% raise=31% fold=0% check=14%  (0s)
+  updates: 113 | policy: -0.00038 | value: 9.13446 | entropy: 0.1275 | approx_kl: 0.00101
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -782.9137822495534
+----------------------------------------
+[Episode 449999] panel min -782.9  mean -271.7 mbb/h  |  best_response -783±0  equilibrium -272±0  random +869±0
+[Episode 449999]   actions: call=62% raise=23% fold=0% check=15%  (0s)
+  updates: 128 | policy: -0.00050 | value: 7.92196 | entropy: 0.1298 | approx_kl: 0.00113
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -822.8170680390222
+----------------------------------------
+[Episode 499999] panel min -822.8  mean -282.7 mbb/h  |  best_response -823±0  equilibrium -283±0  random +896±0
+[Episode 499999]   actions: call=57% raise=28% fold=0% check=14%  (0s)
+  updates: 142 | policy: -0.00024 | value: 7.98435 | entropy: 0.1124 | approx_kl: 0.00074
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -797.748092099006
+----------------------------------------
+[Episode 549999] panel min -797.7  mean -289.9 mbb/h  |  best_response -798±0  equilibrium -290±0  random +939±0
+[Episode 549999]   actions: call=54% raise=32% fold=0% check=14%  (0s)
+  updates: 156 | policy: -0.00002 | value: 8.85514 | entropy: 0.0949 | approx_kl: 0.00035
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -812.9235667440171
+----------------------------------------
+[Episode 599999] panel min -812.9  mean -289.9 mbb/h  |  best_response -813±0  equilibrium -290±0  random +944±0
+[Episode 599999]   actions: call=53% raise=33% fold=0% check=14%  (0s)
+  updates: 170 | policy: -0.00028 | value: 8.98455 | entropy: 0.0979 | approx_kl: 0.00068
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -831.3751385990113
+----------------------------------------
+[Episode 649999] panel min -831.4  mean -287.5 mbb/h  |  best_response -831±0  equilibrium -287±0  random +938±0
+[Episode 649999]   actions: call=54% raise=33% fold=0% check=13%  (0s)
+  updates: 185 | policy: 0.00011 | value: 9.13939 | entropy: 0.0982 | approx_kl: 0.00026
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -804.006054865177
+----------------------------------------
+[Episode 699999] panel min -804.0  mean -278.6 mbb/h  |  best_response -804±0  equilibrium -279±0  random +923±0
+[Episode 699999]   actions: call=54% raise=32% fold=1% check=13%  (0s)
+  updates: 199 | policy: 0.00004 | value: 8.94653 | entropy: 0.1220 | approx_kl: 0.00043
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -512.3618230832374
+----------------------------------------
+[Episode 749999] panel min -512.4  mean -123.8 mbb/h  |  best_response -512±0  equilibrium -124±0  random +758±0
+[Episode 749999]   actions: call=47% raise=28% fold=12% check=12%  (0s)
+  updates: 212 | policy: -0.00175 | value: 6.26570 | entropy: 0.2979 | approx_kl: 0.00476
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -627.0939525713472
+----------------------------------------
+[Episode 799999] panel min -627.1  mean -89.5 mbb/h  |  best_response -627±0  equilibrium -89±0  random +857±0
+[Episode 799999]   actions: call=47% raise=27% fold=7% check=19%  (0s)
+  updates: 224 | policy: -0.00138 | value: 5.06040 | entropy: 0.2019 | approx_kl: 0.00184
+
+----------------------------------------
+  episode      |  849999
+  reward       |  -709.7267349592075
+----------------------------------------
+[Episode 849999] panel min -709.7  mean -90.8 mbb/h  |  best_response -710±0  equilibrium -91±0  random +873±0
+[Episode 849999]   actions: call=46% raise=28% fold=7% check=20%  (0s)
+  updates: 237 | policy: -0.00061 | value: 4.77385 | entropy: 0.1400 | approx_kl: 0.00047
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -797.5813211442261
+----------------------------------------
+[Episode 899999] panel min -797.6  mean -93.9 mbb/h  |  best_response -798±0  equilibrium -94±0  random +890±0
+[Episode 899999]   actions: call=45% raise=29% fold=7% check=19%  (0s)
+  updates: 252 | policy: -0.00036 | value: 4.92094 | entropy: 0.1010 | approx_kl: 0.00098
+
+----------------------------------------
+  episode      |  949999
+  reward       |  -1046.160374775512
+----------------------------------------
+[Episode 949999] panel min -1046.2  mean -99.1 mbb/h  |  best_response -1046±0  equilibrium -99±0  random +819±0
+[Episode 949999]   actions: call=38% raise=33% fold=10% check=19%  (0s)
+  updates: 266 | policy: -0.00098 | value: 4.83251 | entropy: 0.1057 | approx_kl: 0.00058
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1315.695666386742
+----------------------------------------
+[Episode 999999] panel min -1315.7  mean -46.8 mbb/h  |  best_response -1316±0  equilibrium -47±0  random +759±0
+[Episode 999999]   actions: call=28% raise=39% fold=12% check=21%  (0s)
+  updates: 280 | policy: -0.00186 | value: 3.09909 | entropy: 0.1107 | approx_kl: 0.00303
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_24/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_24/fig.png
+=== trial 24 finished: score -1053.1
+[I 2026-11-07 18:58:28,294] Trial 24 finished with value: -1053.1457874354935 and parameters: {'lr': 0.00012072806281186651, 'update_every': 8192, 'num_epochs': 6, 'batch_size': 1024, 'clip_range': 0.22458781852773624, 'entropy_coef': 0.004393483717890632, 'opponent_update_every': 13808}. Best is trial 1 with value: -781.1201433492297.
+
+=== trial 28: {"lr": 0.00010703969398414817, "update_every": 8192, "num_epochs": 7, "batch_size": 128, "clip_range": 0.23176763851348411, "entropy_coef": 0.0051313220933770914, "opponent_update_every": 11355}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -583.462248188687
+----------------------------------------
+[Episode 49999] panel min -583.5  mean -283.8 mbb/h  |  best_response -583±0  equilibrium -284±0  random +957±0
+[Episode 49999]   actions: call=34% raise=45% fold=7% check=14%  (0s)
+  updates: 12 | policy: -0.00702 | value: 12.14822 | entropy: 0.5194 | approx_kl: 0.01670
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -970.2895863826634
+----------------------------------------
+[Episode 99999] panel min -970.3  mean -67.7 mbb/h  |  best_response -970±0  equilibrium -68±0  random +842±0
+[Episode 99999]   actions: call=38% raise=36% fold=10% check=16%  (0s)
+  updates: 26 | policy: -0.00286 | value: 4.54306 | entropy: 0.3081 | approx_kl: 0.00282
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1020.4242589931465
+----------------------------------------
+[Episode 149999] panel min -1020.4  mean -52.6 mbb/h  |  best_response -1020±0  equilibrium -53±0  random +824±0
+[Episode 149999]   actions: call=38% raise=35% fold=10% check=17%  (0s)
+  updates: 40 | policy: -0.00112 | value: 4.98939 | entropy: 0.2155 | approx_kl: 0.00173
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1007.5923287054644
+----------------------------------------
+[Episode 199999] panel min -1007.6  mean -65.1 mbb/h  |  best_response -1008±0  equilibrium -65±0  random +779±0
+[Episode 199999]   actions: call=40% raise=30% fold=10% check=20%  (0s)
+  updates: 55 | policy: -0.00426 | value: 3.24142 | entropy: 0.2632 | approx_kl: 0.00301
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1349.5889875837279
+----------------------------------------
+[Episode 249999] panel min -1349.6  mean -36.2 mbb/h  |  best_response -1350±0  equilibrium -36±0  random +749±0
+[Episode 249999]   actions: call=41% raise=27% fold=11% check=20%  (0s)
+  updates: 69 | policy: -0.00365 | value: 2.96129 | entropy: 0.2215 | approx_kl: 0.00259
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1032.7259095259094
+----------------------------------------
+=== trial 28 pruned after 6 evaluation(s) (episode 299999, panel min -1032.7)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_ppo_v1\trials\trial_28/
+[I 2026-11-07 19:03:59,583] Trial 28 pruned. 
+worker done
+[I 2026-11-10 14:25:06,080] Using an existing study with name 'leduc_ppo_v1' instead of creating a new one.
+study has 30 finished and 0 running trials (target 30); nothing to do

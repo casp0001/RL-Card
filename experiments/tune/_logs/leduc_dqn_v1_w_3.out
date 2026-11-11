@@ -1,0 +1,1097 @@
+[I 2026-11-08 01:28:21,886] Using an existing study with name 'leduc_dqn_v1' instead of creating a new one.
+worker Cloud-3M0LKK4-50332: 0/30 trials finished
+
+=== trial 2: {"lr": 0.0006738414906436974, "batch_size": 64, "mlp_layers": "256 256", "epsilon_decay_steps": 1286810, "epsilon_end": 0.11521333861356717, "replay_memory_size": 489064, "opponent_update_every": 1957, "update_target_every": 2275}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1500.0000000000002
+----------------------------------------
+
+[Episode 49999] panel min -1500.0  mean -327.5 mbb/h  |  best_response -1500±0  equilibrium -328±0  random +1429±0
+
+[Episode 49999]   actions: call=7% raise=73% fold=0% check=20%  (21s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1533.3333333333335
+----------------------------------------
+
+[Episode 99999] panel min -1533.3  mean -331.0 mbb/h  |  best_response -1533±0  equilibrium -331±0  random +1421±0
+
+[Episode 99999]   actions: call=7% raise=71% fold=0% check=23%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1600.0000000000002
+----------------------------------------
+
+[Episode 149999] panel min -1600.0  mean -488.9 mbb/h  |  best_response -1600±0  equilibrium -489±0  random +1432±0
+
+[Episode 149999]   actions: call=14% raise=69% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1600.0000000000002
+----------------------------------------
+
+[Episode 199999] panel min -1600.0  mean -488.9 mbb/h  |  best_response -1600±0  equilibrium -489±0  random +1432±0
+
+[Episode 199999]   actions: call=14% raise=69% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1600.0000000000002
+----------------------------------------
+
+[Episode 249999] panel min -1600.0  mean -488.9 mbb/h  |  best_response -1600±0  equilibrium -489±0  random +1432±0
+
+[Episode 249999]   actions: call=14% raise=69% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1600.0000000000002
+----------------------------------------
+
+[Episode 299999] panel min -1600.0  mean -488.9 mbb/h  |  best_response -1600±0  equilibrium -489±0  random +1432±0
+
+[Episode 299999]   actions: call=14% raise=69% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -1633.3333333333335
+----------------------------------------
+
+[Episode 349999] panel min -1633.3  mean -497.7 mbb/h  |  best_response -1633±0  equilibrium -498±0  random +1424±0
+
+[Episode 349999]   actions: call=14% raise=68% fold=0% check=19%  (0s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1650.0000000000002
+----------------------------------------
+
+[Episode 399999] panel min -1650.0  mean -473.8 mbb/h  |  best_response -1650±0  equilibrium -474±0  random +1419±0
+
+[Episode 399999]   actions: call=14% raise=67% fold=0% check=19%  (0s)
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -1733.3333333333337
+----------------------------------------
+
+[Episode 449999] panel min -1733.3  mean -540.3 mbb/h  |  best_response -1733±0  equilibrium -540±0  random +1374±0
+
+[Episode 449999]   actions: call=21% raise=61% fold=2% check=16%  (0s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -1716.6666666666667
+----------------------------------------
+
+[Episode 499999] panel min -1716.7  mean -542.1 mbb/h  |  best_response -1717±0  equilibrium -542±0  random +1377±0
+
+[Episode 499999]   actions: call=21% raise=59% fold=2% check=18%  (0s)
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -666.6666666666667
+----------------------------------------
+
+[Episode 549999] panel min -666.7  mean -270.4 mbb/h  |  best_response -667±0  equilibrium -270±0  random +1273±0
+
+[Episode 549999]   actions: call=21% raise=54% fold=7% check=18%  (0s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -666.6666666666667
+----------------------------------------
+
+[Episode 599999] panel min -666.7  mean -268.6 mbb/h  |  best_response -667±0  equilibrium -269±0  random +1265±0
+
+[Episode 599999]   actions: call=21% raise=55% fold=7% check=16%  (0s)
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 649999] panel min -566.7  mean -264.5 mbb/h  |  best_response -567±0  equilibrium -265±0  random +1170±0
+
+[Episode 649999]   actions: call=28% raise=47% fold=7% check=19%  (0s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -583.3333333333334
+----------------------------------------
+
+[Episode 699999] panel min -583.3  mean -253.4 mbb/h  |  best_response -583±0  equilibrium -253±0  random +1173±0
+
+[Episode 699999]   actions: call=25% raise=45% fold=8% check=22%  (0s)
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -516.6666666666666
+----------------------------------------
+
+[Episode 749999] panel min -516.7  mean -99.0 mbb/h  |  best_response -517±0  equilibrium -99±0  random +1027±0
+
+[Episode 749999]   actions: call=39% raise=31% fold=8% check=22%  (0s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1333.3333333333335
+----------------------------------------
+=== trial 2 pruned after 16 evaluation(s) (episode 799999, panel min -1333.3)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_2/
+[I 2026-11-08 02:45:46,475] Trial 2 pruned. 
+
+=== trial 4: {"lr": 0.0010177519511201, "batch_size": 256, "mlp_layers": "256 256", "epsilon_decay_steps": 1237676, "epsilon_end": 0.014467110097321309, "replay_memory_size": 766700, "opponent_update_every": 22305, "update_target_every": 1243}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1633.3333333333335
+----------------------------------------
+
+[Episode 49999] panel min -1633.3  mean -326.0 mbb/h  |  best_response -1633±0  equilibrium -326±0  random +1403±0
+
+[Episode 49999]   actions: call=11% raise=67% fold=0% check=22%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1566.666666666667
+----------------------------------------
+
+[Episode 99999] panel min -1566.7  mean -319.3 mbb/h  |  best_response -1567±0  equilibrium -319±0  random +1413±0
+
+[Episode 99999]   actions: call=6% raise=70% fold=0% check=25%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1500.0000000000002
+----------------------------------------
+
+[Episode 149999] panel min -1500.0  mean -327.5 mbb/h  |  best_response -1500±0  equilibrium -328±0  random +1429±0
+
+[Episode 149999]   actions: call=7% raise=73% fold=0% check=20%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1466.6666666666667
+----------------------------------------
+
+[Episode 199999] panel min -1466.7  mean -347.6 mbb/h  |  best_response -1467±0  equilibrium -348±0  random +1422±0
+
+[Episode 199999]   actions: call=8% raise=75% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1466.6666666666667
+----------------------------------------
+
+[Episode 249999] panel min -1466.7  mean -347.6 mbb/h  |  best_response -1467±0  equilibrium -348±0  random +1422±0
+
+[Episode 249999]   actions: call=8% raise=75% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1616.666666666667
+----------------------------------------
+=== trial 4 pruned after 6 evaluation(s) (episode 299999, panel min -1616.7)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_4/
+[I 2026-11-08 03:17:17,182] Trial 4 pruned. 
+
+=== trial 8: {"lr": 0.0025227796160592324, "batch_size": 64, "mlp_layers": "256 256", "epsilon_decay_steps": 787221, "epsilon_end": 0.06790716872482909, "replay_memory_size": 89628, "opponent_update_every": 23074, "update_target_every": 2661}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1750.0000000000002
+----------------------------------------
+
+[Episode 49999] panel min -1750.0  mean -449.2 mbb/h  |  best_response -1750±0  equilibrium -449±0  random +1433±0
+
+[Episode 49999]   actions: call=18% raise=59% fold=0% check=22%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1600.0
+----------------------------------------
+
+[Episode 99999] panel min -1600.0  mean -354.8 mbb/h  |  best_response -1600±0  equilibrium -355±0  random +1427±0
+
+[Episode 99999]   actions: call=12% raise=70% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1633.3333333333335
+----------------------------------------
+
+[Episode 149999] panel min -1633.3  mean -441.7 mbb/h  |  best_response -1633±0  equilibrium -442±0  random +1423±0
+
+[Episode 149999]   actions: call=14% raise=68% fold=1% check=17%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1566.666666666667
+----------------------------------------
+
+[Episode 199999] panel min -1566.7  mean -440.9 mbb/h  |  best_response -1567±0  equilibrium -441±0  random +1401±0
+
+[Episode 199999]   actions: call=14% raise=66% fold=3% check=17%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1283.3333333333333
+----------------------------------------
+
+[Episode 249999] panel min -1283.3  mean -344.7 mbb/h  |  best_response -1283±0  equilibrium -345±0  random +1360±0
+
+[Episode 249999]   actions: call=13% raise=63% fold=5% check=19%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1650.0
+----------------------------------------
+=== trial 8 pruned after 6 evaluation(s) (episode 299999, panel min -1650.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_8/
+[I 2026-11-08 03:42:47,711] Trial 8 pruned. 
+
+=== trial 11: {"lr": 3.659970972284355e-05, "batch_size": 128, "mlp_layers": "128 128", "epsilon_decay_steps": 2040904, "epsilon_end": 0.016830932831688, "replay_memory_size": 37274, "opponent_update_every": 1113, "update_target_every": 4005}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1533.3333333333335
+----------------------------------------
+
+[Episode 49999] panel min -1533.3  mean -254.6 mbb/h  |  best_response -1533±0  equilibrium -255±0  random +1413±0
+
+[Episode 49999]   actions: call=11% raise=69% fold=0% check=20%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1566.666666666667
+----------------------------------------
+
+[Episode 99999] panel min -1566.7  mean -255.3 mbb/h  |  best_response -1567±0  equilibrium -255±0  random +1395±0
+
+[Episode 99999]   actions: call=11% raise=65% fold=0% check=24%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1466.6666666666667
+----------------------------------------
+
+[Episode 149999] panel min -1466.7  mean -347.6 mbb/h  |  best_response -1467±0  equilibrium -348±0  random +1422±0
+
+[Episode 149999]   actions: call=8% raise=75% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1566.6666666666667
+----------------------------------------
+
+[Episode 199999] panel min -1566.7  mean -320.9 mbb/h  |  best_response -1567±0  equilibrium -321±0  random +1413±0
+
+[Episode 199999]   actions: call=5% raise=71% fold=0% check=24%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1400.0000000000005
+----------------------------------------
+
+[Episode 249999] panel min -1400.0  mean -346.8 mbb/h  |  best_response -1400±0  equilibrium -347±0  random +1404±0
+
+[Episode 249999]   actions: call=8% raise=73% fold=2% check=17%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1683.3333333333335
+----------------------------------------
+=== trial 11 pruned after 6 evaluation(s) (episode 299999, panel min -1683.3)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_11/
+[I 2026-11-08 04:00:10,919] Trial 11 pruned. 
+
+=== trial 13: {"lr": 0.0001617347461318855, "batch_size": 32, "mlp_layers": "256 256", "epsilon_decay_steps": 82889, "epsilon_end": 0.015794001328139906, "replay_memory_size": 73264, "opponent_update_every": 3843, "update_target_every": 1487}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -866.6666666666667
+----------------------------------------
+
+[Episode 49999] panel min -866.7  mean -185.2 mbb/h  |  best_response -867±0  equilibrium -185±0  random +1073±0
+
+[Episode 49999]   actions: call=26% raise=39% fold=9% check=26%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1383.3333333333333
+----------------------------------------
+
+[Episode 99999] panel min -1383.3  mean -286.4 mbb/h  |  best_response -1383±0  equilibrium -286±0  random +872±0
+
+[Episode 99999]   actions: call=28% raise=33% fold=8% check=31%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -2333.3333333333335
+----------------------------------------
+
+[Episode 149999] panel min -2333.3  mean -151.1 mbb/h  |  best_response -2333±0  equilibrium -151±0  random +1004±0
+
+[Episode 149999]   actions: call=29% raise=37% fold=6% check=28%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1333.3333333333335
+----------------------------------------
+
+[Episode 199999] panel min -1333.3  mean -269.1 mbb/h  |  best_response -1333±0  equilibrium -269±0  random +749±0
+
+[Episode 199999]   actions: call=25% raise=32% fold=21% check=23%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -866.6666666666667
+----------------------------------------
+
+[Episode 249999] panel min -866.7  mean -67.8 mbb/h  |  best_response -867±0  equilibrium -68±0  random +774±0
+
+[Episode 249999]   actions: call=37% raise=30% fold=13% check=20%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1533.3333333333335
+----------------------------------------
+=== trial 13 pruned after 6 evaluation(s) (episode 299999, panel min -1533.3)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_13/
+[I 2026-11-08 04:29:37,435] Trial 13 pruned. 
+
+=== trial 15: {"lr": 5.669462275157348e-05, "batch_size": 128, "mlp_layers": "256 256", "epsilon_decay_steps": 393919, "epsilon_end": 0.06765208908642496, "replay_memory_size": 284877, "opponent_update_every": 2631, "update_target_every": 980}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1633.3333333333337
+----------------------------------------
+
+[Episode 49999] panel min -1633.3  mean -218.5 mbb/h  |  best_response -1633±0  equilibrium -219±0  random +1371±0
+
+[Episode 49999]   actions: call=16% raise=54% fold=0% check=30%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1600.0
+----------------------------------------
+
+[Episode 99999] panel min -1600.0  mean -354.8 mbb/h  |  best_response -1600±0  equilibrium -355±0  random +1427±0
+
+[Episode 99999]   actions: call=12% raise=70% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1566.666666666667
+----------------------------------------
+
+[Episode 149999] panel min -1566.7  mean -440.9 mbb/h  |  best_response -1567±0  equilibrium -441±0  random +1405±0
+
+[Episode 149999]   actions: call=14% raise=66% fold=3% check=17%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -633.3333333333333
+----------------------------------------
+
+[Episode 199999] panel min -633.3  mean -258.4 mbb/h  |  best_response -633±0  equilibrium -258±0  random +1224±0
+
+[Episode 199999]   actions: call=21% raise=53% fold=8% check=18%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -616.6666666666667
+----------------------------------------
+
+[Episode 249999] panel min -616.7  mean -220.5 mbb/h  |  best_response -617±0  equilibrium -220±0  random +1144±0
+
+[Episode 249999]   actions: call=24% raise=42% fold=8% check=26%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1250.0
+----------------------------------------
+
+[Episode 299999] panel min -1250.0  mean -124.7 mbb/h  |  best_response -1250±0  equilibrium -125±0  random +823±0
+
+[Episode 299999]   actions: call=37% raise=35% fold=9% check=19%  (0s)
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -1333.3333333333335
+----------------------------------------
+
+[Episode 349999] panel min -1333.3  mean -186.3 mbb/h  |  best_response -1333±0  equilibrium -186±0  random +961±0
+
+[Episode 349999]   actions: call=38% raise=40% fold=6% check=16%  (0s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1000.0
+----------------------------------------
+
+[Episode 399999] panel min -1000.0  mean -232.3 mbb/h  |  best_response -1000±0  equilibrium -232±0  random +1073±0
+
+[Episode 399999]   actions: call=35% raise=35% fold=6% check=24%  (0s)
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -1066.666666666667
+----------------------------------------
+
+[Episode 449999] panel min -1066.7  mean -171.5 mbb/h  |  best_response -1067±0  equilibrium -172±0  random +1086±0
+
+[Episode 449999]   actions: call=18% raise=39% fold=10% check=33%  (0s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -1666.6666666666665
+----------------------------------------
+
+[Episode 499999] panel min -1666.7  mean -133.9 mbb/h  |  best_response -1667±0  equilibrium -134±0  random +907±0
+
+[Episode 499999]   actions: call=38% raise=33% fold=9% check=20%  (0s)
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -1266.6666666666667
+----------------------------------------
+
+[Episode 549999] panel min -1266.7  mean -97.0 mbb/h  |  best_response -1267±0  equilibrium -97±0  random +773±0
+
+[Episode 549999]   actions: call=40% raise=23% fold=11% check=26%  (0s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1050.0
+----------------------------------------
+
+[Episode 599999] panel min -1050.0  mean -150.5 mbb/h  |  best_response -1050±0  equilibrium -150±0  random +764±0
+
+[Episode 599999]   actions: call=48% raise=35% fold=8% check=9%  (0s)
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -1466.6666666666667
+----------------------------------------
+
+[Episode 649999] panel min -1466.7  mean -221.3 mbb/h  |  best_response -1467±0  equilibrium -221±0  random +1005±0
+
+[Episode 649999]   actions: call=30% raise=47% fold=8% check=16%  (0s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -1116.666666666667
+----------------------------------------
+
+[Episode 699999] panel min -1116.7  mean -269.0 mbb/h  |  best_response -1117±0  equilibrium -269±0  random +1091±0
+
+[Episode 699999]   actions: call=24% raise=35% fold=7% check=34%  (0s)
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -1666.6666666666667
+----------------------------------------
+
+[Episode 749999] panel min -1666.7  mean -186.1 mbb/h  |  best_response -1667±0  equilibrium -186±0  random +1012±0
+
+[Episode 749999]   actions: call=32% raise=34% fold=7% check=26%  (0s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1583.3333333333333
+----------------------------------------
+=== trial 15 pruned after 16 evaluation(s) (episode 799999, panel min -1583.3)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_15/
+[I 2026-11-08 06:08:20,548] Trial 15 pruned. 
+
+=== trial 20: {"lr": 5.416493050881759e-05, "batch_size": 128, "mlp_layers": "256 256", "epsilon_decay_steps": 1842604, "epsilon_end": 0.026375867373352884, "replay_memory_size": 324828, "opponent_update_every": 21574, "update_target_every": 444}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1566.666666666667
+----------------------------------------
+
+[Episode 49999] panel min -1566.7  mean -232.8 mbb/h  |  best_response -1567±0  equilibrium -233±0  random +1391±0
+
+[Episode 49999]   actions: call=18% raise=59% fold=0% check=23%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1566.666666666667
+----------------------------------------
+
+[Episode 99999] panel min -1566.7  mean -326.0 mbb/h  |  best_response -1567±0  equilibrium -326±0  random +1437±0
+
+[Episode 99999]   actions: call=6% raise=71% fold=0% check=23%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1466.6666666666667
+----------------------------------------
+
+[Episode 149999] panel min -1466.7  mean -347.6 mbb/h  |  best_response -1467±0  equilibrium -348±0  random +1422±0
+
+[Episode 149999]   actions: call=8% raise=75% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1566.666666666667
+----------------------------------------
+
+[Episode 199999] panel min -1566.7  mean -292.0 mbb/h  |  best_response -1567±0  equilibrium -292±0  random +1428±0
+
+[Episode 199999]   actions: call=5% raise=70% fold=0% check=25%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1600.0
+----------------------------------------
+
+[Episode 249999] panel min -1600.0  mean -314.3 mbb/h  |  best_response -1600±0  equilibrium -314±0  random +1428±0
+
+[Episode 249999]   actions: call=5% raise=70% fold=0% check=25%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1533.3333333333335
+----------------------------------------
+=== trial 20 pruned after 6 evaluation(s) (episode 299999, panel min -1533.3)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_20/
+[I 2026-11-08 06:31:12,039] Trial 20 pruned. 
+
+=== trial 22: {"lr": 0.00018779676297053986, "batch_size": 32, "mlp_layers": "256 256", "epsilon_decay_steps": 94232, "epsilon_end": 0.24601693563718646, "replay_memory_size": 170545, "opponent_update_every": 2224, "update_target_every": 477}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1633.3333333333335
+----------------------------------------
+
+[Episode 49999] panel min -1633.3  mean -449.7 mbb/h  |  best_response -1633±0  equilibrium -450±0  random +1389±0
+
+[Episode 49999]   actions: call=14% raise=65% fold=3% check=19%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 99999] panel min -566.7  mean -201.3 mbb/h  |  best_response -567±0  equilibrium -201±0  random +1154±0
+
+[Episode 99999]   actions: call=26% raise=40% fold=8% check=26%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1383.3333333333333
+----------------------------------------
+
+[Episode 149999] panel min -1383.3  mean -101.4 mbb/h  |  best_response -1383±0  equilibrium -101±0  random +1010±0
+
+[Episode 149999]   actions: call=30% raise=34% fold=9% check=27%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1333.3333333333335
+----------------------------------------
+
+[Episode 199999] panel min -1333.3  mean -246.9 mbb/h  |  best_response -1333±0  equilibrium -247±0  random +1107±0
+
+[Episode 199999]   actions: call=20% raise=52% fold=6% check=22%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -866.6666666666667
+----------------------------------------
+
+[Episode 249999] panel min -866.7  mean -246.5 mbb/h  |  best_response -867±0  equilibrium -246±0  random +1151±0
+
+[Episode 249999]   actions: call=19% raise=40% fold=8% check=34%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -633.3333333333333
+----------------------------------------
+
+[Episode 299999] panel min -633.3  mean -202.1 mbb/h  |  best_response -633±0  equilibrium -202±0  random +1138±0
+
+[Episode 299999]   actions: call=20% raise=48% fold=6% check=26%  (0s)
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -766.6666666666667
+----------------------------------------
+
+[Episode 349999] panel min -766.7  mean -238.1 mbb/h  |  best_response -767±0  equilibrium -238±0  random +1218±0
+
+[Episode 349999]   actions: call=19% raise=46% fold=7% check=28%  (0s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -850.0
+----------------------------------------
+
+[Episode 399999] panel min -850.0  mean -64.7 mbb/h  |  best_response -850±0  equilibrium -65±0  random +1016±0
+
+[Episode 399999]   actions: call=39% raise=31% fold=8% check=22%  (0s)
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -1500.0
+----------------------------------------
+
+[Episode 449999] panel min -1500.0  mean -53.0 mbb/h  |  best_response -1500±0  equilibrium -53±0  random +998±0
+
+[Episode 449999]   actions: call=30% raise=43% fold=7% check=20%  (0s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -900.0
+----------------------------------------
+
+[Episode 499999] panel min -900.0  mean -40.2 mbb/h  |  best_response -900±0  equilibrium -40±0  random +955±0
+
+[Episode 499999]   actions: call=42% raise=22% fold=7% check=29%  (0s)
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 549999] panel min -566.7  mean -66.0 mbb/h  |  best_response -567±0  equilibrium -66±0  random +998±0
+
+[Episode 549999]   actions: call=43% raise=22% fold=9% check=26%  (0s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -933.3333333333334
+----------------------------------------
+
+[Episode 599999] panel min -933.3  mean -92.0 mbb/h  |  best_response -933±0  equilibrium -92±0  random +921±0
+
+[Episode 599999]   actions: call=44% raise=23% fold=8% check=24%  (0s)
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -1266.6666666666667
+----------------------------------------
+
+[Episode 649999] panel min -1266.7  mean -56.8 mbb/h  |  best_response -1267±0  equilibrium -57±0  random +1022±0
+
+[Episode 649999]   actions: call=40% raise=32% fold=6% check=22%  (0s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -533.3333333333334
+----------------------------------------
+
+[Episode 699999] panel min -533.3  mean -63.7 mbb/h  |  best_response -533±0  equilibrium -64±0  random +1034±0
+
+[Episode 699999]   actions: call=48% raise=26% fold=6% check=20%  (0s)
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 749999] panel min -566.7  mean -63.5 mbb/h  |  best_response -567±0  equilibrium -63±0  random +995±0
+
+[Episode 749999]   actions: call=41% raise=27% fold=8% check=24%  (0s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1200.0000000000002
+----------------------------------------
+
+[Episode 799999] panel min -1200.0  mean -31.2 mbb/h  |  best_response -1200±0  equilibrium -31±0  random +1002±0
+
+[Episode 799999]   actions: call=29% raise=36% fold=11% check=25%  (0s)
+
+----------------------------------------
+  episode      |  849999
+  reward       |  -1400.0000000000002
+----------------------------------------
+
+[Episode 849999] panel min -1400.0  mean -118.8 mbb/h  |  best_response -1400±0  equilibrium -119±0  random +1005±0
+
+[Episode 849999]   actions: call=31% raise=40% fold=7% check=22%  (0s)
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -883.3333333333334
+----------------------------------------
+
+[Episode 899999] panel min -883.3  mean -163.6 mbb/h  |  best_response -883±0  equilibrium -164±0  random +1179±0
+
+[Episode 899999]   actions: call=20% raise=50% fold=7% check=23%  (0s)
+
+----------------------------------------
+  episode      |  949999
+  reward       |  -1033.3333333333335
+----------------------------------------
+
+[Episode 949999] panel min -1033.3  mean -81.0 mbb/h  |  best_response -1033±0  equilibrium -81±0  random +1008±0
+
+[Episode 949999]   actions: call=31% raise=34% fold=10% check=25%  (0s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1100.0
+----------------------------------------
+
+[Episode 999999] panel min -1100.0  mean -156.4 mbb/h  |  best_response -1100±0  equilibrium -156±0  random +959±0
+
+[Episode 999999]   actions: call=34% raise=28% fold=10% check=28%  (0s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_22/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_22/fig.png
+=== trial 22 finished: score -1005.6
+[I 2026-11-08 08:09:39,441] Trial 22 finished with value: -1005.5555555555557 and parameters: {'lr': 0.00018779676297053986, 'batch_size': 32, 'mlp_layers': '256 256', 'epsilon_decay_steps': 94232, 'epsilon_end': 0.24601693563718646, 'replay_memory_size': 170545, 'opponent_update_every': 2224, 'update_target_every': 477}. Best is trial 22 with value: -1005.5555555555557.
+
+=== trial 25: {"lr": 0.00021655819340829404, "batch_size": 32, "mlp_layers": "256 256", "epsilon_decay_steps": 82565, "epsilon_end": 0.24727516004865216, "replay_memory_size": 136289, "opponent_update_every": 32656, "update_target_every": 470}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1733.3333333333335
+----------------------------------------
+
+[Episode 49999] panel min -1733.3  mean -438.8 mbb/h  |  best_response -1733±0  equilibrium -439±0  random +1406±0
+
+[Episode 49999]   actions: call=13% raise=66% fold=1% check=21%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 99999] panel min -566.7  mean -225.5 mbb/h  |  best_response -567±0  equilibrium -226±0  random +1164±0
+
+[Episode 99999]   actions: call=25% raise=43% fold=8% check=24%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 149999] panel min -566.7  mean -221.9 mbb/h  |  best_response -567±0  equilibrium -222±0  random +1080±0
+
+[Episode 149999]   actions: call=27% raise=43% fold=7% check=22%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -1083.3333333333335
+----------------------------------------
+
+[Episode 199999] panel min -1083.3  mean -257.9 mbb/h  |  best_response -1083±0  equilibrium -258±0  random +1031±0
+
+[Episode 199999]   actions: call=19% raise=47% fold=8% check=26%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -1483.3333333333335
+----------------------------------------
+
+[Episode 249999] panel min -1483.3  mean -296.5 mbb/h  |  best_response -1483±0  equilibrium -296±0  random +1096±0
+
+[Episode 249999]   actions: call=39% raise=30% fold=1% check=30%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -1183.3333333333335
+----------------------------------------
+
+[Episode 299999] panel min -1183.3  mean -189.0 mbb/h  |  best_response -1183±0  equilibrium -189±0  random +1149±0
+
+[Episode 299999]   actions: call=32% raise=48% fold=3% check=17%  (0s)
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -1700.0
+----------------------------------------
+
+[Episode 349999] panel min -1700.0  mean -166.2 mbb/h  |  best_response -1700±0  equilibrium -166±0  random +961±0
+
+[Episode 349999]   actions: call=25% raise=48% fold=9% check=18%  (0s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -1100.0
+----------------------------------------
+
+[Episode 399999] panel min -1100.0  mean -283.5 mbb/h  |  best_response -1100±0  equilibrium -284±0  random +1057±0
+
+[Episode 399999]   actions: call=25% raise=46% fold=5% check=25%  (0s)
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -1400.0000000000002
+----------------------------------------
+
+[Episode 449999] panel min -1400.0  mean -321.7 mbb/h  |  best_response -1400±0  equilibrium -322±0  random +1289±0
+
+[Episode 449999]   actions: call=13% raise=61% fold=5% check=20%  (0s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -650.0
+----------------------------------------
+
+[Episode 499999] panel min -650.0  mean -225.7 mbb/h  |  best_response -650±0  equilibrium -226±0  random +921±0
+
+[Episode 499999]   actions: call=39% raise=34% fold=7% check=21%  (0s)
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -766.6666666666666
+----------------------------------------
+
+[Episode 549999] panel min -766.7  mean -186.1 mbb/h  |  best_response -767±0  equilibrium -186±0  random +1100±0
+
+[Episode 549999]   actions: call=26% raise=41% fold=7% check=26%  (0s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1833.3333333333335
+----------------------------------------
+
+[Episode 599999] panel min -1833.3  mean -261.2 mbb/h  |  best_response -1833±0  equilibrium -261±0  random +1053±0
+
+[Episode 599999]   actions: call=33% raise=38% fold=7% check=22%  (0s)
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -1483.3333333333335
+----------------------------------------
+
+[Episode 649999] panel min -1483.3  mean -293.4 mbb/h  |  best_response -1483±0  equilibrium -293±0  random +947±0
+
+[Episode 649999]   actions: call=32% raise=30% fold=7% check=31%  (0s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -1383.3333333333333
+----------------------------------------
+
+[Episode 699999] panel min -1383.3  mean -195.0 mbb/h  |  best_response -1383±0  equilibrium -195±0  random +1159±0
+
+[Episode 699999]   actions: call=20% raise=46% fold=6% check=29%  (0s)
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -1416.666666666667
+----------------------------------------
+
+[Episode 749999] panel min -1416.7  mean -344.1 mbb/h  |  best_response -1417±0  equilibrium -344±0  random +1186±0
+
+[Episode 749999]   actions: call=32% raise=48% fold=2% check=18%  (0s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -933.3333333333335
+----------------------------------------
+
+[Episode 799999] panel min -933.3  mean -163.6 mbb/h  |  best_response -933±0  equilibrium -164±0  random +1244±0
+
+[Episode 799999]   actions: call=20% raise=55% fold=5% check=20%  (0s)
+
+----------------------------------------
+  episode      |  849999
+  reward       |  -1600.0
+----------------------------------------
+
+[Episode 849999] panel min -1600.0  mean -107.2 mbb/h  |  best_response -1600±0  equilibrium -107±0  random +923±0
+
+[Episode 849999]   actions: call=26% raise=50% fold=8% check=15%  (0s)
+
+----------------------------------------
+  episode      |  899999
+  reward       |  -1700.0
+----------------------------------------
+
+[Episode 899999] panel min -1700.0  mean -174.7 mbb/h  |  best_response -1700±0  equilibrium -175±0  random +965±0
+
+[Episode 899999]   actions: call=32% raise=41% fold=7% check=20%  (0s)
+
+----------------------------------------
+  episode      |  949999
+  reward       |  -1966.666666666667
+----------------------------------------
+
+[Episode 949999] panel min -1966.7  mean -299.1 mbb/h  |  best_response -1967±0  equilibrium -299±0  random +941±0
+
+[Episode 949999]   actions: call=27% raise=42% fold=5% check=26%  (0s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1666.6666666666667
+----------------------------------------
+
+[Episode 999999] panel min -1666.7  mean -336.9 mbb/h  |  best_response -1667±0  equilibrium -337±0  random +1234±0
+
+[Episode 999999]   actions: call=18% raise=59% fold=2% check=22%  (0s)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_25/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_25/fig.png
+=== trial 25 finished: score -1777.8
+[I 2026-11-08 09:52:37,992] Trial 25 finished with value: -1777.777777777778 and parameters: {'lr': 0.00021655819340829404, 'batch_size': 32, 'mlp_layers': '256 256', 'epsilon_decay_steps': 82565, 'epsilon_end': 0.24727516004865216, 'replay_memory_size': 136289, 'opponent_update_every': 32656, 'update_target_every': 470}. Best is trial 22 with value: -1005.5555555555557.
+
+=== trial 28: {"lr": 0.0003614184245433974, "batch_size": 32, "mlp_layers": "256 256", "epsilon_decay_steps": 293609, "epsilon_end": 0.1942492946443982, "replay_memory_size": 493034, "opponent_update_every": 1713, "update_target_every": 419}
+
+----------------------------------------
+  episode      |  49999
+  reward       |  -1466.6666666666667
+----------------------------------------
+
+[Episode 49999] panel min -1466.7  mean -347.6 mbb/h  |  best_response -1467±0  equilibrium -348±0  random +1422±0
+
+[Episode 49999]   actions: call=8% raise=75% fold=0% check=17%  (0s)
+
+----------------------------------------
+  episode      |  99999
+  reward       |  -1666.6666666666667
+----------------------------------------
+
+[Episode 99999] panel min -1666.7  mean -441.7 mbb/h  |  best_response -1667±0  equilibrium -442±0  random +1418±0
+
+[Episode 99999]   actions: call=14% raise=68% fold=1% check=17%  (0s)
+
+----------------------------------------
+  episode      |  149999
+  reward       |  -1700.0000000000002
+----------------------------------------
+
+[Episode 149999] panel min -1700.0  mean -406.3 mbb/h  |  best_response -1700±0  equilibrium -406±0  random +1422±0
+
+[Episode 149999]   actions: call=13% raise=65% fold=1% check=22%  (0s)
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 199999] panel min -566.7  mean -252.7 mbb/h  |  best_response -567±0  equilibrium -253±0  random +1166±0
+
+[Episode 199999]   actions: call=26% raise=45% fold=8% check=21%  (0s)
+
+----------------------------------------
+  episode      |  249999
+  reward       |  -566.6666666666666
+----------------------------------------
+
+[Episode 249999] panel min -566.7  mean -252.7 mbb/h  |  best_response -567±0  equilibrium -253±0  random +1176±0
+
+[Episode 249999]   actions: call=26% raise=45% fold=8% check=21%  (0s)
+
+----------------------------------------
+  episode      |  299999
+  reward       |  -533.3333333333334
+----------------------------------------
+
+[Episode 299999] panel min -533.3  mean -201.7 mbb/h  |  best_response -533±0  equilibrium -202±0  random +1146±0
+
+[Episode 299999]   actions: call=25% raise=41% fold=8% check=26%  (0s)
+
+----------------------------------------
+  episode      |  349999
+  reward       |  -950.0000000000002
+----------------------------------------
+
+[Episode 349999] panel min -950.0  mean -241.3 mbb/h  |  best_response -950±0  equilibrium -241±0  random +1011±0
+
+[Episode 349999]   actions: call=26% raise=40% fold=9% check=25%  (0s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -766.6666666666669
+----------------------------------------
+
+[Episode 399999] panel min -766.7  mean -179.1 mbb/h  |  best_response -767±0  equilibrium -179±0  random +986±0
+
+[Episode 399999]   actions: call=27% raise=39% fold=7% check=27%  (0s)
+
+----------------------------------------
+  episode      |  449999
+  reward       |  -900.0000000000001
+----------------------------------------
+
+[Episode 449999] panel min -900.0  mean -180.7 mbb/h  |  best_response -900±0  equilibrium -181±0  random +1024±0
+
+[Episode 449999]   actions: call=26% raise=36% fold=9% check=29%  (0s)
+
+----------------------------------------
+  episode      |  499999
+  reward       |  -1450.0000000000002
+----------------------------------------
+
+[Episode 499999] panel min -1450.0  mean -158.4 mbb/h  |  best_response -1450±0  equilibrium -158±0  random +999±0
+
+[Episode 499999]   actions: call=44% raise=29% fold=6% check=20%  (0s)
+
+----------------------------------------
+  episode      |  549999
+  reward       |  -600.0000000000001
+----------------------------------------
+
+[Episode 549999] panel min -600.0  mean -85.5 mbb/h  |  best_response -600±0  equilibrium -85±0  random +983±0
+
+[Episode 549999]   actions: call=41% raise=29% fold=8% check=22%  (0s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1049.9999999999998
+----------------------------------------
+
+[Episode 599999] panel min -1050.0  mean -200.7 mbb/h  |  best_response -1050±0  equilibrium -201±0  random +1105±0
+
+[Episode 599999]   actions: call=28% raise=39% fold=8% check=25%  (0s)
+
+----------------------------------------
+  episode      |  649999
+  reward       |  -516.6666666666666
+----------------------------------------
+
+[Episode 649999] panel min -516.7  mean -150.2 mbb/h  |  best_response -517±0  equilibrium -150±0  random +1044±0
+
+[Episode 649999]   actions: call=39% raise=33% fold=7% check=21%  (0s)
+
+----------------------------------------
+  episode      |  699999
+  reward       |  -550.0
+----------------------------------------
+
+[Episode 699999] panel min -550.0  mean -142.2 mbb/h  |  best_response -550±0  equilibrium -142±0  random +1007±0
+
+[Episode 699999]   actions: call=38% raise=33% fold=8% check=21%  (0s)
+
+----------------------------------------
+  episode      |  749999
+  reward       |  -1766.6666666666665
+----------------------------------------
+
+[Episode 749999] panel min -1766.7  mean -101.2 mbb/h  |  best_response -1767±0  equilibrium -101±0  random +1006±0
+
+[Episode 749999]   actions: call=29% raise=43% fold=10% check=18%  (0s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1550.0
+----------------------------------------
+=== trial 28 pruned after 16 evaluation(s) (episode 799999, panel min -1550.0)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_dqn_v1\trials\trial_28/
+[I 2026-11-08 11:19:19,227] Trial 28 pruned. 
+worker done
+[I 2026-11-10 14:26:26,163] Using an existing study with name 'leduc_dqn_v1' instead of creating a new one.
+study has 30 finished and 0 running trials (target 30); nothing to do

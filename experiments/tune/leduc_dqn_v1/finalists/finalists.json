@@ -1,0 +1,322 @@
+{
+  "final_deals": 5000,
+  "runs": [
+    {
+      "trial": 22,
+      "seed": 1042,
+      "params": {
+        "lr": 0.00018779676297053986,
+        "batch_size": 32,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 94232,
+        "epsilon_end": 0.24601693563718646,
+        "replay_memory_size": 170545,
+        "opponent_update_every": 2224,
+        "update_target_every": 477
+      },
+      "trial_score": -1005.5555555555557,
+      "final_min": -1033.3333333333333,
+      "final_mean": -124.02170609115791,
+      "members": {
+        "best_response": {
+          "mean": -1033.3333333333333,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -124.02170609115791,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 1138.117283950617,
+          "se": 0.0
+        }
+      },
+      "training_score": -1061.1111111111113,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_22/seed_1042"
+    },
+    {
+      "trial": 22,
+      "seed": 1043,
+      "params": {
+        "lr": 0.00018779676297053986,
+        "batch_size": 32,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 94232,
+        "epsilon_end": 0.24601693563718646,
+        "replay_memory_size": 170545,
+        "opponent_update_every": 2224,
+        "update_target_every": 477
+      },
+      "trial_score": -1005.5555555555557,
+      "final_min": -933.3333333333335,
+      "final_mean": -186.29971409469,
+      "members": {
+        "best_response": {
+          "mean": -933.3333333333335,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -186.29971409469,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 1143.8271604938268,
+          "se": 0.0
+        }
+      },
+      "training_score": -1272.2222222222224,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_22/seed_1043"
+    },
+    {
+      "trial": 29,
+      "seed": 1044,
+      "params": {
+        "lr": 0.0001970210782885835,
+        "batch_size": 64,
+        "mlp_layers": "512 512",
+        "epsilon_decay_steps": 92778,
+        "epsilon_end": 0.23853530589742689,
+        "replay_memory_size": 362350,
+        "opponent_update_every": 1212,
+        "update_target_every": 412
+      },
+      "trial_score": -927.7777777777779,
+      "final_min": -1583.3333333333335,
+      "final_mean": -92.61325665896018,
+      "members": {
+        "best_response": {
+          "mean": -1583.3333333333335,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -92.61325665896018,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 1083.796296296296,
+          "se": 0.0
+        }
+      },
+      "training_score": -1300.0000000000002,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_29/seed_1044"
+    },
+    {
+      "trial": 29,
+      "seed": 1042,
+      "params": {
+        "lr": 0.0001970210782885835,
+        "batch_size": 64,
+        "mlp_layers": "512 512",
+        "epsilon_decay_steps": 92778,
+        "epsilon_end": 0.23853530589742689,
+        "replay_memory_size": 362350,
+        "opponent_update_every": 1212,
+        "update_target_every": 412
+      },
+      "trial_score": -927.7777777777779,
+      "final_min": -933.3333333333335,
+      "final_mean": -34.26148016122713,
+      "members": {
+        "best_response": {
+          "mean": -933.3333333333335,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -34.26148016122713,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 907.0987654320985,
+          "se": 0.0
+        }
+      },
+      "training_score": -883.3333333333335,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_29/seed_1042"
+    },
+    {
+      "trial": 29,
+      "seed": 1043,
+      "params": {
+        "lr": 0.0001970210782885835,
+        "batch_size": 64,
+        "mlp_layers": "512 512",
+        "epsilon_decay_steps": 92778,
+        "epsilon_end": 0.23853530589742689,
+        "replay_memory_size": 362350,
+        "opponent_update_every": 1212,
+        "update_target_every": 412
+      },
+      "trial_score": -927.7777777777779,
+      "final_min": -950.0000000000002,
+      "final_mean": -149.53747364453122,
+      "members": {
+        "best_response": {
+          "mean": -950.0000000000002,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -149.53747364453122,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 1133.333333333333,
+          "se": 0.0
+        }
+      },
+      "training_score": -1122.2222222222224,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_29/seed_1043"
+    },
+    {
+      "trial": 22,
+      "seed": 1044,
+      "params": {
+        "lr": 0.00018779676297053986,
+        "batch_size": 32,
+        "mlp_layers": "256 256",
+        "epsilon_decay_steps": 94232,
+        "epsilon_end": 0.24601693563718646,
+        "replay_memory_size": 170545,
+        "opponent_update_every": 2224,
+        "update_target_every": 477
+      },
+      "trial_score": -1005.5555555555557,
+      "final_min": -1066.6666666666667,
+      "final_mean": -38.66463822010161,
+      "members": {
+        "best_response": {
+          "mean": -1066.6666666666667,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -38.66463822010161,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 916.2037037037036,
+          "se": 0.0
+        }
+      },
+      "training_score": -850.0,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_22/seed_1044"
+    },
+    {
+      "trial": 18,
+      "seed": 1042,
+      "params": {
+        "lr": 1.7014578332651673e-05,
+        "batch_size": 512,
+        "mlp_layers": "128 128",
+        "epsilon_decay_steps": 181861,
+        "epsilon_end": 0.04680224426446211,
+        "replay_memory_size": 161749,
+        "opponent_update_every": 2955,
+        "update_target_every": 282
+      },
+      "trial_score": -1183.3333333333335,
+      "final_min": -1016.6666666666666,
+      "final_mean": -162.7241416894864,
+      "members": {
+        "best_response": {
+          "mean": -1016.6666666666666,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -162.7241416894864,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 853.7037037037034,
+          "se": 0.0
+        }
+      },
+      "training_score": -1361.111111111111,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_18/seed_1042"
+    },
+    {
+      "trial": 18,
+      "seed": 1043,
+      "params": {
+        "lr": 1.7014578332651673e-05,
+        "batch_size": 512,
+        "mlp_layers": "128 128",
+        "epsilon_decay_steps": 181861,
+        "epsilon_end": 0.04680224426446211,
+        "replay_memory_size": 161749,
+        "opponent_update_every": 2955,
+        "update_target_every": 282
+      },
+      "trial_score": -1183.3333333333335,
+      "final_min": -1300.0,
+      "final_mean": -150.81442867966365,
+      "members": {
+        "best_response": {
+          "mean": -1300.0,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -150.81442867966365,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 716.2037037037037,
+          "se": 0.0
+        }
+      },
+      "training_score": -1255.5555555555557,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_18/seed_1043"
+    },
+    {
+      "trial": 18,
+      "seed": 1044,
+      "params": {
+        "lr": 1.7014578332651673e-05,
+        "batch_size": 512,
+        "mlp_layers": "128 128",
+        "epsilon_decay_steps": 181861,
+        "epsilon_end": 0.04680224426446211,
+        "replay_memory_size": 161749,
+        "opponent_update_every": 2955,
+        "update_target_every": 282
+      },
+      "trial_score": -1183.3333333333335,
+      "final_min": -1050.0,
+      "final_mean": -94.43356934868467,
+      "members": {
+        "best_response": {
+          "mean": -1050.0,
+          "se": 0.0
+        },
+        "equilibrium": {
+          "mean": -94.43356934868467,
+          "se": 0.0
+        },
+        "random": {
+          "mean": 939.5061728395059,
+          "se": 0.0
+        }
+      },
+      "training_score": -1416.6666666666667,
+      "log_dir": "experiments/tune/leduc_dqn_v1/finalists/trial_18/seed_1044"
+    }
+  ],
+  "winner": {
+    "trial": 22,
+    "params": {
+      "lr": 0.00018779676297053986,
+      "batch_size": 32,
+      "mlp_layers": "256 256",
+      "epsilon_decay_steps": 94232,
+      "epsilon_end": 0.24601693563718646,
+      "replay_memory_size": 170545,
+      "opponent_update_every": 2224,
+      "update_target_every": 477
+    },
+    "final_min_mean": -1011.1111111111112,
+    "seeds": [
+      1042,
+      1043,
+      1044
+    ],
+    "final_deals": 5000
+  }
+}

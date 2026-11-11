@@ -1,0 +1,405 @@
+[I 2026-11-07 14:12:06,291] Using an existing study with name 'leduc_deepcfr_v1' instead of creating a new one.
+worker Cloud-3M0LKK4-23580: 0/30 trials finished
+
+=== trial 3: {"lr": 0.0001593328535350095, "batch_size": 2048, "layers": "256 256"}
+0/300 complete.1/300 complete.2/300 complete.3/300 complete.4/300 complete.5/300 complete.6/300 complete.7/300 complete.8/300 complete.9/300 complete.10/300 complete.11/300 complete.12/300 complete.13/300 complete.
+----------------------------------------
+  episode      |  14
+  reward       |  -293.30488294534564
+----------------------------------------
+[Iteration 14] panel min -293.3  mean -105.7 mbb/h  |  best_response -293±0  equilibrium -106±0  random +781±0
+[Iteration 14]   actions: call=39% raise=34% fold=13% check=14%  (25s)
+  last-step weighted losses  adv: 1.640873  policy: 0.019165
+14/300 complete.15/300 complete.16/300 complete.17/300 complete.18/300 complete.19/300 complete.20/300 complete.21/300 complete.22/300 complete.23/300 complete.24/300 complete.25/300 complete.26/300 complete.27/300 complete.28/300 complete.
+----------------------------------------
+  episode      |  29
+  reward       |  -264.83561868500294
+----------------------------------------
+[Iteration 29] panel min -264.8  mean -77.5 mbb/h  |  best_response -265±0  equilibrium -77±0  random +789±0
+[Iteration 29]   actions: call=42% raise=29% fold=12% check=17%  (0s)
+  last-step weighted losses  adv: 1.426214  policy: 0.019176
+29/300 complete.30/300 complete.31/300 complete.32/300 complete.33/300 complete.34/300 complete.35/300 complete.36/300 complete.37/300 complete.38/300 complete.39/300 complete.40/300 complete.41/300 complete.42/300 complete.43/300 complete.
+----------------------------------------
+  episode      |  44
+  reward       |  -271.6393648761642
+----------------------------------------
+[Iteration 44] panel min -271.6  mean -66.7 mbb/h  |  best_response -272±0  equilibrium -67±0  random +767±0
+[Iteration 44]   actions: call=41% raise=29% fold=13% check=17%  (0s)
+  last-step weighted losses  adv: 1.335527  policy: 0.016941
+44/300 complete.45/300 complete.46/300 complete.47/300 complete.48/300 complete.49/300 complete.50/300 complete.51/300 complete.52/300 complete.53/300 complete.54/300 complete.55/300 complete.56/300 complete.57/300 complete.58/300 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -285.3034264539996
+----------------------------------------
+[Iteration 59] panel min -285.3  mean -63.5 mbb/h  |  best_response -285±0  equilibrium -64±0  random +741±0
+[Iteration 59]   actions: call=40% raise=28% fold=14% check=18%  (0s)
+  last-step weighted losses  adv: 1.290708  policy: 0.019309
+59/300 complete.60/300 complete.61/300 complete.62/300 complete.63/300 complete.64/300 complete.65/300 complete.66/300 complete.67/300 complete.68/300 complete.69/300 complete.70/300 complete.71/300 complete.72/300 complete.73/300 complete.
+----------------------------------------
+  episode      |  74
+  reward       |  -290.4836418642077
+----------------------------------------
+[Iteration 74] panel min -290.5  mean -65.1 mbb/h  |  best_response -290±0  equilibrium -65±0  random +756±0
+[Iteration 74]   actions: call=38% raise=29% fold=13% check=19%  (0s)
+  last-step weighted losses  adv: 1.442754  policy: 0.018207
+74/300 complete.75/300 complete.76/300 complete.77/300 complete.78/300 complete.79/300 complete.80/300 complete.81/300 complete.82/300 complete.83/300 complete.84/300 complete.85/300 complete.86/300 complete.87/300 complete.88/300 complete.
+----------------------------------------
+  episode      |  89
+  reward       |  -291.4790339429704
+----------------------------------------
+=== trial 3 pruned after 6 evaluation(s) (episode 89, panel min -291.5)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\trials\trial_3/
+[I 2026-11-07 14:27:23,125] Trial 3 pruned. 
+
+=== trial 5: {"lr": 0.0017838335580749281, "batch_size": 2048, "layers": "256 256"}
+0/300 complete.1/300 complete.2/300 complete.3/300 complete.4/300 complete.5/300 complete.6/300 complete.7/300 complete.8/300 complete.9/300 complete.10/300 complete.11/300 complete.12/300 complete.13/300 complete.
+----------------------------------------
+  episode      |  14
+  reward       |  -235.23199322595252
+----------------------------------------
+[Iteration 14] panel min -235.2  mean -86.5 mbb/h  |  best_response -235±0  equilibrium -86±0  random +794±0
+[Iteration 14]   actions: call=30% raise=36% fold=14% check=19%  (0s)
+  last-step weighted losses  adv: 1.882031  policy: 0.021022
+14/300 complete.15/300 complete.16/300 complete.17/300 complete.18/300 complete.19/300 complete.20/300 complete.21/300 complete.22/300 complete.23/300 complete.24/300 complete.25/300 complete.26/300 complete.27/300 complete.28/300 complete.
+----------------------------------------
+  episode      |  29
+  reward       |  -178.6219329552176
+----------------------------------------
+[Iteration 29] panel min -178.6  mean -42.6 mbb/h  |  best_response -179±0  equilibrium -43±0  random +750±0
+[Iteration 29]   actions: call=32% raise=33% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.748314  policy: 0.021532
+29/300 complete.30/300 complete.31/300 complete.32/300 complete.33/300 complete.34/300 complete.35/300 complete.36/300 complete.37/300 complete.38/300 complete.39/300 complete.40/300 complete.41/300 complete.42/300 complete.43/300 complete.
+----------------------------------------
+  episode      |  44
+  reward       |  -204.89457461301535
+----------------------------------------
+[Iteration 44] panel min -204.9  mean -42.0 mbb/h  |  best_response -205±0  equilibrium -42±0  random +717±0
+[Iteration 44]   actions: call=30% raise=35% fold=16% check=20%  (0s)
+  last-step weighted losses  adv: 1.900956  policy: 0.020459
+44/300 complete.45/300 complete.46/300 complete.47/300 complete.48/300 complete.49/300 complete.50/300 complete.51/300 complete.52/300 complete.53/300 complete.54/300 complete.55/300 complete.56/300 complete.57/300 complete.58/300 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -162.7305613293178
+----------------------------------------
+[Iteration 59] panel min -162.7  mean -34.8 mbb/h  |  best_response -163±0  equilibrium -35±0  random +720±0
+[Iteration 59]   actions: call=30% raise=34% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.751746  policy: 0.020993
+59/300 complete.60/300 complete.61/300 complete.62/300 complete.63/300 complete.64/300 complete.65/300 complete.66/300 complete.67/300 complete.68/300 complete.69/300 complete.70/300 complete.71/300 complete.72/300 complete.73/300 complete.
+----------------------------------------
+  episode      |  74
+  reward       |  -173.0909360736315
+----------------------------------------
+[Iteration 74] panel min -173.1  mean -29.6 mbb/h  |  best_response -173±0  equilibrium -30±0  random +708±0
+[Iteration 74]   actions: call=30% raise=34% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.744514  policy: 0.019755
+74/300 complete.75/300 complete.76/300 complete.77/300 complete.78/300 complete.79/300 complete.80/300 complete.81/300 complete.82/300 complete.83/300 complete.84/300 complete.85/300 complete.86/300 complete.87/300 complete.88/300 complete.
+----------------------------------------
+  episode      |  89
+  reward       |  -174.5181369996085
+----------------------------------------
+[Iteration 89] panel min -174.5  mean -32.3 mbb/h  |  best_response -175±0  equilibrium -32±0  random +728±0
+[Iteration 89]   actions: call=31% raise=34% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.713300  policy: 0.021799
+89/300 complete.90/300 complete.91/300 complete.92/300 complete.93/300 complete.94/300 complete.95/300 complete.96/300 complete.97/300 complete.98/300 complete.99/300 complete.100/300 complete.101/300 complete.102/300 complete.103/300 complete.
+----------------------------------------
+  episode      |  104
+  reward       |  -168.6406661339725
+----------------------------------------
+[Iteration 104] panel min -168.6  mean -28.5 mbb/h  |  best_response -169±0  equilibrium -29±0  random +714±0
+[Iteration 104]   actions: call=31% raise=33% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.838705  policy: 0.020661
+104/300 complete.105/300 complete.106/300 complete.107/300 complete.108/300 complete.109/300 complete.110/300 complete.111/300 complete.112/300 complete.113/300 complete.114/300 complete.115/300 complete.116/300 complete.117/300 complete.118/300 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -174.99146528128108
+----------------------------------------
+[Iteration 119] panel min -175.0  mean -27.2 mbb/h  |  best_response -175±0  equilibrium -27±0  random +717±0
+[Iteration 119]   actions: call=31% raise=33% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.748014  policy: 0.021603
+119/300 complete.120/300 complete.121/300 complete.122/300 complete.123/300 complete.124/300 complete.125/300 complete.126/300 complete.127/300 complete.128/300 complete.129/300 complete.130/300 complete.131/300 complete.132/300 complete.133/300 complete.
+----------------------------------------
+  episode      |  134
+  reward       |  -164.54225138961817
+----------------------------------------
+[Iteration 134] panel min -164.5  mean -24.9 mbb/h  |  best_response -165±0  equilibrium -25±0  random +719±0
+[Iteration 134]   actions: call=32% raise=32% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.867605  policy: 0.020429
+134/300 complete.135/300 complete.136/300 complete.137/300 complete.138/300 complete.139/300 complete.140/300 complete.141/300 complete.142/300 complete.143/300 complete.144/300 complete.145/300 complete.146/300 complete.147/300 complete.148/300 complete.
+----------------------------------------
+  episode      |  149
+  reward       |  -175.99611474639366
+----------------------------------------
+[Iteration 149] panel min -176.0  mean -25.6 mbb/h  |  best_response -176±0  equilibrium -26±0  random +699±0
+[Iteration 149]   actions: call=31% raise=32% fold=16% check=21%  (0s)
+  last-step weighted losses  adv: 1.917695  policy: 0.021474
+149/300 complete.150/300 complete.151/300 complete.152/300 complete.153/300 complete.154/300 complete.155/300 complete.156/300 complete.157/300 complete.158/300 complete.159/300 complete.160/300 complete.161/300 complete.162/300 complete.163/300 complete.
+----------------------------------------
+  episode      |  164
+  reward       |  -185.12927880077206
+----------------------------------------
+[Iteration 164] panel min -185.1  mean -26.4 mbb/h  |  best_response -185±0  equilibrium -26±0  random +715±0
+[Iteration 164]   actions: call=31% raise=33% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.853537  policy: 0.022510
+164/300 complete.165/300 complete.166/300 complete.167/300 complete.168/300 complete.169/300 complete.170/300 complete.171/300 complete.172/300 complete.173/300 complete.174/300 complete.175/300 complete.176/300 complete.177/300 complete.178/300 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -180.02597570756512
+----------------------------------------
+[Iteration 179] panel min -180.0  mean -26.0 mbb/h  |  best_response -180±0  equilibrium -26±0  random +710±0
+[Iteration 179]   actions: call=31% raise=33% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.770252  policy: 0.022554
+179/300 complete.180/300 complete.181/300 complete.182/300 complete.183/300 complete.184/300 complete.185/300 complete.186/300 complete.187/300 complete.188/300 complete.189/300 complete.190/300 complete.191/300 complete.192/300 complete.193/300 complete.
+----------------------------------------
+  episode      |  194
+  reward       |  -167.17976755771394
+----------------------------------------
+[Iteration 194] panel min -167.2  mean -25.5 mbb/h  |  best_response -167±0  equilibrium -26±0  random +715±0
+[Iteration 194]   actions: call=31% raise=33% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.957413  policy: 0.020512
+194/300 complete.195/300 complete.196/300 complete.197/300 complete.198/300 complete.199/300 complete.200/300 complete.201/300 complete.202/300 complete.203/300 complete.204/300 complete.205/300 complete.206/300 complete.207/300 complete.208/300 complete.
+----------------------------------------
+  episode      |  209
+  reward       |  -169.16719391085942
+----------------------------------------
+[Iteration 209] panel min -169.2  mean -24.8 mbb/h  |  best_response -169±0  equilibrium -25±0  random +721±0
+[Iteration 209]   actions: call=30% raise=34% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.725604  policy: 0.022425
+209/300 complete.210/300 complete.211/300 complete.212/300 complete.213/300 complete.214/300 complete.215/300 complete.216/300 complete.217/300 complete.218/300 complete.219/300 complete.220/300 complete.221/300 complete.222/300 complete.223/300 complete.
+----------------------------------------
+  episode      |  224
+  reward       |  -160.79861980030188
+----------------------------------------
+[Iteration 224] panel min -160.8  mean -23.5 mbb/h  |  best_response -161±0  equilibrium -24±0  random +720±0
+[Iteration 224]   actions: call=31% raise=33% fold=15% check=22%  (0s)
+  last-step weighted losses  adv: 1.796708  policy: 0.020619
+224/300 complete.225/300 complete.226/300 complete.227/300 complete.228/300 complete.229/300 complete.230/300 complete.231/300 complete.232/300 complete.233/300 complete.234/300 complete.235/300 complete.236/300 complete.237/300 complete.238/300 complete.
+----------------------------------------
+  episode      |  239
+  reward       |  -178.29759062950373
+----------------------------------------
+[Iteration 239] panel min -178.3  mean -24.6 mbb/h  |  best_response -178±0  equilibrium -25±0  random +716±0
+[Iteration 239]   actions: call=31% raise=34% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.763707  policy: 0.022239
+239/300 complete.240/300 complete.241/300 complete.242/300 complete.243/300 complete.244/300 complete.245/300 complete.246/300 complete.247/300 complete.248/300 complete.249/300 complete.250/300 complete.251/300 complete.252/300 complete.253/300 complete.
+----------------------------------------
+  episode      |  254
+  reward       |  -180.7012567753463
+----------------------------------------
+[Iteration 254] panel min -180.7  mean -24.3 mbb/h  |  best_response -181±0  equilibrium -24±0  random +726±0
+[Iteration 254]   actions: call=31% raise=33% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.990828  policy: 0.022556
+254/300 complete.255/300 complete.256/300 complete.257/300 complete.258/300 complete.259/300 complete.260/300 complete.261/300 complete.262/300 complete.263/300 complete.264/300 complete.265/300 complete.266/300 complete.267/300 complete.268/300 complete.
+----------------------------------------
+  episode      |  269
+  reward       |  -187.01627942770736
+----------------------------------------
+[Iteration 269] panel min -187.0  mean -26.2 mbb/h  |  best_response -187±0  equilibrium -26±0  random +729±0
+[Iteration 269]   actions: call=31% raise=34% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.941704  policy: 0.022434
+269/300 complete.270/300 complete.271/300 complete.272/300 complete.273/300 complete.274/300 complete.275/300 complete.276/300 complete.277/300 complete.278/300 complete.279/300 complete.280/300 complete.281/300 complete.282/300 complete.283/300 complete.
+----------------------------------------
+  episode      |  284
+  reward       |  -182.8816281867742
+----------------------------------------
+[Iteration 284] panel min -182.9  mean -26.4 mbb/h  |  best_response -183±0  equilibrium -26±0  random +734±0
+[Iteration 284]   actions: call=32% raise=33% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.983535  policy: 0.026532
+284/300 complete.285/300 complete.286/300 complete.287/300 complete.288/300 complete.289/300 complete.290/300 complete.291/300 complete.292/300 complete.293/300 complete.294/300 complete.295/300 complete.296/300 complete.297/300 complete.298/300 complete.
+----------------------------------------
+  episode      |  299
+  reward       |  -171.16391607738052
+----------------------------------------
+[Iteration 299] panel min -171.2  mean -23.0 mbb/h  |  best_response -171±0  equilibrium -23±0  random +734±0
+[Iteration 299]   actions: call=31% raise=33% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.811130  policy: 0.024534
+299/300 complete.
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\trials\trial_5/
+Learning curve saved to C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\trials\trial_5/fig.png
+=== trial 5 finished: score -180.4
+[I 2026-11-07 15:18:10,861] Trial 5 finished with value: -180.35394123062068 and parameters: {'lr': 0.0017838335580749281, 'batch_size': 2048, 'layers': '256 256'}. Best is trial 8 with value: -176.91094476680794.
+
+=== trial 17: {"lr": 0.0024733724218463926, "batch_size": 2048, "layers": "256 256"}
+0/300 complete.1/300 complete.2/300 complete.3/300 complete.4/300 complete.5/300 complete.6/300 complete.7/300 complete.8/300 complete.9/300 complete.10/300 complete.11/300 complete.12/300 complete.13/300 complete.
+----------------------------------------
+  episode      |  14
+  reward       |  -215.7284729515384
+----------------------------------------
+[Iteration 14] panel min -215.7  mean -78.0 mbb/h  |  best_response -216±0  equilibrium -78±0  random +732±0
+[Iteration 14]   actions: call=33% raise=33% fold=15% check=19%  (0s)
+  last-step weighted losses  adv: 1.905177  policy: 0.023806
+14/300 complete.15/300 complete.16/300 complete.17/300 complete.18/300 complete.19/300 complete.20/300 complete.21/300 complete.22/300 complete.23/300 complete.24/300 complete.25/300 complete.26/300 complete.27/300 complete.28/300 complete.
+----------------------------------------
+  episode      |  29
+  reward       |  -185.03282116888926
+----------------------------------------
+[Iteration 29] panel min -185.0  mean -52.9 mbb/h  |  best_response -185±0  equilibrium -53±0  random +743±0
+[Iteration 29]   actions: call=37% raise=30% fold=13% check=20%  (0s)
+  last-step weighted losses  adv: 1.775369  policy: 0.021564
+29/300 complete.30/300 complete.31/300 complete.32/300 complete.33/300 complete.34/300 complete.35/300 complete.36/300 complete.37/300 complete.38/300 complete.39/300 complete.40/300 complete.41/300 complete.42/300 complete.43/300 complete.
+----------------------------------------
+  episode      |  44
+  reward       |  -183.2031220827593
+----------------------------------------
+[Iteration 44] panel min -183.2  mean -37.8 mbb/h  |  best_response -183±0  equilibrium -38±0  random +727±0
+[Iteration 44]   actions: call=36% raise=28% fold=14% check=22%  (0s)
+  last-step weighted losses  adv: 1.591280  policy: 0.019455
+44/300 complete.45/300 complete.46/300 complete.47/300 complete.48/300 complete.49/300 complete.50/300 complete.51/300 complete.52/300 complete.53/300 complete.54/300 complete.55/300 complete.56/300 complete.57/300 complete.58/300 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -206.56203010665476
+----------------------------------------
+[Iteration 59] panel min -206.6  mean -32.1 mbb/h  |  best_response -207±0  equilibrium -32±0  random +704±0
+[Iteration 59]   actions: call=34% raise=30% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.689470  policy: 0.018642
+59/300 complete.60/300 complete.61/300 complete.62/300 complete.63/300 complete.64/300 complete.65/300 complete.66/300 complete.67/300 complete.68/300 complete.69/300 complete.70/300 complete.71/300 complete.72/300 complete.73/300 complete.
+----------------------------------------
+  episode      |  74
+  reward       |  -188.59479841622905
+----------------------------------------
+[Iteration 74] panel min -188.6  mean -28.6 mbb/h  |  best_response -189±0  equilibrium -29±0  random +721±0
+[Iteration 74]   actions: call=31% raise=33% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.757030  policy: 0.019123
+74/300 complete.75/300 complete.76/300 complete.77/300 complete.78/300 complete.79/300 complete.80/300 complete.81/300 complete.82/300 complete.83/300 complete.84/300 complete.85/300 complete.86/300 complete.87/300 complete.88/300 complete.
+----------------------------------------
+  episode      |  89
+  reward       |  -189.44687471021336
+----------------------------------------
+[Iteration 89] panel min -189.4  mean -25.3 mbb/h  |  best_response -189±0  equilibrium -25±0  random +717±0
+[Iteration 89]   actions: call=31% raise=33% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.659653  policy: 0.018403
+89/300 complete.90/300 complete.91/300 complete.92/300 complete.93/300 complete.94/300 complete.95/300 complete.96/300 complete.97/300 complete.98/300 complete.99/300 complete.100/300 complete.101/300 complete.102/300 complete.103/300 complete.
+----------------------------------------
+  episode      |  104
+  reward       |  -187.60493080832757
+----------------------------------------
+[Iteration 104] panel min -187.6  mean -23.4 mbb/h  |  best_response -188±0  equilibrium -23±0  random +709±0
+[Iteration 104]   actions: call=30% raise=33% fold=16% check=21%  (0s)
+  last-step weighted losses  adv: 1.670578  policy: 0.020091
+104/300 complete.105/300 complete.106/300 complete.107/300 complete.108/300 complete.109/300 complete.110/300 complete.111/300 complete.112/300 complete.113/300 complete.114/300 complete.115/300 complete.116/300 complete.117/300 complete.118/300 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -180.67365247203182
+----------------------------------------
+[Iteration 119] panel min -180.7  mean -21.2 mbb/h  |  best_response -181±0  equilibrium -21±0  random +699±0
+[Iteration 119]   actions: call=30% raise=34% fold=16% check=21%  (0s)
+  last-step weighted losses  adv: 1.848935  policy: 0.020889
+119/300 complete.120/300 complete.121/300 complete.122/300 complete.123/300 complete.124/300 complete.125/300 complete.126/300 complete.127/300 complete.128/300 complete.129/300 complete.130/300 complete.131/300 complete.132/300 complete.133/300 complete.
+----------------------------------------
+  episode      |  134
+  reward       |  -183.8972082351212
+----------------------------------------
+[Iteration 134] panel min -183.9  mean -22.0 mbb/h  |  best_response -184±0  equilibrium -22±0  random +699±0
+[Iteration 134]   actions: call=29% raise=34% fold=16% check=21%  (0s)
+  last-step weighted losses  adv: 1.670548  policy: 0.021551
+134/300 complete.135/300 complete.136/300 complete.137/300 complete.138/300 complete.139/300 complete.140/300 complete.141/300 complete.142/300 complete.143/300 complete.144/300 complete.145/300 complete.146/300 complete.147/300 complete.148/300 complete.
+----------------------------------------
+  episode      |  149
+  reward       |  -178.43114448419584
+----------------------------------------
+[Iteration 149] panel min -178.4  mean -21.5 mbb/h  |  best_response -178±0  equilibrium -22±0  random +713±0
+[Iteration 149]   actions: call=30% raise=34% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.866124  policy: 0.022281
+149/300 complete.150/300 complete.151/300 complete.152/300 complete.153/300 complete.154/300 complete.155/300 complete.156/300 complete.157/300 complete.158/300 complete.159/300 complete.160/300 complete.161/300 complete.162/300 complete.163/300 complete.
+----------------------------------------
+  episode      |  164
+  reward       |  -184.05411178827535
+----------------------------------------
+[Iteration 164] panel min -184.1  mean -23.6 mbb/h  |  best_response -184±0  equilibrium -24±0  random +718±0
+[Iteration 164]   actions: call=30% raise=35% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.735057  policy: 0.022047
+164/300 complete.165/300 complete.166/300 complete.167/300 complete.168/300 complete.169/300 complete.170/300 complete.171/300 complete.172/300 complete.173/300 complete.174/300 complete.175/300 complete.176/300 complete.177/300 complete.178/300 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -167.65633204600732
+----------------------------------------
+[Iteration 179] panel min -167.7  mean -21.4 mbb/h  |  best_response -168±0  equilibrium -21±0  random +714±0
+[Iteration 179]   actions: call=29% raise=34% fold=16% check=21%  (0s)
+  last-step weighted losses  adv: 1.723857  policy: 0.022808
+179/300 complete.180/300 complete.181/300 complete.182/300 complete.183/300 complete.184/300 complete.185/300 complete.186/300 complete.187/300 complete.188/300 complete.189/300 complete.190/300 complete.191/300 complete.192/300 complete.193/300 complete.
+----------------------------------------
+  episode      |  194
+  reward       |  -181.99960113077282
+----------------------------------------
+[Iteration 194] panel min -182.0  mean -19.3 mbb/h  |  best_response -182±0  equilibrium -19±0  random +724±0
+[Iteration 194]   actions: call=29% raise=35% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.676483  policy: 0.022572
+194/300 complete.195/300 complete.196/300 complete.197/300 complete.198/300 complete.199/300 complete.200/300 complete.201/300 complete.202/300 complete.203/300 complete.204/300 complete.205/300 complete.206/300 complete.207/300 complete.208/300 complete.
+----------------------------------------
+  episode      |  209
+  reward       |  -173.78086063239573
+----------------------------------------
+[Iteration 209] panel min -173.8  mean -21.3 mbb/h  |  best_response -174±0  equilibrium -21±0  random +722±0
+[Iteration 209]   actions: call=30% raise=34% fold=15% check=21%  (0s)
+  last-step weighted losses  adv: 1.772083  policy: 0.023245
+209/300 complete.210/300 complete.211/300 complete.212/300 complete.213/300 complete.214/300 complete.215/300 complete.216/300 complete.217/300 complete.218/300 complete.219/300 complete.220/300 complete.221/300 complete.222/300 complete.223/300 complete.
+----------------------------------------
+  episode      |  224
+  reward       |  -178.75319112539046
+----------------------------------------
+[Iteration 224] panel min -178.8  mean -22.6 mbb/h  |  best_response -179±0  equilibrium -23±0  random +732±0
+[Iteration 224]   actions: call=30% raise=34% fold=14% check=21%  (0s)
+  last-step weighted losses  adv: 1.953678  policy: 0.022692
+224/300 complete.225/300 complete.226/300 complete.227/300 complete.228/300 complete.229/300 complete.230/300 complete.231/300 complete.232/300 complete.233/300 complete.234/300 complete.235/300 complete.236/300 complete.237/300 complete.238/300 complete.
+----------------------------------------
+  episode      |  239
+  reward       |  -192.74411993669483
+----------------------------------------
+=== trial 17 pruned after 16 evaluation(s) (episode 239, panel min -192.7)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\trials\trial_17/
+[I 2026-11-07 16:00:00,486] Trial 17 pruned. 
+
+=== trial 27: {"lr": 0.0022789261819235, "batch_size": 1024, "layers": "128 128"}
+0/300 complete.1/300 complete.2/300 complete.3/300 complete.4/300 complete.5/300 complete.6/300 complete.7/300 complete.8/300 complete.9/300 complete.10/300 complete.11/300 complete.12/300 complete.13/300 complete.
+----------------------------------------
+  episode      |  14
+  reward       |  -219.8248003641133
+----------------------------------------
+[Iteration 14] panel min -219.8  mean -60.8 mbb/h  |  best_response -220±0  equilibrium -61±0  random +773±0
+[Iteration 14]   actions: call=35% raise=33% fold=12% check=21%  (0s)
+  last-step weighted losses  adv: 1.790717  policy: 0.020456
+14/300 complete.15/300 complete.16/300 complete.17/300 complete.18/300 complete.19/300 complete.20/300 complete.21/300 complete.22/300 complete.23/300 complete.24/300 complete.25/300 complete.26/300 complete.27/300 complete.28/300 complete.
+----------------------------------------
+  episode      |  29
+  reward       |  -245.21481558111594
+----------------------------------------
+[Iteration 29] panel min -245.2  mean -41.5 mbb/h  |  best_response -245±0  equilibrium -41±0  random +723±0
+[Iteration 29]   actions: call=34% raise=32% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.637863  policy: 0.021994
+29/300 complete.30/300 complete.31/300 complete.32/300 complete.33/300 complete.34/300 complete.35/300 complete.36/300 complete.37/300 complete.38/300 complete.39/300 complete.40/300 complete.41/300 complete.42/300 complete.43/300 complete.
+----------------------------------------
+  episode      |  44
+  reward       |  -190.6219390190073
+----------------------------------------
+[Iteration 44] panel min -190.6  mean -40.3 mbb/h  |  best_response -191±0  equilibrium -40±0  random +722±0
+[Iteration 44]   actions: call=33% raise=32% fold=15% check=20%  (0s)
+  last-step weighted losses  adv: 1.988958  policy: 0.023649
+44/300 complete.45/300 complete.46/300 complete.47/300 complete.48/300 complete.49/300 complete.50/300 complete.51/300 complete.52/300 complete.53/300 complete.54/300 complete.55/300 complete.56/300 complete.57/300 complete.58/300 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -201.8930262144933
+----------------------------------------
+[Iteration 59] panel min -201.9  mean -36.6 mbb/h  |  best_response -202±0  equilibrium -37±0  random +711±0
+[Iteration 59]   actions: call=34% raise=31% fold=14% check=20%  (0s)
+  last-step weighted losses  adv: 1.811224  policy: 0.022655
+59/300 complete.60/300 complete.61/300 complete.62/300 complete.63/300 complete.64/300 complete.65/300 complete.66/300 complete.67/300 complete.68/300 complete.69/300 complete.70/300 complete.71/300 complete.72/300 complete.73/300 complete.
+----------------------------------------
+  episode      |  74
+  reward       |  -222.97845607475693
+----------------------------------------
+[Iteration 74] panel min -223.0  mean -38.4 mbb/h  |  best_response -223±0  equilibrium -38±0  random +713±0
+[Iteration 74]   actions: call=33% raise=33% fold=14% check=19%  (0s)
+  last-step weighted losses  adv: 1.753286  policy: 0.025973
+74/300 complete.75/300 complete.76/300 complete.77/300 complete.78/300 complete.79/300 complete.80/300 complete.81/300 complete.82/300 complete.83/300 complete.84/300 complete.85/300 complete.86/300 complete.87/300 complete.88/300 complete.
+----------------------------------------
+  episode      |  89
+  reward       |  -205.233515332234
+----------------------------------------
+=== trial 27 pruned after 6 evaluation(s) (episode 89, panel min -205.2)
+
+Logs saved in C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\tune\leduc_deepcfr_v1\trials\trial_27/
+[I 2026-11-07 16:06:50,792] Trial 27 pruned. 
+worker done
+[I 2026-11-10 14:24:30,959] Using an existing study with name 'leduc_deepcfr_v1' instead of creating a new one.
+study has 30 finished and 0 running trials (target 30); nothing to do
