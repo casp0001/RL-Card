@@ -1,0 +1,3 @@
+arm,score,training hours
+A: original,-1084 (sd 117),
+C: retrained,-1409 (sd 119),2.4 (sd 0.1)

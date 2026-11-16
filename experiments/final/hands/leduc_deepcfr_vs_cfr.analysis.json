@@ -1,0 +1,1627 @@
+{
+ "game": "leduc",
+ "agent": {
+  "kind": "deepcfr",
+  "ckpt": "C:\\Users\\Petr.Cesar\\Documents\\bakacode\\RL-Card\\experiments\\tune\\leduc_deepcfr_v1\\finalists\\trial_15\\seed_1042"
+ },
+ "opponent": "CFR+ equilibrium",
+ "measure": "exact EV loss against the CFR+ equilibrium",
+ "summary": {
+  "deals": 400,
+  "decisions": 685,
+  "mean_ev_loss": 0.024018371483799237,
+  "share_with_loss_over_0.05bb": 0.05693430656934306
+ },
+ "hands": [
+  {
+   "deal": 260,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "Q"
+    ],
+    "opponent": [
+     "K"
+    ]
+   },
+   "board": [
+    "K"
+   ],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.41887830144558924,
+      "raise": 0.5806048420503942,
+      "fold": 0.0005168565040167086,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -0.2041020029661717,
+       "raise": -0.10354934477519295,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "ev": -0.14587357954374372,
+      "ev_loss": 0.04232423476855077,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.0001634256931445812,
+       "raise": 0.9998279641167864,
+       "fold": 8.61019006909606e-06
+      },
+      "opponent_reach": 1.0
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.9195325984136595,
+      "fold": 6.660006660006656e-07,
+      "check": 0.08046673558567452
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "K"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.3528191929038679,
+      "fold": 2.2976206427372383e-12,
+      "check": 0.6471808070938345
+     },
+     "analysis": {
+      "values": {
+       "raise": 0.7098225409346892,
+       "fold": -1.0,
+       "check": 0.6713411799356527
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "raise",
+      "ev": 0.6849181426613351,
+      "ev_loss": 0.02490439827335411,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 0.25529737778657013,
+       "fold": 0.011355476934129884,
+       "check": 0.7333471452793
+      },
+      "opponent_reach": 0.23801711191607033
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "K"
+     ],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 5.6269399907378404e-05,
+      "raise": 0.9999409716933173,
+      "fold": 2.758906775382404e-06,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "K"
+     ],
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.2340996191931368,
+      "raise": 0.0,
+      "fold": 0.7659003808068632,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -4.844834712625732,
+       "fold": -3.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "ev": -3.431875103699964,
+      "ev_loss": 0.43187510369996396,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.8996286849215875,
+       "fold": 0.1003713150784125
+      },
+      "opponent_reach": 0.008184624858761588
+     }
+    }
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": -5.0,
+    "opponent": 5.0
+   },
+   "category": "largest mistake"
+  },
+  {
+   "deal": 24,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "K"
+    ],
+    "opponent": [
+     "J"
+    ]
+   },
+   "board": [
+    "J"
+   ],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.12602657046616905,
+      "raise": 0.8739732847296842,
+      "fold": 1.448041467834405e-07,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": 0.5218369415601967,
+       "raise": 0.6075943962361662,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "ev": 0.5967865179471843,
+      "ev_loss": 0.010807878288981887,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 7.983627785244677e-05,
+       "raise": 0.9999194977214816,
+       "fold": 6.660006660006655e-07
+      },
+      "opponent_reach": 1.0
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.9563249508615524,
+      "raise": 0.043645151970420716,
+      "fold": 2.9897168026835706e-05,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.1891314788427252,
+      "fold": 0.0019181317985710027,
+      "check": 0.8089503893587038
+     },
+     "analysis": {
+      "values": {
+       "raise": -0.07607157944394506,
+       "fold": -2.0,
+       "check": 0.10159659879254515
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "check",
+      "ev": 0.06396281423547222,
+      "ev_loss": 0.03763378455707293,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 2.5538403145084968e-05,
+       "fold": 2.2201809496273873e-07,
+       "check": 0.9999742395787599
+      },
+      "opponent_reach": 0.36068785790458224
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 2.3213889985848673e-07,
+      "raise": 0.9999995357222002,
+      "fold": 2.3213889985848673e-07,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "fold",
+     "probs": {
+      "call": 0.2989709305074369,
+      "raise": 0.0,
+      "fold": 0.7010290694925632,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -5.310722148639218,
+       "fold": -4.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "ev": -4.391867820415374,
+      "ev_loss": 0.39186782041537427,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.8567845547563021,
+       "fold": 0.14321544524369784
+      },
+      "opponent_reach": 0.1038675898476619
+     }
+    }
+   ],
+   "showdown": false,
+   "folded": "agent",
+   "payoff_bb": {
+    "agent": -4.0,
+    "opponent": 4.0
+   },
+   "category": "largest mistake"
+  },
+  {
+   "deal": 82,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "K"
+    ],
+    "opponent": [
+     "J"
+    ]
+   },
+   "board": [
+    "J"
+   ],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.12602657046616905,
+      "raise": 0.8739732847296842,
+      "fold": 1.448041467834405e-07,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": 0.5218369415601967,
+       "raise": 0.6075943962361662,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "ev": 0.5967865179471843,
+      "ev_loss": 0.010807878288981887,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 7.983627785244677e-05,
+       "raise": 0.9999194977214816,
+       "fold": 6.660006660006655e-07
+      },
+      "opponent_reach": 1.0
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.9563249508615524,
+      "raise": 0.043645151970420716,
+      "fold": 2.9897168026835706e-05,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.1891314788427252,
+      "fold": 0.0019181317985710027,
+      "check": 0.8089503893587038
+     },
+     "analysis": {
+      "values": {
+       "raise": -0.07607157944394506,
+       "fold": -2.0,
+       "check": 0.10159659879254515
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "check",
+      "ev": 0.06396281423547222,
+      "ev_loss": 0.03763378455707293,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 2.5538403145084968e-05,
+       "fold": 2.2201809496273873e-07,
+       "check": 0.9999742395787599
+      },
+      "opponent_reach": 0.36068785790458224
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 2.3213889985848673e-07,
+      "raise": 0.9999995357222002,
+      "fold": 2.3213889985848673e-07,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.2989709305074369,
+      "raise": 0.0,
+      "fold": 0.7010290694925632,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -5.310722148639218,
+       "fold": -4.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "ev": -4.391867820415374,
+      "ev_loss": 0.39186782041537427,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.8567845547563021,
+       "fold": 0.14321544524369784
+      },
+      "opponent_reach": 0.1038675898476619
+     }
+    }
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": -6.0,
+    "opponent": 6.0
+   },
+   "category": "largest mistake"
+  },
+  {
+   "deal": 252,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "K"
+    ],
+    "opponent": [
+     "J"
+    ]
+   },
+   "board": [
+    "J"
+   ],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.12602657046616905,
+      "raise": 0.8739732847296842,
+      "fold": 1.448041467834405e-07,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": 0.5218369415601967,
+       "raise": 0.6075943962361662,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "ev": 0.5967865179471843,
+      "ev_loss": 0.010807878288981887,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 7.983627785244677e-05,
+       "raise": 0.9999194977214816,
+       "fold": 6.660006660006655e-07
+      },
+      "opponent_reach": 1.0
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.9563249508615524,
+      "raise": 0.043645151970420716,
+      "fold": 2.9897168026835706e-05,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.1891314788427252,
+      "fold": 0.0019181317985710027,
+      "check": 0.8089503893587038
+     },
+     "analysis": {
+      "values": {
+       "raise": -0.07607157944394506,
+       "fold": -2.0,
+       "check": 0.10159659879254515
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "check",
+      "ev": 0.06396281423547222,
+      "ev_loss": 0.03763378455707293,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 2.5538403145084968e-05,
+       "fold": 2.2201809496273873e-07,
+       "check": 0.9999742395787599
+      },
+      "opponent_reach": 0.36068785790458224
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 2.3213889985848673e-07,
+      "raise": 0.9999995357222002,
+      "fold": 2.3213889985848673e-07,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.2989709305074369,
+      "raise": 0.0,
+      "fold": 0.7010290694925632,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -5.310722148639218,
+       "fold": -4.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "ev": -4.391867820415374,
+      "ev_loss": 0.39186782041537427,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.8567845547563021,
+       "fold": 0.14321544524369784
+      },
+      "opponent_reach": 0.1038675898476619
+     }
+    }
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": -6.0,
+    "opponent": 6.0
+   },
+   "category": "largest mistake"
+  },
+  {
+   "deal": 261,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "BB",
+    "opponent": "SB"
+   },
+   "holes": {
+    "agent": [
+     "K"
+    ],
+    "opponent": [
+     "Q"
+    ]
+   },
+   "board": [
+    "Q"
+   ],
+   "decisions": [
+    {
+     "role": "opponent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0001634256931445812,
+      "raise": 0.9998279641167864,
+      "fold": 8.61019006909606e-06,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.46596442213566663,
+      "raise": 0.5340162806711043,
+      "fold": 1.9297193229100172e-05,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": 0.7978122224792508,
+       "raise": 0.7782689455207515,
+       "fold": -1.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "call",
+      "ev": 0.7873411016759009,
+      "ev_loss": 0.010471120803349887,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.6507286460741017,
+       "raise": 0.3492703919723533,
+       "fold": 9.61953544976458e-07
+      },
+      "opponent_reach": 0.6416110257770622
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.9999996669423691,
+      "raise": 0.0,
+      "fold": 3.330576308640194e-07,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "Q"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.33831113483906117,
+      "fold": 0.00017510534361417853,
+      "check": 0.6615137598173246
+     },
+     "analysis": {
+      "values": {
+       "raise": -2.300728377343056,
+       "fold": -3.0,
+       "check": -2.010837520982977
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "check",
+      "ev": -2.109084033213401,
+      "ev_loss": 0.09824651223042391,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 0.0001287049974052137,
+       "fold": 6.356113403903798e-07,
+       "check": 0.9998706593912544
+      },
+      "opponent_reach": 0.22082241196090843
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "Q"
+     ],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 1.063448251960239e-06,
+      "raise": 0.9999988255325007,
+      "fold": 1.1101924726381403e-07,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "Q"
+     ],
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "fold",
+     "probs": {
+      "call": 0.491955003001228,
+      "raise": 0.0,
+      "fold": 0.508044996998772,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -5.642473817629608,
+       "fold": -4.999999999999999
+      },
+      "values_se": {
+       "call": 0.0,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "ev": -5.316068208880184,
+      "ev_loss": 0.3160682088801847,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.7261394519907167,
+       "fold": 0.2738605480092833
+      },
+      "opponent_reach": 0.11816447381893097
+     }
+    }
+   ],
+   "showdown": false,
+   "folded": "agent",
+   "payoff_bb": {
+    "agent": -5.0,
+    "opponent": 5.0
+   },
+   "category": "largest mistake"
+  },
+  {
+   "deal": 174,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "Q"
+    ],
+    "opponent": [
+     "K"
+    ]
+   },
+   "board": [
+    "Q"
+   ],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.41887830144558924,
+      "raise": 0.5806048420503942,
+      "fold": 0.0005168565040167086,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -0.2041020029661717,
+       "raise": -0.10354934477519295,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "ev": -0.14587357954374372,
+      "ev_loss": 0.04232423476855077,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.0001634256931445812,
+       "raise": 0.9998279641167864,
+       "fold": 8.61019006909606e-06
+      },
+      "opponent_reach": 1.0
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.6507286460741017,
+      "raise": 0.3492703919723533,
+      "fold": 9.61953544976458e-07,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "Q"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.9999927193981714,
+      "fold": 3.989357366034671e-13,
+      "check": 7.280601429804888e-06
+     },
+     "analysis": {
+      "values": {
+       "raise": 2.5205470697974994,
+       "fold": -2.0,
+       "check": 2.5196475702158976
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "raise",
+      "ev": 2.520547063246798,
+      "ev_loss": 6.5507013147225734e-09,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 0.6769960153462204,
+       "fold": 2.2203842057601312e-07,
+       "check": 0.3230037626153591
+      },
+      "opponent_reach": 0.16070535969356542
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "Q"
+     ],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.6425390611024745,
+      "raise": 6.600832147710551e-06,
+      "fold": 0.35745433806537774,
+      "check": 0.0
+     },
+     "analysis": null
+    }
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": 4.0,
+    "opponent": -4.0
+   },
+   "category": "random hand"
+  },
+  {
+   "deal": 315,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "BB",
+    "opponent": "SB"
+   },
+   "holes": {
+    "agent": [
+     "Q"
+    ],
+    "opponent": [
+     "Q"
+    ]
+   },
+   "board": [
+    "J"
+   ],
+   "decisions": [
+    {
+     "role": "opponent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0001634256931445812,
+      "raise": 0.9998279641167864,
+      "fold": 8.61019006909606e-06,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.967978148169899,
+      "raise": 0.011167421976669464,
+      "fold": 0.020854429853431514,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -0.5316792301197057,
+       "raise": -0.7075166802666303,
+       "fold": -1.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "call",
+      "ev": -0.5434094437691718,
+      "ev_loss": 0.011730213649466026,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.9999124910550841,
+       "raise": 8.001294413306671e-05,
+       "fold": 7.496000782858305e-06
+      },
+      "opponent_reach": 0.6416293324980012
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 1.763072024386494e-05,
+      "fold": 7.663688378166844e-06,
+      "check": 0.999974705591378
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "J"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.09709915378803342,
+      "fold": 9.964125105108527e-06,
+      "check": 0.9028908820868615
+     },
+     "analysis": {
+      "values": {
+       "raise": -1.3560341734276269,
+       "fold": -2.0,
+       "check": -1.3557425201480688
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "check",
+      "ev": -1.3557772588968426,
+      "ev_loss": 3.4738748773799344e-05,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 0.051559069984533114,
+       "fold": 1.8612227884782995e-06,
+       "check": 0.9484390687926785
+      },
+      "opponent_reach": 0.3103736333148958
+     }
+    }
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": 0.0,
+    "opponent": -0.0
+   },
+   "category": "random hand"
+  },
+  {
+   "deal": 322,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "J"
+    ],
+    "opponent": [
+     "Q"
+    ]
+   },
+   "board": [],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "fold",
+     "probs": {
+      "call": 0.23688904908545733,
+      "raise": 0.005209686949412834,
+      "fold": 0.7579012639651298,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -0.5724818589956621,
+       "raise": -0.727479812339271,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "ev": -0.5183552572630273,
+      "ev_loss": 0.018355257263027336,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.00018113400143977826,
+       "raise": 0.10423985146512814,
+       "fold": 0.8955790145334321
+      },
+      "opponent_reach": 1.0000000000000002
+     }
+    }
+   ],
+   "showdown": false,
+   "folded": "agent",
+   "payoff_bb": {
+    "agent": -0.5,
+    "opponent": 0.5
+   },
+   "category": "random hand"
+  },
+  {
+   "deal": 336,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "K"
+    ],
+    "opponent": [
+     "J"
+    ]
+   },
+   "board": [
+    "Q"
+   ],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.12602657046616905,
+      "raise": 0.8739732847296842,
+      "fold": 1.448041467834405e-07,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": 0.5218369415601967,
+       "raise": 0.6075943962361662,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "ev": 0.5967865179471843,
+      "ev_loss": 0.010807878288981887,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 7.983627785244677e-05,
+       "raise": 0.9999194977214816,
+       "fold": 6.660006660006655e-07
+      },
+      "opponent_reach": 1.0
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.9563249508615524,
+      "raise": 0.043645151970420716,
+      "fold": 2.9897168026835706e-05,
+      "check": 0.0
+     },
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 2",
+     "board": [
+      "Q"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.23088042047473536,
+      "fold": 1.527569666336181e-07,
+      "check": 0.769119426768298
+     },
+     "analysis": {
+      "values": {
+       "raise": 0.03832533222097887,
+       "fold": -2.0,
+       "check": 0.08039679919502121
+      },
+      "values_se": {
+       "raise": 0.0,
+       "fold": 0.0,
+       "check": 0.0
+      },
+      "best": "check",
+      "ev": 0.07068300341496093,
+      "ev_loss": 0.009713795780060278,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "raise": 0.0884940517041569,
+       "fold": 2.2201809496273867e-07,
+       "check": 0.9115057262777481
+      },
+      "opponent_reach": 0.3563291038852291
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "round 2",
+     "board": [
+      "Q"
+     ],
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.12165678043581489,
+      "fold": 0.0014258985931241642,
+      "check": 0.8769173209710609
+     },
+     "analysis": null
+    }
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": 2.0,
+    "opponent": -2.0
+   },
+   "category": "random hand"
+  },
+  {
+   "deal": 348,
+   "names": {
+    "agent": "Deep CFR",
+    "opponent": "CFR+"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "J"
+    ],
+    "opponent": [
+     "Q"
+    ]
+   },
+   "board": [],
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "round 1",
+     "board": [],
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "fold",
+     "probs": {
+      "call": 0.23688904908545733,
+      "raise": 0.005209686949412834,
+      "fold": 0.7579012639651298,
+      "check": 0.0
+     },
+     "analysis": {
+      "values": {
+       "call": -0.5724818589956621,
+       "raise": -0.727479812339271,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "ev": -0.5183552572630273,
+      "ev_loss": 0.018355257263027336,
+      "ev_loss_se": 0.0,
+      "equilibrium_probs": {
+       "call": 0.00018113400143977826,
+       "raise": 0.10423985146512814,
+       "fold": 0.8955790145334321
+      },
+      "opponent_reach": 1.0000000000000002
+     }
+    }
+   ],
+   "showdown": false,
+   "folded": "agent",
+   "payoff_bb": {
+    "agent": -0.5,
+    "opponent": 0.5
+   },
+   "category": "random hand"
+  }
+ ]
+}

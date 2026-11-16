@@ -1,0 +1,77 @@
+
+----------------------------------------
+  episode      |  199999
+  reward       |  -2386.0
+----------------------------------------
+[Episode 199999] avg policy: panel min -2386.0  mean -1188.8 mbb/h  |  random +2560±129  station -40±47  maniac -354±163  nit -1018±155  tag -2146±198  lag -2386±212
+[Episode 199999] avg policy:   actions: call=11% raise=80% fold=1% check=9%  (33s)
+
+----------------------------------------
+  episode      |  399999
+  reward       |  -2176.5
+----------------------------------------
+[Episode 399999] avg policy: panel min -2176.5  mean -1034.7 mbb/h  |  random +2268±109  station -32±58  maniac +74±203  nit -1108±149  tag -1931±188  lag -2176±199
+[Episode 399999] avg policy:   actions: call=21% raise=72% fold=2% check=6%  (16s)
+
+----------------------------------------
+  episode      |  599999
+  reward       |  -1939.0
+----------------------------------------
+[Episode 599999] avg policy: panel min -1939.0  mean -961.8 mbb/h  |  random +2016±118  station -90±77  maniac +36±293  nit -1052±136  tag -1766±187  lag -1939±206
+[Episode 599999] avg policy:   actions: call=19% raise=70% fold=4% check=6%  (13s)
+
+----------------------------------------
+  episode      |  799999
+  reward       |  -1580.0
+----------------------------------------
+[Episode 799999] avg policy: panel min -1580.0  mean -660.4 mbb/h  |  random +1800±120  station -28±83  maniac +744±308  nit -954±135  tag -1484±184  lag -1580±201
+[Episode 799999] avg policy:   actions: call=18% raise=67% fold=7% check=8%  (14s)
+
+----------------------------------------
+  episode      |  999999
+  reward       |  -1254.0
+----------------------------------------
+[Episode 999999] avg policy: panel min -1254.0  mean -424.9 mbb/h  |  random +1642±102  station +43±85  maniac +1077±325  nit -764±123  tag -1254±171  lag -1226±195
+[Episode 999999] avg policy:   actions: call=19% raise=63% fold=9% check=9%  (23s)
+
+Checkpoint saved at episode 1000000 to experiments\tune\nfsp_v3\no_batchnorm_2000000\trial_33\seed_1044/checkpoints\episode_1000000
+
+----------------------------------------
+  episode      |  1199999
+  reward       |  -1349.5
+----------------------------------------
+[Episode 1199999] avg policy: panel min -1349.5  mean -389.5 mbb/h  |  random +1610±102  station -2±88  maniac +1339±333  nit -710±116  tag -1225±170  lag -1350±194
+[Episode 1199999] avg policy:   actions: call=19% raise=62% fold=10% check=9%  (22s)
+
+----------------------------------------
+  episode      |  1399999
+  reward       |  -1209.5
+----------------------------------------
+[Episode 1399999] avg policy: panel min -1209.5  mean -371.0 mbb/h  |  random +1528±103  station -32±85  maniac +1242±330  nit -736±116  tag -1210±169  lag -1120±194
+[Episode 1399999] avg policy:   actions: call=19% raise=60% fold=10% check=11%  (21s)
+
+----------------------------------------
+  episode      |  1599999
+  reward       |  -1211.5
+----------------------------------------
+[Episode 1599999] avg policy: panel min -1211.5  mean -336.4 mbb/h  |  random +1483±93  station +84±87  maniac +1398±343  nit -818±115  tag -1212±166  lag -1135±192
+[Episode 1599999] avg policy:   actions: call=20% raise=58% fold=11% check=11%  (22s)
+
+----------------------------------------
+  episode      |  1799999
+  reward       |  -1270.5
+----------------------------------------
+[Episode 1799999] avg policy: panel min -1270.5  mean -414.1 mbb/h  |  random +1354±98  station -20±87  maniac +1156±349  nit -782±115  tag -1154±165  lag -1270±194
+[Episode 1799999] avg policy:   actions: call=20% raise=57% fold=11% check=12%  (19s)
+
+----------------------------------------
+  episode      |  1999999
+  reward       |  -1334.5
+----------------------------------------
+[Episode 1999999] avg policy: panel min -1334.5  mean -446.3 mbb/h  |  random +1388±101  station -6±84  maniac +1212±353  nit -858±115  tag -1245±166  lag -1334±192
+[Episode 1999999] avg policy:   actions: call=20% raise=56% fold=11% check=12%  (21s)
+
+Logs saved in experiments\tune\nfsp_v3\no_batchnorm_2000000\trial_33\seed_1044/
+
+Model saved to experiments\tune\nfsp_v3\no_batchnorm_2000000\trial_33\seed_1044/
+Learning curve saved to experiments\tune\nfsp_v3\no_batchnorm_2000000\trial_33\seed_1044/fig.png

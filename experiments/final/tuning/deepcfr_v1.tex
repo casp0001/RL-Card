@@ -1,0 +1,13 @@
+% Deep CFR, limit: study deepcfr_v1
+\begin{tabular}{lrrrr}
+\toprule
+parameter & searched & winner & importance (4 complete) & importance (30 trials at evaluation 2) \\
+\midrule
+lr & 0.0001 - 0.003 (log) & 0.000653 &  & 0.67 \\
+num\_traversals & fixed 1000 & (fixed) &  &  \\
+num\_step & fixed 1000 & (fixed) &  &  \\
+batch\_size & 1024 / 4096 / 8192 & 8192 &  & 0.28 \\
+layers & 128 128 128 / 256 256 256 & 128 128 128 &  & 0.04 \\
+memory\_capacity & fixed 2000000 & (fixed) &  &  \\
+\bottomrule
+\end{tabular}

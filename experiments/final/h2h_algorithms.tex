@@ -1,0 +1,14 @@
+% Head-to-head by algorithm (mean over all seed pairs)
+\begin{tabular}{lrrrrrrr}
+\toprule
+algorithm & dqn & ppo & ppo\_ext & nfsp & nfsp\_ext & deepcfr & deepcfr\_ext \\
+\midrule
+dqn & -- & -83 $\pm$ 52 (sd 80) & -275 $\pm$ 48 (sd 75) & -149 $\pm$ 52 (sd 74) & -203 $\pm$ 61 (sd 85) & -141 $\pm$ 34 (sd 44) & -264 $\pm$ 30 (sd 40) \\
+ppo & +83 $\pm$ 52 (sd 80) & -- & -184 $\pm$ 45 (sd 67) & -8 $\pm$ 39 (sd 56) & +18 $\pm$ 41 (sd 58) & +65 $\pm$ 42 (sd 62) & -63 $\pm$ 31 (sd 43) \\
+ppo\_ext & +275 $\pm$ 48 (sd 75) & +184 $\pm$ 45 (sd 67) & -- & +175 $\pm$ 67 (sd 100) & +204 $\pm$ 44 (sd 62) & +189 $\pm$ 21 (sd 22) & +116 $\pm$ 24 (sd 33) \\
+nfsp & +149 $\pm$ 52 (sd 74) & +8 $\pm$ 39 (sd 56) & -175 $\pm$ 67 (sd 100) & -- & -245 $\pm$ 61 (sd 85) & -167 $\pm$ 49 (sd 71) & -162 $\pm$ 45 (sd 61) \\
+nfsp\_ext & +203 $\pm$ 61 (sd 85) & -18 $\pm$ 41 (sd 58) & -204 $\pm$ 44 (sd 62) & +245 $\pm$ 61 (sd 85) & -- & -100 $\pm$ 42 (sd 59) & -140 $\pm$ 31 (sd 46) \\
+deepcfr & +141 $\pm$ 34 (sd 44) & -65 $\pm$ 42 (sd 62) & -189 $\pm$ 21 (sd 22) & +167 $\pm$ 49 (sd 71) & +100 $\pm$ 42 (sd 59) & -- & -128 $\pm$ 25 (sd 31) \\
+deepcfr\_ext & +264 $\pm$ 30 (sd 40) & +63 $\pm$ 31 (sd 43) & -116 $\pm$ 24 (sd 33) & +162 $\pm$ 45 (sd 61) & +140 $\pm$ 31 (sd 46) & +128 $\pm$ 25 (sd 31) & -- \\
+\bottomrule
+\end{tabular}

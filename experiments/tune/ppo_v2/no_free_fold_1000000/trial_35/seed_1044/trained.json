@@ -1,0 +1,32 @@
+{
+ "ablation": "ppo_free_fold",
+ "study": "ppo_v2",
+ "trial": 35,
+ "seed": 1044,
+ "budget": 1000000,
+ "change": {
+  "no_free_fold": true
+ },
+ "params": {
+  "lr": 0.0004622276610035371,
+  "update_every": 4096,
+  "num_epochs": 4,
+  "batch_size": 1024,
+  "clip_range": 0.18554120609176747,
+  "entropy_coef": 0.01690513363604953,
+  "opponent_update_every": 9321
+ },
+ "history": [
+  -1563.0,
+  -756.5,
+  -563.0,
+  -512.5,
+  -498.5,
+  -448.5,
+  -261.0,
+  -261.5,
+  -375.0,
+  -596.5
+ ],
+ "hours": 0.5645936388439602
+}

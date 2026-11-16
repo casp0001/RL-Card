@@ -1,0 +1,28 @@
+{
+ "panel": {
+  "min": -277.375,
+  "mean": -80.6,
+  "members": {
+   "random": 1158.25,
+   "station": 325.125,
+   "maniac": -277.375,
+   "nit": -79.125,
+   "tag": -172.5,
+   "lag": -199.125
+  }
+ },
+ "lbr": {
+  "mean": 643.25,
+  "se": 90.139014746554
+ },
+ "free_fold": {
+  "mean": 0.0,
+  "n": 1414
+ },
+ "style": {
+  "VPIP": 0.708,
+  "PFR": 0.51,
+  "fold facing a bet": 0.2631424405315615,
+  "aggression factor (post-flop)": 3.997501025657733
+ }
+}

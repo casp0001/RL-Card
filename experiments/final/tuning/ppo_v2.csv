@@ -1,0 +1,10 @@
+parameter,searched,winner,importance (7 complete),importance (50 trials at evaluation 2)
+lr,5e-05 - 0.001 (log),0.000462,0.16,0.20
+update_every,2048 / 4096 / 8192 / 16384,4096,0.00,0.48
+num_epochs,2 - 8,4,0.16,0.10
+batch_size,128 / 256 / 512 / 1024,1024,0.16,0.02
+clip_range,0.1 - 0.3,0.186,0.08,0.03
+entropy_coef,0.001 - 0.03 (log),0.0169,0.19,0.13
+gae_lambda,fixed 0.95,(fixed),,
+mlp_layers,fixed 256 256,(fixed),,
+opponent_update_every,2000 - 50000 (log),9321,0.26,0.04

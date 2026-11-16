@@ -1,0 +1,380 @@
+[
+  {
+    "name": "dqn_s1042",
+    "algo": "dqn",
+    "kind": "dqn",
+    "ckpt": "experiments/tune/dqn_v1/finalists/trial_7/seed_1042",
+    "seed": 1042,
+    "study": "dqn_v1",
+    "trial": 7,
+    "params": {
+      "lr": 1.0339910411294462e-05,
+      "batch_size": 512,
+      "mlp_layers": "256 256",
+      "epsilon_decay_steps": 321427,
+      "epsilon_end": 0.02028445965557619,
+      "replay_memory_size": 331814,
+      "opponent_update_every": 4186,
+      "update_target_every": 666
+    }
+  },
+  {
+    "name": "dqn_s1043",
+    "algo": "dqn",
+    "kind": "dqn",
+    "ckpt": "experiments/tune/dqn_v1/finalists/trial_7/seed_1043",
+    "seed": 1043,
+    "study": "dqn_v1",
+    "trial": 7,
+    "params": {
+      "lr": 1.0339910411294462e-05,
+      "batch_size": 512,
+      "mlp_layers": "256 256",
+      "epsilon_decay_steps": 321427,
+      "epsilon_end": 0.02028445965557619,
+      "replay_memory_size": 331814,
+      "opponent_update_every": 4186,
+      "update_target_every": 666
+    }
+  },
+  {
+    "name": "dqn_s1044",
+    "algo": "dqn",
+    "kind": "dqn",
+    "ckpt": "experiments/tune/dqn_v1/finalists/trial_7/seed_1044",
+    "seed": 1044,
+    "study": "dqn_v1",
+    "trial": 7,
+    "params": {
+      "lr": 1.0339910411294462e-05,
+      "batch_size": 512,
+      "mlp_layers": "256 256",
+      "epsilon_decay_steps": 321427,
+      "epsilon_end": 0.02028445965557619,
+      "replay_memory_size": 331814,
+      "opponent_update_every": 4186,
+      "update_target_every": 666
+    }
+  },
+  {
+    "name": "ppo_s1043",
+    "algo": "ppo",
+    "kind": "ppo",
+    "ckpt": "experiments/tune/ppo_v2/finalists/trial_35/seed_1043",
+    "seed": 1043,
+    "study": "ppo_v2",
+    "trial": 35,
+    "params": {
+      "lr": 0.0004622276610035371,
+      "update_every": 4096,
+      "num_epochs": 4,
+      "batch_size": 1024,
+      "clip_range": 0.18554120609176747,
+      "entropy_coef": 0.01690513363604953,
+      "opponent_update_every": 9321
+    }
+  },
+  {
+    "name": "ppo_s1042",
+    "algo": "ppo",
+    "kind": "ppo",
+    "ckpt": "experiments/tune/ppo_v2/finalists/trial_35/seed_1042",
+    "seed": 1042,
+    "study": "ppo_v2",
+    "trial": 35,
+    "params": {
+      "lr": 0.0004622276610035371,
+      "update_every": 4096,
+      "num_epochs": 4,
+      "batch_size": 1024,
+      "clip_range": 0.18554120609176747,
+      "entropy_coef": 0.01690513363604953,
+      "opponent_update_every": 9321
+    }
+  },
+  {
+    "name": "ppo_s1044",
+    "algo": "ppo",
+    "kind": "ppo",
+    "ckpt": "experiments/tune/ppo_v2/finalists/trial_35/seed_1044",
+    "seed": 1044,
+    "study": "ppo_v2",
+    "trial": 35,
+    "params": {
+      "lr": 0.0004622276610035371,
+      "update_every": 4096,
+      "num_epochs": 4,
+      "batch_size": 1024,
+      "clip_range": 0.18554120609176747,
+      "entropy_coef": 0.01690513363604953,
+      "opponent_update_every": 9321
+    }
+  },
+  {
+    "name": "nfsp_s1042",
+    "algo": "nfsp",
+    "kind": "nfsp",
+    "ckpt": "experiments/tune/nfsp_v3/finalists/trial_33/seed_1042",
+    "seed": 1042,
+    "study": "nfsp_v3",
+    "trial": 33,
+    "params": {
+      "rl_learning_rate": 5.399790117221206e-06,
+      "sl_learning_rate": 0.001651998752669914,
+      "anticipatory_param": 0.032663786525574307,
+      "reservoir_buffer_capacity": 354192,
+      "q_replay_memory_size": 78922,
+      "q_epsilon_start": 0.021407987140248542,
+      "layers": "256 256",
+      "train_every": 16,
+      "opponent_update_every": 18149
+    }
+  },
+  {
+    "name": "nfsp_s1043",
+    "algo": "nfsp",
+    "kind": "nfsp",
+    "ckpt": "experiments/tune/nfsp_v3/finalists/trial_33/seed_1043",
+    "seed": 1043,
+    "study": "nfsp_v3",
+    "trial": 33,
+    "params": {
+      "rl_learning_rate": 5.399790117221206e-06,
+      "sl_learning_rate": 0.001651998752669914,
+      "anticipatory_param": 0.032663786525574307,
+      "reservoir_buffer_capacity": 354192,
+      "q_replay_memory_size": 78922,
+      "q_epsilon_start": 0.021407987140248542,
+      "layers": "256 256",
+      "train_every": 16,
+      "opponent_update_every": 18149
+    }
+  },
+  {
+    "name": "nfsp_s1044",
+    "algo": "nfsp",
+    "kind": "nfsp",
+    "ckpt": "experiments/tune/nfsp_v3/finalists/trial_33/seed_1044",
+    "seed": 1044,
+    "study": "nfsp_v3",
+    "trial": 33,
+    "params": {
+      "rl_learning_rate": 5.399790117221206e-06,
+      "sl_learning_rate": 0.001651998752669914,
+      "anticipatory_param": 0.032663786525574307,
+      "reservoir_buffer_capacity": 354192,
+      "q_replay_memory_size": 78922,
+      "q_epsilon_start": 0.021407987140248542,
+      "layers": "256 256",
+      "train_every": 16,
+      "opponent_update_every": 18149
+    }
+  },
+  {
+    "name": "deepcfr_s1042",
+    "algo": "deepcfr",
+    "kind": "deepcfr",
+    "ckpt": "experiments/tune/deepcfr_v1/finalists/trial_27/seed_1042",
+    "seed": 1042,
+    "study": "deepcfr_v1",
+    "trial": 27,
+    "params": {
+      "lr": 0.0006527893773762898,
+      "batch_size": 8192,
+      "layers": "128 128 128"
+    }
+  },
+  {
+    "name": "deepcfr_s1044",
+    "algo": "deepcfr",
+    "kind": "deepcfr",
+    "ckpt": "experiments/tune/deepcfr_v1/finalists/trial_27/seed_1044",
+    "seed": 1044,
+    "study": "deepcfr_v1",
+    "trial": 27,
+    "params": {
+      "lr": 0.0006527893773762898,
+      "batch_size": 8192,
+      "layers": "128 128 128"
+    }
+  },
+  {
+    "name": "deepcfr_s1043",
+    "algo": "deepcfr",
+    "kind": "deepcfr",
+    "ckpt": "experiments/tune/deepcfr_v1/finalists/trial_27/seed_1043",
+    "seed": 1043,
+    "study": "deepcfr_v1",
+    "trial": 27,
+    "params": {
+      "lr": 0.0006527893773762898,
+      "batch_size": 8192,
+      "layers": "128 128 128"
+    }
+  },
+  {
+    "name": "ppo_ext_s1042",
+    "algo": "ppo_ext",
+    "kind": "ppo",
+    "ckpt": "experiments/tune/ppo_v2/extended_4000000/trial_35/seed_1042",
+    "seed": 1042,
+    "study": "ppo_v2",
+    "trial": 35,
+    "params": {
+      "lr": 0.0004622276610035371,
+      "update_every": 4096,
+      "num_epochs": 4,
+      "batch_size": 1024,
+      "clip_range": 0.18554120609176747,
+      "entropy_coef": 0.01690513363604953,
+      "opponent_update_every": 9321
+    },
+    "budget": 4000000
+  },
+  {
+    "name": "ppo_ext_s1043",
+    "algo": "ppo_ext",
+    "kind": "ppo",
+    "ckpt": "experiments/tune/ppo_v2/extended_4000000/trial_35/seed_1043",
+    "seed": 1043,
+    "study": "ppo_v2",
+    "trial": 35,
+    "params": {
+      "lr": 0.0004622276610035371,
+      "update_every": 4096,
+      "num_epochs": 4,
+      "batch_size": 1024,
+      "clip_range": 0.18554120609176747,
+      "entropy_coef": 0.01690513363604953,
+      "opponent_update_every": 9321
+    },
+    "budget": 4000000
+  },
+  {
+    "name": "ppo_ext_s1044",
+    "algo": "ppo_ext",
+    "kind": "ppo",
+    "ckpt": "experiments/tune/ppo_v2/extended_4000000/trial_35/seed_1044",
+    "seed": 1044,
+    "study": "ppo_v2",
+    "trial": 35,
+    "params": {
+      "lr": 0.0004622276610035371,
+      "update_every": 4096,
+      "num_epochs": 4,
+      "batch_size": 1024,
+      "clip_range": 0.18554120609176747,
+      "entropy_coef": 0.01690513363604953,
+      "opponent_update_every": 9321
+    },
+    "budget": 4000000
+  },
+  {
+    "name": "nfsp_ext_s1042",
+    "algo": "nfsp_ext",
+    "kind": "nfsp",
+    "ckpt": "experiments/tune/nfsp_v3/extended_8000000/trial_33/seed_1042",
+    "seed": 1042,
+    "study": "nfsp_v3",
+    "trial": 33,
+    "params": {
+      "rl_learning_rate": 5.399790117221206e-06,
+      "sl_learning_rate": 0.001651998752669914,
+      "anticipatory_param": 0.032663786525574307,
+      "reservoir_buffer_capacity": 354192,
+      "q_replay_memory_size": 78922,
+      "q_epsilon_start": 0.021407987140248542,
+      "layers": "256 256",
+      "train_every": 16,
+      "opponent_update_every": 18149
+    },
+    "budget": 8000000
+  },
+  {
+    "name": "nfsp_ext_s1043",
+    "algo": "nfsp_ext",
+    "kind": "nfsp",
+    "ckpt": "experiments/tune/nfsp_v3/extended_8000000/trial_33/seed_1043",
+    "seed": 1043,
+    "study": "nfsp_v3",
+    "trial": 33,
+    "params": {
+      "rl_learning_rate": 5.399790117221206e-06,
+      "sl_learning_rate": 0.001651998752669914,
+      "anticipatory_param": 0.032663786525574307,
+      "reservoir_buffer_capacity": 354192,
+      "q_replay_memory_size": 78922,
+      "q_epsilon_start": 0.021407987140248542,
+      "layers": "256 256",
+      "train_every": 16,
+      "opponent_update_every": 18149
+    },
+    "budget": 8000000
+  },
+  {
+    "name": "nfsp_ext_s1044",
+    "algo": "nfsp_ext",
+    "kind": "nfsp",
+    "ckpt": "experiments/tune/nfsp_v3/extended_8000000/trial_33/seed_1044",
+    "seed": 1044,
+    "study": "nfsp_v3",
+    "trial": 33,
+    "params": {
+      "rl_learning_rate": 5.399790117221206e-06,
+      "sl_learning_rate": 0.001651998752669914,
+      "anticipatory_param": 0.032663786525574307,
+      "reservoir_buffer_capacity": 354192,
+      "q_replay_memory_size": 78922,
+      "q_epsilon_start": 0.021407987140248542,
+      "layers": "256 256",
+      "train_every": 16,
+      "opponent_update_every": 18149
+    },
+    "budget": 8000000
+  },
+  {
+    "name": "deepcfr_ext_s1042",
+    "algo": "deepcfr_ext",
+    "kind": "deepcfr",
+    "ckpt": "experiments/tune/deepcfr_v1/extended_500/trial_27/seed_1042",
+    "seed": 1042,
+    "study": "deepcfr_v1",
+    "trial": 27,
+    "params": {
+      "lr": 0.0006527893773762898,
+      "batch_size": 8192,
+      "layers": "128 128 128"
+    },
+    "budget": 500
+  },
+  {
+    "name": "deepcfr_ext_s1043",
+    "algo": "deepcfr_ext",
+    "kind": "deepcfr",
+    "ckpt": "experiments/tune/deepcfr_v1/extended_500/trial_27/seed_1043",
+    "seed": 1043,
+    "study": "deepcfr_v1",
+    "trial": 27,
+    "params": {
+      "lr": 0.0006527893773762898,
+      "batch_size": 8192,
+      "layers": "128 128 128"
+    },
+    "budget": 500
+  },
+  {
+    "name": "deepcfr_ext_s1044",
+    "algo": "deepcfr_ext",
+    "kind": "deepcfr",
+    "ckpt": "experiments/tune/deepcfr_v1/extended_500/trial_27/seed_1044",
+    "seed": 1044,
+    "study": "deepcfr_v1",
+    "trial": 27,
+    "params": {
+      "lr": 0.0006527893773762898,
+      "batch_size": 8192,
+      "layers": "128 128 128"
+    },
+    "budget": 500
+  }
+]

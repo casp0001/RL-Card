@@ -1,0 +1,5093 @@
+{
+ "game": "limit",
+ "agent": {
+  "kind": "ppo",
+  "ckpt": "C:\\Users\\Petr.Cesar\\Documents\\bakacode\\RL-Card\\experiments\\tune\\ppo_v2\\extended_4000000\\trial_35\\seed_1042"
+ },
+ "opponent": "tag",
+ "measure": "EV loss against the actual opponent (Monte Carlo, Bayesian opponent range)",
+ "samples": 300,
+ "hands": [
+  {
+   "deal": 9,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "S6",
+     "C8"
+    ],
+    "opponent": [
+     "SJ",
+     "CJ"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "S6",
+      "C8"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.197184,
+      "raise": 0.796019,
+      "fold": 0.006797,
+      "check": 0.0
+     },
+     "equity": 0.4329,
+     "hs": 0.4329,
+     "eq_actual": 0.1583,
+     "analysis": {
+      "values": {
+       "call": -0.5466666666666666,
+       "raise": -0.4033333333333333,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.36582471490649393,
+       "raise": 0.3314472280126429,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": -0.43225341666666667,
+      "ev_loss": -0.2177465833333333,
+      "ev_loss_se": 0.23268622714751452,
+      "ess": 1225.0,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "SJ",
+      "CJ"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.000504,
+      "raise": 0.999496,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7755,
+     "hs": 0.7755,
+     "eq_actual": 0.8277,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "S6",
+      "C8"
+     ],
+     "board": [],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.903526,
+      "raise": 0.08418,
+      "fold": 0.012293,
+      "check": 0.0
+     },
+     "equity": 0.4329,
+     "hs": 0.4329,
+     "eq_actual": 0.1585,
+     "analysis": {
+      "values": {
+       "call": -2.0033333333333334,
+       "raise": -2.6966666666666668,
+       "fold": -2.0
+      },
+      "values_se": {
+       "call": 0.4238828410664621,
+       "raise": 0.49895539337522354,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -2.0616572149905483,
+      "ev_loss": -0.2516761183427848,
+      "ev_loss_se": 0.301461927632391,
+      "ess": 547.942240469124,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "SJ",
+      "CJ"
+     ],
+     "board": [
+      "HK",
+      "D4",
+      "C7"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.993667,
+      "fold": 0.0,
+      "check": 0.006333
+     },
+     "equity": 0.7367,
+     "hs": 0.8497,
+     "eq_actual": 0.797,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "S6",
+      "C8"
+     ],
+     "board": [
+      "HK",
+      "D4",
+      "C7"
+     ],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.384197,
+      "raise": 0.615523,
+      "fold": 0.00028,
+      "check": 0.0
+     },
+     "equity": 0.3233,
+     "hs": 0.1152,
+     "eq_actual": 0.203,
+     "analysis": {
+      "values": {
+       "call": -5.546666666666667,
+       "raise": -6.1066666666666665,
+       "fold": -3.0
+      },
+      "values_se": {
+       "call": 0.4325953754095344,
+       "raise": 0.4475946698522208,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -5.890646480000001,
+      "ev_loss": 2.8906464800000005,
+      "ev_loss_se": 0.43128264778472697,
+      "ess": 224.66003733642833,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "SJ",
+      "CJ"
+     ],
+     "board": [
+      "HK",
+      "D4",
+      "C7"
+     ],
+     "pot_bb": 9.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.855422,
+      "raise": 0.144578,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7367,
+     "hs": 0.8497,
+     "eq_actual": 0.797,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "S6",
+      "C8"
+     ],
+     "board": [
+      "HK",
+      "D4",
+      "C7",
+      "DT"
+     ],
+     "pot_bb": 10.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.99575,
+      "fold": 3e-06,
+      "check": 0.004247
+     },
+     "equity": 0.26,
+     "hs": 0.1203,
+     "eq_actual": 0.1818,
+     "analysis": {
+      "values": {
+       "raise": -4.286666666666667,
+       "fold": -5.0,
+       "check": -3.64
+      },
+      "values_se": {
+       "raise": 0.4364055403120049,
+       "fold": 0.0,
+       "check": 0.38356887727244016
+      },
+      "best": "check",
+      "samples": 300,
+      "ev": -4.283922413333334,
+      "ev_loss": 0.6439224133333331,
+      "ev_loss_se": 0.20076820608342366,
+      "ess": 113.21305175657841,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "SJ",
+      "CJ"
+     ],
+     "board": [
+      "HK",
+      "D4",
+      "C7",
+      "DT"
+     ],
+     "pot_bb": 12.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.685201,
+      "raise": 0.314799,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7967,
+     "hs": 0.8256,
+     "eq_actual": 0.8182,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "S6",
+      "C8"
+     ],
+     "board": [
+      "HK",
+      "D4",
+      "C7",
+      "DT",
+      "CQ"
+     ],
+     "pot_bb": 14.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.996073,
+      "fold": 0.000238,
+      "check": 0.00369
+     },
+     "equity": 0.1076,
+     "hs": 0.1076,
+     "eq_actual": 0.0,
+     "analysis": {
+      "values": {
+       "raise": -8.666666666666666,
+       "fold": -7.0,
+       "check": -7.38
+      },
+      "values_se": {
+       "raise": 0.1621575086124765,
+       "fold": 0.0,
+       "check": 0.04634705009379638
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -8.66152220514446,
+      "ev_loss": 1.6615222051444622,
+      "ev_loss_se": 0.1615515917997735,
+      "ess": 86.20727263467309,
+      "candidates": 990
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "SJ",
+      "CJ"
+     ],
+     "board": [
+      "HK",
+      "D4",
+      "C7",
+      "DT",
+      "CQ"
+     ],
+     "pot_bb": 16.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999621,
+      "raise": 0.000371,
+      "fold": 8e-06,
+      "check": 0.0
+     },
+     "equity": 0.6894,
+     "hs": 0.6894,
+     "eq_actual": 1.0,
+     "analysis": null
+    }
+   ],
+   "preflop_aggressor": "opponent",
+   "board": [
+    "HK",
+    "D4",
+    "C7",
+    "DT",
+    "CQ"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": -9.0,
+    "opponent": 9.0
+   },
+   "pot_bb": 18.0,
+   "best_hands": {
+    "agent": "high card",
+    "opponent": "pair"
+   },
+   "category": "river_bluff"
+  },
+  {
+   "deal": 23,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "C5",
+     "C9"
+    ],
+    "opponent": [
+     "D5",
+     "S5"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "C5",
+      "C9"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.178999,
+      "raise": 0.703694,
+      "fold": 0.117307,
+      "check": 0.0
+     },
+     "equity": 0.4592,
+     "hs": 0.4592,
+     "eq_actual": 0.3708,
+     "analysis": {
+      "values": {
+       "call": -0.8433333333333334,
+       "raise": -0.5033333333333333,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.33780121645096073,
+       "raise": 0.34603981358029184,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -0.56380197,
+      "ev_loss": -0.30286469666666654,
+      "ev_loss_se": 0.20107206387578433,
+      "ess": 1225.0,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "D5",
+      "S5"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.212012,
+      "raise": 0.787931,
+      "fold": 5.7e-05,
+      "check": 0.0
+     },
+     "equity": 0.6029,
+     "hs": 0.6029,
+     "eq_actual": 0.6395,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "C5",
+      "C9"
+     ],
+     "board": [],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.973909,
+      "raise": 0.025978,
+      "fold": 0.000113,
+      "check": 0.0
+     },
+     "equity": 0.4592,
+     "hs": 0.4592,
+     "eq_actual": 0.3715,
+     "analysis": {
+      "values": {
+       "call": -1.4333333333333333,
+       "raise": -1.9733333333333334,
+       "fold": -2.0
+      },
+      "values_se": {
+       "call": 0.4332561461141331,
+       "raise": 0.4723548855119044,
+       "fold": 0.0
+      },
+      "best": "call",
+      "samples": 300,
+      "ev": -1.4474254866666667,
+      "ev_loss": 0.014092153333333055,
+      "ev_loss_se": 0.00571674923277603,
+      "ess": 548.170571216844,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "D5",
+      "S5"
+     ],
+     "board": [
+      "S7",
+      "HK",
+      "HA"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.002614,
+      "fold": 0.0,
+      "check": 0.997386
+     },
+     "equity": 0.5617,
+     "hs": 0.6166,
+     "eq_actual": 0.8384,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C5",
+      "C9"
+     ],
+     "board": [
+      "S7",
+      "HK",
+      "HA"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.583953,
+      "fold": 0.000208,
+      "check": 0.41584
+     },
+     "equity": 0.2717,
+     "hs": 0.241,
+     "eq_actual": 0.1616,
+     "analysis": {
+      "values": {
+       "raise": -1.12,
+       "fold": -3.0,
+       "check": -0.5333333333333333
+      },
+      "values_se": {
+       "raise": 0.3429441679648993,
+       "fold": 0.0,
+       "check": 0.2894400596382159
+      },
+      "best": "check",
+      "samples": 300,
+      "ev": -0.8764318169015166,
+      "ev_loss": 0.34309848356818307,
+      "ev_loss_se": 0.15558958669985304,
+      "ess": 211.67284659327413,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "D5",
+      "S5"
+     ],
+     "board": [
+      "S7",
+      "HK",
+      "HA"
+     ],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.998535,
+      "raise": 2.6e-05,
+      "fold": 0.001439,
+      "check": 0.0
+     },
+     "equity": 0.5617,
+     "hs": 0.6166,
+     "eq_actual": 0.8384,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "C5",
+      "C9"
+     ],
+     "board": [
+      "S7",
+      "HK",
+      "HA",
+      "C7"
+     ],
+     "pot_bb": 8.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.970081,
+      "fold": 4.9e-05,
+      "check": 0.02987
+     },
+     "equity": 0.26,
+     "hs": 0.2459,
+     "eq_actual": 0.1364,
+     "analysis": {
+      "values": {
+       "raise": -0.7466666666666667,
+       "fold": -4.0,
+       "check": -1.22
+      },
+      "values_se": {
+       "raise": 0.3528628996342812,
+       "fold": 0.0,
+       "check": 0.31979438767775403
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": -0.7609645466666667,
+      "ev_loss": 0.01429787999999989,
+      "ev_loss_se": 0.00852355505961891,
+      "ess": 190.64982885642536,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "D5",
+      "S5"
+     ],
+     "board": [
+      "S7",
+      "HK",
+      "HA",
+      "C7"
+     ],
+     "pot_bb": 10.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.939296,
+      "raise": 1e-06,
+      "fold": 0.060703,
+      "check": 0.0
+     },
+     "equity": 0.5533,
+     "hs": 0.644,
+     "eq_actual": 0.8636,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "C5",
+      "C9"
+     ],
+     "board": [
+      "S7",
+      "HK",
+      "HA",
+      "C7",
+      "D2"
+     ],
+     "pot_bb": 12.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.99389,
+      "fold": 0.004878,
+      "check": 0.001232
+     },
+     "equity": 0.1742,
+     "hs": 0.1742,
+     "eq_actual": 0.0,
+     "analysis": {
+      "values": {
+       "raise": -5.68,
+       "fold": -6.0,
+       "check": -6.086666666666667
+      },
+      "values_se": {
+       "raise": 0.302226594061982,
+       "fold": 0.0,
+       "check": 0.06758673907211449
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": -5.682061973333333,
+      "ev_loss": 0.002061973333333918,
+      "ev_loss_se": 0.0018314999826362695,
+      "ess": 111.3562795778003,
+      "candidates": 990
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "D5",
+      "S5"
+     ],
+     "board": [
+      "S7",
+      "HK",
+      "HA",
+      "C7",
+      "D2"
+     ],
+     "pot_bb": 14.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.998019,
+      "raise": 2e-06,
+      "fold": 0.001978,
+      "check": 0.0
+     },
+     "equity": 0.6328,
+     "hs": 0.6328,
+     "eq_actual": 1.0,
+     "analysis": null
+    }
+   ],
+   "preflop_aggressor": "opponent",
+   "board": [
+    "S7",
+    "HK",
+    "HA",
+    "C7",
+    "D2"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": -8.0,
+    "opponent": 8.0
+   },
+   "pot_bb": 16.0,
+   "best_hands": {
+    "agent": "pair",
+    "opponent": "two pair"
+   },
+   "category": "river_bluff"
+  },
+  {
+   "deal": 0,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "BB",
+    "opponent": "SB"
+   },
+   "holes": {
+    "agent": [
+     "HJ",
+     "S6"
+    ],
+    "opponent": [
+     "S3",
+     "D3"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "S3",
+      "D3"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.010169,
+      "raise": 0.989826,
+      "fold": 6e-06,
+      "check": 0.0
+     },
+     "equity": 0.5373,
+     "hs": 0.5373,
+     "eq_actual": 0.541,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "HJ",
+      "S6"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.711452,
+      "raise": 0.260151,
+      "fold": 0.028398,
+      "check": 0.0
+     },
+     "equity": 0.4766,
+     "hs": 0.4766,
+     "eq_actual": 0.4695,
+     "analysis": {
+      "values": {
+       "call": -1.01,
+       "raise": -0.74,
+       "fold": -1.0
+      },
+      "values_se": {
+       "call": 0.33028095198841956,
+       "raise": 0.3927111834142179,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": -0.9394753205246796,
+      "ev_loss": 0.19947532052467962,
+      "ev_loss_se": 0.1497538390052155,
+      "ess": 1089.8746886410188,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "S3",
+      "D3"
+     ],
+     "board": [
+      "CA",
+      "C4",
+      "C8"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.001344,
+      "fold": 0.0,
+      "check": 0.998656
+     },
+     "equity": 0.4017,
+     "hs": 0.5638,
+     "eq_actual": 0.7152,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "HJ",
+      "S6"
+     ],
+     "board": [
+      "CA",
+      "C4",
+      "C8"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.813814,
+      "fold": 0.002973,
+      "check": 0.183212
+     },
+     "equity": 0.2517,
+     "hs": 0.3034,
+     "eq_actual": 0.2848,
+     "analysis": {
+      "values": {
+       "raise": -1.1833333333333333,
+       "fold": -2.0,
+       "check": -0.6
+      },
+      "values_se": {
+       "raise": 0.2467834698896518,
+       "fold": 0.0,
+       "check": 0.20636472350704296
+      },
+      "best": "check",
+      "samples": 300,
+      "ev": -1.0788875122208457,
+      "ev_loss": 0.4788875122208456,
+      "ev_loss_se": 0.16157596111752434,
+      "ess": 672.8858735542252,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "S3",
+      "D3"
+     ],
+     "board": [
+      "CA",
+      "C4",
+      "C8",
+      "HQ"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.200021,
+      "fold": 0.0,
+      "check": 0.799979
+     },
+     "equity": 0.3033,
+     "hs": 0.4662,
+     "eq_actual": 0.8636,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "HJ",
+      "S6"
+     ],
+     "board": [
+      "CA",
+      "C4",
+      "C8",
+      "HQ"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.817284,
+      "fold": 0.000276,
+      "check": 0.18244
+     },
+     "equity": 0.2833,
+     "hs": 0.3169,
+     "eq_actual": 0.1364,
+     "analysis": {
+      "values": {
+       "raise": -1.0133333333333334,
+       "fold": -2.0,
+       "check": -0.46
+      },
+      "values_se": {
+       "raise": 0.24399011865389822,
+       "fold": 0.0,
+       "check": 0.1703992295636847
+      },
+      "best": "check",
+      "samples": 300,
+      "ev": -0.91265552,
+      "ev_loss": 0.4526555199999999,
+      "ev_loss_se": 0.1706893449903283,
+      "ess": 520.2598200753037,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "S3",
+      "D3"
+     ],
+     "board": [
+      "CA",
+      "C4",
+      "C8",
+      "HQ"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "fold",
+     "probs": {
+      "call": 0.861864,
+      "raise": 8e-06,
+      "fold": 0.138128,
+      "check": 0.0
+     },
+     "equity": 0.3033,
+     "hs": 0.4662,
+     "eq_actual": 0.8636,
+     "analysis": null
+    }
+   ],
+   "preflop_aggressor": "opponent",
+   "board": [
+    "CA",
+    "C4",
+    "C8",
+    "HQ"
+   ],
+   "showdown": false,
+   "folded": "opponent",
+   "payoff_bb": {
+    "agent": 2.0,
+    "opponent": -2.0
+   },
+   "pot_bb": 6.0,
+   "category": "bluff"
+  },
+  {
+   "deal": 16,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "BB",
+    "opponent": "SB"
+   },
+   "holes": {
+    "agent": [
+     "SQ",
+     "H4"
+    ],
+    "opponent": [
+     "S6",
+     "D3"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "S6",
+      "D3"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.656114,
+      "raise": 0.211596,
+      "fold": 0.132291,
+      "check": 0.0
+     },
+     "equity": 0.3605,
+     "hs": 0.3605,
+     "eq_actual": 0.3718,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "SQ",
+      "H4"
+     ],
+     "board": [],
+     "pot_bb": 2.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.662603,
+      "fold": 1.7e-05,
+      "check": 0.33738
+     },
+     "equity": 0.4918,
+     "hs": 0.4918,
+     "eq_actual": 0.6278,
+     "analysis": {
+      "values": {
+       "raise": 0.7966666666666666,
+       "fold": -1.0,
+       "check": 0.42
+      },
+      "values_se": {
+       "raise": 0.2168127455421054,
+       "fold": 0.0,
+       "check": 0.1759535258393404
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 0.6695563233333334,
+      "ev_loss": 0.12711034333333326,
+      "ev_loss_se": 0.05310749761798892,
+      "ess": 451.0662710820529,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "S6",
+      "D3"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.681346,
+      "raise": 0.002129,
+      "fold": 0.316525,
+      "check": 0.0
+     },
+     "equity": 0.3605,
+     "hs": 0.3605,
+     "eq_actual": 0.3845,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "SQ",
+      "H4"
+     ],
+     "board": [
+      "H8",
+      "DJ",
+      "CA"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.309409,
+      "fold": 0.008636,
+      "check": 0.681955
+     },
+     "equity": 0.3683,
+     "hs": 0.4149,
+     "eq_actual": 0.7712,
+     "analysis": {
+      "values": {
+       "raise": 0.88,
+       "fold": -2.0,
+       "check": -0.06
+      },
+      "values_se": {
+       "raise": 0.15035001897282305,
+       "fold": 0.0,
+       "check": 0.16312582090158514
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 0.21409062,
+      "ev_loss": 0.66590938,
+      "ev_loss_se": 0.10492169271186262,
+      "ess": 447.35330315160854,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "S6",
+      "D3"
+     ],
+     "board": [
+      "H8",
+      "DJ",
+      "CA"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.25,
+      "fold": 0.0,
+      "check": 0.75
+     },
+     "equity": 0.1733,
+     "hs": 0.093,
+     "eq_actual": 0.2288,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "SQ",
+      "H4"
+     ],
+     "board": [
+      "H8",
+      "DJ",
+      "CA",
+      "S7"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.42732,
+      "fold": 0.002719,
+      "check": 0.569961
+     },
+     "equity": 0.3067,
+     "hs": 0.3135,
+     "eq_actual": 0.8636,
+     "analysis": {
+      "values": {
+       "raise": 0.24666666666666667,
+       "fold": -2.0,
+       "check": -0.16
+      },
+      "values_se": {
+       "raise": 0.17874037980884586,
+       "fold": 0.0,
+       "check": 0.1391293199509406
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 0.008773839999999991,
+      "ev_loss": 0.23789282666666678,
+      "ev_loss_se": 0.08323281941531248,
+      "ess": 397.320594719194,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "S6",
+      "D3"
+     ],
+     "board": [
+      "H8",
+      "DJ",
+      "CA",
+      "S7"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "fold",
+     "probs": {
+      "call": 0.001074,
+      "raise": 0.0,
+      "fold": 0.998926,
+      "check": 0.0
+     },
+     "equity": 0.105,
+     "hs": 0.1029,
+     "eq_actual": 0.1364,
+     "analysis": null
+    }
+   ],
+   "preflop_aggressor": "agent",
+   "board": [
+    "H8",
+    "DJ",
+    "CA",
+    "S7"
+   ],
+   "showdown": false,
+   "folded": "opponent",
+   "payoff_bb": {
+    "agent": 2.0,
+    "opponent": -2.0
+   },
+   "pot_bb": 6.0,
+   "category": "bluff"
+  },
+  {
+   "deal": 2,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "BB",
+    "opponent": "SB"
+   },
+   "holes": {
+    "agent": [
+     "H7",
+     "CK"
+    ],
+    "opponent": [
+     "C7",
+     "DQ"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "C7",
+      "DQ"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.020454,
+      "raise": 0.979523,
+      "fold": 2.3e-05,
+      "check": 0.0
+     },
+     "equity": 0.516,
+     "hs": 0.516,
+     "eq_actual": 0.2672,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "H7",
+      "CK"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.74748,
+      "raise": 0.252515,
+      "fold": 4e-06,
+      "check": 0.0
+     },
+     "equity": 0.5526,
+     "hs": 0.5526,
+     "eq_actual": 0.7515,
+     "analysis": {
+      "values": {
+       "call": 0.6433333333333333,
+       "raise": 0.8333333333333334,
+       "fold": -1.0
+      },
+      "values_se": {
+       "call": 0.33864502559916904,
+       "raise": 0.37125936909102664,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 0.6913046579713247,
+      "ev_loss": 0.14202867536200856,
+      "ev_loss_se": 0.13035915924382208,
+      "ess": 1089.2826607762522,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C7",
+      "DQ"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.997787,
+      "fold": 0.0,
+      "check": 0.002213
+     },
+     "equity": 0.7833,
+     "hs": 0.9158,
+     "eq_actual": 0.8758,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "H7",
+      "CK"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6"
+     ],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.730218,
+      "raise": 0.255539,
+      "fold": 0.014243,
+      "check": 0.0
+     },
+     "equity": 0.415,
+     "hs": 0.426,
+     "eq_actual": 0.1242,
+     "analysis": {
+      "values": {
+       "call": -2.8933333333333335,
+       "raise": -3.7,
+       "fold": -2.0
+      },
+      "values_se": {
+       "call": 0.3287181052459118,
+       "raise": 0.3731065165428414,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -3.0867443800000003,
+      "ev_loss": 1.08674438,
+      "ev_loss_se": 0.32722249130084596,
+      "ess": 460.4309985609874,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C7",
+      "DQ"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6"
+     ],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.016125,
+      "raise": 0.983875,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7833,
+     "hs": 0.9158,
+     "eq_actual": 0.8758,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "H7",
+      "CK"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6"
+     ],
+     "pot_bb": 9.0,
+     "to_call_bb": 1.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.874161,
+      "raise": 0.112657,
+      "fold": 0.013181,
+      "check": 0.0
+     },
+     "equity": 0.415,
+     "hs": 0.426,
+     "eq_actual": 0.1242,
+     "analysis": {
+      "values": {
+       "call": -6.066666666666666,
+       "raise": -9.153333333333334,
+       "fold": -4.0
+      },
+      "values_se": {
+       "call": 0.23426315769480327,
+       "raise": 0.3062512333225078,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -6.387160860494194,
+      "ev_loss": 2.387160860494194,
+      "ev_loss_se": 0.23220441867499614,
+      "ess": 195.9142462440277,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "C7",
+      "DQ"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6",
+      "D7"
+     ],
+     "pot_bb": 10.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.999994,
+      "fold": 0.0,
+      "check": 6e-06
+     },
+     "equity": 0.9517,
+     "hs": 0.9903,
+     "eq_actual": 0.9318,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "H7",
+      "CK"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6",
+      "D7"
+     ],
+     "pot_bb": 12.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.933839,
+      "raise": 0.066046,
+      "fold": 0.000115,
+      "check": 0.0
+     },
+     "equity": 0.7333,
+     "hs": 0.8029,
+     "eq_actual": 0.0682,
+     "analysis": {
+      "values": {
+       "call": -6.433333333333334,
+       "raise": -8.653333333333334,
+       "fold": -5.0
+      },
+      "values_se": {
+       "call": 0.3824999423155828,
+       "raise": 0.2786323236053401,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -6.579790620000002,
+      "ev_loss": 1.5797906199999994,
+      "ev_loss_se": 0.36788874825698614,
+      "ess": 180.79314533548347,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "C7",
+      "DQ"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6",
+      "D7",
+      "HK"
+     ],
+     "pot_bb": 14.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.999962,
+      "fold": 0.0,
+      "check": 3.8e-05
+     },
+     "equity": 0.9566,
+     "hs": 0.9566,
+     "eq_actual": 0.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "H7",
+      "CK"
+     ],
+     "board": [
+      "SQ",
+      "C2",
+      "H6",
+      "D7",
+      "HK"
+     ],
+     "pot_bb": 16.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.563375,
+      "raise": 0.436625,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9808,
+     "hs": 0.9808,
+     "eq_actual": 1.0,
+     "analysis": {
+      "values": {
+       "call": 7.44,
+       "raise": 9.46,
+       "fold": -7.0
+      },
+      "values_se": {
+       "call": 0.29287183723171245,
+       "raise": 0.4032825179668216,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 8.3219825,
+      "ev_loss": 1.1380174999999997,
+      "ev_loss_se": 0.06676762688781095,
+      "ess": 156.7879759627825,
+      "candidates": 990
+     }
+    }
+   ],
+   "preflop_aggressor": "opponent",
+   "board": [
+    "SQ",
+    "C2",
+    "H6",
+    "D7",
+    "HK"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": 9.0,
+    "opponent": -9.0
+   },
+   "pot_bb": 18.0,
+   "best_hands": {
+    "agent": "two pair",
+    "opponent": "two pair"
+   },
+   "category": "slowplay"
+  },
+  {
+   "deal": 4,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "C8",
+     "SA"
+    ],
+    "opponent": [
+     "D2",
+     "DA"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.111376,
+      "raise": 0.888624,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.5988,
+     "hs": 0.5988,
+     "eq_actual": 0.6138,
+     "analysis": {
+      "values": {
+       "call": -0.16,
+       "raise": -0.04666666666666667,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.38215956206892593,
+       "raise": 0.3398036462768458,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": -0.05928928,
+      "ev_loss": 0.012622613333333345,
+      "ev_loss_se": 0.021645942269524744,
+      "ess": 1225.0,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "D2",
+      "DA"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.271306,
+      "raise": 0.728594,
+      "fold": 0.0001,
+      "check": 0.0
+     },
+     "equity": 0.5738,
+     "hs": 0.5738,
+     "eq_actual": 0.373,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.710019,
+      "raise": 0.289981,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.5988,
+     "hs": 0.5988,
+     "eq_actual": 0.6182,
+     "analysis": {
+      "values": {
+       "call": 0.3233333333333333,
+       "raise": 0.6633333333333333,
+       "fold": -2.0
+      },
+      "values_se": {
+       "call": 0.4527093794445688,
+       "raise": 0.5185198540974819,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 0.4219268733333333,
+      "ev_loss": 0.24140646000000013,
+      "ev_loss_se": 0.11466175002899266,
+      "ess": 515.9567886232279,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "D2",
+      "DA"
+     ],
+     "board": [],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999574,
+      "raise": 0.000422,
+      "fold": 4e-06,
+      "check": 0.0
+     },
+     "equity": 0.5738,
+     "hs": 0.5738,
+     "eq_actual": 0.3802,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT"
+     ],
+     "pot_bb": 8.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.300358,
+      "fold": 0.0,
+      "check": 0.699642
+     },
+     "equity": 0.915,
+     "hs": 0.988,
+     "eq_actual": 0.9217,
+     "analysis": {
+      "values": {
+       "raise": 5.8533333333333335,
+       "fold": -4.0,
+       "check": 5.136666666666667
+      },
+      "values_se": {
+       "raise": 0.4904841039846378,
+       "fold": 0.0,
+       "check": 0.4745636576690533
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 5.351923233333333,
+      "ev_loss": 0.5014101000000001,
+      "ev_loss_se": 0.07427408826267388,
+      "ess": 434.8062665456241,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "D2",
+      "DA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT"
+     ],
+     "pot_bb": 8.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.994007,
+      "fold": 0.0,
+      "check": 0.005993
+     },
+     "equity": 0.8417,
+     "hs": 0.9047,
+     "eq_actual": 0.0783,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT"
+     ],
+     "pot_bb": 9.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.198195,
+      "raise": 0.801805,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.915,
+     "hs": 0.988,
+     "eq_actual": 0.9217,
+     "analysis": {
+      "values": {
+       "call": 5.5633333333333335,
+       "raise": 5.81,
+       "fold": -4.0
+      },
+      "values_se": {
+       "call": 0.5868286426340167,
+       "raise": 0.638980601886719,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 5.7611118999999995,
+      "ev_loss": 0.04888810000000008,
+      "ev_loss_se": 0.0211113651168026,
+      "ess": 196.8199381569057,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "D2",
+      "DA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT"
+     ],
+     "pot_bb": 11.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.9116,
+      "raise": 0.0884,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8417,
+     "hs": 0.9047,
+     "eq_actual": 0.0783,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT",
+      "S2"
+     ],
+     "pot_bb": 12.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.854295,
+      "fold": 0.0,
+      "check": 0.145705
+     },
+     "equity": 0.9533,
+     "hs": 0.9845,
+     "eq_actual": 0.9205,
+     "analysis": {
+      "values": {
+       "raise": 10.473333333333333,
+       "fold": -6.0,
+       "check": 9.2
+      },
+      "values_se": {
+       "raise": 0.3369610841085986,
+       "fold": 0.0,
+       "check": 0.3360203847933272
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 10.2878023,
+      "ev_loss": 0.18553103333333268,
+      "ev_loss_se": 0.013876506550358284,
+      "ess": 186.31344321830227,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "D2",
+      "DA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT",
+      "S2"
+     ],
+     "pot_bb": 14.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.007897,
+      "raise": 0.992103,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9383,
+     "hs": 0.9787,
+     "eq_actual": 0.0795,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT",
+      "S2"
+     ],
+     "pot_bb": 18.0,
+     "to_call_bb": 2.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.096851,
+      "raise": 0.903149,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9533,
+     "hs": 0.9845,
+     "eq_actual": 0.9205,
+     "analysis": {
+      "values": {
+       "call": 12.926666666666666,
+       "raise": 14.22,
+       "fold": -8.0
+      },
+      "values_se": {
+       "call": 0.2938687219071593,
+       "raise": 0.3126019120333581,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 14.094739373333333,
+      "ev_loss": 0.1252606266666667,
+      "ev_loss_se": 0.009020898169458955,
+      "ess": 59.58451454695627,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "D2",
+      "DA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT",
+      "S2"
+     ],
+     "pot_bb": 22.0,
+     "to_call_bb": 2.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.302941,
+      "raise": 0.697059,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9383,
+     "hs": 0.9787,
+     "eq_actual": 0.0795,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT",
+      "S2"
+     ],
+     "pot_bb": 26.0,
+     "to_call_bb": 2.0,
+     "raises_round": 4,
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 1.0,
+      "raise": 0.0,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9533,
+     "hs": 0.9845,
+     "eq_actual": 0.9205,
+     "analysis": {
+      "values": {
+       "call": 14.18,
+       "fold": -12.0
+      },
+      "values_se": {
+       "call": 0.37087801454419084,
+       "fold": 0.0
+      },
+      "best": "call",
+      "samples": 300,
+      "ev": 14.18,
+      "ev_loss": 0.0,
+      "ev_loss_se": 0.0,
+      "ess": 39.52578445247326,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "D2",
+      "DA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT",
+      "S2",
+      "S3"
+     ],
+     "pot_bb": 28.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.999217,
+      "fold": 0.0,
+      "check": 0.000783
+     },
+     "equity": 0.9091,
+     "hs": 0.9091,
+     "eq_actual": 0.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "C8",
+      "SA"
+     ],
+     "board": [
+      "S8",
+      "CA",
+      "HT",
+      "S2",
+      "S3"
+     ],
+     "pot_bb": 30.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999999,
+      "raise": 1e-06,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9293,
+     "hs": 0.9293,
+     "eq_actual": 1.0,
+     "analysis": {
+      "values": {
+       "call": 15.52,
+       "raise": 18.726666666666667,
+       "fold": -14.0
+      },
+      "values_se": {
+       "call": 0.20503364598675464,
+       "raise": 0.25684794305021436,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 15.520003206666667,
+      "ev_loss": 3.2066634600000006,
+      "ev_loss_se": 0.07123576791056663,
+      "ess": 38.512338611185385,
+      "candidates": 990
+     }
+    }
+   ],
+   "preflop_aggressor": "agent",
+   "board": [
+    "S8",
+    "CA",
+    "HT",
+    "S2",
+    "S3"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": 16.0,
+    "opponent": -16.0
+   },
+   "pot_bb": 32.0,
+   "best_hands": {
+    "agent": "two pair",
+    "opponent": "two pair"
+   },
+   "category": "slowplay"
+  },
+  {
+   "deal": 48,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "H6",
+     "DK"
+    ],
+    "opponent": [
+     "CK",
+     "DT"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "H6",
+      "DK"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.118997,
+      "raise": 0.880946,
+      "fold": 5.7e-05,
+      "check": 0.0
+     },
+     "equity": 0.5413,
+     "hs": 0.5413,
+     "eq_actual": 0.2855,
+     "analysis": {
+      "values": {
+       "call": -0.57,
+       "raise": -0.66,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.3390183546890249,
+       "raise": 0.3171662432605197,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -0.6492811500000001,
+      "ev_loss": -0.01405218333333316,
+      "ev_loss_se": 0.2250852841049933,
+      "ess": 1225.0,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "CK",
+      "DT"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.101626,
+      "raise": 0.898363,
+      "fold": 1.1e-05,
+      "check": 0.0
+     },
+     "equity": 0.5963,
+     "hs": 0.5963,
+     "eq_actual": 0.718,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "H6",
+      "DK"
+     ],
+     "board": [],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.948378,
+      "raise": 0.051581,
+      "fold": 4.1e-05,
+      "check": 0.0
+     },
+     "equity": 0.5413,
+     "hs": 0.5413,
+     "eq_actual": 0.2883,
+     "analysis": {
+      "values": {
+       "call": -1.7033333333333334,
+       "raise": -2.15,
+       "fold": -2.0
+      },
+      "values_se": {
+       "call": 0.4089658037218982,
+       "raise": 0.49571463452794334,
+       "fold": 0.0
+      },
+      "best": "call",
+      "samples": 300,
+      "ev": -1.72638501,
+      "ev_loss": 0.02305167666666698,
+      "ev_loss_se": 0.008395723000217669,
+      "ess": 523.3949102691394,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "CK",
+      "DT"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "check",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.002094,
+      "fold": 0.0,
+      "check": 0.997906
+     },
+     "equity": 0.4617,
+     "hs": 0.4186,
+     "eq_actual": 0.197,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "H6",
+      "DK"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.943111,
+      "fold": 0.0,
+      "check": 0.056889
+     },
+     "equity": 0.5833,
+     "hs": 0.79,
+     "eq_actual": 0.803,
+     "analysis": {
+      "values": {
+       "raise": 2.283333333333333,
+       "fold": -3.0,
+       "check": 1.98
+      },
+      "values_se": {
+       "raise": 0.4516403481617862,
+       "fold": 0.0,
+       "check": 0.41047977475747766
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 2.2660770033333333,
+      "ev_loss": 0.01725632999999999,
+      "ev_loss_se": 0.006936042743076407,
+      "ess": 377.84079223100633,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "CK",
+      "DT"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4"
+     ],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999565,
+      "raise": 0.000317,
+      "fold": 0.000118,
+      "check": 0.0
+     },
+     "equity": 0.4617,
+     "hs": 0.4186,
+     "eq_actual": 0.197,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "H6",
+      "DK"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4",
+      "HK"
+     ],
+     "pot_bb": 8.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.997928,
+      "fold": 0.0,
+      "check": 0.002072
+     },
+     "equity": 0.8617,
+     "hs": 0.9536,
+     "eq_actual": 0.8636,
+     "analysis": {
+      "values": {
+       "raise": 6.926666666666667,
+       "fold": -4.0,
+       "check": 5.766666666666667
+      },
+      "values_se": {
+       "raise": 0.35528164384208377,
+       "fold": 0.0,
+       "check": 0.33515111928957547
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 6.924263146666667,
+      "ev_loss": 0.0024035199999994207,
+      "ev_loss_se": 0.00022011641864670068,
+      "ess": 331.08684534718145,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "CK",
+      "DT"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4",
+      "HK"
+     ],
+     "pot_bb": 10.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.016125,
+      "raise": 0.983875,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7817,
+     "hs": 0.8841,
+     "eq_actual": 0.1364,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "H6",
+      "DK"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4",
+      "HK"
+     ],
+     "pot_bb": 14.0,
+     "to_call_bb": 2.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.070604,
+      "raise": 0.929396,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8617,
+     "hs": 0.9536,
+     "eq_actual": 0.8636,
+     "analysis": {
+      "values": {
+       "call": 9.273333333333333,
+       "raise": 10.433333333333334,
+       "fold": -6.0
+      },
+      "values_se": {
+       "call": 0.4655056428554718,
+       "raise": 0.5154866591159221,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 10.351432693333333,
+      "ev_loss": 0.0819006399999998,
+      "ev_loss_se": 0.008043948168520823,
+      "ess": 58.90448088831837,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "CK",
+      "DT"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4",
+      "HK"
+     ],
+     "pot_bb": 18.0,
+     "to_call_bb": 2.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.472251,
+      "raise": 0.527749,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7817,
+     "hs": 0.8841,
+     "eq_actual": 0.1364,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "H6",
+      "DK"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4",
+      "HK",
+      "C2"
+     ],
+     "pot_bb": 20.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.999868,
+      "fold": 0.0,
+      "check": 0.000132
+     },
+     "equity": 0.9051,
+     "hs": 0.9051,
+     "eq_actual": 1.0,
+     "analysis": {
+      "values": {
+       "raise": 13.486666666666666,
+       "fold": -10.0,
+       "check": 14.933333333333334
+      },
+      "values_se": {
+       "raise": 0.1878395228964004,
+       "fold": 0.0,
+       "check": 0.21992870707282267
+      },
+      "best": "check",
+      "samples": 300,
+      "ev": 13.486857626666666,
+      "ev_loss": 1.446475706666667,
+      "ev_loss_se": 0.07555159251278969,
+      "ess": 51.40939565918604,
+      "candidates": 990
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "CK",
+      "DT"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4",
+      "HK",
+      "C2"
+     ],
+     "pot_bb": 22.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.030698,
+      "raise": 0.969302,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8081,
+     "hs": 0.8081,
+     "eq_actual": 0.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "H6",
+      "DK"
+     ],
+     "board": [
+      "C7",
+      "C6",
+      "S4",
+      "HK",
+      "C2"
+     ],
+     "pot_bb": 26.0,
+     "to_call_bb": 2.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999254,
+      "raise": 0.000746,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9051,
+     "hs": 0.9051,
+     "eq_actual": 1.0,
+     "analysis": {
+      "values": {
+       "call": 13.906666666666666,
+       "raise": 16.666666666666668,
+       "fold": -12.0
+      },
+      "values_se": {
+       "call": 0.09333333333333324,
+       "raise": 0.12891220845180906,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 13.908725626666667,
+      "ev_loss": 2.7579410400000004,
+      "ev_loss_se": 0.06067501655919831,
+      "ess": 49.451934256343975,
+      "candidates": 990
+     }
+    }
+   ],
+   "preflop_aggressor": "opponent",
+   "board": [
+    "C7",
+    "C6",
+    "S4",
+    "HK",
+    "C2"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": 14.0,
+    "opponent": -14.0
+   },
+   "pot_bb": 28.0,
+   "best_hands": {
+    "agent": "two pair",
+    "opponent": "pair"
+   },
+   "category": "big_win"
+  },
+  {
+   "deal": 250,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "BB",
+    "opponent": "SB"
+   },
+   "holes": {
+    "agent": [
+     "S4",
+     "H4"
+    ],
+    "opponent": [
+     "HQ",
+     "HJ"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "HQ",
+      "HJ"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.001214,
+      "raise": 0.998786,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.6014,
+     "hs": 0.6014,
+     "eq_actual": 0.5078,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "S4",
+      "H4"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.846452,
+      "raise": 0.151606,
+      "fold": 0.001942,
+      "check": 0.0
+     },
+     "equity": 0.5701,
+     "hs": 0.5701,
+     "eq_actual": 0.4883,
+     "analysis": {
+      "values": {
+       "call": -0.31666666666666665,
+       "raise": -0.013333333333333334,
+       "fold": -1.0
+      },
+      "values_se": {
+       "call": 0.3721778483453302,
+       "raise": 0.4205950377792562,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": -0.2720065466666666,
+      "ev_loss": 0.25867321333333315,
+      "ev_loss_se": 0.13502671411788772,
+      "ess": 1103.005191003605,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "HQ",
+      "HJ"
+     ],
+     "board": [],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.887617,
+      "raise": 0.112379,
+      "fold": 4e-06,
+      "check": 0.0
+     },
+     "equity": 0.6014,
+     "hs": 0.6014,
+     "eq_actual": 0.5165,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "S4",
+      "H4"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2"
+     ],
+     "pot_bb": 6.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.996719,
+      "fold": 0.0,
+      "check": 0.003281
+     },
+     "equity": 0.6017,
+     "hs": 0.7461,
+     "eq_actual": 0.7566,
+     "analysis": {
+      "values": {
+       "raise": 0.12333333333333334,
+       "fold": -3.0,
+       "check": -0.12333333333333334
+      },
+      "values_se": {
+       "raise": 0.4716303545984608,
+       "fold": 0.0,
+       "check": 0.4342427212843989
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 0.12252402,
+      "ev_loss": 0.0008093133333334101,
+      "ev_loss_se": 0.0003835397398235602,
+      "ess": 951.3970767974213,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "HQ",
+      "HJ"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2"
+     ],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.998875,
+      "raise": 3.4e-05,
+      "fold": 0.00109,
+      "check": 0.0
+     },
+     "equity": 0.4217,
+     "hs": 0.4704,
+     "eq_actual": 0.2434,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "S4",
+      "H4"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2",
+      "SQ"
+     ],
+     "pot_bb": 8.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.993056,
+      "fold": 0.0,
+      "check": 0.006944
+     },
+     "equity": 0.5533,
+     "hs": 0.6324,
+     "eq_actual": 0.0455,
+     "analysis": {
+      "values": {
+       "raise": 1.86,
+       "fold": -4.0,
+       "check": 1.22
+      },
+      "values_se": {
+       "raise": 0.38717050939409287,
+       "fold": 0.0,
+       "check": 0.3860077806067688
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 1.85555584,
+      "ev_loss": 0.0044441599999998915,
+      "ev_loss_se": 0.0011539500585651082,
+      "ess": 766.6334829178636,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "HQ",
+      "HJ"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2",
+      "SQ"
+     ],
+     "pot_bb": 10.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.023609,
+      "raise": 0.976391,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8233,
+     "hs": 0.8744,
+     "eq_actual": 0.9545,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "S4",
+      "H4"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2",
+      "SQ"
+     ],
+     "pot_bb": 14.0,
+     "to_call_bb": 2.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.893659,
+      "raise": 0.106341,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.5533,
+     "hs": 0.6324,
+     "eq_actual": 0.0455,
+     "analysis": {
+      "values": {
+       "call": -9.28,
+       "raise": -12.633333333333333,
+       "fold": -6.0
+      },
+      "values_se": {
+       "call": 0.24960347594984109,
+       "raise": 0.3003466348698886,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -9.63659682,
+      "ev_loss": 3.6365968200000007,
+      "ev_loss_se": 0.25435146632573813,
+      "ess": 119.9656505448589,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "HQ",
+      "HJ"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2",
+      "SQ",
+      "D4"
+     ],
+     "pot_bb": 16.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.992331,
+      "fold": 0.0,
+      "check": 0.007669
+     },
+     "equity": 0.7884,
+     "hs": 0.7884,
+     "eq_actual": 0.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "S4",
+      "H4"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2",
+      "SQ",
+      "D4"
+     ],
+     "pot_bb": 18.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.033656,
+      "raise": 0.966344,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9909,
+     "hs": 0.9909,
+     "eq_actual": 1.0,
+     "analysis": {
+      "values": {
+       "call": 10.0,
+       "raise": 13.1,
+       "fold": -8.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.05754160919975787,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 12.9956664,
+      "ev_loss": 0.1043336,
+      "ev_loss_se": 0.0019366203992270835,
+      "ess": 111.2680499078781,
+      "candidates": 990
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "HQ",
+      "HJ"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2",
+      "SQ",
+      "D4"
+     ],
+     "pot_bb": 22.0,
+     "to_call_bb": 2.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.296747,
+      "raise": 0.703253,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7884,
+     "hs": 0.7884,
+     "eq_actual": 0.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "S4",
+      "H4"
+     ],
+     "board": [
+      "D5",
+      "S2",
+      "D2",
+      "SQ",
+      "D4"
+     ],
+     "pot_bb": 26.0,
+     "to_call_bb": 2.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999993,
+      "raise": 7e-06,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9909,
+     "hs": 0.9909,
+     "eq_actual": 1.0,
+     "analysis": {
+      "values": {
+       "call": 14.0,
+       "raise": 16.0,
+       "fold": -12.0
+      },
+      "values_se": {
+       "call": 0.0,
+       "raise": 0.0,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 14.000014,
+      "ev_loss": 1.9999859999999998,
+      "ev_loss_se": 0.0,
+      "ess": 99.2425760592676,
+      "candidates": 990
+     }
+    }
+   ],
+   "preflop_aggressor": "agent",
+   "board": [
+    "D5",
+    "S2",
+    "D2",
+    "SQ",
+    "D4"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": 14.0,
+    "opponent": -14.0
+   },
+   "pot_bb": 28.0,
+   "best_hands": {
+    "agent": "full house",
+    "opponent": "two pair"
+   },
+   "category": "big_win"
+  },
+  {
+   "deal": 159,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "SB",
+    "opponent": "BB"
+   },
+   "holes": {
+    "agent": [
+     "C9",
+     "HA"
+    ],
+    "opponent": [
+     "HT",
+     "DA"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "C9",
+      "HA"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.055351,
+      "raise": 0.944649,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.6084,
+     "hs": 0.6084,
+     "eq_actual": 0.2735,
+     "analysis": {
+      "values": {
+       "call": 0.64,
+       "raise": 0.48,
+       "fold": -0.5
+      },
+      "values_se": {
+       "call": 0.3780947366433034,
+       "raise": 0.33081905719965116,
+       "fold": 0.0
+      },
+      "best": "call",
+      "samples": 300,
+      "ev": 0.48885616,
+      "ev_loss": -0.04885615999999997,
+      "ev_loss_se": 0.13651811680931095,
+      "ess": 1225.0,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "HT",
+      "DA"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.031269,
+      "raise": 0.96873,
+      "fold": 1e-06,
+      "check": 0.0
+     },
+     "equity": 0.6297,
+     "hs": 0.6297,
+     "eq_actual": 0.725,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C9",
+      "HA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.677058,
+      "fold": 0.0,
+      "check": 0.322942
+     },
+     "equity": 0.855,
+     "hs": 0.9491,
+     "eq_actual": 0.2116,
+     "analysis": {
+      "values": {
+       "raise": 2.6966666666666668,
+       "fold": -2.0,
+       "check": 2.6866666666666665
+      },
+      "values_se": {
+       "raise": 0.23323130433740713,
+       "fold": 0.0,
+       "check": 0.2291603272661224
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 2.693437246666667,
+      "ev_loss": -0.01343724666666682,
+      "ev_loss_se": 0.054766119948435235,
+      "ess": 875.8724610504548,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "HT",
+      "DA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3"
+     ],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.003447,
+      "raise": 0.996553,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8517,
+     "hs": 0.9565,
+     "eq_actual": 0.7884,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C9",
+      "HA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3"
+     ],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.454681,
+      "raise": 0.545319,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.855,
+     "hs": 0.9491,
+     "eq_actual": 0.2116,
+     "analysis": {
+      "values": {
+       "call": 1.2466666666666666,
+       "raise": 1.35,
+       "fold": -3.0
+      },
+      "values_se": {
+       "call": 0.567669909999369,
+       "raise": 0.5896378534458889,
+       "fold": 0.0
+      },
+      "best": "raise",
+      "samples": 300,
+      "ev": 1.3030162966666667,
+      "ev_loss": 0.04698370333333334,
+      "ev_loss_se": 0.04737450953400748,
+      "ess": 102.59140023951055,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "HT",
+      "DA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3"
+     ],
+     "pot_bb": 9.0,
+     "to_call_bb": 1.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.268941,
+      "raise": 0.731059,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8517,
+     "hs": 0.9565,
+     "eq_actual": 0.7884,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "C9",
+      "HA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3"
+     ],
+     "pot_bb": 11.0,
+     "to_call_bb": 1.0,
+     "raises_round": 4,
+     "legal": [
+      "call",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 1.0,
+      "raise": 0.0,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.855,
+     "hs": 0.9491,
+     "eq_actual": 0.2116,
+     "analysis": {
+      "values": {
+       "call": -5.133333333333334,
+       "fold": -5.0
+      },
+      "values_se": {
+       "call": 0.663952109952717,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -5.133333333333334,
+      "ev_loss": -0.4666666666666667,
+      "ev_loss_se": 0.48445934267062557,
+      "ess": 26.981950039868654,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "HT",
+      "DA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3",
+      "H7"
+     ],
+     "pot_bb": 12.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.998126,
+      "fold": 0.0,
+      "check": 0.001874
+     },
+     "equity": 0.8867,
+     "hs": 0.9285,
+     "eq_actual": 0.8636,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "C9",
+      "HA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3",
+      "H7"
+     ],
+     "pot_bb": 14.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.207988,
+      "raise": 0.792012,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8617,
+     "hs": 0.9208,
+     "eq_actual": 0.1364,
+     "analysis": {
+      "values": {
+       "call": -7.033333333333333,
+       "raise": -7.446666666666666,
+       "fold": -6.0
+      },
+      "values_se": {
+       "call": 0.5880609508398246,
+       "raise": 0.6557195972851814,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -7.360698293333334,
+      "ev_loss": 1.3606982933333343,
+      "ev_loss_se": 0.640188773462861,
+      "ess": 26.296372862147184,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "HT",
+      "DA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3",
+      "H7"
+     ],
+     "pot_bb": 18.0,
+     "to_call_bb": 2.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.09298,
+      "raise": 0.90702,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8867,
+     "hs": 0.9285,
+     "eq_actual": 0.8636,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "C9",
+      "HA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3",
+      "H7"
+     ],
+     "pot_bb": 22.0,
+     "to_call_bb": 2.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999372,
+      "raise": 0.000628,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8617,
+     "hs": 0.9208,
+     "eq_actual": 0.1364,
+     "analysis": {
+      "values": {
+       "call": -8.146666666666667,
+       "raise": -10.553333333333333,
+       "fold": -10.0
+      },
+      "values_se": {
+       "call": 0.6515015386964329,
+       "raise": 0.759922447098297,
+       "fold": 0.0
+      },
+      "best": "call",
+      "samples": 300,
+      "ev": -8.148178053333334,
+      "ev_loss": 0.0015113866666672394,
+      "ev_loss_se": 0.00015972274134951736,
+      "ess": 22.760496589711597,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "HT",
+      "DA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3",
+      "H7",
+      "DK"
+     ],
+     "pot_bb": 24.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.975076,
+      "fold": 0.0,
+      "check": 0.024924
+     },
+     "equity": 0.8848,
+     "hs": 0.8848,
+     "eq_actual": 1.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "C9",
+      "HA"
+     ],
+     "board": [
+      "SA",
+      "DQ",
+      "H3",
+      "H7",
+      "DK"
+     ],
+     "pot_bb": 26.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999993,
+      "raise": 7e-06,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8727,
+     "hs": 0.8727,
+     "eq_actual": 0.0,
+     "analysis": {
+      "values": {
+       "call": -12.926666666666666,
+       "raise": -16.346666666666668,
+       "fold": -12.0
+      },
+      "values_se": {
+       "call": 0.2928045807058834,
+       "raise": 0.3565589706022113,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -12.926690606666666,
+      "ev_loss": 0.9266906066666668,
+      "ev_loss_se": 0.2928050085325622,
+      "ess": 21.123277448081318,
+      "candidates": 990
+     }
+    }
+   ],
+   "preflop_aggressor": "agent",
+   "board": [
+    "SA",
+    "DQ",
+    "H3",
+    "H7",
+    "DK"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": -14.0,
+    "opponent": 14.0
+   },
+   "pot_bb": 28.0,
+   "best_hands": {
+    "agent": "pair",
+    "opponent": "pair"
+   },
+   "category": "big_loss"
+  },
+  {
+   "deal": 241,
+   "swap": 0,
+   "names": {
+    "agent": "PPO ext.",
+    "opponent": "TAG"
+   },
+   "positions": {
+    "agent": "BB",
+    "opponent": "SB"
+   },
+   "holes": {
+    "agent": [
+     "H9",
+     "HK"
+    ],
+    "opponent": [
+     "S4",
+     "S6"
+    ]
+   },
+   "decisions": [
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "preflop",
+     "hole": [
+      "S4",
+      "S6"
+     ],
+     "board": [],
+     "pot_bb": 1.5,
+     "to_call_bb": 0.5,
+     "raises_round": 0,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.381741,
+      "raise": 0.604759,
+      "fold": 0.013501,
+      "check": 0.0
+     },
+     "equity": 0.4128,
+     "hs": 0.4128,
+     "eq_actual": 0.381,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "preflop",
+     "hole": [
+      "H9",
+      "HK"
+     ],
+     "board": [],
+     "pot_bb": 3.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.514979,
+      "raise": 0.485021,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.5989,
+     "hs": 0.5989,
+     "eq_actual": 0.6188,
+     "analysis": {
+      "values": {
+       "call": -0.4166666666666667,
+       "raise": -0.57,
+       "fold": -1.0
+      },
+      "values_se": {
+       "call": 0.4000963744917676,
+       "raise": 0.42193917148922316,
+       "fold": 0.0
+      },
+      "best": "call",
+      "samples": 300,
+      "ev": -0.4910365533333333,
+      "ev_loss": 0.07436988666666663,
+      "ev_loss_se": 0.06826553807338866,
+      "ess": 1085.466344847846,
+      "candidates": 1225
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "S4",
+      "S6"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2"
+     ],
+     "pot_bb": 4.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.999975,
+      "fold": 0.0,
+      "check": 2.5e-05
+     },
+     "equity": 0.9183,
+     "hs": 0.9958,
+     "eq_actual": 0.9955,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "H9",
+      "HK"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2"
+     ],
+     "pot_bb": 5.0,
+     "to_call_bb": 1.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.798926,
+      "raise": 0.197583,
+      "fold": 0.003491,
+      "check": 0.0
+     },
+     "equity": 0.375,
+     "hs": 0.4223,
+     "eq_actual": 0.0045,
+     "analysis": {
+      "values": {
+       "call": -3.8933333333333335,
+       "raise": -4.65,
+       "fold": -2.0
+      },
+      "values_se": {
+       "call": 0.3608887003384268,
+       "raise": 0.3901840459880308,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -4.036228176666667,
+      "ev_loss": 2.036228176666667,
+      "ev_loss_se": 0.3608757972624402,
+      "ess": 449.26397049537286,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "flop",
+     "hole": [
+      "S4",
+      "S6"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2"
+     ],
+     "pot_bb": 7.0,
+     "to_call_bb": 1.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.001981,
+      "raise": 0.998019,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9183,
+     "hs": 0.9958,
+     "eq_actual": 0.9955,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "flop",
+     "hole": [
+      "H9",
+      "HK"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2"
+     ],
+     "pot_bb": 9.0,
+     "to_call_bb": 1.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.944916,
+      "raise": 0.046052,
+      "fold": 0.009033,
+      "check": 0.0
+     },
+     "equity": 0.375,
+     "hs": 0.4223,
+     "eq_actual": 0.0045,
+     "analysis": {
+      "values": {
+       "call": -7.51,
+       "raise": -7.433333333333334,
+       "fold": -4.0
+      },
+      "values_se": {
+       "call": 0.30310489149935493,
+       "raise": 0.29237173895933133,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -7.4747635519031155,
+      "ev_loss": 3.4747635519031155,
+      "ev_loss_se": 0.2986626515156544,
+      "ess": 129.91545796059074,
+      "candidates": 1081
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "S4",
+      "S6"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2",
+      "SK"
+     ],
+     "pot_bb": 10.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.999994,
+      "fold": 0.0,
+      "check": 6e-06
+     },
+     "equity": 0.9533,
+     "hs": 0.9957,
+     "eq_actual": 1.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "H9",
+      "HK"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2",
+      "SK"
+     ],
+     "pot_bb": 12.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.016973,
+      "raise": 0.983027,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7583,
+     "hs": 0.8763,
+     "eq_actual": 0.0,
+     "analysis": {
+      "values": {
+       "call": -5.153333333333333,
+       "raise": -5.226666666666667,
+       "fold": -5.0
+      },
+      "values_se": {
+       "call": 0.6128769326075864,
+       "raise": 0.6593854328200127,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -5.22542198,
+      "ev_loss": -0.27457802,
+      "ev_loss_se": 0.48536216749554295,
+      "ess": 110.68507771944915,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "turn",
+     "hole": [
+      "S4",
+      "S6"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2",
+      "SK"
+     ],
+     "pot_bb": 16.0,
+     "to_call_bb": 2.0,
+     "raises_round": 2,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.000335,
+      "raise": 0.999665,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.9533,
+     "hs": 0.9957,
+     "eq_actual": 1.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "turn",
+     "hole": [
+      "H9",
+      "HK"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2",
+      "SK"
+     ],
+     "pot_bb": 20.0,
+     "to_call_bb": 2.0,
+     "raises_round": 3,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999975,
+      "raise": 2.5e-05,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.7583,
+     "hs": 0.8763,
+     "eq_actual": 0.0,
+     "analysis": {
+      "values": {
+       "call": -11.613333333333333,
+       "raise": -14.833333333333334,
+       "fold": -9.0
+      },
+      "values_se": {
+       "call": 0.3399643673810751,
+       "raise": 0.4162216129257567,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -11.613413833333333,
+      "ev_loss": 2.613413833333333,
+      "ev_loss_se": 0.33996618369326376,
+      "ess": 58.75608606132496,
+      "candidates": 1035
+     }
+    },
+    {
+     "role": "opponent",
+     "seat": 1,
+     "position": "SB",
+     "street": "river",
+     "hole": [
+      "S4",
+      "S6"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2",
+      "SK",
+      "D7"
+     ],
+     "pot_bb": 22.0,
+     "to_call_bb": 0.0,
+     "raises_round": 0,
+     "legal": [
+      "raise",
+      "fold",
+      "check"
+     ],
+     "action": "raise",
+     "probs": {
+      "call": 0.0,
+      "raise": 0.999994,
+      "fold": 0.0,
+      "check": 6e-06
+     },
+     "equity": 0.9955,
+     "hs": 0.9955,
+     "eq_actual": 1.0,
+     "analysis": null
+    },
+    {
+     "role": "agent",
+     "seat": 0,
+     "position": "BB",
+     "street": "river",
+     "hole": [
+      "H9",
+      "HK"
+     ],
+     "board": [
+      "D3",
+      "C5",
+      "C2",
+      "SK",
+      "D7"
+     ],
+     "pot_bb": 24.0,
+     "to_call_bb": 2.0,
+     "raises_round": 1,
+     "legal": [
+      "call",
+      "raise",
+      "fold"
+     ],
+     "action": "call",
+     "probs": {
+      "call": 0.999999,
+      "raise": 1e-06,
+      "fold": 0.0,
+      "check": 0.0
+     },
+     "equity": 0.8343,
+     "hs": 0.8343,
+     "eq_actual": 0.0,
+     "analysis": {
+      "values": {
+       "call": -12.22,
+       "raise": -14.513333333333334,
+       "fold": -11.0
+      },
+      "values_se": {
+       "call": 0.2564981566168191,
+       "raise": 0.24528886951054332,
+       "fold": 0.0
+      },
+      "best": "fold",
+      "samples": 300,
+      "ev": -12.220002293333334,
+      "ev_loss": 1.2200022933333337,
+      "ev_loss_se": 0.25649809857762534,
+      "ess": 57.61877390861583,
+      "candidates": 990
+     }
+    }
+   ],
+   "preflop_aggressor": "opponent",
+   "board": [
+    "D3",
+    "C5",
+    "C2",
+    "SK",
+    "D7"
+   ],
+   "showdown": true,
+   "folded": null,
+   "payoff_bb": {
+    "agent": -13.0,
+    "opponent": 13.0
+   },
+   "pot_bb": 26.0,
+   "best_hands": {
+    "agent": "pair",
+    "opponent": "straight"
+   },
+   "category": "big_loss"
+  }
+ ]
+}

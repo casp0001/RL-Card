@@ -1,0 +1,31 @@
+{
+ "date": "2026-11-13 14:35:43",
+ "git_commit": "ab21edea24d5b2cd6ba69776bbf4dcf09d6da2bc",
+ "git_branch": "main",
+ "uncommitted_python_files": [],
+ "uncommitted_files_total": 33,
+ "python": "3.14.6",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "cpu_count": 16,
+ "packages": {
+  "torch": "2.14.0",
+  "numpy": "2.5.2",
+  "rlcard": "1.2.0",
+  "optuna": "4.9.0",
+  "matplotlib": "3.11.1",
+  "scipy": "1.18.0"
+ },
+ "command": "final_report.py all",
+ "manifest_sha256": "2d01ff08802cb813cfab2209dfce24d1102ea7d3072ce4f9ad03d769cd2517cd",
+ "results_sha256": "16d061c64b66434eaf458791a7e69dd62ded9ea211a38af20df952b93cc2e3fb",
+ "final_evaluation_settings": {
+  "h2h_deals": 2000,
+  "panel_deals": 5000,
+  "lbr_deals": 5000,
+  "lbr_bot_deals": 500,
+  "lbr_samples": 500,
+  "panel_seed": 50000000,
+  "h2h_details": 1,
+  "style_deals": 500
+ }
+}

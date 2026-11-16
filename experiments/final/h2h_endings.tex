@@ -1,0 +1,28 @@
+% How the hands end (first algorithm's view)
+\begin{tabular}{lrrrrr}
+\toprule
+match & showdown & first folds & second folds & first wins at showdown & first wins without showdown \\
+\midrule
+dqn vs ppo & 29\% & 35\% & 36\% & +88 & -171 \\
+dqn vs ppo\_ext & 31\% & 36\% & 33\% & -76 & -199 \\
+dqn vs nfsp & 38\% & 37\% & 25\% & +862 & -1011 \\
+dqn vs nfsp\_ext & 39\% & 39\% & 22\% & +691 & -894 \\
+dqn vs deepcfr & 35\% & 32\% & 33\% & +319 & -461 \\
+dqn vs deepcfr\_ext & 31\% & 36\% & 33\% & +332 & -596 \\
+ppo vs ppo\_ext & 31\% & 37\% & 32\% & -64 & -119 \\
+ppo vs nfsp & 38\% & 38\% & 24\% & +635 & -643 \\
+ppo vs nfsp\_ext & 36\% & 38\% & 26\% & +470 & -452 \\
+ppo vs deepcfr & 33\% & 30\% & 36\% & +218 & -153 \\
+ppo vs deepcfr\_ext & 30\% & 36\% & 33\% & +269 & -333 \\
+ppo\_ext vs nfsp & 38\% & 37\% & 25\% & +885 & -710 \\
+ppo\_ext vs nfsp\_ext & 38\% & 37\% & 26\% & +698 & -494 \\
+ppo\_ext vs deepcfr & 34\% & 29\% & 37\% & +314 & -124 \\
+ppo\_ext vs deepcfr\_ext & 32\% & 33\% & 34\% & +345 & -229 \\
+nfsp vs nfsp\_ext & 52\% & 24\% & 24\% & -377 & +132 \\
+nfsp vs deepcfr & 43\% & 21\% & 36\% & -441 & +274 \\
+nfsp vs deepcfr\_ext & 42\% & 23\% & 35\% & -516 & +354 \\
+nfsp\_ext vs deepcfr & 43\% & 21\% & 36\% & -249 & +149 \\
+nfsp\_ext vs deepcfr\_ext & 41\% & 24\% & 35\% & -300 & +160 \\
+deepcfr vs deepcfr\_ext & 37\% & 35\% & 28\% & -23 & -105 \\
+\bottomrule
+\end{tabular}

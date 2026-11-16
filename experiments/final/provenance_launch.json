@@ -1,0 +1,19 @@
+{
+ "date": "2026-11-12 23:44:10",
+ "git_commit": "ab21edea24d5b2cd6ba69776bbf4dcf09d6da2bc",
+ "git_branch": "main",
+ "uncommitted_python_files": [],
+ "uncommitted_files_total": 30,
+ "python": "3.14.6",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "cpu_count": 16,
+ "packages": {
+  "torch": "2.14.0",
+  "numpy": "2.5.2",
+  "rlcard": "1.2.0",
+  "optuna": "4.9.0",
+  "matplotlib": "3.11.1",
+  "scipy": "1.18.0"
+ },
+ "command": "final_report.py provenance --name provenance_launch.json"
+}

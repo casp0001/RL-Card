@@ -1,0 +1,116 @@
+ppo_free_fold: 0 of 3 retrained runs done; training [1042, 1043, 1044]
+2026-11-12 16:07  ppo_free_fold seed 1042: done
+2026-11-12 16:08  ppo_free_fold seed 1043: done
+2026-11-12 16:08  ppo_free_fold seed 1044: done
+ppo_free_fold: measurements 0 of 9 done
+ppo_free_fold: head-to-head 0 of 54 matches done
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+  [1/54] C_s1042 vs A_s1042: +272 +/- 48
+
+INFO - Restoring model from checkpoint...
+  [2/54] C_s1042 vs A_s1043: +132 +/- 53
+
+INFO - Restoring model from checkpoint...
+  [3/54] C_s1042 vs A_s1044: +53 +/- 51
+
+INFO - Restoring model from checkpoint...
+  [4/54] C_s1043 vs A_s1042: +200 +/- 48
+  [5/54] C_s1043 vs A_s1043: +212 +/- 49
+  [6/54] C_s1043 vs A_s1044: +109 +/- 49
+
+INFO - Restoring model from checkpoint...
+  [7/54] C_s1044 vs A_s1042: +131 +/- 48
+  [8/54] C_s1044 vs A_s1043: +69 +/- 50
+  [9/54] C_s1044 vs A_s1044: +18 +/- 46
+
+INFO - Restoring model from checkpoint...
+  [10/54] C_s1042 vs B_s1042: +195 +/- 47
+
+INFO - Restoring model from checkpoint...
+  [11/54] C_s1042 vs B_s1043: +120 +/- 53
+
+INFO - Restoring model from checkpoint...
+  [12/54] C_s1042 vs B_s1044: +0 +/- 51
+  [13/54] C_s1043 vs B_s1042: +111 +/- 47
+  [14/54] C_s1043 vs B_s1043: +186 +/- 49
+  [15/54] C_s1043 vs B_s1044: +60 +/- 49
+  [16/54] C_s1044 vs B_s1042: +38 +/- 48
+  [17/54] C_s1044 vs B_s1043: +46 +/- 50
+  [18/54] C_s1044 vs B_s1044: -21 +/- 46
+  [19/54] B_s1042 vs A_s1042: +96 +/- 19
+  [20/54] B_s1042 vs A_s1043: -24 +/- 44
+  [21/54] B_s1042 vs A_s1044: -12 +/- 43
+  [22/54] B_s1043 vs A_s1042: +140 +/- 44
+  [23/54] B_s1043 vs A_s1043: +65 +/- 14
+  [24/54] B_s1043 vs A_s1044: +70 +/- 49
+  [25/54] B_s1044 vs A_s1042: +90 +/- 44
+  [26/54] B_s1044 vs A_s1043: -6 +/- 49
+  [27/54] B_s1044 vs A_s1044: +11 +/- 11
+  [28/54] A_s1042 vs deepcfr_s1042: +1 +/- 42
+  [29/54] A_s1042 vs deepcfr_s1043: -35 +/- 42
+  [30/54] A_s1042 vs deepcfr_s1044: +19 +/- 43
+  [31/54] A_s1043 vs deepcfr_s1042: +76 +/- 50
+  [32/54] A_s1043 vs deepcfr_s1043: +54 +/- 49
+  [33/54] A_s1043 vs deepcfr_s1044: +165 +/- 50
+  [34/54] A_s1044 vs deepcfr_s1042: +90 +/- 47
+  [35/54] A_s1044 vs deepcfr_s1043: +105 +/- 47
+  [36/54] A_s1044 vs deepcfr_s1044: +109 +/- 47
+  [37/54] B_s1042 vs deepcfr_s1042: +77 +/- 42
+  [38/54] B_s1042 vs deepcfr_s1043: +48 +/- 42
+  [39/54] B_s1042 vs deepcfr_s1044: +99 +/- 42
+  [40/54] B_s1043 vs deepcfr_s1042: +96 +/- 50
+  [41/54] B_s1043 vs deepcfr_s1043: +79 +/- 48
+  [42/54] B_s1043 vs deepcfr_s1044: +185 +/- 50
+  [43/54] B_s1044 vs deepcfr_s1042: +140 +/- 47
+  [44/54] B_s1044 vs deepcfr_s1043: +155 +/- 47
+  [45/54] B_s1044 vs deepcfr_s1044: +150 +/- 48
+  [46/54] C_s1042 vs deepcfr_s1042: +206 +/- 53
+  [47/54] C_s1042 vs deepcfr_s1043: +180 +/- 54
+  [48/54] C_s1042 vs deepcfr_s1044: +253 +/- 54
+  [49/54] C_s1043 vs deepcfr_s1042: +200 +/- 52
+  [50/54] C_s1043 vs deepcfr_s1043: +180 +/- 50
+  [51/54] C_s1043 vs deepcfr_s1044: +261 +/- 52
+  [52/54] C_s1044 vs deepcfr_s1042: +100 +/- 51
+  [53/54] C_s1044 vs deepcfr_s1043: +89 +/- 50
+  [54/54] C_s1044 vs deepcfr_s1044: +137 +/- 52
+### Free-fold ablation, PPO (ppo_v2 trial 35), mean (sd) over seeds [1042, 1043, 1044]
+
+| arm | P(fold | check free) | panel min | panel mean | vs random | vs station | vs maniac | vs nit | vs tag | vs lag | LBR | VPIP | PFR | fold facing a bet | AF |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A: original (free fold allowed) | 5.9% (sd 2.1) | -319 (sd 22) | -196 (sd 30) | +1079 (sd 175) | +98 (sd 47) | -261 (sd 34) | -198 (sd 62) | -305 (sd 46) | -313 (sd 16) | +813 (sd 132) | 76% (sd 8) | 45% (sd 13) | 20% (sd 5) | 2.95 (sd 0.98) |
+| B: A, fold moved to check at evaluation | 0.0% (sd 0.0) | -269 (sd 13) | -108 (sd 31) | +1161 (sd 131) | +278 (sd 80) | -259 (sd 30) | -146 (sd 61) | -206 (sd 42) | -208 (sd 11) | +778 (sd 126) | 76% (sd 8) | 45% (sd 13) | 21% (sd 6) | 2.91 (sd 0.96) |
+| C: retrained without free fold | 0.0% (sd 0.0) | -341 (sd 323) | -75 (sd 83) | +1446 (sd 70) | +298 (sd 40) | -283 (sd 374) | -146 (sd 28) | -129 (sd 15) | -117 (sd 44) | +725 (sd 183) | 89% (sd 3) | 47% (sd 1) | 13% (sd 2) | 3.46 (sd 0.20) |
+
+Held-out panel (2000 duplicate deals per bot, FINAL_PANEL_SEED), LBR (1000 deals, lower = less exploitable), style from 500 deals against tag. mbb/hand.
+
+### Paired differences per seed (mean (sd) over seeds)
+
+| difference | panel min | panel mean | LBR (negative = less exploitable) |
+|---|---|---|---|
+| C - A | -22 (sd 345) | +121 (sd 111) | -88 (sd 309) |
+| C - B | -72 (sd 316) | +33 (sd 112) | -53 (sd 304) |
+| B - A | +51 (sd 30) | +88 (sd 25) | -35 (sd 9) |
+
+### Head-to-head (2000 duplicate deals per pair, mean over seed pairs)
+
+| match | row wins (mbb/hand) |
+|---|---|
+| C vs A | +133 ± 54 |
+| C vs B | +82 ± 49 |
+| B vs A | +48 ± 40 |
+| A vs deepcfr | +65 ± 42 |
+| B vs deepcfr | +114 ± 31 |
+| C vs deepcfr | +178 ± 44 |
+
+± counts the training seeds of both sides as the random units plus the card noise.
+
+### Training-time panel score (mean of the last 3 evaluations, tuning deals)
+
+| arm | score | training hours |
+|---|---|---|
+| A: original | -285 (sd 39) |  |
+| C: retrained | -319 (sd 117) | 0.6 (sd 0.0) |
+

@@ -1,0 +1,18 @@
+% Training cost of the winning configurations
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+game & algorithm & study & budget & runs & hours per run & parameters (playing) & parameters (all trained) & tuning trials (complete / pruned / failed) & tuning worker-hours \\
+\midrule
+limit & DQN & dqn\_v1 & 1,000,000 episodes & 3 & 8.0 (sd 1.3) & 106,857 & 106,857 & 5 / 45 / 0 & 182 \\
+limit & PPO & ppo\_v2 & 1,000,000 episodes & 3 & 1.1 (sd 0.5) & 106,501 & 106,501 & 7 / 43 / 0 & 12 \\
+limit & PPO extended & ppo\_v2 & 4,000,000 episodes & 3 & 11.3 (sd 0.1) & 106,501 & 106,501 & - & - \\
+limit & NFSP & nfsp\_v3 & 2,000,000 episodes & 3 & 1.8 (sd 0.2) & 106,857 & 213,714 & 9 / 41 / 0 & 49 \\
+limit & NFSP extended & nfsp\_v3 & 8,000,000 episodes & 3 & 8.6 (sd 2.5) & 106,857 & 213,714 & - & - \\
+limit & Deep CFR & deepcfr\_v1 & 200 iterations & 3 & 6.6 (sd 0.2) & 53,252 & 159,756 & 4 / 26 / 0 & 104 \\
+limit & Deep CFR extended & deepcfr\_v1 & 500 iterations & 3 & 19.8 (sd 0.2) & 53,252 & 159,756 & - & - \\
+leduc & DQN & leduc\_dqn\_v1 & 1,000,000 episodes & 3 & 1.7 (sd 0.0) & 76,437 & 76,437 & 9 / 21 / 0 & 41 \\
+leduc & PPO & leduc\_ppo\_v1 & 1,000,000 episodes & 3 & 0.3 (sd 0.0) & 76,549 & 76,549 & 5 / 25 / 0 & 4 \\
+leduc & NFSP & leduc\_nfsp\_v1 & 2,000,000 episodes & 3 & 0.8 (sd 0.0) & 21,909 & 43,818 & 7 / 23 / 0 & 13 \\
+leduc & Deep CFR & leduc\_deepcfr\_v1 & 300 iterations & 3 & 0.3 (sd 0.0) & 21,764 & 65,292 & 7 / 23 / 0 & 9 \\
+\bottomrule
+\end{tabular}

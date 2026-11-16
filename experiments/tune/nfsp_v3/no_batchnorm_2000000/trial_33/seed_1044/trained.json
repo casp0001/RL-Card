@@ -1,0 +1,34 @@
+{
+ "ablation": "nfsp_batchnorm",
+ "study": "nfsp_v3",
+ "trial": 33,
+ "seed": 1044,
+ "budget": 2000000,
+ "change": {
+  "batchnorm": false
+ },
+ "params": {
+  "rl_learning_rate": 5.399790117221206e-06,
+  "sl_learning_rate": 0.001651998752669914,
+  "anticipatory_param": 0.032663786525574307,
+  "reservoir_buffer_capacity": 354192,
+  "q_replay_memory_size": 78922,
+  "q_epsilon_start": 0.021407987140248542,
+  "layers": "256 256",
+  "train_every": 16,
+  "opponent_update_every": 18149
+ },
+ "history": [
+  -2386.0,
+  -2176.5,
+  -1939.0,
+  -1580.0,
+  -1254.0,
+  -1349.5,
+  -1209.5,
+  -1211.5,
+  -1270.5,
+  -1334.5
+ ],
+ "hours": 2.4806119874450894
+}

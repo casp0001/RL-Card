@@ -1,0 +1,15 @@
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+  hand 1/10 analysed (59s)
+  hand 2/10 analysed (102s)
+  hand 3/10 analysed (130s)
+  hand 4/10 analysed (168s)
+  hand 5/10 analysed (195s)
+  hand 6/10 analysed (239s)
+  hand 7/10 analysed (271s)
+  hand 8/10 analysed (306s)
+  hand 9/10 analysed (358s)
+  hand 10/10 analysed (396s)
+C:\Users\Petr.Cesar\Documents\bakacode\RL-Card\experiments\final\hands\nfsp_vs_tag.analysis.json: 10 hands

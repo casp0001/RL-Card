@@ -1,0 +1,5 @@
+algorithm,DQN,PPO,NFSP,Deep CFR,CFR+ equilibrium
+DQN,--,+146 (sd 225),+70 (sd 28),-78 (sd 39),-116 (sd 74)
+PPO,-146 (sd 225),--,-84 (sd 48),-147 (sd 78),-165 (sd 89)
+NFSP,-70 (sd 28),+84 (sd 48),--,-65 (sd 4),-145 (sd 8)
+Deep CFR,+78 (sd 39),+147 (sd 78),+65 (sd 4),--,-27 (sd 3)

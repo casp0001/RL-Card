@@ -1,0 +1,189 @@
+PPO (experiments\tune\ppo_v2\finalists\trial_35\seed_1042) vs TAG, 300 duplicate deals
+
+===== river_bluff (2 of 16 matching hands) =====
+Deal 6: PPO BB [Js 3d], TAG SB [Ah 6h]
+  PREFLOP    pot 1.5 BB
+             TAG raises  (eq 0.60 vs-hand 0.68)  p(call=0.00 raise=1.00 fold=0.00)
+             PPO calls   (eq 0.45 vs-hand 0.35)  p(call=0.49 raise=0.14 fold=0.37)
+  FLOP      [7d Td Th]   pot 4.0 BB
+             TAG checks  (eq 0.54 hs 0.68 vs-hand 0.74)  p(raise=0.13 fold=0.00 check=0.87)
+             PPO bets    (eq 0.37 hs 0.30 vs-hand 0.26)  p(raise=0.59 fold=0.01 check=0.40)
+             TAG calls   (eq 0.54 hs 0.68 vs-hand 0.74)  p(call=0.91 raise=0.09 fold=0.00)
+  TURN      [7d Td Th 4s]   pot 6.0 BB
+             PPO checks  (eq 0.26 hs 0.22 vs-hand 0.14)  p(raise=0.50 fold=0.13 check=0.38)
+             TAG checks  (eq 0.50 hs 0.56 vs-hand 0.86)  p(raise=0.02 fold=0.00 check=0.98)
+  RIVER     [7d Td Th 4s 8h]   pot 6.0 BB
+             PPO bets    (eq 0.14 hs 0.14 vs-hand 0.00)  p(raise=0.41 fold=0.11 check=0.47)   <BLUFF, behind>
+             TAG calls   (eq 0.41 hs 0.41 vs-hand 1.00)  p(call=1.00 raise=0.00 fold=0.00)
+  SHOWDOWN [7d Td Th 4s 8h]: PPO pair, TAG pair
+  result: PPO -5.0 BB, TAG +5.0 BB
+
+Deal 8: PPO SB [9h As], TAG BB [6d Td]
+  PREFLOP    pot 1.5 BB
+             PPO limps   (eq 0.61 vs-hand 0.59)  p(call=0.57 raise=0.43 fold=0.00)
+             TAG bets    (eq 0.49 vs-hand 0.42)  p(raise=0.95 fold=0.00 check=0.05)
+             PPO calls   (eq 0.61 vs-hand 0.58)  p(call=0.67 raise=0.33 fold=0.00)
+  FLOP      [5c 4s 8h]   pot 4.0 BB
+             TAG checks  (eq 0.35 hs 0.15 vs-hand 0.38)  p(raise=0.00 fold=0.00 check=1.00)
+             PPO bets    (eq 0.44 hs 0.54 vs-hand 0.62)  p(raise=0.62 fold=0.00 check=0.38)
+             TAG calls   (eq 0.35 hs 0.15 vs-hand 0.38)  p(call=1.00 raise=0.00 fold=0.00)
+  TURN      [5c 4s 8h Ks]   pot 6.0 BB
+             PPO checks  (eq 0.39 hs 0.44 vs-hand 0.77)  p(raise=0.48 fold=0.01 check=0.51)
+             TAG checks  (eq 0.25 hs 0.16 vs-hand 0.23)  p(raise=0.20 fold=0.00 check=0.80)
+  RIVER     [5c 4s 8h Ks 3c]   pot 6.0 BB
+             PPO bets    (eq 0.31 hs 0.31 vs-hand 1.00)  p(raise=0.37 fold=0.01 check=0.62)   <BLUFF>
+             TAG folds   (eq 0.08 hs 0.08 vs-hand 0.00)  p(call=0.00 raise=0.00 fold=1.00)
+  TAG folded
+  result: PPO +3.0 BB, TAG -3.0 BB
+
+===== bluff (2 of 44 matching hands) =====
+Deal 0: PPO BB [Jh 6s], TAG SB [3s 3d]
+  PREFLOP    pot 1.5 BB
+             TAG raises  (eq 0.54 vs-hand 0.54)  p(call=0.01 raise=0.99 fold=0.00)
+             PPO calls   (eq 0.48 vs-hand 0.47)  p(call=0.74 raise=0.17 fold=0.08)
+  FLOP      [Ac 4c 8c]   pot 4.0 BB
+             TAG checks  (eq 0.40 hs 0.56 vs-hand 0.72)  p(raise=0.00 fold=0.00 check=1.00)
+             PPO checks  (eq 0.25 hs 0.30 vs-hand 0.28)  p(raise=0.38 fold=0.18 check=0.43)
+  TURN      [Ac 4c 8c Qh]   pot 4.0 BB
+             TAG checks  (eq 0.30 hs 0.47 vs-hand 0.86)  p(raise=0.20 fold=0.00 check=0.80)
+             PPO bets    (eq 0.28 hs 0.32 vs-hand 0.14)  p(raise=0.48 fold=0.07 check=0.45)   <BLUFF>
+             TAG folds   (eq 0.30 hs 0.47 vs-hand 0.86)  p(call=0.86 raise=0.00 fold=0.14)
+  TAG folded
+  result: PPO +2.0 BB, TAG -2.0 BB
+
+Deal 14 (seats swapped): TAG SB [7c 4c], PPO BB [4d 9d]
+  PREFLOP    pot 1.5 BB
+             TAG limps   (eq 0.42 vs-hand 0.35)  p(call=0.33 raise=0.66 fold=0.01)
+             PPO bets    (eq 0.44 vs-hand 0.64)  p(raise=0.26 fold=0.12 check=0.62)
+             TAG calls   (eq 0.42 vs-hand 0.34)  p(call=0.88 raise=0.01 fold=0.11)
+  FLOP      [Tc 8h Kc]   pot 4.0 BB
+             PPO checks  (eq 0.26 hs 0.23 vs-hand 0.50)  p(raise=0.50 fold=0.14 check=0.35)
+             TAG checks  (eq 0.49 hs 0.16 vs-hand 0.50)  p(raise=0.01 fold=0.00 check=0.99)
+  TURN      [Tc 8h Kc 6d]   pot 4.0 BB
+             PPO checks  (eq 0.24 hs 0.16 vs-hand 0.68)  p(raise=0.46 fold=0.15 check=0.39)
+             TAG checks  (eq 0.42 hs 0.10 vs-hand 0.32)  p(raise=0.00 fold=0.00 check=1.00)
+  RIVER     [Tc 8h Kc 6d Ac]   pot 4.0 BB
+             PPO bets    (eq 0.16 hs 0.16 vs-hand 0.00)  p(raise=0.56 fold=0.01 check=0.44)   <BLUFF, behind>
+             TAG raises  (eq 0.98 hs 0.98 vs-hand 1.00)  p(call=0.00 raise=1.00 fold=0.00)
+             PPO calls   (eq 0.16 hs 0.16 vs-hand 0.00)  p(call=0.97 raise=0.02 fold=0.01)
+  SHOWDOWN [Tc 8h Kc 6d Ac]: TAG flush, PPO high card
+  result: TAG +6.0 BB, PPO -6.0 BB
+
+===== slowplay (2 of 43 matching hands) =====
+Deal 2 (seats swapped): TAG BB [7h Kc], PPO SB [7c Qd]
+  PREFLOP    pot 1.5 BB
+             PPO limps   (eq 0.52 vs-hand 0.27)  p(call=0.58 raise=0.29 fold=0.13)
+             TAG bets    (eq 0.55 vs-hand 0.75)  p(raise=0.99 fold=0.00 check=0.01)
+             PPO calls   (eq 0.52 vs-hand 0.25)  p(call=0.72 raise=0.16 fold=0.12)
+  FLOP      [Qs 2c 6h]   pot 4.0 BB
+             TAG checks  (eq 0.41 hs 0.43 vs-hand 0.12)  p(raise=0.00 fold=0.00 check=1.00)
+             PPO bets    (eq 0.78 hs 0.92 vs-hand 0.88)  p(raise=0.64 fold=0.00 check=0.36)
+             TAG calls   (eq 0.41 hs 0.43 vs-hand 0.12)  p(call=1.00 raise=0.00 fold=0.00)
+  TURN      [Qs 2c 6h 7d]   pot 6.0 BB
+             PPO bets    (eq 0.95 hs 0.99 vs-hand 0.93)  p(raise=0.81 fold=0.00 check=0.19)
+             TAG calls   (eq 0.73 hs 0.80 vs-hand 0.07)  p(call=0.95 raise=0.05 fold=0.00)
+  RIVER     [Qs 2c 6h 7d Kh]   pot 10.0 BB
+             PPO bets    (eq 0.96 hs 0.96 vs-hand 0.00)  p(raise=0.78 fold=0.00 check=0.22)   <behind>
+             TAG raises  (eq 0.98 hs 0.98 vs-hand 1.00)  p(call=0.00 raise=1.00 fold=0.00)
+             PPO calls   (eq 0.96 hs 0.96 vs-hand 0.00)  p(call=0.87 raise=0.13 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [Qs 2c 6h 7d Kh]: TAG two pair, PPO two pair
+  result: TAG +9.0 BB, PPO -9.0 BB
+
+Deal 4: PPO SB [8c As], TAG BB [2d Ad]
+  PREFLOP    pot 1.5 BB
+             PPO limps   (eq 0.60 vs-hand 0.61)  p(call=0.57 raise=0.43 fold=0.00)
+             TAG bets    (eq 0.57 vs-hand 0.37)  p(raise=1.00 fold=0.00 check=0.00)
+             PPO raises  (eq 0.60 vs-hand 0.62)  p(call=0.64 raise=0.36 fold=0.00)
+             TAG calls   (eq 0.57 vs-hand 0.38)  p(call=0.95 raise=0.05 fold=0.00)
+  FLOP      [8s Ac Th]   pot 6.0 BB
+             PPO bets    (eq 0.92 hs 0.99 vs-hand 0.92)  p(raise=0.96 fold=0.00 check=0.04)
+             TAG raises  (eq 0.84 hs 0.90 vs-hand 0.08)  p(call=0.04 raise=0.96 fold=0.00)
+             PPO calls   (eq 0.92 hs 0.99 vs-hand 0.92)  p(call=0.65 raise=0.35 fold=0.00)   <SLOW-PLAY>
+  TURN      [8s Ac Th 2s]   pot 10.0 BB
+             TAG bets    (eq 0.94 hs 0.98 vs-hand 0.08)  p(raise=1.00 fold=0.00 check=0.00)
+             PPO raises  (eq 0.95 hs 0.98 vs-hand 0.92)  p(call=0.51 raise=0.49 fold=0.00)
+             TAG calls   (eq 0.94 hs 0.98 vs-hand 0.08)  p(call=0.06 raise=0.94 fold=0.00)   <SLOW-PLAY>
+  RIVER     [8s Ac Th 2s 3s]   pot 18.0 BB
+             PPO bets    (eq 0.93 hs 0.93 vs-hand 1.00)  p(raise=0.99 fold=0.00 check=0.01)
+             TAG raises  (eq 0.91 hs 0.91 vs-hand 0.00)  p(call=0.01 raise=0.99 fold=0.00)   <behind>
+             PPO calls   (eq 0.93 hs 0.93 vs-hand 1.00)  p(call=0.98 raise=0.02 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [8s Ac Th 2s 3s]: PPO two pair, TAG two pair
+  result: PPO +13.0 BB, TAG -13.0 BB
+
+===== big_win (2 of 239 matching hands) =====
+Deal 43 (seats swapped): TAG BB [9c Qh], PPO SB [Ac Qd]
+  PREFLOP    pot 1.5 BB
+             PPO raises  (eq 0.65 vs-hand 0.77)  p(call=0.60 raise=0.40 fold=0.00)
+             TAG calls   (eq 0.55 vs-hand 0.25)  p(call=0.51 raise=0.49 fold=0.00)
+  FLOP      [Qs 4h Th]   pot 4.0 BB
+             PPO bets    (eq 0.80 hs 0.96 vs-hand 0.83)  p(raise=0.82 fold=0.00 check=0.18)
+             TAG calls   (eq 0.80 hs 0.94 vs-hand 0.17)  p(call=0.19 raise=0.81 fold=0.00)   <SLOW-PLAY>
+  TURN      [Qs 4h Th 3s]   pot 6.0 BB
+             PPO bets    (eq 0.86 hs 0.94 vs-hand 0.93)  p(raise=0.86 fold=0.00 check=0.14)
+             TAG raises  (eq 0.82 hs 0.91 vs-hand 0.07)  p(call=0.09 raise=0.91 fold=0.00)
+             PPO calls   (eq 0.86 hs 0.94 vs-hand 0.93)  p(call=0.80 raise=0.20 fold=0.00)   <SLOW-PLAY>
+  RIVER     [Qs 4h Th 3s 4d]   pot 14.0 BB
+             TAG bets    (eq 0.84 hs 0.84 vs-hand 0.00)  p(raise=1.00 fold=0.00 check=0.00)   <behind>
+             PPO calls   (eq 0.89 hs 0.89 vs-hand 1.00)  p(call=0.92 raise=0.08 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [Qs 4h Th 3s 4d]: TAG two pair, PPO two pair
+  result: TAG -9.0 BB, PPO +9.0 BB
+
+Deal 48: PPO SB [6h Kd], TAG BB [Kc Td]
+  PREFLOP    pot 1.5 BB
+             PPO raises  (eq 0.54 vs-hand 0.29)  p(call=0.56 raise=0.44 fold=0.00)
+             TAG raises  (eq 0.60 vs-hand 0.72)  p(call=0.10 raise=0.90 fold=0.00)
+             PPO raises  (eq 0.54 vs-hand 0.29)  p(call=0.79 raise=0.21 fold=0.00)
+             TAG calls   (eq 0.60 vs-hand 0.72)  p(call=1.00 raise=0.00 fold=0.00)
+  FLOP      [7c 6c 4s]   pot 8.0 BB
+             PPO bets    (eq 0.58 hs 0.79 vs-hand 0.80)  p(raise=0.62 fold=0.00 check=0.38)
+             TAG calls   (eq 0.46 hs 0.42 vs-hand 0.20)  p(call=1.00 raise=0.00 fold=0.00)
+  TURN      [7c 6c 4s Kh]   pot 10.0 BB
+             PPO checks  (eq 0.86 hs 0.95 vs-hand 0.86)  p(raise=0.76 fold=0.00 check=0.24)   <SLOW-PLAY>
+             TAG bets    (eq 0.78 hs 0.88 vs-hand 0.14)  p(raise=1.00 fold=0.00 check=0.00)
+             PPO calls   (eq 0.86 hs 0.95 vs-hand 0.86)  p(call=0.82 raise=0.18 fold=0.00)   <SLOW-PLAY>
+  RIVER     [7c 6c 4s Kh 2c]   pot 14.0 BB
+             TAG bets    (eq 0.81 hs 0.81 vs-hand 0.00)  p(raise=1.00 fold=0.00 check=0.00)   <behind>
+             PPO calls   (eq 0.91 hs 0.91 vs-hand 1.00)  p(call=0.97 raise=0.03 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [7c 6c 4s Kh 2c]: PPO two pair, TAG pair
+  result: PPO +9.0 BB, TAG -9.0 BB
+
+===== big_loss (2 of 354 matching hands) =====
+Deal 113 (seats swapped): TAG BB [Jc 7s], PPO SB [Th 9c]
+  PREFLOP    pot 1.5 BB
+             PPO limps   (eq 0.52 vs-hand 0.43)  p(call=0.56 raise=0.41 fold=0.02)
+             TAG bets    (eq 0.50 vs-hand 0.56)  p(raise=0.96 fold=0.00 check=0.04)
+             PPO raises  (eq 0.52 vs-hand 0.41)  p(call=0.70 raise=0.28 fold=0.02)
+             TAG calls   (eq 0.50 vs-hand 0.56)  p(call=1.00 raise=0.00 fold=0.00)
+  FLOP      [Td 9s 8c]   pot 6.0 BB
+             PPO bets    (eq 0.79 hs 0.95 vs-hand 0.19)  p(raise=0.99 fold=0.00 check=0.01)
+             TAG raises  (eq 0.93 hs 0.98 vs-hand 0.81)  p(call=0.00 raise=1.00 fold=0.00)
+             PPO calls   (eq 0.79 hs 0.95 vs-hand 0.19)  p(call=0.60 raise=0.40 fold=0.00)
+  TURN      [Td 9s 8c Jh]   pot 10.0 BB
+             TAG bets    (eq 0.72 hs 0.77 vs-hand 0.83)  p(raise=0.79 fold=0.00 check=0.21)
+             PPO raises  (eq 0.66 hs 0.65 vs-hand 0.17)  p(call=0.71 raise=0.29 fold=0.00)
+             TAG calls   (eq 0.72 hs 0.77 vs-hand 0.83)  p(call=0.95 raise=0.05 fold=0.00)
+  RIVER     [Td 9s 8c Jh 6s]   pot 18.0 BB
+             PPO bets    (eq 0.63 hs 0.63 vs-hand 0.00)  p(raise=1.00 fold=0.00 check=0.00)   <behind>
+             TAG calls   (eq 0.77 hs 0.77 vs-hand 1.00)  p(call=0.22 raise=0.78 fold=0.00)
+  SHOWDOWN [Td 9s 8c Jh 6s]: TAG straight, PPO two pair
+  result: TAG +11.0 BB, PPO -11.0 BB
+
+Deal 150 (seats swapped): TAG SB [2c 3s], PPO BB [Js Jc]
+  PREFLOP    pot 1.5 BB
+             TAG limps   (eq 0.32 vs-hand 0.13)  p(call=0.54 raise=0.07 fold=0.39)
+             PPO checks  (eq 0.78 vs-hand 0.86)  p(raise=0.64 fold=0.00 check=0.36)
+  FLOP      [Qh 6c 5h]   pot 2.0 BB
+             TAG bets    (eq 0.26 hs 0.00 vs-hand 0.19)  p(raise=0.25 fold=0.00 check=0.75)   <SEMI-BLUFF>
+             PPO raises  (eq 0.74 hs 0.85 vs-hand 0.81)  p(call=0.81 raise=0.19 fold=0.00)
+             TAG calls   (eq 0.26 hs 0.00 vs-hand 0.19)  p(call=0.90 raise=0.00 fold=0.10)
+  TURN      [Qh 6c 5h 4c]   pot 6.0 BB
+             PPO checks  (eq 0.69 hs 0.78 vs-hand 0.00)  p(raise=0.71 fold=0.00 check=0.29)
+             TAG bets    (eq 0.92 hs 0.97 vs-hand 1.00)  p(raise=1.00 fold=0.00 check=0.00)
+             PPO calls   (eq 0.69 hs 0.78 vs-hand 0.00)  p(call=0.88 raise=0.12 fold=0.00)
+  RIVER     [Qh 6c 5h 4c Jd]   pot 10.0 BB
+             TAG bets    (eq 0.97 hs 0.97 vs-hand 1.00)  p(raise=1.00 fold=0.00 check=0.00)
+             PPO raises  (eq 0.95 hs 0.95 vs-hand 0.00)  p(call=0.76 raise=0.24 fold=0.00)   <behind>
+             TAG raises  (eq 0.97 hs 0.97 vs-hand 1.00)  p(call=0.00 raise=1.00 fold=0.00)
+             PPO calls   (eq 0.95 hs 0.95 vs-hand 0.00)  p(call=0.98 raise=0.02 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [Qh 6c 5h 4c Jd]: TAG straight, PPO three of a kind
+  result: TAG +11.0 BB, PPO -11.0 BB

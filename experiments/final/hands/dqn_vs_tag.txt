@@ -1,0 +1,205 @@
+DQN (experiments\tune\dqn_v1\finalists\trial_7\seed_1042) vs TAG, 300 duplicate deals
+
+===== river_bluff (2 of 17 matching hands) =====
+Deal 32: DQN BB [Qc 6h], TAG SB [5d 8c]
+  PREFLOP    pot 1.5 BB
+             TAG raises  (eq 0.42 vs-hand 0.38)  p(call=0.36 raise=0.63 fold=0.01)
+             DQN raises  (eq 0.51 vs-hand 0.61)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.42 vs-hand 0.38)  p(call=1.00 raise=0.00 fold=0.00)
+  FLOP      [4d 2s 9h]   pot 6.0 BB
+             DQN checks  (eq 0.40 hs 0.32 vs-hand 0.75)  p(raise=0.00 fold=0.00 check=1.00)
+             TAG checks  (eq 0.27 hs 0.09 vs-hand 0.25)  p(raise=0.25 fold=0.00 check=0.75)
+  TURN      [4d 2s 9h 9d]   pot 6.0 BB
+             DQN checks  (eq 0.39 hs 0.33 vs-hand 0.86)  p(raise=0.00 fold=0.00 check=1.00)
+             TAG bets    (eq 0.17 hs 0.10 vs-hand 0.14)  p(raise=0.20 fold=0.00 check=0.80)   <BLUFF>
+             DQN calls   (eq 0.39 hs 0.33 vs-hand 0.86)  p(call=1.00 raise=0.00 fold=0.00)
+  RIVER     [4d 2s 9h 9d 3h]   pot 10.0 BB
+             TAG checks  (eq 0.03 hs 0.03 vs-hand 0.00)  p(raise=0.15 fold=0.00 check=0.85)
+             DQN bets    (eq 0.23 hs 0.23 vs-hand 1.00)  p(raise=1.00 fold=0.00 check=0.00)   <BLUFF>
+             TAG folds   (eq 0.03 hs 0.03 vs-hand 0.00)  p(call=0.01 raise=0.00 fold=0.99)
+  TAG folded
+  result: DQN +5.0 BB, TAG -5.0 BB
+
+Deal 47 (seats swapped): TAG BB [Kh Ad], DQN SB [8h Js]
+  PREFLOP    pot 1.5 BB
+             DQN raises  (eq 0.52 vs-hand 0.36)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG raises  (eq 0.65 vs-hand 0.65)  p(call=0.01 raise=0.99 fold=0.00)
+             DQN raises  (eq 0.52 vs-hand 0.34)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.65 vs-hand 0.63)  p(call=0.98 raise=0.02 fold=0.00)
+  FLOP      [Qd 4h Qh]   pot 8.0 BB
+             DQN checks  (eq 0.50 hs 0.45 vs-hand 0.22)  p(raise=0.00 fold=0.00 check=1.00)
+             TAG bets    (eq 0.65 hs 0.74 vs-hand 0.78)  p(raise=0.71 fold=0.00 check=0.29)
+             DQN raises  (eq 0.50 hs 0.45 vs-hand 0.22)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.65 hs 0.74 vs-hand 0.78)  p(call=0.99 raise=0.01 fold=0.00)
+  TURN      [Qd 4h Qh 6c]   pot 12.0 BB
+             DQN checks  (eq 0.33 hs 0.35 vs-hand 0.14)  p(raise=0.00 fold=0.00 check=1.00)
+             TAG checks  (eq 0.59 hs 0.62 vs-hand 0.86)  p(raise=0.15 fold=0.00 check=0.85)
+  RIVER     [Qd 4h Qh 6c Ah]   pot 12.0 BB
+             DQN checks  (eq 0.35 hs 0.35 vs-hand 0.00)  p(raise=0.00 fold=0.00 check=1.00)
+             TAG bets    (eq 0.87 hs 0.87 vs-hand 1.00)  p(raise=1.00 fold=0.00 check=0.00)
+             DQN raises  (eq 0.35 hs 0.35 vs-hand 0.00)  p(call=0.00 raise=1.00 fold=0.00)   <BLUFF, behind>
+             TAG raises  (eq 0.87 hs 0.87 vs-hand 1.00)  p(call=0.20 raise=0.80 fold=0.00)
+             DQN calls   (eq 0.35 hs 0.35 vs-hand 0.00)  p(call=1.00 raise=0.00 fold=0.00)
+  SHOWDOWN [Qd 4h Qh 6c Ah]: TAG two pair, DQN pair
+  result: TAG +12.0 BB, DQN -12.0 BB
+
+===== bluff (2 of 33 matching hands) =====
+Deal 25 (seats swapped): TAG SB [8d 7c], DQN BB [7h Js]
+  PREFLOP    pot 1.5 BB
+             TAG raises  (eq 0.45 vs-hand 0.32)  p(call=0.16 raise=0.84 fold=0.00)
+             DQN raises  (eq 0.50 vs-hand 0.69)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.45 vs-hand 0.31)  p(call=1.00 raise=0.00 fold=0.00)
+  FLOP      [9h As 3h]   pot 6.0 BB
+             DQN checks  (eq 0.41 hs 0.34 vs-hand 0.85)  p(raise=0.00 fold=0.00 check=1.00)
+             TAG checks  (eq 0.28 hs 0.18 vs-hand 0.15)  p(raise=0.25 fold=0.00 check=0.75)
+  TURN      [9h As 3h 5d]   pot 6.0 BB
+             DQN bets    (eq 0.23 hs 0.24 vs-hand 0.84)  p(raise=1.00 fold=0.00 check=0.00)   <BLUFF>
+             TAG calls   (eq 0.26 hs 0.10 vs-hand 0.16)  p(call=0.20 raise=0.00 fold=0.80)
+  RIVER     [9h As 3h 5d 7d]   pot 10.0 BB
+             DQN bets    (eq 0.63 hs 0.63 vs-hand 1.00)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG calls   (eq 0.61 hs 0.61 vs-hand 0.00)  p(call=1.00 raise=0.00 fold=0.00)
+  SHOWDOWN [9h As 3h 5d 7d]: TAG pair, DQN pair
+  result: TAG -7.0 BB, DQN +7.0 BB
+
+Deal 44 (seats swapped): TAG SB [Ks Jh], DQN BB [4c Qd]
+  PREFLOP    pot 1.5 BB
+             TAG raises  (eq 0.61 vs-hand 0.65)  p(call=0.00 raise=1.00 fold=0.00)
+             DQN calls   (eq 0.49 vs-hand 0.35)  p(call=1.00 raise=0.00 fold=0.00)
+  FLOP      [3h 3s 7s]   pot 4.0 BB
+             TAG checks  (eq 0.51 hs 0.59 vs-hand 0.77)  p(raise=0.04 fold=0.00 check=0.96)
+             DQN checks  (eq 0.38 hs 0.40 vs-hand 0.23)  p(raise=0.00 fold=0.00 check=1.00)
+  TURN      [3h 3s 7s 9d]   pot 4.0 BB
+             TAG checks  (eq 0.46 hs 0.48 vs-hand 0.86)  p(raise=0.00 fold=0.00 check=1.00)
+             DQN bets    (eq 0.32 hs 0.32 vs-hand 0.14)  p(raise=1.00 fold=0.00 check=0.00)   <BLUFF>
+             TAG calls   (eq 0.46 hs 0.48 vs-hand 0.86)  p(call=1.00 raise=0.00 fold=0.00)
+  RIVER     [3h 3s 7s 9d 8d]   pot 8.0 BB
+             DQN checks  (eq 0.20 hs 0.20 vs-hand 0.00)  p(raise=0.00 fold=0.00 check=1.00)
+             TAG checks  (eq 0.34 hs 0.34 vs-hand 1.00)  p(raise=0.15 fold=0.00 check=0.85)
+  SHOWDOWN [3h 3s 7s 9d 8d]: TAG pair, DQN pair
+  result: TAG +4.0 BB, DQN -4.0 BB
+
+===== slowplay (2 of 85 matching hands) =====
+Deal 2: DQN BB [7h Kc], TAG SB [7c Qd]
+  PREFLOP    pot 1.5 BB
+             TAG raises  (eq 0.52 vs-hand 0.27)  p(call=0.02 raise=0.98 fold=0.00)
+             DQN calls   (eq 0.55 vs-hand 0.75)  p(call=1.00 raise=0.00 fold=0.00)
+  FLOP      [Qs 2c 6h]   pot 4.0 BB
+             TAG bets    (eq 0.78 hs 0.92 vs-hand 0.88)  p(raise=1.00 fold=0.00 check=0.00)
+             DQN calls   (eq 0.41 hs 0.43 vs-hand 0.12)  p(call=1.00 raise=0.00 fold=0.00)
+  TURN      [Qs 2c 6h 7d]   pot 6.0 BB
+             TAG bets    (eq 0.95 hs 0.99 vs-hand 0.93)  p(raise=1.00 fold=0.00 check=0.00)
+             DQN calls   (eq 0.73 hs 0.80 vs-hand 0.07)  p(call=1.00 raise=0.00 fold=0.00)
+  RIVER     [Qs 2c 6h 7d Kh]   pot 10.0 BB
+             TAG bets    (eq 0.96 hs 0.96 vs-hand 0.00)  p(raise=1.00 fold=0.00 check=0.00)   <behind>
+             DQN calls   (eq 0.98 hs 0.98 vs-hand 1.00)  p(call=1.00 raise=0.00 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [Qs 2c 6h 7d Kh]: DQN two pair, TAG two pair
+  result: DQN +7.0 BB, TAG -7.0 BB
+
+Deal 2 (seats swapped): TAG BB [7h Kc], DQN SB [7c Qd]
+  PREFLOP    pot 1.5 BB
+             DQN limps   (eq 0.52 vs-hand 0.27)  p(call=1.00 raise=0.00 fold=0.00)
+             TAG bets    (eq 0.55 vs-hand 0.75)  p(raise=0.99 fold=0.00 check=0.01)
+             DQN raises  (eq 0.52 vs-hand 0.25)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.55 vs-hand 0.76)  p(call=0.98 raise=0.02 fold=0.00)
+  FLOP      [Qs 2c 6h]   pot 6.0 BB
+             DQN bets    (eq 0.78 hs 0.92 vs-hand 0.88)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG calls   (eq 0.41 hs 0.43 vs-hand 0.12)  p(call=0.99 raise=0.00 fold=0.01)
+  TURN      [Qs 2c 6h 7d]   pot 8.0 BB
+             DQN bets    (eq 0.95 hs 0.99 vs-hand 0.93)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG calls   (eq 0.73 hs 0.80 vs-hand 0.07)  p(call=0.54 raise=0.46 fold=0.00)
+  RIVER     [Qs 2c 6h 7d Kh]   pot 12.0 BB
+             DQN checks  (eq 0.96 hs 0.96 vs-hand 0.00)  p(raise=0.00 fold=0.00 check=1.00)   <SLOW-PLAY>
+             TAG bets    (eq 0.98 hs 0.98 vs-hand 1.00)  p(raise=1.00 fold=0.00 check=0.00)
+             DQN calls   (eq 0.96 hs 0.96 vs-hand 0.00)  p(call=1.00 raise=0.00 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [Qs 2c 6h 7d Kh]: TAG two pair, DQN two pair
+  result: TAG +8.0 BB, DQN -8.0 BB
+
+===== big_win (2 of 248 matching hands) =====
+Deal 48: DQN SB [6h Kd], TAG BB [Kc Td]
+  PREFLOP    pot 1.5 BB
+             DQN limps   (eq 0.54 vs-hand 0.29)  p(call=1.00 raise=0.00 fold=0.00)
+             TAG bets    (eq 0.60 vs-hand 0.72)  p(raise=1.00 fold=0.00 check=0.00)
+             DQN calls   (eq 0.54 vs-hand 0.29)  p(call=1.00 raise=0.00 fold=0.00)
+  FLOP      [7c 6c 4s]   pot 4.0 BB
+             TAG checks  (eq 0.46 hs 0.42 vs-hand 0.20)  p(raise=0.01 fold=0.00 check=0.99)
+             DQN bets    (eq 0.58 hs 0.79 vs-hand 0.80)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG calls   (eq 0.46 hs 0.42 vs-hand 0.20)  p(call=1.00 raise=0.00 fold=0.00)
+  TURN      [7c 6c 4s Kh]   pot 6.0 BB
+             DQN bets    (eq 0.86 hs 0.95 vs-hand 0.86)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG raises  (eq 0.78 hs 0.88 vs-hand 0.14)  p(call=0.01 raise=0.99 fold=0.00)
+             DQN raises  (eq 0.86 hs 0.95 vs-hand 0.86)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.78 hs 0.88 vs-hand 0.14)  p(call=0.47 raise=0.53 fold=0.00)
+  RIVER     [7c 6c 4s Kh 2c]   pot 18.0 BB
+             DQN checks  (eq 0.91 hs 0.91 vs-hand 1.00)  p(raise=0.00 fold=0.00 check=1.00)   <SLOW-PLAY>
+             TAG bets    (eq 0.81 hs 0.81 vs-hand 0.00)  p(raise=1.00 fold=0.00 check=0.00)   <behind>
+             DQN calls   (eq 0.91 hs 0.91 vs-hand 1.00)  p(call=1.00 raise=0.00 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [7c 6c 4s Kh 2c]: DQN two pair, TAG pair
+  result: DQN +11.0 BB, TAG -11.0 BB
+
+Deal 50 (seats swapped): TAG BB [9c Kc], DQN SB [Kd 6d]
+  PREFLOP    pot 1.5 BB
+             DQN raises  (eq 0.57 vs-hand 0.32)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.60 vs-hand 0.67)  p(call=0.13 raise=0.87 fold=0.00)
+  FLOP      [8s 7d 6h]   pot 4.0 BB
+             DQN bets    (eq 0.55 hs 0.67 vs-hand 0.59)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG calls   (eq 0.57 hs 0.40 vs-hand 0.41)  p(call=0.99 raise=0.01 fold=0.00)
+  TURN      [8s 7d 6h Ks]   pot 6.0 BB
+             DQN bets    (eq 0.86 hs 0.93 vs-hand 0.61)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG raises  (eq 0.81 hs 0.87 vs-hand 0.39)  p(call=0.02 raise=0.98 fold=0.00)
+             DQN raises  (eq 0.86 hs 0.93 vs-hand 0.61)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.81 hs 0.87 vs-hand 0.39)  p(call=0.51 raise=0.49 fold=0.00)   <SLOW-PLAY>
+  RIVER     [8s 7d 6h Ks Qc]   pot 18.0 BB
+             DQN checks  (eq 0.92 hs 0.92 vs-hand 1.00)  p(raise=0.00 fold=0.00 check=1.00)   <SLOW-PLAY>
+             TAG bets    (eq 0.83 hs 0.83 vs-hand 0.00)  p(raise=0.98 fold=0.00 check=0.02)   <behind>
+             DQN calls   (eq 0.92 hs 0.92 vs-hand 1.00)  p(call=1.00 raise=0.00 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [8s 7d 6h Ks Qc]: TAG pair, DQN two pair
+  result: TAG -11.0 BB, DQN +11.0 BB
+
+===== big_loss (2 of 343 matching hands) =====
+Deal 52: DQN BB [2s 4c], TAG SB [Qd Kc]
+  PREFLOP    pot 1.5 BB
+             TAG raises  (eq 0.62 vs-hand 0.67)  p(call=0.00 raise=1.00 fold=0.00)
+             DQN raises  (eq 0.33 vs-hand 0.34)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.62 vs-hand 0.66)  p(call=0.74 raise=0.26 fold=0.00)
+  FLOP      [4d Jh Qc]   pot 6.0 BB
+             DQN bets    (eq 0.51 hs 0.64 vs-hand 0.18)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG raises  (eq 0.90 hs 0.96 vs-hand 0.82)  p(call=0.00 raise=1.00 fold=0.00)
+             DQN raises  (eq 0.51 hs 0.64 vs-hand 0.18)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG raises  (eq 0.90 hs 0.96 vs-hand 0.82)  p(call=0.19 raise=0.81 fold=0.00)
+             DQN calls   (eq 0.51 hs 0.64 vs-hand 0.18)  p(call=1.00 fold=0.00)
+  TURN      [4d Jh Qc 9c]   pot 14.0 BB
+             TAG bets    (eq 0.84 hs 0.90 vs-hand 0.89)  p(raise=1.00 fold=0.00 check=0.00)
+             DQN raises  (eq 0.45 hs 0.53 vs-hand 0.11)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG raises  (eq 0.84 hs 0.90 vs-hand 0.89)  p(call=0.13 raise=0.87 fold=0.00)
+             DQN raises  (eq 0.45 hs 0.53 vs-hand 0.11)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.84 hs 0.90 vs-hand 0.89)  p(call=1.00 fold=0.00)
+  RIVER     [4d Jh Qc 9c 6s]   pot 30.0 BB
+             DQN bets    (eq 0.42 hs 0.42 vs-hand 0.00)  p(raise=1.00 fold=0.00 check=0.00)   <behind>
+             TAG raises  (eq 0.86 hs 0.86 vs-hand 1.00)  p(call=0.02 raise=0.98 fold=0.00)
+             DQN raises  (eq 0.42 hs 0.42 vs-hand 0.00)  p(call=0.00 raise=1.00 fold=0.00)   <behind>
+             TAG calls   (eq 0.86 hs 0.86 vs-hand 1.00)  p(call=0.50 raise=0.50 fold=0.00)   <SLOW-PLAY>
+  SHOWDOWN [4d Jh Qc 9c 6s]: DQN pair, TAG pair
+  result: DQN -21.0 BB, TAG +21.0 BB
+
+Deal 280 (seats swapped): TAG BB [Kh 3s], DQN SB [Ah 4s]
+  PREFLOP    pot 1.5 BB
+             DQN raises  (eq 0.57 vs-hand 0.66)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG calls   (eq 0.52 vs-hand 0.34)  p(call=0.77 raise=0.23 fold=0.00)
+  FLOP      [Kc 3d Ts]   pot 4.0 BB
+             DQN bets    (eq 0.47 hs 0.52 vs-hand 0.06)  p(raise=1.00 fold=0.00 check=0.00)
+             TAG raises  (eq 0.92 hs 0.99 vs-hand 0.94)  p(call=0.00 raise=1.00 fold=0.00)
+             DQN raises  (eq 0.47 hs 0.52 vs-hand 0.06)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG raises  (eq 0.92 hs 0.99 vs-hand 0.94)  p(call=0.04 raise=0.96 fold=0.00)
+             DQN calls   (eq 0.47 hs 0.52 vs-hand 0.06)  p(call=1.00 fold=0.00)
+  TURN      [Kc 3d Ts Qc]   pot 12.0 BB
+             TAG bets    (eq 0.86 hs 0.95 vs-hand 0.91)  p(raise=0.98 fold=0.00 check=0.02)
+             DQN raises  (eq 0.45 hs 0.41 vs-hand 0.09)  p(call=0.00 raise=1.00 fold=0.00)
+             TAG raises  (eq 0.86 hs 0.95 vs-hand 0.91)  p(call=0.53 raise=0.47 fold=0.00)
+             DQN calls   (eq 0.45 hs 0.41 vs-hand 0.09)  p(call=1.00 raise=0.00 fold=0.00)
+  RIVER     [Kc 3d Ts Qc 5s]   pot 24.0 BB
+             TAG bets    (eq 0.94 hs 0.94 vs-hand 1.00)  p(raise=1.00 fold=0.00 check=0.00)
+             DQN raises  (eq 0.31 hs 0.31 vs-hand 0.00)  p(call=0.00 raise=1.00 fold=0.00)   <BLUFF, behind>
+             TAG raises  (eq 0.94 hs 0.94 vs-hand 1.00)  p(call=0.07 raise=0.93 fold=0.00)
+             DQN calls   (eq 0.31 hs 0.31 vs-hand 0.00)  p(call=1.00 raise=0.00 fold=0.00)
+  SHOWDOWN [Kc 3d Ts Qc 5s]: TAG two pair, DQN high card
+  result: TAG +18.0 BB, DQN -18.0 BB

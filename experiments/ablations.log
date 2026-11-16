@@ -1,0 +1,3 @@
+2026-11-12 15:34:20  starting ppo_free_fold, nfsp_batchnorm
+2026-11-12 16:31:00  ppo_free_fold: done -> experiments/ablation_ppo_free_fold.md
+2026-11-12 18:21:35  nfsp_batchnorm: done -> experiments/ablation_nfsp_batchnorm.md
