@@ -348,6 +348,15 @@ def cmd_leduc(a):
                           'share_with_loss_over_0.05bb': float(np.mean(np.array(losses) > 0.05))},
               'hands': chosen}
     _write(a.out, result)
+    if a.decisions:   # every agent decision of all deals (for distributions), not only the kept hands
+        rows = [{'deal': h['deal'], 'position': h['positions']['agent'], 'street': d['street'], 'action': d['action'],
+                 'best': d['analysis']['best'], 'ev_loss': d['analysis']['ev_loss'],
+                 'opponent_reach': d['analysis']['opponent_reach']}
+                for h in hands for d in h['decisions'] if d['analysis']]
+        os.makedirs(os.path.dirname(os.path.abspath(a.decisions)), exist_ok=True)
+        with open(a.decisions, 'w', encoding='utf-8') as f:
+            json.dump({'agent': result['agent'], 'summary': result['summary'], 'decisions': rows}, f)
+        print(f'{a.decisions}: {len(rows)} decisions', flush=True)
 
 
 def _write(path, result):
@@ -373,6 +382,7 @@ def main():
     led.add_argument('--name', default=None)
     led.add_argument('--deals', type=int, default=400, help='hands played against the equilibrium')
     led.add_argument('--hands', type=int, default=10, help='hands kept: the worst ones and typical ones')
+    led.add_argument('--decisions', default=None, help='optional JSON path: every agent decision of all deals')
     for q in (lim, led):
         q.add_argument('--out', required=True)
         q.add_argument('--seed', type=int, default=0)

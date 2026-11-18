@@ -1,0 +1,4 @@
+arm,P(fold | check free),panel min,panel mean,vs random,vs station,vs maniac,vs nit,vs tag,vs lag,LBR,VPIP,PFR,fold facing a bet,AF
+A: original (free fold allowed),5.9% (sd 2.1),-319 (sd 22),-196 (sd 30),+1079 (sd 175),+98 (sd 47),-261 (sd 34),-198 (sd 62),-305 (sd 46),-313 (sd 16),+813 (sd 132),76% (sd 8),45% (sd 13),20% (sd 5),2.95 (sd 0.98)
+"B: A, fold moved to check at evaluation",0.0% (sd 0.0),-269 (sd 13),-108 (sd 31),+1161 (sd 131),+278 (sd 80),-259 (sd 30),-146 (sd 61),-206 (sd 42),-208 (sd 11),+778 (sd 126),76% (sd 8),45% (sd 13),21% (sd 6),2.91 (sd 0.96)
+C: retrained without free fold,0.0% (sd 0.0),-341 (sd 323),-75 (sd 83),+1446 (sd 70),+298 (sd 40),-283 (sd 374),-146 (sd 28),-129 (sd 15),-117 (sd 44),+725 (sd 183),89% (sd 3),47% (sd 1),13% (sd 2),3.46 (sd 0.20)

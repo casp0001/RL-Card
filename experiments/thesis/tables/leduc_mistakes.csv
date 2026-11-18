@@ -1,0 +1,5 @@
+algorithm,head-to-head vs others (mbb/hand),exploitability (mbb/hand),mean EV loss per decision (BB),decisions losing over 0.05 BB,decisions
+Deep CFR,+97,175,0.024,6%,685
+DQN,+46,1011,0.107,32%,904
+NFSP,-17,315,0.135,77%,821
+PPO,-126,813,0.238,40%,786

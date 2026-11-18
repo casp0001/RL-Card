@@ -1,0 +1,19 @@
+% NFSP, limit: study nfsp_v3
+\begin{tabular}{lrrrr}
+\toprule
+parameter & searched & winner & importance (9 complete) & importance (50 trials at evaluation 2) \\
+\midrule
+rl\_learning\_rate & 5e-06 - 0.001 (log) & 5.4e-06 & 0.00 & 0.00 \\
+sl\_learning\_rate & 1e-05 - 0.003 (log) & 0.00165 & 0.08 & 0.04 \\
+anticipatory\_param & 0.03 - 0.9 (log) & 0.0327 & 0.04 & 0.01 \\
+reservoir\_buffer\_capacity & 200000 - 1.5e+06 (log) & 354192 & 0.10 & 0.02 \\
+q\_replay\_memory\_size & 20000 - 600000 (log) & 78922 & 0.13 & 0.01 \\
+q\_epsilon\_start & 0.02 - 0.3 (log) & 0.0214 & 0.50 & 0.82 \\
+layers & 128 128 / 256 256 / 512 512 / 256 256 256 & 256 256 & 0.05 & 0.01 \\
+train\_every & 16 / 32 / 64 / 128 & 16 & 0.01 & 0.01 \\
+optimizer & fixed adam & (fixed) &  &  \\
+q\_activation & fixed relu & (fixed) &  &  \\
+opponent\_update\_every & 1000 - 100000 (log) & 18149 & 0.09 & 0.08 \\
+max\_grad\_norm & fixed 10.0 & (fixed) &  &  \\
+\bottomrule
+\end{tabular}

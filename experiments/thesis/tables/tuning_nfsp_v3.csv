@@ -1,0 +1,13 @@
+parameter,searched,winner,importance (9 complete),importance (50 trials at evaluation 2)
+rl_learning_rate,5e-06 - 0.001 (log),5.4e-06,0.00,0.00
+sl_learning_rate,1e-05 - 0.003 (log),0.00165,0.08,0.04
+anticipatory_param,0.03 - 0.9 (log),0.0327,0.04,0.01
+reservoir_buffer_capacity,200000 - 1.5e+06 (log),354192,0.10,0.02
+q_replay_memory_size,20000 - 600000 (log),78922,0.13,0.01
+q_epsilon_start,0.02 - 0.3 (log),0.0214,0.50,0.82
+layers,128 128 / 256 256 / 512 512 / 256 256 256,256 256,0.05,0.01
+train_every,16 / 32 / 64 / 128,16,0.01,0.01
+optimizer,fixed adam,(fixed),,
+q_activation,fixed relu,(fixed),,
+opponent_update_every,1000 - 100000 (log),18149,0.09,0.08
+max_grad_norm,fixed 10.0,(fixed),,

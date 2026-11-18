@@ -1,0 +1,6 @@
+match,row wins (mbb/hand)
+C vs A,+64 ± 71
+A vs ppo_ext,-204 ± 44
+C vs ppo_ext,-136 ± 68
+A vs deepcfr_ext,-140 ± 31
+C vs deepcfr_ext,-132 ± 46

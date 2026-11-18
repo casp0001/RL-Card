@@ -1,0 +1,14 @@
+% Summary by algorithm (mean over seeds, sd = spread over seeds)
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+algorithm & agents & panel min & vs random & vs station & vs maniac & vs nit & vs tag & vs lag & LBR & best lower bound \\
+\midrule
+DQN & 3 & -1136 (sd 122) & +1379 (sd 71) & +219 (sd 26) & -1136 (sd 122) & -421 (sd 16) & -779 (sd 23) & -903 (sd 39) & +1359 (sd 9) & +1359 (sd 9) \\
+PPO & 3 & -344 (sd 38) & +1042 (sd 179) & +102 (sd 62) & -314 (sd 45) & -208 (sd 54) & -318 (sd 47) & -344 (sd 38) & +725 (sd 103) & +725 (sd 103) \\
+PPO ext. & 3 & -251 (sd 48) & +1172 (sd 141) & +205 (sd 40) & -1 (sd 165) & -179 (sd 49) & -251 (sd 48) & -172 (sd 29) & +542 (sd 148) & +542 (sd 148) \\
+NFSP & 3 & -1120 (sd 45) & +1530 (sd 89) & +110 (sd 19) & +773 (sd 97) & -659 (sd 52) & -1029 (sd 45) & -1120 (sd 45) & +1567 (sd 94) & +1567 (sd 94) \\
+NFSP ext. & 3 & -1036 (sd 106) & +1531 (sd 21) & +271 (sd 30) & +751 (sd 116) & -591 (sd 20) & -963 (sd 53) & -1036 (sd 106) & +1267 (sd 64) & +1267 (sd 64) \\
+Deep CFR & 3 & -423 (sd 23) & +1008 (sd 51) & +271 (sd 6) & +509 (sd 50) & -340 (sd 18) & -418 (sd 22) & -422 (sd 22) & +588 (sd 37) & +588 (sd 37) \\
+Deep CFR ext. & 3 & -306 (sd 17) & +1185 (sd 37) & +332 (sd 18) & +321 (sd 47) & -261 (sd 7) & -306 (sd 17) & -290 (sd 23) & +523 (sd 19) & +523 (sd 19) \\
+\bottomrule
+\end{tabular}

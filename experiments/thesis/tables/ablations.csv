@@ -1,0 +1,6 @@
+algorithm,change,arm,panel min,panel mean,LBR,head-to-head vs original
+PPO,free fold removed,B (at evaluation),+51 (sd 30),+88 (sd 25),-35 (sd 9),+48 ± 40
+PPO,free fold removed,C (retrained),-22 (sd 345),+121 (sd 111),-88 (sd 309),+133 ± 54
+NFSP,BatchNorm removed,C (retrained),-250 (sd 91),-103 (sd 35),+296 (sd 179),-22 ± 59
+Deep CFR,4000 SGD steps per fit (was 1000),C (retrained),-153 (sd 105),-183 (sd 77),+371 (sd 67),-120 ± 46
+NFSP,literature hyperparameters (8M episodes),C (retrained),-209 (sd 190),-9 (sd 114),+324 (sd 161),+64 ± 71

@@ -1,0 +1,19 @@
+% NFSP, leduc: study leduc_nfsp_v1
+\begin{tabular}{lrrrr}
+\toprule
+parameter & searched & winner & importance (7 complete) & importance (30 trials at evaluation 5) \\
+\midrule
+rl\_learning\_rate & 5e-06 - 0.001 (log) & 0.000252 & 0.20 & 0.10 \\
+sl\_learning\_rate & 1e-05 - 0.003 (log) & 1.44e-05 & 0.04 & 0.00 \\
+anticipatory\_param & 0.03 - 0.9 (log) & 0.0387 & 0.10 & 0.03 \\
+reservoir\_buffer\_capacity & 200000 - 1.5e+06 (log) & 515097 & 0.09 & 0.03 \\
+q\_replay\_memory\_size & 20000 - 600000 (log) & 25893 & 0.26 & 0.01 \\
+q\_epsilon\_start & 0.02 - 0.3 (log) & 0.0429 & 0.13 & 0.72 \\
+layers & 128 128 / 256 256 / 512 512 / 256 256 256 & 128 128 & 0.11 & 0.04 \\
+train\_every & 16 / 32 / 64 / 128 & 32 & 0.01 & 0.04 \\
+optimizer & fixed adam & (fixed) &  &  \\
+q\_activation & fixed relu & (fixed) &  &  \\
+opponent\_update\_every & 1000 - 100000 (log) & 34927 & 0.05 & 0.03 \\
+max\_grad\_norm & fixed 10.0 & (fixed) &  &  \\
+\bottomrule
+\end{tabular}

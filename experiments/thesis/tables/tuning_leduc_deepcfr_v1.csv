@@ -1,0 +1,7 @@
+parameter,searched,winner,importance (7 complete),importance (30 trials at evaluation 5)
+lr,0.0001 - 0.003 (log),0.00294,0.60,0.88
+num_traversals,fixed 500,(fixed),,
+num_step,fixed 300,(fixed),,
+batch_size,512 / 1024 / 2048,1024,0.18,0.04
+layers,64 64 / 128 128 / 128 128 128 / 256 256,128 128,0.22,0.08
+memory_capacity,fixed 1000000,(fixed),,

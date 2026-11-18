@@ -1,0 +1,17 @@
+% DQN, leduc: study leduc_dqn_v1
+\begin{tabular}{lrrrr}
+\toprule
+parameter & searched & winner & importance (9 complete) & importance (30 trials at evaluation 5) \\
+\midrule
+lr & 1e-05 - 0.003 (log) & 0.000188 & 0.04 & 0.07 \\
+batch\_size & 32 / 64 / 128 / 256 / 512 & 32 & 0.12 & 0.08 \\
+mlp\_layers & 128 128 / 256 256 / 512 512 / 256 256 256 / 512 512 512 & 256 256 & 0.08 & 0.09 \\
+epsilon\_decay\_steps & 50000 - 3e+06 (log) & 94232 & 0.09 & 0.41 \\
+epsilon\_end & 0.01 - 0.25 (log) & 0.246 & 0.10 & 0.13 \\
+replay\_memory\_size & 20000 - 1e+06 (log) & 170545 & 0.07 & 0.05 \\
+opponent\_update\_every & 1000 - 100000 (log) & 2224 & 0.25 & 0.10 \\
+update\_target\_every & 250 - 10000 (log) & 477 & 0.24 & 0.06 \\
+train\_every & fixed 1 & (fixed) &  &  \\
+activation & fixed relu & (fixed) &  &  \\
+\bottomrule
+\end{tabular}

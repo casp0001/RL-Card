@@ -1,0 +1,7 @@
+match,row wins (mbb/hand)
+C vs A,+133 ± 54
+C vs B,+82 ± 49
+B vs A,+48 ± 40
+A vs deepcfr,+65 ± 42
+B vs deepcfr,+114 ± 31
+C vs deepcfr,+178 ± 44

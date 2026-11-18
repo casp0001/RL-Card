@@ -1,0 +1,5 @@
+algorithm,mean head-to-head vs others (mbb/hand),exploitability (mbb/hand)
+Deep CFR,+97,175
+DQN,+46,1011
+NFSP,-17,315
+PPO,-126,813

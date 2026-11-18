@@ -1,0 +1,16 @@
+% PPO, leduc: study leduc_ppo_v1
+\begin{tabular}{lrrrr}
+\toprule
+parameter & searched & winner & importance (5 complete) & importance (30 trials at evaluation 5) \\
+\midrule
+lr & 5e-05 - 0.001 (log) & 7.45e-05 & 0.11 & 0.12 \\
+update\_every & 2048 / 4096 / 8192 / 16384 & 8192 & 0.09 & 0.03 \\
+num\_epochs & 2 - 8 & 3 & 0.31 & 0.35 \\
+batch\_size & 128 / 256 / 512 / 1024 & 1024 & 0.08 & 0.30 \\
+clip\_range & 0.1 - 0.3 & 0.163 & 0.16 & 0.08 \\
+entropy\_coef & 0.001 - 0.03 (log) & 0.0064 & 0.05 & 0.07 \\
+gae\_lambda & fixed 0.95 & (fixed) &  &  \\
+mlp\_layers & fixed 256 256 & (fixed) &  &  \\
+opponent\_update\_every & 2000 - 50000 (log) & 12186 & 0.20 & 0.05 \\
+\bottomrule
+\end{tabular}
