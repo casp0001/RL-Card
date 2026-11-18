@@ -22,10 +22,36 @@ final evaluation (experiments/run_ablations.py runs both).
                   C - A: what BatchNorm costs NFSP (DQN shares the network code; a
                   large effect would make retraining DQN worth its ~8 h per run).
 
+Two follow-ups on whether Deep CFR and NFSP were held back by their
+configuration (both far below the published scale, see the thesis notes):
+
+  deepcfr_sgd     Brown et al. (2019): fewer SGD steps per network fit do not slow
+                  convergence but raise the asymptotic exploitability; the study
+                  fixed num_step = 1000 (the paper: 32,000 for limit hold'em) and the
+                  extended run plateaued from ~iteration 320. deepcfr_v1 winner,
+                  200 iterations, two arms:
+                    A  original    the finalist runs (1000 SGD steps per fit)
+                    C  retrained   4000 SGD steps per fit, everything else identical
+  nfsp_literature the nfsp_v3 winner sits at the lower bound of four parameters
+                  (eta, RL learning rate, epsilon, train_every) and its reservoir is far
+                  below the published sizes. 8M episodes (the extended budget), two arms:
+                    A  tuned       the extended nfsp_v3 winner (nfsp_ext)
+                    C  literature  the same run with the published values where the
+                                   winner sat at a bound or far from them: eta 0.1,
+                                   epsilon start 0.08 (Heinrich & Silver 2016), RL
+                                   learning rate 1e-4 (Adam; Lanctot et al. 2017's best,
+                                   inside nfsp_v3's divergence-free range), reservoir
+                                   1.5M (the RAM cap; papers 2M-30M), replay 200k;
+                                   network, SL learning rate and train_every as tuned
+Both also measure, and play, the extended PPO and Deep CFR runs (ppo_ext,
+deepcfr_ext): the h2h winner and the least exploitable agent of the final
+evaluation, on the same deals.
+
 Every arm gets the same measurement (the held-out protocol of heldout_eval.py):
 held-out panel (FINAL_PANEL_SEED deals), LBR, a match against tag for the
 style statistics (incl. P(fold | check free)), and duplicate head-to-head
-matches between the arms and against the Deep CFR winner.
+matches between the arms and against the reference agents (the Deep CFR
+winner, or for the follow-ups ppo_ext and deepcfr_ext).
 
     python experiments/run_ablation.py ppo_free_fold              (train the missing runs, then evaluate)
     python experiments/run_ablation.py nfsp_batchnorm --skip_train  (evaluate only)
@@ -46,6 +72,13 @@ sys.path.insert(0, REPO)
 os.chdir(REPO)
 
 DEEPCFR = 'deepcfr_v1'
+# reference agents: (label, study, run folder under the study, kind); every arm plays every reference
+DEEPCFR_REF = [('deepcfr', DEEPCFR, 'finalists', 'deepcfr')]
+EXTENDED_REFS = [('ppo_ext', 'ppo_v2', 'extended_4000000', 'ppo'),
+                 ('deepcfr_ext', DEEPCFR, 'extended_500', 'deepcfr')]
+# optional spec keys: 'params' (overrides of the winner's tuned values), 'budget' (training budget,
+# default the study's), 'baseline' (run folder of arm A, default 'finalists'), 'refs' (default
+# DEEPCFR_REF), 'measure_refs' (also measure the references; default False)
 ABLATIONS = {
     'ppo_free_fold': {
         'study': 'ppo_v2', 'kind': 'ppo', 'variant': 'no_free_fold', 'fixed': {'no_free_fold': True},
@@ -59,6 +92,23 @@ ABLATIONS = {
         'arms': [('A', 'original (BatchNorm on the input of both networks)'),
                  ('C', 'retrained without BatchNorm')],
     },
+    'deepcfr_sgd': {
+        'study': DEEPCFR, 'kind': 'deepcfr', 'variant': 'sgd4000', 'fixed': {'num_step': 4000},
+        'title': 'SGD-steps ablation, Deep CFR',
+        'arms': [('A', 'original (1000 SGD steps per network fit)'),
+                 ('C', 'retrained with 4000 SGD steps per fit')],
+        'refs': EXTENDED_REFS, 'measure_refs': True,
+    },
+    'nfsp_literature': {
+        'study': 'nfsp_v3', 'kind': 'nfsp', 'variant': 'literature', 'budget': 8_000_000,
+        'baseline': 'extended_8000000', 'fixed': {},
+        'params': {'anticipatory_param': 0.1, 'q_epsilon_start': 0.08, 'rl_learning_rate': 1e-4,
+                   'reservoir_buffer_capacity': 1_500_000, 'q_replay_memory_size': 200_000},
+        'title': 'Literature-configuration check, NFSP (8M episodes)',
+        'arms': [('A', 'tuned (nfsp_v3 winner, extended)'),
+                 ('C', 'literature values (eta 0.1, eps 0.08, RL lr 1e-4, reservoir 1.5M, replay 200k)')],
+        'refs': EXTENDED_REFS, 'measure_refs': True,
+    },
 }
 
 
@@ -67,8 +117,30 @@ def winner(study):
         return json.load(f)['winner']
 
 
+def run_dir(study, folder, seed):
+    return os.path.join('experiments', 'tune', study, folder, f'trial_{winner(study)["trial"]}', f'seed_{seed}')
+
+
 def finalist_dir(study, seed):
-    return os.path.join('experiments', 'tune', study, 'finalists', f'trial_{winner(study)["trial"]}', f'seed_{seed}')
+    return run_dir(study, 'finalists', seed)
+
+
+def baseline_dir(a, seed):
+    ''' Arm A: the finalist run, or (spec 'baseline') e.g. the extended run of the same winner. '''
+    return run_dir(a.spec['study'], a.spec.get('baseline', 'finalists'), seed)
+
+
+def refs(a):
+    return a.spec.get('refs', DEEPCFR_REF)
+
+
+def ref_seeds(label, a):
+    return winner(next(r for r in refs(a) if r[0] == label)[1])['seeds']
+
+
+def default_budget(spec):
+    import tune
+    return spec.get('budget') or tune.load_config(spec['study'])['budget']
 
 
 def retrained_dir(a, seed):
@@ -83,17 +155,30 @@ def cmd_train_one(a):
     ''' One retrained run: the winner's configuration with the ablation's change. '''
     import torch
     import tune
+    import tune_spaces
     torch.set_num_threads(a.threads)
     study = a.spec['study']
     cfg = tune.load_config(study)
     interval = cfg['budget'] // cfg['evals']
-    budget = a.budget or cfg['budget']
+    budget = a.budget or default_budget(a.spec)
     cfg = dict(cfg, budget=budget, evals=max(1, budget // interval), fixed=dict(cfg['fixed'], **a.spec['fixed']))
     w = winner(study)
+    over = a.spec.get('params', {})
+    bad = [k for k in over if k not in cfg['space'] or not cfg['space'][k].get('tune', True)]
+    assert not bad, f'params {bad} are not tuned parameters of {study} (use fixed)'
+    params = dict(w['params'], **over)
     log_dir = retrained_dir(a, a.seed)
-    module, args = tune.build_args(cfg, w['params'], log_dir, a.seed, save_model=True)
+    module, args = tune.build_args(cfg, params, log_dir, a.seed, save_model=True)
+    # build_args applies the space's fixed values after the study's fixed settings (e.g. Deep CFR's
+    # num_step), so the ablation's own changes are set last
+    for k, v in a.spec['fixed'].items():
+        setattr(args, k, v)
+    for name, value in over.items():
+        for k, v in tune_spaces.to_args(name, cfg['space'][name], value).items():
+            assert getattr(args, k) == v, (k, getattr(args, k), v)
     for k, v in a.spec['fixed'].items():
         assert getattr(args, k) == v, (k, getattr(args, k))
+    print(f'{a.ablation} seed {a.seed}: budget {budget}, changes {dict(a.spec["fixed"], **over)}', flush=True)
     history = []
 
     def track(episode, results):
@@ -103,7 +188,7 @@ def cmd_train_one(a):
     module.train(args, track)
     with open(os.path.join(log_dir, 'trained.json'), 'w', encoding='utf-8') as f:
         json.dump({'ablation': a.ablation, 'study': study, 'trial': w['trial'], 'seed': a.seed, 'budget': budget,
-                   'change': a.spec['fixed'], 'params': w['params'], 'history': history,
+                   'change': dict(a.spec['fixed'], **over), 'params': params, 'history': history,
                    'hours': (time.time() - start) / 3600}, f, indent=1)
 
 
@@ -140,12 +225,13 @@ def agents(a):
     arms = [arm for arm, _ in a.spec['arms']]
     out = {}
     for s in winner(study)['seeds']:
-        out[f'A_s{s}'] = ('A', s, kind, finalist_dir(study, s), False)
+        out[f'A_s{s}'] = ('A', s, kind, baseline_dir(a, s), False)
         if 'B' in arms:
-            out[f'B_s{s}'] = ('B', s, kind, finalist_dir(study, s), True)
+            out[f'B_s{s}'] = ('B', s, kind, baseline_dir(a, s), True)
         out[f'C_s{s}'] = ('C', s, kind, retrained_dir(a, s), False)
-    for s in winner(DEEPCFR)['seeds']:
-        out[f'deepcfr_s{s}'] = ('deepcfr', s, 'deepcfr', finalist_dir(DEEPCFR, s), False)
+    for label, ref_study, folder, ref_kind in refs(a):
+        for s in winner(ref_study)['seeds']:
+            out[f'{label}_s{s}'] = (label, s, ref_kind, run_dir(ref_study, folder, s), False)
     return out
 
 
@@ -187,7 +273,8 @@ def cmd_measure_one(a):
 
 def measure_all(a):
     os.makedirs(a.work, exist_ok=True)
-    names = [n for n in agents(a) if not n.startswith('deepcfr')]
+    measured = {arm for arm, _ in a.spec['arms']} | ({r[0] for r in refs(a)} if a.spec.get('measure_refs') else set())
+    names = [n for n, spec in agents(a).items() if spec[0] in measured]
     todo = [n for n in names if not os.path.isfile(os.path.join(a.work, f'{n}.json'))]
     print(f'{a.ablation}: measurements {len(names) - len(todo)} of {len(names)} done', flush=True)
     running = []
@@ -211,7 +298,7 @@ def _pairs(a):
     seeds = winner(a.spec['study'])['seeds']
     arms = [arm for arm, _ in a.spec['arms']]
     between = [(x, y) for x, y in (('C', 'A'), ('C', 'B'), ('B', 'A')) if x in arms and y in arms]
-    return between + [(x, 'deepcfr') for x in arms], seeds
+    return between + [(x, r[0]) for r in refs(a) for x in arms], seeds
 
 
 def h2h_all(a):
@@ -224,8 +311,9 @@ def h2h_all(a):
             done = json.load(f)
     specs = agents(a)
     groups, seeds = _pairs(a)
+    ref_labels = {r[0] for r in refs(a)}
     pairs = [(f'{x}_s{s}', f'{y}_s{t}') for x, y in groups for s in seeds
-             for t in (winner(DEEPCFR)['seeds'] if y == 'deepcfr' else seeds)]
+             for t in (ref_seeds(y, a) if y in ref_labels else seeds)]
     todo = [p for p in pairs if f'{p[0]}:{p[1]}' not in done]
     print(f'{a.ablation}: head-to-head {len(pairs) - len(todo)} of {len(pairs)} matches done', flush=True)
     policies = {}
@@ -266,14 +354,20 @@ def report(a, h2h):
         if os.path.isfile(p):
             with open(p, encoding='utf-8') as f:
                 m[n] = json.load(f)
-    arms = a.spec['arms']
+    ref_labels = [r[0] for r in refs(a)]
+    rows_spec = list(a.spec['arms']) + ([(r, f'reference ({r})') for r in ref_labels]
+                                        if a.spec.get('measure_refs') else [])
     members = list(next(iter(m.values()))['panel']['members'])
     header = (['arm', 'P(fold | check free)', 'panel min', 'panel mean'] + [f'vs {x}' for x in members]
               + ['LBR', 'VPIP', 'PFR', 'fold facing a bet', 'AF'])
     rows = []
-    for arm, label in arms:
-        ms = [m[f'{arm}_s{s}'] for s in seeds if f'{arm}_s{s}' in m]
-        rows.append([f'{arm}: {label}', _agg([x['free_fold']['mean'] for x in ms], 1, pct=True),
+    for arm, label in rows_spec:
+        arm_seeds = ref_seeds(arm, a) if arm in ref_labels else seeds
+        ms = [m[f'{arm}_s{s}'] for s in arm_seeds if f'{arm}_s{s}' in m]
+        if not ms:
+            continue
+        rows.append([label if arm in ref_labels else f'{arm}: {label}',
+                     _agg([x['free_fold']['mean'] for x in ms], 1, pct=True),
                      _agg([x['panel']['min'] for x in ms]), _agg([x['panel']['mean'] for x in ms])]
                     + [_agg([x['panel']['members'][k] for x in ms]) for k in members]
                     + [_agg([x['lbr']['mean'] for x in ms])]
@@ -288,7 +382,7 @@ def report(a, h2h):
     # paired differences per seed (same seed = same initialisation and data stream up to the change)
     groups, _ = _pairs(a)
     rows = []
-    for x, y in [g for g in groups if g[1] != 'deepcfr']:
+    for x, y in [g for g in groups if g[1] not in ref_labels]:
         def diffs(f):
             return [f(m[f'{x}_s{s}']) - f(m[f'{y}_s{s}']) for s in seeds if f'{x}_s{s}' in m and f'{y}_s{s}' in m]
         rows.append([f'{x} - {y}', _agg(diffs(lambda r: r['panel']['min'])),
@@ -298,7 +392,7 @@ def report(a, h2h):
 
     rows = []
     for x, y in groups:
-        ys = winner(DEEPCFR)['seeds'] if y == 'deepcfr' else seeds
+        ys = ref_seeds(y, a) if y in ref_labels else seeds
         grid = np.full((len(seeds), len(ys)), np.nan)
         var = []
         for i, s in enumerate(seeds):
@@ -315,8 +409,19 @@ def report(a, h2h):
                            '± counts the training seeds of both sides as the random units plus the card noise.'))
 
     # training-time score (what tuning would have seen: mean of the last 3 panel evaluations)
-    with open(os.path.join('experiments', 'tune', study, 'finalists', 'finalists.json'), encoding='utf-8') as f:
-        runs = {r['seed']: r for r in json.load(f)['runs'] if r['trial'] == winner(study)['trial']}
+    a_scores, a_hours = [], []
+    if a.spec.get('baseline', 'finalists') == 'finalists':
+        with open(os.path.join('experiments', 'tune', study, 'finalists', 'finalists.json'), encoding='utf-8') as f:
+            runs = {r['seed']: r for r in json.load(f)['runs'] if r['trial'] == winner(study)['trial']}
+        a_scores = [runs[s].get('training_score') for s in seeds if s in runs]
+    else:   # an extended run: extended.json holds its panel history and wall time
+        for s in seeds:
+            p = os.path.join(baseline_dir(a, s), 'extended.json')
+            if os.path.isfile(p):
+                with open(p, encoding='utf-8') as f:
+                    e = json.load(f)
+                a_scores.append(statistics.fmean(e['history'][-3:]))
+                a_hours.append(e.get('hours'))
     c_scores, hours = [], []
     for s in seeds:
         p = os.path.join(retrained_dir(a, s), 'trained.json')
@@ -327,7 +432,7 @@ def report(a, h2h):
             hours.append(t['hours'])
     md.append(_write_table(a.out + '_training', 'Training-time panel score (mean of the last 3 evaluations, tuning deals)',
                            ['arm', 'score', 'training hours'],
-                           [['A: original', _agg([runs[s].get('training_score') for s in seeds if s in runs]), ''],
+                           [['A: ' + a.spec['arms'][0][1], _agg(a_scores), _agg(a_hours, 1).lstrip('+')],
                             ['C: retrained', _agg(c_scores), _agg(hours, 1).lstrip('+')]]))
     with open(a.out + '.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
@@ -357,8 +462,7 @@ def main():
     a = p.parse_args()
     a.spec = ABLATIONS[a.ablation]
     if a.root is None:
-        import tune
-        budget = a.budget or tune.load_config(a.spec['study'])['budget']
+        budget = a.budget or default_budget(a.spec)
         a.root = os.path.join('experiments', 'tune', a.spec['study'], f'{a.spec["variant"]}_{budget}')
     a.work = a.work or os.path.join('experiments', f'ablation_{a.ablation}_work')
     a.out = a.out or os.path.join('experiments', f'ablation_{a.ablation}')

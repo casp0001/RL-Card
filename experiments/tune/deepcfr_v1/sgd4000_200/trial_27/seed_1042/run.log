@@ -1,0 +1,124 @@
+deepcfr_sgd seed 1042: budget 200, changes {'num_step': 4000}
+0/200 complete.1/200 complete.2/200 complete.3/200 complete.4/200 complete.5/200 complete.6/200 complete.7/200 complete.8/200 complete.9/200 complete.
+Checkpoint saved at episode 10 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_10
+10/200 complete.11/200 complete.12/200 complete.13/200 complete.14/200 complete.15/200 complete.16/200 complete.17/200 complete.18/200 complete.
+----------------------------------------
+  episode      |  19
+  reward       |  -1608.5
+----------------------------------------
+[Iteration 19] panel min -1608.5  mean -896.0 mbb/h  |  random +872±88  station -322±90  maniac -1608±251  nit -584±97  tag -866±117  lag -1100±143
+[Iteration 19]   actions: call=20% raise=54% fold=16% check=10%  (24s)
+  last-step weighted losses  adv: 9.061906  policy: 0.015740
+19/200 complete.
+Checkpoint saved at episode 20 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_20
+20/200 complete.21/200 complete.22/200 complete.23/200 complete.24/200 complete.25/200 complete.26/200 complete.27/200 complete.28/200 complete.29/200 complete.
+Checkpoint saved at episode 30 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_30
+30/200 complete.31/200 complete.32/200 complete.33/200 complete.34/200 complete.35/200 complete.36/200 complete.37/200 complete.38/200 complete.
+----------------------------------------
+  episode      |  39
+  reward       |  -1731.5
+----------------------------------------
+[Iteration 39] panel min -1731.5  mean -848.2 mbb/h  |  random +872±89  station -304±86  maniac -1732±257  nit -534±99  tag -812±123  lag -861±148
+[Iteration 39]   actions: call=22% raise=49% fold=16% check=14%  (14s)
+  last-step weighted losses  adv: 11.609771  policy: 0.017626
+39/200 complete.
+Checkpoint saved at episode 40 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_40
+40/200 complete.41/200 complete.42/200 complete.43/200 complete.44/200 complete.45/200 complete.46/200 complete.47/200 complete.48/200 complete.49/200 complete.
+Checkpoint saved at episode 50 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_50
+50/200 complete.51/200 complete.52/200 complete.53/200 complete.54/200 complete.55/200 complete.56/200 complete.57/200 complete.58/200 complete.
+----------------------------------------
+  episode      |  59
+  reward       |  -1346.5
+----------------------------------------
+[Iteration 59] panel min -1346.5  mean -737.6 mbb/h  |  random +839±82  station -248±83  maniac -1346±253  nit -536±102  tag -738±126  lag -818±142
+[Iteration 59]   actions: call=22% raise=49% fold=16% check=13%  (11s)
+  last-step weighted losses  adv: 14.221653  policy: 0.019252
+59/200 complete.
+Checkpoint saved at episode 60 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_60
+60/200 complete.61/200 complete.62/200 complete.63/200 complete.64/200 complete.65/200 complete.66/200 complete.67/200 complete.68/200 complete.69/200 complete.
+Checkpoint saved at episode 70 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_70
+70/200 complete.71/200 complete.72/200 complete.73/200 complete.74/200 complete.75/200 complete.76/200 complete.77/200 complete.78/200 complete.
+----------------------------------------
+  episode      |  79
+  reward       |  -976.0
+----------------------------------------
+[Iteration 79] panel min -976.0  mean -582.7 mbb/h  |  random +950±85  station -22±83  maniac -976±257  nit -534±96  tag -699±127  lag -682±144
+[Iteration 79]   actions: call=22% raise=51% fold=16% check=12%  (12s)
+  last-step weighted losses  adv: 17.178148  policy: 0.020138
+79/200 complete.
+Checkpoint saved at episode 80 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_80
+80/200 complete.81/200 complete.82/200 complete.83/200 complete.84/200 complete.85/200 complete.86/200 complete.87/200 complete.88/200 complete.89/200 complete.
+Checkpoint saved at episode 90 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_90
+90/200 complete.91/200 complete.92/200 complete.93/200 complete.94/200 complete.95/200 complete.96/200 complete.97/200 complete.98/200 complete.
+----------------------------------------
+  episode      |  99
+  reward       |  -799.0
+----------------------------------------
+[Iteration 99] panel min -799.0  mean -485.7 mbb/h  |  random +938±86  station +35±81  maniac -799±274  nit -454±96  tag -608±124  lag -602±143
+[Iteration 99]   actions: call=20% raise=53% fold=16% check=11%  (11s)
+  last-step weighted losses  adv: 15.882135  policy: 0.020642
+99/200 complete.
+Checkpoint saved at episode 100 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_100
+100/200 complete.101/200 complete.102/200 complete.103/200 complete.104/200 complete.105/200 complete.106/200 complete.107/200 complete.108/200 complete.109/200 complete.
+Checkpoint saved at episode 110 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_110
+110/200 complete.111/200 complete.112/200 complete.113/200 complete.114/200 complete.115/200 complete.116/200 complete.117/200 complete.118/200 complete.
+----------------------------------------
+  episode      |  119
+  reward       |  -670.0
+----------------------------------------
+[Iteration 119] panel min -670.0  mean -414.3 mbb/h  |  random +838±83  station +50±77  maniac -380±252  nit -402±93  tag -670±120  lag -670±139
+[Iteration 119]   actions: call=21% raise=51% fold=15% check=13%  (8s)
+  last-step weighted losses  adv: 16.011199  policy: 0.021824
+119/200 complete.
+Checkpoint saved at episode 120 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_120
+120/200 complete.121/200 complete.122/200 complete.123/200 complete.124/200 complete.125/200 complete.126/200 complete.127/200 complete.128/200 complete.129/200 complete.
+Checkpoint saved at episode 130 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_130
+130/200 complete.131/200 complete.132/200 complete.133/200 complete.134/200 complete.135/200 complete.136/200 complete.137/200 complete.138/200 complete.
+----------------------------------------
+  episode      |  139
+  reward       |  -714.5
+----------------------------------------
+[Iteration 139] panel min -714.5  mean -471.7 mbb/h  |  random +974±84  station +38±82  maniac -533±246  nit -481±98  tag -668±120  lag -714±142
+[Iteration 139]   actions: call=21% raise=51% fold=15% check=12%  (8s)
+  last-step weighted losses  adv: 15.475257  policy: 0.022891
+139/200 complete.
+Checkpoint saved at episode 140 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_140
+140/200 complete.141/200 complete.142/200 complete.143/200 complete.144/200 complete.145/200 complete.146/200 complete.147/200 complete.148/200 complete.149/200 complete.
+Checkpoint saved at episode 150 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_150
+150/200 complete.151/200 complete.152/200 complete.153/200 complete.154/200 complete.155/200 complete.156/200 complete.157/200 complete.158/200 complete.
+----------------------------------------
+  episode      |  159
+  reward       |  -608.0
+----------------------------------------
+[Iteration 159] panel min -608.0  mean -293.9 mbb/h  |  random +1048±87  station +147±79  maniac -25±265  nit -432±95  tag -608±116  lag -552±138
+[Iteration 159]   actions: call=21% raise=52% fold=14% check=13%  (8s)
+  last-step weighted losses  adv: 15.834835  policy: 0.022255
+159/200 complete.
+Checkpoint saved at episode 160 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_160
+160/200 complete.161/200 complete.162/200 complete.163/200 complete.164/200 complete.165/200 complete.166/200 complete.167/200 complete.168/200 complete.169/200 complete.
+Checkpoint saved at episode 170 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_170
+170/200 complete.171/200 complete.172/200 complete.173/200 complete.174/200 complete.175/200 complete.176/200 complete.177/200 complete.178/200 complete.
+----------------------------------------
+  episode      |  179
+  reward       |  -562.5
+----------------------------------------
+[Iteration 179] panel min -562.5  mean -295.8 mbb/h  |  random +866±81  station +158±78  maniac -160±257  nit -370±91  tag -562±115  lag -546±139
+[Iteration 179]   actions: call=23% raise=50% fold=14% check=14%  (9s)
+  last-step weighted losses  adv: 15.297352  policy: 0.022854
+179/200 complete.
+Checkpoint saved at episode 180 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_180
+180/200 complete.181/200 complete.182/200 complete.183/200 complete.184/200 complete.185/200 complete.186/200 complete.187/200 complete.188/200 complete.189/200 complete.
+Checkpoint saved at episode 190 to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/checkpoints\episode_190
+190/200 complete.191/200 complete.192/200 complete.193/200 complete.194/200 complete.195/200 complete.196/200 complete.197/200 complete.198/200 complete.
+----------------------------------------
+  episode      |  199
+  reward       |  -619.0
+----------------------------------------
+[Iteration 199] panel min -619.0  mean -347.1 mbb/h  |  random +958±87  station +290±77  maniac -358±264  nit -468±93  tag -619±119  lag -580±135
+[Iteration 199]   actions: call=22% raise=51% fold=13% check=13%  (9s)
+  last-step weighted losses  adv: 15.227930  policy: 0.023587
+199/200 complete.
+Logs saved in experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/
+
+Model saved to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/
+Learning curve saved to experiments\tune\deepcfr_v1\sgd4000_200\trial_27\seed_1042/fig.png

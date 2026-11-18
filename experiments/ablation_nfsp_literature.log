@@ -1,0 +1,117 @@
+nfsp_literature: 0 of 3 retrained runs done; training [1042, 1043, 1044]
+2026-11-17 19:02  nfsp_literature seed 1042: done
+2026-11-17 19:02  nfsp_literature seed 1043: done
+2026-11-17 19:05  nfsp_literature seed 1044: done
+nfsp_literature: measurements 0 of 12 done
+nfsp_literature: head-to-head 0 of 45 matches done
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+  [1/45] C_s1042 vs A_s1042: +184 +/- 97
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+  [2/45] C_s1042 vs A_s1043: +157 +/- 97
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+  [3/45] C_s1042 vs A_s1044: +55 +/- 104
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+  [4/45] C_s1043 vs A_s1042: +149 +/- 103
+  [5/45] C_s1043 vs A_s1043: -26 +/- 105
+  [6/45] C_s1043 vs A_s1044: +25 +/- 113
+
+INFO - Restoring model from checkpoint...
+
+INFO - Restoring model from checkpoint...
+  [7/45] C_s1044 vs A_s1042: +154 +/- 102
+  [8/45] C_s1044 vs A_s1043: -41 +/- 107
+  [9/45] C_s1044 vs A_s1044: -81 +/- 113
+
+INFO - Restoring model from checkpoint...
+  [10/45] A_s1042 vs ppo_ext_s1042: -217 +/- 62
+
+INFO - Restoring model from checkpoint...
+  [11/45] A_s1042 vs ppo_ext_s1043: -257 +/- 64
+
+INFO - Restoring model from checkpoint...
+  [12/45] A_s1042 vs ppo_ext_s1044: -310 +/- 59
+  [13/45] A_s1043 vs ppo_ext_s1042: -190 +/- 62
+  [14/45] A_s1043 vs ppo_ext_s1043: -107 +/- 65
+  [15/45] A_s1043 vs ppo_ext_s1044: -219 +/- 60
+  [16/45] A_s1044 vs ppo_ext_s1042: -136 +/- 63
+  [17/45] A_s1044 vs ppo_ext_s1043: -165 +/- 65
+  [18/45] A_s1044 vs ppo_ext_s1044: -232 +/- 59
+  [19/45] C_s1042 vs ppo_ext_s1042: -75 +/- 70
+  [20/45] C_s1042 vs ppo_ext_s1043: -80 +/- 72
+  [21/45] C_s1042 vs ppo_ext_s1044: -233 +/- 67
+  [22/45] C_s1043 vs ppo_ext_s1042: -177 +/- 72
+  [23/45] C_s1043 vs ppo_ext_s1043: -12 +/- 74
+  [24/45] C_s1043 vs ppo_ext_s1044: -286 +/- 70
+  [25/45] C_s1044 vs ppo_ext_s1042: -49 +/- 70
+  [26/45] C_s1044 vs ppo_ext_s1043: -59 +/- 72
+  [27/45] C_s1044 vs ppo_ext_s1044: -254 +/- 69
+  [28/45] A_s1042 vs deepcfr_ext_s1042: -174 +/- 64
+  [29/45] A_s1042 vs deepcfr_ext_s1043: -194 +/- 65
+  [30/45] A_s1042 vs deepcfr_ext_s1044: -170 +/- 63
+  [31/45] A_s1043 vs deepcfr_ext_s1042: -150 +/- 65
+  [32/45] A_s1043 vs deepcfr_ext_s1043: -134 +/- 66
+  [33/45] A_s1043 vs deepcfr_ext_s1044: -73 +/- 65
+  [34/45] A_s1044 vs deepcfr_ext_s1042: -159 +/- 67
+  [35/45] A_s1044 vs deepcfr_ext_s1043: -57 +/- 67
+  [36/45] A_s1044 vs deepcfr_ext_s1044: -149 +/- 65
+  [37/45] C_s1042 vs deepcfr_ext_s1042: -200 +/- 77
+  [38/45] C_s1042 vs deepcfr_ext_s1043: -150 +/- 76
+  [39/45] C_s1042 vs deepcfr_ext_s1044: -151 +/- 74
+  [40/45] C_s1043 vs deepcfr_ext_s1042: -208 +/- 79
+  [41/45] C_s1043 vs deepcfr_ext_s1043: -112 +/- 80
+  [42/45] C_s1043 vs deepcfr_ext_s1044: -175 +/- 79
+  [43/45] C_s1044 vs deepcfr_ext_s1042: -87 +/- 78
+  [44/45] C_s1044 vs deepcfr_ext_s1043: -52 +/- 80
+  [45/45] C_s1044 vs deepcfr_ext_s1044: -53 +/- 77
+### Literature-configuration check, NFSP (8M episodes) (nfsp_v3 trial 33), mean (sd) over seeds [1042, 1043, 1044]
+
+| arm | P(fold | check free) | panel min | panel mean | vs random | vs station | vs maniac | vs nit | vs tag | vs lag | LBR | VPIP | PFR | fold facing a bet | AF |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A: tuned (nfsp_v3 winner, extended) | 2.5% (sd 0.4) | -1085 (sd 140) | -352 (sd 60) | +1518 (sd 47) | +298 (sd 16) | +678 (sd 163) | -622 (sd 38) | -1029 (sd 94) | -1084 (sd 141) | +1258 (sd 74) | 83% (sd 1) | 37% (sd 2) | 11% (sd 1) | 3.76 (sd 0.65) |
+| C: literature values (eta 0.1, eps 0.08, RL lr 1e-4, reservoir 1.5M, replay 200k) | 2.3% (sd 0.3) | -1294 (sd 167) | -361 (sd 70) | +2035 (sd 81) | +295 (sd 55) | +1025 (sd 57) | -658 (sd 47) | -1174 (sd 96) | -1294 (sd 167) | +1582 (sd 134) | 96% (sd 0) | 68% (sd 2) | 5% (sd 1) | 6.13 (sd 1.07) |
+| reference (ppo_ext) | 2.6% (sd 1.2) | -270 (sd 49) | -64 (sd 5) | +1222 (sd 149) | +233 (sd 62) | +68 (sd 170) | -191 (sd 50) | -270 (sd 49) | -163 (sd 17) | +627 (sd 199) | 77% (sd 5) | 45% (sd 9) | 18% (sd 3) | 2.89 (sd 0.66) |
+| reference (deepcfr_ext) | 0.8% (sd 0.2) | -331 (sd 13) | -43 (sd 31) | +1205 (sd 54) | +324 (sd 19) | +359 (sd 118) | -266 (sd 9) | -328 (sd 14) | -306 (sd 40) | +597 (sd 118) | 70% (sd 2) | 42% (sd 2) | 21% (sd 1) | 3.70 (sd 0.15) |
+
+Held-out panel (2000 duplicate deals per bot, FINAL_PANEL_SEED), LBR (1000 deals, lower = less exploitable), style from 500 deals against tag. mbb/hand.
+
+### Paired differences per seed (mean (sd) over seeds)
+
+| difference | panel min | panel mean | LBR (negative = less exploitable) |
+|---|---|---|---|
+| C - A | -209 (sd 190) | -9 (sd 114) | +324 (sd 161) |
+
+### Head-to-head (2000 duplicate deals per pair, mean over seed pairs)
+
+| match | row wins (mbb/hand) |
+|---|---|
+| C vs A | +64 ± 71 |
+| A vs ppo_ext | -204 ± 44 |
+| C vs ppo_ext | -136 ± 68 |
+| A vs deepcfr_ext | -140 ± 31 |
+| C vs deepcfr_ext | -132 ± 46 |
+
+± counts the training seeds of both sides as the random units plus the card noise.
+
+### Training-time panel score (mean of the last 3 evaluations, tuning deals)
+
+| arm | score | training hours |
+|---|---|---|
+| A: tuned (nfsp_v3 winner, extended) | -1052 (sd 49) | 8.6 (sd 2.5) |
+| C: retrained | -1319 (sd 30) | 24.8 (sd 0.2) |
+
